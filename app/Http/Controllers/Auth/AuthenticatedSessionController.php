@@ -24,6 +24,9 @@ class AuthenticatedSessionController extends Controller
         return response()->noContent();
     }
 
+    /**
+     * Generate Authorization token.
+     */
     public function getToken(CreateTokenRequest $request): JsonResponse
     {
         $request->authenticate();
