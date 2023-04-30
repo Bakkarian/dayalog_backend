@@ -6,8 +6,9 @@ DAYALOG logistics system tracks vehicles that deliver goods and it would involve
 ### API Documentation 
 
 ```
- {{BaseUrl}}/docs
+ {{BaseUrl}} /docs
 ```
+e.g http://localhost:8000/docs
 
 ### TO-DO
 
