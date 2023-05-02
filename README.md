@@ -21,7 +21,7 @@ e.g http://localhost:8000/docs
     - [x] verify email
 - [ ] Create order
 - [ ] Attach vehicle an order
-- [ ] get current location of a vehicle
+- [ ] get the current location of a vehicle
 
 > **Warning:** This task list is still under development and review.
 
