@@ -16,9 +16,12 @@ e.g http://localhost:8000/docs
 - [x] Authentication
     - [x] register
     - [x] login
+    - [ ] Login with phone number and merchant code
     - [x] Logout
     - [x] reset password
     - [x] verify email
+    - [ ] login with PataSente account
+- [ ] Roles and permissions
 - [ ] Devices Module
     - [ ] Add device to the system
     - [ ] Get devices
@@ -35,6 +38,7 @@ e.g http://localhost:8000/docs
     - [ ] get order vehicle information for a vehicle
     - [ ]Dispatch Module (Order submodule)
         - [ ] create a route(dispatch )
-        
+- [ ] FileManager 
+- [ ] Terms and conditions management
 > **Warning:** This task list is still under development and review.
 
