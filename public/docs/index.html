@@ -93,6 +93,21 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
                                 <a href="#endpoints-GETapi-user">GET api/user</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-devices">
+                                <a href="#endpoints-GETapi-devices">Display a listing of the devices.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-devices">
+                                <a href="#endpoints-POSTapi-devices">Add a new device.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-devices--id-">
+                                <a href="#endpoints-GETapi-devices--id-">Get information on a device</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-devices--id-">
+                                <a href="#endpoints-PUTapi-devices--id-">Update the specified device.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-devices--id-">
+                                <a href="#endpoints-DELETEapi-devices--id-">Remove the specified device.</a>
+                            </li>
                                                                         </ul>
                             </ul>
             </div>
@@ -103,7 +118,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: April 30, 2023</li>
+        <li>Last updated: May 10, 2023</li>
     </ul>
 </div>
 
@@ -145,9 +160,9 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"ewmlgsmj\",
-    \"email\": \"alphonso.hane@example.org\",
-    \"password\": \"aut\"
+    \"name\": \"uttmmns\",
+    \"email\": \"preichel@example.org\",
+    \"password\": \"quia\"
 }"
 </code></pre></div>
 
@@ -163,9 +178,9 @@ const headers = {
 };
 
 let body = {
-    "name": "ewmlgsmj",
-    "email": "alphonso.hane@example.org",
-    "password": "aut"
+    "name": "uttmmns",
+    "email": "preichel@example.org",
+    "password": "quia"
 };
 
 fetch(url, {
@@ -185,9 +200,9 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'name' =&gt; 'ewmlgsmj',
-            'email' =&gt; 'alphonso.hane@example.org',
-            'password' =&gt; 'aut',
+            'name' =&gt; 'uttmmns',
+            'email' =&gt; 'preichel@example.org',
+            'password' =&gt; 'quia',
         ],
     ]
 );
@@ -201,9 +216,9 @@ import json
 
 url = 'https://daylog.example.com/api/register'
 payload = {
-    "name": "ewmlgsmj",
-    "email": "alphonso.hane@example.org",
-    "password": "aut"
+    "name": "uttmmns",
+    "email": "preichel@example.org",
+    "password": "quia"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -276,10 +291,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-register"
-               value="ewmlgsmj"
+               value="uttmmns"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>ewmlgsmj</code></p>
+<p>Must not be greater than 255 characters. Example: <code>uttmmns</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -287,10 +302,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-register"
-               value="alphonso.hane@example.org"
+               value="preichel@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>alphonso.hane@example.org</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>preichel@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -298,10 +313,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-register"
-               value="aut"
+               value="quia"
                data-component="body">
     <br>
-<p>Example: <code>aut</code></p>
+<p>Example: <code>quia</code></p>
         </div>
         </form>
 
@@ -322,9 +337,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"mbeer@example.org\",
-    \"password\": \"(sWdw`Ob;)0&lt;D--Y\",
-    \"token_name\": \"inventore\"
+    \"email\": \"greichert@example.org\",
+    \"password\": \"sTKXRor`$pDwmjs(P|\",
+    \"token_name\": \"ratione\"
 }"
 </code></pre></div>
 
@@ -340,9 +355,9 @@ const headers = {
 };
 
 let body = {
-    "email": "mbeer@example.org",
-    "password": "(sWdw`Ob;)0&lt;D--Y",
-    "token_name": "inventore"
+    "email": "greichert@example.org",
+    "password": "sTKXRor`$pDwmjs(P|",
+    "token_name": "ratione"
 };
 
 fetch(url, {
@@ -362,9 +377,9 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'email' =&gt; 'mbeer@example.org',
-            'password' =&gt; '(sWdw`Ob;)0&lt;D--Y',
-            'token_name' =&gt; 'inventore',
+            'email' =&gt; 'greichert@example.org',
+            'password' =&gt; 'sTKXRor`$pDwmjs(P|',
+            'token_name' =&gt; 'ratione',
         ],
     ]
 );
@@ -378,9 +393,9 @@ import json
 
 url = 'https://daylog.example.com/api/tokens/create'
 payload = {
-    "email": "mbeer@example.org",
-    "password": "(sWdw`Ob;)0&lt;D--Y",
-    "token_name": "inventore"
+    "email": "greichert@example.org",
+    "password": "sTKXRor`$pDwmjs(P|",
+    "token_name": "ratione"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -453,10 +468,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-tokens-create"
-               value="mbeer@example.org"
+               value="greichert@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>mbeer@example.org</code></p>
+<p>Must be a valid email address. Example: <code>greichert@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -464,10 +479,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-tokens-create"
-               value="(sWdw`Ob;)0<D--Y"
+               value="sTKXRor`$pDwmjs(P|"
                data-component="body">
     <br>
-<p>Example: <code>(sWdw</code>Ob;)0&lt;D--Y`</p>
+<p>Example: <code>sTKXRor</code>$pDwmjs(P|`</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>token_name</code></b>&nbsp;&nbsp;
@@ -475,10 +490,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="token_name"                data-endpoint="POSTapi-tokens-create"
-               value="inventore"
+               value="ratione"
                data-component="body">
     <br>
-<p>Example: <code>inventore</code></p>
+<p>Example: <code>ratione</code></p>
         </div>
         </form>
 
@@ -499,7 +514,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"bstroman@example.net\"
+    \"email\": \"mcdermott.mortimer@example.com\"
 }"
 </code></pre></div>
 
@@ -515,7 +530,7 @@ const headers = {
 };
 
 let body = {
-    "email": "bstroman@example.net"
+    "email": "mcdermott.mortimer@example.com"
 };
 
 fetch(url, {
@@ -535,7 +550,7 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'email' =&gt; 'bstroman@example.net',
+            'email' =&gt; 'mcdermott.mortimer@example.com',
         ],
     ]
 );
@@ -549,7 +564,7 @@ import json
 
 url = 'https://daylog.example.com/api/forgot-password'
 payload = {
-    "email": "bstroman@example.net"
+    "email": "mcdermott.mortimer@example.com"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -622,10 +637,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-forgot-password"
-               value="bstroman@example.net"
+               value="mcdermott.mortimer@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>bstroman@example.net</code></p>
+<p>Must be a valid email address. Example: <code>mcdermott.mortimer@example.com</code></p>
         </div>
         </form>
 
@@ -646,9 +661,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"esse\",
-    \"email\": \"cecelia.romaguera@example.com\",
-    \"password\": \"commodi\"
+    \"token\": \"culpa\",
+    \"email\": \"reymundo59@example.net\",
+    \"password\": \"officia\"
 }"
 </code></pre></div>
 
@@ -664,9 +679,9 @@ const headers = {
 };
 
 let body = {
-    "token": "esse",
-    "email": "cecelia.romaguera@example.com",
-    "password": "commodi"
+    "token": "culpa",
+    "email": "reymundo59@example.net",
+    "password": "officia"
 };
 
 fetch(url, {
@@ -686,9 +701,9 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'token' =&gt; 'esse',
-            'email' =&gt; 'cecelia.romaguera@example.com',
-            'password' =&gt; 'commodi',
+            'token' =&gt; 'culpa',
+            'email' =&gt; 'reymundo59@example.net',
+            'password' =&gt; 'officia',
         ],
     ]
 );
@@ -702,9 +717,9 @@ import json
 
 url = 'https://daylog.example.com/api/reset-password'
 payload = {
-    "token": "esse",
-    "email": "cecelia.romaguera@example.com",
-    "password": "commodi"
+    "token": "culpa",
+    "email": "reymundo59@example.net",
+    "password": "officia"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -777,10 +792,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="token"                data-endpoint="POSTapi-reset-password"
-               value="esse"
+               value="culpa"
                data-component="body">
     <br>
-<p>Example: <code>esse</code></p>
+<p>Example: <code>culpa</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -788,10 +803,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-reset-password"
-               value="cecelia.romaguera@example.com"
+               value="reymundo59@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>cecelia.romaguera@example.com</code></p>
+<p>Must be a valid email address. Example: <code>reymundo59@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -799,10 +814,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-reset-password"
-               value="commodi"
+               value="officia"
                data-component="body">
     <br>
-<p>Example: <code>commodi</code></p>
+<p>Example: <code>officia</code></p>
         </div>
         </form>
 
@@ -819,14 +834,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://daylog.example.com/api/verify-email/sit/est" \
+    --get "https://daylog.example.com/api/verify-email/sed/temporibus" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://daylog.example.com/api/verify-email/sit/est"
+    "https://daylog.example.com/api/verify-email/sed/temporibus"
 );
 
 const headers = {
@@ -843,7 +858,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'https://daylog.example.com/api/verify-email/sit/est',
+    'https://daylog.example.com/api/verify-email/sed/temporibus',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -859,7 +874,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://daylog.example.com/api/verify-email/sit/est'
+url = 'https://daylog.example.com/api/verify-email/sed/temporibus'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -948,10 +963,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="id"                data-endpoint="GETapi-verify-email--id---hash-"
-               value="sit"
+               value="sed"
                data-component="url">
     <br>
-<p>The ID of the verify email. Example: <code>sit</code></p>
+<p>The ID of the verify email. Example: <code>sed</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>hash</code></b>&nbsp;&nbsp;
@@ -959,10 +974,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="hash"                data-endpoint="GETapi-verify-email--id---hash-"
-               value="est"
+               value="temporibus"
                data-component="url">
     <br>
-<p>Example: <code>est</code></p>
+<p>Example: <code>temporibus</code></p>
             </div>
                     </form>
 
@@ -1342,6 +1357,1124 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Example: <code>application/json</code></p>
             </div>
                         </form>
+
+                    <h2 id="endpoints-GETapi-devices">Display a listing of the devices.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-devices">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://daylog.example.com/api/devices" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://daylog.example.com/api/devices"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'https://daylog.example.com/api/devices',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'https://daylog.example.com/api/devices'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-devices">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 59
+access-control-allow-origin: localhost:8000
+access-control-allow-credentials: true
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;&quot;,
+            &quot;uniqueid&quot;: &quot;038020188471&quot;,
+            &quot;lastupdate&quot;: &quot;2023-04-26 18:10:38&quot;,
+            &quot;positionid&quot;: 5981,
+            &quot;groupid&quot;: 1,
+            &quot;attributes&quot;: &quot;{}&quot;,
+            &quot;phone&quot;: null,
+            &quot;model&quot;: &quot;tk103&quot;,
+            &quot;contact&quot;: null,
+            &quot;category&quot;: null,
+            &quot;disabled&quot;: 0,
+            &quot;status&quot;: &quot;offline&quot;,
+            &quot;geofenceids&quot;: null,
+            &quot;expirationtime&quot;: null,
+            &quot;motionstate&quot;: 0,
+            &quot;motiontime&quot;: null,
+            &quot;motiondistance&quot;: 0,
+            &quot;overspeedstate&quot;: 0,
+            &quot;overspeedtime&quot;: null,
+            &quot;overspeedgeofenceid&quot;: 0,
+            &quot;motionstreak&quot;: 0
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;Hello world&quot;,
+            &quot;uniqueid&quot;: &quot;43893489348943&quot;,
+            &quot;lastupdate&quot;: null,
+            &quot;positionid&quot;: null,
+            &quot;groupid&quot;: null,
+            &quot;attributes&quot;: &quot;{}&quot;,
+            &quot;phone&quot;: null,
+            &quot;model&quot;: null,
+            &quot;contact&quot;: null,
+            &quot;category&quot;: null,
+            &quot;disabled&quot;: 0,
+            &quot;status&quot;: &quot;offline&quot;,
+            &quot;geofenceids&quot;: null,
+            &quot;expirationtime&quot;: null,
+            &quot;motionstate&quot;: 0,
+            &quot;motiontime&quot;: null,
+            &quot;motiondistance&quot;: 0,
+            &quot;overspeedstate&quot;: 0,
+            &quot;overspeedtime&quot;: null,
+            &quot;overspeedgeofenceid&quot;: 0,
+            &quot;motionstreak&quot;: 0
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;name&quot;: &quot;new device&quot;,
+            &quot;uniqueid&quot;: &quot;89834843849843&quot;,
+            &quot;lastupdate&quot;: null,
+            &quot;positionid&quot;: null,
+            &quot;groupid&quot;: null,
+            &quot;attributes&quot;: &quot;{}&quot;,
+            &quot;phone&quot;: null,
+            &quot;model&quot;: &quot;text2&quot;,
+            &quot;contact&quot;: null,
+            &quot;category&quot;: null,
+            &quot;disabled&quot;: 0,
+            &quot;status&quot;: null,
+            &quot;geofenceids&quot;: null,
+            &quot;expirationtime&quot;: null,
+            &quot;motionstate&quot;: 0,
+            &quot;motiontime&quot;: null,
+            &quot;motiondistance&quot;: 0,
+            &quot;overspeedstate&quot;: 0,
+            &quot;overspeedtime&quot;: null,
+            &quot;overspeedgeofenceid&quot;: 0,
+            &quot;motionstreak&quot;: 0
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;name&quot;: &quot;new device&quot;,
+            &quot;uniqueid&quot;: &quot;89834843849844&quot;,
+            &quot;lastupdate&quot;: null,
+            &quot;positionid&quot;: null,
+            &quot;groupid&quot;: null,
+            &quot;attributes&quot;: &quot;{}&quot;,
+            &quot;phone&quot;: null,
+            &quot;model&quot;: &quot;text2&quot;,
+            &quot;contact&quot;: null,
+            &quot;category&quot;: null,
+            &quot;disabled&quot;: 0,
+            &quot;status&quot;: null,
+            &quot;geofenceids&quot;: null,
+            &quot;expirationtime&quot;: null,
+            &quot;motionstate&quot;: 0,
+            &quot;motiontime&quot;: null,
+            &quot;motiondistance&quot;: 0,
+            &quot;overspeedstate&quot;: 0,
+            &quot;overspeedtime&quot;: null,
+            &quot;overspeedgeofenceid&quot;: 0,
+            &quot;motionstreak&quot;: 0
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;name&quot;: &quot;new device&quot;,
+            &quot;uniqueid&quot;: &quot;19834843849844&quot;,
+            &quot;lastupdate&quot;: null,
+            &quot;positionid&quot;: null,
+            &quot;groupid&quot;: null,
+            &quot;attributes&quot;: &quot;{}&quot;,
+            &quot;phone&quot;: null,
+            &quot;model&quot;: &quot;text2&quot;,
+            &quot;contact&quot;: null,
+            &quot;category&quot;: null,
+            &quot;disabled&quot;: 0,
+            &quot;status&quot;: null,
+            &quot;geofenceids&quot;: null,
+            &quot;expirationtime&quot;: null,
+            &quot;motionstate&quot;: 0,
+            &quot;motiontime&quot;: null,
+            &quot;motiondistance&quot;: 0,
+            &quot;overspeedstate&quot;: 0,
+            &quot;overspeedtime&quot;: null,
+            &quot;overspeedgeofenceid&quot;: 0,
+            &quot;motionstreak&quot;: 0
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;name&quot;: &quot;new device&quot;,
+            &quot;uniqueid&quot;: &quot;13834843849844&quot;,
+            &quot;lastupdate&quot;: null,
+            &quot;positionid&quot;: null,
+            &quot;groupid&quot;: null,
+            &quot;attributes&quot;: &quot;{}&quot;,
+            &quot;phone&quot;: null,
+            &quot;model&quot;: &quot;text2&quot;,
+            &quot;contact&quot;: null,
+            &quot;category&quot;: null,
+            &quot;disabled&quot;: 0,
+            &quot;status&quot;: null,
+            &quot;geofenceids&quot;: null,
+            &quot;expirationtime&quot;: null,
+            &quot;motionstate&quot;: 0,
+            &quot;motiontime&quot;: null,
+            &quot;motiondistance&quot;: 0,
+            &quot;overspeedstate&quot;: 0,
+            &quot;overspeedtime&quot;: null,
+            &quot;overspeedgeofenceid&quot;: 0,
+            &quot;motionstreak&quot;: 0
+        },
+        {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;new device&quot;,
+            &quot;uniqueid&quot;: &quot;11834843849844&quot;,
+            &quot;lastupdate&quot;: null,
+            &quot;positionid&quot;: null,
+            &quot;groupid&quot;: null,
+            &quot;attributes&quot;: &quot;{}&quot;,
+            &quot;phone&quot;: null,
+            &quot;model&quot;: &quot;text2&quot;,
+            &quot;contact&quot;: null,
+            &quot;category&quot;: null,
+            &quot;disabled&quot;: 0,
+            &quot;status&quot;: null,
+            &quot;geofenceids&quot;: null,
+            &quot;expirationtime&quot;: null,
+            &quot;motionstate&quot;: 0,
+            &quot;motiontime&quot;: null,
+            &quot;motiondistance&quot;: 0,
+            &quot;overspeedstate&quot;: 0,
+            &quot;overspeedtime&quot;: null,
+            &quot;overspeedgeofenceid&quot;: 0,
+            &quot;motionstreak&quot;: 0
+        },
+        {
+            &quot;id&quot;: 8,
+            &quot;name&quot;: &quot;new device&quot;,
+            &quot;uniqueid&quot;: &quot;11134843849844&quot;,
+            &quot;lastupdate&quot;: null,
+            &quot;positionid&quot;: null,
+            &quot;groupid&quot;: null,
+            &quot;attributes&quot;: &quot;{}&quot;,
+            &quot;phone&quot;: null,
+            &quot;model&quot;: &quot;text2&quot;,
+            &quot;contact&quot;: null,
+            &quot;category&quot;: null,
+            &quot;disabled&quot;: 0,
+            &quot;status&quot;: null,
+            &quot;geofenceids&quot;: null,
+            &quot;expirationtime&quot;: null,
+            &quot;motionstate&quot;: 0,
+            &quot;motiontime&quot;: null,
+            &quot;motiondistance&quot;: 0,
+            &quot;overspeedstate&quot;: 0,
+            &quot;overspeedtime&quot;: null,
+            &quot;overspeedgeofenceid&quot;: 0,
+            &quot;motionstreak&quot;: 0
+        },
+        {
+            &quot;id&quot;: 9,
+            &quot;name&quot;: &quot;new device&quot;,
+            &quot;uniqueid&quot;: &quot;11114843849844&quot;,
+            &quot;lastupdate&quot;: null,
+            &quot;positionid&quot;: null,
+            &quot;groupid&quot;: null,
+            &quot;attributes&quot;: &quot;{}&quot;,
+            &quot;phone&quot;: null,
+            &quot;model&quot;: &quot;text2&quot;,
+            &quot;contact&quot;: null,
+            &quot;category&quot;: null,
+            &quot;disabled&quot;: 0,
+            &quot;status&quot;: null,
+            &quot;geofenceids&quot;: null,
+            &quot;expirationtime&quot;: null,
+            &quot;motionstate&quot;: 0,
+            &quot;motiontime&quot;: null,
+            &quot;motiondistance&quot;: 0,
+            &quot;overspeedstate&quot;: 0,
+            &quot;overspeedtime&quot;: null,
+            &quot;overspeedgeofenceid&quot;: 0,
+            &quot;motionstreak&quot;: 0
+        },
+        {
+            &quot;id&quot;: 10,
+            &quot;name&quot;: &quot;new device&quot;,
+            &quot;uniqueid&quot;: &quot;11111843849844&quot;,
+            &quot;lastupdate&quot;: null,
+            &quot;positionid&quot;: null,
+            &quot;groupid&quot;: null,
+            &quot;attributes&quot;: &quot;{}&quot;,
+            &quot;phone&quot;: null,
+            &quot;model&quot;: &quot;tk103&quot;,
+            &quot;contact&quot;: null,
+            &quot;category&quot;: null,
+            &quot;disabled&quot;: 0,
+            &quot;status&quot;: null,
+            &quot;geofenceids&quot;: null,
+            &quot;expirationtime&quot;: null,
+            &quot;motionstate&quot;: 0,
+            &quot;motiontime&quot;: null,
+            &quot;motiondistance&quot;: 0,
+            &quot;overspeedstate&quot;: 0,
+            &quot;overspeedtime&quot;: null,
+            &quot;overspeedgeofenceid&quot;: 0,
+            &quot;motionstreak&quot;: 0
+        },
+        {
+            &quot;id&quot;: 11,
+            &quot;name&quot;: &quot;dfghjk&quot;,
+            &quot;uniqueid&quot;: &quot;sdfghjk&quot;,
+            &quot;lastupdate&quot;: null,
+            &quot;positionid&quot;: null,
+            &quot;groupid&quot;: null,
+            &quot;attributes&quot;: &quot;{}&quot;,
+            &quot;phone&quot;: null,
+            &quot;model&quot;: null,
+            &quot;contact&quot;: null,
+            &quot;category&quot;: null,
+            &quot;disabled&quot;: 0,
+            &quot;status&quot;: null,
+            &quot;geofenceids&quot;: null,
+            &quot;expirationtime&quot;: null,
+            &quot;motionstate&quot;: 0,
+            &quot;motiontime&quot;: null,
+            &quot;motiondistance&quot;: 0,
+            &quot;overspeedstate&quot;: 0,
+            &quot;overspeedtime&quot;: null,
+            &quot;overspeedgeofenceid&quot;: 0,
+            &quot;motionstreak&quot;: 0
+        },
+        {
+            &quot;id&quot;: 12,
+            &quot;name&quot;: &quot;From Api&quot;,
+            &quot;uniqueid&quot;: &quot;11111943849844&quot;,
+            &quot;lastupdate&quot;: null,
+            &quot;positionid&quot;: null,
+            &quot;groupid&quot;: null,
+            &quot;attributes&quot;: &quot;{}&quot;,
+            &quot;phone&quot;: null,
+            &quot;model&quot;: &quot;text2&quot;,
+            &quot;contact&quot;: null,
+            &quot;category&quot;: null,
+            &quot;disabled&quot;: 0,
+            &quot;status&quot;: null,
+            &quot;geofenceids&quot;: null,
+            &quot;expirationtime&quot;: null,
+            &quot;motionstate&quot;: 0,
+            &quot;motiontime&quot;: null,
+            &quot;motiondistance&quot;: 0,
+            &quot;overspeedstate&quot;: 0,
+            &quot;overspeedtime&quot;: null,
+            &quot;overspeedgeofenceid&quot;: 0,
+            &quot;motionstreak&quot;: 0
+        },
+        {
+            &quot;id&quot;: 13,
+            &quot;name&quot;: &quot;From Api&quot;,
+            &quot;uniqueid&quot;: &quot;11111743849844&quot;,
+            &quot;lastupdate&quot;: null,
+            &quot;positionid&quot;: null,
+            &quot;groupid&quot;: null,
+            &quot;attributes&quot;: &quot;{}&quot;,
+            &quot;phone&quot;: null,
+            &quot;model&quot;: &quot;text2&quot;,
+            &quot;contact&quot;: null,
+            &quot;category&quot;: null,
+            &quot;disabled&quot;: 0,
+            &quot;status&quot;: null,
+            &quot;geofenceids&quot;: null,
+            &quot;expirationtime&quot;: null,
+            &quot;motionstate&quot;: 0,
+            &quot;motiontime&quot;: null,
+            &quot;motiondistance&quot;: 0,
+            &quot;overspeedstate&quot;: 0,
+            &quot;overspeedtime&quot;: null,
+            &quot;overspeedgeofenceid&quot;: 0,
+            &quot;motionstreak&quot;: 0
+        }
+    ],
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;http://localhost:8000/api/devices?page=1&quot;,
+        &quot;last&quot;: &quot;http://localhost:8000/api/devices?page=1&quot;,
+        &quot;prev&quot;: null,
+        &quot;next&quot;: null
+    },
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 1,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost:8000/api/devices?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
+            }
+        ],
+        &quot;path&quot;: &quot;http://localhost:8000/api/devices&quot;,
+        &quot;per_page&quot;: 25,
+        &quot;to&quot;: 13,
+        &quot;total&quot;: 13
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-devices" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-devices"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-devices"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-devices" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-devices">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-devices" data-method="GET"
+      data-path="api/devices"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-devices', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/devices</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETapi-devices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETapi-devices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-POSTapi-devices">Add a new device.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-devices">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://daylog.example.com/api/devices" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"aut\",
+    \"uniqueid\": \"wjeksphsazwfeuhwqi\",
+    \"model\": \"accusantium\",
+    \"tc_user_id\": 260513.8682422
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://daylog.example.com/api/devices"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "aut",
+    "uniqueid": "wjeksphsazwfeuhwqi",
+    "model": "accusantium",
+    "tc_user_id": 260513.8682422
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'https://daylog.example.com/api/devices',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'aut',
+            'uniqueid' =&gt; 'wjeksphsazwfeuhwqi',
+            'model' =&gt; 'accusantium',
+            'tc_user_id' =&gt; 260513.8682422,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'https://daylog.example.com/api/devices'
+payload = {
+    "name": "aut",
+    "uniqueid": "wjeksphsazwfeuhwqi",
+    "model": "accusantium",
+    "tc_user_id": 260513.8682422
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-devices">
+</span>
+<span id="execution-results-POSTapi-devices" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-devices"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-devices"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-devices" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-devices">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-devices" data-method="POST"
+      data-path="api/devices"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-devices', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/devices</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="POSTapi-devices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="POSTapi-devices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="name"                data-endpoint="POSTapi-devices"
+               value="aut"
+               data-component="body">
+    <br>
+<p>Example: <code>aut</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>uniqueid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="uniqueid"                data-endpoint="POSTapi-devices"
+               value="wjeksphsazwfeuhwqi"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>wjeksphsazwfeuhwqi</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>model</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="model"                data-endpoint="POSTapi-devices"
+               value="accusantium"
+               data-component="body">
+    <br>
+<p>Example: <code>accusantium</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>tc_user_id</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               name="tc_user_id"                data-endpoint="POSTapi-devices"
+               value="260513.8682422"
+               data-component="body">
+    <br>
+<p>Example: <code>260513.8682422</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-GETapi-devices--id-">Get information on a device</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-devices--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://daylog.example.com/api/devices/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://daylog.example.com/api/devices/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'https://daylog.example.com/api/devices/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'https://daylog.example.com/api/devices/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-devices--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 58
+access-control-allow-origin: localhost:8000
+access-control-allow-credentials: true
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;&quot;,
+        &quot;uniqueid&quot;: &quot;038020188471&quot;,
+        &quot;lastupdate&quot;: &quot;2023-04-26 18:10:38&quot;,
+        &quot;positionid&quot;: 5981,
+        &quot;groupid&quot;: 1,
+        &quot;attributes&quot;: &quot;{}&quot;,
+        &quot;phone&quot;: null,
+        &quot;model&quot;: &quot;tk103&quot;,
+        &quot;contact&quot;: null,
+        &quot;category&quot;: null,
+        &quot;disabled&quot;: 0,
+        &quot;status&quot;: &quot;offline&quot;,
+        &quot;geofenceids&quot;: null,
+        &quot;expirationtime&quot;: null,
+        &quot;motionstate&quot;: 0,
+        &quot;motiontime&quot;: null,
+        &quot;motiondistance&quot;: 0,
+        &quot;overspeedstate&quot;: 0,
+        &quot;overspeedtime&quot;: null,
+        &quot;overspeedgeofenceid&quot;: 0,
+        &quot;motionstreak&quot;: 0
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-devices--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-devices--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-devices--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-devices--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-devices--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-devices--id-" data-method="GET"
+      data-path="api/devices/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-devices--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/devices/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETapi-devices--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETapi-devices--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               name="id"                data-endpoint="GETapi-devices--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the device. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="endpoints-PUTapi-devices--id-">Update the specified device.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-devices--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "https://daylog.example.com/api/devices/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://daylog.example.com/api/devices/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'https://daylog.example.com/api/devices/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'https://daylog.example.com/api/devices/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('PUT', url, headers=headers)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-devices--id-">
+</span>
+<span id="execution-results-PUTapi-devices--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-devices--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-devices--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-devices--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-devices--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-devices--id-" data-method="PUT"
+      data-path="api/devices/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-devices--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/devices/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/devices/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="PUTapi-devices--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="PUTapi-devices--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               name="id"                data-endpoint="PUTapi-devices--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the device. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="endpoints-DELETEapi-devices--id-">Remove the specified device.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-devices--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "https://daylog.example.com/api/devices/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://daylog.example.com/api/devices/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'https://daylog.example.com/api/devices/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'https://daylog.example.com/api/devices/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('DELETE', url, headers=headers)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-devices--id-">
+</span>
+<span id="execution-results-DELETEapi-devices--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-devices--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-devices--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-devices--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-devices--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-devices--id-" data-method="DELETE"
+      data-path="api/devices/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-devices--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/devices/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="DELETEapi-devices--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="DELETEapi-devices--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               name="id"                data-endpoint="DELETEapi-devices--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the device. Example: <code>1</code></p>
+            </div>
+                    </form>
 
             
 
