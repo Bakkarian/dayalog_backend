@@ -22,9 +22,9 @@ e.g http://localhost:8000/docs
     - [x] verify email
     - [ ] login with PataSente account
 - [ ] Roles and permissions
-- [ ] Devices Module
-    - [ ] Add device to the system
-    - [ ] Get devices
+- [x] Devices Module
+    - [x] Add the device to the system
+    - [x] Get devices
 - [ ] Vehicles Module
     - [ ] Add Vehicle to the system
     - [ ] Attach a Device to a vehicle
@@ -36,7 +36,7 @@ e.g http://localhost:8000/docs
     - [ ] Get order information
     - [ ] Attach vehicle an order
     - [ ] get order vehicle information for a vehicle
-    - [ ]Dispatch Module (Order submodule)
+    - [ ] Dispatch Module (Order submodule)
         - [ ] create a route(dispatch )
 - [ ] FileManager 
 - [ ] Terms and conditions management
