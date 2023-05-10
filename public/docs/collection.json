@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Dayalog API Usage",
-        "_postman_id": "6975054f-9ab9-4cb8-8d55-99200fee2679",
+        "_postman_id": "1f82be8e-9196-4fa0-be39-6bb3a876ac94",
         "description": "Documentation for dayalog api",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ewmlgsmj\",\"email\":\"alphonso.hane@example.org\",\"password\":\"aut\"}"
+                            "raw": "{\"name\":\"uttmmns\",\"email\":\"preichel@example.org\",\"password\":\"quia\"}"
                         },
                         "description": "",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"mbeer@example.org\",\"password\":\"(sWdw`Ob;)0<D--Y\",\"token_name\":\"inventore\"}"
+                            "raw": "{\"email\":\"greichert@example.org\",\"password\":\"sTKXRor`$pDwmjs(P|\",\"token_name\":\"ratione\"}"
                         },
                         "description": "",
                         "auth": {
@@ -103,7 +103,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"bstroman@example.net\"}"
+                            "raw": "{\"email\":\"mcdermott.mortimer@example.com\"}"
                         },
                         "description": "",
                         "auth": {
@@ -134,7 +134,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"token\":\"esse\",\"email\":\"cecelia.romaguera@example.com\",\"password\":\"commodi\"}"
+                            "raw": "{\"token\":\"culpa\",\"email\":\"reymundo59@example.net\",\"password\":\"officia\"}"
                         },
                         "description": "",
                         "auth": {
@@ -155,13 +155,13 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sit",
+                                    "value": "sed",
                                     "description": "The ID of the verify email."
                                 },
                                 {
                                     "id": "hash",
                                     "key": "hash",
-                                    "value": "est",
+                                    "value": "temporibus",
                                     "description": ""
                                 }
                             ]
@@ -316,6 +316,237 @@
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "Display a listing of the devices.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/devices",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/devices"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "localhost:8000"
+                                },
+                                {
+                                    "key": "access-control-allow-credentials",
+                                    "value": "true"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"\",\"uniqueid\":\"038020188471\",\"lastupdate\":\"2023-04-26 18:10:38\",\"positionid\":5981,\"groupid\":1,\"attributes\":\"{}\",\"phone\":null,\"model\":\"tk103\",\"contact\":null,\"category\":null,\"disabled\":0,\"status\":\"offline\",\"geofenceids\":null,\"expirationtime\":null,\"motionstate\":0,\"motiontime\":null,\"motiondistance\":0,\"overspeedstate\":0,\"overspeedtime\":null,\"overspeedgeofenceid\":0,\"motionstreak\":0},{\"id\":2,\"name\":\"Hello world\",\"uniqueid\":\"43893489348943\",\"lastupdate\":null,\"positionid\":null,\"groupid\":null,\"attributes\":\"{}\",\"phone\":null,\"model\":null,\"contact\":null,\"category\":null,\"disabled\":0,\"status\":\"offline\",\"geofenceids\":null,\"expirationtime\":null,\"motionstate\":0,\"motiontime\":null,\"motiondistance\":0,\"overspeedstate\":0,\"overspeedtime\":null,\"overspeedgeofenceid\":0,\"motionstreak\":0},{\"id\":3,\"name\":\"new device\",\"uniqueid\":\"89834843849843\",\"lastupdate\":null,\"positionid\":null,\"groupid\":null,\"attributes\":\"{}\",\"phone\":null,\"model\":\"text2\",\"contact\":null,\"category\":null,\"disabled\":0,\"status\":null,\"geofenceids\":null,\"expirationtime\":null,\"motionstate\":0,\"motiontime\":null,\"motiondistance\":0,\"overspeedstate\":0,\"overspeedtime\":null,\"overspeedgeofenceid\":0,\"motionstreak\":0},{\"id\":4,\"name\":\"new device\",\"uniqueid\":\"89834843849844\",\"lastupdate\":null,\"positionid\":null,\"groupid\":null,\"attributes\":\"{}\",\"phone\":null,\"model\":\"text2\",\"contact\":null,\"category\":null,\"disabled\":0,\"status\":null,\"geofenceids\":null,\"expirationtime\":null,\"motionstate\":0,\"motiontime\":null,\"motiondistance\":0,\"overspeedstate\":0,\"overspeedtime\":null,\"overspeedgeofenceid\":0,\"motionstreak\":0},{\"id\":5,\"name\":\"new device\",\"uniqueid\":\"19834843849844\",\"lastupdate\":null,\"positionid\":null,\"groupid\":null,\"attributes\":\"{}\",\"phone\":null,\"model\":\"text2\",\"contact\":null,\"category\":null,\"disabled\":0,\"status\":null,\"geofenceids\":null,\"expirationtime\":null,\"motionstate\":0,\"motiontime\":null,\"motiondistance\":0,\"overspeedstate\":0,\"overspeedtime\":null,\"overspeedgeofenceid\":0,\"motionstreak\":0},{\"id\":6,\"name\":\"new device\",\"uniqueid\":\"13834843849844\",\"lastupdate\":null,\"positionid\":null,\"groupid\":null,\"attributes\":\"{}\",\"phone\":null,\"model\":\"text2\",\"contact\":null,\"category\":null,\"disabled\":0,\"status\":null,\"geofenceids\":null,\"expirationtime\":null,\"motionstate\":0,\"motiontime\":null,\"motiondistance\":0,\"overspeedstate\":0,\"overspeedtime\":null,\"overspeedgeofenceid\":0,\"motionstreak\":0},{\"id\":7,\"name\":\"new device\",\"uniqueid\":\"11834843849844\",\"lastupdate\":null,\"positionid\":null,\"groupid\":null,\"attributes\":\"{}\",\"phone\":null,\"model\":\"text2\",\"contact\":null,\"category\":null,\"disabled\":0,\"status\":null,\"geofenceids\":null,\"expirationtime\":null,\"motionstate\":0,\"motiontime\":null,\"motiondistance\":0,\"overspeedstate\":0,\"overspeedtime\":null,\"overspeedgeofenceid\":0,\"motionstreak\":0},{\"id\":8,\"name\":\"new device\",\"uniqueid\":\"11134843849844\",\"lastupdate\":null,\"positionid\":null,\"groupid\":null,\"attributes\":\"{}\",\"phone\":null,\"model\":\"text2\",\"contact\":null,\"category\":null,\"disabled\":0,\"status\":null,\"geofenceids\":null,\"expirationtime\":null,\"motionstate\":0,\"motiontime\":null,\"motiondistance\":0,\"overspeedstate\":0,\"overspeedtime\":null,\"overspeedgeofenceid\":0,\"motionstreak\":0},{\"id\":9,\"name\":\"new device\",\"uniqueid\":\"11114843849844\",\"lastupdate\":null,\"positionid\":null,\"groupid\":null,\"attributes\":\"{}\",\"phone\":null,\"model\":\"text2\",\"contact\":null,\"category\":null,\"disabled\":0,\"status\":null,\"geofenceids\":null,\"expirationtime\":null,\"motionstate\":0,\"motiontime\":null,\"motiondistance\":0,\"overspeedstate\":0,\"overspeedtime\":null,\"overspeedgeofenceid\":0,\"motionstreak\":0},{\"id\":10,\"name\":\"new device\",\"uniqueid\":\"11111843849844\",\"lastupdate\":null,\"positionid\":null,\"groupid\":null,\"attributes\":\"{}\",\"phone\":null,\"model\":\"tk103\",\"contact\":null,\"category\":null,\"disabled\":0,\"status\":null,\"geofenceids\":null,\"expirationtime\":null,\"motionstate\":0,\"motiontime\":null,\"motiondistance\":0,\"overspeedstate\":0,\"overspeedtime\":null,\"overspeedgeofenceid\":0,\"motionstreak\":0},{\"id\":11,\"name\":\"dfghjk\",\"uniqueid\":\"sdfghjk\",\"lastupdate\":null,\"positionid\":null,\"groupid\":null,\"attributes\":\"{}\",\"phone\":null,\"model\":null,\"contact\":null,\"category\":null,\"disabled\":0,\"status\":null,\"geofenceids\":null,\"expirationtime\":null,\"motionstate\":0,\"motiontime\":null,\"motiondistance\":0,\"overspeedstate\":0,\"overspeedtime\":null,\"overspeedgeofenceid\":0,\"motionstreak\":0},{\"id\":12,\"name\":\"From Api\",\"uniqueid\":\"11111943849844\",\"lastupdate\":null,\"positionid\":null,\"groupid\":null,\"attributes\":\"{}\",\"phone\":null,\"model\":\"text2\",\"contact\":null,\"category\":null,\"disabled\":0,\"status\":null,\"geofenceids\":null,\"expirationtime\":null,\"motionstate\":0,\"motiontime\":null,\"motiondistance\":0,\"overspeedstate\":0,\"overspeedtime\":null,\"overspeedgeofenceid\":0,\"motionstreak\":0},{\"id\":13,\"name\":\"From Api\",\"uniqueid\":\"11111743849844\",\"lastupdate\":null,\"positionid\":null,\"groupid\":null,\"attributes\":\"{}\",\"phone\":null,\"model\":\"text2\",\"contact\":null,\"category\":null,\"disabled\":0,\"status\":null,\"geofenceids\":null,\"expirationtime\":null,\"motionstate\":0,\"motiontime\":null,\"motiondistance\":0,\"overspeedstate\":0,\"overspeedtime\":null,\"overspeedgeofenceid\":0,\"motionstreak\":0}],\"links\":{\"first\":\"http:\\\/\\\/localhost:8000\\\/api\\\/devices?page=1\",\"last\":\"http:\\\/\\\/localhost:8000\\\/api\\\/devices?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/devices?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/devices\",\"per_page\":25,\"to\":13,\"total\":13}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Add a new device.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/devices",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/devices"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"aut\",\"uniqueid\":\"wjeksphsazwfeuhwqi\",\"model\":\"accusantium\",\"tc_user_id\":260513.8682422}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get information on a device",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/devices\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/devices\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the device."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "58"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "localhost:8000"
+                                },
+                                {
+                                    "key": "access-control-allow-credentials",
+                                    "value": "true"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":1,\"name\":\"\",\"uniqueid\":\"038020188471\",\"lastupdate\":\"2023-04-26 18:10:38\",\"positionid\":5981,\"groupid\":1,\"attributes\":\"{}\",\"phone\":null,\"model\":\"tk103\",\"contact\":null,\"category\":null,\"disabled\":0,\"status\":\"offline\",\"geofenceids\":null,\"expirationtime\":null,\"motionstate\":0,\"motiontime\":null,\"motiondistance\":0,\"overspeedstate\":0,\"overspeedtime\":null,\"overspeedgeofenceid\":0,\"motionstreak\":0}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified device.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/devices\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/devices\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the device."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified device.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/devices\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/devices\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the device."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
                 }
             ]
         }
