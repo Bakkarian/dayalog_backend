@@ -13,6 +13,8 @@ class Device extends Model
 
     protected $table = 'tc_devices';
 
+    public $timestamps = false;
+
     protected $attributes = [
         'attributes' => '{}',
     ];
