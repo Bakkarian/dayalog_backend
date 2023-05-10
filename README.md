@@ -16,12 +16,25 @@ e.g http://localhost:8000/docs
 - [x] Authentication
     - [x] register
     - [x] login
-    - [x] logout
+    - [x] Logout
     - [x] reset password
     - [x] verify email
-- [ ] Create order
-- [ ] Attach vehicle an order
-- [ ] get current location of a vehicle
-
+- [ ] Devices Module
+    - [ ] Add device to the system
+    - [ ] Get devices
+- [ ] Vehicles Module
+    - [ ] Add Vehicle to the system
+    - [ ] Attach a Device to a vehicle
+    - [ ] Detach a Device to a vehicle
+    - [ ] list Vehicles
+- [ ]  Order
+    - [ ] Create order
+    - [ ] Attach vehicle to order
+    - [ ] Get order information
+    - [ ] Attach vehicle an order
+    - [ ] get order vehicle information for a vehicle
+    - [ ]Dispatch Module (Order submodule)
+        - [ ] create a route(dispatch )
+        
 > **Warning:** This task list is still under development and review.
 
