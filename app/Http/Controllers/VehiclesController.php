@@ -17,7 +17,7 @@ class VehiclesController extends Controller
      */
     public function index()
     {
-        return VehicleResource::collection(Vehicle::pagenate(25));
+        return VehicleResource::collection(Vehicle::paginate(25));
     }
 
     /**
