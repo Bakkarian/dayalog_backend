@@ -6,6 +6,7 @@ use App\Http\Requests\VehicleRequest;
 use App\Http\Resources\VehicleResource;
 use App\Models\Device;
 use App\Models\Vehicle;
+use App\Models\VehicleDevice;
 use Illuminate\Http\Request;
 
 class VehiclesController extends Controller
@@ -108,14 +109,18 @@ class VehiclesController extends Controller
     }
 
     /**
-     * Remove device attached to a vehicle.
+     * Remove devices attached to a vehicle.
      *
      * @group Vehicles
      */
-    public function detachDevice(Request $request, Vehicle $vehicle)
+    public function detachDevices(Request $request, Vehicle $vehicle)
     {
 
-        $vehicle->device()->detach();
+
+         // Detach the device from the vehicle through the intermediate model
+        VehicleDevice::where('vehicle_id', $vehicle->id)
+        ->delete();
+
         return response()->json(['message' => 'Device successfully detached from the vehicle'], 200);
     }
 }

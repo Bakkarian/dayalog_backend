@@ -32,4 +32,4 @@ Route::apiResource('devices', DeviceController::class);
 Route::apiResource('vehicles', VehiclesController::class);
 
 Route::put('vehicles/{vehicle}/attach-device', [VehiclesController::class, 'attachDevice']);
-Route::put('vehicles/{vehicle}/detach-device', [VehiclesController::class, 'detachDevice']);
+Route::put('vehicles/{vehicle}/detach-devices', [VehiclesController::class, 'detachDevices']);
