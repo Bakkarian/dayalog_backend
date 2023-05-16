@@ -94,7 +94,7 @@ class VehiclesController extends Controller
     public function attachDevice(Request $request, Vehicle $vehicle){
 
         $request->validate([
-            'device_id' => 'required|exists:tc_devices,uniqueid',
+            'device_id' => 'required|exists:traccar.tc_devices,id|unique:vehicle_devices,device_id',
         ]);
 
         $device = Device::findOrFail($request->device_id);
