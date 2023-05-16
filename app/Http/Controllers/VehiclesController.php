@@ -98,8 +98,11 @@ class VehiclesController extends Controller
         ]);
 
         $device = Device::findOrFail($request->device_id);
-        $vehicle->device()->associate($device);
-        $vehicle->save();
+
+        $vehicleDevice = new VehicleDevice();
+        $vehicleDevice->vehicle_id = $vehicle->id;
+        $vehicleDevice->device_id = $device->id;
+        $vehicleDevice->save();
 
         return response()->json(['message' => 'Device attached to the vehicle successfully']);
     }
