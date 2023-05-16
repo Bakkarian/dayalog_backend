@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('vehicle_devices', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Vehicle::class)->unique();
+            $table->foreignIdFor(Vehicle::class);
             $table->foreignIdFor(Device::class)->unique()->nullable();
             $table->timestamps();
         });
