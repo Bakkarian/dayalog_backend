@@ -54,6 +54,8 @@ class DeviceController extends Controller
     public function destroy(Device $device)
     {
         $device->delete();
-        return response()->json(null, 204);
+        return response()->json([
+            'message'=>'Deletes successfully'
+        ], 204);
     }
 }
