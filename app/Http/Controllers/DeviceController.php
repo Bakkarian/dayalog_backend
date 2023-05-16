@@ -11,6 +11,7 @@ class DeviceController extends Controller
 {
     /**
      * Display a listing of the devices.
+     * @group  Devices
      */
     public function index()
     {
@@ -19,6 +20,7 @@ class DeviceController extends Controller
 
     /**
      * Add a new device.
+     * @group  Devices
      */
     public function store(DeviceRequest $request)
     {
@@ -33,6 +35,7 @@ class DeviceController extends Controller
 
     /**
      * Get information on a device
+     * @group  Devices
      */
     public function show(Device $device)
     {
@@ -41,6 +44,7 @@ class DeviceController extends Controller
 
     /**
      * Update the specified device.
+     * @group  Devices
      */
     public function update(Request $request, Device $device)
     {
@@ -50,6 +54,7 @@ class DeviceController extends Controller
 
     /**
      * Remove the specified device.
+     * @group  Devices
      */
     public function destroy(Device $device)
     {

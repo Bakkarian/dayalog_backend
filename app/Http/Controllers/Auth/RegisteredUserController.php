@@ -15,6 +15,7 @@ class RegisteredUserController extends Controller
     /**
      * Handle user registation
      *
+     * @group Authentication
      */
     public function store(Request $request): JsonResponse
     {

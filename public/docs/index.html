@@ -64,70 +64,91 @@
                     <a href="#authenticating-requests">Authenticating requests</a>
                 </li>
                             </ul>
-                    <ul id="tocify-header-endpoints" class="tocify-header">
-                <li class="tocify-item level-1" data-unique="endpoints">
-                    <a href="#endpoints">Endpoints</a>
+                    <ul id="tocify-header-authentication" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="authentication">
+                    <a href="#authentication">Authentication</a>
                 </li>
-                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-register">
-                                <a href="#endpoints-POSTapi-register">Handle user registation</a>
+                                    <ul id="tocify-subheader-authentication" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="authentication-POSTapi-register">
+                                <a href="#authentication-POSTapi-register">Handle user registation</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-tokens-create">
-                                <a href="#endpoints-POSTapi-tokens-create">Generate Authorization token.</a>
+                                                                                <li class="tocify-item level-2" data-unique="authentication-POSTapi-tokens-create">
+                                <a href="#authentication-POSTapi-tokens-create">Generate Authorization token.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-forgot-password">
-                                <a href="#endpoints-POSTapi-forgot-password">Handle an incoming password reset link request.</a>
+                                                                                <li class="tocify-item level-2" data-unique="authentication-POSTapi-forgot-password">
+                                <a href="#authentication-POSTapi-forgot-password">Handle an incoming password reset link request.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-reset-password">
-                                <a href="#endpoints-POSTapi-reset-password">Handle an incoming new password request.</a>
+                                                                                <li class="tocify-item level-2" data-unique="authentication-POSTapi-reset-password">
+                                <a href="#authentication-POSTapi-reset-password">Handle an incoming new password request.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-verify-email--id---hash-">
-                                <a href="#endpoints-GETapi-verify-email--id---hash-">Mark the authenticated user's email address as verified.</a>
+                                                                                <li class="tocify-item level-2" data-unique="authentication-GETapi-verify-email--id---hash-">
+                                <a href="#authentication-GETapi-verify-email--id---hash-">Mark the authenticated user's email address as verified.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-email-verification-notification">
-                                <a href="#endpoints-POSTapi-email-verification-notification">Send a new email verification notification.</a>
+                                                                                <li class="tocify-item level-2" data-unique="authentication-POSTapi-email-verification-notification">
+                                <a href="#authentication-POSTapi-email-verification-notification">Send a new email verification notification.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-logout">
-                                <a href="#endpoints-POSTapi-logout">Destroy an authenticated session.</a>
+                                                                                <li class="tocify-item level-2" data-unique="authentication-POSTapi-logout">
+                                <a href="#authentication-POSTapi-logout">Destroy an authenticated session.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
-                                <a href="#endpoints-GETapi-user">GET api/user</a>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-devices" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="devices">
+                    <a href="#devices">Devices</a>
+                </li>
+                                    <ul id="tocify-subheader-devices" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="devices-GETapi-devices">
+                                <a href="#devices-GETapi-devices">Display a listing of the devices.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-devices">
-                                <a href="#endpoints-GETapi-devices">Display a listing of the devices.</a>
+                                                                                <li class="tocify-item level-2" data-unique="devices-POSTapi-devices">
+                                <a href="#devices-POSTapi-devices">Add a new device.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-devices">
-                                <a href="#endpoints-POSTapi-devices">Add a new device.</a>
+                                                                                <li class="tocify-item level-2" data-unique="devices-GETapi-devices--id-">
+                                <a href="#devices-GETapi-devices--id-">Get information on a device</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-devices--id-">
-                                <a href="#endpoints-GETapi-devices--id-">Get information on a device</a>
+                                                                                <li class="tocify-item level-2" data-unique="devices-PUTapi-devices--id-">
+                                <a href="#devices-PUTapi-devices--id-">Update the specified device.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-devices--id-">
-                                <a href="#endpoints-PUTapi-devices--id-">Update the specified device.</a>
+                                                                                <li class="tocify-item level-2" data-unique="devices-DELETEapi-devices--id-">
+                                <a href="#devices-DELETEapi-devices--id-">Remove the specified device.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-devices--id-">
-                                <a href="#endpoints-DELETEapi-devices--id-">Remove the specified device.</a>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-users" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="users">
+                    <a href="#users">Users</a>
+                </li>
+                                    <ul id="tocify-subheader-users" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="users-GETapi-user">
+                                <a href="#users-GETapi-user">GET api/user</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-vehicles">
-                                <a href="#endpoints-GETapi-vehicles">Display a listing of the vehicles.</a>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-vehicles" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="vehicles">
+                    <a href="#vehicles">Vehicles</a>
+                </li>
+                                    <ul id="tocify-subheader-vehicles" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="vehicles-GETapi-vehicles">
+                                <a href="#vehicles-GETapi-vehicles">Display a listing of the vehicles.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-vehicles">
-                                <a href="#endpoints-POSTapi-vehicles">Add vehicle to the system</a>
+                                                                                <li class="tocify-item level-2" data-unique="vehicles-POSTapi-vehicles">
+                                <a href="#vehicles-POSTapi-vehicles">Add vehicle to the system</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-vehicles--id-">
-                                <a href="#endpoints-GETapi-vehicles--id-">Get vehicle details</a>
+                                                                                <li class="tocify-item level-2" data-unique="vehicles-GETapi-vehicles--id-">
+                                <a href="#vehicles-GETapi-vehicles--id-">Get vehicle details</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-vehicles--id-">
-                                <a href="#endpoints-PUTapi-vehicles--id-">Update vehicle information.</a>
+                                                                                <li class="tocify-item level-2" data-unique="vehicles-PUTapi-vehicles--id-">
+                                <a href="#vehicles-PUTapi-vehicles--id-">Update vehicle information.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-vehicles--id-">
-                                <a href="#endpoints-DELETEapi-vehicles--id-">Delete a vehicle.</a>
+                                                                                <li class="tocify-item level-2" data-unique="vehicles-DELETEapi-vehicles--id-">
+                                <a href="#vehicles-DELETEapi-vehicles--id-">Delete a vehicle.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-vehicles--vehicle_id--attach-device">
-                                <a href="#endpoints-PUTapi-vehicles--vehicle_id--attach-device">Attach device to a vehicle</a>
+                                                                                <li class="tocify-item level-2" data-unique="vehicles-PUTapi-vehicles--vehicle_id--attach-device">
+                                <a href="#vehicles-PUTapi-vehicles--vehicle_id--attach-device">Attach device to a vehicle</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-vehicles--vehicle_id--detach-device">
-                                <a href="#endpoints-PUTapi-vehicles--vehicle_id--detach-device">Remove device attached to a vehicle.</a>
+                                                                                <li class="tocify-item level-2" data-unique="vehicles-PUTapi-vehicles--vehicle_id--detach-device">
+                                <a href="#vehicles-PUTapi-vehicles--vehicle_id--detach-device">Remove device attached to a vehicle.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -160,11 +181,11 @@ You can switch the language used with the tabs at the top right (or from the nav
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
 
-        <h1 id="endpoints">Endpoints</h1>
+        <h1 id="authentication">Authentication</h1>
 
     
 
-                                <h2 id="endpoints-POSTapi-register">Handle user registation</h2>
+                                <h2 id="authentication-POSTapi-register">Handle user registation</h2>
 
 <p>
 </p>
@@ -181,9 +202,9 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"raz\",
-    \"email\": \"mariano53@example.com\",
-    \"password\": \"natus\"
+    \"name\": \"xplocyatufr\",
+    \"email\": \"lucienne.hirthe@example.com\",
+    \"password\": \"voluptatem\"
 }"
 </code></pre></div>
 
@@ -199,9 +220,9 @@ const headers = {
 };
 
 let body = {
-    "name": "raz",
-    "email": "mariano53@example.com",
-    "password": "natus"
+    "name": "xplocyatufr",
+    "email": "lucienne.hirthe@example.com",
+    "password": "voluptatem"
 };
 
 fetch(url, {
@@ -221,9 +242,9 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'name' =&gt; 'raz',
-            'email' =&gt; 'mariano53@example.com',
-            'password' =&gt; 'natus',
+            'name' =&gt; 'xplocyatufr',
+            'email' =&gt; 'lucienne.hirthe@example.com',
+            'password' =&gt; 'voluptatem',
         ],
     ]
 );
@@ -237,9 +258,9 @@ import json
 
 url = 'https://daylog.example.com/api/register'
 payload = {
-    "name": "raz",
-    "email": "mariano53@example.com",
-    "password": "natus"
+    "name": "xplocyatufr",
+    "email": "lucienne.hirthe@example.com",
+    "password": "voluptatem"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -312,10 +333,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-register"
-               value="raz"
+               value="xplocyatufr"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>raz</code></p>
+<p>Must not be greater than 255 characters. Example: <code>xplocyatufr</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -323,10 +344,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-register"
-               value="mariano53@example.com"
+               value="lucienne.hirthe@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>mariano53@example.com</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>lucienne.hirthe@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -334,14 +355,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-register"
-               value="natus"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>Example: <code>natus</code></p>
+<p>Example: <code>voluptatem</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-POSTapi-tokens-create">Generate Authorization token.</h2>
+                    <h2 id="authentication-POSTapi-tokens-create">Generate Authorization token.</h2>
 
 <p>
 </p>
@@ -358,9 +379,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"glindgren@example.org\",
-    \"password\": \"c\'_\\\\gc?M4\",
-    \"token_name\": \"nemo\"
+    \"email\": \"rae28@example.net\",
+    \"password\": \"&lt;BU@xt\",
+    \"token_name\": \"quo\"
 }"
 </code></pre></div>
 
@@ -376,9 +397,9 @@ const headers = {
 };
 
 let body = {
-    "email": "glindgren@example.org",
-    "password": "c'_\\gc?M4",
-    "token_name": "nemo"
+    "email": "rae28@example.net",
+    "password": "&lt;BU@xt",
+    "token_name": "quo"
 };
 
 fetch(url, {
@@ -398,9 +419,9 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'email' =&gt; 'glindgren@example.org',
-            'password' =&gt; 'c\'_\\gc?M4',
-            'token_name' =&gt; 'nemo',
+            'email' =&gt; 'rae28@example.net',
+            'password' =&gt; '&lt;BU@xt',
+            'token_name' =&gt; 'quo',
         ],
     ]
 );
@@ -414,9 +435,9 @@ import json
 
 url = 'https://daylog.example.com/api/tokens/create'
 payload = {
-    "email": "glindgren@example.org",
-    "password": "c'_\\gc?M4",
-    "token_name": "nemo"
+    "email": "rae28@example.net",
+    "password": "&lt;BU@xt",
+    "token_name": "quo"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -489,10 +510,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-tokens-create"
-               value="glindgren@example.org"
+               value="rae28@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>glindgren@example.org</code></p>
+<p>Must be a valid email address. Example: <code>rae28@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -500,10 +521,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-tokens-create"
-               value="c'_\gc?M4"
+               value="<BU@xt"
                data-component="body">
     <br>
-<p>Example: <code>c'_\gc?M4</code></p>
+<p>Example: <code>&lt;BU@xt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>token_name</code></b>&nbsp;&nbsp;
@@ -511,14 +532,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="token_name"                data-endpoint="POSTapi-tokens-create"
-               value="nemo"
+               value="quo"
                data-component="body">
     <br>
-<p>Example: <code>nemo</code></p>
+<p>Example: <code>quo</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-POSTapi-forgot-password">Handle an incoming password reset link request.</h2>
+                    <h2 id="authentication-POSTapi-forgot-password">Handle an incoming password reset link request.</h2>
 
 <p>
 </p>
@@ -535,7 +556,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"brittany.schoen@example.net\"
+    \"email\": \"sauer.lori@example.com\"
 }"
 </code></pre></div>
 
@@ -551,7 +572,7 @@ const headers = {
 };
 
 let body = {
-    "email": "brittany.schoen@example.net"
+    "email": "sauer.lori@example.com"
 };
 
 fetch(url, {
@@ -571,7 +592,7 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'email' =&gt; 'brittany.schoen@example.net',
+            'email' =&gt; 'sauer.lori@example.com',
         ],
     ]
 );
@@ -585,7 +606,7 @@ import json
 
 url = 'https://daylog.example.com/api/forgot-password'
 payload = {
-    "email": "brittany.schoen@example.net"
+    "email": "sauer.lori@example.com"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -658,14 +679,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-forgot-password"
-               value="brittany.schoen@example.net"
+               value="sauer.lori@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>brittany.schoen@example.net</code></p>
+<p>Must be a valid email address. Example: <code>sauer.lori@example.com</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-POSTapi-reset-password">Handle an incoming new password request.</h2>
+                    <h2 id="authentication-POSTapi-reset-password">Handle an incoming new password request.</h2>
 
 <p>
 </p>
@@ -682,9 +703,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"voluptates\",
-    \"email\": \"layla.thiel@example.com\",
-    \"password\": \"nostrum\"
+    \"token\": \"ratione\",
+    \"email\": \"botsford.reymundo@example.org\",
+    \"password\": \"consectetur\"
 }"
 </code></pre></div>
 
@@ -700,9 +721,9 @@ const headers = {
 };
 
 let body = {
-    "token": "voluptates",
-    "email": "layla.thiel@example.com",
-    "password": "nostrum"
+    "token": "ratione",
+    "email": "botsford.reymundo@example.org",
+    "password": "consectetur"
 };
 
 fetch(url, {
@@ -722,9 +743,9 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'token' =&gt; 'voluptates',
-            'email' =&gt; 'layla.thiel@example.com',
-            'password' =&gt; 'nostrum',
+            'token' =&gt; 'ratione',
+            'email' =&gt; 'botsford.reymundo@example.org',
+            'password' =&gt; 'consectetur',
         ],
     ]
 );
@@ -738,9 +759,9 @@ import json
 
 url = 'https://daylog.example.com/api/reset-password'
 payload = {
-    "token": "voluptates",
-    "email": "layla.thiel@example.com",
-    "password": "nostrum"
+    "token": "ratione",
+    "email": "botsford.reymundo@example.org",
+    "password": "consectetur"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -813,10 +834,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="token"                data-endpoint="POSTapi-reset-password"
-               value="voluptates"
+               value="ratione"
                data-component="body">
     <br>
-<p>Example: <code>voluptates</code></p>
+<p>Example: <code>ratione</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -824,10 +845,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-reset-password"
-               value="layla.thiel@example.com"
+               value="botsford.reymundo@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>layla.thiel@example.com</code></p>
+<p>Must be a valid email address. Example: <code>botsford.reymundo@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -835,14 +856,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-reset-password"
-               value="nostrum"
+               value="consectetur"
                data-component="body">
     <br>
-<p>Example: <code>nostrum</code></p>
+<p>Example: <code>consectetur</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-GETapi-verify-email--id---hash-">Mark the authenticated user&#039;s email address as verified.</h2>
+                    <h2 id="authentication-GETapi-verify-email--id---hash-">Mark the authenticated user&#039;s email address as verified.</h2>
 
 <p>
 </p>
@@ -855,14 +876,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://daylog.example.com/api/verify-email/saepe/sint" \
+    --get "https://daylog.example.com/api/verify-email/quos/suscipit" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://daylog.example.com/api/verify-email/saepe/sint"
+    "https://daylog.example.com/api/verify-email/quos/suscipit"
 );
 
 const headers = {
@@ -879,7 +900,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'https://daylog.example.com/api/verify-email/saepe/sint',
+    'https://daylog.example.com/api/verify-email/quos/suscipit',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -895,7 +916,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://daylog.example.com/api/verify-email/saepe/sint'
+url = 'https://daylog.example.com/api/verify-email/quos/suscipit'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -984,10 +1005,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="id"                data-endpoint="GETapi-verify-email--id---hash-"
-               value="saepe"
+               value="quos"
                data-component="url">
     <br>
-<p>The ID of the verify email. Example: <code>saepe</code></p>
+<p>The ID of the verify email. Example: <code>quos</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>hash</code></b>&nbsp;&nbsp;
@@ -995,14 +1016,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="hash"                data-endpoint="GETapi-verify-email--id---hash-"
-               value="sint"
+               value="suscipit"
                data-component="url">
     <br>
-<p>Example: <code>sint</code></p>
+<p>Example: <code>suscipit</code></p>
             </div>
                     </form>
 
-                    <h2 id="endpoints-POSTapi-email-verification-notification">Send a new email verification notification.</h2>
+                    <h2 id="authentication-POSTapi-email-verification-notification">Send a new email verification notification.</h2>
 
 <p>
 </p>
@@ -1122,7 +1143,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-POSTapi-logout">Destroy an authenticated session.</h2>
+                    <h2 id="authentication-POSTapi-logout">Destroy an authenticated session.</h2>
 
 <p>
 </p>
@@ -1242,144 +1263,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-GETapi-user">GET api/user</h2>
+                <h1 id="devices">Devices</h1>
 
-<p>
-</p>
+    
 
-
-
-<span id="example-requests-GETapi-user">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "https://daylog.example.com/api/user" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://daylog.example.com/api/user"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-
-<div class="php-example">
-    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$response = $client-&gt;get(
-    'https://daylog.example.com/api/user',
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="python-example">
-    <pre><code class="language-python">import requests
-import json
-
-url = 'https://daylog.example.com/api/user'
-headers = {
-  'Content-Type': 'application/json',
-  'Accept': 'application/json'
-}
-
-response = requests.request('GET', url, headers=headers)
-response.json()</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-user">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-user" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-user"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-user"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-user" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-user">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-user" data-method="GET"
-      data-path="api/user"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-user', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/user</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="GETapi-user"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="GETapi-user"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
-
-                    <h2 id="endpoints-GETapi-devices">Display a listing of the devices.</h2>
+                                <h2 id="devices-GETapi-devices">Display a listing of the devices.</h2>
 
 <p>
 </p>
@@ -1863,7 +1751,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-POSTapi-devices">Add a new device.</h2>
+                    <h2 id="devices-POSTapi-devices">Add a new device.</h2>
 
 <p>
 </p>
@@ -1880,10 +1768,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"minima\",
-    \"uniqueid\": \"rcvugimkvbzjtp\",
-    \"model\": \"corporis\",
-    \"tc_user_id\": 87401.47
+    \"name\": \"expedita\",
+    \"uniqueid\": \"ndrsifdmdm\",
+    \"model\": \"porro\",
+    \"tc_user_id\": 2037.2810763
 }"
 </code></pre></div>
 
@@ -1899,10 +1787,10 @@ const headers = {
 };
 
 let body = {
-    "name": "minima",
-    "uniqueid": "rcvugimkvbzjtp",
-    "model": "corporis",
-    "tc_user_id": 87401.47
+    "name": "expedita",
+    "uniqueid": "ndrsifdmdm",
+    "model": "porro",
+    "tc_user_id": 2037.2810763
 };
 
 fetch(url, {
@@ -1922,10 +1810,10 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'name' =&gt; 'minima',
-            'uniqueid' =&gt; 'rcvugimkvbzjtp',
-            'model' =&gt; 'corporis',
-            'tc_user_id' =&gt; 87401.47,
+            'name' =&gt; 'expedita',
+            'uniqueid' =&gt; 'ndrsifdmdm',
+            'model' =&gt; 'porro',
+            'tc_user_id' =&gt; 2037.2810763,
         ],
     ]
 );
@@ -1939,10 +1827,10 @@ import json
 
 url = 'https://daylog.example.com/api/devices'
 payload = {
-    "name": "minima",
-    "uniqueid": "rcvugimkvbzjtp",
-    "model": "corporis",
-    "tc_user_id": 87401.47
+    "name": "expedita",
+    "uniqueid": "ndrsifdmdm",
+    "model": "porro",
+    "tc_user_id": 2037.2810763
 }
 headers = {
   'Content-Type': 'application/json',
@@ -2015,10 +1903,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-devices"
-               value="minima"
+               value="expedita"
                data-component="body">
     <br>
-<p>Example: <code>minima</code></p>
+<p>Example: <code>expedita</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>uniqueid</code></b>&nbsp;&nbsp;
@@ -2026,10 +1914,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="uniqueid"                data-endpoint="POSTapi-devices"
-               value="rcvugimkvbzjtp"
+               value="ndrsifdmdm"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>rcvugimkvbzjtp</code></p>
+<p>Must not be greater than 255 characters. Example: <code>ndrsifdmdm</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model</code></b>&nbsp;&nbsp;
@@ -2037,10 +1925,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="model"                data-endpoint="POSTapi-devices"
-               value="corporis"
+               value="porro"
                data-component="body">
     <br>
-<p>Example: <code>corporis</code></p>
+<p>Example: <code>porro</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>tc_user_id</code></b>&nbsp;&nbsp;
@@ -2048,14 +1936,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="tc_user_id"                data-endpoint="POSTapi-devices"
-               value="87401.47"
+               value="2037.2810763"
                data-component="body">
     <br>
-<p>Example: <code>87401.47</code></p>
+<p>Example: <code>2037.2810763</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-GETapi-devices--id-">Get information on a device</h2>
+                    <h2 id="devices-GETapi-devices--id-">Get information on a device</h2>
 
 <p>
 </p>
@@ -2229,7 +2117,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="endpoints-PUTapi-devices--id-">Update the specified device.</h2>
+                    <h2 id="devices-PUTapi-devices--id-">Update the specified device.</h2>
 
 <p>
 </p>
@@ -2365,7 +2253,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="endpoints-DELETEapi-devices--id-">Remove the specified device.</h2>
+                    <h2 id="devices-DELETEapi-devices--id-">Remove the specified device.</h2>
 
 <p>
 </p>
@@ -2497,7 +2385,152 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="endpoints-GETapi-vehicles">Display a listing of the vehicles.</h2>
+                <h1 id="users">Users</h1>
+
+    
+
+                                <h2 id="users-GETapi-user">GET api/user</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-user">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://daylog.example.com/api/user" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://daylog.example.com/api/user"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'https://daylog.example.com/api/user',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'https://daylog.example.com/api/user'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-user">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: localhost:8000
+access-control-allow-credentials: true
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-user" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-user"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-user" data-method="GET"
+      data-path="api/user"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-user', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/user</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETapi-user"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETapi-user"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                <h1 id="vehicles">Vehicles</h1>
+
+    
+
+                                <h2 id="vehicles-GETapi-vehicles">Display a listing of the vehicles.</h2>
 
 <p>
 </p>
@@ -2563,7 +2596,7 @@ response.json()</code></pre></div>
 
 <span id="example-responses-GETapi-vehicles">
             <blockquote>
-            <p>Example response (500):</p>
+            <p>Example response (200):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -2578,502 +2611,39 @@ access-control-allow-credentials: true
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Call to undefined method App\\Models\\Vehicle::pagenate()&quot;,
-    &quot;exception&quot;: &quot;BadMethodCallException&quot;,
-    &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php&quot;,
-    &quot;line&quot;: 71,
-    &quot;trace&quot;: [
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php&quot;,
-            &quot;line&quot;: 36,
-            &quot;function&quot;: &quot;throwBadMethodCallException&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Database\\Eloquent\\Model&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php&quot;,
-            &quot;line&quot;: 2335,
-            &quot;function&quot;: &quot;forwardCallTo&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Database\\Eloquent\\Model&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php&quot;,
-            &quot;line&quot;: 2347,
-            &quot;function&quot;: &quot;__call&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Database\\Eloquent\\Model&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/app/Http/Controllers/VehiclesController.php&quot;,
-            &quot;line&quot;: 18,
-            &quot;function&quot;: &quot;__callStatic&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Database\\Eloquent\\Model&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Routing/Controller.php&quot;,
-            &quot;line&quot;: 54,
-            &quot;function&quot;: &quot;index&quot;,
-            &quot;class&quot;: &quot;App\\Http\\Controllers\\VehiclesController&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php&quot;,
-            &quot;line&quot;: 43,
-            &quot;function&quot;: &quot;callAction&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Controller&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Routing/Route.php&quot;,
-            &quot;line&quot;: 260,
-            &quot;function&quot;: &quot;dispatch&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\ControllerDispatcher&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Routing/Route.php&quot;,
-            &quot;line&quot;: 205,
-            &quot;function&quot;: &quot;runController&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
-            &quot;line&quot;: 798,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 141,
-            &quot;function&quot;: &quot;Illuminate\\Routing\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php&quot;,
-            &quot;line&quot;: 50,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\SubstituteBindings&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
-            &quot;line&quot;: 126,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
-            &quot;line&quot;: 102,
-            &quot;function&quot;: &quot;handleRequest&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php&quot;,
-            &quot;line&quot;: 54,
-            &quot;function&quot;: &quot;handleRequestUsingNamedLimiter&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php&quot;,
-            &quot;line&quot;: 33,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 141,
-            &quot;function&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\{closure}&quot;,
-            &quot;class&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 116,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php&quot;,
-            &quot;line&quot;: 34,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 116,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
-            &quot;line&quot;: 799,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
-            &quot;line&quot;: 776,
-            &quot;function&quot;: &quot;runRouteWithinStack&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
-            &quot;line&quot;: 740,
-            &quot;function&quot;: &quot;runRoute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Routing/Router.php&quot;,
-            &quot;line&quot;: 729,
-            &quot;function&quot;: &quot;dispatchToRoute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
-            &quot;line&quot;: 200,
-            &quot;function&quot;: &quot;dispatch&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 141,
-            &quot;function&quot;: &quot;Illuminate\\Foundation\\Http\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php&quot;,
-            &quot;line&quot;: 21,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php&quot;,
-            &quot;line&quot;: 31,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php&quot;,
-            &quot;line&quot;: 21,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php&quot;,
-            &quot;line&quot;: 40,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TrimStrings&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php&quot;,
-            &quot;line&quot;: 27,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php&quot;,
-            &quot;line&quot;: 86,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php&quot;,
-            &quot;line&quot;: 62,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\HandleCors&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php&quot;,
-            &quot;line&quot;: 39,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\TrustProxies&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php&quot;,
-            &quot;line&quot;: 116,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
-            &quot;line&quot;: 175,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php&quot;,
-            &quot;line&quot;: 144,
-            &quot;function&quot;: &quot;sendRequestThroughRouter&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 299,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 287,
-            &quot;function&quot;: &quot;callLaravelOrLumenRoute&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 92,
-            &quot;function&quot;: &quot;makeApiCall&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 45,
-            &quot;function&quot;: &quot;makeResponseCall&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php&quot;,
-            &quot;line&quot;: 35,
-            &quot;function&quot;: &quot;makeResponseCallIfConditionsPass&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
-            &quot;line&quot;: 209,
-            &quot;function&quot;: &quot;__invoke&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
-            &quot;line&quot;: 166,
-            &quot;function&quot;: &quot;iterateThroughStrategies&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php&quot;,
-            &quot;line&quot;: 95,
-            &quot;function&quot;: &quot;fetchResponses&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
-            &quot;line&quot;: 124,
-            &quot;function&quot;: &quot;processRoute&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
-            &quot;line&quot;: 71,
-            &quot;function&quot;: &quot;extractEndpointsInfoFromLaravelApp&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php&quot;,
-            &quot;line&quot;: 49,
-            &quot;function&quot;: &quot;extractEndpointsInfoAndWriteToDisk&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php&quot;,
-            &quot;line&quot;: 51,
-            &quot;function&quot;: &quot;get&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
-            &quot;line&quot;: 36,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Container/Util.php&quot;,
-            &quot;line&quot;: 41,
-            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
-            &quot;line&quot;: 93,
-            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php&quot;,
-            &quot;line&quot;: 37,
-            &quot;function&quot;: &quot;callBoundMethod&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Container/Container.php&quot;,
-            &quot;line&quot;: 662,
-            &quot;function&quot;: &quot;call&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Console/Command.php&quot;,
-            &quot;line&quot;: 194,
-            &quot;function&quot;: &quot;call&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/symfony/console/Command/Command.php&quot;,
-            &quot;line&quot;: 312,
-            &quot;function&quot;: &quot;execute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Console/Command.php&quot;,
-            &quot;line&quot;: 164,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Command\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/symfony/console/Application.php&quot;,
-            &quot;line&quot;: 1040,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/symfony/console/Application.php&quot;,
-            &quot;line&quot;: 314,
-            &quot;function&quot;: &quot;doRunCommand&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/symfony/console/Application.php&quot;,
-            &quot;line&quot;: 168,
-            &quot;function&quot;: &quot;doRun&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php&quot;,
-            &quot;line&quot;: 200,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/artisan&quot;,
-            &quot;line&quot;: 37,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Console\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        }
-    ]
+    &quot;data&quot;: [],
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;http://localhost:8000/api/vehicles?page=1&quot;,
+        &quot;last&quot;: &quot;http://localhost:8000/api/vehicles?page=1&quot;,
+        &quot;prev&quot;: null,
+        &quot;next&quot;: null
+    },
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;from&quot;: null,
+        &quot;last_page&quot;: 1,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost:8000/api/vehicles?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
+            }
+        ],
+        &quot;path&quot;: &quot;http://localhost:8000/api/vehicles&quot;,
+        &quot;per_page&quot;: 25,
+        &quot;to&quot;: null,
+        &quot;total&quot;: 0
+    }
 }</code>
  </pre>
     </span>
@@ -3131,7 +2701,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-POSTapi-vehicles">Add vehicle to the system</h2>
+                    <h2 id="vehicles-POSTapi-vehicles">Add vehicle to the system</h2>
 
 <p>
 </p>
@@ -3148,16 +2718,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"vin\": \"architecto\",
-    \"number_plate\": \"aut\",
-    \"make\": \"incidunt\",
-    \"model\": \"quia\",
+    \"vin\": \"est\",
+    \"number_plate\": \"assumenda\",
+    \"make\": \"officiis\",
+    \"model\": \"dolorem\",
     \"availability\": false,
-    \"capacity_weight\": 263.981846,
-    \"capacity_volume\": 9834119.9,
-    \"insurance_policy_number\": \"esse\",
-    \"insurance_coverage\": \"non\",
-    \"insurance_expiration\": \"2023-05-16T03:10:19\"
+    \"capacity_weight\": 36655568.5858659,
+    \"capacity_volume\": 359231.1338995,
+    \"insurance_policy_number\": \"non\",
+    \"insurance_coverage\": \"error\",
+    \"insurance_expiration\": \"2023-05-16T03:44:12\"
 }"
 </code></pre></div>
 
@@ -3173,16 +2743,16 @@ const headers = {
 };
 
 let body = {
-    "vin": "architecto",
-    "number_plate": "aut",
-    "make": "incidunt",
-    "model": "quia",
+    "vin": "est",
+    "number_plate": "assumenda",
+    "make": "officiis",
+    "model": "dolorem",
     "availability": false,
-    "capacity_weight": 263.981846,
-    "capacity_volume": 9834119.9,
-    "insurance_policy_number": "esse",
-    "insurance_coverage": "non",
-    "insurance_expiration": "2023-05-16T03:10:19"
+    "capacity_weight": 36655568.5858659,
+    "capacity_volume": 359231.1338995,
+    "insurance_policy_number": "non",
+    "insurance_coverage": "error",
+    "insurance_expiration": "2023-05-16T03:44:12"
 };
 
 fetch(url, {
@@ -3202,16 +2772,16 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'vin' =&gt; 'architecto',
-            'number_plate' =&gt; 'aut',
-            'make' =&gt; 'incidunt',
-            'model' =&gt; 'quia',
+            'vin' =&gt; 'est',
+            'number_plate' =&gt; 'assumenda',
+            'make' =&gt; 'officiis',
+            'model' =&gt; 'dolorem',
             'availability' =&gt; false,
-            'capacity_weight' =&gt; 263.981846,
-            'capacity_volume' =&gt; 9834119.9,
-            'insurance_policy_number' =&gt; 'esse',
-            'insurance_coverage' =&gt; 'non',
-            'insurance_expiration' =&gt; '2023-05-16T03:10:19',
+            'capacity_weight' =&gt; 36655568.5858659,
+            'capacity_volume' =&gt; 359231.1338995,
+            'insurance_policy_number' =&gt; 'non',
+            'insurance_coverage' =&gt; 'error',
+            'insurance_expiration' =&gt; '2023-05-16T03:44:12',
         ],
     ]
 );
@@ -3225,16 +2795,16 @@ import json
 
 url = 'https://daylog.example.com/api/vehicles'
 payload = {
-    "vin": "architecto",
-    "number_plate": "aut",
-    "make": "incidunt",
-    "model": "quia",
+    "vin": "est",
+    "number_plate": "assumenda",
+    "make": "officiis",
+    "model": "dolorem",
     "availability": false,
-    "capacity_weight": 263.981846,
-    "capacity_volume": 9834119.9,
-    "insurance_policy_number": "esse",
-    "insurance_coverage": "non",
-    "insurance_expiration": "2023-05-16T03:10:19"
+    "capacity_weight": 36655568.5858659,
+    "capacity_volume": 359231.1338995,
+    "insurance_policy_number": "non",
+    "insurance_coverage": "error",
+    "insurance_expiration": "2023-05-16T03:44:12"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -3307,10 +2877,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="vin"                data-endpoint="POSTapi-vehicles"
-               value="architecto"
+               value="est"
                data-component="body">
     <br>
-<p>Example: <code>architecto</code></p>
+<p>Example: <code>est</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>number_plate</code></b>&nbsp;&nbsp;
@@ -3318,10 +2888,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="number_plate"                data-endpoint="POSTapi-vehicles"
-               value="aut"
+               value="assumenda"
                data-component="body">
     <br>
-<p>Example: <code>aut</code></p>
+<p>Example: <code>assumenda</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>make</code></b>&nbsp;&nbsp;
@@ -3329,10 +2899,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="make"                data-endpoint="POSTapi-vehicles"
-               value="incidunt"
+               value="officiis"
                data-component="body">
     <br>
-<p>Example: <code>incidunt</code></p>
+<p>Example: <code>officiis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model</code></b>&nbsp;&nbsp;
@@ -3340,10 +2910,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="model"                data-endpoint="POSTapi-vehicles"
-               value="quia"
+               value="dolorem"
                data-component="body">
     <br>
-<p>Example: <code>quia</code></p>
+<p>Example: <code>dolorem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>availability</code></b>&nbsp;&nbsp;
@@ -3372,10 +2942,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="capacity_weight"                data-endpoint="POSTapi-vehicles"
-               value="263.981846"
+               value="36655568.585866"
                data-component="body">
     <br>
-<p>Example: <code>263.981846</code></p>
+<p>Example: <code>36655568.585866</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>capacity_volume</code></b>&nbsp;&nbsp;
@@ -3383,10 +2953,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="capacity_volume"                data-endpoint="POSTapi-vehicles"
-               value="9834119.9"
+               value="359231.1338995"
                data-component="body">
     <br>
-<p>Example: <code>9834119.9</code></p>
+<p>Example: <code>359231.1338995</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>insurance_policy_number</code></b>&nbsp;&nbsp;
@@ -3394,10 +2964,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="insurance_policy_number"                data-endpoint="POSTapi-vehicles"
-               value="esse"
+               value="non"
                data-component="body">
     <br>
-<p>Example: <code>esse</code></p>
+<p>Example: <code>non</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>insurance_coverage</code></b>&nbsp;&nbsp;
@@ -3405,10 +2975,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="insurance_coverage"                data-endpoint="POSTapi-vehicles"
-               value="non"
+               value="error"
                data-component="body">
     <br>
-<p>Example: <code>non</code></p>
+<p>Example: <code>error</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>insurance_expiration</code></b>&nbsp;&nbsp;
@@ -3416,14 +2986,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="insurance_expiration"                data-endpoint="POSTapi-vehicles"
-               value="2023-05-16T03:10:19"
+               value="2023-05-16T03:44:12"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2023-05-16T03:10:19</code></p>
+<p>Must be a valid date. Example: <code>2023-05-16T03:44:12</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-GETapi-vehicles--id-">Get vehicle details</h2>
+                    <h2 id="vehicles-GETapi-vehicles--id-">Get vehicle details</h2>
 
 <p>
 </p>
@@ -3436,14 +3006,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://daylog.example.com/api/vehicles/8" \
+    --get "https://daylog.example.com/api/vehicles/17" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://daylog.example.com/api/vehicles/8"
+    "https://daylog.example.com/api/vehicles/17"
 );
 
 const headers = {
@@ -3460,7 +3030,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'https://daylog.example.com/api/vehicles/8',
+    'https://daylog.example.com/api/vehicles/17',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -3476,7 +3046,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://daylog.example.com/api/vehicles/8'
+url = 'https://daylog.example.com/api/vehicles/17'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -3504,7 +3074,7 @@ access-control-allow-credentials: true
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;No query results for model [App\\Models\\Vehicle] 8&quot;,
+    &quot;message&quot;: &quot;No query results for model [App\\Models\\Vehicle] 17&quot;,
     &quot;exception&quot;: &quot;Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException&quot;,
     &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php&quot;,
     &quot;line&quot;: 408,
@@ -4006,14 +3576,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="id"                data-endpoint="GETapi-vehicles--id-"
-               value="8"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>8</code></p>
+<p>The ID of the vehicle. Example: <code>17</code></p>
             </div>
                     </form>
 
-                    <h2 id="endpoints-PUTapi-vehicles--id-">Update vehicle information.</h2>
+                    <h2 id="vehicles-PUTapi-vehicles--id-">Update vehicle information.</h2>
 
 <p>
 </p>
@@ -4026,14 +3596,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://daylog.example.com/api/vehicles/20" \
+    "https://daylog.example.com/api/vehicles/13" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://daylog.example.com/api/vehicles/20"
+    "https://daylog.example.com/api/vehicles/13"
 );
 
 const headers = {
@@ -4050,7 +3620,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'https://daylog.example.com/api/vehicles/20',
+    'https://daylog.example.com/api/vehicles/13',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -4066,7 +3636,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://daylog.example.com/api/vehicles/20'
+url = 'https://daylog.example.com/api/vehicles/13'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -4142,14 +3712,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="id"                data-endpoint="PUTapi-vehicles--id-"
-               value="20"
+               value="13"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>20</code></p>
+<p>The ID of the vehicle. Example: <code>13</code></p>
             </div>
                     </form>
 
-                    <h2 id="endpoints-DELETEapi-vehicles--id-">Delete a vehicle.</h2>
+                    <h2 id="vehicles-DELETEapi-vehicles--id-">Delete a vehicle.</h2>
 
 <p>
 </p>
@@ -4162,14 +3732,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://daylog.example.com/api/vehicles/7" \
+    "https://daylog.example.com/api/vehicles/12" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://daylog.example.com/api/vehicles/7"
+    "https://daylog.example.com/api/vehicles/12"
 );
 
 const headers = {
@@ -4186,7 +3756,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'https://daylog.example.com/api/vehicles/7',
+    'https://daylog.example.com/api/vehicles/12',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -4202,7 +3772,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://daylog.example.com/api/vehicles/7'
+url = 'https://daylog.example.com/api/vehicles/12'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -4274,14 +3844,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="id"                data-endpoint="DELETEapi-vehicles--id-"
-               value="7"
+               value="12"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>7</code></p>
+<p>The ID of the vehicle. Example: <code>12</code></p>
             </div>
                     </form>
 
-                    <h2 id="endpoints-PUTapi-vehicles--vehicle_id--attach-device">Attach device to a vehicle</h2>
+                    <h2 id="vehicles-PUTapi-vehicles--vehicle_id--attach-device">Attach device to a vehicle</h2>
 
 <p>
 </p>
@@ -4294,18 +3864,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://daylog.example.com/api/vehicles/11/attach-device" \
+    "https://daylog.example.com/api/vehicles/7/attach-device" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"device_id\": \"dicta\"
+    \"device_id\": \"a\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://daylog.example.com/api/vehicles/11/attach-device"
+    "https://daylog.example.com/api/vehicles/7/attach-device"
 );
 
 const headers = {
@@ -4314,7 +3884,7 @@ const headers = {
 };
 
 let body = {
-    "device_id": "dicta"
+    "device_id": "a"
 };
 
 fetch(url, {
@@ -4327,14 +3897,14 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'https://daylog.example.com/api/vehicles/11/attach-device',
+    'https://daylog.example.com/api/vehicles/7/attach-device',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'device_id' =&gt; 'dicta',
+            'device_id' =&gt; 'a',
         ],
     ]
 );
@@ -4346,9 +3916,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://daylog.example.com/api/vehicles/11/attach-device'
+url = 'https://daylog.example.com/api/vehicles/7/attach-device'
 payload = {
-    "device_id": "dicta"
+    "device_id": "a"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -4421,10 +3991,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="vehicle_id"                data-endpoint="PUTapi-vehicles--vehicle_id--attach-device"
-               value="11"
+               value="7"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>11</code></p>
+<p>The ID of the vehicle. Example: <code>7</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -4433,14 +4003,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="device_id"                data-endpoint="PUTapi-vehicles--vehicle_id--attach-device"
-               value="dicta"
+               value="a"
                data-component="body">
     <br>
-<p>Example: <code>dicta</code></p>
+<p>Example: <code>a</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-PUTapi-vehicles--vehicle_id--detach-device">Remove device attached to a vehicle.</h2>
+                    <h2 id="vehicles-PUTapi-vehicles--vehicle_id--detach-device">Remove device attached to a vehicle.</h2>
 
 <p>
 </p>
@@ -4453,14 +4023,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://daylog.example.com/api/vehicles/10/detach-device" \
+    "https://daylog.example.com/api/vehicles/15/detach-device" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://daylog.example.com/api/vehicles/10/detach-device"
+    "https://daylog.example.com/api/vehicles/15/detach-device"
 );
 
 const headers = {
@@ -4477,7 +4047,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'https://daylog.example.com/api/vehicles/10/detach-device',
+    'https://daylog.example.com/api/vehicles/15/detach-device',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -4493,7 +4063,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://daylog.example.com/api/vehicles/10/detach-device'
+url = 'https://daylog.example.com/api/vehicles/15/detach-device'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -4565,10 +4135,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="vehicle_id"                data-endpoint="PUTapi-vehicles--vehicle_id--detach-device"
-               value="10"
+               value="15"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>10</code></p>
+<p>The ID of the vehicle. Example: <code>15</code></p>
             </div>
                     </form>
 

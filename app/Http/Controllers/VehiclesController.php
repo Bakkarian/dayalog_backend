@@ -12,6 +12,8 @@ class VehiclesController extends Controller
 {
     /**
      * Display a listing of the vehicles.
+     *
+     * @group Vehicles
      */
     public function index()
     {
@@ -20,6 +22,8 @@ class VehiclesController extends Controller
 
     /**
      * Add vehicle to the system
+     *
+     * @group Vehicles
      */
     public function store(VehicleRequest $request)
     {
@@ -40,6 +44,8 @@ class VehiclesController extends Controller
 
     /**
      * Get vehicle details
+     *
+     * @group Vehicles
      */
     public function show(Vehicle $vehicle)
     {
@@ -48,6 +54,8 @@ class VehiclesController extends Controller
 
     /**
      * Update vehicle information.
+     *
+     * @group Vehicles
      */
     public function update(Request $request, Vehicle $vehicle)
     {
@@ -66,6 +74,8 @@ class VehiclesController extends Controller
 
     /**
      * Delete a vehicle.
+     *
+     * @group Vehicles
      */
     public function destroy(Vehicle $vehicle)
     {
@@ -78,6 +88,8 @@ class VehiclesController extends Controller
 
     /**
      * Attach device to a vehicle
+     *
+     * @group Vehicles
      */
     public function attachDevice(Request $request, Vehicle $vehicle){
 
@@ -95,6 +107,7 @@ class VehiclesController extends Controller
     /**
      * Remove device attached to a vehicle.
      *
+     * @group Vehicles
      */
     public function detachDevice(Request $request, Vehicle $vehicle)
     {
