@@ -92,12 +92,15 @@ class VehiclesController extends Controller
      *
      * @group Vehicles
      */
-    public function attachDevice(Request $request, Vehicle $vehicle){
+    public function attachDevice(Request $request, $vehicle){
 
+        $request->merge(['vehicle' => $request->route('vehicle')]);
         $request->validate([
+            'vehicle' => 'exists:vehicles,id',
             'device_id' => 'required|exists:traccar.tc_devices,id|unique:vehicle_devices,device_id',
         ]);
 
+        $vehicle = Vehicle::findOrFail($vehicle);
         $device = Device::findOrFail($request->device_id);
 
         $vehicleDevice = new VehicleDevice();
@@ -115,6 +118,10 @@ class VehiclesController extends Controller
      */
     public function detachDevices(Request $request, Vehicle $vehicle)
     {
+        $request->merge(['vehicle' => $request->route('vehicle')]);
+        $request->validate([
+            'vehicle' => 'exists:vehicles,id',
+        ]);
 
 
          // Detach the device from the vehicle through the intermediate model
