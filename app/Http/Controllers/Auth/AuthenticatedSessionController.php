@@ -14,6 +14,8 @@ class AuthenticatedSessionController extends Controller
 {
     /**
      * Handle an incoming authentication request.
+     *
+     * @group Authentication
      */
     public function store(LoginRequest $request): Response
     {
@@ -26,6 +28,8 @@ class AuthenticatedSessionController extends Controller
 
     /**
      * Generate Authorization token.
+     *
+     * @group Authentication
      */
     public function getToken(CreateTokenRequest $request): JsonResponse
     {
@@ -37,6 +41,8 @@ class AuthenticatedSessionController extends Controller
 
     /**
      * Destroy an authenticated session.
+     *
+     * @group Authentication
      */
     public function destroy(Request $request): Response
     {

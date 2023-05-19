@@ -13,6 +13,8 @@ class PasswordResetLinkController extends Controller
     /**
      * Handle an incoming password reset link request.
      *
+     * @group Authentication
+     * 
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request): JsonResponse

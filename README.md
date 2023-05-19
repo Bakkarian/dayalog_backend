@@ -25,11 +25,13 @@ e.g http://localhost:8000/docs
 - [x] Devices Module
     - [x] Add the device to the system
     - [x] Get devices
-- [ ] Vehicles Module
-    - [ ] Add Vehicle to the system
-    - [ ] Attach a Device to a vehicle
-    - [ ] Detach a Device to a vehicle
-    - [ ] list Vehicles
+- [x] Vehicles Module
+    - [x] Add Vehicle to the system
+    - [x] Update Vehicle
+    - [x] Remove Vehicle
+    - [x] Attach a Device to a vehicle
+    - [x] Detach a Device to a vehicle
+    - [x] list Vehicles
 - [ ]  Order
     - [ ] Create order
     - [ ] Attach vehicle to order

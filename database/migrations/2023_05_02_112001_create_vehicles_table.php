@@ -14,10 +14,20 @@ return new class extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
+
+            $table->string('vin')->unique();
             $table->string('number_plate')->unique();
-            $table->foreignIdFor(Device::class);
+            $table->string('make');
             $table->string('model');
-            //TODO: add columns that represent capacity (What the vehicle can carry)
+
+            $table->decimal('capacity_weight', 10, 2);
+            $table->decimal('capacity_volume', 10, 2);
+            $table->boolean('availability')->default(true);
+            
+            $table->string('insurance_policy_number')->nullable();
+            $table->string('insurance_coverage')->nullable();
+            $table->timestamp('insurance_expiration')->nullable();
+
             $table->timestamps();
         });
     }
