@@ -27,7 +27,7 @@ class CreateTokenRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => ['required', 'string', 'email'],
+            'user_id' => ['required', 'string'],
             'password' => ['required', 'string'],
             'token_name' => ['required', 'string'],
         ];
@@ -42,13 +42,22 @@ class CreateTokenRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
+        $credentials = $this->only('user_id', 'password');
+        $user = User::where(function ($query) use ($credentials) {
+            $query->where('patasente_id', $credentials['user_id'])
+                ->orWhere('phone_number', $credentials['user_id'])
+                ->orWhere('email', $credentials['user_id']);
+        })->first();
+
+        if (! $user || ! Hash::check($credentials['password'], $user->password)) {
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
-                'email' => __('auth.failed'),
+                'user_id' => __('auth.failed'),
             ]);
         }
+
+        Auth::login($user, $this->boolean('remember'));
 
         RateLimiter::clear($this->throttleKey());
     }
