@@ -39,4 +39,6 @@ class Device extends Model
 
         return $device;
     }
+
+    //TODO: Create a custom delete that caters for the tc_user_device table
 }
