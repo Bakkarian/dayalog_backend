@@ -22,7 +22,12 @@ class DriverController extends Controller
      */
     public function store(DriverRequest $request)
     {
-        //
+        $driver = Driver::create([
+            'user_id' => $request->user_id,
+            'license' => $request->license,
+        ]);
+
+        return new DriverResource($driver);
     }
 
     /**
