@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\DriverController;
 use App\Http\Controllers\VehiclesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -28,7 +29,7 @@ Route::middleware(['auth:sanctum'])->get(
 );
 
 Route::apiResource('devices', DeviceController::class);
-
+Route::apiResource('drivers', DriverController::class);
 Route::apiResource('vehicles', VehiclesController::class);
 
 Route::put('vehicles/{vehicle}/attach-device', [VehiclesController::class, 'attachDevice']);
