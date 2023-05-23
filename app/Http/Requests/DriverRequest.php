@@ -23,7 +23,7 @@ class DriverRequest extends FormRequest
     {
         return [
             'license' => [''] ,
-            'user_id' => ['required', 'exists:users']
+            'user_id' => ['required', 'exists:users,id','unique:drivers,user_id']
         ];
     }
 }
