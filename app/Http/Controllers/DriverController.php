@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DriverRequest;
 use App\Http\Resources\DriverResource;
-use App\Models\Device;
+use App\Models\Driver;
 use Illuminate\Http\Request;
 
 class DriverController extends Controller
@@ -14,12 +14,7 @@ class DriverController extends Controller
      */
     public function index()
     {
-        $driver = Device::create([
-            'user_id' => $request->user_id,
-            'license' => $request->license,
-        ]);
-
-        return new DriverResource($driver);
+        return DriverResource::collection(Driver::paginate(25));
     }
 
     /**
