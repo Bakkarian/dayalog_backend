@@ -41,9 +41,20 @@ class DriverController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $driver)
     {
-        //
+        $request->merge(['driver' => $request->route('driver')]);
+        $request->validate([
+            'driver' => 'exists:drivers,id',
+            'user_id' => 'exists:users,id'
+        ]);
+
+        $driver = Driver::findOrFail($driver);
+        $driver->update($request->only([
+            'user_id',
+            'license',
+        ]));
+        return new DriverResource($driver);
     }
 
     /**
