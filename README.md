@@ -20,16 +20,17 @@ e.g http://localhost:8000/docs
     - [x] Logout
     - [x] reset password
     - [x] verify email
+    - [x] Save Patasente account and phone number on user table
     - [ ] login with PataSente account
 - [ ] Roles and permissions
 - [x] Devices Module
     - [x] Add the device to the system
     - [x] Get devices
 - [x] Drivers
-    - [ ] Create Driver
-    - [ ] Get Driver Information
-    - [ ] Delete A driver
-    - [ ] Update driver information
+    - [x] Create Driver
+    - [x] Get Driver Information
+    - [x] Delete A driver
+    - [x] Update driver information
 - [x] Vehicles Module
     - [x] Add Vehicle to the system
     - [x] Update Vehicle
@@ -45,8 +46,8 @@ e.g http://localhost:8000/docs
     - [ ] Get order information
     - [ ] Attach vehicle an order
     - [ ] get order vehicle information for a vehicle
-    - [ ] Dispatch Module (Order submodule)
-        - [ ] create a route(dispatch )
+- [ ] Dispatch Module (Order submodule)
+    - [ ] create a route(dispatch )
 - [ ] FileManager 
 - [ ] Terms and conditions management
 > **Warning:** This task list is still under development and review.
