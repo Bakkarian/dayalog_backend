@@ -7,10 +7,13 @@ use App\Http\Resources\DriverResource;
 use App\Models\Driver;
 use Illuminate\Http\Request;
 
+/**
+* @group Drivers
+*/
 class DriverController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the drivers.
      */
     public function index()
     {
@@ -18,7 +21,7 @@ class DriverController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created drivers.
      */
     public function store(DriverRequest $request)
     {
@@ -39,7 +42,7 @@ class DriverController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified driver.
      */
     public function update(Request $request, string $driver)
     {
@@ -58,7 +61,7 @@ class DriverController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove driver from the system.
      */
     public function destroy(Driver $driver)
     {

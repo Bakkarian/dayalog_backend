@@ -114,25 +114,25 @@
                             </li>
                                                                         </ul>
                             </ul>
-                    <ul id="tocify-header-endpoints" class="tocify-header">
-                <li class="tocify-item level-1" data-unique="endpoints">
-                    <a href="#endpoints">Endpoints</a>
+                    <ul id="tocify-header-drivers" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="drivers">
+                    <a href="#drivers">Drivers</a>
                 </li>
-                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-drivers">
-                                <a href="#endpoints-GETapi-drivers">Display a listing of the resource.</a>
+                                    <ul id="tocify-subheader-drivers" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="drivers-GETapi-drivers">
+                                <a href="#drivers-GETapi-drivers">Display a listing of the drivers.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-drivers">
-                                <a href="#endpoints-POSTapi-drivers">Store a newly created resource in storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="drivers-POSTapi-drivers">
+                                <a href="#drivers-POSTapi-drivers">Store a newly created drivers.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-drivers--id-">
-                                <a href="#endpoints-GETapi-drivers--id-">Display the specified resource.</a>
+                                                                                <li class="tocify-item level-2" data-unique="drivers-GETapi-drivers--id-">
+                                <a href="#drivers-GETapi-drivers--id-">Display the specified resource.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-drivers--id-">
-                                <a href="#endpoints-PUTapi-drivers--id-">Update the specified resource in storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="drivers-PUTapi-drivers--id-">
+                                <a href="#drivers-PUTapi-drivers--id-">Update the specified driver.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-drivers--id-">
-                                <a href="#endpoints-DELETEapi-drivers--id-">Remove the specified resource from storage.</a>
+                                                                                <li class="tocify-item level-2" data-unique="drivers-DELETEapi-drivers--id-">
+                                <a href="#drivers-DELETEapi-drivers--id-">Remove driver from the system.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -224,11 +224,11 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"acvumblu\",
-    \"email\": \"volkman.ezra@example.net\",
-    \"patasente_id\": \"earum\",
-    \"phone_number\": \"velit\",
-    \"password\": \"officiis\"
+    \"name\": \"iuvgvjqtnyciex\",
+    \"email\": \"uboyer@example.net\",
+    \"patasente_id\": \"quia\",
+    \"phone_number\": \"nulla\",
+    \"password\": \"ut\"
 }"
 </code></pre></div>
 
@@ -244,11 +244,11 @@ const headers = {
 };
 
 let body = {
-    "name": "acvumblu",
-    "email": "volkman.ezra@example.net",
-    "patasente_id": "earum",
-    "phone_number": "velit",
-    "password": "officiis"
+    "name": "iuvgvjqtnyciex",
+    "email": "uboyer@example.net",
+    "patasente_id": "quia",
+    "phone_number": "nulla",
+    "password": "ut"
 };
 
 fetch(url, {
@@ -268,11 +268,11 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'name' =&gt; 'acvumblu',
-            'email' =&gt; 'volkman.ezra@example.net',
-            'patasente_id' =&gt; 'earum',
-            'phone_number' =&gt; 'velit',
-            'password' =&gt; 'officiis',
+            'name' =&gt; 'iuvgvjqtnyciex',
+            'email' =&gt; 'uboyer@example.net',
+            'patasente_id' =&gt; 'quia',
+            'phone_number' =&gt; 'nulla',
+            'password' =&gt; 'ut',
         ],
     ]
 );
@@ -286,11 +286,11 @@ import json
 
 url = 'https://daylog.example.com/api/register'
 payload = {
-    "name": "acvumblu",
-    "email": "volkman.ezra@example.net",
-    "patasente_id": "earum",
-    "phone_number": "velit",
-    "password": "officiis"
+    "name": "iuvgvjqtnyciex",
+    "email": "uboyer@example.net",
+    "patasente_id": "quia",
+    "phone_number": "nulla",
+    "password": "ut"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -363,10 +363,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-register"
-               value="acvumblu"
+               value="iuvgvjqtnyciex"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>acvumblu</code></p>
+<p>Must not be greater than 255 characters. Example: <code>iuvgvjqtnyciex</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -374,10 +374,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-register"
-               value="volkman.ezra@example.net"
+               value="uboyer@example.net"
                data-component="body">
     <br>
-<p>This field is required when none of <code>phone_number</code> and <code>patasente_id</code> are present.  Must be a valid email address. Must not be greater than 255 characters. Example: <code>volkman.ezra@example.net</code></p>
+<p>This field is required when none of <code>phone_number</code> and <code>patasente_id</code> are present.  Must be a valid email address. Must not be greater than 255 characters. Example: <code>uboyer@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>patasente_id</code></b>&nbsp;&nbsp;
@@ -385,10 +385,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="patasente_id"                data-endpoint="POSTapi-register"
-               value="earum"
+               value="quia"
                data-component="body">
     <br>
-<p>This field is required when none of <code>email</code> and <code>phone_number</code> are present. Example: <code>earum</code></p>
+<p>This field is required when none of <code>email</code> and <code>phone_number</code> are present. Example: <code>quia</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>phone_number</code></b>&nbsp;&nbsp;
@@ -396,10 +396,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="phone_number"                data-endpoint="POSTapi-register"
-               value="velit"
+               value="nulla"
                data-component="body">
     <br>
-<p>This field is required when none of <code>email</code> and <code>patasente_id</code> are present. Example: <code>velit</code></p>
+<p>This field is required when none of <code>email</code> and <code>patasente_id</code> are present. Example: <code>nulla</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -407,10 +407,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-register"
-               value="officiis"
+               value="ut"
                data-component="body">
     <br>
-<p>Example: <code>officiis</code></p>
+<p>Example: <code>ut</code></p>
         </div>
         </form>
 
@@ -431,9 +431,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": \"et\",
-    \"password\": \"=#%v5x=TL&gt;N6d#l\",
-    \"token_name\": \"eum\"
+    \"user_id\": \"fugit\",
+    \"password\": \"GE52UM*elc.n\",
+    \"token_name\": \"quam\"
 }"
 </code></pre></div>
 
@@ -449,9 +449,9 @@ const headers = {
 };
 
 let body = {
-    "user_id": "et",
-    "password": "=#%v5x=TL&gt;N6d#l",
-    "token_name": "eum"
+    "user_id": "fugit",
+    "password": "GE52UM*elc.n",
+    "token_name": "quam"
 };
 
 fetch(url, {
@@ -471,9 +471,9 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'user_id' =&gt; 'et',
-            'password' =&gt; '=#%v5x=TL&gt;N6d#l',
-            'token_name' =&gt; 'eum',
+            'user_id' =&gt; 'fugit',
+            'password' =&gt; 'GE52UM*elc.n',
+            'token_name' =&gt; 'quam',
         ],
     ]
 );
@@ -487,9 +487,9 @@ import json
 
 url = 'https://daylog.example.com/api/tokens/create'
 payload = {
-    "user_id": "et",
-    "password": "=#%v5x=TL&gt;N6d#l",
-    "token_name": "eum"
+    "user_id": "fugit",
+    "password": "GE52UM*elc.n",
+    "token_name": "quam"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -562,10 +562,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="user_id"                data-endpoint="POSTapi-tokens-create"
-               value="et"
+               value="fugit"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>fugit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -573,10 +573,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-tokens-create"
-               value="=#%v5x=TL>N6d#l"
+               value="GE52UM*elc.n"
                data-component="body">
     <br>
-<p>Example: <code>=#%v5x=TL&gt;N6d#l</code></p>
+<p>Example: <code>GE52UM*elc.n</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>token_name</code></b>&nbsp;&nbsp;
@@ -584,10 +584,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="token_name"                data-endpoint="POSTapi-tokens-create"
-               value="eum"
+               value="quam"
                data-component="body">
     <br>
-<p>Example: <code>eum</code></p>
+<p>Example: <code>quam</code></p>
         </div>
         </form>
 
@@ -608,7 +608,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"meghan19@example.com\"
+    \"email\": \"klocko.ulises@example.net\"
 }"
 </code></pre></div>
 
@@ -624,7 +624,7 @@ const headers = {
 };
 
 let body = {
-    "email": "meghan19@example.com"
+    "email": "klocko.ulises@example.net"
 };
 
 fetch(url, {
@@ -644,7 +644,7 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'email' =&gt; 'meghan19@example.com',
+            'email' =&gt; 'klocko.ulises@example.net',
         ],
     ]
 );
@@ -658,7 +658,7 @@ import json
 
 url = 'https://daylog.example.com/api/forgot-password'
 payload = {
-    "email": "meghan19@example.com"
+    "email": "klocko.ulises@example.net"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -731,10 +731,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-forgot-password"
-               value="meghan19@example.com"
+               value="klocko.ulises@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>meghan19@example.com</code></p>
+<p>Must be a valid email address. Example: <code>klocko.ulises@example.net</code></p>
         </div>
         </form>
 
@@ -755,9 +755,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"veniam\",
-    \"email\": \"ahuel@example.org\",
-    \"password\": \"voluptas\"
+    \"token\": \"qui\",
+    \"email\": \"hamill.april@example.net\",
+    \"password\": \"distinctio\"
 }"
 </code></pre></div>
 
@@ -773,9 +773,9 @@ const headers = {
 };
 
 let body = {
-    "token": "veniam",
-    "email": "ahuel@example.org",
-    "password": "voluptas"
+    "token": "qui",
+    "email": "hamill.april@example.net",
+    "password": "distinctio"
 };
 
 fetch(url, {
@@ -795,9 +795,9 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'token' =&gt; 'veniam',
-            'email' =&gt; 'ahuel@example.org',
-            'password' =&gt; 'voluptas',
+            'token' =&gt; 'qui',
+            'email' =&gt; 'hamill.april@example.net',
+            'password' =&gt; 'distinctio',
         ],
     ]
 );
@@ -811,9 +811,9 @@ import json
 
 url = 'https://daylog.example.com/api/reset-password'
 payload = {
-    "token": "veniam",
-    "email": "ahuel@example.org",
-    "password": "voluptas"
+    "token": "qui",
+    "email": "hamill.april@example.net",
+    "password": "distinctio"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -886,10 +886,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="token"                data-endpoint="POSTapi-reset-password"
-               value="veniam"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>veniam</code></p>
+<p>Example: <code>qui</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -897,10 +897,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-reset-password"
-               value="ahuel@example.org"
+               value="hamill.april@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>ahuel@example.org</code></p>
+<p>Must be a valid email address. Example: <code>hamill.april@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -908,10 +908,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-reset-password"
-               value="voluptas"
+               value="distinctio"
                data-component="body">
     <br>
-<p>Example: <code>voluptas</code></p>
+<p>Example: <code>distinctio</code></p>
         </div>
         </form>
 
@@ -928,14 +928,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://daylog.example.com/api/verify-email/laboriosam/quia" \
+    --get "https://daylog.example.com/api/verify-email/corporis/distinctio" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://daylog.example.com/api/verify-email/laboriosam/quia"
+    "https://daylog.example.com/api/verify-email/corporis/distinctio"
 );
 
 const headers = {
@@ -952,7 +952,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'https://daylog.example.com/api/verify-email/laboriosam/quia',
+    'https://daylog.example.com/api/verify-email/corporis/distinctio',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -968,7 +968,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://daylog.example.com/api/verify-email/laboriosam/quia'
+url = 'https://daylog.example.com/api/verify-email/corporis/distinctio'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -1057,10 +1057,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="id"                data-endpoint="GETapi-verify-email--id---hash-"
-               value="laboriosam"
+               value="corporis"
                data-component="url">
     <br>
-<p>The ID of the verify email. Example: <code>laboriosam</code></p>
+<p>The ID of the verify email. Example: <code>corporis</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>hash</code></b>&nbsp;&nbsp;
@@ -1068,10 +1068,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="hash"                data-endpoint="GETapi-verify-email--id---hash-"
-               value="quia"
+               value="distinctio"
                data-component="url">
     <br>
-<p>Example: <code>quia</code></p>
+<p>Example: <code>distinctio</code></p>
             </div>
                     </form>
 
@@ -1820,10 +1820,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"quia\",
-    \"uniqueid\": \"pznuuodb\",
-    \"model\": \"quos\",
-    \"tc_user_id\": 2865735.038
+    \"name\": \"cumque\",
+    \"uniqueid\": \"soslhcocvrixoog\",
+    \"model\": \"molestiae\",
+    \"tc_user_id\": 11008.39712433
 }"
 </code></pre></div>
 
@@ -1839,10 +1839,10 @@ const headers = {
 };
 
 let body = {
-    "name": "quia",
-    "uniqueid": "pznuuodb",
-    "model": "quos",
-    "tc_user_id": 2865735.038
+    "name": "cumque",
+    "uniqueid": "soslhcocvrixoog",
+    "model": "molestiae",
+    "tc_user_id": 11008.39712433
 };
 
 fetch(url, {
@@ -1862,10 +1862,10 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'name' =&gt; 'quia',
-            'uniqueid' =&gt; 'pznuuodb',
-            'model' =&gt; 'quos',
-            'tc_user_id' =&gt; 2865735.038,
+            'name' =&gt; 'cumque',
+            'uniqueid' =&gt; 'soslhcocvrixoog',
+            'model' =&gt; 'molestiae',
+            'tc_user_id' =&gt; 11008.39712433,
         ],
     ]
 );
@@ -1879,10 +1879,10 @@ import json
 
 url = 'https://daylog.example.com/api/devices'
 payload = {
-    "name": "quia",
-    "uniqueid": "pznuuodb",
-    "model": "quos",
-    "tc_user_id": 2865735.038
+    "name": "cumque",
+    "uniqueid": "soslhcocvrixoog",
+    "model": "molestiae",
+    "tc_user_id": 11008.39712433
 }
 headers = {
   'Content-Type': 'application/json',
@@ -1955,10 +1955,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-devices"
-               value="quia"
+               value="cumque"
                data-component="body">
     <br>
-<p>Example: <code>quia</code></p>
+<p>Example: <code>cumque</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>uniqueid</code></b>&nbsp;&nbsp;
@@ -1966,10 +1966,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="uniqueid"                data-endpoint="POSTapi-devices"
-               value="pznuuodb"
+               value="soslhcocvrixoog"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>pznuuodb</code></p>
+<p>Must not be greater than 255 characters. Example: <code>soslhcocvrixoog</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model</code></b>&nbsp;&nbsp;
@@ -1977,10 +1977,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="model"                data-endpoint="POSTapi-devices"
-               value="quos"
+               value="molestiae"
                data-component="body">
     <br>
-<p>Example: <code>quos</code></p>
+<p>Example: <code>molestiae</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>tc_user_id</code></b>&nbsp;&nbsp;
@@ -1988,10 +1988,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="tc_user_id"                data-endpoint="POSTapi-devices"
-               value="2865735.038"
+               value="11008.39712433"
                data-component="body">
     <br>
-<p>Example: <code>2865735.038</code></p>
+<p>Example: <code>11008.39712433</code></p>
         </div>
         </form>
 
@@ -2437,11 +2437,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                <h1 id="endpoints">Endpoints</h1>
+                <h1 id="drivers">Drivers</h1>
 
     
 
-                                <h2 id="endpoints-GETapi-drivers">Display a listing of the resource.</h2>
+                                <h2 id="drivers-GETapi-drivers">Display a listing of the drivers.</h2>
 
 <p>
 </p>
@@ -2620,7 +2620,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-POSTapi-drivers">Store a newly created resource in storage.</h2>
+                    <h2 id="drivers-POSTapi-drivers">Store a newly created drivers.</h2>
 
 <p>
 </p>
@@ -2637,7 +2637,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": \"fugit\"
+    \"user_id\": \"sequi\"
 }"
 </code></pre></div>
 
@@ -2653,7 +2653,7 @@ const headers = {
 };
 
 let body = {
-    "user_id": "fugit"
+    "user_id": "sequi"
 };
 
 fetch(url, {
@@ -2673,7 +2673,7 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'user_id' =&gt; 'fugit',
+            'user_id' =&gt; 'sequi',
         ],
     ]
 );
@@ -2687,7 +2687,7 @@ import json
 
 url = 'https://daylog.example.com/api/drivers'
 payload = {
-    "user_id": "fugit"
+    "user_id": "sequi"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -2771,14 +2771,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="user_id"                data-endpoint="POSTapi-drivers"
-               value="fugit"
+               value="sequi"
                data-component="body">
     <br>
-<p>Example: <code>fugit</code></p>
+<p>Example: <code>sequi</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-GETapi-drivers--id-">Display the specified resource.</h2>
+                    <h2 id="drivers-GETapi-drivers--id-">Display the specified resource.</h2>
 
 <p>
 </p>
@@ -2935,7 +2935,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="endpoints-PUTapi-drivers--id-">Update the specified resource in storage.</h2>
+                    <h2 id="drivers-PUTapi-drivers--id-">Update the specified driver.</h2>
 
 <p>
 </p>
@@ -3095,7 +3095,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
-                    <h2 id="endpoints-DELETEapi-drivers--id-">Remove the specified resource from storage.</h2>
+                    <h2 id="drivers-DELETEapi-drivers--id-">Remove driver from the system.</h2>
 
 <p>
 </p>
@@ -3560,16 +3560,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"vin\": \"officiis\",
-    \"number_plate\": \"nobis\",
-    \"make\": \"vel\",
-    \"model\": \"mollitia\",
+    \"vin\": \"numquam\",
+    \"number_plate\": \"aut\",
+    \"make\": \"iusto\",
+    \"model\": \"ea\",
     \"availability\": false,
-    \"capacity_weight\": 4,
-    \"capacity_volume\": 8775.8225,
-    \"insurance_policy_number\": \"maxime\",
-    \"insurance_coverage\": \"in\",
-    \"insurance_expiration\": \"2023-05-24T03:23:27\"
+    \"capacity_weight\": 3750.7426,
+    \"capacity_volume\": 0.1,
+    \"insurance_policy_number\": \"omnis\",
+    \"insurance_coverage\": \"eum\",
+    \"insurance_expiration\": \"2023-05-24T03:28:51\"
 }"
 </code></pre></div>
 
@@ -3585,16 +3585,16 @@ const headers = {
 };
 
 let body = {
-    "vin": "officiis",
-    "number_plate": "nobis",
-    "make": "vel",
-    "model": "mollitia",
+    "vin": "numquam",
+    "number_plate": "aut",
+    "make": "iusto",
+    "model": "ea",
     "availability": false,
-    "capacity_weight": 4,
-    "capacity_volume": 8775.8225,
-    "insurance_policy_number": "maxime",
-    "insurance_coverage": "in",
-    "insurance_expiration": "2023-05-24T03:23:27"
+    "capacity_weight": 3750.7426,
+    "capacity_volume": 0.1,
+    "insurance_policy_number": "omnis",
+    "insurance_coverage": "eum",
+    "insurance_expiration": "2023-05-24T03:28:51"
 };
 
 fetch(url, {
@@ -3614,16 +3614,16 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'vin' =&gt; 'officiis',
-            'number_plate' =&gt; 'nobis',
-            'make' =&gt; 'vel',
-            'model' =&gt; 'mollitia',
+            'vin' =&gt; 'numquam',
+            'number_plate' =&gt; 'aut',
+            'make' =&gt; 'iusto',
+            'model' =&gt; 'ea',
             'availability' =&gt; false,
-            'capacity_weight' =&gt; 4.0,
-            'capacity_volume' =&gt; 8775.8225,
-            'insurance_policy_number' =&gt; 'maxime',
-            'insurance_coverage' =&gt; 'in',
-            'insurance_expiration' =&gt; '2023-05-24T03:23:27',
+            'capacity_weight' =&gt; 3750.7426,
+            'capacity_volume' =&gt; 0.1,
+            'insurance_policy_number' =&gt; 'omnis',
+            'insurance_coverage' =&gt; 'eum',
+            'insurance_expiration' =&gt; '2023-05-24T03:28:51',
         ],
     ]
 );
@@ -3637,16 +3637,16 @@ import json
 
 url = 'https://daylog.example.com/api/vehicles'
 payload = {
-    "vin": "officiis",
-    "number_plate": "nobis",
-    "make": "vel",
-    "model": "mollitia",
+    "vin": "numquam",
+    "number_plate": "aut",
+    "make": "iusto",
+    "model": "ea",
     "availability": false,
-    "capacity_weight": 4,
-    "capacity_volume": 8775.8225,
-    "insurance_policy_number": "maxime",
-    "insurance_coverage": "in",
-    "insurance_expiration": "2023-05-24T03:23:27"
+    "capacity_weight": 3750.7426,
+    "capacity_volume": 0.1,
+    "insurance_policy_number": "omnis",
+    "insurance_coverage": "eum",
+    "insurance_expiration": "2023-05-24T03:28:51"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -3719,10 +3719,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="vin"                data-endpoint="POSTapi-vehicles"
-               value="officiis"
+               value="numquam"
                data-component="body">
     <br>
-<p>Example: <code>officiis</code></p>
+<p>Example: <code>numquam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>number_plate</code></b>&nbsp;&nbsp;
@@ -3730,10 +3730,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="number_plate"                data-endpoint="POSTapi-vehicles"
-               value="nobis"
+               value="aut"
                data-component="body">
     <br>
-<p>Example: <code>nobis</code></p>
+<p>Example: <code>aut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>make</code></b>&nbsp;&nbsp;
@@ -3741,10 +3741,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="make"                data-endpoint="POSTapi-vehicles"
-               value="vel"
+               value="iusto"
                data-component="body">
     <br>
-<p>Example: <code>vel</code></p>
+<p>Example: <code>iusto</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model</code></b>&nbsp;&nbsp;
@@ -3752,10 +3752,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="model"                data-endpoint="POSTapi-vehicles"
-               value="mollitia"
+               value="ea"
                data-component="body">
     <br>
-<p>Example: <code>mollitia</code></p>
+<p>Example: <code>ea</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>availability</code></b>&nbsp;&nbsp;
@@ -3784,10 +3784,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="capacity_weight"                data-endpoint="POSTapi-vehicles"
-               value="4"
+               value="3750.7426"
                data-component="body">
     <br>
-<p>Example: <code>4</code></p>
+<p>Example: <code>3750.7426</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>capacity_volume</code></b>&nbsp;&nbsp;
@@ -3795,10 +3795,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="capacity_volume"                data-endpoint="POSTapi-vehicles"
-               value="8775.8225"
+               value="0.1"
                data-component="body">
     <br>
-<p>Example: <code>8775.8225</code></p>
+<p>Example: <code>0.1</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>insurance_policy_number</code></b>&nbsp;&nbsp;
@@ -3806,10 +3806,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="insurance_policy_number"                data-endpoint="POSTapi-vehicles"
-               value="maxime"
+               value="omnis"
                data-component="body">
     <br>
-<p>Example: <code>maxime</code></p>
+<p>Example: <code>omnis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>insurance_coverage</code></b>&nbsp;&nbsp;
@@ -3817,10 +3817,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="insurance_coverage"                data-endpoint="POSTapi-vehicles"
-               value="in"
+               value="eum"
                data-component="body">
     <br>
-<p>Example: <code>in</code></p>
+<p>Example: <code>eum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>insurance_expiration</code></b>&nbsp;&nbsp;
@@ -3828,10 +3828,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="insurance_expiration"                data-endpoint="POSTapi-vehicles"
-               value="2023-05-24T03:23:27"
+               value="2023-05-24T03:28:51"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2023-05-24T03:23:27</code></p>
+<p>Must be a valid date. Example: <code>2023-05-24T03:28:51</code></p>
         </div>
         </form>
 
@@ -3848,14 +3848,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://daylog.example.com/api/vehicles/8" \
+    --get "https://daylog.example.com/api/vehicles/19" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://daylog.example.com/api/vehicles/8"
+    "https://daylog.example.com/api/vehicles/19"
 );
 
 const headers = {
@@ -3872,7 +3872,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'https://daylog.example.com/api/vehicles/8',
+    'https://daylog.example.com/api/vehicles/19',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -3888,7 +3888,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://daylog.example.com/api/vehicles/8'
+url = 'https://daylog.example.com/api/vehicles/19'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -3916,7 +3916,7 @@ access-control-allow-credentials: true
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;No query results for model [App\\Models\\Vehicle] 8&quot;,
+    &quot;message&quot;: &quot;No query results for model [App\\Models\\Vehicle] 19&quot;,
     &quot;exception&quot;: &quot;Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException&quot;,
     &quot;file&quot;: &quot;/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php&quot;,
     &quot;line&quot;: 408,
@@ -4418,10 +4418,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="id"                data-endpoint="GETapi-vehicles--id-"
-               value="8"
+               value="19"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>8</code></p>
+<p>The ID of the vehicle. Example: <code>19</code></p>
             </div>
                     </form>
 
@@ -4438,14 +4438,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://daylog.example.com/api/vehicles/9" \
+    "https://daylog.example.com/api/vehicles/13" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://daylog.example.com/api/vehicles/9"
+    "https://daylog.example.com/api/vehicles/13"
 );
 
 const headers = {
@@ -4462,7 +4462,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'https://daylog.example.com/api/vehicles/9',
+    'https://daylog.example.com/api/vehicles/13',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -4478,7 +4478,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://daylog.example.com/api/vehicles/9'
+url = 'https://daylog.example.com/api/vehicles/13'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -4554,10 +4554,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="id"                data-endpoint="PUTapi-vehicles--id-"
-               value="9"
+               value="13"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>9</code></p>
+<p>The ID of the vehicle. Example: <code>13</code></p>
             </div>
                     </form>
 
@@ -4574,14 +4574,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://daylog.example.com/api/vehicles/10" \
+    "https://daylog.example.com/api/vehicles/8" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://daylog.example.com/api/vehicles/10"
+    "https://daylog.example.com/api/vehicles/8"
 );
 
 const headers = {
@@ -4598,7 +4598,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'https://daylog.example.com/api/vehicles/10',
+    'https://daylog.example.com/api/vehicles/8',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -4614,7 +4614,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://daylog.example.com/api/vehicles/10'
+url = 'https://daylog.example.com/api/vehicles/8'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -4686,10 +4686,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="id"                data-endpoint="DELETEapi-vehicles--id-"
-               value="10"
+               value="8"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>10</code></p>
+<p>The ID of the vehicle. Example: <code>8</code></p>
             </div>
                     </form>
 
@@ -4706,18 +4706,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://daylog.example.com/api/vehicles/15/attach-device" \
+    "https://daylog.example.com/api/vehicles/5/attach-device" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"device_id\": \"quos\"
+    \"device_id\": \"praesentium\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://daylog.example.com/api/vehicles/15/attach-device"
+    "https://daylog.example.com/api/vehicles/5/attach-device"
 );
 
 const headers = {
@@ -4726,7 +4726,7 @@ const headers = {
 };
 
 let body = {
-    "device_id": "quos"
+    "device_id": "praesentium"
 };
 
 fetch(url, {
@@ -4739,14 +4739,14 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'https://daylog.example.com/api/vehicles/15/attach-device',
+    'https://daylog.example.com/api/vehicles/5/attach-device',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'device_id' =&gt; 'quos',
+            'device_id' =&gt; 'praesentium',
         ],
     ]
 );
@@ -4758,9 +4758,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://daylog.example.com/api/vehicles/15/attach-device'
+url = 'https://daylog.example.com/api/vehicles/5/attach-device'
 payload = {
-    "device_id": "quos"
+    "device_id": "praesentium"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -4833,10 +4833,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="vehicle"                data-endpoint="PUTapi-vehicles--vehicle--attach-device"
-               value="15"
+               value="5"
                data-component="url">
     <br>
-<p>The vehicle. Example: <code>15</code></p>
+<p>The vehicle. Example: <code>5</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -4856,10 +4856,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="device_id"                data-endpoint="PUTapi-vehicles--vehicle--attach-device"
-               value="quos"
+               value="praesentium"
                data-component="body">
     <br>
-<p>Example: <code>quos</code></p>
+<p>Example: <code>praesentium</code></p>
         </div>
         </form>
 
@@ -4876,7 +4876,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://daylog.example.com/api/vehicles/16/detach-devices" \
+    "https://daylog.example.com/api/vehicles/15/detach-devices" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
 </code></pre></div>
@@ -4884,7 +4884,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://daylog.example.com/api/vehicles/16/detach-devices"
+    "https://daylog.example.com/api/vehicles/15/detach-devices"
 );
 
 const headers = {
@@ -4901,7 +4901,7 @@ fetch(url, {
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'https://daylog.example.com/api/vehicles/16/detach-devices',
+    'https://daylog.example.com/api/vehicles/15/detach-devices',
     [
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
@@ -4917,7 +4917,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://daylog.example.com/api/vehicles/16/detach-devices'
+url = 'https://daylog.example.com/api/vehicles/15/detach-devices'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -4989,10 +4989,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                name="vehicle_id"                data-endpoint="PUTapi-vehicles--vehicle_id--detach-devices"
-               value="16"
+               value="15"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>16</code></p>
+<p>The ID of the vehicle. Example: <code>15</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
