@@ -28,27 +28,43 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: lvsuvlalfhdesfvjmgei
+        example: acvumblu
         type: string
         custom: []
       email:
         name: email
-        description: 'Must be a valid email address. Must not be greater than 255 characters.'
-        required: true
-        example: jana.connelly@example.org
+        description: 'This field is required when none of <code>phone_number</code> and <code>patasente_id</code> are present.  Must be a valid email address. Must not be greater than 255 characters.'
+        required: false
+        example: volkman.ezra@example.net
+        type: string
+        custom: []
+      patasente_id:
+        name: patasente_id
+        description: 'This field is required when none of <code>email</code> and <code>phone_number</code> are present.'
+        required: false
+        example: earum
+        type: string
+        custom: []
+      phone_number:
+        name: phone_number
+        description: 'This field is required when none of <code>email</code> and <code>patasente_id</code> are present.'
+        required: false
+        example: velit
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: dolorem
+        example: officiis
         type: string
         custom: []
     cleanBodyParameters:
-      name: lvsuvlalfhdesfvjmgei
-      email: jana.connelly@example.org
-      password: dolorem
+      name: acvumblu
+      email: volkman.ezra@example.net
+      patasente_id: earum
+      phone_number: velit
+      password: officiis
     fileParameters: []
     responses: []
     responseFields: []
@@ -78,31 +94,31 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      email:
-        name: email
-        description: 'Must be a valid email address.'
+      user_id:
+        name: user_id
+        description: ''
         required: true
-        example: melba.ruecker@example.com
+        example: et
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: 'zjh}&~X\i~S1yR'
+        example: '=#%v5x=TL>N6d#l'
         type: string
         custom: []
       token_name:
         name: token_name
         description: ''
         required: true
-        example: necessitatibus
+        example: eum
         type: string
         custom: []
     cleanBodyParameters:
-      email: melba.ruecker@example.com
-      password: 'zjh}&~X\i~S1yR'
-      token_name: necessitatibus
+      user_id: et
+      password: '=#%v5x=TL>N6d#l'
+      token_name: eum
     fileParameters: []
     responses: []
     responseFields: []
@@ -136,11 +152,11 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: weissnat.nyasia@example.org
+        example: meghan19@example.com
         type: string
         custom: []
     cleanBodyParameters:
-      email: weissnat.nyasia@example.org
+      email: meghan19@example.com
     fileParameters: []
     responses: []
     responseFields: []
@@ -174,27 +190,27 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: ullam
+        example: veniam
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: kokeefe@example.org
+        example: ahuel@example.org
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: rem
+        example: voluptas
         type: string
         custom: []
     cleanBodyParameters:
-      token: ullam
-      email: kokeefe@example.org
-      password: rem
+      token: veniam
+      email: ahuel@example.org
+      password: voluptas
     fileParameters: []
     responses: []
     responseFields: []
@@ -224,19 +240,19 @@ endpoints:
         name: id
         description: 'The ID of the verify email.'
         required: true
-        example: et
+        example: laboriosam
         type: string
         custom: []
       hash:
         name: hash
         description: ''
         required: true
-        example: tempora
+        example: quia
         type: string
         custom: []
     cleanUrlParameters:
-      id: et
-      hash: tempora
+      id: laboriosam
+      hash: quia
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

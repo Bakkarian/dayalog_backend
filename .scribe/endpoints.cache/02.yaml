@@ -70,35 +70,35 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: est
+        example: quia
         type: string
         custom: []
       uniqueid:
         name: uniqueid
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: xovxgrbtdgkefeastfni
+        example: pznuuodb
         type: string
         custom: []
       model:
         name: model
         description: ''
         required: true
-        example: et
+        example: quos
         type: string
         custom: []
       tc_user_id:
         name: tc_user_id
         description: ''
         required: false
-        example: 12635361.5
+        example: 2865735.038
         type: number
         custom: []
     cleanBodyParameters:
-      name: est
-      uniqueid: xovxgrbtdgkefeastfni
-      model: et
-      tc_user_id: 12635361.5
+      name: quia
+      uniqueid: pznuuodb
+      model: quos
+      tc_user_id: 2865735.038
     fileParameters: []
     responses: []
     responseFields: []

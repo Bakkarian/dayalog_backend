@@ -29,6 +29,10 @@ Route::middleware(['auth:sanctum'])->get(
 );
 
 Route::apiResource('devices', DeviceController::class);
+
+/**
+ * @group Drivers
+ */
 Route::apiResource('drivers', DriverController::class);
 Route::apiResource('vehicles', VehiclesController::class);
 
