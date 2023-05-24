@@ -25,6 +25,11 @@ e.g http://localhost:8000/docs
 - [x] Devices Module
     - [x] Add the device to the system
     - [x] Get devices
+- [x] Drivers
+    - [ ] Create Driver
+    - [ ] Get Driver Information
+    - [ ] Delete A driver
+    - [ ] Update driver information
 - [x] Vehicles Module
     - [x] Add Vehicle to the system
     - [x] Update Vehicle
@@ -32,6 +37,8 @@ e.g http://localhost:8000/docs
     - [x] Attach a Device to a vehicle
     - [x] Detach a Device to a vehicle
     - [x] list Vehicles
+    - [ ] Attach Driver
+    - [ ] Detach Driver
 - [ ]  Order
     - [ ] Create order
     - [ ] Attach vehicle to order
