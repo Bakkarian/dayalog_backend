@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\DriverRequest;
 use App\Http\Resources\DriverResource;
 use App\Models\Driver;
+use App\Models\Vehicle;
+use App\Models\VehicleDriver;
 use Illuminate\Http\Request;
 
 /**
@@ -70,4 +72,23 @@ class DriverController extends Controller
             'message'=>'Deletes successfully'
         ], 204);
     }
+
+    /**
+     * Assign Vehicle to Driver
+     */
+    public function assignVechile(Driver $driver, Vehicle $vechile)
+    {
+        $vehicleDriver = VehicleDriver::create(
+            [
+                'vehicle_id' => $vehicle->id,
+                'driver_id' => $driver->id
+            ]
+        );
+        
+        return response()->json([
+            'message' => 'Vehicle assigned successfully.',
+            'data' => $vehicleDriver
+        ], 200);
+    }
+
 }
