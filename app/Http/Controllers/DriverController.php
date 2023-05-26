@@ -91,4 +91,24 @@ class DriverController extends Controller
         ], 200);
     }
 
+     /**
+     * Remove Vehicle from Driver
+     */
+    public function RemoveVechile(Driver $driver, Vehicle $vechile)
+    {
+        $vehicleDriver = VehicleDriver::where('vehicle_id', $vehicle->id)
+            ->where('driver_id', $driver->id)
+            ->first();
+
+        if (!$vehicleDriver) {
+            return response()->json([
+                'message' => 'Vehicle not assigned to the driver.',
+            ], 404);
+        }
+
+        $vehicleDriver->delete();
+        return response()->json([
+            'message' => 'Vehicle removed successfully.',
+        ], 200);
+    }
 }
