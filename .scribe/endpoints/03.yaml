@@ -75,11 +75,11 @@ endpoints:
         name: user_id
         description: ''
         required: true
-        example: libero
+        example: exercitationem
         type: string
         custom: []
     cleanBodyParameters:
-      user_id: libero
+      user_id: exercitationem
     fileParameters: []
     responses: []
     responseFields: []
@@ -257,12 +257,12 @@ endpoints:
         name: vehicle
         description: 'The vehicle.'
         required: true
-        example: 10
+        example: 16
         type: integer
         custom: []
     cleanUrlParameters:
       driver_id: 1
-      vehicle: 10
+      vehicle: 16
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -303,12 +303,12 @@ endpoints:
         name: vehicle
         description: 'The vehicle.'
         required: true
-        example: 3
+        example: 11
         type: integer
         custom: []
     cleanUrlParameters:
       driver_id: 1
-      vehicle: 3
+      vehicle: 11
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

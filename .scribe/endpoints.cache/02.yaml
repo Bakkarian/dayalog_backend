@@ -70,35 +70,35 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: sit
+        example: reprehenderit
         type: string
         custom: []
       uniqueid:
         name: uniqueid
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: hmifbelwmzrrmbt
+        example: pjtpdff
         type: string
         custom: []
       model:
         name: model
         description: ''
         required: true
-        example: cumque
+        example: optio
         type: string
         custom: []
       tc_user_id:
         name: tc_user_id
         description: ''
         required: false
-        example: 236.8
+        example: 2.016874912
         type: number
         custom: []
     cleanBodyParameters:
-      name: sit
-      uniqueid: hmifbelwmzrrmbt
-      model: cumque
-      tc_user_id: 236.8
+      name: reprehenderit
+      uniqueid: pjtpdff
+      model: optio
+      tc_user_id: 2.016874912
     fileParameters: []
     responses: []
     responseFields: []
