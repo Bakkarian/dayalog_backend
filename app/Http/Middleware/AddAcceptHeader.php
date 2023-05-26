@@ -15,11 +15,7 @@ class AddAcceptHeader
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Check if the "Accept" header is not already set
-
-            $request->headers->set('Accept', 'application/json');
-
-
+        $request->headers->set('Accept', 'application/json');
         return $next($request);
     }
 }
