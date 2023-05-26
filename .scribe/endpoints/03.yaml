@@ -75,11 +75,11 @@ endpoints:
         name: user_id
         description: ''
         required: true
-        example: sequi
+        example: vel
         type: string
         custom: []
     cleanBodyParameters:
-      user_id: sequi
+      user_id: vel
     fileParameters: []
     responses: []
     responseFields: []
