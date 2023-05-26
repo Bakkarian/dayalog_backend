@@ -16,11 +16,12 @@ e.g http://localhost:8000/docs
 - [x] Authentication
     - [x] register
     - [x] login
-    - [ ] Login with phone number and merchant code
+    - [x] Login with phone number and merchant code
     - [x] Logout
     - [x] reset password
     - [x] verify email
     - [x] Save Patasente account and phone number on user table
+    - [ ] Validating phone numbers 
     - [ ] login with PataSente account
 - [ ] Roles and permissions
 - [x] Devices Module
@@ -38,8 +39,8 @@ e.g http://localhost:8000/docs
     - [x] Attach a Device to a vehicle
     - [x] Detach a Device to a vehicle
     - [x] list Vehicles
-    - [ ] Attach Driver
-    - [ ] Detach Driver
+    - [x] Attach Driver
+    - [x] Detach Driver
 - [ ]  Order
     - [ ] Create order
     - [ ] Attach vehicle to order
