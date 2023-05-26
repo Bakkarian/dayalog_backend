@@ -31,7 +31,9 @@ Route::middleware(['auth:sanctum'])->get(
 Route::apiResource('devices', DeviceController::class);
 
 Route::apiResource('drivers', DriverController::class);
-Route::apiResource('vehicles', VehiclesController::class);
+Route::post('/drivers/{driver}/vehicles/{vehicle}', [DriverController::class, 'assignVehicle']);
+Route::delete('/drivers/{driver}/vehicles/{vehicle}', [DriverController::class, 'removeVehicle']);
 
+Route::apiResource('vehicles', VehiclesController::class);
 Route::put('vehicles/{vehicle}/attach-device', [VehiclesController::class, 'attachDevice']);
 Route::put('vehicles/{vehicle}/detach-devices', [VehiclesController::class, 'detachDevices']);
