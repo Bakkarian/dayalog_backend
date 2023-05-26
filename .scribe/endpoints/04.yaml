@@ -68,83 +68,83 @@ endpoints:
         name: vin
         description: ''
         required: true
-        example: blanditiis
+        example: molestias
         type: string
         custom: []
       number_plate:
         name: number_plate
         description: ''
         required: true
-        example: id
+        example: quibusdam
         type: string
         custom: []
       make:
         name: make
         description: ''
         required: true
-        example: error
+        example: dolor
         type: string
         custom: []
       model:
         name: model
         description: ''
         required: true
-        example: non
+        example: voluptatum
         type: string
         custom: []
       availability:
         name: availability
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         custom: []
       capacity_weight:
         name: capacity_weight
         description: ''
         required: true
-        example: 3.0
+        example: 0.0
         type: number
         custom: []
       capacity_volume:
         name: capacity_volume
         description: ''
         required: true
-        example: 6.383213011
+        example: 115.70666023
         type: number
         custom: []
       insurance_policy_number:
         name: insurance_policy_number
         description: ''
         required: false
-        example: qui
+        example: ex
         type: string
         custom: []
       insurance_coverage:
         name: insurance_coverage
         description: ''
         required: false
-        example: sed
+        example: ut
         type: string
         custom: []
       insurance_expiration:
         name: insurance_expiration
         description: 'Must be a valid date.'
         required: false
-        example: '2023-05-26T05:39:38'
+        example: '2023-05-26T05:58:49'
         type: string
         custom: []
     cleanBodyParameters:
-      vin: blanditiis
-      number_plate: id
-      make: error
-      model: non
-      availability: false
-      capacity_weight: 3.0
-      capacity_volume: 6.383213011
-      insurance_policy_number: qui
-      insurance_coverage: sed
-      insurance_expiration: '2023-05-26T05:39:38'
+      vin: molestias
+      number_plate: quibusdam
+      make: dolor
+      model: voluptatum
+      availability: true
+      capacity_weight: 0.0
+      capacity_volume: 115.70666023
+      insurance_policy_number: ex
+      insurance_coverage: ut
+      insurance_expiration: '2023-05-26T05:58:49'
     fileParameters: []
     responses: []
     responseFields: []
@@ -174,11 +174,11 @@ endpoints:
         name: id
         description: 'The ID of the vehicle.'
         required: true
-        example: 10
+        example: 17
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 10
+      id: 17
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -189,7 +189,7 @@ endpoints:
         status: 404
         content: |-
           {
-              "message": "No query results for model [App\\Models\\Vehicle] 10",
+              "message": "No query results for model [App\\Models\\Vehicle] 17",
               "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
               "file": "/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
               "line": 408,
@@ -705,11 +705,11 @@ endpoints:
         name: id
         description: 'The ID of the vehicle.'
         required: true
-        example: 18
+        example: 10
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 18
+      id: 10
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -743,11 +743,11 @@ endpoints:
         name: vehicle
         description: 'The vehicle.'
         required: true
-        example: 1
+        example: 8
         type: integer
         custom: []
     cleanUrlParameters:
-      vehicle: 1
+      vehicle: 8
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -762,11 +762,11 @@ endpoints:
         name: device_id
         description: ''
         required: true
-        example: quasi
+        example: minus
         type: string
         custom: []
     cleanBodyParameters:
-      device_id: quasi
+      device_id: minus
     fileParameters: []
     responses: []
     responseFields: []
@@ -796,11 +796,11 @@ endpoints:
         name: vehicle_id
         description: 'The ID of the vehicle.'
         required: true
-        example: 13
+        example: 18
         type: integer
         custom: []
     cleanUrlParameters:
-      vehicle_id: 13
+      vehicle_id: 18
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:

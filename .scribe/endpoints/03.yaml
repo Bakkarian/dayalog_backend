@@ -75,11 +75,11 @@ endpoints:
         name: user_id
         description: ''
         required: true
-        example: vel
+        example: libero
         type: string
         custom: []
     cleanBodyParameters:
-      user_id: vel
+      user_id: libero
     fileParameters: []
     responses: []
     responseFields: []
@@ -217,6 +217,98 @@ endpoints:
         custom: []
     cleanUrlParameters:
       id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/drivers/{driver_id}/vehicles/{vehicle}'
+    metadata:
+      groupName: Drivers
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Assign Vehicle to Driver'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      driver_id:
+        name: driver_id
+        description: 'The ID of the driver.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      vehicle:
+        name: vehicle
+        description: 'The vehicle.'
+        required: true
+        example: 10
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      driver_id: 1
+      vehicle: 10
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/drivers/{driver_id}/vehicles/{vehicle}'
+    metadata:
+      groupName: Drivers
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove Vehicle from Driver'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      driver_id:
+        name: driver_id
+        description: 'The ID of the driver.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      vehicle:
+        name: vehicle
+        description: 'The vehicle.'
+        required: true
+        example: 3
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      driver_id: 1
+      vehicle: 3
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
