@@ -1,4 +1,5 @@
 <script setup>
+import primary_logo from '@/assets/LOGO-PRIMARY.png'
 import Checkbox from '@/Components/Checkbox.vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import InputError from '@/Components/InputError.vue';
@@ -33,18 +34,29 @@ const submit = () => {
     <GuestLayout>
         <Head title="Log in" />
 
-        <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
-            {{ status }}
-        </div>
+            <!-- Start of login -->
+                <div class="mx-auto w-full max-w-sm lg:w-96 animate__animated animate__fadeIn">
+                    <div>
+                    <div class="h-10 overflow-hidden flex items-center">
+                        <img class="w-[200px] w-auto" :src=primary_logo alt="dayalog" />
+                    </div>
+                    <h2 class="mt-8 text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
+                    <p class="mt-2 text-sm leading-6 text-gray-500">
+                        Don't have an account?
+                        {{ ' ' }}
+                        <Link :href="route('register')" class="font-semibold text-[#002760] hover:text-blue-700" >Sign up here</Link>
+                    </p>
+                    </div>
 
-        <form @submit.prevent="submit">
+                <div class="mt-10">
+                    <div>
+        <form @submit.prevent="submit" class="space-y-6">
             <div>
-                <InputLabel for="email" value="Email" />
-
+                <InputLabel for="email" value="Email address" />
+                <div class="mt-2">
                 <TextInput
                     id="email"
                     type="email"
-                    class="mt-1 block w-full"
                     v-model="form.email"
                     required
                     autofocus
@@ -53,42 +65,60 @@ const submit = () => {
 
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
+            </div>
 
-            <div class="mt-4">
+            <div>
                 <InputLabel for="password" value="Password" />
+            <div class="mt-2">
 
                 <TextInput
                     id="password"
                     type="password"
-                    class="mt-1 block w-full"
                     v-model="form.password"
                     required
                     autocomplete="current-password"
                 />
-
-                <InputError class="mt-2" :message="form.errors.password" />
             </div>
+        </div>
 
-            <div class="block mt-4">
-                <label class="flex items-center">
-                    <Checkbox name="remember" v-model:checked="form.remember" />
-                    <span class="ml-2 text-sm text-gray-600">Remember me</span>
-                </label>
-            </div>
+                        <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <Checkbox  id="remember-me" name="remember-me" v-model:checked="form.remember" />
+                            <label for="remember-me" class="ml-3 block text-sm leading-6 text-gray-700">Remember me</label>
+                        </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <Link
-                    v-if="canResetPassword"
-                    :href="route('password.request')"
-                    class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                    Forgot your password?
-                </Link>
+                        <div class="text-sm leading-6">
+                            <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+                        </div>
+                        </div>
 
-                <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Log in
+                <div>
+                <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    Sign In
                 </PrimaryButton>
-            </div>
-        </form>
+                        </div>
+                    </form>
+                    </div>
+
+                    <div class="mt-10">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                        <div class="w-full border-t border-gray-200" />
+                        </div>
+                        <div class="relative flex justify-center text-sm font-medium leading-6">
+                        <span class="bg-white px-6 text-gray-900">Or Create Account</span>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <Link :href="route('register')" class="flex w-full justify-center rounded-md bg-blue-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-700 focus-visible:outline">Signup</Link>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <!-- End of login -->
     </GuestLayout>
 </template>
+
+  <style scoped>
+
+  </style>
