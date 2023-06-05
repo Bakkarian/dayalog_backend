@@ -9,8 +9,7 @@ use App\Http\Controllers\Auth\API\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
-                ->middleware('guest')
-                ->name('register');
+                ->middleware('guest');
 
 // Route::post('/login', [AuthenticatedSessionController::class, 'store'])
 //                 ->middleware('guest')
@@ -20,21 +19,16 @@ Route::post('/register', [RegisteredUserController::class, 'store'])
 Route::post('/tokens/create', [AuthenticatedSessionController::class, 'getToken' ] )->middleware('guest')->name('get.token');
 
 Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])
-                ->middleware('guest')
-                ->name('password.email');
+                ->middleware('guest');
 
 Route::post('/reset-password', [NewPasswordController::class, 'store'])
-                ->middleware('guest')
-                ->name('password.store');
+                ->middleware('guest');
 
 Route::get('/verify-email/{id}/{hash}', VerifyEmailController::class)
-                ->middleware(['auth', 'signed', 'throttle:6,1'])
-                ->name('verification.verify');
+                ->middleware(['auth', 'signed', 'throttle:6,1']);
 
 Route::post('/email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
-                ->middleware(['auth', 'throttle:6,1'])
-                ->name('verification.send');
+                ->middleware(['auth', 'throttle:6,1']);
 
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
-                ->middleware('auth')
-                ->name('logout');
+                ->middleware('auth');
