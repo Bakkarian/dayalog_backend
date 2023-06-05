@@ -70,83 +70,83 @@ endpoints:
         name: vin
         description: ''
         required: true
-        example: numquam
+        example: ut
         type: string
         custom: []
       number_plate:
         name: number_plate
         description: ''
         required: true
-        example: aut
+        example: unde
         type: string
         custom: []
       make:
         name: make
         description: ''
         required: true
-        example: iusto
+        example: suscipit
         type: string
         custom: []
       model:
         name: model
         description: ''
         required: true
-        example: ea
+        example: corrupti
         type: string
         custom: []
       availability:
         name: availability
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         custom: []
       capacity_weight:
         name: capacity_weight
         description: ''
         required: true
-        example: 3750.7426
+        example: 333992673.0911
         type: number
         custom: []
       capacity_volume:
         name: capacity_volume
         description: ''
         required: true
-        example: 0.1
+        example: 178.20518
         type: number
         custom: []
       insurance_policy_number:
         name: insurance_policy_number
         description: ''
         required: false
-        example: omnis
+        example: aut
         type: string
         custom: []
       insurance_coverage:
         name: insurance_coverage
         description: ''
         required: false
-        example: eum
+        example: provident
         type: string
         custom: []
       insurance_expiration:
         name: insurance_expiration
         description: 'Must be a valid date.'
         required: false
-        example: '2023-05-24T03:28:51'
+        example: '2023-05-26T06:39:37'
         type: string
         custom: []
     cleanBodyParameters:
-      vin: numquam
-      number_plate: aut
-      make: iusto
-      model: ea
-      availability: false
-      capacity_weight: 3750.7426
-      capacity_volume: 0.1
-      insurance_policy_number: omnis
-      insurance_coverage: eum
-      insurance_expiration: '2023-05-24T03:28:51'
+      vin: ut
+      number_plate: unde
+      make: suscipit
+      model: corrupti
+      availability: true
+      capacity_weight: 333992673.0911
+      capacity_volume: 178.20518
+      insurance_policy_number: aut
+      insurance_coverage: provident
+      insurance_expiration: '2023-05-26T06:39:37'
     fileParameters: []
     responses: []
     responseFields: []
@@ -176,11 +176,11 @@ endpoints:
         name: id
         description: 'The ID of the vehicle.'
         required: true
-        example: 19
+        example: 13
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 19
+      id: 13
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -191,7 +191,7 @@ endpoints:
         status: 404
         content: |-
           {
-              "message": "No query results for model [App\\Models\\Vehicle] 19",
+              "message": "No query results for model [App\\Models\\Vehicle] 13",
               "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
               "file": "/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
               "line": 408,
@@ -254,7 +254,7 @@ endpoints:
                   },
                   {
                       "file": "/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
-                      "line": 33,
+                      "line": 25,
                       "function": "Illuminate\\Pipeline\\{closure}",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
@@ -275,7 +275,7 @@ endpoints:
                   },
                   {
                       "file": "/home/iamafasha/Desktop/personal/dayalog/dayalog_api/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php",
-                      "line": 34,
+                      "line": 26,
                       "function": "then",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
@@ -669,11 +669,11 @@ endpoints:
         name: id
         description: 'The ID of the vehicle.'
         required: true
-        example: 13
+        example: 10
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 13
+      id: 10
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -707,11 +707,11 @@ endpoints:
         name: id
         description: 'The ID of the vehicle.'
         required: true
-        example: 8
+        example: 7
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 8
+      id: 7
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -745,11 +745,11 @@ endpoints:
         name: vehicle
         description: 'The vehicle.'
         required: true
-        example: 5
+        example: 18
         type: integer
         custom: []
     cleanUrlParameters:
-      vehicle: 5
+      vehicle: 18
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -764,11 +764,11 @@ endpoints:
         name: device_id
         description: ''
         required: true
-        example: praesentium
+        example: vitae
         type: string
         custom: []
     cleanBodyParameters:
-      device_id: praesentium
+      device_id: vitae
     fileParameters: []
     responses: []
     responseFields: []
@@ -798,11 +798,11 @@ endpoints:
         name: vehicle_id
         description: 'The ID of the vehicle.'
         required: true
-        example: 15
+        example: 12
         type: integer
         custom: []
     cleanUrlParameters:
-      vehicle_id: 15
+      vehicle_id: 12
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:

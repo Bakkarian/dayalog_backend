@@ -76,7 +76,7 @@ class DriverController extends Controller
     /**
      * Assign Vehicle to Driver
      */
-    public function assignVechile(Driver $driver, Vehicle $vechile)
+    public function assignVehicle(Driver $driver, Vehicle $vechile)
     {
         $vehicleDriver = VehicleDriver::create(
             [
@@ -84,7 +84,7 @@ class DriverController extends Controller
                 'driver_id' => $driver->id
             ]
         );
-        
+
         return response()->json([
             'message' => 'Vehicle assigned successfully.',
             'data' => $vehicleDriver
@@ -94,7 +94,7 @@ class DriverController extends Controller
      /**
      * Remove Vehicle from Driver
      */
-    public function RemoveVechile(Driver $driver, Vehicle $vechile)
+    public function removeVehicle(Driver $driver, Vehicle $vechile)
     {
         $vehicleDriver = VehicleDriver::where('vehicle_id', $vehicle->id)
             ->where('driver_id', $driver->id)
