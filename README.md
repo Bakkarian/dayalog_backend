@@ -53,3 +53,30 @@ e.g http://localhost:8000/docs
 - [ ] Terms and conditions management
 > **Warning:** This task list is still under development and review.
 
+#### Setup Project
+
+step 1 
+
+Clone the project 
+
+step 2
+```
+cp .env.example .env
+```
+
+step 3 
+
+Setup the .env environment variables required
+
+step 4
+
+```
+ php artisan migrate:fresh
+```
+step 5
+
+```
+php artisan db:seed
+```
+
+user email will be  `admin@dayalog.com` and the password will be `password`
