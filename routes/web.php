@@ -16,6 +16,11 @@ use Inertia\Inertia;
 |
 */
 
+Route::get('/test_page', function () {
+    return Inertia::render('Test', [
+    ]);
+});
+
 Route::get('/', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
