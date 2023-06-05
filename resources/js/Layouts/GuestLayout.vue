@@ -1,20 +1,29 @@
 <script setup>
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
+import logo from '@/assets/LOGO.png'
 import { Link } from '@inertiajs/vue3';
+
+    let images = [
+            "https://images.pexels.com/photos/5471182/pexels-photo-5471182.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://images.pexels.com/photos/248412/pexels-photo-248412.jpeg?auto=compress&cs=tinysrgb&w=1600",
+            "https://img.freepik.com/premium-vector/world-map-with-countries-borders_47243-900.jpg?w=2000",
+            "https://img.freepik.com/premium-vector/location-travel-road-white-background-vector-illustration_547150-338.jpg?w=1380",
+        ]
+
+    function getRandomImage(){
+        let randomInt = Math.floor(Math.random() * images.length);
+        return images[randomInt];
+    }
 </script>
 
 <template>
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-        <div>
-            <Link href="/">
-                <ApplicationLogo class="w-20 h-20 fill-current text-gray-500" />
-            </Link>
-        </div>
-
-        <div
-            class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg"
-        >
+    <div class="flex min-h-full flex-1">
+        <div class="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
             <slot />
         </div>
+      <div class="relative hidden w-0 flex-1 lg:block">
+        <img class="absolute inset-0 h-full w-full object-cover" :src="getRandomImage()" alt="" />
+        <img class="relative mx-auto opacity-40" :src=logo />
+      </div>
     </div>
 </template>
