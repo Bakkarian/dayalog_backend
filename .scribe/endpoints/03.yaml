@@ -1,16 +1,16 @@
-name: Drivers
+name: Vehicles
 description: ''
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/drivers
+    uri: api/vehicles
     metadata:
-      groupName: Drivers
+      groupName: Vehicles
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display a listing of the drivers.'
+      title: 'Display a listing of the vehicles.'
       description: ''
       authenticated: false
       custom: []
@@ -27,12 +27,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"user_id":1,"license":null,"created_at":"2023-05-23T18:59:03.000000Z","updated_at":"2023-05-23T18:59:03.000000Z"}],"links":{"first":"http:\/\/localhost:8000\/api\/drivers?page=1","last":"http:\/\/localhost:8000\/api\/drivers?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/drivers?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost:8000\/api\/drivers","per_page":25,"to":1,"total":1}}'
+        content: '{"data":[],"links":{"first":"http:\/\/localhost:8000\/api\/vehicles?page=1","last":"http:\/\/localhost:8000\/api\/vehicles?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":null,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/vehicles?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost:8000\/api\/vehicles","per_page":25,"to":null,"total":0}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '57'
+          x-ratelimit-remaining: '49'
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
         description: null
@@ -46,13 +46,13 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/drivers
+    uri: api/vehicles
     metadata:
-      groupName: Drivers
+      groupName: Vehicles
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store a newly created drivers.'
+      title: 'Add vehicle to the system'
       description: ''
       authenticated: false
       custom: []
@@ -64,22 +64,87 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      license:
-        name: license
-        description: ''
-        required: false
-        example: null
-        type: string
-        custom: []
-      user_id:
-        name: user_id
+      vin:
+        name: vin
         description: ''
         required: true
-        example: exercitationem
+        example: officiis
+        type: string
+        custom: []
+      number_plate:
+        name: number_plate
+        description: ''
+        required: true
+        example: labore
+        type: string
+        custom: []
+      make:
+        name: make
+        description: ''
+        required: true
+        example: autem
+        type: string
+        custom: []
+      model:
+        name: model
+        description: ''
+        required: true
+        example: ea
+        type: string
+        custom: []
+      availability:
+        name: availability
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        custom: []
+      capacity_weight:
+        name: capacity_weight
+        description: ''
+        required: true
+        example: 97.3457
+        type: number
+        custom: []
+      capacity_volume:
+        name: capacity_volume
+        description: ''
+        required: true
+        example: 21.4
+        type: number
+        custom: []
+      insurance_policy_number:
+        name: insurance_policy_number
+        description: ''
+        required: false
+        example: fugit
+        type: string
+        custom: []
+      insurance_coverage:
+        name: insurance_coverage
+        description: ''
+        required: false
+        example: veritatis
+        type: string
+        custom: []
+      insurance_expiration:
+        name: insurance_expiration
+        description: 'Must be a valid date.'
+        required: false
+        example: '2023-06-08T19:35:20'
         type: string
         custom: []
     cleanBodyParameters:
-      user_id: exercitationem
+      vin: officiis
+      number_plate: labore
+      make: autem
+      model: ea
+      availability: true
+      capacity_weight: 97.3457
+      capacity_volume: 21.4
+      insurance_policy_number: fugit
+      insurance_coverage: veritatis
+      insurance_expiration: '2023-06-08T19:35:20'
     fileParameters: []
     responses: []
     responseFields: []
@@ -91,13 +156,13 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/drivers/{id}'
+    uri: 'api/vehicles/{id}'
     metadata:
-      groupName: Drivers
+      groupName: Vehicles
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display the specified resource.'
+      title: 'Get vehicle details'
       description: ''
       authenticated: false
       custom: []
@@ -107,13 +172,13 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the driver.'
+        description: 'The ID of the vehicle.'
         required: true
-        example: 1
+        example: 8
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 8
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -121,13 +186,13 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"data":{"id":1,"user_id":1,"license":null,"created_at":"2023-05-23T18:59:03.000000Z","updated_at":"2023-05-23T18:59:03.000000Z"}}'
+        status: 404
+        content: '{"message":"Record not found."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '56'
+          x-ratelimit-remaining: '48'
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
         description: null
@@ -142,13 +207,13 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'api/drivers/{id}'
+    uri: 'api/vehicles/{id}'
     metadata:
-      groupName: Drivers
+      groupName: Vehicles
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update the specified driver.'
+      title: 'Update vehicle information.'
       description: ''
       authenticated: false
       custom: []
@@ -158,160 +223,152 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the driver.'
+        description: 'The ID of the vehicle.'
+        required: true
+        example: 14
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 14
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/vehicles/{id}'
+    metadata:
+      groupName: Vehicles
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete a vehicle.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the vehicle.'
         required: true
         example: 1
         type: integer
         custom: []
     cleanUrlParameters:
       id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/vehicles/{vehicle}/attach-device'
+    metadata:
+      groupName: Vehicles
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Attach device to a vehicle'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      vehicle:
+        name: vehicle
+        description: 'The vehicle.'
+        required: true
+        example: 15
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      vehicle: 15
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      driver:
-        name: driver
+      vehicle:
+        name: vehicle
         description: ''
         required: false
         example: null
         type: string
         custom: []
-      user_id:
-        name: user_id
+      device_id:
+        name: device_id
+        description: ''
+        required: true
+        example: quisquam
+        type: string
+        custom: []
+    cleanBodyParameters:
+      device_id: quisquam
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/vehicles/{vehicle_id}/detach-devices'
+    metadata:
+      groupName: Vehicles
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove devices attached to a vehicle.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      vehicle_id:
+        name: vehicle_id
+        description: 'The ID of the vehicle.'
+        required: true
+        example: 5
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      vehicle_id: 5
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      vehicle:
+        name: vehicle
         description: ''
         required: false
         example: null
         type: string
         custom: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/drivers/{id}'
-    metadata:
-      groupName: Drivers
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Remove driver from the system.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the driver.'
-        required: true
-        example: 1
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/drivers/{driver_id}/vehicles/{vehicle}'
-    metadata:
-      groupName: Drivers
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Assign Vehicle to Driver'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      driver_id:
-        name: driver_id
-        description: 'The ID of the driver.'
-        required: true
-        example: 1
-        type: integer
-        custom: []
-      vehicle:
-        name: vehicle
-        description: 'The vehicle.'
-        required: true
-        example: 16
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      driver_id: 1
-      vehicle: 16
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/drivers/{driver_id}/vehicles/{vehicle}'
-    metadata:
-      groupName: Drivers
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Remove Vehicle from Driver'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      driver_id:
-        name: driver_id
-        description: 'The ID of the driver.'
-        required: true
-        example: 1
-        type: integer
-        custom: []
-      vehicle:
-        name: vehicle
-        description: 'The vehicle.'
-        required: true
-        example: 11
-        type: integer
-        custom: []
-    cleanUrlParameters:
-      driver_id: 1
-      vehicle: 11
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
     responses: []

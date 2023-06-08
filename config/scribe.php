@@ -67,7 +67,7 @@ return [
                      */
                     'config' => [
                         'app.env' => 'documentation',
-                        // 'app.debug' => false,
+                        'app.debug' => false,
                     ],
 
                     /*
