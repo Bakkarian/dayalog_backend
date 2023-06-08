@@ -7,6 +7,7 @@ import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
 
+defineOptions({ layout: GuestLayout })
 const form = useForm({
     name: '',
     email: '',
@@ -21,10 +22,7 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout>
         <Head title="Register" />
-
-
                 <!-- start of sign up -->
                 <div class="mx-auto w-full max-w-sm lg:w-96 animate__animated animate__fadeIn">
                 <div>
@@ -114,9 +112,8 @@ const submit = () => {
                 </div>
                 </div>
                 <!-- end of signup -->
-    </GuestLayout>
 </template>
 
-  <style scoped>
+<style scoped>
 
-  </style>
+</style>
