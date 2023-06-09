@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Dayalog API Usage",
-        "_postman_id": "15037f14-030d-468e-81cb-b92ec8b3f4d8",
+        "_postman_id": "b5cdd717-c513-46f4-af84-5824b27f8f86",
         "description": "Documentation for dayalog api",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"btkesdip\",\"email\":\"daren27@example.net\",\"patasente_id\":\"laboriosam\",\"phone_number\":\"voluptates\",\"password\":\"excepturi\"}"
+                            "raw": "{\"name\":\"lypvbsjvieryld\",\"email\":\"zferry@example.org\",\"patasente_id\":\"qui\",\"phone_number\":\"facilis\",\"password\":\"itaque\"}"
                         },
                         "description": "",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"vitae\",\"password\":\"=2m08mVP\\\/IX(SH\",\"token_name\":\"reiciendis\"}"
+                            "raw": "{\"user_id\":\"atque\",\"password\":\"K#I\\\/o-8jDDVLLFC'gu\",\"token_name\":\"enim\"}"
                         },
                         "description": "",
                         "auth": {
@@ -103,7 +103,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"bode.tyree@example.com\"}"
+                            "raw": "{\"email\":\"enrique91@example.net\"}"
                         },
                         "description": "",
                         "auth": {
@@ -134,7 +134,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"token\":\"nisi\",\"email\":\"reinger.rene@example.org\",\"password\":\"perspiciatis\"}"
+                            "raw": "{\"token\":\"molestiae\",\"email\":\"steuber.nathanial@example.com\",\"password\":\"sunt\"}"
                         },
                         "description": "",
                         "auth": {
@@ -155,13 +155,13 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "qui",
+                                    "value": "eveniet",
                                     "description": "The ID of the verify email."
                                 },
                                 {
                                     "id": "hash",
                                     "key": "hash",
-                                    "value": "reprehenderit",
+                                    "value": "omnis",
                                     "description": ""
                                 }
                             ]
@@ -314,7 +314,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "53"
+                                    "value": "59"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -353,7 +353,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"distinctio\",\"uniqueid\":\"jpuerewrlzrqmpdrpdmhet\",\"model\":\"magnam\",\"tc_user_id\":1}"
+                            "raw": "{\"name\":\"voluptate\",\"uniqueid\":\"fnntzcbweebkmoslazs\",\"model\":\"tempora\",\"tc_user_id\":1878.410187}"
                         },
                         "description": "",
                         "auth": {
@@ -413,7 +413,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "52"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -551,7 +551,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "51"
+                                    "value": "57"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -590,7 +590,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"sequi\"}"
+                            "raw": "{\"user_id\":\"illo\"}"
                         },
                         "description": "",
                         "auth": {
@@ -611,7 +611,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "19",
+                                    "value": "13",
                                     "description": "The ID of the driver."
                                 }
                             ]
@@ -650,7 +650,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "50"
+                                    "value": "56"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -718,7 +718,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "9",
+                                    "value": "8",
                                     "description": "The ID of the driver."
                                 }
                             ]
@@ -754,13 +754,13 @@
                                 {
                                     "id": "driver_id",
                                     "key": "driver_id",
-                                    "value": "12",
+                                    "value": "4",
                                     "description": "The ID of the driver."
                                 },
                                 {
                                     "id": "vehicle",
                                     "key": "vehicle",
-                                    "value": "6",
+                                    "value": "10",
                                     "description": "The vehicle."
                                 }
                             ]
@@ -796,14 +796,251 @@
                                 {
                                     "id": "driver_id",
                                     "key": "driver_id",
-                                    "value": "14",
+                                    "value": "2",
                                     "description": "The ID of the driver."
                                 },
                                 {
                                     "id": "vehicle",
                                     "key": "vehicle",
-                                    "value": "9",
+                                    "value": "10",
                                     "description": "The vehicle."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Orders",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the orders.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/orders",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/orders"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "53"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "localhost:8000"
+                                },
+                                {
+                                    "key": "access-control-allow-credentials",
+                                    "value": "true"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[],\"links\":{\"first\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"last\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":null,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders\",\"per_page\":25,\"to\":null,\"total\":0}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Add an order to the system",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/orders",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/orders"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"from\":\"modi\",\"to\":\"eligendi\",\"patasente_purchase_order_id\":6,\"reference\":\"doloremque\",\"notes\":\"itaque\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get all details of an order",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/orders\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/orders\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "3",
+                                    "description": "The ID of the order."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "52"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "localhost:8000"
+                                },
+                                {
+                                    "key": "access-control-allow-credentials",
+                                    "value": "true"
+                                }
+                            ],
+                            "code": 404,
+                            "body": "{\"message\":\"Record not found.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update Update order details.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/orders\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/orders\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "5",
+                                    "description": "The ID of the order."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete an order.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/orders\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/orders\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "17",
+                                    "description": "The ID of the order."
                                 }
                             ]
                         },
@@ -933,7 +1170,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "49"
+                                    "value": "55"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -972,7 +1209,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"vin\":\"officiis\",\"number_plate\":\"labore\",\"make\":\"autem\",\"model\":\"ea\",\"availability\":true,\"capacity_weight\":97.3457,\"capacity_volume\":21.4,\"insurance_policy_number\":\"fugit\",\"insurance_coverage\":\"veritatis\",\"insurance_expiration\":\"2023-06-08T19:35:20\"}"
+                            "raw": "{\"vin\":\"eius\",\"number_plate\":\"ratione\",\"make\":\"explicabo\",\"model\":\"unde\",\"availability\":true,\"capacity_weight\":14237146.94189,\"capacity_volume\":1211293.690282,\"insurance_policy_number\":\"consequatur\",\"insurance_coverage\":\"eaque\",\"insurance_expiration\":\"2023-06-09T05:37:20\"}"
                         },
                         "description": "",
                         "auth": {
@@ -993,7 +1230,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "8",
+                                    "value": "10",
                                     "description": "The ID of the vehicle."
                                 }
                             ]
@@ -1032,7 +1269,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "48"
+                                    "value": "54"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1061,7 +1298,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "14",
+                                    "value": "12",
                                     "description": "The ID of the vehicle."
                                 }
                             ]
@@ -1097,7 +1334,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "18",
                                     "description": "The ID of the vehicle."
                                 }
                             ]
@@ -1151,7 +1388,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"device_id\":\"quisquam\"}"
+                            "raw": "{\"device_id\":\"quia\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1172,7 +1409,7 @@
                                 {
                                     "id": "vehicle_id",
                                     "key": "vehicle_id",
-                                    "value": "5",
+                                    "value": "7",
                                     "description": "The ID of the vehicle."
                                 }
                             ]
