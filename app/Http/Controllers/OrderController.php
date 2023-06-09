@@ -7,10 +7,13 @@ use App\Http\Resources\OrderResource;
 use App\Models\Order;
 use Illuminate\Http\Request;
 
+/**
+ * @group Orders
+ */
 class OrderController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the orders.
      */
     public function index()
     {
@@ -18,7 +21,7 @@ class OrderController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Add an order to the system
      */
     public function store(OrderRequest $request)
     {
@@ -34,7 +37,7 @@ class OrderController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Get all details of an order
      */
     public function show(Order $order)
     {
@@ -42,7 +45,7 @@ class OrderController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update Update order details.
      */
     public function update(Request $request, Order $order)
     {
@@ -57,7 +60,7 @@ class OrderController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete an order.
      */
     public function destroy(Order $order)
     {
