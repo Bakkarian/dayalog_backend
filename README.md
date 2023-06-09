@@ -42,11 +42,12 @@ e.g http://localhost:8000/docs
     - [x] Attach Driver
     - [x] Detach Driver
 - [ ]  Order
-    - [ ] Create order
+    - [x] Create order
     - [ ] Attach vehicle to order
-    - [ ] Get order information
+    - [x] Get order information
     - [ ] Attach vehicle an order
-    - [ ] get order vehicle information for a vehicle
+    - [x] Delete order
+    - [x] Edit order
 - [ ] Dispatch Module (Order submodule)
     - [ ] create a route(dispatch )
 - [ ] FileManager 
