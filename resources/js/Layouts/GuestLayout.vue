@@ -1,19 +1,31 @@
 <script setup>
-import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import logo from '@/assets/LOGO.png'
-import { Link } from '@inertiajs/vue3';
+    import logo from '@/assets/LOGO.png'
+    import { usePage } from '@inertiajs/vue3';
+    import { ref, onMounted, watch, computed } from 'vue';
 
-    let images = [
+    const component = computed(() => usePage().component)
+    const image = ref("");
+
+
+    function getRandomImage(){
+        const images = [
             "https://images.pexels.com/photos/5471182/pexels-photo-5471182.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             "https://images.pexels.com/photos/248412/pexels-photo-248412.jpeg?auto=compress&cs=tinysrgb&w=1600",
             "https://img.freepik.com/premium-vector/world-map-with-countries-borders_47243-900.jpg?w=2000",
             "https://img.freepik.com/premium-vector/location-travel-road-white-background-vector-illustration_547150-338.jpg?w=1380",
         ]
-
-    function getRandomImage(){
-        let randomInt = Math.floor(Math.random() * images.length);
+        const randomInt = Math.floor(Math.random() * images.length);
         return images[randomInt];
     }
+
+    onMounted(() => {
+        image.value = getRandomImage()
+    });
+
+    watch(component, async (newVal, oldVal) => {
+        image.value = getRandomImage()
+    });
+
 </script>
 
 <template>
@@ -22,7 +34,7 @@ import { Link } from '@inertiajs/vue3';
             <slot />
         </div>
       <div class="relative hidden w-0 flex-1 lg:block">
-        <img class="absolute inset-0 h-full w-full object-cover" :src="getRandomImage()" alt="" />
+        <img class="absolute inset-0 h-full w-full object-cover" :src="image" alt="" />
         <img class="relative mx-auto opacity-40" :src=logo />
       </div>
     </div>
