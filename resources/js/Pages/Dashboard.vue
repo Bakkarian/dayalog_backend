@@ -30,10 +30,10 @@
                     <nav class="flex flex-1 flex-col">
                       <ul role="list" class="-mx-2 flex-1 space-y-1">
                         <li v-for="item in navigation" :key="item.name">
-                          <a :href="item.href" :class="[item.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
+                          <Link :href="item.href" :class="[item.current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold']">
                             <component :is="item.icon" class="h-6 w-6 shrink-0" aria-hidden="true" />
                             {{ item.name }}
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </nav>
@@ -52,10 +52,10 @@
           <nav class="mt-8">
             <ul role="list" class="flex flex-col items-center space-y-1">
               <li v-for="item in navigation" :key="item.name">
-                <a :href="item.href" :class="[item.current ? 'bg-black bg-opacity-30 text-white' : 'text-gray-400 hover:text-white hover:bg-black hover:bg-opacity-20', 'group flex gap-x-3 rounded-md p-3 text-sm leading-6 font-semibold']">
+                <Link :href="item.href" :class="[item.href.endsWith(url) ? 'bg-black bg-opacity-30 text-red' : 'text-gray-400 hover:text-white hover:bg-black hover:bg-opacity-20', 'group flex gap-x-3 rounded-md p-3 text-sm leading-6 font-semibold']">
                   <component :is="item.icon" class="h-6 w-6 shrink-0" aria-hidden="true" />
                   <span class="sr-only">{{ item.name }}</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
@@ -99,7 +99,7 @@
                   <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
                     <MenuItems class="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
                       <MenuItem v-for="item in userNavigation" :key="item.name" v-slot="{ active }">
-                        <a :href="item.href" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">{{ item.name }}</a>
+                        <Link :href="item.href" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">{{ item.name }}</Link>
                       </MenuItem>
                     </MenuItems>
                   </transition>
@@ -130,7 +130,7 @@
   </template>
 
   <script setup>
-  import {reactive, ref} from 'vue'
+  import { ref} from 'vue'
   import DriverList1 from "@/Containers/DriverList1.vue";
   import  ProgressLoader from '@/Containers/loader.vue'
   import { Loader } from "@googlemaps/js-api-loader"
@@ -147,28 +147,15 @@
   import {
     Bars3Icon,
     BellIcon,
-    CalendarIcon,
-    ChartPieIcon,
-    DocumentDuplicateIcon,
-    FolderIcon,
-    HomeIcon,
-    UsersIcon,
     XMarkIcon,
   } from '@heroicons/vue/24/outline'
   import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
+  import useNavigation from '@/composable'
+  import { Link, usePage } from '@inertiajs/vue3';
+  import { computed } from 'vue';
 
-  const navigation = [
-    { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
-    { name: 'Team', href: '#', icon: UsersIcon, current: false },
-    { name: 'Projects', href: '#', icon: FolderIcon, current: false },
-    { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-    { name: 'Documents', href: '#', icon: DocumentDuplicateIcon, current: false },
-    { name: 'Reports', href: '#', icon: ChartPieIcon, current: false },
-  ]
-  const userNavigation = [
-    { name: 'Your profile', href: '#' },
-    { name: 'Sign out', href: '#' },
-  ]
+  const url = computed(() => usePage().url)
+  const { navigation, userNavigation } = useNavigation()
 
   const sidebarOpen = ref(false)
   let loadingList = ref(true)
