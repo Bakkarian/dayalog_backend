@@ -13,7 +13,7 @@
                             <div class="sm:col-span-4">
                                 <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Device name</label>
                                 <div class="mt-2">
-                                    <input type="text" name="device-name" id="device-name" placeholder="Unique device name" autocomplete="device-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    <input type="text" name="device-name" id="device-name" required placeholder="Unique device name" autocomplete="device-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
 
@@ -21,21 +21,21 @@
                                 <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Device Unique Id</label>
                                 <p class="text-xs text-gray-500">Usually the last 10 digits of the IMEI number but with a "0" at the beginning</p>
                                 <div class="mt-2">
-                                    <input type="number" value="0" name="unique-id" id="unique-id" autocomplete="unique-id" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    <input type="number" value="0" name="unique-id" required id="unique-id" autocomplete="unique-id" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
 
                             <div class="sm:col-span-4">
                                 <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Device Model</label>
                                 <div class="mt-2">
-                                    <input id="device-model" name="model" type="text" placeholder="Example: tk103" autocomplete="model-number" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    <input id="device-model" name="model" type="text" required placeholder="Example: tk103" autocomplete="model-number" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
 
 
                             <div class="sm:col-span-4">
                                 <div class="mt-2">
-                                    <input id="model" name="model" type="text" value="09876" disabled class="block w-full disabled:text-gray-300 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                    <input id="model" name="model" type="text" value="09876" required disabled class="block w-full disabled:text-gray-300 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
                         </div>
@@ -47,12 +47,12 @@
                 </div>
             </form>
             <div class="hidden lg:block">
-                <img src="../assets/add-device.svg">
+                <img class="max-w-md mx-auto" src="../assets/add-device.svg">
             </div>
         </div>
     </div>
   </template>
 
   <script setup>
-  import { PhotoIcon, UserCircleIcon } from '@heroicons/vue/24/outline'
+
   </script>
