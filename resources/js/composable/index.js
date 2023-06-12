@@ -5,7 +5,8 @@ import {
   DocumentDuplicateIcon,
   FolderIcon,
   HomeIcon,
-  UsersIcon,
+    UsersIcon,
+  DeviceTabletIcon,
 } from '@heroicons/vue/24/outline'
 import { usePage } from '@inertiajs/vue3'
 
@@ -18,11 +19,12 @@ export default function useNavigation() {
 
   const navigation = computed(() => [
     { name: 'Dashboard', href: route('dashboard'), icon: HomeIcon, current: route('dashboard').endsWith(url) },
+    { name: 'Add Device', href: route('device.create'), icon: DeviceTabletIcon, current: route('device.create').endsWith(url) },
     { name: 'Create Driver', href: route('driver.create'), icon: UsersIcon, current: route('driver.create').endsWith(url) },
-    { name: 'Projects', href: route('test'), icon: FolderIcon, current: route('test').endsWith(url) },
+    /*{ name: 'Projects', href: route('test'), icon: FolderIcon, current: route('test').endsWith(url) },
     { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
     { name: 'Documents', href: '#', icon: DocumentDuplicateIcon, current: false },
-    { name: 'Reports', href: '#', icon: ChartPieIcon, current: false },
+    { name: 'Reports', href: '#', icon: ChartPieIcon, current: false },*/
   ])
 
   const userNavigation = [
