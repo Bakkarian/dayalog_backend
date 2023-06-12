@@ -131,6 +131,7 @@
 
   <script setup>
   import { ref} from 'vue'
+  import Layout from '@/Layouts/NoLayout.vue';
   import DriverList1 from "@/Containers/DriverList1.vue";
   import  ProgressLoader from '@/Containers/loader.vue'
   import { Loader } from "@googlemaps/js-api-loader"
@@ -154,6 +155,7 @@
   import { Link, usePage } from '@inertiajs/vue3';
   import { computed } from 'vue';
 
+  defineOptions({ layout: Layout })
   const url = computed(() => usePage().url)
   const { navigation, userNavigation } = useNavigation()
 
