@@ -28,7 +28,7 @@ class VehiclesController extends Controller
      */
     public function store(VehicleRequest $request)
     {
-        $device = Vehicle::create([
+        $vehicle = Vehicle::create([
             'vin' => $request->vin,
             'number_plate' => $request->number_plate,
             'make' => $request->make,
@@ -40,7 +40,7 @@ class VehiclesController extends Controller
             'insurance_expiration' => $request->insurance_expiration
         ]);
 
-        return new VehicleResource($device);
+        return new VehicleResource($vehicle);
     }
 
     /**

@@ -19,7 +19,7 @@ use Inertia\Inertia;
 Route::get('/test_page', function () {
     return Inertia::render('Test', [
     ]);
-});
+})->name('test');
 
 Route::get('/', function () {
     return Inertia::render('Dashboard');
@@ -27,7 +27,7 @@ Route::get('/', function () {
 
 Route::get('/create-driver', function () {
     return Inertia::render('Main');
-})->middleware(['auth', 'verified'])->name('main');
+})->middleware(['auth', 'verified'])->name('driver.create');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

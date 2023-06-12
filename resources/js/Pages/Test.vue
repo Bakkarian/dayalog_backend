@@ -1,6 +1,5 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
-
 defineProps({
     canLogin: {
         type: Boolean,
@@ -10,11 +9,11 @@ defineProps({
     },
     laravelVersion: {
         type: String,
-        required: true,
+        required: false,
     },
     phpVersion: {
         type: String,
-        required: true,
+        required: false,
     },
 });
 </script>

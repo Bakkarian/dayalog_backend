@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\DriverController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\VehiclesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -36,5 +37,7 @@ Route::delete('/drivers/{driver}/vehicles/{vehicle}', [DriverController::class, 
 Route::apiResource('vehicles', VehiclesController::class);
 Route::put('vehicles/{vehicle}/attach-device', [VehiclesController::class, 'attachDevice']);
 Route::put('vehicles/{vehicle}/detach-devices', [VehiclesController::class, 'detachDevices']);
+
+Route::apiResource('orders', OrderController::class);
 
 require __DIR__.'/api_auth.php';

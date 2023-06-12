@@ -109,18 +109,13 @@
           </div>
 
           <main class="xl:pl-96">
-            <div class="px-4 py-10 sm:px-6 lg:px-8 lg:py-6">
-              <!-- Main area -->
-            </div>
+            <slot />
           </main>
         </div>
 
         <aside class="fixed bottom-0 left-20 top-16 hidden w-96 border-r border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block animate__animated animate__fadeIn">
           <!-- Secondary column (hidden on smaller screens) -->
-          <div id="driver-list" class="mt-8 w-full overflow-y-auto bg-white h-40 shadow-lg rounded-md transition-all ease-in-out duration-300">
-            <ProgressLoader v-if="loadingList"/>
-            <DriverList1 :routeFunction="showroute" v-else />
-          </div>
+          <slot name="aside" ></slot>
         </aside>
       </div>
 
@@ -131,7 +126,6 @@
 
   <script setup>
   import { ref} from 'vue'
-  import Layout from '@/Layouts/NoLayout.vue';
   import DriverList1 from "@/Containers/DriverList1.vue";
   import  ProgressLoader from '@/Containers/loader.vue'
   import { Loader } from "@googlemaps/js-api-loader"
@@ -155,7 +149,6 @@
   import { Link, usePage } from '@inertiajs/vue3';
   import { computed } from 'vue';
 
-  defineOptions({ layout: Layout })
   const url = computed(() => usePage().url)
   const { navigation, userNavigation } = useNavigation()
 
