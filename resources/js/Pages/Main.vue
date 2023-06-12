@@ -189,8 +189,5 @@
   </template>
 
   <script setup>
-  import Layout from '@/Layouts/MainLayout.vue';
   import { PhotoIcon, UserCircleIcon } from '@heroicons/vue/24/outline'
-  defineOptions({ layout: Layout })
-
   </script>
