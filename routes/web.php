@@ -26,8 +26,12 @@ Route::get('/', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/create-driver', function () {
-    return Inertia::render('Main');
+    return Inertia::render('CreateDriver');
 })->middleware(['auth', 'verified'])->name('driver.create');
+
+Route::get('/add-device', function () {
+    return Inertia::render('AddDevice');
+})->middleware(['auth', 'verified'])->name('device.create');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
