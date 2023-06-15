@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Dayalog API Usage",
-        "_postman_id": "b5cdd717-c513-46f4-af84-5824b27f8f86",
+        "_postman_id": "c268fbf8-1a2d-415d-b0cd-e7a587a97039",
         "description": "Documentation for dayalog api",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"lypvbsjvieryld\",\"email\":\"zferry@example.org\",\"patasente_id\":\"qui\",\"phone_number\":\"facilis\",\"password\":\"itaque\"}"
+                            "raw": "{\"name\":\"thiu\",\"email\":\"paula91@example.com\",\"patasente_id\":\"recusandae\",\"phone_number\":\"cum\",\"password\":\"dolorem\"}"
                         },
                         "description": "",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"atque\",\"password\":\"K#I\\\/o-8jDDVLLFC'gu\",\"token_name\":\"enim\"}"
+                            "raw": "{\"user_id\":\"voluptate\",\"password\":\"+|Q+ot1|M2bz6kZs\",\"token_name\":\"consequuntur\"}"
                         },
                         "description": "",
                         "auth": {
@@ -103,7 +103,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"enrique91@example.net\"}"
+                            "raw": "{\"email\":\"maximillian96@example.com\"}"
                         },
                         "description": "",
                         "auth": {
@@ -134,7 +134,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"token\":\"molestiae\",\"email\":\"steuber.nathanial@example.com\",\"password\":\"sunt\"}"
+                            "raw": "{\"token\":\"quasi\",\"email\":\"dickens.emma@example.com\",\"password\":\"aliquam\"}"
                         },
                         "description": "",
                         "auth": {
@@ -155,13 +155,13 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "eveniet",
+                                    "value": "rerum",
                                     "description": "The ID of the verify email."
                                 },
                                 {
                                     "id": "hash",
                                     "key": "hash",
-                                    "value": "omnis",
+                                    "value": "atque",
                                     "description": ""
                                 }
                             ]
@@ -353,7 +353,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"voluptate\",\"uniqueid\":\"fnntzcbweebkmoslazs\",\"model\":\"tempora\",\"tc_user_id\":1878.410187}"
+                            "raw": "{\"name\":\"ullam\",\"uniqueid\":\"rcapnlnjnjunodpwpkijaxld\",\"model\":\"commodi\",\"tc_user_id\":20.574}"
                         },
                         "description": "",
                         "auth": {
@@ -590,7 +590,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"illo\"}"
+                            "raw": "{\"user_id\":\"fugit\"}"
                         },
                         "description": "",
                         "auth": {
@@ -611,7 +611,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "13",
+                                    "value": "19",
                                     "description": "The ID of the driver."
                                 }
                             ]
@@ -679,7 +679,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "9",
+                                    "value": "7",
                                     "description": "The ID of the driver."
                                 }
                             ]
@@ -718,7 +718,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "8",
+                                    "value": "13",
                                     "description": "The ID of the driver."
                                 }
                             ]
@@ -754,13 +754,13 @@
                                 {
                                     "id": "driver_id",
                                     "key": "driver_id",
-                                    "value": "4",
+                                    "value": "6",
                                     "description": "The ID of the driver."
                                 },
                                 {
                                     "id": "vehicle",
                                     "key": "vehicle",
-                                    "value": "10",
+                                    "value": "1",
                                     "description": "The vehicle."
                                 }
                             ]
@@ -796,13 +796,13 @@
                                 {
                                     "id": "driver_id",
                                     "key": "driver_id",
-                                    "value": "2",
+                                    "value": "5",
                                     "description": "The ID of the driver."
                                 },
                                 {
                                     "id": "vehicle",
                                     "key": "vehicle",
-                                    "value": "10",
+                                    "value": "1",
                                     "description": "The vehicle."
                                 }
                             ]
@@ -887,7 +887,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[],\"links\":{\"first\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"last\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":null,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders\",\"per_page\":25,\"to\":null,\"total\":0}}",
+                            "body": "{\"data\":[{\"id\":1,\"from\":1,\"to\":1,\"patasente_purchase_order_id\":\"6\",\"reference\":\"doloremque\",\"notes\":\"itaque\",\"created_at\":\"2023-06-15T02:18:32.000000Z\",\"updated_at\":\"2023-06-15T02:18:32.000000Z\"},{\"id\":2,\"from\":1,\"to\":1,\"patasente_purchase_order_id\":\"6\",\"reference\":\"doloremque\",\"notes\":\"itaque\",\"created_at\":\"2023-06-15T02:21:38.000000Z\",\"updated_at\":\"2023-06-15T02:21:38.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"last\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders\",\"per_page\":25,\"to\":2,\"total\":2}}",
                             "name": ""
                         }
                     ]
@@ -914,7 +914,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"from\":\"modi\",\"to\":\"eligendi\",\"patasente_purchase_order_id\":6,\"reference\":\"doloremque\",\"notes\":\"itaque\"}"
+                            "raw": "{\"from\":\"molestias\",\"to\":\"qui\",\"patasente_purchase_order_id\":1,\"reference\":\"et\",\"notes\":\"nulla\"}"
                         },
                         "description": "",
                         "auth": {
@@ -935,7 +935,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "1",
                                     "description": "The ID of the order."
                                 }
                             ]
@@ -985,8 +985,8 @@
                                     "value": "true"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\"message\":\"Record not found.\"}",
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":1,\"from\":1,\"to\":1,\"patasente_purchase_order_id\":\"6\",\"reference\":\"doloremque\",\"notes\":\"itaque\",\"created_at\":\"2023-06-15T02:18:32.000000Z\",\"updated_at\":\"2023-06-15T02:18:32.000000Z\"}}",
                             "name": ""
                         }
                     ]
@@ -1003,7 +1003,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "5",
+                                    "value": "1",
                                     "description": "The ID of the order."
                                 }
                             ]
@@ -1039,8 +1039,92 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "17",
+                                    "value": "1",
                                     "description": "The ID of the order."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Attach Vehicle to an order",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/orders\/:order_id\/vehicle\/:vehicle_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/orders\/:order_id\/vehicle\/:vehicle_id",
+                            "variable": [
+                                {
+                                    "id": "order_id",
+                                    "key": "order_id",
+                                    "value": "1",
+                                    "description": "The ID of the order."
+                                },
+                                {
+                                    "id": "vehicle_id",
+                                    "key": "vehicle_id",
+                                    "value": "1",
+                                    "description": "The ID of the vehicle."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Detach Vehicle from an order",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/orders\/:order_id\/vehicle\/:vehicle_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/orders\/:order_id\/vehicle\/:vehicle_id",
+                            "variable": [
+                                {
+                                    "id": "order_id",
+                                    "key": "order_id",
+                                    "value": "1",
+                                    "description": "The ID of the order."
+                                },
+                                {
+                                    "id": "vehicle_id",
+                                    "key": "vehicle_id",
+                                    "value": "1",
+                                    "description": "The ID of the vehicle."
                                 }
                             ]
                         },
@@ -1182,7 +1266,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[],\"links\":{\"first\":\"http:\\\/\\\/localhost:8000\\\/api\\\/vehicles?page=1\",\"last\":\"http:\\\/\\\/localhost:8000\\\/api\\\/vehicles?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":null,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/vehicles?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/vehicles\",\"per_page\":25,\"to\":null,\"total\":0}}",
+                            "body": "{\"data\":[{\"id\":1,\"vin\":\"eius\",\"number_plate\":\"ratione\",\"make\":\"explicabo\",\"model\":\"unde\",\"capacity_weight\":\"14237146.94\",\"capacity_volume\":\"1211293.69\",\"availability\":1,\"insurance_policy_number\":\"consequatur\",\"insurance_coverage\":\"eaque\",\"insurance_expiration\":\"2023-06-09 05:37:20\",\"created_at\":\"2023-06-15T02:12:53.000000Z\",\"updated_at\":\"2023-06-15T02:12:53.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/localhost:8000\\\/api\\\/vehicles?page=1\",\"last\":\"http:\\\/\\\/localhost:8000\\\/api\\\/vehicles?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/vehicles?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/vehicles\",\"per_page\":25,\"to\":1,\"total\":1}}",
                             "name": ""
                         }
                     ]
@@ -1209,7 +1293,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"vin\":\"eius\",\"number_plate\":\"ratione\",\"make\":\"explicabo\",\"model\":\"unde\",\"availability\":true,\"capacity_weight\":14237146.94189,\"capacity_volume\":1211293.690282,\"insurance_policy_number\":\"consequatur\",\"insurance_coverage\":\"eaque\",\"insurance_expiration\":\"2023-06-09T05:37:20\"}"
+                            "raw": "{\"vin\":\"sunt\",\"number_plate\":\"est\",\"make\":\"vitae\",\"model\":\"eligendi\",\"availability\":false,\"capacity_weight\":1900032,\"capacity_volume\":539.6,\"insurance_policy_number\":\"voluptatem\",\"insurance_coverage\":\"adipisci\",\"insurance_expiration\":\"2023-06-15T03:57:58\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1230,7 +1314,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "10",
+                                    "value": "1",
                                     "description": "The ID of the vehicle."
                                 }
                             ]
@@ -1280,8 +1364,8 @@
                                     "value": "true"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\"message\":\"Record not found.\"}",
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":1,\"vin\":\"eius\",\"number_plate\":\"ratione\",\"make\":\"explicabo\",\"model\":\"unde\",\"capacity_weight\":\"14237146.94\",\"capacity_volume\":\"1211293.69\",\"availability\":1,\"insurance_policy_number\":\"consequatur\",\"insurance_coverage\":\"eaque\",\"insurance_expiration\":\"2023-06-09 05:37:20\",\"created_at\":\"2023-06-15T02:12:53.000000Z\",\"updated_at\":\"2023-06-15T02:12:53.000000Z\"}}",
                             "name": ""
                         }
                     ]
@@ -1298,7 +1382,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "12",
+                                    "value": "1",
                                     "description": "The ID of the vehicle."
                                 }
                             ]
@@ -1334,7 +1418,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "18",
+                                    "value": "1",
                                     "description": "The ID of the vehicle."
                                 }
                             ]
@@ -1370,7 +1454,7 @@
                                 {
                                     "id": "vehicle",
                                     "key": "vehicle",
-                                    "value": "15",
+                                    "value": "1",
                                     "description": "The vehicle."
                                 }
                             ]
@@ -1388,7 +1472,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"device_id\":\"quia\"}"
+                            "raw": "{\"device_id\":\"totam\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1409,7 +1493,7 @@
                                 {
                                     "id": "vehicle_id",
                                     "key": "vehicle_id",
-                                    "value": "7",
+                                    "value": "1",
                                     "description": "The ID of the vehicle."
                                 }
                             ]
