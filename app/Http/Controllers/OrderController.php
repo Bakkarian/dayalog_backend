@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\OrderRequest;
 use App\Http\Resources\OrderResource;
 use App\Models\Order;
+use App\Models\OrderVehicle;
+use App\Models\Vehicle;
 use Illuminate\Http\Request;
 
 /**
@@ -87,4 +89,20 @@ class OrderController extends Controller
             'message' => 'Vehicle attached successfully.'
         ]);
     }
+
+    /**
+     * Detach Vehicle from an order
+     */
+    public function detachVehicle( Order $order, Vehicle $vehicle)
+    {
+        $orderVehicle = OrderVehicle::where('order_id', $order->id)
+        ->where('vehicle_id', $vehicle->id)
+        ->firstOrFail();
+        $orderVehicle->delete();
+
+        return response()->json([
+            'message' => 'Vehicle detached successfully.'
+        ]);
+    }
+
 }
