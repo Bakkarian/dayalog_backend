@@ -39,5 +39,7 @@ Route::put('vehicles/{vehicle}/attach-device', [VehiclesController::class, 'atta
 Route::put('vehicles/{vehicle}/detach-devices', [VehiclesController::class, 'detachDevices']);
 
 Route::apiResource('orders', OrderController::class);
+Route::post('/orders/{order}/vehicle/{vehicle}', [OrderController::class, 'attachVehicle']);
+Route::delete('/orders/{order}/vehicle/{vehicle}', [OrderController::class, 'detachVehicle']);
 
 require __DIR__.'/api_auth.php';
