@@ -69,4 +69,22 @@ class OrderController extends Controller
             'message'=>'Deletes successfully'
         ], 204);
     }
+
+
+    /**
+     * Attach Vehicle to an order
+     */
+    public function attachVehicle(Order $order, Vehicle $vehicle)
+    {
+        $orderVehicle = new OrderVehicle();
+        $orderVehicle->order_id = $order->id;
+        $orderVehicle->vehicle_id = $vehicle->id;
+        $orderVehicle->created_at = now();
+        $orderVehicle->updated_at = now();
+        $orderVehicle->save();
+
+        return response()->json([
+            'message' => 'Vehicle attached successfully.'
+        ]);
+    }
 }
