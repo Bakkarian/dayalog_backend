@@ -23,7 +23,7 @@ export default function useNavigation() {
     { name: 'Add Device', href: route('device.create'), icon: DeviceTabletIcon, current: route('device.create').endsWith(url) },
     { name: 'View Devices', href: route('devices.view'), icon: QueueListIcon, current: route('devices.view').endsWith(url) },
     { name: 'Create Driver', href: route('driver.create'), icon: UsersIcon, current: route('driver.create').endsWith(url) },
-    // { name: 'Create Driver', href: route('driver.create'), icon: UsersIcon, current: route('driver.create').endsWith(url) },
+    { name: 'Add Vehicle', href: route('vehicle.create'), icon: UsersIcon, current: route('vehicle.create').endsWith(url) },
     /*{ name: 'Projects', href: route('test'), icon: FolderIcon, current: route('test').endsWith(url) },
     { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
     { name: 'Documents', href: '#', icon: DocumentDuplicateIcon, current: false },
