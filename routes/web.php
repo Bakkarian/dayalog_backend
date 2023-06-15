@@ -33,6 +33,14 @@ Route::get('/add-device', function () {
     return Inertia::render('AddDevice');
 })->middleware(['auth', 'verified'])->name('device.create');
 
+Route::get('/view-devices', function () {
+    return Inertia::render('ViewDevices');
+})->middleware(['auth', 'verified'])->name('devices.view');
+
+Route::get('/add-vehicle', function () {
+    return Inertia::render('AddVehicle');
+})->middleware(['auth', 'verified'])->name('vehicle.create');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
