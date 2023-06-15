@@ -41,15 +41,19 @@ e.g http://localhost:8000/docs
     - [x] list Vehicles
     - [x] Attach Driver
     - [x] Detach Driver
-- [ ]  Order
+- [x]  Order
     - [x] Create order
-    - [ ] Attach vehicle to order
     - [x] Get order information
-    - [ ] Attach vehicle an order
+    - [x] Attach vehicle an order
+    - [x] Detach a vehicle from an order
     - [x] Delete order
     - [x] Edit order
+    - [ ] Add order status
 - [ ] Dispatch Module (Order submodule)
-    - [ ] create a route(dispatch )
+    - [ ] Create a route(dispatch )
+    - [ ] Mark a route as started
+    - [ ] Mark a route as completed
+    - [ ] When an order has routes and 
 - [ ] FileManager 
 - [ ] Terms and conditions management
 > **Warning:** This task list is still under development and review.

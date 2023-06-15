@@ -17,8 +17,9 @@ return new class extends Migration
     {
         Schema::create('order_vehicle', function (Blueprint $table) {
             $table->id();
-            $table->foreignId(Order::class);
-            $table->foreignIdFor(Vehicle::class);
+            $table->foreignIdFor(Order::class)->constrained();
+            $table->foreignIdFor(Vehicle::class)->constrained();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
