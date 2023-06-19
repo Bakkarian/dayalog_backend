@@ -42,6 +42,8 @@ Route::put('vehicles/{vehicle}/detach-devices', [VehiclesController::class, 'det
 Route::apiResource('orders', OrderController::class);
 Route::post('/orders/{order}/vehicle/{vehicle}', [OrderController::class, 'attachVehicle']);
 Route::delete('/orders/{order}/vehicle/{vehicle}', [OrderController::class, 'detachVehicle']);
+Route::put('/orders/{order}/status/{newStatus}', [OrderController::class, 'changeStatus']);
+
 
 Route::apiResource('dispatches', DispatchController::class);
 Route::put('/dispatches/{dispatch}/status/{newStatus}', [DispatchController::class, 'changeStatusOfAnOrder']);
