@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreignIdFor(User::class, 'from')->constrained('users')->nullable();
             //From means the user who receives what has been bought
             $table->foreignIdFor(User::class, 'to')->constrained('users');
-            $table->string('patasente_purchase_order_id');
-            $table->string('reference');
+            $table->string('patasente_purchase_order_id')->nullable();
+            $table->string('reference')->nullable();
             $table->string('notes');
             $table->enum('status',[
                 'pending',
