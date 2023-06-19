@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class OrderRequest extends FormRequest
+class DispatchRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,12 +22,10 @@ class OrderRequest extends FormRequest
     public function rules(): array
     {
         return [
-
-            'from' => 'required|exists:users,id',
-            'to' => 'required|exists:users,id',
-            'patasente_purchase_order_id' => 'nullable|integer',
-            'reference' => 'required|nullable|string',
-            'notes' => 'nullable|string'
+            'order_vehicle_id' => 'required|exists:order_vehicle,id|max:255',
+            'origin'=> 'required',
+            'destination' => 'required',
+            'notes' => 'string',
         ];
     }
 }

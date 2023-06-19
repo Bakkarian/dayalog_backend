@@ -48,12 +48,13 @@ e.g http://localhost:8000/docs
     - [x] Detach a vehicle from an order
     - [x] Delete order
     - [x] Edit order
-    - [ ] Add order status
+    - [x] Add/change order status
 - [ ] Dispatch Module (Order submodule)
-    - [ ] Create a route(dispatch )
-    - [ ] Mark a route as started
-    - [ ] Mark a route as completed
-    - [ ] When an order has routes and 
+    - [x] Get route details and lists
+    - [x] Create a route(dispatch )
+    - [x] Edit Route
+    - [x] Remove route
+    - [x] Change Route Status
 - [ ] FileManager 
 - [ ] Terms and conditions management
 > **Warning:** This task list is still under development and review.

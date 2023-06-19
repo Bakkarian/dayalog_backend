@@ -78,6 +78,7 @@ class OrderController extends Controller
      */
     public function attachVehicle(Order $order, Vehicle $vehicle)
     {
+        // TODO: To avoid attaching of vehicle to multiple orders or even same order
         $orderVehicle = new OrderVehicle();
         $orderVehicle->order_id = $order->id;
         $orderVehicle->vehicle_id = $vehicle->id;
@@ -86,7 +87,8 @@ class OrderController extends Controller
         $orderVehicle->save();
 
         return response()->json([
-            'message' => 'Vehicle attached successfully.'
+            'message' => 'Vehicle attached successfully.',
+            'orderVehicle' => $orderVehicle
         ]);
     }
 
@@ -105,4 +107,21 @@ class OrderController extends Controller
         ]);
     }
 
+    /**
+     * Change Order status
+     * @param   Order $order The order model instance
+     * @urlParam string $newStatus The new status value (possible values: 'not_started', 'transit', 'reached', 'cancelled').  Example: cancelled
+     *
+     */
+
+    public function changeStatus(Order $order, $newStatus)
+    {
+        $order->status = $newStatus;
+        $order->save();
+
+        return response()->json([
+            'message' => 'Status updated successfully',
+            'status' => $order->status,
+        ]);
+    }
 }

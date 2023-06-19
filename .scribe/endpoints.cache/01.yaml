@@ -70,35 +70,35 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: ullam
+        example: aliquam
         type: string
         custom: []
       uniqueid:
         name: uniqueid
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: rcapnlnjnjunodpwpkijaxld
+        example: otbfvjuatij
         type: string
         custom: []
       model:
         name: model
         description: ''
         required: true
-        example: commodi
+        example: hic
         type: string
         custom: []
       tc_user_id:
         name: tc_user_id
         description: ''
         required: false
-        example: 20.574
+        example: 5357704.5568743
         type: number
         custom: []
     cleanBodyParameters:
-      name: ullam
-      uniqueid: rcapnlnjnjunodpwpkijaxld
-      model: commodi
-      tc_user_id: 20.574
+      name: aliquam
+      uniqueid: otbfvjuatij
+      model: hic
+      tc_user_id: 5357704.5568743
     fileParameters: []
     responses: []
     responseFields: []
