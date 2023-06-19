@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('order_vehicle_id');
             $table->string('origin');
             $table->string('destination');
-            $table->string('notes');
+            $table->string('notes')->nullable();
             $table->enum(
                 'status',
                 [
@@ -25,11 +25,14 @@ return new class extends Migration
                     'reached',
                     'cancelled'
                 ]
-            );
+            )->default('not_started');
             $table->timestamps();
+            //TODO: Use ForeignFor instead
             $table->foreign('order_vehicle_id')
                 ->references('id')
                 ->on('order_vehicle');
+
+            $table->softDeletes();
         });
     }
 
