@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\DispatchController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\VehiclesController;
@@ -42,4 +43,6 @@ Route::apiResource('orders', OrderController::class);
 Route::post('/orders/{order}/vehicle/{vehicle}', [OrderController::class, 'attachVehicle']);
 Route::delete('/orders/{order}/vehicle/{vehicle}', [OrderController::class, 'detachVehicle']);
 
+Route::apiResource('dispatches', DispatchController::class);
+Route::put('/dispatches/{dispatch}/status/{newStatus}', [DispatchController::class, 'changeStatusOfAnOrder']);
 require __DIR__.'/api_auth.php';
