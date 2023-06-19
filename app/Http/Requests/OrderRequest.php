@@ -26,7 +26,7 @@ class OrderRequest extends FormRequest
             'from' => 'required|exists:users,id',
             'to' => 'required|exists:users,id',
             'patasente_purchase_order_id' => 'nullable|integer',
-            'reference' => 'nullable|string',
+            'reference' => 'required|nullable|string',
             'notes' => 'nullable|string'
         ];
     }
