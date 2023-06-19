@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('order_vehicle_id');
             $table->string('origin');
             $table->string('destination');
+            $table->string('notes');
             $table->timestamps();
             $table->foreign('order_vehicle_id')
                 ->references('id')
