@@ -21,6 +21,11 @@ return new class extends Migration
             $table->string('patasente_purchase_order_id');
             $table->string('reference');
             $table->string('notes');
+            $table->enum('status',[
+                'pending',
+                'in_progress',
+                'completed'
+            ]);
             $table->timestamps();
         });
     }

@@ -17,6 +17,15 @@ return new class extends Migration
             $table->string('origin');
             $table->string('destination');
             $table->string('notes');
+            $table->enum(
+                'status',
+                [
+                    'not_started',
+                    'transit',
+                    'reached',
+                    'cancelled'
+                ]
+            );
             $table->timestamps();
             $table->foreign('order_vehicle_id')
                 ->references('id')
