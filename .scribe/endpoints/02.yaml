@@ -75,11 +75,11 @@ endpoints:
         name: user_id
         description: ''
         required: true
-        example: fugit
+        example: praesentium
         type: string
         custom: []
     cleanBodyParameters:
-      user_id: fugit
+      user_id: praesentium
     fileParameters: []
     responses: []
     responseFields: []
@@ -160,11 +160,11 @@ endpoints:
         name: id
         description: 'The ID of the driver.'
         required: true
-        example: 7
+        example: 16
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 7
+      id: 16
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -212,11 +212,11 @@ endpoints:
         name: id
         description: 'The ID of the driver.'
         required: true
-        example: 13
+        example: 19
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 13
+      id: 19
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -250,7 +250,7 @@ endpoints:
         name: driver_id
         description: 'The ID of the driver.'
         required: true
-        example: 6
+        example: 16
         type: integer
         custom: []
       vehicle:
@@ -261,7 +261,7 @@ endpoints:
         type: integer
         custom: []
     cleanUrlParameters:
-      driver_id: 6
+      driver_id: 16
       vehicle: 1
     queryParameters: []
     cleanQueryParameters: []
@@ -296,7 +296,7 @@ endpoints:
         name: driver_id
         description: 'The ID of the driver.'
         required: true
-        example: 5
+        example: 1
         type: integer
         custom: []
       vehicle:
@@ -307,7 +307,7 @@ endpoints:
         type: integer
         custom: []
     cleanUrlParameters:
-      driver_id: 5
+      driver_id: 1
       vehicle: 1
     queryParameters: []
     cleanQueryParameters: []

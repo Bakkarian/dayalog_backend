@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Dayalog API Usage",
-        "_postman_id": "c268fbf8-1a2d-415d-b0cd-e7a587a97039",
+        "_postman_id": "4294a50c-1811-452f-8f3e-3bab549113bd",
         "description": "Documentation for dayalog api",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"thiu\",\"email\":\"paula91@example.com\",\"patasente_id\":\"recusandae\",\"phone_number\":\"cum\",\"password\":\"dolorem\"}"
+                            "raw": "{\"name\":\"yabkvbgdxg\",\"email\":\"murl44@example.com\",\"patasente_id\":\"aut\",\"phone_number\":\"quo\",\"password\":\"neque\"}"
                         },
                         "description": "",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"voluptate\",\"password\":\"+|Q+ot1|M2bz6kZs\",\"token_name\":\"consequuntur\"}"
+                            "raw": "{\"user_id\":\"dolores\",\"password\":\">sQ&v@+j')1<d|X)P\",\"token_name\":\"et\"}"
                         },
                         "description": "",
                         "auth": {
@@ -103,7 +103,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"maximillian96@example.com\"}"
+                            "raw": "{\"email\":\"jayme.nicolas@example.org\"}"
                         },
                         "description": "",
                         "auth": {
@@ -134,7 +134,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"token\":\"quasi\",\"email\":\"dickens.emma@example.com\",\"password\":\"aliquam\"}"
+                            "raw": "{\"token\":\"est\",\"email\":\"matilde21@example.net\",\"password\":\"autem\"}"
                         },
                         "description": "",
                         "auth": {
@@ -155,13 +155,13 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "rerum",
+                                    "value": "doloremque",
                                     "description": "The ID of the verify email."
                                 },
                                 {
                                     "id": "hash",
                                     "key": "hash",
-                                    "value": "atque",
+                                    "value": "in",
                                     "description": ""
                                 }
                             ]
@@ -353,7 +353,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ullam\",\"uniqueid\":\"rcapnlnjnjunodpwpkijaxld\",\"model\":\"commodi\",\"tc_user_id\":20.574}"
+                            "raw": "{\"name\":\"aliquam\",\"uniqueid\":\"otbfvjuatij\",\"model\":\"hic\",\"tc_user_id\":5357704.5568743}"
                         },
                         "description": "",
                         "auth": {
@@ -505,6 +505,291 @@
             ]
         },
         {
+            "name": "Dispatch",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/dispatches",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/dispatches"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "51"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "localhost:8000"
+                                },
+                                {
+                                    "key": "access-control-allow-credentials",
+                                    "value": "true"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":1,\"order_vehicle_id\":10,\"origin\":\"Kawempe Tttula road\",\"destination\":\"49e994,434344\",\"notes\":\"Hello world dispatch notes\",\"status\":\"not_started\",\"created_at\":\"2023-06-19T13:56:27.000000Z\",\"updated_at\":\"2023-06-19T13:58:14.000000Z\",\"deleted_at\":null}],\"links\":{\"first\":\"http:\\\/\\\/localhost:8000\\\/api\\\/dispatches?page=1\",\"last\":\"http:\\\/\\\/localhost:8000\\\/api\\\/dispatches?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/dispatches?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/dispatches\",\"per_page\":25,\"to\":1,\"total\":1}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/dispatches",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/dispatches"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"order_vehicle_id\":\"vfjqdpbpzbuydbspgdwn\",\"origin\":\"eaque\",\"destination\":\"omnis\",\"notes\":\"voluptate\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/dispatches\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/dispatches\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the dispatch."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "50"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "localhost:8000"
+                                },
+                                {
+                                    "key": "access-control-allow-credentials",
+                                    "value": "true"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":1,\"order_vehicle_id\":10,\"origin\":\"Kawempe Tttula road\",\"destination\":\"49e994,434344\",\"notes\":\"Hello world dispatch notes\",\"status\":\"not_started\",\"created_at\":\"2023-06-19T13:56:27.000000Z\",\"updated_at\":\"2023-06-19T13:58:14.000000Z\",\"deleted_at\":null}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/dispatches\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/dispatches\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the dispatch."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/dispatches\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/dispatches\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the dispatch."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Change status of a dispatch",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/dispatches\/:dispatch_id\/status\/:newStatus",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/dispatches\/:dispatch_id\/status\/:newStatus",
+                            "variable": [
+                                {
+                                    "id": "dispatch_id",
+                                    "key": "dispatch_id",
+                                    "value": "1",
+                                    "description": "The ID of the dispatch."
+                                },
+                                {
+                                    "id": "newStatus",
+                                    "key": "newStatus",
+                                    "value": "placeat",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "string",
+                                    "key": "string",
+                                    "value": "in_progress",
+                                    "description": "$newStatus The new status value (possible values:    'pending',  'in_progress', 'completed'"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
             "name": "Drivers",
             "description": "",
             "item": [
@@ -590,7 +875,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"fugit\"}"
+                            "raw": "{\"user_id\":\"praesentium\"}"
                         },
                         "description": "",
                         "auth": {
@@ -679,7 +964,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "7",
+                                    "value": "16",
                                     "description": "The ID of the driver."
                                 }
                             ]
@@ -718,7 +1003,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "13",
+                                    "value": "19",
                                     "description": "The ID of the driver."
                                 }
                             ]
@@ -754,7 +1039,7 @@
                                 {
                                     "id": "driver_id",
                                     "key": "driver_id",
-                                    "value": "6",
+                                    "value": "16",
                                     "description": "The ID of the driver."
                                 },
                                 {
@@ -796,7 +1081,7 @@
                                 {
                                     "id": "driver_id",
                                     "key": "driver_id",
-                                    "value": "5",
+                                    "value": "1",
                                     "description": "The ID of the driver."
                                 },
                                 {
@@ -887,7 +1172,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"from\":1,\"to\":1,\"patasente_purchase_order_id\":\"6\",\"reference\":\"doloremque\",\"notes\":\"itaque\",\"created_at\":\"2023-06-15T02:18:32.000000Z\",\"updated_at\":\"2023-06-15T02:18:32.000000Z\"},{\"id\":2,\"from\":1,\"to\":1,\"patasente_purchase_order_id\":\"6\",\"reference\":\"doloremque\",\"notes\":\"itaque\",\"created_at\":\"2023-06-15T02:21:38.000000Z\",\"updated_at\":\"2023-06-15T02:21:38.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"last\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders\",\"per_page\":25,\"to\":2,\"total\":2}}",
+                            "body": "{\"data\":[{\"id\":1,\"from\":1,\"to\":1,\"patasente_purchase_order_id\":\"89498349\",\"reference\":\"he there\",\"notes\":\"Hello world order\",\"status\":\"pending\",\"created_at\":\"2023-06-19T13:39:03.000000Z\",\"updated_at\":\"2023-06-19T13:39:03.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"last\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders\",\"per_page\":25,\"to\":1,\"total\":1}}",
                             "name": ""
                         }
                     ]
@@ -914,7 +1199,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"from\":\"molestias\",\"to\":\"qui\",\"patasente_purchase_order_id\":1,\"reference\":\"et\",\"notes\":\"nulla\"}"
+                            "raw": "{\"from\":\"reiciendis\",\"to\":\"qui\",\"patasente_purchase_order_id\":6,\"reference\":\"repudiandae\",\"notes\":\"distinctio\"}"
                         },
                         "description": "",
                         "auth": {
@@ -986,7 +1271,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"from\":1,\"to\":1,\"patasente_purchase_order_id\":\"6\",\"reference\":\"doloremque\",\"notes\":\"itaque\",\"created_at\":\"2023-06-15T02:18:32.000000Z\",\"updated_at\":\"2023-06-15T02:18:32.000000Z\"}}",
+                            "body": "{\"data\":{\"id\":1,\"from\":1,\"to\":1,\"patasente_purchase_order_id\":\"89498349\",\"reference\":\"he there\",\"notes\":\"Hello world order\",\"status\":\"pending\",\"created_at\":\"2023-06-19T13:39:03.000000Z\",\"updated_at\":\"2023-06-19T13:39:03.000000Z\"}}",
                             "name": ""
                         }
                     ]
@@ -1146,6 +1431,54 @@
                         }
                     },
                     "response": []
+                },
+                {
+                    "name": "Change Order status",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/orders\/:order_id\/status\/:newStatus",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/orders\/:order_id\/status\/:newStatus",
+                            "variable": [
+                                {
+                                    "id": "order_id",
+                                    "key": "order_id",
+                                    "value": "1",
+                                    "description": "The ID of the order."
+                                },
+                                {
+                                    "id": "newStatus",
+                                    "key": "newStatus",
+                                    "value": "nemo",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "string",
+                                    "key": "string",
+                                    "value": "cancelled",
+                                    "description": "$newStatus The new status value (possible values: 'not_started', 'transit', 'reached', 'cancelled')."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
                 }
             ]
         },
@@ -1266,7 +1599,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"vin\":\"eius\",\"number_plate\":\"ratione\",\"make\":\"explicabo\",\"model\":\"unde\",\"capacity_weight\":\"14237146.94\",\"capacity_volume\":\"1211293.69\",\"availability\":1,\"insurance_policy_number\":\"consequatur\",\"insurance_coverage\":\"eaque\",\"insurance_expiration\":\"2023-06-09 05:37:20\",\"created_at\":\"2023-06-15T02:12:53.000000Z\",\"updated_at\":\"2023-06-15T02:12:53.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/localhost:8000\\\/api\\\/vehicles?page=1\",\"last\":\"http:\\\/\\\/localhost:8000\\\/api\\\/vehicles?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/vehicles?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/vehicles\",\"per_page\":25,\"to\":1,\"total\":1}}",
+                            "body": "{\"data\":[{\"id\":1,\"vin\":\"340i340340934\",\"number_plate\":\"UAZ 049A\",\"make\":\"Kawindo\",\"model\":\"Prime\",\"capacity_weight\":\"40.00\",\"capacity_volume\":\"40.00\",\"availability\":1,\"insurance_policy_number\":null,\"insurance_coverage\":null,\"insurance_expiration\":null,\"created_at\":\"2023-06-19T13:36:21.000000Z\",\"updated_at\":\"2023-06-19T13:36:21.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/localhost:8000\\\/api\\\/vehicles?page=1\",\"last\":\"http:\\\/\\\/localhost:8000\\\/api\\\/vehicles?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/vehicles?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/vehicles\",\"per_page\":25,\"to\":1,\"total\":1}}",
                             "name": ""
                         }
                     ]
@@ -1293,7 +1626,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"vin\":\"sunt\",\"number_plate\":\"est\",\"make\":\"vitae\",\"model\":\"eligendi\",\"availability\":false,\"capacity_weight\":1900032,\"capacity_volume\":539.6,\"insurance_policy_number\":\"voluptatem\",\"insurance_coverage\":\"adipisci\",\"insurance_expiration\":\"2023-06-15T03:57:58\"}"
+                            "raw": "{\"vin\":\"eveniet\",\"number_plate\":\"non\",\"make\":\"quia\",\"model\":\"in\",\"availability\":true,\"capacity_weight\":1.161018,\"capacity_volume\":7851764.43792,\"insurance_policy_number\":\"cumque\",\"insurance_coverage\":\"doloribus\",\"insurance_expiration\":\"2023-06-19T14:23:39\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1365,7 +1698,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"vin\":\"eius\",\"number_plate\":\"ratione\",\"make\":\"explicabo\",\"model\":\"unde\",\"capacity_weight\":\"14237146.94\",\"capacity_volume\":\"1211293.69\",\"availability\":1,\"insurance_policy_number\":\"consequatur\",\"insurance_coverage\":\"eaque\",\"insurance_expiration\":\"2023-06-09 05:37:20\",\"created_at\":\"2023-06-15T02:12:53.000000Z\",\"updated_at\":\"2023-06-15T02:12:53.000000Z\"}}",
+                            "body": "{\"data\":{\"id\":1,\"vin\":\"340i340340934\",\"number_plate\":\"UAZ 049A\",\"make\":\"Kawindo\",\"model\":\"Prime\",\"capacity_weight\":\"40.00\",\"capacity_volume\":\"40.00\",\"availability\":1,\"insurance_policy_number\":null,\"insurance_coverage\":null,\"insurance_expiration\":null,\"created_at\":\"2023-06-19T13:36:21.000000Z\",\"updated_at\":\"2023-06-19T13:36:21.000000Z\"}}",
                             "name": ""
                         }
                     ]
@@ -1472,7 +1805,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"device_id\":\"totam\"}"
+                            "raw": "{\"device_id\":\"quis\"}"
                         },
                         "description": "",
                         "auth": {

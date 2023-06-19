@@ -27,7 +27,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"vin":"eius","number_plate":"ratione","make":"explicabo","model":"unde","capacity_weight":"14237146.94","capacity_volume":"1211293.69","availability":1,"insurance_policy_number":"consequatur","insurance_coverage":"eaque","insurance_expiration":"2023-06-09 05:37:20","created_at":"2023-06-15T02:12:53.000000Z","updated_at":"2023-06-15T02:12:53.000000Z"}],"links":{"first":"http:\/\/localhost:8000\/api\/vehicles?page=1","last":"http:\/\/localhost:8000\/api\/vehicles?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/vehicles?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost:8000\/api\/vehicles","per_page":25,"to":1,"total":1}}'
+        content: '{"data":[{"id":1,"vin":"340i340340934","number_plate":"UAZ 049A","make":"Kawindo","model":"Prime","capacity_weight":"40.00","capacity_volume":"40.00","availability":1,"insurance_policy_number":null,"insurance_coverage":null,"insurance_expiration":null,"created_at":"2023-06-19T13:36:21.000000Z","updated_at":"2023-06-19T13:36:21.000000Z"}],"links":{"first":"http:\/\/localhost:8000\/api\/vehicles?page=1","last":"http:\/\/localhost:8000\/api\/vehicles?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/vehicles?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost:8000\/api\/vehicles","per_page":25,"to":1,"total":1}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -68,83 +68,83 @@ endpoints:
         name: vin
         description: ''
         required: true
-        example: sunt
+        example: eveniet
         type: string
         custom: []
       number_plate:
         name: number_plate
         description: ''
         required: true
-        example: est
+        example: non
         type: string
         custom: []
       make:
         name: make
         description: ''
         required: true
-        example: vitae
+        example: quia
         type: string
         custom: []
       model:
         name: model
         description: ''
         required: true
-        example: eligendi
+        example: in
         type: string
         custom: []
       availability:
         name: availability
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         custom: []
       capacity_weight:
         name: capacity_weight
         description: ''
         required: true
-        example: 1900032.0
+        example: 1.161018
         type: number
         custom: []
       capacity_volume:
         name: capacity_volume
         description: ''
         required: true
-        example: 539.6
+        example: 7851764.43792
         type: number
         custom: []
       insurance_policy_number:
         name: insurance_policy_number
         description: ''
         required: false
-        example: voluptatem
+        example: cumque
         type: string
         custom: []
       insurance_coverage:
         name: insurance_coverage
         description: ''
         required: false
-        example: adipisci
+        example: doloribus
         type: string
         custom: []
       insurance_expiration:
         name: insurance_expiration
         description: 'Must be a valid date.'
         required: false
-        example: '2023-06-15T03:57:58'
+        example: '2023-06-19T14:23:39'
         type: string
         custom: []
     cleanBodyParameters:
-      vin: sunt
-      number_plate: est
-      make: vitae
-      model: eligendi
-      availability: false
-      capacity_weight: 1900032.0
-      capacity_volume: 539.6
-      insurance_policy_number: voluptatem
-      insurance_coverage: adipisci
-      insurance_expiration: '2023-06-15T03:57:58'
+      vin: eveniet
+      number_plate: non
+      make: quia
+      model: in
+      availability: true
+      capacity_weight: 1.161018
+      capacity_volume: 7851764.43792
+      insurance_policy_number: cumque
+      insurance_coverage: doloribus
+      insurance_expiration: '2023-06-19T14:23:39'
     fileParameters: []
     responses: []
     responseFields: []
@@ -187,7 +187,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"vin":"eius","number_plate":"ratione","make":"explicabo","model":"unde","capacity_weight":"14237146.94","capacity_volume":"1211293.69","availability":1,"insurance_policy_number":"consequatur","insurance_coverage":"eaque","insurance_expiration":"2023-06-09 05:37:20","created_at":"2023-06-15T02:12:53.000000Z","updated_at":"2023-06-15T02:12:53.000000Z"}}'
+        content: '{"data":{"id":1,"vin":"340i340340934","number_plate":"UAZ 049A","make":"Kawindo","model":"Prime","capacity_weight":"40.00","capacity_volume":"40.00","availability":1,"insurance_policy_number":null,"insurance_coverage":null,"insurance_expiration":null,"created_at":"2023-06-19T13:36:21.000000Z","updated_at":"2023-06-19T13:36:21.000000Z"}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -320,11 +320,11 @@ endpoints:
         name: device_id
         description: ''
         required: true
-        example: totam
+        example: quis
         type: string
         custom: []
     cleanBodyParameters:
-      device_id: totam
+      device_id: quis
     fileParameters: []
     responses: []
     responseFields: []
