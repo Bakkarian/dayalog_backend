@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\DeviceController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -33,9 +34,7 @@ Route::get('/add-device', function () {
     return Inertia::render('AddDevice');
 })->middleware(['auth', 'verified'])->name('device.create');
 
-Route::get('/view-devices', function () {
-    return Inertia::render('ViewDevices');
-})->middleware(['auth', 'verified'])->name('devices.view');
+Route::get('/view-devices', DeviceController::class)->middleware(['auth', 'verified'])->name('devices.view');
 
 Route::get('/add-vehicle', function () {
     return Inertia::render('AddVehicle');
