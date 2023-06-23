@@ -54,8 +54,8 @@ import {
     ExclamationCircleIcon,
     CheckBadgeIcon,
 } from '@heroicons/vue/24/solid'
-const devices = [
-    { name: 'Ivan tracker', uniqueid: '038020188471', model: 'tk103', positionid: '5981', disabled: 0 },
-    // More people...
-]
+
+const props = defineProps({
+    devices: String
+})
 </script>
