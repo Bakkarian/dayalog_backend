@@ -80,6 +80,36 @@
                                 <input type="date" placeholder="" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                             </div>
                         </div>
+                        <div class="sm:col-span-5 border rounded-md p-6 bg-blue-300 bg-opacity-5">
+                            <Combobox as="div" v-model="selectedPerson">
+                                <ComboboxLabel class="block text-sm font-medium leading-6 text-gray-900">Attach a device</ComboboxLabel>
+                                <div class="relative mt-2">
+                                    <ComboboxInput class="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-12 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" @change="query = $event.target.value" :display-value="(device) => device?.name" />
+                                    <ComboboxButton class="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none">
+                                        <ChevronUpDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
+                                    </ComboboxButton>
+
+                                    <ComboboxOptions v-if="filteredPeople.length > 0" class="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                                        <ComboboxOption v-for="device in filteredPeople" :key="device.id" :value="device" as="template" v-slot="{ active, selected }">
+                                            <li :class="['relative cursor-default select-none py-2 pl-3 pr-9', active ? 'bg-indigo-600 text-white' : 'text-gray-900']">
+                                                <div class="flex">
+                                              <span :class="['truncate', selected && 'font-semibold']">
+                                                {{ device.name }}
+                                              </span>
+                                                    <span :class="['ml-2 truncate text-gray-500', active ? 'text-indigo-200' : 'text-gray-500']">
+                                                {{ device.id }}
+                                              </span>
+                                                </div>
+
+                                                <span v-if="selected" :class="['absolute inset-y-0 right-0 flex items-center pr-4', active ? 'text-white' : 'text-indigo-600']">
+                                              <CheckIcon class="h-5 w-5" aria-hidden="true" />
+                                            </span>
+                                            </li>
+                                        </ComboboxOption>
+                                    </ComboboxOptions>
+                                </div>
+                            </Combobox>
+                        </div>
                     </div>
                 </div>
                 <div class="flex justify-end">
@@ -102,17 +132,18 @@
         ComboboxOptions,
     } from '@headlessui/vue'
 
-    const people = [
-        { id: 1, name: 'Leslie Alexander' },
-        // More users...
+    const devices = [
+        { name: 'Clear Me & Select Device', id: '' },
+        { name: 'Ivan Tracker', id: '038020188471' },
+        { name: 'Binjii Truck 1', id: '9172995223' },
     ]
 
     const query = ref('')
-    const selectedPerson = ref(null)
+    const selectedPerson = ref(devices[0])
     const filteredPeople = computed(() =>
         query.value === ''
-            ? people
-            : people.filter((person) => {
+            ? devices
+            : devices.filter((person) => {
                 return person.name.toLowerCase().includes(query.value.toLowerCase())
             })
     )
