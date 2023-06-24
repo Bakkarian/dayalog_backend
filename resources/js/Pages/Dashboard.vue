@@ -333,8 +333,8 @@
         });
       });
 
-      var icons = {
-        start: new google.maps.MarkerImage(
+      let icons = {
+        start: /*new google.maps.MarkerImage(
             // URL
             "https://bishangatravel.com/wp-content/uploads/2022/07/marker.png",
             // (width,height)
@@ -343,8 +343,11 @@
             new google.maps.Point( 0, 0 ),
             // The anchor point (x,y)
             new google.maps.Point( 22, 32 )
-        ),
-        end: new google.maps.MarkerImage(
+        )*/{
+            url: "https://bishangatravel.com/wp-content/uploads/2022/07/marker.png",
+            scaledSize: new google.maps.Size(40, 40),
+        },
+        end: /*new google.maps.MarkerImage(
             // URL
             "https://bishangatravel.com/wp-content/uploads/2022/07/marker.png",
             // (width,height)
@@ -353,13 +356,17 @@
             new google.maps.Point( 0, 0 ),
             // The anchor point (x,y)
             new google.maps.Point( 22, 32 )
-        )
+        )*/{
+            url: "https://bishangatravel.com/wp-content/uploads/2022/07/marker.png",
+            scaledSize: new google.maps.Size(40, 40),
+        }
       };
 
       directionsService = new google.maps.DirectionsService();
       directionsRenderer = new google.maps.DirectionsRenderer({
         map,
         suppressMarkers: true,
+          // icons: icons,
       });
 
       // document.getElementById("show-route").addEventListener("click", () => {
