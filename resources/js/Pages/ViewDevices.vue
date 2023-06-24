@@ -6,9 +6,8 @@
                 <p class="mt-2 text-sm text-gray-700">A list of all the devices registered in the system.</p>
             </div>
             <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-                <a href="/add-device" class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                    Add Device
-                </a>
+
+                <Link href="/add-device" class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"> Add Device</Link>
             </div>
         </div>
         <div class="mt-8 flow-root">
@@ -51,6 +50,7 @@
 </template>
 
 <script setup>
+import { Link } from '@inertiajs/vue3'
 import {
     ExclamationCircleIcon,
     CheckBadgeIcon,

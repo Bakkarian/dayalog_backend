@@ -30,11 +30,9 @@ Route::get('/create-driver', function () {
     return Inertia::render('CreateDriver');
 })->middleware(['auth', 'verified'])->name('driver.create');
 
-Route::get('/add-device', function () {
-    return Inertia::render('AddDevice');
-})->middleware(['auth', 'verified'])->name('device.create');
-
-Route::get('/view-devices', DeviceController::class)->middleware(['auth', 'verified'])->name('devices.view');
+Route::get('/view-devices', [DeviceController::class, 'index'])->middleware(['auth', 'verified'])->name('devices.index');
+Route::get('/add-device', [DeviceController::class, 'create'])->middleware(['auth', 'verified'])->name('device.create');
+Route::post('/store', [DeviceController::class, 'store'])->middleware(['auth', 'verified'])->name('device.store');
 
 Route::get('/add-vehicle', function () {
     return Inertia::render('AddVehicle');
