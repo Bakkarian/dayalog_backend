@@ -28,7 +28,7 @@
                             </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-200 bg-white">
-                            <tr v-for="device in devices" :key="device.model">
+                            <tr v-for="device in devices.data" :key="device.model">
                                 <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ device.name }}</td>
                                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ device.uniqueid }}</td>
                                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ device.model }}</td>
@@ -42,6 +42,7 @@
                             </tr>
                             </tbody>
                         </table>
+                        <Pagination :links="devices.links" />
                     </div>
                 </div>
             </div>
@@ -54,6 +55,7 @@ import {
     ExclamationCircleIcon,
     CheckBadgeIcon,
 } from '@heroicons/vue/24/solid'
+import Pagination from '@/Components/Pagination.vue';
 
 const props = defineProps({
     devices: String

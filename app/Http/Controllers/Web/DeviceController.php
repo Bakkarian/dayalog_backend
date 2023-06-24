@@ -14,7 +14,7 @@ class DeviceController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $devices = Device::all();
+        $devices = Device::paginate(10);
         return Inertia::render('ViewDevices', [
             'devices' => $devices
         ]);
