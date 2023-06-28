@@ -2,19 +2,20 @@
 namespace App\Services;
 
 use App\Models\Device;
+use App\Models\TCDevice;
 
 class DeviceService {
 
  public function store(array $data): Device
  {
-     $device = Device::create($data);
-     return $device;
+     $device = TCDevice::create($data);
+     return Device::find($device->id);
  }
 
- public function update(array $data, Device $device): Device
+ public function update(array $data, TCDevice $device): Device
  {
      $device->update($data);
-     return $device;
+     return Device::find($device->id);
  }
 }
 

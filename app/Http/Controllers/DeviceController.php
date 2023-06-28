@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\DeviceRequest;
 use App\Http\Resources\DeviceResource;
 use App\Models\Device;
+use App\Models\TCDevice;
 use Illuminate\Http\Request;
 
 class DeviceController extends Controller
@@ -24,12 +25,13 @@ class DeviceController extends Controller
      */
     public function store(DeviceRequest $request)
     {
-        $device = Device::create([
+        $device = TCDevice::create([
             'name' =>  $request->name,
             'uniqueid' => $request->uniqueid,
             'model' => $request->model,
         ]);
 
+        $device = Device::find($device->id);
         return new DeviceResource($device);
     }
 
@@ -46,9 +48,10 @@ class DeviceController extends Controller
      * Update the specified device.
      * @group  Devices
      */
-    public function update(Request $request, Device $device)
+    public function update(Request $request, TCDevice $device)
     {
         $device->update($request->only(['name', 'uniqueid', 'model']));
+        $device = Device::find($device->id);
         return new DeviceResource($device);
     }
 
@@ -56,7 +59,7 @@ class DeviceController extends Controller
      * Remove the specified device.
      * @group  Devices
      */
-    public function destroy(Device $device)
+    public function destroy(TCDevice $device)
     {
         $device->delete();
         return response()->json([
