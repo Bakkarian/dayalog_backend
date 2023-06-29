@@ -27,6 +27,7 @@ e.g http://localhost:8000/docs
 - [x] Devices Module
     - [x] Add the device to the system
     - [x] Get devices
+    - [ ] List Devices not attached to any vehicle 
 - [x] Drivers
     - [x] Create Driver
     - [x] Get Driver Information
