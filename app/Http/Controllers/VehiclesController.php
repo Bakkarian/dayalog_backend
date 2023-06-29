@@ -103,6 +103,7 @@ class VehiclesController extends Controller
         $vehicle = Vehicle::findOrFail($vehicle);
         $device = Device::findOrFail($request->device_id);
 
+        //TODO: use logic in VehicleService
         $vehicleDevice = new VehicleDevice();
         $vehicleDevice->vehicle_id = $vehicle->id;
         $vehicleDevice->device_id = $device->id;
@@ -128,6 +129,11 @@ class VehiclesController extends Controller
         VehicleDevice::where('vehicle_id', $vehicle->id)
         ->delete();
 
-        return response()->json(['message' => 'Device successfully detached from the vehicle'], 200);
+        return response()->json(
+            [
+                'message' => 'Device successfully detached from the vehicle'
+            ],
+            200
+        );
     }
 }
