@@ -26,7 +26,7 @@ return new class extends Migration
             
             $table->string('insurance_policy_number')->nullable();
             $table->string('insurance_coverage')->nullable();
-            $table->timestamp('insurance_expiration')->nullable();
+            $table->date('insurance_expiration')->nullable();
 
             $table->timestamps();
         });
