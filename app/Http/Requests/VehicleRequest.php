@@ -34,6 +34,8 @@ class VehicleRequest extends FormRequest
             'insurance_policy_number' => 'nullable|string',
             'insurance_coverage' => 'nullable|string',
             'insurance_expiration' => 'nullable|date',
+
+            'attached_device_id' =>'integer'
         ];
     }
 }

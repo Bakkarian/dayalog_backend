@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Web\DeviceController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\Web\VehicleController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -32,11 +32,10 @@ Route::get('/create-driver', function () {
 
 Route::get('/view-devices', [DeviceController::class, 'index'])->middleware(['auth', 'verified'])->name('devices.index');
 Route::get('/add-device', [DeviceController::class, 'create'])->middleware(['auth', 'verified'])->name('device.create');
-Route::post('/store', [DeviceController::class, 'store'])->middleware(['auth', 'verified'])->name('device.store');
+Route::post('/device/store', [DeviceController::class, 'store'])->middleware(['auth', 'verified'])->name('device.store');
 
-Route::get('/add-vehicle', function () {
-    return Inertia::render('AddVehicle');
-})->middleware(['auth', 'verified'])->name('vehicle.create');
+Route::get('/add-vehicle', [VehicleController::class, 'index'])->middleware(['auth', 'verified'])->name('vehicle.create');
+Route::post('/vehicle/store', [VehicleController::class, 'store'])->middleware(['auth', 'verified'])->name('vehicle.store');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
