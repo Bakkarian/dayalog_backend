@@ -68,43 +68,43 @@ endpoints:
         name: from
         description: ''
         required: true
-        example: reiciendis
+        example: quod
         type: string
         custom: []
       to:
         name: to
         description: ''
         required: true
-        example: qui
+        example: blanditiis
         type: string
         custom: []
       patasente_purchase_order_id:
         name: patasente_purchase_order_id
         description: ''
         required: false
-        example: 6
+        example: 12
         type: integer
         custom: []
       reference:
         name: reference
         description: ''
         required: true
-        example: repudiandae
+        example: ut
         type: string
         custom: []
       notes:
         name: notes
         description: ''
         required: false
-        example: distinctio
+        example: beatae
         type: string
         custom: []
     cleanBodyParameters:
-      from: reiciendis
-      to: qui
-      patasente_purchase_order_id: 6
-      reference: repudiandae
-      notes: distinctio
+      from: quod
+      to: blanditiis
+      patasente_purchase_order_id: 12
+      reference: ut
+      notes: beatae
     fileParameters: []
     responses: []
     responseFields: []
@@ -360,7 +360,7 @@ endpoints:
         name: newStatus
         description: ''
         required: true
-        example: nemo
+        example: omnis
         type: string
         custom: []
       string:
@@ -372,7 +372,7 @@ endpoints:
         custom: []
     cleanUrlParameters:
       order_id: 1
-      newStatus: nemo
+      newStatus: omnis
       string: cancelled
     queryParameters: []
     cleanQueryParameters: []

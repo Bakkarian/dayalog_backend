@@ -27,7 +27,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"vin":"340i340340934","number_plate":"UAZ 049A","make":"Kawindo","model":"Prime","capacity_weight":"40.00","capacity_volume":"40.00","availability":1,"insurance_policy_number":null,"insurance_coverage":null,"insurance_expiration":null,"created_at":"2023-06-19T13:36:21.000000Z","updated_at":"2023-06-19T13:36:21.000000Z"}],"links":{"first":"http:\/\/localhost:8000\/api\/vehicles?page=1","last":"http:\/\/localhost:8000\/api\/vehicles?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/vehicles?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost:8000\/api\/vehicles","per_page":25,"to":1,"total":1}}'
+        content: '{"data":[{"id":1,"vin":"340i340340934","number_plate":"UAZ 049A","make":"Kawindo","model":"Prime","capacity_weight":"40.00","capacity_volume":"40.00","availability":1,"insurance_policy_number":null,"insurance_coverage":null,"insurance_expiration":"2023-06-24","created_at":"2023-06-19T13:36:21.000000Z","updated_at":"2023-06-19T13:36:21.000000Z"},{"id":2,"vin":"Voluptas minima ulla","number_plate":"Corporis quas quibus","make":"Reiciendis sed nisi","model":"Sint doloremque dolo","capacity_weight":"28.00","capacity_volume":"2.00","availability":1,"insurance_policy_number":"A quis esse est non","insurance_coverage":"Id culpa labore qua","insurance_expiration":"1985-02-08","created_at":"2023-06-29T08:09:16.000000Z","updated_at":"2023-06-29T08:09:16.000000Z"},{"id":3,"vin":"FKMFKKGF","number_plate":"DFJKJDF","make":"Reiciendis sed nisi","model":"Sint doloremque dolo","capacity_weight":"28.00","capacity_volume":"2.00","availability":1,"insurance_policy_number":"A quis esse est non","insurance_coverage":"Id culpa labore qua","insurance_expiration":"1985-02-08","created_at":"2023-06-29T08:15:17.000000Z","updated_at":"2023-06-29T08:15:17.000000Z"},{"id":4,"vin":"FKMFKKGFS","number_plate":"DFJKJDFA","make":"Reiciendis sed nisi","model":"Sint doloremque dolo","capacity_weight":"28.00","capacity_volume":"2.00","availability":1,"insurance_policy_number":"A quis esse est non","insurance_coverage":"Id culpa labore qua","insurance_expiration":"1985-02-08","created_at":"2023-06-29T08:15:48.000000Z","updated_at":"2023-06-29T08:15:48.000000Z"},{"id":5,"vin":"Lorem enim enim opti","number_plate":"Labore consequat Im","make":"Eos sed pariatur Pe","model":"Accusamus dolor volu","capacity_weight":"14.00","capacity_volume":"39.00","availability":1,"insurance_policy_number":"Quis veritatis harum","insurance_coverage":"Qui ut tempor labore","insurance_expiration":"2005-12-10","created_at":"2023-06-29T08:16:07.000000Z","updated_at":"2023-06-29T08:16:07.000000Z"},{"id":6,"vin":"DFFKLDFK","number_plate":"DFLDFKL","make":"Eos sed pariatur Pe","model":"Accusamus dolor volu","capacity_weight":"14.00","capacity_volume":"39.00","availability":1,"insurance_policy_number":"Quis veritatis harum","insurance_coverage":"Qui ut tempor labore","insurance_expiration":"2005-12-10","created_at":"2023-06-29T08:16:30.000000Z","updated_at":"2023-06-29T08:16:30.000000Z"},{"id":7,"vin":"Qui eos fuga Ration","number_plate":"Eum vero fugiat dol","make":"Consectetur dolor al","model":"Sint corrupti et co","capacity_weight":"18.00","capacity_volume":"99.00","availability":1,"insurance_policy_number":"Perspiciatis irure","insurance_coverage":"Laborum Consequatur","insurance_expiration":"1974-03-13","created_at":"2023-06-29T08:23:40.000000Z","updated_at":"2023-06-29T08:23:40.000000Z"},{"id":8,"vin":"Veniam sed corporis","number_plate":"Sunt similique quia","make":"Quae esse perspicia","model":"Ipsum ipsum ex nece","capacity_weight":"91.00","capacity_volume":"80.00","availability":1,"insurance_policy_number":"Unde voluptates quis","insurance_coverage":"Doloribus ipsum anim","insurance_expiration":"1975-12-01","created_at":"2023-06-29T08:27:46.000000Z","updated_at":"2023-06-29T08:27:46.000000Z"},{"id":9,"vin":"Reiciendis nisi quis","number_plate":"In labore quae aliqu","make":"Quod explicabo Quia","model":"Dolorem aute ullamco","capacity_weight":"11.00","capacity_volume":"40.00","availability":1,"insurance_policy_number":"Est quas iste aute v","insurance_coverage":"Aliqua Repellendus","insurance_expiration":"1995-01-01","created_at":"2023-06-29T08:33:05.000000Z","updated_at":"2023-06-29T08:33:05.000000Z"},{"id":10,"vin":"Adipisci fugit veli","number_plate":"Magnam non velit ull","make":"Rerum aute rerum ame","model":"Ipsa qui nulla mole","capacity_weight":"67.00","capacity_volume":"37.00","availability":1,"insurance_policy_number":"Et tempore ratione","insurance_coverage":"Ducimus adipisicing","insurance_expiration":"2008-01-13","created_at":"2023-06-29T08:49:35.000000Z","updated_at":"2023-06-29T08:49:35.000000Z"},{"id":11,"vin":"Ipsa nihil incididu","number_plate":"Aut ipsum voluptate","make":"Officia illo duis ve","model":"Sunt doloribus sed","capacity_weight":"17.00","capacity_volume":"82.00","availability":1,"insurance_policy_number":"Error dolore eum qui","insurance_coverage":"Perspiciatis dolore","insurance_expiration":"2013-11-27","created_at":"2023-06-29T08:50:01.000000Z","updated_at":"2023-06-29T08:50:01.000000Z"},{"id":12,"vin":"Impedit autem quia","number_plate":"Ab eum cupidatat qui","make":"Dolor repudiandae to","model":"Voluptatem Qui dolo","capacity_weight":"92.00","capacity_volume":"23.00","availability":1,"insurance_policy_number":"Vero autem qui aut e","insurance_coverage":"Necessitatibus in do","insurance_expiration":"1982-04-25","created_at":"2023-06-29T08:54:29.000000Z","updated_at":"2023-06-29T08:54:29.000000Z"},{"id":13,"vin":"Quibusdam amet nequ","number_plate":"Est numquam sed quia","make":"In optio eius debit","model":"Magni sunt nisi maxi","capacity_weight":"24.00","capacity_volume":"76.00","availability":1,"insurance_policy_number":"Provident accusanti","insurance_coverage":"In sequi labore null","insurance_expiration":"1986-02-09","created_at":"2023-06-29T09:02:31.000000Z","updated_at":"2023-06-29T09:02:31.000000Z"},{"id":14,"vin":"Quod tempore volupt","number_plate":"Dolore mollit aliqua","make":"Quod deleniti exerci","model":"Eum nostrum officiis","capacity_weight":"32.00","capacity_volume":"47.00","availability":1,"insurance_policy_number":"Incidunt tempor mag","insurance_coverage":"Mollit ad qui aut ev","insurance_expiration":"2002-09-11","created_at":"2023-06-29T09:18:17.000000Z","updated_at":"2023-06-29T09:18:17.000000Z"},{"id":15,"vin":"Eos velit labore de","number_plate":"Fugiat autem quia an","make":"Ut eum quisquam labo","model":"Architecto elit ut","capacity_weight":"69.00","capacity_volume":"53.00","availability":1,"insurance_policy_number":"Consectetur ut aliqu","insurance_coverage":"Animi voluptatum ni","insurance_expiration":"2001-04-05","created_at":"2023-06-29T09:18:45.000000Z","updated_at":"2023-06-29T09:18:45.000000Z"},{"id":16,"vin":"Deserunt natus qui m","number_plate":"Consequat Sed in op","make":"Commodo eaque volupt","model":"Quidem qui ipsa ani","capacity_weight":"62.00","capacity_volume":"27.00","availability":1,"insurance_policy_number":"Dolores ea fugiat ci","insurance_coverage":"Ut quos quisquam cup","insurance_expiration":"1971-10-04","created_at":"2023-06-29T09:20:31.000000Z","updated_at":"2023-06-29T09:20:31.000000Z"},{"id":17,"vin":"Magna voluptatibus l","number_plate":"Cupiditate at omnis","make":"Tenetur voluptatem v","model":"Ratione ea quibusdam","capacity_weight":"20.00","capacity_volume":"25.00","availability":1,"insurance_policy_number":"Commodo velit labor","insurance_coverage":"Error aut ipsa aspe","insurance_expiration":"1988-10-02","created_at":"2023-06-29T09:20:57.000000Z","updated_at":"2023-06-29T09:20:57.000000Z"},{"id":18,"vin":"Consectetur laborio","number_plate":"Fugiat nihil distin","make":"Sunt dolorem ab fugi","model":"Inventore laboriosam","capacity_weight":"76.00","capacity_volume":"40.00","availability":1,"insurance_policy_number":"Sit aut do fugiat","insurance_coverage":"Optio praesentium q","insurance_expiration":"1999-08-26","created_at":"2023-06-29T09:21:14.000000Z","updated_at":"2023-06-29T09:21:14.000000Z"}],"links":{"first":"http:\/\/localhost:8000\/api\/vehicles?page=1","last":"http:\/\/localhost:8000\/api\/vehicles?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/vehicles?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost:8000\/api\/vehicles","per_page":25,"to":18,"total":18}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -68,83 +68,91 @@ endpoints:
         name: vin
         description: ''
         required: true
-        example: eveniet
+        example: quos
         type: string
         custom: []
       number_plate:
         name: number_plate
         description: ''
         required: true
-        example: non
+        example: vero
         type: string
         custom: []
       make:
         name: make
         description: ''
         required: true
-        example: quia
+        example: explicabo
         type: string
         custom: []
       model:
         name: model
         description: ''
         required: true
-        example: in
+        example: consequuntur
         type: string
         custom: []
       availability:
         name: availability
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         custom: []
       capacity_weight:
         name: capacity_weight
         description: ''
         required: true
-        example: 1.161018
+        example: 4286794.5562
         type: number
         custom: []
       capacity_volume:
         name: capacity_volume
         description: ''
         required: true
-        example: 7851764.43792
+        example: 63856461.57
         type: number
         custom: []
       insurance_policy_number:
         name: insurance_policy_number
         description: ''
         required: false
-        example: cumque
+        example: consequatur
         type: string
         custom: []
       insurance_coverage:
         name: insurance_coverage
         description: ''
         required: false
-        example: doloribus
+        example: ratione
         type: string
         custom: []
       insurance_expiration:
         name: insurance_expiration
         description: 'Must be a valid date.'
         required: false
-        example: '2023-06-19T14:23:39'
+        example: '2023-07-15T18:06:46'
         type: string
         custom: []
+      attached_device_id:
+        name: attached_device_id
+        description: ''
+        required: false
+        example: 2
+        type: integer
+        custom: []
     cleanBodyParameters:
-      vin: eveniet
-      number_plate: non
-      make: quia
-      model: in
-      availability: true
-      capacity_weight: 1.161018
-      capacity_volume: 7851764.43792
-      insurance_policy_number: cumque
-      insurance_coverage: doloribus
-      insurance_expiration: '2023-06-19T14:23:39'
+      vin: quos
+      number_plate: vero
+      make: explicabo
+      model: consequuntur
+      availability: false
+      capacity_weight: 4286794.5562
+      capacity_volume: 63856461.57
+      insurance_policy_number: consequatur
+      insurance_coverage: ratione
+      insurance_expiration: '2023-07-15T18:06:46'
+      attached_device_id: 2
     fileParameters: []
     responses: []
     responseFields: []
@@ -187,7 +195,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"vin":"340i340340934","number_plate":"UAZ 049A","make":"Kawindo","model":"Prime","capacity_weight":"40.00","capacity_volume":"40.00","availability":1,"insurance_policy_number":null,"insurance_coverage":null,"insurance_expiration":null,"created_at":"2023-06-19T13:36:21.000000Z","updated_at":"2023-06-19T13:36:21.000000Z"}}'
+        content: '{"data":{"id":1,"vin":"340i340340934","number_plate":"UAZ 049A","make":"Kawindo","model":"Prime","capacity_weight":"40.00","capacity_volume":"40.00","availability":1,"insurance_policy_number":null,"insurance_coverage":null,"insurance_expiration":"2023-06-24","created_at":"2023-06-19T13:36:21.000000Z","updated_at":"2023-06-19T13:36:21.000000Z"}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -320,11 +328,11 @@ endpoints:
         name: device_id
         description: ''
         required: true
-        example: quis
+        example: qui
         type: string
         custom: []
     cleanBodyParameters:
-      device_id: quis
+      device_id: qui
     fileParameters: []
     responses: []
     responseFields: []
