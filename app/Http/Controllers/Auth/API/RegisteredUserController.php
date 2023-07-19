@@ -4,11 +4,9 @@ namespace App\Http\Controllers\Auth\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use Illuminate\Auth\Events\Registered;
+use App\Services\UserService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends Controller
 {
@@ -28,17 +26,10 @@ class RegisteredUserController extends Controller
             'password' => ['required'],
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email ?? null,
-            'patasente_id'=> $request->patasente_id ?? null,
-            'phone_number'=> $request->phone_number ?? null,
-            'password' => Hash::make($request->password),
-        ]);
-
-        event(new Registered($user));
+        $user = (new UserService())->store($request->validated());
         return response()->json([
-            "message" => "Registered successfully"
+            "message" => "Registered successfully",
+            "user" => $user
         ]);
     }
 }
