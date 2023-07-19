@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Web\DeviceController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Web\DriverController;
 use App\Http\Controllers\Web\VehicleController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -26,9 +27,8 @@ Route::get('/', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/create-driver', function () {
-    return Inertia::render('CreateDriver');
-})->middleware(['auth', 'verified'])->name('driver.create');
+Route::get('/create-driver',  [DriverController::class,'create'] )->middleware(['auth', 'verified'])->name('driver.create');
+Route::post('/create-driver', [DriverController::class,'store'] )->middleware(['auth', 'verified'])->name('driver.store');
 
 Route::get('/view-devices', [DeviceController::class, 'index'])->middleware(['auth', 'verified'])->name('devices.index');
 Route::get('/add-device', [DeviceController::class, 'create'])->middleware(['auth', 'verified'])->name('device.create');
