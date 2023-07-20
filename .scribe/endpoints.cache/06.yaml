@@ -28,43 +28,43 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: hkie
+        example: x
         type: string
         custom: []
       email:
         name: email
         description: 'This field is required when none of <code>phone_number</code> and <code>patasente_id</code> are present.  Must be a valid email address. Must not be greater than 255 characters.'
         required: false
-        example: faufderhar@example.org
+        example: carmel05@example.net
         type: string
         custom: []
       patasente_id:
         name: patasente_id
         description: 'TODO : rename to patasente merchant code. This field is required when none of <code>email</code> and <code>phone_number</code> are present.'
         required: false
-        example: atque
+        example: reiciendis
         type: string
         custom: []
       phone_number:
         name: phone_number
         description: 'This field is required when none of <code>email</code> and <code>patasente_id</code> are present.'
         required: false
-        example: optio
+        example: cumque
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: dolores
+        example: harum
         type: string
         custom: []
     cleanBodyParameters:
-      name: hkie
-      email: faufderhar@example.org
-      patasente_id: atque
-      phone_number: optio
-      password: dolores
+      name: x
+      email: carmel05@example.net
+      patasente_id: reiciendis
+      phone_number: cumque
+      password: harum
     fileParameters: []
     responses: []
     responseFields: []
@@ -98,27 +98,27 @@ endpoints:
         name: user_id
         description: ''
         required: true
-        example: distinctio
+        example: esse
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: "~'cjj-Nlr-RgpGwE"
+        example: Zn;V|N
         type: string
         custom: []
       token_name:
         name: token_name
         description: ''
         required: true
-        example: saepe
+        example: repudiandae
         type: string
         custom: []
     cleanBodyParameters:
-      user_id: distinctio
-      password: "~'cjj-Nlr-RgpGwE"
-      token_name: saepe
+      user_id: esse
+      password: Zn;V|N
+      token_name: repudiandae
     fileParameters: []
     responses: []
     responseFields: []
@@ -152,11 +152,11 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: hdare@example.net
+        example: emie43@example.net
         type: string
         custom: []
     cleanBodyParameters:
-      email: hdare@example.net
+      email: emie43@example.net
     fileParameters: []
     responses: []
     responseFields: []
@@ -190,27 +190,27 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: perferendis
+        example: voluptatibus
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: jacobson.thaddeus@example.com
+        example: viola04@example.net
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: porro
+        example: velit
         type: string
         custom: []
     cleanBodyParameters:
-      token: perferendis
-      email: jacobson.thaddeus@example.com
-      password: porro
+      token: voluptatibus
+      email: viola04@example.net
+      password: velit
     fileParameters: []
     responses: []
     responseFields: []
@@ -240,7 +240,7 @@ endpoints:
         name: id
         description: 'The ID of the verify email.'
         required: true
-        example: porro
+        example: quam
         type: string
         custom: []
       hash:
@@ -251,7 +251,7 @@ endpoints:
         type: string
         custom: []
     cleanUrlParameters:
-      id: porro
+      id: quam
       hash: et
     queryParameters: []
     cleanQueryParameters: []

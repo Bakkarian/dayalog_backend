@@ -70,35 +70,35 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: dolore
+        example: ut
         type: string
         custom: []
       uniqueid:
         name: uniqueid
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: cmccyqftdzxwikgdptirp
+        example: rseko
         type: string
         custom: []
       model:
         name: model
         description: ''
         required: true
-        example: itaque
+        example: eum
         type: string
         custom: []
       tc_user_id:
         name: tc_user_id
         description: ''
         required: false
-        example: 1616.586042174
+        example: 0.0
         type: number
         custom: []
     cleanBodyParameters:
-      name: dolore
-      uniqueid: cmccyqftdzxwikgdptirp
-      model: itaque
-      tc_user_id: 1616.586042174
+      name: ut
+      uniqueid: rseko
+      model: eum
+      tc_user_id: 0.0
     fileParameters: []
     responses: []
     responseFields: []

@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Dayalog API Usage",
-        "_postman_id": "5bdc553e-813e-4f19-8b75-26d3149233f9",
+        "_postman_id": "645c8111-8ebb-4804-a29d-5df850bcb2aa",
         "description": "Documentation for dayalog api",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"hkie\",\"email\":\"faufderhar@example.org\",\"patasente_id\":\"atque\",\"phone_number\":\"optio\",\"password\":\"dolores\"}"
+                            "raw": "{\"name\":\"x\",\"email\":\"carmel05@example.net\",\"patasente_id\":\"reiciendis\",\"phone_number\":\"cumque\",\"password\":\"harum\"}"
                         },
                         "description": "",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"distinctio\",\"password\":\"~'cjj-Nlr-RgpGwE\",\"token_name\":\"saepe\"}"
+                            "raw": "{\"user_id\":\"esse\",\"password\":\"Zn;V|N\",\"token_name\":\"repudiandae\"}"
                         },
                         "description": "",
                         "auth": {
@@ -103,7 +103,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"hdare@example.net\"}"
+                            "raw": "{\"email\":\"emie43@example.net\"}"
                         },
                         "description": "",
                         "auth": {
@@ -134,7 +134,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"token\":\"perferendis\",\"email\":\"jacobson.thaddeus@example.com\",\"password\":\"porro\"}"
+                            "raw": "{\"token\":\"voluptatibus\",\"email\":\"viola04@example.net\",\"password\":\"velit\"}"
                         },
                         "description": "",
                         "auth": {
@@ -155,7 +155,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "porro",
+                                    "value": "quam",
                                     "description": "The ID of the verify email."
                                 },
                                 {
@@ -353,7 +353,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"dolore\",\"uniqueid\":\"cmccyqftdzxwikgdptirp\",\"model\":\"itaque\",\"tc_user_id\":1616.586042174}"
+                            "raw": "{\"name\":\"ut\",\"uniqueid\":\"rseko\",\"model\":\"eum\",\"tc_user_id\":0}"
                         },
                         "description": "",
                         "auth": {
@@ -590,7 +590,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"order_vehicle_id\":\"slwmfquk\",\"origin\":\"voluptatibus\",\"destination\":\"inventore\",\"notes\":\"sit\"}"
+                            "raw": "{\"order_vehicle_id\":\"ymp\",\"origin\":\"molestias\",\"destination\":\"neque\",\"notes\":\"quis\"}"
                         },
                         "description": "",
                         "auth": {
@@ -757,7 +757,7 @@
                                 {
                                     "id": "newStatus",
                                     "key": "newStatus",
-                                    "value": "aliquid",
+                                    "value": "qui",
                                     "description": ""
                                 },
                                 {
@@ -1172,7 +1172,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"from\":1,\"to\":1,\"patasente_purchase_order_id\":\"89498349\",\"reference\":\"he there\",\"notes\":\"Hello world order\",\"status\":\"pending\",\"created_at\":\"2023-06-19T13:39:03.000000Z\",\"updated_at\":\"2023-06-19T13:39:03.000000Z\"}],\"links\":{\"first\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"last\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders\",\"per_page\":25,\"to\":1,\"total\":1}}",
+                            "body": "{\"data\":[{\"id\":1,\"from\":1,\"to\":1,\"patasente_purchase_order_id\":\"89498349\",\"reference\":\"he there\",\"notes\":\"Hello world order\",\"status\":\"pending\",\"created_at\":\"2023-06-19T13:39:03.000000Z\",\"updated_at\":\"2023-06-19T13:39:03.000000Z\",\"vehicles\":[{\"id\":1,\"vin\":\"340i340340934\",\"number_plate\":\"UAZ 049A\",\"make\":\"Kawindo\",\"model\":\"Prime\",\"capacity_weight\":\"40.00\",\"capacity_volume\":\"40.00\",\"availability\":1,\"insurance_policy_number\":null,\"insurance_coverage\":null,\"insurance_expiration\":\"2023-06-24\",\"created_at\":\"2023-06-19T13:36:21.000000Z\",\"updated_at\":\"2023-06-19T13:36:21.000000Z\",\"pivot\":{\"order_id\":1,\"vehicle_id\":1}}]}],\"links\":{\"first\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"last\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/orders\",\"per_page\":25,\"to\":1,\"total\":1}}",
                             "name": ""
                         }
                     ]
@@ -1199,7 +1199,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"from\":\"quod\",\"to\":\"blanditiis\",\"patasente_purchase_order_id\":12,\"reference\":\"ut\",\"notes\":\"beatae\"}"
+                            "raw": "{\"from\":\"rem\",\"to\":\"labore\",\"patasente_purchase_order_id\":9,\"reference\":\"cupiditate\",\"notes\":\"repudiandae\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1271,7 +1271,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"from\":1,\"to\":1,\"patasente_purchase_order_id\":\"89498349\",\"reference\":\"he there\",\"notes\":\"Hello world order\",\"status\":\"pending\",\"created_at\":\"2023-06-19T13:39:03.000000Z\",\"updated_at\":\"2023-06-19T13:39:03.000000Z\"}}",
+                            "body": "{\"data\":{\"id\":1,\"from\":1,\"to\":1,\"patasente_purchase_order_id\":\"89498349\",\"reference\":\"he there\",\"notes\":\"Hello world order\",\"status\":\"pending\",\"created_at\":\"2023-06-19T13:39:03.000000Z\",\"updated_at\":\"2023-06-19T13:39:03.000000Z\",\"vehicles\":[{\"id\":1,\"vin\":\"340i340340934\",\"number_plate\":\"UAZ 049A\",\"make\":\"Kawindo\",\"model\":\"Prime\",\"capacity_weight\":\"40.00\",\"capacity_volume\":\"40.00\",\"availability\":1,\"insurance_policy_number\":null,\"insurance_coverage\":null,\"insurance_expiration\":\"2023-06-24\",\"created_at\":\"2023-06-19T13:36:21.000000Z\",\"updated_at\":\"2023-06-19T13:36:21.000000Z\",\"pivot\":{\"order_id\":1,\"vehicle_id\":1}}]}}",
                             "name": ""
                         }
                     ]
@@ -1450,7 +1450,7 @@
                                 {
                                     "id": "newStatus",
                                     "key": "newStatus",
-                                    "value": "omnis",
+                                    "value": "est",
                                     "description": ""
                                 },
                                 {
@@ -1626,7 +1626,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"vin\":\"quos\",\"number_plate\":\"vero\",\"make\":\"explicabo\",\"model\":\"consequuntur\",\"availability\":false,\"capacity_weight\":4286794.5562,\"capacity_volume\":63856461.57,\"insurance_policy_number\":\"consequatur\",\"insurance_coverage\":\"ratione\",\"insurance_expiration\":\"2023-07-15T18:06:46\",\"attached_device_id\":2}"
+                            "raw": "{\"vin\":\"praesentium\",\"number_plate\":\"ut\",\"make\":\"aliquid\",\"model\":\"et\",\"availability\":false,\"capacity_weight\":4765186.93,\"capacity_volume\":6.3398,\"insurance_policy_number\":\"voluptas\",\"insurance_coverage\":\"quo\",\"insurance_expiration\":\"2023-07-20T02:34:13\",\"attached_device_id\":18}"
                         },
                         "description": "",
                         "auth": {
@@ -1805,7 +1805,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"device_id\":\"qui\"}"
+                            "raw": "{\"device_id\":\"labore\"}"
                         },
                         "description": "",
                         "auth": {
