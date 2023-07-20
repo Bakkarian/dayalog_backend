@@ -12,4 +12,13 @@ class OrderVehicle extends Model
 
     protected $table ='order_vehicle';
 
+    public function vehicle()
+    {
+        return $this->belongsTo(Vehicle::class);
+    }
+
+    public function dispatches()
+    {
+        return $this->hasMany(Dispatch::class);
+    }
 }
