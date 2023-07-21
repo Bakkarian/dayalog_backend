@@ -20,5 +20,16 @@ class Device extends Model
         );
     }
 
+
+    public function positions()
+    {
+        return $this->hasMany(DevicePosition::class, 'deviceid');
+    }
+
+    public function lastPostion()
+    {
+        return $this->hasOne(DevicePosition::class, 'deviceid')->orderByDesc('id');
+    }
+
     //TODO: Create a custom delete that caters for the tc_user_device table
 }
