@@ -41,7 +41,7 @@ class OrderResource extends JsonResource
     {
         return [
                 'id' => $vehicle->id,
-                'device' => $vehicle->device
+                'device' => $vehicle->device->with('lastPosition')->get()
             ];
     }
 }
