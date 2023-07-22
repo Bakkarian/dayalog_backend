@@ -70,28 +70,28 @@ endpoints:
         name: vin
         description: ''
         required: true
-        example: praesentium
+        example: enim
         type: string
         custom: []
       number_plate:
         name: number_plate
         description: ''
         required: true
-        example: ut
+        example: laboriosam
         type: string
         custom: []
       make:
         name: make
         description: ''
         required: true
-        example: aliquid
+        example: deleniti
         type: string
         custom: []
       model:
         name: model
         description: ''
         required: true
-        example: et
+        example: non
         type: string
         custom: []
       availability:
@@ -105,56 +105,56 @@ endpoints:
         name: capacity_weight
         description: ''
         required: true
-        example: 4765186.93
+        example: 4343.8
         type: number
         custom: []
       capacity_volume:
         name: capacity_volume
         description: ''
         required: true
-        example: 6.3398
+        example: 4.49676
         type: number
         custom: []
       insurance_policy_number:
         name: insurance_policy_number
         description: ''
         required: false
-        example: voluptas
+        example: est
         type: string
         custom: []
       insurance_coverage:
         name: insurance_coverage
         description: ''
         required: false
-        example: quo
+        example: quae
         type: string
         custom: []
       insurance_expiration:
         name: insurance_expiration
         description: 'Must be a valid date.'
         required: false
-        example: '2023-07-20T02:34:13'
+        example: '2023-07-22T03:05:30'
         type: string
         custom: []
       attached_device_id:
         name: attached_device_id
         description: ''
         required: false
-        example: 18
+        example: 3
         type: integer
         custom: []
     cleanBodyParameters:
-      vin: praesentium
-      number_plate: ut
-      make: aliquid
-      model: et
+      vin: enim
+      number_plate: laboriosam
+      make: deleniti
+      model: non
       availability: false
-      capacity_weight: 4765186.93
-      capacity_volume: 6.3398
-      insurance_policy_number: voluptas
-      insurance_coverage: quo
-      insurance_expiration: '2023-07-20T02:34:13'
-      attached_device_id: 18
+      capacity_weight: 4343.8
+      capacity_volume: 4.49676
+      insurance_policy_number: est
+      insurance_coverage: quae
+      insurance_expiration: '2023-07-22T03:05:30'
+      attached_device_id: 3
     fileParameters: []
     responses: []
     responseFields: []
@@ -330,11 +330,11 @@ endpoints:
         name: device_id
         description: ''
         required: true
-        example: labore
+        example: autem
         type: string
         custom: []
     cleanBodyParameters:
-      device_id: labore
+      device_id: autem
     fileParameters: []
     responses: []
     responseFields: []

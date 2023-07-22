@@ -68,35 +68,35 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: ut
+        example: quisquam
         type: string
         custom: []
       uniqueid:
         name: uniqueid
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: rseko
+        example: rcvtrvqlddbxfufz
         type: string
         custom: []
       model:
         name: model
         description: ''
         required: true
-        example: eum
+        example: aut
         type: string
         custom: []
       tc_user_id:
         name: tc_user_id
         description: ''
         required: false
-        example: 0.0
+        example: 261.14585
         type: number
         custom: []
     cleanBodyParameters:
-      name: ut
-      uniqueid: rseko
-      model: eum
-      tc_user_id: 0.0
+      name: quisquam
+      uniqueid: rcvtrvqlddbxfufz
+      model: aut
+      tc_user_id: 261.14585
     fileParameters: []
     responses: []
     responseFields: []
