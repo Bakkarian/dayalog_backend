@@ -70,21 +70,21 @@ endpoints:
         name: order_vehicle_id
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: slwmfquk
+        example: vdgfnztuwaq
         type: string
         custom: []
       origin:
         name: origin
         description: ''
         required: true
-        example: voluptatibus
+        example: adipisci
         type: string
         custom: []
       destination:
         name: destination
         description: ''
         required: true
-        example: inventore
+        example: sint
         type: string
         custom: []
       notes:
@@ -95,9 +95,9 @@ endpoints:
         type: string
         custom: []
     cleanBodyParameters:
-      order_vehicle_id: slwmfquk
-      origin: voluptatibus
-      destination: inventore
+      order_vehicle_id: vdgfnztuwaq
+      origin: adipisci
+      destination: sint
       notes: sit
     fileParameters: []
     responses: []
@@ -262,7 +262,7 @@ endpoints:
         name: newStatus
         description: ''
         required: true
-        example: aliquid
+        example: et
         type: string
         custom: []
       string:
@@ -274,7 +274,7 @@ endpoints:
         custom: []
     cleanUrlParameters:
       dispatch_id: 1
-      newStatus: aliquid
+      newStatus: et
       string: in_progress
     queryParameters: []
     cleanQueryParameters: []

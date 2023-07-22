@@ -11,8 +11,8 @@ class Order extends Model
 
     protected $guarded = [];
 
-    public function vehicles()
+    public function orderVehicles()
     {
-        return $this->belongsToMany(Vehicle::class);
+        return $this->hasMany(OrderVehicle::class);
     }
 }
