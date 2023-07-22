@@ -26,7 +26,7 @@ class Device extends Model
         return $this->hasMany(DevicePosition::class, 'deviceid');
     }
 
-    public function lastPostion()
+    public function lastPosition()
     {
         return $this->hasOne(DevicePosition::class, 'deviceid')->orderByDesc('id');
     }
