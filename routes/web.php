@@ -34,6 +34,10 @@ Route::get('/view-devices', [DeviceController::class, 'index'])->middleware(['au
 Route::get('/add-device', [DeviceController::class, 'create'])->middleware(['auth', 'verified'])->name('device.create');
 Route::post('/device/store', [DeviceController::class, 'store'])->middleware(['auth', 'verified'])->name('device.store');
 
+
+Route::get('/vehicles', function () {
+    return Inertia::render('ViewVehicles');
+})->middleware(['auth', 'verified'])->name('vehicle.view');
 Route::get('/add-vehicle', [VehicleController::class, 'index'])->middleware(['auth', 'verified'])->name('vehicle.create');
 Route::post('/vehicle/store', [VehicleController::class, 'store'])->middleware(['auth', 'verified'])->name('vehicle.store');
 
