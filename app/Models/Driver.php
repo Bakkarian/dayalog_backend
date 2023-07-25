@@ -13,5 +13,10 @@ class Driver extends Model
         'license',
         'user_id'
     ];
-    
+
+    public function bioData()
+    {
+        return $this->belongsTo(User::class,'user_id');
+    }
+
 }
