@@ -10,10 +10,10 @@
                 </div>
 
                 <ul role="list" class="row-auto divide-y divide-gray-100 overflow-hidden bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl overflow-y-scroll">
-                    <li v-for="vehicle in vehicles" :key="vehicle.make" @click="selectedVehicle = vehicle" class="relative flex justify-between gap-x-6 px-4 py-5 hover:bg-gray-50 sm:px-6 cursor-pointer">
+                    <li v-for="vehicle in vehicles.data" :key="vehicle.id" @click="selectedVehicle = vehicle" class="relative flex justify-between gap-x-6 px-4 py-5 hover:bg-gray-50 sm:px-6 cursor-pointer">
                         <div class="flex gap-x-4">
                             <div class="h-12 w-12 flex-none rounded-full bg-gray-200 flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" :class="vehicle.deviceAttached?'text-green-500':'text-red-500'" class="w-6 h-6 mx-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" :class="vehicle.driver?'text-green-500':'text-red-500'" class="w-6 h-6 mx-auto">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
                                 </svg>
                             </div>
@@ -21,19 +21,17 @@
                                 <p class="text-sm font-semibold leading-6 text-gray-900">
                                     <a>
                                         <span class="absolute inset-x-0 -top-px bottom-0" />
-                                        {{ vehicle.name }}
+                                        {{ vehicle.number_plate }}
                                     </a>
                                 </p>
                                 <p class="mt-1 flex text-xs leading-5 text-gray-500">
-                                    <a class="relative truncate hover:underline">{{
-                                            vehicle.make
-                                        }}</a>
+                                    <a class="relative truncate hover:underline">{{vehicle.make}}</a>
                                 </p>
                             </div>
                         </div>
                         <div class="flex items-center gap-x-4">
                             <div class="hidden sm:flex sm:flex-col sm:items-end">
-                                <p v-if="!vehicle.deviceAttached" class="mt-1 text-xs leading-5 text-gray-500">
+                                <p v-if="!vehicle.driver" class="mt-1 text-xs leading-5 text-gray-500">
                                     Not Attached
                                 </p>
                                 <div v-else class="mt-1 flex items-center gap-x-1.5">
@@ -193,6 +191,9 @@
       ComboboxOption,
       ComboboxOptions,
   } from '@headlessui/vue'
+import { usePage } from '@inertiajs/vue3';
+
+  const vehicles = computed(() => usePage().props.vehicles)
 
   const drivers = [
       { id: 0, name: 'Alex Driver', valid: false },
@@ -216,37 +217,5 @@
 
   let selectedVehicle = ref({});
 
-  const vehicles = [
-      {
-          name: 'UGB 699U',
-          make: 'Toyota',
-          id: 13456,
-          deviceAttached: true,
-      },
-      {
-          name: 'UGB 699U',
-          make: 'Toyota',
-          id: 13456,
-          deviceAttached: false,
-      },
-      {
-          name: 'UGB 699U',
-          make: 'Toyota',
-          id: 13456,
-          deviceAttached: true,
-      },
-      {
-          name: 'UGB 699U',
-          make: 'Toyota',
-          id: 13456,
-          deviceAttached: false,
-      },
-      {
-          name: 'UGB 699U',
-          make: 'Toyota',
-          id: 13456,
-          deviceAttached: false,
-      },
-  ]
   selectedVehicle.value = vehicles[0];
   </script>
