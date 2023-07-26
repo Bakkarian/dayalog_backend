@@ -40,6 +40,7 @@ Route::get('/add-vehicle', [VehicleController::class, 'create'])->middleware(['a
 Route::post('/vehicle/store', [VehicleController::class, 'store'])->middleware(['auth', 'verified'])->name('vehicle.store');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/drivers/search', [DriverController::class,'search'] )->name('driver.search-json');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
