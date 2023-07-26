@@ -6,15 +6,25 @@
             <div class="col-span-1 row-end-2">
                 <div class="mb-5">
                     <label for="email" class="sr-only">Search</label>
-                    <input type="text" name="search" id="search" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Search vehicles" />
+                    <input type="text" name="search" id="search" class="block w-full rounded-md border-0 py-1.5 text-gray-900 \
+                        shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset \
+                         focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Search vehicles" />
                 </div>
 
-                <ul role="list" class="row-auto divide-y divide-gray-100 overflow-hidden bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl overflow-y-scroll">
-                    <li v-for="vehicle in vehicles.data" :key="vehicle.id" @click="selectedVehicle = vehicle" class="relative flex justify-between gap-x-6 px-4 py-5 hover:bg-gray-50 sm:px-6 cursor-pointer">
+                <ul role="list" class="row-auto divide-y divide-gray-100 overflow-hidden bg-white shadow-sm ring-1 \
+                         ring-gray-900/5 sm:rounded-xl overflow-y-scroll">
+                    <li v-for="vehicle in vehicles.data" :key="vehicle.id" @click="selectedVehicle = vehicle" class="relative \
+                        flex justify-between gap-x-6 px-4 py-5 hover:bg-gray-50 sm:px-6 cursor-pointer">
                         <div class="flex gap-x-4">
                             <div class="h-12 w-12 flex-none rounded-full bg-gray-200 flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" :class="vehicle.driver?'text-green-500':'text-red-500'" class="w-6 h-6 mx-auto">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" :class="vehicle.driver?'text-green-500':'text-red-500'" class="w-6 h-6 mx-auto">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 \
+                                     0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 \
+                                      4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 \
+                                       17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 \
+                                        18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 \
+                                         0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
                                 </svg>
                             </div>
                             <div class="min-w-0 flex-auto">
@@ -46,40 +56,41 @@
                     </li>
                 </ul>
             </div>
-            <div  v-if="selectedVehicle" class="col-span-1 border-l pl-8">
-                <div class="lg:fixed w-full max-w-[440px]">
-                    <div class="bg-white p-6 rounded-md">
-                        <div class="flex justify-between">
-                            <h2 class="font-bold">{{ selectedVehicle["name"] }}</h2>
-                            <div class="mt-1 flex items-center gap-x-1.5">
-                                <div class="flex-none rounded-full p-1" :class="selectedVehicle['deviceAttached']?'bg-emerald-500/20':'bg-orange-500/20'">
-                                    <div class="h-1.5 w-1.5 rounded-full" :class="selectedVehicle['deviceAttached']?'bg-emerald-500':'bg-orange-500'"/>
+
+                <div  v-if="selectedVehicle" class="col-span-1 border-l pl-8">
+                    <div class="lg:fixed w-full max-w-[440px]">
+                        <div class="bg-white p-6 rounded-md">
+                            <div class="flex justify-between">
+                                <h2 class="font-bold">{{ selectedVehicle.number_plate }}</h2>
+                                <div class="mt-1 flex items-center gap-x-1.5">
+                                    <div class="flex-none rounded-full p-1" :class="selectedVehicle.driver?'bg-emerald-500/20':'bg-orange-500/20'">
+                                        <div class="h-1.5 w-1.5 rounded-full" :class="selectedVehicle.driver?'bg-emerald-500':'bg-orange-500'"/>
+                                    </div>
+                                    <p class="text-xs leading-5 text-gray-500">{{ selectedVehicle.driver?'Attached':'Not Attached' }} to driver</p>
                                 </div>
-                                <p class="text-xs leading-5 text-gray-500">{{ selectedVehicle["deviceAttached"]?'Attached':'Not Attached' }} to driver</p>
                             </div>
-                        </div>
-                        <p>Isuzu</p>
-                        <p class="text-xs">Kanta</p>
-                        <hr class="my-4" />
-                        <div v-if="selectedVehicle['deviceAttached']" id="driverDetails">
-                            <p>Driver Name: <strong>Ivan Driver</strong></p>
-                            <p>Phone / Email: <strong>0773099747 / ivanatresyn@gmail.com</strong></p>
-                            <p>Merch Code: <strong><a href="#" class="text-blue-500">M00232</a></strong></p>
-                            <p>Licence No: <strong>098765456783924</strong></p>
-                            <div class="mt-2">
-                                <span>Unlink Driver from vehicle: </span>
-                                <button type="button" @click="openWarning = true" class="ml-4 rounded-full bg-red-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500">Unlink Driver</button>
+                            <p>{{ selectedVehicle.make }}</p>
+                            <p class="text-xs">{{ selectedVehicle.model }}</p>
+                            <hr class="my-4" />
+                            <div v-if="selectedVehicle.driver" id="driverDetails">
+                                <p>Driver Name: <strong>{{ selectedVehicle.driver?.bio_data?.name }}</strong></p>
+                                <p>Phone / Email: <strong>{{ selectedVehicle.driver?.bio_data?.phone_number }} / {{ selectedVehicle.driver?.bio_data?.email }} </strong></p>
+                                <p>Merch Code: <strong><a href="#" class="text-blue-500">{{ selectedVehicle.driver?.bio_data?.patasente_id }} </a></strong></p>
+                                <p>Licence No: <strong>{{ selectedVehicle.driver?.license }} </strong></p>
+                                <div class="mt-2">
+                                    <span>Unlink Driver from vehicle: </span>
+                                    <button type="button" @click="openWarning = true" class="ml-4 rounded-full bg-red-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500">Unlink Driver</button>
+                                </div>
                             </div>
-                        </div>
-                        <div v-else>
-                            <div class="mt-2">
-                                <span>Link a Driver to this vehicle: </span>
-                                <button type="button" @click="openLinkDriver = true" class="ml-4 rounded-full bg-green-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500">Link Driver</button>
+                            <div v-else>
+                                <div class="mt-2">
+                                    <span>Link a Driver to this vehicle: </span>
+                                    <button type="button" @click="openLinkDriver = true" class="ml-4 rounded-full bg-green-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500">Link Driver</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
     <TransitionRoot as="template" :show="openLinkDriver">
