@@ -13,18 +13,13 @@
 
                 <ul role="list" class="row-auto divide-y divide-gray-100 overflow-hidden bg-white shadow-sm ring-1 \
                          ring-gray-900/5 sm:rounded-xl overflow-y-scroll">
-                    <li v-for="vehicle in vehicles.data" :key="vehicle.id" @click="selectedVehicle = vehicle" class="relative \
+                    <li v-for="vehicle in vehicles.data" :key="vehicle.id" @click="selectedVehicleId = vehicle.id" class="relative \
                         flex justify-between gap-x-6 px-4 py-5 hover:bg-gray-50 sm:px-6 cursor-pointer">
                         <div class="flex gap-x-4">
                             <div class="h-12 w-12 flex-none rounded-full bg-gray-200 flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" :class="vehicle.driver?'text-green-500':'text-red-500'" class="w-6 h-6 mx-auto">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 \
-                                     0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 \
-                                      4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 \
-                                       17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 \
-                                        18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 \
-                                         0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902  17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5   18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026  0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
                                 </svg>
                             </div>
                             <div class="min-w-0 flex-auto">
@@ -116,7 +111,7 @@
                                 </div>
                             </div>
                             <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
-                                <button type="button" class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-0 border-0 hover:bg-red-500 sm:ml-3 sm:w-auto" @click="openWarning = false">Unlink</button>
+                                <button type="button" class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-0 border-0 hover:bg-red-500 sm:ml-3 sm:w-auto" @click="unlinkVehicleDriver">Unlink</button>
                                 <button type="button" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto" @click="openWarning = false" ref="cancelButtonRef">Cancel</button>
                             </div>
                         </DialogPanel>
@@ -129,21 +124,42 @@
 
   <script setup>
   import { ChevronRightIcon } from '@heroicons/vue/20/solid'
-  import {computed, ref} from "vue";
+  import {computed, ref, watch} from "vue";
 
   import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
   import { ExclamationTriangleIcon } from '@heroicons/vue/24/outline'
 
-  import { usePage } from '@inertiajs/vue3';
+  import { useForm, usePage } from '@inertiajs/vue3';
   import LinkDriverToVehicle from '@/Containers/LinkDriverToVehicle.vue';
 
   const vehicles = computed(() => usePage().props.vehicles)
-  const selectedVehicle = ref(false);
   const openLinkDriver = ref(false)
   const openWarning = ref(false)
+  const selectedVehicleId = ref(false);
+
+  const selectedVehicle = computed(()=>{
+    return vehicles.value?.data.find(vehicle => vehicle.id == selectedVehicleId.value);
+  })
 
   const closeLinkModal = () => {
     openLinkDriver.value = false;
   }
 
+  const form = useForm({
+    'vehicle_id':selectedVehicle.value?.id,
+    'driver_id':selectedVehicle.value?.driver?.id
+  })
+
+  watch(selectedVehicle, async (newVehicle) => {
+    form.vehicle_id = newVehicle?.id;
+    form.driver_id = newVehicle?.driver?.id
+  })
+
+  const unlinkVehicleDriver = () => {
+    form.delete(route('vehicle.detach-driver'),{
+        onSuccess: () => {
+            openWarning.value = false
+        }
+    })
+  }
   </script>
