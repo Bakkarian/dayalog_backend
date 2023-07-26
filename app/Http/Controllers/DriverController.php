@@ -102,7 +102,7 @@ class DriverController extends Controller
      /**
      * Remove Vehicle from Driver
      */
-    public function removeVehicle(Driver $driver, Vehicle $vechile)
+    public function removeVehicle(Driver $driver, Vehicle $vehicle)
     {
         $vehicleDriver = VehicleDriver::where('vehicle_id', $vehicle->id)
             ->where('driver_id', $driver->id)
