@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/vehicles',  [VehicleController::class, 'index'] )->name('vehicle.view');
     Route::get('/add-vehicle', [VehicleController::class, 'create'] )->name('vehicle.create');
     Route::post('/vehicle/store', [VehicleController::class, 'store'] )->name('vehicle.store');
+    Route::post('/vehicle/{vehicle}/attach/driver', [VehicleController::class, 'attachDriver'])->name('vehicle.attach-driver');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'] )->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'] )->name('profile.destroy');

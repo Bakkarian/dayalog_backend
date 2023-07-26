@@ -30,8 +30,24 @@ class VehicleController extends Controller
 
     public function store(VehicleRequest $request)
     {
-        $vehicle = (new VehicleService())->store($request->validated());
+        (new VehicleService())->store($request->validated());
 
         return redirect()->back()->with('success', 'Added Vehicle');
+    }
+    public function attachDriver(Request $request, Vehicle $vehicle)
+    {
+
+        if($vehicle->driver != null ){
+            return  redirect()->back()->with('success', 'Vehicle is already attached to a driver.');
+        }
+
+        VehicleDriver::create(
+            [
+                'vehicle_id' => $vehicle->id,
+                'driver_id' => $request->driver_id
+            ]
+        );
+
+        return redirect()->back()->with('success', 'Vehicle updated');
     }
 }
