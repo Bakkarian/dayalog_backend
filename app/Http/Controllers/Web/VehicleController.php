@@ -16,8 +16,13 @@ class VehicleController extends Controller
 {
     public function index(Request $request)
     {
+        $term = $request->term;
 
-        $vehicles = Vehicle::with(['driver.bioData' ])->paginate(7);
+        $vehicles = Vehicle::with(['driver.bioData' ])
+                    ->where('number_plate', 'LIKE', "%$term%")
+                    ->orWhere('make', 'LIKE', "%$term%")
+                    ->orWhere('model', 'LIKE', "%$term%")
+                    ->paginate(7);
         return Inertia::render('ViewVehicles', [
             'vehicles' => $vehicles
         ]);

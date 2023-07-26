@@ -8,7 +8,10 @@
                     <label for="email" class="sr-only">Search</label>
                     <input type="text" name="search" id="search" class="block w-full rounded-md border-0 py-1.5 text-gray-900 \
                         shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset \
-                         focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Search vehicles" />
+                         focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Search vehicles"
+                         v-model="term"
+                         @keyup="searchVehicles"
+                         />
                 </div>
 
                 <ul role="list" class="row-auto divide-y divide-gray-100 overflow-hidden bg-white shadow-sm ring-1 \
@@ -124,25 +127,37 @@
 
   <script setup>
   import { ChevronRightIcon } from '@heroicons/vue/20/solid'
-  import {computed, ref, watch} from "vue";
+  import {computed, ref, watch, reactive} from "vue";
 
   import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
   import { ExclamationTriangleIcon } from '@heroicons/vue/24/outline'
 
-  import { useForm, usePage } from '@inertiajs/vue3';
+  import { useForm, usePage, router } from '@inertiajs/vue3';
   import LinkDriverToVehicle from '@/Containers/LinkDriverToVehicle.vue';
+  import debounce from 'lodash/debounce'
 
+  const page = usePage()
   const vehicles = computed(() => usePage().props.vehicles)
   const openLinkDriver = ref(false)
   const openWarning = ref(false)
-  const selectedVehicleId = ref(false);
+
+  const selectedVehicleId = ref(false)
+  const term = ref('')
 
   const selectedVehicle = computed(()=>{
     return vehicles.value?.data.find(vehicle => vehicle.id == selectedVehicleId.value);
   })
 
+  const searchVehicles = debounce(()=>{
+    router.reload({
+        data: {
+            term: term.value,
+        },
+    })
+  }, 500)
+
   const closeLinkModal = () => {
-    openLinkDriver.value = false;
+    openLinkDriver.value = false
   }
 
   const form = useForm({
