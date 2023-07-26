@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\VehicleRequest;
 use App\Models\Device;
+use App\Models\Driver;
 use App\Models\Vehicle;
+use App\Models\VehicleDriver;
 use App\Services\VehicleService;
 
 class VehicleController extends Controller
@@ -47,6 +49,23 @@ class VehicleController extends Controller
                 'driver_id' => $request->driver_id
             ]
         );
+
+        return redirect()->back()->with('success', 'Vehicle updated');
+    }
+
+    public function detachDriver(Request $request)
+    {
+
+
+        $vehicleDriver = VehicleDriver::where('vehicle_id', $request->vehicle_id)
+            ->where('driver_id', $request->driver_id)
+            ->first();
+
+        if (!$vehicleDriver) {
+            return redirect()->back()->with('message' , 'Vehicle not assigned to the driver.');
+        }
+
+        $vehicleDriver->delete();
 
         return redirect()->back()->with('success', 'Vehicle updated');
     }
