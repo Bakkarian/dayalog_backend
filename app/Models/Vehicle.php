@@ -42,10 +42,10 @@ class Vehicle extends Model
         return $this->hasOneThrough(
             Driver::class,
             VehicleDriver::class,
-            'driver_id', // Foreign key on the "vehicle_devices" table
+            'vehicle_id', // Foreign key on the "vehicle_devices" table
             'id', // Foreign key on the "devices" table
             'id', // Local key on the "vehicles" table
-            'vehicle_id' // Local key on the "vehicle_devices" table
+            'driver_id' // Local key on the "vehicle_devices" table
         );
     }
 }
