@@ -1,4 +1,7 @@
 <template>
+
+    <Head title="Add Drivers" />
+
     <div class="px-4 py-10 sm:px-6 lg:px-8 lg:py-6 max-w-7xl">
         <!-- Main area -->
         <div class="mb-8">
@@ -64,7 +67,7 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
 import FlashMessage from '@/Containers/FlashMessage.vue';
-import { useForm } from '@inertiajs/vue3';
+import { Head, useForm } from '@inertiajs/vue3';
 
 
     const form = useForm({

@@ -1,4 +1,6 @@
 <template>
+    <Head title="Vehicles" />
+
     <div class="px-4 py-10 sm:px-6 lg:px-8 lg:py-6">
         <!-- Main area -->
         <h1 class="text-xl mb-8">Vehicles</h1>
@@ -132,7 +134,7 @@
   import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
   import { ExclamationTriangleIcon } from '@heroicons/vue/24/outline'
 
-  import { useForm, usePage, router } from '@inertiajs/vue3';
+  import { useForm, usePage, router, Head } from '@inertiajs/vue3';
   import LinkDriverToVehicle from '@/Containers/LinkDriverToVehicle.vue';
   import debounce from 'lodash/debounce'
 

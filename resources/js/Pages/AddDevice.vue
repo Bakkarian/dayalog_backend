@@ -1,4 +1,5 @@
 <template>
+    <Head title="Add Device" />
     <div class="px-4 py-10 sm:px-6 lg:px-8 lg:py-6">
         <!-- Main area -->
         <h1 class="text-xl mb-8">Add Device</h1>
@@ -91,7 +92,7 @@
   </template>
 
   <script setup>
-import { useForm } from '@inertiajs/vue3';
+import { Head, useForm } from '@inertiajs/vue3';
 import addDeviceImage from '@/assets/add-device.svg'
 import FlashMessage from '@/Containers/FlashMessage.vue';
 

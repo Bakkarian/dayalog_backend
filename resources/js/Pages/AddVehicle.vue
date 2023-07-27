@@ -1,4 +1,5 @@
 <template>
+    <Head title="Add Vehicles" />
     <div class="px-4 py-10 sm:px-6 lg:px-8 lg:py-6 max-w-7xl">
         <!-- Main area -->
         <div class="mb-8">
@@ -102,7 +103,7 @@
 
 <script setup>
 import AttachDevice from '@/Containers/AttachDevice.vue'
-import { useForm } from '@inertiajs/vue3'
+import { Head, useForm } from '@inertiajs/vue3'
 import  TextInput  from '@/Components/TextInput.vue'
 import InputLabel from '@/Components/InputLabel.vue';
 import InputError from '@/Components/InputError.vue';

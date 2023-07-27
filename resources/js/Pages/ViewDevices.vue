@@ -1,4 +1,7 @@
 <template>
+
+    <Head title="Devices" />
+
     <div class="px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div class="sm:flex sm:items-center">
             <div class="sm:flex-auto">
@@ -50,7 +53,7 @@
 </template>
 
 <script setup>
-import { Link } from '@inertiajs/vue3'
+import { Head, Link } from '@inertiajs/vue3'
 import {
     ExclamationCircleIcon,
     CheckBadgeIcon,
