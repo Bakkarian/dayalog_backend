@@ -29,8 +29,8 @@ class DriverController extends Controller
        ]);
 
        return redirect()
-           ->route('driver.create')
-           ->with('success', 'Device Saved Successfully');
+           ->back()
+           ->with('success', 'Driver added Successfully');
     }
 
     public function search(Request $request)
