@@ -29,9 +29,19 @@ class DriverRequest extends FormRequest
                  'unique:drivers,user_id'
             ],
             'name' => ['required_if:user_id,null'],
-            'email' => ['required_without_all:user_id,patasente_id,phone_number'],
-            'patasente_id' => ['required_without_all:user_id,email,phone_number'],
-            'phone_number' => ['required_without_all:user_id,email,patasente_id']
+            'email' => [
+                'required_without_all:user_id,patasente_id,phone_number',
+                'unique:users,email',
+
+            ],
+            'patasente_id' => [
+                'required_without_all:user_id,email,phone_number',
+                'unique:users,patasente_id'
+            ],
+            'phone_number' => [
+                'required_without_all:user_id,email,patasente_id',
+                'unique:users,phone_number',
+            ]
 
         ];
     }
