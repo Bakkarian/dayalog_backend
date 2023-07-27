@@ -45,6 +45,7 @@
                             </div>
                         </div>
                     </div>
+                    <FlashMessage />
                     <button type="submit"
                             class="rounded-md mt-12 bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                         Create Driver
@@ -62,6 +63,7 @@
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
+import FlashMessage from '@/Containers/FlashMessage.vue';
 import { useForm } from '@inertiajs/vue3';
 
 

@@ -136,7 +136,6 @@
   import LinkDriverToVehicle from '@/Containers/LinkDriverToVehicle.vue';
   import debounce from 'lodash/debounce'
 
-  const page = usePage()
   const vehicles = computed(() => usePage().props.vehicles)
   const openLinkDriver = ref(false)
   const openWarning = ref(false)
@@ -153,6 +152,7 @@
         data: {
             term: term.value,
         },
+        only: ['vehicles'],
     })
   }, 500)
 
