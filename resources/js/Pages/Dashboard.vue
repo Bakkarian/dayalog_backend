@@ -1,4 +1,5 @@
 <template>
+    <Head title="Dashboard" />
     <div class="">
       <div class="absolute top-0 bottom-0 right-0 left-0">
         <!--      <img src="./assets/map.png" class="h-full" />-->
@@ -152,7 +153,7 @@
   } from '@heroicons/vue/24/outline'
   import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
   import useNavigation from '@/composable'
-  import { Link, usePage } from '@inertiajs/vue3';
+  import { Head, Link, usePage } from '@inertiajs/vue3';
   import { computed } from 'vue';
 
   defineOptions({ layout: Layout })

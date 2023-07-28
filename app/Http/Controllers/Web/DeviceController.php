@@ -33,7 +33,7 @@ class DeviceController extends Controller
        $device = (new DeviceService())->store($request->validated());
 
        return redirect()
-           ->route('devices.index')
+           ->back()
            ->with('success', 'Device Saved Successfully');
     }
 

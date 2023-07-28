@@ -76,8 +76,16 @@ class DriverController extends Controller
     /**
      * Assign Vehicle to Driver
      */
-    public function assignVehicle(Driver $driver, Vehicle $vechile)
+    public function assignVehicle(Driver $driver, Vehicle $vehicle)
     {
+
+        if($vehicle->driver != null ){
+            return response()->json([
+                'message' => 'Vehicle is already attached to a driver.',
+                'driver' => $vehicle->driver
+            ], 403);
+        }
+
         $vehicleDriver = VehicleDriver::create(
             [
                 'vehicle_id' => $vehicle->id,
@@ -94,7 +102,7 @@ class DriverController extends Controller
      /**
      * Remove Vehicle from Driver
      */
-    public function removeVehicle(Driver $driver, Vehicle $vechile)
+    public function removeVehicle(Driver $driver, Vehicle $vehicle)
     {
         $vehicleDriver = VehicleDriver::where('vehicle_id', $vehicle->id)
             ->where('driver_id', $driver->id)

@@ -1,4 +1,7 @@
 <template>
+
+    <Head title="Add Drivers" />
+
     <div class="px-4 py-10 sm:px-6 lg:px-8 lg:py-6 max-w-7xl">
         <!-- Main area -->
         <div class="mb-8">
@@ -45,6 +48,7 @@
                             </div>
                         </div>
                     </div>
+                    <FlashMessage />
                     <button type="submit"
                             class="rounded-md mt-12 bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                         Create Driver
@@ -62,7 +66,8 @@
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
-import { useForm } from '@inertiajs/vue3';
+import FlashMessage from '@/Containers/FlashMessage.vue';
+import { Head, useForm } from '@inertiajs/vue3';
 
 
     const form = useForm({

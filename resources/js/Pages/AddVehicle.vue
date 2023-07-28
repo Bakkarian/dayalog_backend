@@ -1,4 +1,5 @@
 <template>
+    <Head title="Add Vehicles" />
     <div class="px-4 py-10 sm:px-6 lg:px-8 lg:py-6 max-w-7xl">
         <!-- Main area -->
         <div class="mb-8">
@@ -90,6 +91,7 @@
                         </div>
                     </div>
                 </div>
+                <FlashMessage />
                 <div class="flex justify-end">
                     <button type="submit" class="rounded-md mt-12 bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add Vehicle</button>
                 </div>
@@ -101,10 +103,11 @@
 
 <script setup>
 import AttachDevice from '@/Containers/AttachDevice.vue'
-import { useForm } from '@inertiajs/vue3'
+import { Head, useForm } from '@inertiajs/vue3'
 import  TextInput  from '@/Components/TextInput.vue'
 import InputLabel from '@/Components/InputLabel.vue';
 import InputError from '@/Components/InputError.vue';
+import FlashMessage from '@/Containers/FlashMessage.vue';
 
 const form = useForm({
     vin:"",
