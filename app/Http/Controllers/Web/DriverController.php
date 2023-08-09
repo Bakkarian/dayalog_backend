@@ -45,6 +45,6 @@ class DriverController extends Controller
                     })
                     ->limit(10)->get();
 
-        return DriverWebJsonResource::collection($drivers);;
+        return DriverWebJsonResource::collection($drivers);
     }
 }
