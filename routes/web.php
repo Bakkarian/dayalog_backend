@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Web\DeviceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Web\DriverController;
@@ -23,9 +24,7 @@ Route::get('/test_page', function () {
     ]);
 })->name('test');
 Route::middleware('auth')->group(function () {
-    Route::get('/', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
+    Route::get('/', [HomeController::class, 'index'])->name('dashboard');
 
     Route::get('/create-driver',  [DriverController::class,'create'] )->name('driver.create');
     Route::post('/create-driver', [DriverController::class,'store'] )->name('driver.store');
