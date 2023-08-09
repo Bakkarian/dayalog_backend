@@ -13,11 +13,13 @@ class HomeController extends Controller
 
     public function index()
     {
+        return Inertia::render('Dashboard');
+    }
 
+
+    public function drivers()
+    {
         $drivers = Driver::with(['vehicles.dispatches', 'bioData'])->get();
-
-        return Inertia::render('Dashboard', [
-            'drivers' => HomeDriversResource::collection($drivers),
-        ]);
+        return response()->json(HomeDriversResource::collection($drivers));
     }
 }
