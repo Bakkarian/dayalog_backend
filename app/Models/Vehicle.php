@@ -48,4 +48,16 @@ class Vehicle extends Model
             'driver_id' // Local key on the "vehicle_devices" table
         );
     }
+    public function dispatches()
+    {
+        return $this->hasManyThrough(Dispatch::class, OrderVehicle::class);
+    }
+
+    public function latestActiveDispatch()
+    {
+        return $this->dispatches()
+            ->where('status', 'transit')
+            ->orderByDesc('created_at')
+            ->first();
+    }
 }

@@ -11,7 +11,6 @@
             <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
               <div class="fixed inset-0 bg-gray-900/80" />
             </TransitionChild>
-
             <div class="fixed inset-0 flex">
               <TransitionChild as="template" enter="transition ease-in-out duration-300 transform" enter-from="-translate-x-full" enter-to="translate-x-0" leave="transition ease-in-out duration-300 transform" leave-from="translate-x-0" leave-to="-translate-x-full">
                 <DialogPanel class="relative mr-16 flex w-full max-w-xs flex-1">
@@ -119,8 +118,7 @@
         <aside class="fixed bottom-0 left-20 top-16 hidden w-96 border-r border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block animate__animated animate__fadeIn">
           <!-- Secondary column (hidden on smaller screens) -->
           <div id="driver-list" class="mt-8 w-full overflow-y-auto bg-white h-40 shadow-lg rounded-md transition-all ease-in-out duration-300">
-            <ProgressLoader v-if="loadingList"/>
-            <DriverList1 :routeFunction="showroute" v-else />
+            <DriverList1 :routeFunction="showroute" />
           </div>
         </aside>
       </div>
@@ -134,7 +132,6 @@
   import { ref} from 'vue'
   import Layout from '@/Layouts/NoLayout.vue';
   import DriverList1 from "@/Containers/DriverList1.vue";
-  import  ProgressLoader from '@/Containers/loader.vue'
   import { Loader } from "@googlemaps/js-api-loader"
   import {
     Dialog,
