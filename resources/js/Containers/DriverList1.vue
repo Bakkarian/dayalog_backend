@@ -7,18 +7,18 @@
             <div class="flex items-center justify-between">
               <p class="truncate text-sm font-medium text-gray-900">{{ driver.name }}</p>
               <div class="ml-2 flex flex-shrink-0">
-                <p class="inline-flex rounded-full px-2 text-xs font-semibold leading-5" :class="driver.onTrip?'text-green-800 bg-green-100':'text-red-800 bg-red-100'">{{ driver.onTrip?'On Trip':'Not On Trip' }}</p>
+                <p class="inline-flex rounded-full px-2 text-xs font-semibold leading-5" :class="driver.lastDispatch?'text-green-800 bg-green-100':'text-red-800 bg-red-100'">{{ driver.onTrip?'On Trip':'Not On Trip' }}</p>
               </div>
             </div>
             <div class="mt-2 sm:flex sm:justify-between">
               <div class="sm:flex">
                 <p class="flex items-center text-sm text-gray-500">
                   <ClockIcon class="mr-1.5 h-4 w-4 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                  Trip: {{ driver.lastTrip }}
+                  Trip: {{ driver.lastDispatch ? dayjs(driver.lastDispatch?.created_at).fromNow():"" }}
                 </p>
                 <p class="mt-2 flex items-center text-sm text-gray-500 sm:ml-6 sm:mt-0">
                   <MapPinIcon class="mr-1.5 h-4 w-4 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                  To: {{ driver.to }}
+                  To: {{ driver.lastDispatch?.destination }}
                 </p>
               </div>
             </div>
@@ -206,65 +206,18 @@
 
 <script setup>
 import { CalendarIcon, CheckIcon, MapPinIcon, ClockIcon, ArrowLeftIcon } from '@heroicons/vue/20/solid'
-import {inject, ref} from "vue";
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
+import { onMounted, ref } from 'vue';
+import * as dayjs from 'dayjs'
+import * as relativeTime from 'dayjs/plugin/relativeTime'
+dayjs.extend(relativeTime)
 
+const drivers = ref([]);
+const loading = ref(true);
 const props = defineProps({
   routeFunction: Function
 });
 
-let drivers = ref([
-  {
-    id: 1,
-    name: 'Ivan Driver',
-    onTrip: true,
-    from: 'Isingiro',
-    to: 'Kampala',
-    lastTrip: '2h ago',
-    setOffTime: '8:30am',
-    detailOpened: false
-  },
-  {
-    id: 2,
-    name: 'Basajjamivule Alex',
-    onTrip: true,
-    from: 'Mbarara',
-    to: 'Mpigi',
-    lastTrip: '2h ago',
-    setOffTime: '8:30am',
-    detailOpened: false
-  },
-  {
-    id: 3,
-    name: 'Georde Driver',
-    onTrip: false,
-    from: 'Isingiro',
-    to: 'Kampala',
-    lastTrip: '2h ago',
-    setOffTime: '8:30am',
-    detailOpened: false
-  },
-  {
-    id: 2,
-    name: 'Kyasa Mark',
-    onTrip: true,
-    from: 'Mbarara',
-    to: 'Mpigi',
-    lastTrip: '2h ago',
-    setOffTime: '8:30am',
-    detailOpened: false
-  },
-  {
-    id: 3,
-    name: 'Georde Driver',
-    onTrip: false,
-    from: 'Isingiro',
-    to: 'Kampala',
-    lastTrip: '2h ago',
-    setOffTime: '8:30am',
-    detailOpened: false
-  },
-])
 let selectedDriver = ref({})
 function closeOtherDetails(id){
   for (let i = 0; i < drivers.value.length; i++){
@@ -278,4 +231,15 @@ const showRoute = () => {
   props.routeFunction();
 }
 const openDetails = ref(false)
+
+
+onMounted(()=>{
+    fetch(route('dashboard.drivers'))
+    .then(response => response.json())
+    .then(data => {
+        drivers.value = data;
+        loading.value = false;
+    })
+})
+
 </script>
