@@ -25,6 +25,7 @@ Route::get('/test_page', function () {
 })->name('test');
 Route::middleware('auth')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('dashboard');
+    Route::get('/home/drivers', [HomeController::class, 'drivers'])->name('dashboard.drivers');
 
     Route::get('/create-driver',  [DriverController::class,'create'] )->name('driver.create');
     Route::post('/create-driver', [DriverController::class,'store'] )->name('driver.store');
