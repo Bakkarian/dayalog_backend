@@ -1,5 +1,8 @@
 <template>
-  <div class="bg-white sm:rounded-md">
+
+<Loader v-if="loading" />
+
+  <div v-else class="bg-white sm:rounded-md">
     <ul role="list" class="divide-y divide-gray-200">
       <li v-for="driver in drivers" :key="driver.id">
         <div @click="driver.detailOpened = !driver.detailOpened; showRoute(); closeOtherDetails(driver.id); selectedDriver = driver" class="block hover:bg-gray-50 cursor-pointer">
@@ -208,6 +211,7 @@
 import { CalendarIcon, CheckIcon, MapPinIcon, ClockIcon, ArrowLeftIcon } from '@heroicons/vue/20/solid'
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
 import { onMounted, ref } from 'vue';
+import Loader from './Loader.vue';
 import * as dayjs from 'dayjs'
 import * as relativeTime from 'dayjs/plugin/relativeTime'
 dayjs.extend(relativeTime)
