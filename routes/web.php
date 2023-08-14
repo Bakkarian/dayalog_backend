@@ -3,6 +3,7 @@
 use App\Http\Controllers\Web\DeviceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Web\DriverController;
+use App\Http\Controllers\Web\OrdersController;
 use App\Http\Controllers\Web\VehicleController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -30,6 +31,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/create-driver',  [DriverController::class,'create'] )->name('driver.create');
     Route::post('/create-driver', [DriverController::class,'store'] )->name('driver.store');
     Route::get('/drivers/search', [DriverController::class,'search'] )->name('driver.search-json');
+
+//    Route::get('/view-orders', [OrdersController::class, 'index'] )->name('orders.view');
+    Route::get('/view-orders', function () {
+        return Inertia::render('Orders');
+    })->name('orders');
 
     Route::get('/view-devices', [DeviceController::class, 'index'] )->name('devices.index');
     Route::get('/add-device', [DeviceController::class, 'create'] )->name('device.create');
