@@ -1,6 +1,6 @@
 
 <script setup>
-import {ref} from 'vue'
+
 import {
   Dialog,
   DialogPanel,
@@ -19,8 +19,7 @@ import {
 import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
 import useNavigation from '@/composable'
 import { Link, usePage} from '@inertiajs/vue3'
-import { watch } from 'vue'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 const url = computed(() => usePage().url)
 
@@ -28,10 +27,6 @@ const { navigation, userNavigation, link } = useNavigation()
 
 const sidebarOpen = ref(false)
 
-
-watch(url, (oldV, newV) => {
-    console.log("fff", oldV, newV)
-})
 
 
 </script>
@@ -139,7 +134,7 @@ watch(url, (oldV, newV) => {
                     </MenuItems>
                   </transition>
                 </Menu>
-                
+
               </div>
             </div>
           </div>
