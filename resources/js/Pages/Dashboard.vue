@@ -231,75 +231,86 @@
     }
   ];
   let map;
-  loader.load().then(async () => {
-    const { Map } = await google.maps.importLibrary("maps");
-    const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
-    // const { DirectionsService, DirectionsRenderer } = await google.maps.importLibrary("directions");
-    let position = {lat: 0.297784, lng: 32.544896}
+  const markerImage = "http://34.23.255.87:9292/v1/storage/buckets/64d8ef0a1bfe6c86adfc/files/64e8721d8425434d0ed2/download?project=scarletpod&mode=admin";
+  let locations = [
+
+  ];
+  let locationMarkers = [];
+  let bounds;
+  function loadMap(){
+      loader.load().then(async () => {
+          const { Map } = await google.maps.importLibrary("maps");
+          const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
+          // const { DirectionsService, DirectionsRenderer } = await google.maps.importLibrary("directions");
+          let position = {lat: 0.297784, lng: 32.544896}
 
 
-    map = new Map(document.getElementById("map"), {
-      center: { lat: 0.297784, lng: 32.544896 },
-      zoom: 15,
-      mapTypeId: 'roadmap',
-      // mapId: "7c96e127d329f19d",
-      styles: mapStyle,
-    });
+          map = new Map(document.getElementById("map"), {
+              center: { lat: 0.297784, lng: 32.544896 },
+              zoom: 9,
+              mapTypeId: 'roadmap',
+              // mapId: "7c96e127d329f19d",
+              styles: mapStyle,
+          });
 
-    const markers = [
-      { position: { lat: 0.297784, lng: 32.544896 }, title: "Marker 1" },
-      { position: { lat: 0.292162, lng: 32.5485867 }, title: "Marker 2" },
-      { position: { lat: 0.291834, lng: 32.553651 }, title: "Marker 3" }
-      // add more markers as needed
-    ];
 
-    markers.forEach((mkr) => {
-      const marker = new google.maps.Marker({
-        position: mkr.position,
-        map: map,
-        title: "Ivan Driver",
-        icon: {
-          url: "https://bishangatravel.com/wp-content/uploads/2022/07/marker.png",
-          scaledSize: new google.maps.Size(40, 40)
-        },
-        /*label: {
-          text: "A",
-          color: "white"
-        },*/
-        animation: google.maps.Animation.DROP,
-        clickable: true,
-        draggable: false
+          locations.forEach((mkr) => {
+              const marker = new google.maps.Marker({
+                  position: mkr.position,
+                  map: map,
+                  title: "Ivan Driver",
+                  icon: {
+                      url: markerImage,
+                      scaledSize: new google.maps.Size(40, 40)
+                  },
+                  /*label: {
+                    text: "A",
+                    color: "white"
+                  },*/
+                  animation: google.maps.Animation.DROP,
+                  clickable: true,
+                  draggable: false
+              });
+              const infowindow = new google.maps.InfoWindow({
+                  content: '' +
+                      '<div class="h-24 w-72">\n' +
+                      '        <div class="cursor-pointer">\n' +
+                      '          <div class="sm:px-4">\n' +
+                      '            <div class="flex items-center justify-between">\n' +
+                      '              <p class="truncate text-sm font-medium text-gray-900">Ivan Driver</p>\n' +
+                      '              <div class="ml-2 flex flex-shrink-0">\n' +
+                      '                <p class="inline-flex rounded-full px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100">On Trip</p>\n' +
+                      '              </div>\n' +
+                      '            </div>\n' +
+                      '            <div class="mt-2 flex justify-between">\n' +
+                      '              <div class="flex">\n' +
+                      '                <p class="flex items-center text-sm text-gray-500">\n' +
+                      '                  Trip: 2 Hrs\n' +
+                      '                </p>\n' +
+                      '                <p class="mt-2 flex items-center text-sm text-gray-500 sm:ml-6 sm:mt-0">\n' +
+                      '                  To: Jinja\n' +
+                      '                </p>\n' +
+                      '              </div>\n' +
+                      '            </div>\n' +
+                      '          </div>\n' +
+                      '        </div></div>'
+              });
+
+              marker.addListener('click', () => {
+                  infowindow.open(map, marker);
+              });
+
+              locationMarkers.push(marker);
+              const bounds = new google.maps.LatLngBounds();
+              locations.forEach(position => {
+                  bounds.extend(position.position);
+              });
+
+              const padding = 150; // Adjust this padding as needed
+              map.fitBounds(bounds, padding);
+          });
       });
-      const infowindow = new google.maps.InfoWindow({
-        content: '' +
-            '<div class="h-24 w-72">\n' +
-            '        <div class="cursor-pointer">\n' +
-            '          <div class="sm:px-4">\n' +
-            '            <div class="flex items-center justify-between">\n' +
-            '              <p class="truncate text-sm font-medium text-gray-900">Ivan Driver</p>\n' +
-            '              <div class="ml-2 flex flex-shrink-0">\n' +
-            '                <p class="inline-flex rounded-full px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100">On Trip</p>\n' +
-            '              </div>\n' +
-            '            </div>\n' +
-            '            <div class="mt-2 flex justify-between">\n' +
-            '              <div class="flex">\n' +
-            '                <p class="flex items-center text-sm text-gray-500">\n' +
-            '                  Trip: 2 Hrs\n' +
-            '                </p>\n' +
-            '                <p class="mt-2 flex items-center text-sm text-gray-500 sm:ml-6 sm:mt-0">\n' +
-            '                  To: Jinja\n' +
-            '                </p>\n' +
-            '              </div>\n' +
-            '            </div>\n' +
-            '          </div>\n' +
-            '        </div></div>'
-      });
-
-      marker.addListener('click', () => {
-        infowindow.open(map, marker);
-      });
-    });
-  });
+  }
   /*function clickAction(){
     loader.deleteScript();
   }*/
@@ -342,7 +353,7 @@
             // The anchor point (x,y)
             new google.maps.Point( 22, 32 )
         )*/{
-            url: "https://bishangatravel.com/wp-content/uploads/2022/07/marker.png",
+            url: markerImage,
             scaledSize: new google.maps.Size(40, 40),
         },
         end: /*new google.maps.MarkerImage(
@@ -355,7 +366,7 @@
             // The anchor point (x,y)
             new google.maps.Point( 22, 32 )
         )*/{
-            url: "https://bishangatravel.com/wp-content/uploads/2022/07/marker.png",
+            url: markerImage,
             scaledSize: new google.maps.Size(40, 40),
         }
       };
@@ -404,12 +415,25 @@
   }
 
 
-  function updateDeviceLocation(position)
-  {
+  function setInitDeviceLocation(position) {
     const device =  props.devices.filter( x=> x.id == position.deviceId)
-    console.log("position changes", position, device);
+    console.log("position initial load", position, device);
+    let positionItem = { id: position.deviceId, position: { lat: position.latitude, lng: position.longitude }, title: "Marker 1" };
+    locations.push(positionItem);
+    // bounds.extend({ lat: position.latitude, lng: position.longitude });
   }
 
+  function updateDeviceLocation(position) {
+      // bounds = new google.maps.LatLngBounds();
+    console.log("position changes", position);
+    let markerIndex = locations.findIndex( x=> x.id === position.deviceId);
+    // console.log(markerIndex);
+    let newPosition = { lat: position.latitude, lng: position.longitude }
+      locationMarkers[markerIndex].setPosition(newPosition);
+      // bounds.extend(newPosition);
+  }
+
+  let initialLocationDataLoad = ref(false);
 
   onMounted(() => {
 
@@ -433,6 +457,7 @@
             };
 
                 ajax('GET', url + '/api/session?token=' + token, function(user) {
+                    // debugger
                     ajax('GET', url + '/api/devices', function(devices) {
                         var socket = new WebSocket('ws' + url.substring(4) + '/api/socket');
                         socket.onopen = () => {
@@ -449,7 +474,15 @@
 
                             var data = JSON.parse(event.data);
                             if(data.positions){
-                                data.positions.forEach(updateDeviceLocation)
+                                // markers.pop();
+                                if (!initialLocationDataLoad.value) {
+                                    data.positions.forEach(setInitDeviceLocation)
+                                    loadMap()
+                                }else {
+                                    data.positions.forEach(updateDeviceLocation)
+                                }
+                                initialLocationDataLoad.value = true;
+                                // console.log(locations);
                             }
                         }
                     });

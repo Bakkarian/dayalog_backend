@@ -44,7 +44,7 @@ return new class extends Migration
                 SET name = NEW.name, uniqueid = NEW.uniqueid, lastupdate = NEW.lastupdate,
                     positionid = NEW.positionid, groupid = NEW.groupid, attributes = NEW.attributes,
                     phone = NEW.phone, model = NEW.model, contact = NEW.contact, category = NEW.category,
-                    disabled = NEW.disabled, status = NEW.status, geofenceids = NEW.geofenceids,
+                    disabled = NEW.disabled, status = NEW.status,
                     expirationtime = NEW.expirationtime, motionstate = NEW.motionstate, motiontime = NEW.motiontime,
                     motiondistance = NEW.motiondistance, overspeedstate = NEW.overspeedstate,
                     overspeedtime = NEW.overspeedtime, overspeedgeofenceid = NEW.overspeedgeofenceid,
