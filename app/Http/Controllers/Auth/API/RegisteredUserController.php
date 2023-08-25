@@ -26,7 +26,7 @@ class RegisteredUserController extends Controller
             'password' => ['required'],
         ]);
 
-        $user = (new UserService())->store($request->validated());
+        $user = (new UserService())->store($request->all());
         return response()->json([
             "message" => "Registered successfully",
             "user" => $user

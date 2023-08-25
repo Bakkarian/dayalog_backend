@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\HomeDriversResource;
+use App\Models\Device;
 use App\Models\Driver;
 use Inertia\Inertia;
 
@@ -13,7 +14,12 @@ class HomeController extends Controller
 
     public function index()
     {
-        return Inertia::render('Dashboard');
+
+        $devices = Device::with(['vehicle'])->get();
+
+        return Inertia::render('Dashboard', [
+            'devices' => $devices,
+        ]);
     }
 
 

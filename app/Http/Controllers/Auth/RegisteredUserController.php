@@ -36,7 +36,7 @@ class RegisteredUserController extends Controller
             'password' => ['required', Rules\Password::defaults()],
         ]);
 
-        $user = (new UserService())->store($request->validated());
+        $user = (new UserService())->store($request->all());
         Auth::login($user);
         return redirect(RouteServiceProvider::HOME);
     }

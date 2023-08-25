@@ -151,18 +151,18 @@
   import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
   import useNavigation from '@/composable'
   import { Head, Link, usePage } from '@inertiajs/vue3';
-  import { computed } from 'vue';
+  import { computed, onMounted, defineProps } from 'vue';
 
   defineOptions({ layout: Layout })
+
+  const props = defineProps(['devices'])
+
   const url = computed(() => usePage().url)
   const { navigation, userNavigation } = useNavigation()
 
   const sidebarOpen = ref(false)
   let loadingList = ref(true)
 
-  function getLogo(){
-    return require("./assets/LOGO.png");
-  }
 
   setTimeout(function(){
     let element = document.getElementById("driver-list")
@@ -402,4 +402,60 @@
       title: title
     });
   }
+
+
+  function updateDeviceLocation(position)
+  {
+    const device =  props.devices.filter( x=> x.id == position.deviceId)
+    console.log("position changes", position, device);
+  }
+
+
+  onMounted(() => {
+
+
+            var url =import.meta.env.VITE_TRACCAR_URL
+            var token = import.meta.env.VITE_TRACCAR_WEBSOCKET_TOKEN
+
+            var ajax = function (method, url, callback) {
+                var xhr = new XMLHttpRequest();
+                xhr.withCredentials = true;
+                xhr.open(method, url, true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+                        callback(JSON.parse(xhr.responseText));
+                    }
+                };
+                if (method == 'POST') {
+                    xhr.setRequestHeader('Content-type', 'application/json');
+                }
+                xhr.send()
+            };
+
+                ajax('GET', url + '/api/session?token=' + token, function(user) {
+                    ajax('GET', url + '/api/devices', function(devices) {
+                        var socket = new WebSocket('ws' + url.substring(4) + '/api/socket');
+                        socket.onopen = () => {
+                            console.log('Connected to websocket Successfully')
+                        }
+                        socket.onerror = (error) => {
+                            console.log('socket error: ', error)
+                        }
+                        socket.onclose = function (event) {
+                            //TODO: Write code to reopen
+                        };
+                        socket.onmessage = function (event) {
+
+
+                            var data = JSON.parse(event.data);
+                            if(data.positions){
+                                data.positions.forEach(updateDeviceLocation)
+                            }
+                        }
+                    });
+                });
+
+
+  })
+
   </script>
