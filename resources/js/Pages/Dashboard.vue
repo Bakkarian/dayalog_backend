@@ -177,7 +177,7 @@
 
   });
   const mapStyle = [
-    {
+    /*{
       "featureType": "administrative",
       "elementType": "geometry",
       "stylers": [
@@ -185,7 +185,7 @@
           "visibility": "off"
         }
       ]
-    },
+    },*/
     {
       "featureType": "administrative.land_parcel",
       "elementType": "labels",
@@ -258,7 +258,7 @@
               const marker = new google.maps.Marker({
                   position: mkr.position,
                   map: map,
-                  title: "Ivan Driver",
+                  title: mkr.title,
                   icon: {
                       url: markerImage,
                       scaledSize: new google.maps.Size(40, 40)
@@ -277,12 +277,12 @@
                       '        <div class="cursor-pointer">\n' +
                       '          <div class="sm:px-4">\n' +
                       '            <div class="flex items-center justify-between">\n' +
-                      '              <p class="truncate text-sm font-medium text-gray-900">Ivan Driver</p>\n' +
+                      '              <p class="truncate text-sm font-medium text-gray-900">'+mkr.title+'</p>\n' +
                       '              <div class="ml-2 flex flex-shrink-0">\n' +
-                      '                <p class="inline-flex rounded-full px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100">On Trip</p>\n' +
+                      '                <p class="inline-flex rounded-full px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100">'+mkr.status+'</p>\n' +
                       '              </div>\n' +
                       '            </div>\n' +
-                      '            <div class="mt-2 flex justify-between">\n' +
+                      '            <!--<div class="mt-2 flex justify-between">\n' +
                       '              <div class="flex">\n' +
                       '                <p class="flex items-center text-sm text-gray-500">\n' +
                       '                  Trip: 2 Hrs\n' +
@@ -291,7 +291,7 @@
                       '                  To: Jinja\n' +
                       '                </p>\n' +
                       '              </div>\n' +
-                      '            </div>\n' +
+                      '            </div>-->\n' +
                       '          </div>\n' +
                       '        </div></div>'
               });
@@ -418,8 +418,14 @@
   function setInitDeviceLocation(position) {
     const device =  props.devices.filter( x=> x.id == position.deviceId)
     console.log("position initial load", position, device);
-    let positionItem = { id: position.deviceId, position: { lat: position.latitude, lng: position.longitude }, title: "Marker 1" };
+    let positionItem = {
+        id: position.deviceId,
+        position: { lat: position.latitude, lng: position.longitude },
+        title: device[0].name,
+        status: device[0].status
+    };
     locations.push(positionItem);
+    console.log(device[0]);
     // bounds.extend({ lat: position.latitude, lng: position.longitude });
   }
 
