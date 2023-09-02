@@ -133,6 +133,7 @@
   import Layout from '@/Layouts/NoLayout.vue';
   import DriverList1 from "@/Containers/DriverList1.vue";
   import { Loader } from "@googlemaps/js-api-loader"
+  import markr from "@/assets/marker.png"
   import {
     Dialog,
     DialogPanel,
@@ -231,7 +232,7 @@
     }
   ];
   let map;
-  const markerImage = "http://34.23.255.87:9292/v1/storage/buckets/64d8ef0a1bfe6c86adfc/files/64e8721d8425434d0ed2/download?project=scarletpod&mode=admin";
+  const markerImage = markr;
   let locations = [
 
   ];
