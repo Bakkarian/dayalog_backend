@@ -108,6 +108,8 @@ import  TextInput  from '@/Components/TextInput.vue'
 import InputLabel from '@/Components/InputLabel.vue';
 import InputError from '@/Components/InputError.vue';
 import FlashMessage from '@/Containers/FlashMessage.vue';
+import Layout from '@/Layouts/MainLayout.vue'
+defineOptions({ layout: Layout })
 
 const form = useForm({
     vin:"",
