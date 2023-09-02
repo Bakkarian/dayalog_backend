@@ -24,8 +24,13 @@ Route::get('/test_page', function () {
     return Inertia::render('Test', [
     ]);
 })->name('test');
+
+Route::get('/', function (){
+    return Inertia::render("Landing");
+})->name('Dayalog');
+
 Route::middleware('auth')->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
     Route::get('/home/drivers', [HomeController::class, 'drivers'])->name('dashboard.drivers');
 
     Route::get('/create-driver',  [DriverController::class,'create'] )->name('driver.create');
