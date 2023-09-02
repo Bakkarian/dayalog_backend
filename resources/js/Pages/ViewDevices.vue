@@ -59,6 +59,9 @@ import {
     CheckBadgeIcon,
 } from '@heroicons/vue/24/solid'
 import Pagination from '@/Components/Pagination.vue';
+import Layout from '@/Layouts/MainLayout.vue'
+defineOptions({ layout: Layout })
+
 
 const props = defineProps({
     devices: String

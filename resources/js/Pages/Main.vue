@@ -190,4 +190,7 @@
 
   <script setup>
   import { PhotoIcon, UserCircleIcon } from '@heroicons/vue/24/outline'
+  import Layout from '@/Layouts/MainLayout.vue'
+    defineOptions({ layout: Layout })
+
   </script>

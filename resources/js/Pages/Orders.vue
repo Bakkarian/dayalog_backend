@@ -245,6 +245,9 @@ import {
     ComboboxOptions,
 } from '@headlessui/vue'
 
+import Layout from '@/Layouts/MainLayout.vue'
+defineOptions({ layout: Layout })
+
 const openAssignModal = ref(false)
 
 const vehicles = [

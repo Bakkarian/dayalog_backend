@@ -68,6 +68,8 @@ import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
 import FlashMessage from '@/Containers/FlashMessage.vue';
 import { Head, useForm } from '@inertiajs/vue3';
+import Layout from '@/Layouts/MainLayout.vue'
+defineOptions({ layout: Layout })
 
 
     const form = useForm({
