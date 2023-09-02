@@ -484,7 +484,7 @@
                 ajax('GET', url + '/api/session?token=' + token, function(user) {
                     // debugger
                     ajax('GET', url + '/api/devices', function(devices) {
-                        var socket = new WebSocket('ws' + url.substring(4) + '/api/socket');
+                        var socket = new WebSocket('wss' + url.substring(4) + '/api/socket');
                         socket.onopen = () => {
                             console.log('Connected to websocket Successfully')
                         }
