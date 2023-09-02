@@ -137,6 +137,9 @@
   import { useForm, usePage, router, Head } from '@inertiajs/vue3';
   import LinkDriverToVehicle from '@/Containers/LinkDriverToVehicle.vue';
   import debounce from 'lodash/debounce'
+  import Layout from '@/Layouts/MainLayout.vue'
+  defineOptions({ layout: Layout })
+
 
   const vehicles = computed(() => usePage().props.vehicles)
   const openLinkDriver = ref(false)

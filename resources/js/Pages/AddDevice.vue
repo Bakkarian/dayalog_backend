@@ -91,11 +91,12 @@
     </div>
   </template>
 
-  <script setup>
+<script setup>
 import { Head, useForm } from '@inertiajs/vue3';
 import addDeviceImage from '@/assets/add-device.svg'
 import FlashMessage from '@/Containers/FlashMessage.vue';
-
+import Layout from '@/Layouts/MainLayout.vue'
+defineOptions({ layout: Layout })
 
 const form = useForm({
     'name':'',
