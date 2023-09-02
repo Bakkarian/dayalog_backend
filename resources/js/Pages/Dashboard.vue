@@ -251,6 +251,10 @@
               mapTypeId: 'roadmap',
               // mapId: "7c96e127d329f19d",
               styles: mapStyle,
+              // Remove Controls
+              streetViewControl: false, // Remove street view control
+              // zoomControl: false, // Remove zoom control
+              mapTypeControl: false, // Remove map type control
           });
 
 
@@ -319,17 +323,25 @@
     { position: { lat: 0.297784, lng: 32.544896 }, title: "Marker 1" },
     { position: { lat: 0.292162, lng: 32.5485867 }, title: "Marker 2" },
   ];
+  function clearMarkers() {
+      locationMarkers.forEach(marker => {
+          marker.setMap(null); // Remove the marker from the map
+      });
+
+      locationMarkers.pop(); // Clear the MVCArray
+  }
   const showroute  = () =>{
+      clearMarkers();
     loader.load().then(async () => {
       const { Map } = await google.maps.importLibrary("maps");
       const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
 
-      map = new Map(document.getElementById("map"), {
+      /*map = new Map(document.getElementById("map"), {
         center: { lat: 0.292162, lng: 32.5485867 },
         zoom: 13,
         mapTypeId: "roadmap",
         styles: mapStyle
-      });
+      });*/
 
       marker = markers.map((marker) => {
         const { position, title } = marker;
@@ -393,8 +405,15 @@
           (response, status) => {
             if (status === "OK") {
               directionsRenderer.setDirections(response);
+                directionsRenderer.setOptions({
+                    polylineOptions: {
+                        strokeColor: "#002c75", // Red color
+                        strokeWeight: 4, // Line thickness
+                        strokeOpacity: 0.7, // Line opacity (0-1)
+                    },
+                });
               let leg = response.routes[ 0 ].legs[ 0 ];
-              console.log(response,leg.end_location);
+              // console.log(response,leg.end_location);
               makeMarker( origin, icons.start, "title" );
               makeMarker( destination, icons.end, 'title' );
             } else {
