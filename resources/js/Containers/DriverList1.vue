@@ -212,7 +212,7 @@ import { CalendarIcon, CheckIcon, MapPinIcon, ClockIcon, ArrowLeftIcon } from '@
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
 import { onMounted, ref } from 'vue';
 import Loader from './Loader.vue';
-import * as dayjs from 'dayjs'
+import dayjs from 'dayjs'
 import * as relativeTime from 'dayjs/plugin/relativeTime'
 dayjs.extend(relativeTime)
 
