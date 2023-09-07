@@ -1,10 +1,11 @@
 <template>
     <Head title="Dashboard" />
     <div class="">
-      <div class="absolute top-0 bottom-0 right-0 left-0">
+      <div class="absolute top-0 bottom-0 right-0 left-0 lg:left-[350px]">
         <!--      <img src="./assets/map.png" class="h-full" />-->
         <div id="map" class="h-full w-full"></div>
       </div>
+        <div class="bg-gray-100 lg:left-[350px] top-0 bottom-0 w-[50px] absolute"></div>
 
       <div class="absolute right-0 left-0">
         <TransitionRoot as="template" :show="sidebarOpen">
@@ -119,7 +120,25 @@
         <aside class="fixed bottom-0 left-20 top-16 hidden w-96 border-r border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block animate__animated animate__fadeIn">
           <!-- Secondary column (hidden on smaller screens) -->
           <div id="driver-list" class="mt-8 w-full overflow-y-auto bg-white h-40 shadow-lg rounded-md transition-all ease-in-out duration-300">
-            <DriverList1 :routeFunction="showroute" />
+<!--            <DriverList1 :routeFunction="showroute" />-->
+
+              <div class="flex p-4" v-if="locations.length>0" v-for="location in locations">
+                  <div class="flex items-center justify-center rounded-full h-[40px] w-[40px] bg-gray-400 text-white">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+                      </svg>
+                  </div>
+                  <div class="flex-auto ml-2">
+                      <p class="text-sm">{{location.title}}</p>
+                      <p class="text-sm font-bold" :class="location.status.toLowerCase()==='online'?'text-green-500':'text-red-600'">{{location.status}}</p>
+                  </div>
+                  <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" :class="location.positionData['attributes']['batteryLevel']>50?'text-green-400':'text-orange-400'">
+                          <path fill-rule="evenodd" d="M3.75 6.75a3 3 0 00-3 3v6a3 3 0 003 3h15a3 3 0 003-3v-.037c.856-.174 1.5-.93 1.5-1.838v-2.25c0-.907-.644-1.664-1.5-1.837V9.75a3 3 0 00-3-3h-15zm15 1.5a1.5 1.5 0 011.5 1.5v6a1.5 1.5 0 01-1.5 1.5h-15a1.5 1.5 0 01-1.5-1.5v-6a1.5 1.5 0 011.5-1.5h15zM4.5 9.75a.75.75 0 00-.75.75V15c0 .414.336.75.75.75H18a.75.75 0 00.75-.75v-4.5a.75.75 0 00-.75-.75H4.5z" clip-rule="evenodd" />
+                      </svg>
+                      <small>{{location.positionData["attributes"]["batteryLevel"]}}%</small>
+                  </div>
+              </div>
           </div>
         </aside>
       </div>
@@ -286,10 +305,8 @@
   ];
   let map;
   const markerImage = markr;
-  let locations = [
-
-  ];
-  let locationMarkers = [];
+  let locations = ref([]);
+  let locationMarkers = ref([]);
   let selectedMarker = ref(-1);
   function loadMap(){
       loader.load().then(async () => {
@@ -312,7 +329,8 @@
           });
 
 
-          locations.forEach((mkr, i) => {
+          locations.value.forEach((mkr, i) => {
+              console.log(mkr.positionData["attributes"]["batteryLevel"])
               const marker = new google.maps.Marker({
                   position: mkr.position,
                   map: map,
@@ -363,7 +381,7 @@
                         <br />
                         <div class="flex my-2">
                             <p class="text-sm flex-1">Speed:</p>
-                            <p class="text-sm flex-1 text-gray-400" v-if="locationMarkers[selectedMarker].positionData.attributes.motion">${mkr.positionData.speed}</p>
+                            <p class="text-sm flex-1 text-gray-400">${mkr.positionData["speed"]}</p>
                         </div>
                         <div class="flex my-2">
                             <p class="text-sm flex-1">Total Distance:</p>
@@ -371,7 +389,7 @@
                         </div>
                         <div class="flex my-2">
                             <p class="text-sm flex-1">Accuracy:</p>
-                            <p class="text-sm flex-1 text-gray-400">${(mkr.positionData.accuracy).toFixed(1)}</p>
+                            <p class="text-sm flex-1 text-gray-400">${(mkr.positionData["accuracy"]).toFixed(1)}</p>
                         </div>`+
                       '          </div>\n' +
                       '        </div></div>'
@@ -382,9 +400,9 @@
                   // selectedMarker.value = i;
               });
 
-              locationMarkers.push(marker);
+              locationMarkers.value.push(marker);
               const bounds = new google.maps.LatLngBounds();
-              locations.forEach(position => {
+              locations.value.forEach(position => {
                   bounds.extend(position.position);
               });
 
@@ -424,11 +442,11 @@
     { position: { lat: 0.292162, lng: 32.5485867 }, title: "Marker 2" },
   ];
   function clearMarkers() {
-      locationMarkers.forEach(marker => {
+      locationMarkers.value.forEach(marker => {
           marker.setMap(null); // Remove the marker from the map
       });
 
-      locationMarkers.pop(); // Clear the MVCArray
+      locationMarkers.value.pop(); // Clear the MVCArray
   }
   const showroute  = () =>{
       clearMarkers();
@@ -545,7 +563,7 @@
         positionData: position,
         deviceData: device[0],
     };
-    locations.push(positionItem);
+    locations.value.push(positionItem);
     // console.log(device[0], JSON.parse(device[0].attributes).deviceImage);
     // bounds.extend({ lat: position.latitude, lng: position.longitude });
   }
@@ -553,10 +571,10 @@
   function updateDeviceLocation(position) {
       // bounds = new google.maps.LatLngBounds();
     console.log("position changes", position);
-    let markerIndex = locations.findIndex( x=> x.id === position.deviceId);
+    let markerIndex = locations.value.findIndex( x=> x["id"] === position.deviceId);
     let newPosition = { lat: position.latitude, lng: position.longitude }
-      locationMarkers[markerIndex].setPosition(newPosition);
-      locationMarkers[markerIndex].positionData = position;
+      locationMarkers.value[markerIndex].setPosition(newPosition);
+      locationMarkers.value[markerIndex].positionData = position;
       // bounds.extend(newPosition);
       console.log(locationMarkers);
   }
