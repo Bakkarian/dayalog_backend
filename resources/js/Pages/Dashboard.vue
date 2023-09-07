@@ -5,7 +5,7 @@
         <!--      <img src="./assets/map.png" class="h-full" />-->
         <div id="map" class="h-full w-full"></div>
       </div>
-        <div class="bg-gray-100 lg:left-[350px] top-0 bottom-0 w-[50px] absolute"></div>
+        <div class="bg-gradient-to-r from-gray-100 lg:left-[350px] top-0 bottom-0 w-[50px] absolute"></div>
 
       <div class="absolute right-0 left-0">
         <TransitionRoot as="template" :show="sidebarOpen">
