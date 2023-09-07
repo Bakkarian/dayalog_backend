@@ -129,7 +129,7 @@
                       </svg>
                   </div>
                   <div class="flex-auto ml-2">
-                      <p class="text-sm">{{location.title}} - {{index}}</p>
+                      <p class="text-sm">{{location.title}}</p>
                       <p class="text-sm font-bold" :class="location.status.toLowerCase()==='online'?'text-green-500':'text-red-600'">{{location.status}}</p>
                   </div>
                   <div>
