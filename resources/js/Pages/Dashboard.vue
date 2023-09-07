@@ -122,14 +122,14 @@
           <div id="driver-list" class="mt-8 w-full overflow-y-auto bg-white h-40 shadow-lg rounded-md transition-all ease-in-out duration-300">
 <!--            <DriverList1 :routeFunction="showroute" />-->
 
-              <div class="flex p-4" v-if="locations.length>0" v-for="location in locations">
+              <div class="flex p-4 cursor-pointer" v-if="locations.length>0" v-for="(location, index) in locations" @click="selectedMarker = index; centerMapToPosition(location.positionData.latitude,location.positionData.longitude)">
                   <div class="flex items-center justify-center rounded-full h-[40px] w-[40px] bg-gray-400 text-white">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
                       </svg>
                   </div>
                   <div class="flex-auto ml-2">
-                      <p class="text-sm">{{location.title}}</p>
+                      <p class="text-sm">{{location.title}} - {{index}}</p>
                       <p class="text-sm font-bold" :class="location.status.toLowerCase()==='online'?'text-green-500':'text-red-600'">{{location.status}}</p>
                   </div>
                   <div>
@@ -148,7 +148,7 @@
 
             <div class="p-4 bg-white">
                 <div class="flex">
-                    <p class="flex-auto">{{locationMarkers[selectedMarker].title}}</p>
+                    <p class="flex-auto">{{locations[selectedMarker].title}}</p>
                     <button type="button" class="-m-2.5 p-2.5" @click="selectedMarker = -1">
                         <span class="sr-only">Close device</span>
                         <XMarkIcon class="h-6 w-6 text-gray-500" aria-hidden="true" />
@@ -157,15 +157,15 @@
                 <br />
                 <div class="flex my-2">
                     <p class="text-sm flex-1">Speed:</p>
-                    <p class="text-sm flex-1 text-gray-400" v-if="locationMarkers[selectedMarker].positionData.attributes.motion">{{locationMarkers[selectedMarker].positionData.speed}}</p>
+                    <p class="text-sm flex-1 text-gray-400">{{locations[selectedMarker].positionData.speed}}</p>
                 </div>
                 <div class="flex my-2">
                     <p class="text-sm flex-1">Total Distance:</p>
-                    <p class="text-sm flex-1 text-gray-400">{{(locationMarkers[selectedMarker].positionData.attributes["totalDistance"]/1000).toFixed(2)}} Km</p>
+                    <p class="text-sm flex-1 text-gray-400">{{(locations[selectedMarker].positionData.attributes["totalDistance"]/1000).toFixed(2)}} Km</p>
                 </div>
                 <div class="flex my-2">
                     <p class="text-sm flex-1">Accuracy:</p>
-                    <p class="text-sm flex-1 text-gray-400">{{(locationMarkers[selectedMarker].positionData.accuracy).toFixed(1)}}</p>
+                    <p class="text-sm flex-1 text-gray-400">{{(locations[selectedMarker].positionData.accuracy).toFixed(1)}}</p>
                 </div>
             </div>
         </div>
@@ -330,7 +330,7 @@
 
 
           locations.value.forEach((mkr, i) => {
-              console.log(mkr.positionData["attributes"]["batteryLevel"])
+              // console.log(mkr.positionData["attributes"]["batteryLevel"])
               const marker = new google.maps.Marker({
                   position: mkr.position,
                   map: map,
@@ -397,7 +397,6 @@
 
               marker.addListener('click', () => {
                   infowindow.open(map, marker);
-                  // selectedMarker.value = i;
               });
 
               locationMarkers.value.push(marker);
@@ -433,9 +432,13 @@
       styleSheet.innerText = styles;
       document.head.appendChild(styleSheet);
   }
-  /*function clickAction(){
-    loader.deleteScript();
-  }*/
+  function centerMapToPosition(lat,lng){
+      map.setZoom(12);
+      setTimeout(function(){
+          map.panTo({lat: lat, lng: lng});
+          map.setZoom(15);
+      }, 400)
+  }
   let marker, directionsService, directionsRenderer;
   const markers = [
     { position: { lat: 0.297784, lng: 32.544896 }, title: "Marker 1" },
@@ -564,6 +567,7 @@
         deviceData: device[0],
     };
     locations.value.push(positionItem);
+      loadMap()
     // console.log(device[0], JSON.parse(device[0].attributes).deviceImage);
     // bounds.extend({ lat: position.latitude, lng: position.longitude });
   }
@@ -575,6 +579,9 @@
     let newPosition = { lat: position.latitude, lng: position.longitude }
       locationMarkers.value[markerIndex].setPosition(newPosition);
       locationMarkers.value[markerIndex].positionData = position;
+      locations.value[markerIndex].latitude = position.latitude;
+      locations.value[markerIndex].longitude = position.longitude;
+      locations.value[markerIndex].positionData = position;
       // bounds.extend(newPosition);
       console.log(locationMarkers);
   }
@@ -623,7 +630,6 @@
                                 // markers.pop();
                                 if (!initialLocationDataLoad.value) {
                                     data.positions.forEach(setInitDeviceLocation)
-                                    loadMap()
                                 }else {
                                     data.positions.forEach(updateDeviceLocation)
                                 }
