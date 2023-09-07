@@ -9,3 +9,8 @@
 #app {
     @apply h-full; /* feel free to add more classes */
 }
+.marker-label{
+    display: block;
+    background-color: #007BFF;
+    padding-bottom: 80px;
+}

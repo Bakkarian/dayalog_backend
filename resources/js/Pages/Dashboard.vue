@@ -5,6 +5,7 @@
         <!--      <img src="./assets/map.png" class="h-full" />-->
         <div id="map" class="h-full w-full"></div>
       </div>
+
       <div class="absolute right-0 left-0">
         <TransitionRoot as="template" :show="sidebarOpen">
           <Dialog as="div" class="relative z-50 lg:hidden" @close="sidebarOpen = false">
@@ -123,10 +124,36 @@
         </aside>
       </div>
 
-      <!--    <MapExample />-->
+    <div v-if="selectedMarker > -1" class="absolute right-0 left-0 bottom-0 pb-4">
+        <div class="w-[300px] mx-auto shadow-md rounded-md">
 
+            <div class="p-4 bg-white">
+                <div class="flex">
+                    <p class="flex-auto">{{locationMarkers[selectedMarker].title}}</p>
+                    <button type="button" class="-m-2.5 p-2.5" @click="selectedMarker = -1">
+                        <span class="sr-only">Close device</span>
+                        <XMarkIcon class="h-6 w-6 text-gray-500" aria-hidden="true" />
+                    </button>
+                </div>
+                <br />
+                <div class="flex my-2">
+                    <p class="text-sm flex-1">Speed:</p>
+                    <p class="text-sm flex-1 text-gray-400" v-if="locationMarkers[selectedMarker].positionData.attributes.motion">{{locationMarkers[selectedMarker].positionData.speed}}</p>
+                </div>
+                <div class="flex my-2">
+                    <p class="text-sm flex-1">Total Distance:</p>
+                    <p class="text-sm flex-1 text-gray-400">{{(locationMarkers[selectedMarker].positionData.attributes["totalDistance"]/1000).toFixed(2)}} Km</p>
+                </div>
+                <div class="flex my-2">
+                    <p class="text-sm flex-1">Accuracy:</p>
+                    <p class="text-sm flex-1 text-gray-400">{{(locationMarkers[selectedMarker].positionData.accuracy).toFixed(1)}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
   </template>
+
 
   <script setup>
   import { ref} from 'vue'
@@ -178,92 +205,84 @@
 
   });
   const mapStyle = [
-          /*{
-              "featureType": "administrative.land_parcel",
-              "elementType": "labels",
-              "stylers": [
-                  {
-                      "visibility": "off"
-                  }
-              ]
-          },*/
-          {
-              "featureType": "landscape.natural.landcover",
-              "stylers": [
-                  {
-                      "visibility": "off"
-                  }
-              ]
-          },
-          {
-              "featureType": "landscape.natural.terrain",
-              "stylers": [
-                  {
-                      "visibility": "off"
-                  }
-              ]
-          },
-          {
-              "featureType": "poi",
-              "elementType": "labels.text",
-              "stylers": [
-                  {
-                      "visibility": "off"
-                  }
-              ]
-          },
-          {
-              "featureType": "poi.business",
-              "stylers": [
-                  {
-                      "visibility": "off"
-                  }
-              ]
-          },
-          {
-              "featureType": "poi.park",
-              "elementType": "labels.text",
-              "stylers": [
-                  {
-                      "visibility": "off"
-                  }
-              ]
-          },
-          {
-              "featureType": "road.arterial",
-              "elementType": "labels",
-              "stylers": [
-                  {
-                      "visibility": "off"
-                  }
-              ]
-          },
-          {
-              "featureType": "road.highway",
-              "elementType": "labels",
-              "stylers": [
-                  {
-                      "visibility": "off"
-                  }
-              ]
-          },
-          {
-              "featureType": "road.local",
-              "stylers": [
-                  {
-                      "visibility": "off"
-                  }
-              ]
-          },
-          {
-              "featureType": "road.local",
-              "elementType": "labels",
-              "stylers": [
-                  {
-                      "visibility": "off"
-                  }
-              ]
-          }
+      /*{
+          "featureType": "administrative",
+          "elementType": "geometry",
+          "stylers": [
+              {
+                  "visibility": "off"
+              }
+          ]
+      },*/
+      {
+          "featureType": "administrative.land_parcel",
+          "elementType": "geometry.fill",
+          "stylers": [
+              {
+                  "visibility": "off"
+              }
+          ]
+      },
+      {
+          "featureType": "administrative.land_parcel",
+          "elementType": "labels",
+          "stylers": [
+              {
+                  "visibility": "off"
+              }
+          ]
+      },
+      {
+          "featureType": "poi",
+          "stylers": [
+              {
+                  "visibility": "off"
+              }
+          ]
+      },
+      {
+          "featureType": "poi",
+          "elementType": "labels.text",
+          "stylers": [
+              {
+                  "visibility": "off"
+              }
+          ]
+      },
+      {
+          "featureType": "poi.park",
+          "stylers": [
+              {
+                  "visibility": "off"
+              }
+          ]
+      },
+      {
+          "featureType": "road",
+          "elementType": "labels.icon",
+          "stylers": [
+              {
+                  "visibility": "off"
+              }
+          ]
+      },
+      {
+          "featureType": "road.local",
+          "elementType": "labels",
+          "stylers": [
+              {
+                  "visibility": "off"
+              }
+          ]
+      },
+      {
+          "featureType": "transit",
+          "stylers": [
+              {
+                  "visibility": "off"
+              }
+          ]
+      }
   ];
   let map;
   const markerImage = markr;
@@ -271,7 +290,7 @@
 
   ];
   let locationMarkers = [];
-  let bounds;
+  let selectedMarker = ref(-1);
   function loadMap(){
       loader.load().then(async () => {
           const { Map } = await google.maps.importLibrary("maps");
@@ -293,7 +312,7 @@
           });
 
 
-          locations.forEach((mkr) => {
+          locations.forEach((mkr, i) => {
               const marker = new google.maps.Marker({
                   position: mkr.position,
                   map: map,
@@ -303,16 +322,19 @@
                       scaledSize: new google.maps.Size(40, 40)
                   },
                   /*label: {
-                    text: "A",
-                    color: "white"
+                    text: mkr.title,
+                    // color: "white",
                   },*/
-                  animation: google.maps.Animation.DROP,
+                  // animation: google.maps.Animation.DROP,
                   clickable: true,
                   draggable: false
               });
+
+              marker.labelClass = "marker-label";
+
               const infowindow = new google.maps.InfoWindow({
                   content: '' +
-                      '<div class="h-24 w-72">\n' +
+                      '<div class="h-24 w-[300px]">\n' +
                       '        <div class="cursor-pointer">\n' +
                       '          <div class="sm:px-4">\n' +
                       '            <div class="flex items-center justify-between">\n' +
@@ -331,12 +353,33 @@
                       '                </p>\n' +
                       '              </div>\n' +
                       '            </div>-->\n' +
+                      `<!--<div class="flex">
+                            <p class="flex-auto">${mkr.title}</p>
+                            <button type="button" class="-m-2.5 p-2.5" @click="selectedMarker = -1">
+                                <span class="sr-only">Close device</span>
+                                <XMarkIcon class="h-6 w-6 text-gray-500" aria-hidden="true" />
+                            </button>
+                        </div>-->
+                        <br />
+                        <div class="flex my-2">
+                            <p class="text-sm flex-1">Speed:</p>
+                            <p class="text-sm flex-1 text-gray-400" v-if="locationMarkers[selectedMarker].positionData.attributes.motion">${mkr.positionData.speed}</p>
+                        </div>
+                        <div class="flex my-2">
+                            <p class="text-sm flex-1">Total Distance:</p>
+                            <p class="text-sm flex-1 text-gray-400">${(mkr.positionData.attributes["totalDistance"]/1000).toFixed(2)} Km</p>
+                        </div>
+                        <div class="flex my-2">
+                            <p class="text-sm flex-1">Accuracy:</p>
+                            <p class="text-sm flex-1 text-gray-400">${(mkr.positionData.accuracy).toFixed(1)}</p>
+                        </div>`+
                       '          </div>\n' +
                       '        </div></div>'
               });
 
               marker.addListener('click', () => {
                   infowindow.open(map, marker);
+                  // selectedMarker.value = i;
               });
 
               locationMarkers.push(marker);
@@ -349,6 +392,28 @@
               map.fitBounds(bounds, padding);
           });
       });
+      const styles = `
+.custom-label {
+  background-color: #007BFF; /* Background color */
+  border: 2px solid #0056b3; /* Border color */
+  border-radius: 50%; /* Rounded shape */
+  padding: 6px 12px; /* Padding around the label text */
+  text-align: center; /* Center the text horizontally */
+  width: 30px; /* Width of the label */
+  height: 30px; /* Height of the label */
+  line-height: 30px; /* Center the text vertically */
+  color: white; /* Text color */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Font weight */
+  font-family: Arial, sans-serif; /* Font family */
+}
+`;
+
+// Add the custom CSS styles to the document
+      const styleSheet = document.createElement("style");
+      styleSheet.type = "text/css";
+      styleSheet.innerText = styles;
+      document.head.appendChild(styleSheet);
   }
   /*function clickAction(){
     loader.deleteScript();
@@ -471,26 +536,29 @@
 
   function setInitDeviceLocation(position) {
     const device =  props.devices.filter( x=> x.id == position.deviceId)
-    // console.log("position initial load", position, device);
+    console.log("position initial load", position, device);
     let positionItem = {
         id: position.deviceId,
         position: { lat: position.latitude, lng: position.longitude },
         title: device[0].name,
-        status: device[0].status
+        status: device[0].status,
+        positionData: position,
+        deviceData: device[0],
     };
     locations.push(positionItem);
-    console.log(device[0]);
+    // console.log(device[0], JSON.parse(device[0].attributes).deviceImage);
     // bounds.extend({ lat: position.latitude, lng: position.longitude });
   }
 
   function updateDeviceLocation(position) {
       // bounds = new google.maps.LatLngBounds();
-    // console.log("position changes", position);
+    console.log("position changes", position);
     let markerIndex = locations.findIndex( x=> x.id === position.deviceId);
-    // console.log(markerIndex);
     let newPosition = { lat: position.latitude, lng: position.longitude }
       locationMarkers[markerIndex].setPosition(newPosition);
+      locationMarkers[markerIndex].positionData = position;
       // bounds.extend(newPosition);
+      console.log(locationMarkers);
   }
 
   let initialLocationDataLoad = ref(false);
