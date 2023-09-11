@@ -123,7 +123,8 @@
 <!--            <DriverList1 :routeFunction="showroute" />-->
 
               <div v-if="locations.length>0" v-for="(location, index) in locations" @click="selectedMarker = index; centerMapToPosition(location.positionData.latitude,location.positionData.longitude)">
-                  <div class="flex p-4 cursor-pointer" v-if="location.title.toLowerCase()!=='ivan tracker'">
+                  <div class="flex p-4 cursor-pointer items-center" v-if="location.title.toLowerCase()!=='ivan tracker'">
+                      <p class="mr-2 text-gray-500 text-sm">{{index+1}}</p>
                       <div
                           class="flex items-center justify-center rounded-full h-[40px] w-[40px] bg-gray-400 text-white">
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
