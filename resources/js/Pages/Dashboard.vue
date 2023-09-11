@@ -571,7 +571,7 @@
 
   function setInitDeviceLocation(position) {
     const device =  props.devices.filter( x=> x.id == position.deviceId)
-    console.log("position initial load", position, device);
+    // console.log("position initial load", position, device);
     let positionItem = {
         id: position.deviceId,
         position: { lat: position.latitude, lng: position.longitude },
@@ -588,7 +588,7 @@
 
   function updateDeviceLocation(position) {
       // bounds = new google.maps.LatLngBounds();
-    console.log("position changes", position);
+    // console.log("position changes", position);
     let markerIndex = locations.value.findIndex( x=> x["id"] === position.deviceId);
     let newPosition = { lat: position.latitude, lng: position.longitude }
       locationMarkers.value[markerIndex].setPosition(newPosition);
@@ -597,7 +597,7 @@
       locations.value[markerIndex].longitude = position.longitude;
       locations.value[markerIndex].positionData = position;
       // bounds.extend(newPosition);
-      console.log(locationMarkers);
+      // console.log(locationMarkers);
   }
 
   let initialLocationDataLoad = ref(false);
