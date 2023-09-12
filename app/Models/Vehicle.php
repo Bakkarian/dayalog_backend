@@ -53,6 +53,11 @@ class Vehicle extends Model
         return $this->hasManyThrough(Dispatch::class, OrderVehicle::class);
     }
 
+    public function activeDispatches(){
+        return $this->dispatches()->where('status','transit');
+        
+    }
+
     public function latestActiveDispatch()
     {
         return $this->dispatches()
