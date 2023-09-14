@@ -152,6 +152,7 @@
                               }}</small>
                       </div>
                   </div></div>
+            <DriverList1 :routeFunction="showroute" :driver="props.driver" :drivers="props.drivers?.original" />
           </div>
         </aside>
       </div>
@@ -215,7 +216,7 @@
 
   defineOptions({ layout: Layout })
 
-  const props = defineProps(['devices'])
+  const props = defineProps(['devices', 'driver', 'drivers' ])
 
   const url = computed(() => usePage().url)
   const { navigation, userNavigation } = useNavigation()
@@ -451,13 +452,6 @@
       const { Map } = await google.maps.importLibrary("maps");
       const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
 
-      /*map = new Map(document.getElementById("map"), {
-        center: { lat: 0.292162, lng: 32.5485867 },
-        zoom: 13,
-        mapTypeId: "roadmap",
-        styles: mapStyle
-      });*/
-
       marker = markers.map((marker) => {
         const { position, title } = marker;
 
@@ -470,29 +464,11 @@
       });
 
       let icons = {
-        start: /*new google.maps.MarkerImage(
-            // URL
-            "https://bishangatravel.com/wp-content/uploads/2022/07/marker.png",
-            // (width,height)
-            new google.maps.Size( 44, 32 ),
-            // The origin point (x,y)
-            new google.maps.Point( 0, 0 ),
-            // The anchor point (x,y)
-            new google.maps.Point( 22, 32 )
-        )*/{
+        start:{
             url: markerImage,
             scaledSize: new google.maps.Size(40, 40),
         },
-        end: /*new google.maps.MarkerImage(
-            // URL
-            "https://bishangatravel.com/wp-content/uploads/2022/07/marker.png",
-            // (width,height)
-            new google.maps.Size( 44, 32 ),
-            // The origin point (x,y)
-            new google.maps.Point( 0, 0 ),
-            // The anchor point (x,y)
-            new google.maps.Point( 22, 32 )
-        )*/{
+        end:{
             url: markerImage,
             scaledSize: new google.maps.Size(40, 40),
         }
@@ -502,7 +478,6 @@
       directionsRenderer = new google.maps.DirectionsRenderer({
         map,
         suppressMarkers: true,
-          // icons: icons,
       });
 
       // document.getElementById("show-route").addEventListener("click", () => {

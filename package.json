@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite --help"
     },
     "devDependencies": {
         "@googlemaps/js-api-loader": "^1.15.1",
