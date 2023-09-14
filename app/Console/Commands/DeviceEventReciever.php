@@ -11,7 +11,7 @@ class DeviceEventReciever extends Command
      *
      * @var string
      */
-    protected $signature = 'app:device-event-reciever';
+    protected $signature = 'app:device-event-receiver';
 
     /**
      * The console command description.
