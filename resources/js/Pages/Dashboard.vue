@@ -137,7 +137,7 @@
                           <p class="text-sm">{{ location.title }}</p>
                           <p class="text-sm font-bold"
                              :class="location.status.toLowerCase()==='online'?'text-green-500':'text-red-600'">
-                              {{ location.status }}</p>
+                              {{ location.status.toLowerCase()!=='online'?'Parked':'Online' }}</p>
                       </div>
                       <div>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
