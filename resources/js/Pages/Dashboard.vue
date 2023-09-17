@@ -592,8 +592,6 @@
                             //TODO: Write code to reopen
                         };
                         socket.onmessage = function (event) {
-
-
                             var data = JSON.parse(event.data);
                             if(data.positions){
                                 // markers.pop();
