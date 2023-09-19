@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreDispatchedDeviceEventsRequest;
 use App\Http\Requests\UpdateDispatchedDeviceEventsRequest;
+use App\Models\Dispatch;
 use App\Models\DispatchedDeviceEvents;
+use Exception;
 
 class DispatchedDeviceEventsController extends Controller
 {
@@ -63,4 +65,55 @@ class DispatchedDeviceEventsController extends Controller
     {
         //
     }
+
+
+    public function processTraccarPosition($position){
+
+        $deviceId = $position->deviceId;
+
+        $dispatch = Dispatch::with(['deviceEvents', 'orderVehicle.vehicle.device' => function ($q) use ($deviceId) {
+                $q->where('devices.id', $deviceId);
+            }
+        ])
+            ->where('status', 'transit')
+            ->latest()
+            ->first();
+
+        if ($dispatch) {
+            if ($dispatch->deviceEvents->isEmpty()) {
+                DispatchedDeviceEvents::create([
+                    'dispatch_id' => $dispatch->id,
+                    'device_id' => $deviceId,
+                    'device_position_id' => $position->id,
+                    'status' => 'started'
+                ]);
+            } else {
+
+                $event = $dispatch->deviceEvents()->with('devicePosition')->latest()->first();
+                $lastDevicePosition = $event->devicePosition;
+                if ($this->calculatePercentage($lastDevicePosition->speed, $position->speed) > 90 ){
+                    DispatchedDeviceEvents::create([
+                        'dispatch_id' => $dispatch->id,
+                        'device_id' => $deviceId,
+                        'device_position_id' => $position->id,
+                        'status' => ($position->speed == 0 ) ? "stopped" : (($lastDevicePosition->speed == 0) ?  "started" : "moving")
+                    ]);
+                }
+            }
+        }
+
+
+    }
+
+    function calculatePercentage($original, $given)
+    {
+        try{
+            $percentageOfGiven = round((abs(($given- $original))*100) / ($original + $given));
+        }catch(\DivisionByZeroError $e){
+           return 0;
+        }
+
+        return $percentageOfGiven;
+    }
+
 }
