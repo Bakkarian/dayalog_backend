@@ -17,8 +17,29 @@ return new class extends Migration
         Schema::create('dispatched_device_events', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Dispatch::class)->constrained();
-            $table->foreignIdFor(Device::class);
-            $table->foreignIdFor(DevicePosition::class);
+           /*  $table->foreignIdFor(Device::class)->constrained();
+            $table->foreignIdFor(DevicePosition::class)->constrained(); */
+
+            $table->integer('device_id')->index();
+            $table->integer('device_position_id')->index();
+            $table->foreign('device_id')
+                  ->references('id')
+                  ->on('devices')
+                  ->cascadeOnDelete();
+            $table->foreign('device_position_id')
+                    ->references('id')
+                    ->on('device_positions')
+                    ->cascadeOnDelete();
+
+            $table->enum('status', [
+                'started',
+                'stopped',
+                'offline',
+                'moving',
+                'ended'
+            ])->nullable();
+            //It can start
+            //It can stop
             $table->timestamps();
         });
     }
