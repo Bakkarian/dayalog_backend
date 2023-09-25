@@ -325,6 +325,7 @@
       loader.load().then(async () => {
           const { Map } = await google.maps.importLibrary("maps");
           const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
+          // const { MarkerClusterer } = await google.maps.importLibrary("markerclusterer");
           // const { DirectionsService, DirectionsRenderer } = await google.maps.importLibrary("directions");
           let position = {lat: 0.297784, lng: 32.544896}
 
@@ -353,16 +354,16 @@
                           url: markerImage,
                           scaledSize: new google.maps.Size(40, 40)
                       },
-                      /*label: {
+                      label: {
                         text: mkr.title,
                         // color: "white",
-                      },*/
+                          className: 'custom-map-label',
+                      },
                       // animation: google.maps.Animation.DROP,
                       clickable: true,
-                      draggable: false
+                      draggable: false,
+                      zIndex: 0,
                   });
-
-                  marker.labelClass = "marker-label";
 
                   const infowindow = new google.maps.InfoWindow({
                       content: '' +
@@ -424,28 +425,6 @@
               }
           });
       });
-      const styles = `
-.custom-label {
-  background-color: #007BFF; /* Background color */
-  border: 2px solid #0056b3; /* Border color */
-  border-radius: 50%; /* Rounded shape */
-  padding: 6px 12px; /* Padding around the label text */
-  text-align: center; /* Center the text horizontally */
-  width: 30px; /* Width of the label */
-  height: 30px; /* Height of the label */
-  line-height: 30px; /* Center the text vertically */
-  color: white; /* Text color */
-  font-size: 16px; /* Font size */
-  font-weight: bold; /* Font weight */
-  font-family: Arial, sans-serif; /* Font family */
-}
-`;
-
-// Add the custom CSS styles to the document
-      const styleSheet = document.createElement("style");
-      styleSheet.type = "text/css";
-      styleSheet.innerText = styles;
-      document.head.appendChild(styleSheet);
   }
   function centerMapToPosition(lat,lng){
       map.setZoom(12);
