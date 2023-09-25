@@ -354,15 +354,15 @@
                           url: markerImage,
                           scaledSize: new google.maps.Size(40, 40)
                       },
-                      label: {
+                      /*label: {
                         text: mkr.title,
                         // color: "white",
                           className: 'custom-map-label',
-                      },
+                      },*/
                       // animation: google.maps.Animation.DROP,
                       clickable: true,
                       draggable: false,
-                      zIndex: 0,
+                      // zIndex: 0,
                   });
 
                   const infowindow = new google.maps.InfoWindow({
