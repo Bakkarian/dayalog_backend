@@ -41,6 +41,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/view-orders', function () {
         return Inertia::render('Orders');
     })->name('orders');
+    Route::get('/create-order', function () {
+        return Inertia::render('CreateOrder');
+    })->name('create-order');
 
     Route::get('/view-devices', [DeviceController::class, 'index'] )->name('devices.index');
     Route::get('/add-device', [DeviceController::class, 'create'] )->name('device.create');
