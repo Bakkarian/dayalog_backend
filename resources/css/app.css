@@ -9,3 +9,20 @@
 #app {
     @apply h-full; /* feel free to add more classes */
 }
+
+.custom-map-label {
+    background-color: transparent;
+    border: 2px solid transparent;
+    /*border-radius: 50%;*/
+    /*padding: 6px 12px; !* Add padding to the bottom (6px) *!*/
+    margin-bottom: 50px;
+    text-align: center;
+    /*width: 30px;*/
+    /*height: 30px;*/
+    line-height: 30px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
