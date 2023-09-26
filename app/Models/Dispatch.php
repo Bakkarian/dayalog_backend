@@ -35,4 +35,9 @@ class Dispatch extends Model
         return $this->hasMany(DispatchedDeviceEvents::class);
     }
 
+    public function stops()
+    {
+        return $this->deviceEvents()->where('status','stopped');
+    }
+
 }
