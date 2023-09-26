@@ -23,8 +23,8 @@ class HomeController extends Controller
         if($selectedDriverId){
             $driver = Driver::with([
                 'vehicles.device',
-                'vehicles.dispatches',
-                // 'vehicles.latestActiveDispatch'
+                'vehicles.dispatches.stops.devicePosition',
+               'dispatchedVehicle.latestActiveDispatch.stops.devicePosition'
             ])->findOrFail($selectedDriverId);
         }
 
