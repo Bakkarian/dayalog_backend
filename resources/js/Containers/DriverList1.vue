@@ -50,7 +50,7 @@
               <time datetime="2023-01-23T10:32" class="flex-none py-0.5 text-xs leading-5 text-gray-500">"  "</time>
             </li>
 
-            <li class="relative flex gap-x-4">
+            <li v-for="stop in props.driver?.dispatched_vehicle?.latest_active_dispatch?.stops"  class="relative flex gap-x-4">
               <div class="absolute left-0 top-0 flex w-6 justify-center -bottom-6">
                 <div class="w-px bg-gray-200"></div>
               </div>
@@ -59,7 +59,7 @@
                 <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
               </div>
               <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Stop: 1</span> Mbarara town -
-                <a href="#" class="text-blue-400">0.002,13.87763</a></p>
+                <a href="#" class="text-blue-400">{{ stop?.device_position?.latitude }},{{ stop?.device_position?.longitude }} </a></p>
               <time datetime="2023-01-23T11:03" class="flex-none py-0.5 text-xs leading-5 text-gray-500">11:14am</time>
             </li>
 
@@ -117,18 +117,6 @@ const props = defineProps({
   drivers:Array,
 });
 
-
-function closeOtherDetails(id){
-  for (let i = 0; i < drivers.value.length; i++){
-    let item = drivers.value[i];
-    if (item.id !== id){
-      item.detailOpened = false;
-    }
-  }
-}
-const showRoute = () => {
-  props.routeFunction();
-}
 const openDetails = ref(false)
 
 
