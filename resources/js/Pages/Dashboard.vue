@@ -120,7 +120,7 @@
         <aside class="fixed bottom-0 left-20 top-16 hidden w-96 border-r border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block animate__animated animate__fadeIn">
           <!-- Secondary column (hidden on smaller screens) -->
           <div id="driver-list" class="mt-8 w-full overflow-y-auto bg-white h-40 shadow-lg rounded-md transition-all ease-in-out duration-300">
-<!--            <DriverList1 :routeFunction="showroute" />-->
+            <DriverList1 :routeFunction="showroute" />
 
               <div v-if="locations.length>0" v-for="(location, index) in locations" @click="selectedMarker = index; centerMapToPosition(location.positionData.latitude,location.positionData.longitude)">
                   <div class="flex p-4 cursor-pointer items-center" v-if="location.title.toLowerCase()!=='ivan tracker'">
@@ -318,8 +318,8 @@
   ];
   let map;
   const markerImage = markr;
-  let locations = ref([]);
-  let locationMarkers = ref([]);
+  let locations = [];
+  let locationMarkers = [];
   let selectedMarker = ref(-1);
   function loadMap(){
       loader.load().then(async () => {
@@ -343,7 +343,7 @@
           });
 
 
-          locations.value.forEach((mkr, i) => {
+          locations.forEach((mkr, i) => {
               // console.log(mkr.positionData["attributes"]["batteryLevel"])
               if (mkr.title.toLowerCase()!=='ivan tracker') {
                   const marker = new google.maps.Marker({
@@ -414,9 +414,9 @@
                       infowindow.open(map, marker);
                   });
 
-                  locationMarkers.value.push(marker);
+                  locationMarkers.push(marker);
                   const bounds = new google.maps.LatLngBounds();
-                  locations.value.forEach(position => {
+                  locations.forEach(position => {
                       bounds.extend(position.position);
                   });
 
@@ -439,11 +439,11 @@
     { position: { lat: 0.292162, lng: 32.5485867 }, title: "Marker 2" },
   ];
   function clearMarkers() {
-      locationMarkers.value.forEach(marker => {
+      locationMarkers.forEach(marker => {
           marker.setMap(null); // Remove the marker from the map
       });
 
-      locationMarkers.value.pop(); // Clear the MVCArray
+      locationMarkers.pop(); // Clear the MVCArray
   }
   const showroute  = () =>{
       clearMarkers();
@@ -560,7 +560,7 @@
         positionData: position,
         deviceData: device[0],
     };
-    locations.value.push(positionItem);
+    locations.push(positionItem);
       loadMap()
     // console.log(device[0], JSON.parse(device[0].attributes).deviceImage);
     // bounds.extend({ lat: position.latitude, lng: position.longitude });
@@ -568,14 +568,14 @@
 
   function updateDeviceLocation(position) {
       // bounds = new google.maps.LatLngBounds();
-    // console.log("position changes", position);
-    let markerIndex = locations.value.findIndex( x=> x["id"] === position.deviceId);
+    console.log("position changes", position);
+    let markerIndex = locations.findIndex( x=> x["id"] === position.deviceId);
     let newPosition = { lat: position.latitude, lng: position.longitude }
-      locationMarkers.value[markerIndex].setPosition(newPosition);
-      locationMarkers.value[markerIndex].positionData = position;
-      locations.value[markerIndex].latitude = position.latitude;
-      locations.value[markerIndex].longitude = position.longitude;
-      locations.value[markerIndex].positionData = position;
+      locationMarkers[markerIndex].setPosition(newPosition);
+      locationMarkers[markerIndex].positionData = position;
+      locations[markerIndex].latitude = position.latitude;
+      locations[markerIndex].longitude = position.longitude;
+      locations[markerIndex].positionData = position;
       // bounds.extend(newPosition);
       // console.log(locationMarkers);
   }
