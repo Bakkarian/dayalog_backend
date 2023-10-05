@@ -123,7 +123,7 @@
 <!--            <DriverList1 :routeFunction="showroute" />-->
 
               <div v-if="locations.length>0" v-for="(location, index) in locations" @click="selectedMarker = index; centerMapToPosition(location.positionData.latitude,location.positionData.longitude)">
-                  <div class="flex p-4 cursor-pointer items-center" v-if="location.title.toLowerCase()!=='ivan tracker'">
+                  <div class="flex p-4 cursor-pointer items-center" v-if="location.title.toLowerCase()!=='ivan tracker' && location.positionData ">
                       <p class="mr-2 text-gray-500 text-sm">{{index}}</p>
                       <div
                           class="flex items-center justify-center rounded-full h-[40px] w-[40px] bg-gray-400 text-white">
@@ -194,6 +194,7 @@
   import DriverList1 from "@/Containers/DriverList1.vue";
   import { Loader } from "@googlemaps/js-api-loader"
   import markr from "@/assets/marker.png"
+  import useTraccar from "@/composable/traccar"
   import {
     Dialog,
     DialogPanel,
@@ -215,7 +216,7 @@
   import { computed, onMounted, defineProps } from 'vue';
 
   defineOptions({ layout: Layout })
-
+  const { positions : hello, devices : isakiye } = useTraccar();
   const page = usePage()
   const user = computed(() => page.props.auth.user)
 
@@ -230,8 +231,8 @@
 
   setTimeout(function(){
     let element = document.getElementById("driver-list")
-    element.classList.remove("h-40")
-    element.classList.add("h-[85%]")
+    element?.classList?.remove("h-40")
+    element?.classList?.add("h-[85%]")
     loadingList.value = false;
   },1000)
 
@@ -322,7 +323,20 @@
   ];
   let map;
   const markerImage = markr;
-  let locations = ref([]);
+  const locations = computed(()=> {
+
+    const devices = props.devices.map((device => {
+        const latestPosition = hello.value.find(position => position.deviceId = device.id)
+        return  {
+        position: { lat: latestPosition?.latitude, lng: latestPosition?.longitude },
+        title: device.name,
+        status: device.status,
+        positionData: latestPosition,
+        deviceData: device,
+    };
+    }));
+    return devices;
+  })
   let locationMarkers = ref([]);
   let selectedMarker = ref(-1);
   function loadMap(){
@@ -348,7 +362,6 @@
 
 
           locations.value.forEach((mkr, i) => {
-              // console.log(mkr.positionData["attributes"]["batteryLevel"])
               if (mkr.title.toLowerCase()!=='ivan tracker') {
                   const marker = new google.maps.Marker({
                       position: mkr.position,
@@ -358,15 +371,8 @@
                           url: markerImage,
                           scaledSize: new google.maps.Size(40, 40)
                       },
-                      /*label: {
-                        text: mkr.title,
-                        // color: "white",
-                          className: 'custom-map-label',
-                      },*/
-                      // animation: google.maps.Animation.DROP,
                       clickable: true,
                       draggable: false,
-                      // zIndex: 0,
                   });
 
                   const infowindow = new google.maps.InfoWindow({
@@ -442,6 +448,7 @@
     { position: { lat: 0.297784, lng: 32.544896 }, title: "Marker 1" },
     { position: { lat: 0.292162, lng: 32.5485867 }, title: "Marker 2" },
   ];
+
   function clearMarkers() {
       locationMarkers.value.forEach(marker => {
           marker.setMap(null); // Remove the marker from the map
@@ -517,6 +524,7 @@
       // });
     });
   }
+
   function makeMarker( position, icon, title ) {
     new google.maps.Marker({
       position: position,
@@ -526,91 +534,8 @@
     });
   }
 
-
-  function setInitDeviceLocation(position) {
-    const device =  props.devices.filter( x=> x.id == position.deviceId)
-    // console.log("position initial load", position, device);
-    let positionItem = {
-        id: position.deviceId,
-        position: { lat: position.latitude, lng: position.longitude },
-        title: device[0].name,
-        status: device[0].status,
-        positionData: position,
-        deviceData: device[0],
-    };
-    locations.value.push(positionItem);
-      loadMap()
-    // console.log(device[0], JSON.parse(device[0].attributes).deviceImage);
-    // bounds.extend({ lat: position.latitude, lng: position.longitude });
-  }
-
-  function updateDeviceLocation(position) {
-      // bounds = new google.maps.LatLngBounds();
-    // console.log("position changes", position);
-    let markerIndex = locations.value.findIndex( x=> x["id"] === position.deviceId);
-    let newPosition = { lat: position.latitude, lng: position.longitude }
-      locationMarkers.value[markerIndex].setPosition(newPosition);
-      locationMarkers.value[markerIndex].positionData = position;
-      locations.value[markerIndex].latitude = position.latitude;
-      locations.value[markerIndex].longitude = position.longitude;
-      locations.value[markerIndex].positionData = position;
-      // bounds.extend(newPosition);
-      // console.log(locationMarkers);
-  }
-
-  let initialLocationDataLoad = ref(false);
-
   onMounted(() => {
-
-
-            var url =import.meta.env.VITE_TRACCAR_URL
-            var token = import.meta.env.VITE_TRACCAR_WEBSOCKET_TOKEN
-
-            var ajax = function (method, url, callback) {
-                var xhr = new XMLHttpRequest();
-                xhr.withCredentials = true;
-                xhr.open(method, url, true);
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState == 4) {
-                        callback(JSON.parse(xhr.responseText));
-                    }
-                };
-                if (method == 'POST') {
-                    xhr.setRequestHeader('Content-type', 'application/json');
-                }
-                xhr.send()
-            };
-
-                ajax('GET', url + '/api/session?token=' + token, function(user) {
-                    // debugger
-                    ajax('GET', url + '/api/devices', function(devices) {
-                        var socket = new WebSocket('ws' + url.substring(4) + '/api/socket');
-                        socket.onopen = () => {
-                            console.log('Connected to websocket Successfully')
-                        }
-                        socket.onerror = (error) => {
-                            console.log('socket error: ', error)
-                        }
-                        socket.onclose = function (event) {
-                            //TODO: Write code to reopen
-                        };
-                        socket.onmessage = function (event) {
-                            var data = JSON.parse(event.data);
-                            if(data.positions){
-                                // markers.pop();
-                                if (!initialLocationDataLoad.value) {
-                                    data.positions.forEach(setInitDeviceLocation)
-                                }else {
-                                    data.positions.forEach(updateDeviceLocation)
-                                }
-                                initialLocationDataLoad.value = true;
-                                // console.log(locations);
-                            }
-                        }
-                    });
-                });
-
-
+    loadMap()
   })
 
   </script>
