@@ -346,7 +346,7 @@
           locations.value.forEach((mkr, i) => {
               // console.log(mkr.positionData["attributes"]["batteryLevel"])
               if (mkr.title.toLowerCase()!=='ivan tracker') {
-                  const marker = new google.maps.Marker({
+                  const marker = ref(new google.maps.Marker({
                       position: mkr.position,
                       map: map,
                       title: mkr.title,
@@ -363,7 +363,7 @@
                       clickable: true,
                       draggable: false,
                       // zIndex: 0,
-                  });
+                  }));
 
                   const infowindow = new google.maps.InfoWindow({
                       content: '' +
@@ -410,11 +410,11 @@
                           '        </div></div>'
                   });
 
-                  marker.addListener('click', () => {
-                      infowindow.open(map, marker);
+                  marker.value.addListener('click', () => {
+                      infowindow.open(map, marker.value);
                   });
 
-                  locationMarkers.value.push(marker);
+                  locationMarkers.value.push(marker.value);
                   const bounds = new google.maps.LatLngBounds();
                   locations.value.forEach(position => {
                       bounds.extend(position.position);
@@ -422,6 +422,7 @@
 
                   const padding = 150; // Adjust this padding as needed
                   map.fitBounds(bounds, padding);
+                  console.log("location markers",locationMarkers.value)
               }
           });
       });
@@ -439,11 +440,11 @@
     { position: { lat: 0.292162, lng: 32.5485867 }, title: "Marker 2" },
   ];
   function clearMarkers() {
-      locationMarkers.value.forEach(marker => {
+      locationMarkers.forEach(marker => {
           marker.setMap(null); // Remove the marker from the map
       });
 
-      locationMarkers.value.pop(); // Clear the MVCArray
+      locationMarkers.pop(); // Clear the MVCArray
   }
   const showroute  = () =>{
       clearMarkers();
@@ -562,22 +563,26 @@
     };
     locations.value.push(positionItem);
       loadMap()
+      console.log("positions", locations.value[1]);
     // console.log(device[0], JSON.parse(device[0].attributes).deviceImage);
     // bounds.extend({ lat: position.latitude, lng: position.longitude });
   }
 
   function updateDeviceLocation(position) {
       // bounds = new google.maps.LatLngBounds();
-    // console.log("position changes", position);
+    console.log("position changes", position);
     let markerIndex = locations.value.findIndex( x=> x["id"] === position.deviceId);
-    let newPosition = { lat: position.latitude, lng: position.longitude }
+    let newPosition1 = { lat: position.latitude, lng: position.longitude }
+    let newPosition = new google.maps.LatLng(position.latitude, position.longitude)
       locationMarkers.value[markerIndex].setPosition(newPosition);
       locationMarkers.value[markerIndex].positionData = position;
       locations.value[markerIndex].latitude = position.latitude;
       locations.value[markerIndex].longitude = position.longitude;
+      locations.value[markerIndex].position = newPosition;
       locations.value[markerIndex].positionData = position;
       // bounds.extend(newPosition);
-      // console.log(locationMarkers);
+      console.log(newPosition1);
+      console.log(locationMarkers.value[markerIndex]);
   }
 
   let initialLocationDataLoad = ref(false);
