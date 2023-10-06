@@ -31,4 +31,16 @@ class Driver extends Model
         );
     }
 
+    public function dispatchedVehicle()
+    {
+        return $this->hasOneThrough(
+            Vehicle::class,
+            VehicleDriver::class,
+            'vehicle_id', // Foreign key on the "vehicle_devices" table
+            'id', // Foreign key on the "devices" table
+            'id', // Local key on the "vehicles" table
+            'driver_id' // Local key on the "vehicle_devices" table
+        )->whereHas('activeDispatches');
+    }
+
 }

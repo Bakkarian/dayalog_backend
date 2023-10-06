@@ -92,9 +92,9 @@
                 <Menu as="div" class="relative">
                   <MenuButton class="-m-1.5 flex items-center p-1.5">
                     <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+                    <!-- <img class="h-8 w-8 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" /> -->
                     <span class="hidden lg:flex lg:items-center">
-                    <span class="ml-4 text-sm font-semibold leading-6 text-gray-900" aria-hidden="true">Tom Cook</span>
+                    <span class="ml-4 text-sm font-semibold leading-6 text-gray-900" aria-hidden="true">{{ user.name }}</span>
                     <ChevronDownIcon class="ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
                   </span>
                   </MenuButton>
@@ -123,7 +123,7 @@
 <!--            <DriverList1 :routeFunction="showroute" />-->
 
               <div v-if="locations.length>0" v-for="(location, index) in locations" @click="selectedMarker = index; centerMapToPosition(location.positionData.latitude,location.positionData.longitude)">
-                  <div class="flex p-4 cursor-pointer items-center" v-if="location.title.toLowerCase()!=='ivan tracker'">
+                  <div class="flex p-4 cursor-pointer items-center" v-if="location.title.toLowerCase()!=='ivan tracker' && location.positionData ">
                       <p class="mr-2 text-gray-500 text-sm">{{index}}</p>
                       <div
                           class="flex items-center justify-center rounded-full h-[40px] w-[40px] bg-gray-400 text-white">
@@ -152,6 +152,7 @@
                               }}</small>
                       </div>
                   </div></div>
+            <DriverList1 :routeFunction="showroute" :driver="props.driver" :drivers="props.drivers?.original" />
           </div>
         </aside>
       </div>
@@ -193,6 +194,7 @@
   import DriverList1 from "@/Containers/DriverList1.vue";
   import { Loader } from "@googlemaps/js-api-loader"
   import markr from "@/assets/marker.png"
+  import useTraccar from "@/composable/traccar"
   import {
     Dialog,
     DialogPanel,
@@ -214,8 +216,11 @@
   import { computed, onMounted, defineProps } from 'vue';
 
   defineOptions({ layout: Layout })
+  const { positions : hello, devices : isakiye } = useTraccar();
+  const page = usePage()
+  const user = computed(() => page.props.auth.user)
 
-  const props = defineProps(['devices'])
+  const props = defineProps(['devices', 'driver', 'drivers' ])
 
   const url = computed(() => usePage().url)
   const { navigation, userNavigation } = useNavigation()
@@ -226,8 +231,8 @@
 
   setTimeout(function(){
     let element = document.getElementById("driver-list")
-    element.classList.remove("h-40")
-    element.classList.add("h-[85%]")
+    element?.classList?.remove("h-40")
+    element?.classList?.add("h-[85%]")
     loadingList.value = false;
   },1000)
 
@@ -318,7 +323,20 @@
   ];
   let map;
   const markerImage = markr;
-  let locations = ref([]);
+  const locations = computed(()=> {
+
+    const devices = props.devices.map((device => {
+        const latestPosition = hello.value.find(position => position.deviceId = device.id)
+        return  {
+        position: { lat: latestPosition?.latitude, lng: latestPosition?.longitude },
+        title: device.name,
+        status: device.status,
+        positionData: latestPosition,
+        deviceData: device,
+    };
+    }));
+    return devices;
+  })
   let locationMarkers = ref([]);
   let selectedMarker = ref(-1);
   function loadMap(){
@@ -344,9 +362,8 @@
 
 
           locations.value.forEach((mkr, i) => {
-              // console.log(mkr.positionData["attributes"]["batteryLevel"])
               if (mkr.title.toLowerCase()!=='ivan tracker') {
-                  const marker = ref(new google.maps.Marker({
+                  const marker = new google.maps.Marker({
                       position: mkr.position,
                       map: map,
                       title: mkr.title,
@@ -354,16 +371,9 @@
                           url: markerImage,
                           scaledSize: new google.maps.Size(40, 40)
                       },
-                      /*label: {
-                        text: mkr.title,
-                        // color: "white",
-                          className: 'custom-map-label',
-                      },*/
-                      // animation: google.maps.Animation.DROP,
                       clickable: true,
                       draggable: false,
-                      // zIndex: 0,
-                  }));
+                  });
 
                   const infowindow = new google.maps.InfoWindow({
                       content: '' +
@@ -410,11 +420,11 @@
                           '        </div></div>'
                   });
 
-                  marker.value.addListener('click', () => {
-                      infowindow.open(map, marker.value);
+                  marker.addListener('click', () => {
+                      infowindow.open(map, marker);
                   });
 
-                  locationMarkers.value.push(marker.value);
+                  locationMarkers.value.push(marker);
                   const bounds = new google.maps.LatLngBounds();
                   locations.value.forEach(position => {
                       bounds.extend(position.position);
@@ -422,7 +432,6 @@
 
                   const padding = 150; // Adjust this padding as needed
                   map.fitBounds(bounds, padding);
-                  console.log("location markers",locationMarkers.value)
               }
           });
       });
@@ -439,25 +448,19 @@
     { position: { lat: 0.297784, lng: 32.544896 }, title: "Marker 1" },
     { position: { lat: 0.292162, lng: 32.5485867 }, title: "Marker 2" },
   ];
+
   function clearMarkers() {
-      locationMarkers.forEach(marker => {
+      locationMarkers.value.forEach(marker => {
           marker.setMap(null); // Remove the marker from the map
       });
 
-      locationMarkers.pop(); // Clear the MVCArray
+      locationMarkers.value.pop(); // Clear the MVCArray
   }
   const showroute  = () =>{
       clearMarkers();
     loader.load().then(async () => {
       const { Map } = await google.maps.importLibrary("maps");
       const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
-
-      /*map = new Map(document.getElementById("map"), {
-        center: { lat: 0.292162, lng: 32.5485867 },
-        zoom: 13,
-        mapTypeId: "roadmap",
-        styles: mapStyle
-      });*/
 
       marker = markers.map((marker) => {
         const { position, title } = marker;
@@ -471,29 +474,11 @@
       });
 
       let icons = {
-        start: /*new google.maps.MarkerImage(
-            // URL
-            "https://bishangatravel.com/wp-content/uploads/2022/07/marker.png",
-            // (width,height)
-            new google.maps.Size( 44, 32 ),
-            // The origin point (x,y)
-            new google.maps.Point( 0, 0 ),
-            // The anchor point (x,y)
-            new google.maps.Point( 22, 32 )
-        )*/{
+        start:{
             url: markerImage,
             scaledSize: new google.maps.Size(40, 40),
         },
-        end: /*new google.maps.MarkerImage(
-            // URL
-            "https://bishangatravel.com/wp-content/uploads/2022/07/marker.png",
-            // (width,height)
-            new google.maps.Size( 44, 32 ),
-            // The origin point (x,y)
-            new google.maps.Point( 0, 0 ),
-            // The anchor point (x,y)
-            new google.maps.Point( 22, 32 )
-        )*/{
+        end:{
             url: markerImage,
             scaledSize: new google.maps.Size(40, 40),
         }
@@ -503,7 +488,6 @@
       directionsRenderer = new google.maps.DirectionsRenderer({
         map,
         suppressMarkers: true,
-          // icons: icons,
       });
 
       // document.getElementById("show-route").addEventListener("click", () => {
@@ -540,6 +524,7 @@
       // });
     });
   }
+
   function makeMarker( position, icon, title ) {
     new google.maps.Marker({
       position: position,
@@ -549,97 +534,8 @@
     });
   }
 
-
-  function setInitDeviceLocation(position) {
-    const device =  props.devices.filter( x=> x.id == position.deviceId)
-    // console.log("position initial load", position, device);
-    let positionItem = {
-        id: position.deviceId,
-        position: { lat: position.latitude, lng: position.longitude },
-        title: device[0].name,
-        status: device[0].status,
-        positionData: position,
-        deviceData: device[0],
-    };
-    locations.value.push(positionItem);
-      loadMap()
-      console.log("positions", locations.value[1]);
-    // console.log(device[0], JSON.parse(device[0].attributes).deviceImage);
-    // bounds.extend({ lat: position.latitude, lng: position.longitude });
-  }
-
-  function updateDeviceLocation(position) {
-      // bounds = new google.maps.LatLngBounds();
-    console.log("position changes", position);
-    let markerIndex = locations.value.findIndex( x=> x["id"] === position.deviceId);
-    let newPosition1 = { lat: position.latitude, lng: position.longitude }
-    let newPosition = new google.maps.LatLng(position.latitude, position.longitude)
-      locationMarkers.value[markerIndex].setPosition(newPosition);
-      locationMarkers.value[markerIndex].positionData = position;
-      locations.value[markerIndex].latitude = position.latitude;
-      locations.value[markerIndex].longitude = position.longitude;
-      locations.value[markerIndex].position = newPosition;
-      locations.value[markerIndex].positionData = position;
-      // bounds.extend(newPosition);
-      console.log(newPosition1);
-      console.log(locationMarkers.value[markerIndex]);
-  }
-
-  let initialLocationDataLoad = ref(false);
-
   onMounted(() => {
-
-
-            var url =import.meta.env.VITE_TRACCAR_URL
-            var token = import.meta.env.VITE_TRACCAR_WEBSOCKET_TOKEN
-
-            var ajax = function (method, url, callback) {
-                var xhr = new XMLHttpRequest();
-                xhr.withCredentials = true;
-                xhr.open(method, url, true);
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState == 4) {
-                        callback(JSON.parse(xhr.responseText));
-                    }
-                };
-                if (method == 'POST') {
-                    xhr.setRequestHeader('Content-type', 'application/json');
-                }
-                xhr.send()
-            };
-
-                ajax('GET', url + '/api/session?token=' + token, function(user) {
-                    // debugger
-                    ajax('GET', url + '/api/devices', function(devices) {
-                        var socket = new WebSocket('ws' + url.substring(4) + '/api/socket');
-                        socket.onopen = () => {
-                            console.log('Connected to websocket Successfully')
-                        }
-                        socket.onerror = (error) => {
-                            console.log('socket error: ', error)
-                        }
-                        socket.onclose = function (event) {
-                            //TODO: Write code to reopen
-                        };
-                        socket.onmessage = function (event) {
-
-
-                            var data = JSON.parse(event.data);
-                            if(data.positions){
-                                // markers.pop();
-                                if (!initialLocationDataLoad.value) {
-                                    data.positions.forEach(setInitDeviceLocation)
-                                }else {
-                                    data.positions.forEach(updateDeviceLocation)
-                                }
-                                initialLocationDataLoad.value = true;
-                                // console.log(locations);
-                            }
-                        }
-                    });
-                });
-
-
+    loadMap()
   })
 
   </script>
