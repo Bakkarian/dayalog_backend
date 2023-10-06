@@ -335,6 +335,7 @@
         deviceData: device,
     };
     }));
+
     return devices;
   })
   let locationMarkers = ref([]);
@@ -360,43 +361,48 @@
               mapTypeControl: false, // Remove map type control
           });
 
+          console.log(locations.value)
 
-          locations.value.forEach((mkr, i) => {
-              if (mkr.title.toLowerCase()!=='ivan tracker') {
-                  const marker = new google.maps.Marker({
-                      position: mkr.position,
-                      map: map,
-                      title: mkr.title,
-                      icon: {
-                          url: markerImage,
-                          scaledSize: new google.maps.Size(40, 40)
-                      },
-                      clickable: true,
-                      draggable: false,
-                  });
 
-                  const infowindow = new google.maps.InfoWindow({
-                      content: '' +
-                          '<div class="h-24 w-[300px]">\n' +
-                          '        <div class="cursor-pointer">\n' +
-                          '          <div class="sm:px-4">\n' +
-                          '            <div class="flex items-center justify-between">\n' +
-                          '              <p class="truncate text-sm font-medium text-gray-900">' + mkr.title + '</p>\n' +
-                          '              <div class="ml-2 flex flex-shrink-0">\n' +
-                          '                <p class="inline-flex rounded-full px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100">' + mkr.status + '</p>\n' +
-                          '              </div>\n' +
-                          '            </div>\n' +
-                          '            <!--<div class="mt-2 flex justify-between">\n' +
-                          '              <div class="flex">\n' +
-                          '                <p class="flex items-center text-sm text-gray-500">\n' +
-                          '                  Trip: 2 Hrs\n' +
-                          '                </p>\n' +
-                          '                <p class="mt-2 flex items-center text-sm text-gray-500 sm:ml-6 sm:mt-0">\n' +
-                          '                  To: Jinja\n' +
-                          '                </p>\n' +
-                          '              </div>\n' +
-                          '            </div>-->\n' +
-                          `<!--<div class="flex">
+      });
+  }
+  function plotPins(){
+      locations.value.forEach((mkr, i) => {
+          if (mkr.title.toLowerCase()!=='ivan tracker') {
+              const marker = new google.maps.Marker({
+                  position: mkr.position,
+                  map: map,
+                  title: mkr.title,
+                  icon: {
+                      url: markerImage,
+                      scaledSize: new google.maps.Size(40, 40)
+                  },
+                  clickable: true,
+                  draggable: false,
+              });
+
+              const infowindow = new google.maps.InfoWindow({
+                  content: '' +
+                      '<div class="h-24 w-[300px]">\n' +
+                      '        <div class="cursor-pointer">\n' +
+                      '          <div class="sm:px-4">\n' +
+                      '            <div class="flex items-center justify-between">\n' +
+                      '              <p class="truncate text-sm font-medium text-gray-900">' + mkr.title + '</p>\n' +
+                      '              <div class="ml-2 flex flex-shrink-0">\n' +
+                      '                <p class="inline-flex rounded-full px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100">' + mkr.status + '</p>\n' +
+                      '              </div>\n' +
+                      '            </div>\n' +
+                      '            <!--<div class="mt-2 flex justify-between">\n' +
+                      '              <div class="flex">\n' +
+                      '                <p class="flex items-center text-sm text-gray-500">\n' +
+                      '                  Trip: 2 Hrs\n' +
+                      '                </p>\n' +
+                      '                <p class="mt-2 flex items-center text-sm text-gray-500 sm:ml-6 sm:mt-0">\n' +
+                      '                  To: Jinja\n' +
+                      '                </p>\n' +
+                      '              </div>\n' +
+                      '            </div>-->\n' +
+                      `<!--<div class="flex">
                                 <p class="flex-auto">${mkr.title}</p>
                                 <button type="button" class="-m-2.5 p-2.5" @click="selectedMarker = -1">
                                     <span class="sr-only">Close device</span>
@@ -416,24 +422,23 @@
                                 <p class="text-sm flex-1">Accuracy:</p>
                                 <p class="text-sm flex-1 text-gray-400">${(mkr.positionData["accuracy"]).toFixed(1)}</p>
                             </div>` +
-                          '          </div>\n' +
-                          '        </div></div>'
-                  });
+                      '          </div>\n' +
+                      '        </div></div>'
+              });
 
-                  marker.addListener('click', () => {
-                      infowindow.open(map, marker);
-                  });
+              marker.addListener('click', () => {
+                  infowindow.open(map, marker);
+              });
 
-                  locationMarkers.value.push(marker);
-                  const bounds = new google.maps.LatLngBounds();
-                  locations.value.forEach(position => {
-                      bounds.extend(position.position);
-                  });
+              locationMarkers.value.push(marker);
+              const bounds = new google.maps.LatLngBounds();
+              locations.value.forEach(position => {
+                  bounds.extend(position.position);
+              });
 
-                  const padding = 150; // Adjust this padding as needed
-                  map.fitBounds(bounds, padding);
-              }
-          });
+              const padding = 150; // Adjust this padding as needed
+              map.fitBounds(bounds, padding);
+          }
       });
   }
   function centerMapToPosition(lat,lng){
@@ -535,7 +540,7 @@
   }
 
   onMounted(() => {
-    loadMap()
+      loadMap()
   })
 
   </script>
