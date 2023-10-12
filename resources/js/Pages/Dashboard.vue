@@ -335,7 +335,6 @@
         deviceData: device,
     };
     }));
-
     return devices;
   })
   let locationMarkers = ref([]);
@@ -363,7 +362,7 @@
 
           console.log(locations.value)
 
-
+          plotPins()
       });
   }
   function plotPins(){
@@ -431,6 +430,7 @@
               });
 
               locationMarkers.value.push(marker);
+              console.log(locationMarkers.value)
               const bounds = new google.maps.LatLngBounds();
               locations.value.forEach(position => {
                   bounds.extend(position.position);
