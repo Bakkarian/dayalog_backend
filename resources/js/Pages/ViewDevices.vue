@@ -64,6 +64,6 @@ defineOptions({ layout: Layout })
 
 
 const props = defineProps({
-    devices: String
+    devices: Object
 })
 </script>
