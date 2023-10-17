@@ -3,7 +3,7 @@
     <div class="">
       <div class="absolute top-0 bottom-0 right-0 left-0 lg:left-[350px]">
         <!--      <img src="./assets/map.png" class="h-full" />-->
-        <div id="map" class="h-full w-full"></div>
+        <div ref="mapContainer" id="map" class="h-full w-full"></div>
       </div>
         <div class="bg-gradient-to-r from-gray-100 lg:left-[350px] top-0 bottom-0 w-[50px] absolute"></div>
 
@@ -217,6 +217,9 @@
   defineOptions({ layout: Layout })
 
   const { positions : tracarPositions, devices : tracarDevices } = useTraccar();
+  const mapContainer = ref(null);
+  const googleMap = ref(null);
+  const googleMapMarkers = [];
 
   const page = usePage()
   const user = computed(() => page.props.auth.user)
@@ -242,6 +245,7 @@
     version: "weekly",
 
   });
+
   const mapStyle = [
       /*{
           "featureType": "administrative",
@@ -322,6 +326,7 @@
           ]
       }
   ];
+
   let map;
   const markerImage = markr;
   const locations = computed(()=> {
@@ -351,67 +356,43 @@
   const locationMarkers = ref([])
 
     // watch works directly on a ref
-   watch(locations, async (newLocations, oldLocations) => {
-    //look for mark with device id
-
-    newLocations.forEach((newLocation) => {
-        marker = locationMarkers.value.find(marker => marker.deviceId == newLocation.deviceData.id)
-        if(marker){
-            if(typeof google !== 'undefined'){
-                marker.setMap(null)
-                locationMarkers.value.pop()
-                const _marker = new google.maps.Marker({
-                    position: newLocation.position,
-                    map: map,
-                    title: newLocation.title,
-                    deviceId: newLocation.deviceData.id,
-                    icon: {
-                        url: markerImage,
-                        scaledSize: new google.maps.Size(40, 40)
-                    },
-                    clickable: true,
-                    draggable: false,
-                });
-                locationMarkers.value = [...locationMarkers.value.filter(locationMarker => {
-                    return locationMarker.deviceId !=  marker.deviceId, _marker
-                })]
-                    //replace
+  watch(locations ,(newLocations, oldLocations) => {
+    if(googleMap.value){
+        googleMapMarkers.forEach((marker) => {
+            const markerData = marker.get('markerData');
+            if (!newLocations.find((newMarker) => newMarker === markerData)) {
+                marker.setMap(null); // Remove the marker from the map
             }
+        });
+        newLocations.forEach((newLocation) => {
+            const marker = new google.maps.Marker({
+                position: newLocation.position,
+                map: googleMap.value,
+                title: newLocation.title,
+                deviceId: newLocation.deviceData.id,
+                icon: {
+                    url: markerImage,
+                    scaledSize: new google.maps.Size(40, 40)
+                },
+                clickable: true,
+                draggable: false,
+            });
+            marker.set('markerData', newLocation);
+            googleMapMarkers.push(marker);
 
+        })
 
-
-
-        }else{
-            if(typeof google !== 'undefined'){
-                const marker = new google.maps.Marker({
-                    position: newLocation.position,
-                    map: map,
-                    title: newLocation.title,
-                    deviceId: newLocation.deviceData.id,
-                    icon: {
-                        url: markerImage,
-                        scaledSize: new google.maps.Size(40, 40)
-                    },
-                    clickable: true,
-                    draggable: false,
-                });
-
-                locationMarkers.value.push(marker)
-            }
-
-        }
-    })
-
+    }
     //look
    })
 
   let selectedDevice = ref(false);
 
   function loadMap(){
+
       loader.load().then(async () => {
-          const { Map } = await google.maps.importLibrary("maps");
-          map = new Map(document.getElementById("map"), {
-              center: { lat: 0.297784, lng: 32.544896 },
+        googleMap.value = new window.google.maps.Map(mapContainer.value, {
+            center: { lat: 0.297784, lng: 32.544896 },
               zoom: 9,
               mapTypeId: 'roadmap',
               // mapId: "7c96e127d329f19d",
@@ -420,11 +401,14 @@
               streetViewControl: false, // Remove street view control
               // zoomControl: false, // Remove zoom control
               mapTypeControl: false, // Remove map type control
-          });
+        });
       });
   }
+
+
+
   function centerMapToPosition(lat,lng){
-      map.setZoom(12);
+    googleMap.value.setZoom(12);
       setTimeout(function(){
           map.panTo({lat: lat, lng: lng});
           map.setZoom(15);
@@ -436,13 +420,16 @@
     { position: { lat: 0.292162, lng: 32.5485867 }, title: "Marker 2" },
   ];
 
-  function clearMarkers() {
-      locationMarkers.value.forEach(marker => {
-          marker.setMap(null); // Remove the marker from the map
-      });
+  const clearMarkers = () => {
+      // Loop through the markers array and set the map property to null
+      for (const marker of locationMarkers.value) {
+        marker.setMap(null);
+      }
 
-      locationMarkers.value.pop(); // Clear the MVCArray
-  }
+      // Clear the markers array
+      locationMarkers.value = [];
+    };
+
   const showroute  = () =>{
       clearMarkers();
     loader.load().then(async () => {
