@@ -3,7 +3,7 @@
     <div class="">
       <div class="absolute top-0 bottom-0 right-0 left-0 lg:left-[350px]">
         <!--      <img src="./assets/map.png" class="h-full" />-->
-        <div id="map" class="h-full w-full"></div>
+        <div ref="mapContainer" id="map" class="h-full w-full"></div>
       </div>
         <div class="bg-gradient-to-r from-gray-100 lg:left-[350px] top-0 bottom-0 w-[50px] absolute"></div>
 
@@ -120,9 +120,8 @@
         <aside class="fixed bottom-0 left-20 top-16 hidden w-96 border-r border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block animate__animated animate__fadeIn">
           <!-- Secondary column (hidden on smaller screens) -->
           <div id="driver-list" class="mt-8 w-full overflow-y-auto bg-white h-40 shadow-lg rounded-md transition-all ease-in-out duration-300">
-<!--            <DriverList1 :routeFunction="showroute" />-->
 
-              <div v-if="locations.length>0" v-for="(location, index) in locations" @click="selectedMarker = index; centerMapToPosition(location.positionData.latitude,location.positionData.longitude)">
+              <div  v-for="(location, index) in locations" @click="selectedDevice = location.deviceData.id;centerMapToPosition(location.positionData.latitude,location.positionData.longitude)">
                   <div class="flex p-4 cursor-pointer items-center" v-if="location.title.toLowerCase()!=='ivan tracker' && location.positionData ">
                       <p class="mr-2 text-gray-500 text-sm">{{index}}</p>
                       <div
@@ -152,18 +151,18 @@
                               }}</small>
                       </div>
                   </div></div>
-            <DriverList1 :routeFunction="showroute" :driver="props.driver" :drivers="props.drivers?.original" />
+            <!-- <DriverList1 :routeFunction="showroute" :driver="props.driver" :drivers="props.drivers?.original" /> -->
           </div>
         </aside>
       </div>
 
-    <div v-if="selectedMarker > -1" class="absolute right-0 left-0 bottom-0 pb-4">
+    <div v-if="selectedLocation" class="absolute right-0 left-0 bottom-0 pb-4">
         <div class="w-[300px] mx-auto shadow-md rounded-md">
 
             <div class="p-4 bg-white">
                 <div class="flex">
-                    <p class="flex-auto">{{locations[selectedMarker].title}}</p>
-                    <button type="button" class="-m-2.5 p-2.5" @click="selectedMarker = -1">
+                    <p class="flex-auto">{{selectedLocation.title}}</p>
+                    <button type="button" class="-m-2.5 p-2.5" @click="selectedMarker = false">
                         <span class="sr-only">Close device</span>
                         <XMarkIcon class="h-6 w-6 text-gray-500" aria-hidden="true" />
                     </button>
@@ -171,15 +170,15 @@
                 <br />
                 <div class="flex my-2">
                     <p class="text-sm flex-1">Speed:</p>
-                    <p class="text-sm flex-1 text-gray-400">{{locations[selectedMarker].positionData.speed}}</p>
+                    <p class="text-sm flex-1 text-gray-400">{{selectedLocation.positionData.speed}}</p>
                 </div>
                 <div class="flex my-2">
                     <p class="text-sm flex-1">Total Distance:</p>
-                    <p class="text-sm flex-1 text-gray-400">{{(locations[selectedMarker].positionData.attributes["totalDistance"]/1000).toFixed(2)}} Km</p>
+                    <p class="text-sm flex-1 text-gray-400">{{(selectedLocation.positionData.attributes["totalDistance"]/1000).toFixed(2)}} Km</p>
                 </div>
                 <div class="flex my-2">
                     <p class="text-sm flex-1">Accuracy:</p>
-                    <p class="text-sm flex-1 text-gray-400">{{(locations[selectedMarker].positionData.accuracy).toFixed(1)}}</p>
+                    <p class="text-sm flex-1 text-gray-400">{{(selectedLocation.positionData.accuracy).toFixed(1)}}</p>
                 </div>
             </div>
         </div>
@@ -213,10 +212,15 @@
   import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
   import useNavigation from '@/composable'
   import { Head, Link, usePage } from '@inertiajs/vue3';
-  import { computed, onMounted, defineProps } from 'vue';
+  import { computed, onMounted, watch } from 'vue';
 
   defineOptions({ layout: Layout })
-  const { positions : hello, devices : isakiye } = useTraccar();
+
+  const { positions : tracarPositions, devices : tracarDevices } = useTraccar();
+  const mapContainer = ref(null);
+  const googleMap = ref(null);
+  const googleMapMarkers = [];
+
   const page = usePage()
   const user = computed(() => page.props.auth.user)
 
@@ -241,6 +245,7 @@
     version: "weekly",
 
   });
+
   const mapStyle = [
       /*{
           "featureType": "administrative",
@@ -321,12 +326,13 @@
           ]
       }
   ];
+
   let map;
   const markerImage = markr;
   const locations = computed(()=> {
 
     const devices = props.devices.map((device => {
-        const latestPosition = hello.value.find(position => position.deviceId = device.id)
+        const latestPosition = tracarPositions.value.find(position => position.deviceId = device.id)
         return  {
         position: { lat: latestPosition?.latitude, lng: latestPosition?.longitude },
         title: device.name,
@@ -337,19 +343,56 @@
     }));
     return devices;
   })
-  let locationMarkers = ref([]);
-  let selectedMarker = ref(-1);
+
+  const selectedLocation = computed(()=>{
+    if(selectedDevice.value){
+          return locations.value.find(location => {
+            return location.deviceData.id == selectedDevice.value
+          });
+    }else{
+        return false;
+    }
+  })
+  const locationMarkers = ref([])
+
+    // watch works directly on a ref
+  watch(locations ,(newLocations, oldLocations) => {
+    if(googleMap.value){
+        googleMapMarkers.forEach((marker) => {
+            const markerData = marker.get('markerData');
+            if (!newLocations.find((newMarker) => newMarker === markerData)) {
+                marker.setMap(null); // Remove the marker from the map
+            }
+        });
+        newLocations.forEach((newLocation) => {
+            const marker = new google.maps.Marker({
+                position: newLocation.position,
+                map: googleMap.value,
+                title: newLocation.title,
+                deviceId: newLocation.deviceData.id,
+                icon: {
+                    url: markerImage,
+                    scaledSize: new google.maps.Size(40, 40)
+                },
+                clickable: true,
+                draggable: false,
+            });
+            marker.set('markerData', newLocation);
+            googleMapMarkers.push(marker);
+
+        })
+
+    }
+    //look
+   })
+
+  let selectedDevice = ref(false);
+
   function loadMap(){
+
       loader.load().then(async () => {
-          const { Map } = await google.maps.importLibrary("maps");
-          const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
-          // const { MarkerClusterer } = await google.maps.importLibrary("markerclusterer");
-          // const { DirectionsService, DirectionsRenderer } = await google.maps.importLibrary("directions");
-          let position = {lat: 0.297784, lng: 32.544896}
-
-
-          map = new Map(document.getElementById("map"), {
-              center: { lat: 0.297784, lng: 32.544896 },
+        googleMap.value = new window.google.maps.Map(mapContainer.value, {
+            center: { lat: 0.297784, lng: 32.544896 },
               zoom: 9,
               mapTypeId: 'roadmap',
               // mapId: "7c96e127d329f19d",
@@ -358,86 +401,14 @@
               streetViewControl: false, // Remove street view control
               // zoomControl: false, // Remove zoom control
               mapTypeControl: false, // Remove map type control
-          });
-
-
-          locations.value.forEach((mkr, i) => {
-              if (mkr.title.toLowerCase()!=='ivan tracker') {
-                  const marker = new google.maps.Marker({
-                      position: mkr.position,
-                      map: map,
-                      title: mkr.title,
-                      icon: {
-                          url: markerImage,
-                          scaledSize: new google.maps.Size(40, 40)
-                      },
-                      clickable: true,
-                      draggable: false,
-                  });
-
-                  const infowindow = new google.maps.InfoWindow({
-                      content: '' +
-                          '<div class="h-24 w-[300px]">\n' +
-                          '        <div class="cursor-pointer">\n' +
-                          '          <div class="sm:px-4">\n' +
-                          '            <div class="flex items-center justify-between">\n' +
-                          '              <p class="truncate text-sm font-medium text-gray-900">' + mkr.title + '</p>\n' +
-                          '              <div class="ml-2 flex flex-shrink-0">\n' +
-                          '                <p class="inline-flex rounded-full px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100">' + mkr.status + '</p>\n' +
-                          '              </div>\n' +
-                          '            </div>\n' +
-                          '            <!--<div class="mt-2 flex justify-between">\n' +
-                          '              <div class="flex">\n' +
-                          '                <p class="flex items-center text-sm text-gray-500">\n' +
-                          '                  Trip: 2 Hrs\n' +
-                          '                </p>\n' +
-                          '                <p class="mt-2 flex items-center text-sm text-gray-500 sm:ml-6 sm:mt-0">\n' +
-                          '                  To: Jinja\n' +
-                          '                </p>\n' +
-                          '              </div>\n' +
-                          '            </div>-->\n' +
-                          `<!--<div class="flex">
-                                <p class="flex-auto">${mkr.title}</p>
-                                <button type="button" class="-m-2.5 p-2.5" @click="selectedMarker = -1">
-                                    <span class="sr-only">Close device</span>
-                                    <XMarkIcon class="h-6 w-6 text-gray-500" aria-hidden="true" />
-                                </button>
-                            </div>-->
-                            <br />
-                            <div class="flex my-2">
-                                <p class="text-sm flex-1">Speed:</p>
-                                <p class="text-sm flex-1 text-gray-400">${mkr.positionData["speed"]}</p>
-                            </div>
-                            <div class="flex my-2">
-                                <p class="text-sm flex-1">Total Distance:</p>
-                                <p class="text-sm flex-1 text-gray-400">${(mkr.positionData.attributes["totalDistance"] / 1000).toFixed(2)} Km</p>
-                            </div>
-                            <div class="flex my-2">
-                                <p class="text-sm flex-1">Accuracy:</p>
-                                <p class="text-sm flex-1 text-gray-400">${(mkr.positionData["accuracy"]).toFixed(1)}</p>
-                            </div>` +
-                          '          </div>\n' +
-                          '        </div></div>'
-                  });
-
-                  marker.addListener('click', () => {
-                      infowindow.open(map, marker);
-                  });
-
-                  locationMarkers.value.push(marker);
-                  const bounds = new google.maps.LatLngBounds();
-                  locations.value.forEach(position => {
-                      bounds.extend(position.position);
-                  });
-
-                  const padding = 150; // Adjust this padding as needed
-                  map.fitBounds(bounds, padding);
-              }
-          });
+        });
       });
   }
+
+
+
   function centerMapToPosition(lat,lng){
-      map.setZoom(12);
+    googleMap.value.setZoom(12);
       setTimeout(function(){
           map.panTo({lat: lat, lng: lng});
           map.setZoom(15);
@@ -449,13 +420,16 @@
     { position: { lat: 0.292162, lng: 32.5485867 }, title: "Marker 2" },
   ];
 
-  function clearMarkers() {
-      locationMarkers.value.forEach(marker => {
-          marker.setMap(null); // Remove the marker from the map
-      });
+  const clearMarkers = () => {
+      // Loop through the markers array and set the map property to null
+      for (const marker of locationMarkers.value) {
+        marker.setMap(null);
+      }
 
-      locationMarkers.value.pop(); // Clear the MVCArray
-  }
+      // Clear the markers array
+      locationMarkers.value = [];
+    };
+
   const showroute  = () =>{
       clearMarkers();
     loader.load().then(async () => {
