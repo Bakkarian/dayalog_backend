@@ -407,7 +407,7 @@
               mapTypeControl: false, // Remove map type control
         });
           locations.value.forEach((newLocation, i) => {
-              console.log(newLocation.position)
+              // console.log(newLocation.position)
               const marker = new google.maps.Marker({
                   position: newLocation.position,
                   map: googleMap.value,
@@ -423,6 +423,13 @@
               marker.set('markerData', newLocation);
               googleMapMarkers.push(marker);
 
+              const bounds = new google.maps.LatLngBounds();
+              locations.value.forEach(position => {
+                bounds.extend(position.position);
+              });
+
+              const padding = 150; // Adjust this padding as needed
+            googleMap.value.fitBounds(bounds, padding);
           })
       });
   }
@@ -432,8 +439,8 @@
   function centerMapToPosition(lat,lng){
     googleMap.value.setZoom(12);
       setTimeout(function(){
-          map.panTo({lat: lat, lng: lng});
-          map.setZoom(15);
+        googleMap.value.panTo({lat: lat, lng: lng});
+        googleMap.value.setZoom(15);
       }, 400)
   }
   let marker, directionsService, directionsRenderer;
