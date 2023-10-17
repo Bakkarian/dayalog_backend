@@ -357,11 +357,13 @@
 
     // watch works directly on a ref
   watch(locations ,(newLocations, oldLocations) => {
+      console.log(newLocations)
     if(googleMap.value){
         googleMapMarkers.forEach((marker) => {
             const markerData = marker.get('markerData');
             if (!newLocations.find((newMarker) => newMarker === markerData)) {
-                marker.setMap(null); // Remove the marker from the map
+                // marker.setMap(null); // Remove the marker from the map
+                // marker.setPosition()
             }
         });
         newLocations.forEach((newLocation) => {
