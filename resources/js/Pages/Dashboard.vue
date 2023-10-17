@@ -216,7 +216,7 @@
   import { computed, onMounted, defineProps } from 'vue';
 
   defineOptions({ layout: Layout })
-  const { positions : hello, devices : isakiye } = useTraccar();
+  const { positions : livePositions, devices : liveDevices } = useTraccar();
   const page = usePage()
   const user = computed(() => page.props.auth.user)
 
@@ -326,7 +326,7 @@
   const locations = computed(()=> {
 
     const devices = props.devices.map((device => {
-        const latestPosition = hello.value.find(position => position.deviceId = device.id)
+        const latestPosition = livePositions.value.find(position => position.deviceId = device.id)
         return  {
         position: { lat: latestPosition?.latitude, lng: latestPosition?.longitude },
         title: device.name,
@@ -360,14 +360,14 @@
               mapTypeControl: false, // Remove map type control
           });
 
-          console.log(locations.value)
-
           plotPins()
       });
   }
   function plotPins(){
+
       locations.value.forEach((mkr, i) => {
-          if (mkr.title.toLowerCase()!=='ivan tracker') {
+          console.log(locations.value[i].position, ` - ${locations.value[i].title}`)
+          // if (mkr.title.toLowerCase()!=='ivan tracker') {
               const marker = new google.maps.Marker({
                   position: mkr.position,
                   map: map,
@@ -430,7 +430,7 @@
               });
 
               locationMarkers.value.push(marker);
-              console.log(locationMarkers.value)
+              // console.log(locationMarkers.value)
               const bounds = new google.maps.LatLngBounds();
               locations.value.forEach(position => {
                   bounds.extend(position.position);
@@ -438,7 +438,7 @@
 
               const padding = 150; // Adjust this padding as needed
               map.fitBounds(bounds, padding);
-          }
+          // }
       });
   }
   function centerMapToPosition(lat,lng){
