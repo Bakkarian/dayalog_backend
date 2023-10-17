@@ -423,6 +423,12 @@
               marker.set('markerData', newLocation);
               googleMapMarkers.push(marker);
 
+              marker.addListener('click', () => {
+                // infowindow.open(map, marker);
+                selectedDevice.value = newLocation.deviceData.id
+                centerMapToPosition(newLocation.position.lat,newLocation.position.lng)
+              });
+
               const bounds = new google.maps.LatLngBounds();
               locations.value.forEach(position => {
                 bounds.extend(position.position);
