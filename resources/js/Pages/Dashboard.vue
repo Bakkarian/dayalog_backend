@@ -367,20 +367,6 @@
         });*/
         newLocations.forEach((newLocation, i) => {
             // console.log(newLocations[i])
-            /*const marker = new google.maps.Marker({
-                position: newLocation.position,
-                map: googleMap.value,
-                title: newLocation.title,
-                deviceId: newLocation.deviceData.id,
-                icon: {
-                    url: markerImage,
-                    scaledSize: new google.maps.Size(40, 40)
-                },
-                clickable: true,
-                draggable: false,
-            });*/
-            // marker.set('markerData', newLocation);
-            // googleMapMarkers.push(marker);
             let newPosition = newLocation.position
             googleMapMarkers[i].setPosition(newPosition)
 
