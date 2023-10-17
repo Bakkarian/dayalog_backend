@@ -332,7 +332,7 @@
   const locations = computed(()=> {
 
     const devices = props.devices.map((device => {
-        const latestPosition = tracarPositions.value.find(position => position.deviceId = device.id)
+        const latestPosition = tracarPositions.value.find(position => position.deviceId === device.id)
         return  {
         position: { lat: latestPosition?.latitude, lng: latestPosition?.longitude },
         title: device.name,
@@ -358,14 +358,16 @@
     // watch works directly on a ref
   watch(locations ,(newLocations, oldLocations) => {
     if(googleMap.value){
-        googleMapMarkers.forEach((marker) => {
+        /*googleMapMarkers.forEach((marker, index) => {
+            // console.log(marker.get('markerData').title, googleMapMarkers[index].get('markerData').position)
             const markerData = marker.get('markerData');
             if (!newLocations.find((newMarker) => newMarker === markerData)) {
-                marker.setMap(null); // Remove the marker from the map
+                // marker.setMap(null); // Remove the marker from the map
             }
-        });
-        newLocations.forEach((newLocation) => {
-            const marker = new google.maps.Marker({
+        });*/
+        newLocations.forEach((newLocation, i) => {
+            // console.log(newLocations[i])
+            /*const marker = new google.maps.Marker({
                 position: newLocation.position,
                 map: googleMap.value,
                 title: newLocation.title,
@@ -376,9 +378,11 @@
                 },
                 clickable: true,
                 draggable: false,
-            });
-            marker.set('markerData', newLocation);
-            googleMapMarkers.push(marker);
+            });*/
+            // marker.set('markerData', newLocation);
+            // googleMapMarkers.push(marker);
+            let newPosition = newLocation.position
+            googleMapMarkers[i].setPosition(newPosition)
 
         })
 
@@ -402,6 +406,37 @@
               // zoomControl: false, // Remove zoom control
               mapTypeControl: false, // Remove map type control
         });
+          locations.value.forEach((newLocation, i) => {
+              // console.log(newLocation.position)
+              const marker = new google.maps.Marker({
+                  position: newLocation.position,
+                  map: googleMap.value,
+                  title: newLocation.title,
+                  deviceId: newLocation.deviceData.id,
+                  icon: {
+                      url: markerImage,
+                      scaledSize: new google.maps.Size(40, 40)
+                  },
+                  clickable: true,
+                  draggable: false,
+              });
+              marker.set('markerData', newLocation);
+              googleMapMarkers.push(marker);
+
+              marker.addListener('click', () => {
+                // infowindow.open(map, marker);
+                selectedDevice.value = newLocation.deviceData.id
+                centerMapToPosition(newLocation.position.lat,newLocation.position.lng)
+              });
+
+              const bounds = new google.maps.LatLngBounds();
+              locations.value.forEach(position => {
+                bounds.extend(position.position);
+              });
+
+              const padding = 150; // Adjust this padding as needed
+            googleMap.value.fitBounds(bounds, padding);
+          })
       });
   }
 
@@ -410,8 +445,8 @@
   function centerMapToPosition(lat,lng){
     googleMap.value.setZoom(12);
       setTimeout(function(){
-          map.panTo({lat: lat, lng: lng});
-          map.setZoom(15);
+        googleMap.value.panTo({lat: lat, lng: lng});
+        googleMap.value.setZoom(15);
       }, 400)
   }
   let marker, directionsService, directionsRenderer;
