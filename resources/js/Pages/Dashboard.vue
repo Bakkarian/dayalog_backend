@@ -162,7 +162,7 @@
             <div class="p-4 bg-white">
                 <div class="flex">
                     <p class="flex-auto">{{selectedLocation.title}}</p>
-                    <button type="button" class="-m-2.5 p-2.5" @click="selectedMarker = false">
+                    <button type="button" class="-m-2.5 p-2.5" @click="selectedDevice = false">
                         <span class="sr-only">Close device</span>
                         <XMarkIcon class="h-6 w-6 text-gray-500" aria-hidden="true" />
                     </button>
@@ -220,6 +220,7 @@
   const mapContainer = ref(null);
   const googleMap = ref(null);
   const googleMapMarkers = [];
+  let selectedMarker = ref(-1);
 
   const page = usePage()
   const user = computed(() => page.props.auth.user)
@@ -367,20 +368,6 @@
         });*/
         newLocations.forEach((newLocation, i) => {
             // console.log(newLocations[i])
-            /*const marker = new google.maps.Marker({
-                position: newLocation.position,
-                map: googleMap.value,
-                title: newLocation.title,
-                deviceId: newLocation.deviceData.id,
-                icon: {
-                    url: markerImage,
-                    scaledSize: new google.maps.Size(40, 40)
-                },
-                clickable: true,
-                draggable: false,
-            });*/
-            // marker.set('markerData', newLocation);
-            // googleMapMarkers.push(marker);
             let newPosition = newLocation.position
             googleMapMarkers[i].setPosition(newPosition)
 
