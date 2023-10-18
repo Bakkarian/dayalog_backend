@@ -120,7 +120,7 @@
         <aside class="fixed bottom-0 left-20 top-16 hidden w-96 border-r border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block animate__animated animate__fadeIn">
           <!-- Secondary column (hidden on smaller screens) -->
           <div id="driver-list" class="mt-8 w-full overflow-y-auto bg-white h-40 shadow-lg rounded-md transition-all ease-in-out duration-300">
-
+<p>Devices</p>
               <div  v-for="(location, index) in locations" @click="selectedDevice = location.deviceData.id;centerMapToPosition(location.positionData.latitude,location.positionData.longitude)">
                   <div class="flex p-4 cursor-pointer items-center" v-if="location.title.toLowerCase()!=='ivan tracker' && location.positionData ">
                       <p class="mr-2 text-gray-500 text-sm">{{index}}</p>
