@@ -422,7 +422,11 @@
 
               const bounds = new google.maps.LatLngBounds();
               locations.value.forEach(position => {
-                bounds.extend(position.position);
+                  try {
+                      bounds.extend(position.position);
+                  } catch (e) {
+                      console.log(e)
+                  }
               });
 
               const padding = 150; // Adjust this padding as needed
