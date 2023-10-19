@@ -369,10 +369,8 @@
         newLocations.forEach((newLocation, i) => {
             let newPosition = newLocation.position
             console.log(newPosition)
-            try {
+            if (newPosition.lat!=undefined) {
                 googleMapMarkers[i].setPosition(newPosition)
-            } catch (e) {
-                console.log(e)
             }
 
         })
@@ -422,10 +420,8 @@
 
               const bounds = new google.maps.LatLngBounds();
               locations.value.forEach(position => {
-                  try {
+                  if (position.position.lat!=undefined) {
                       bounds.extend(position.position);
-                  } catch (e) {
-                      console.log(e)
                   }
               });
 
