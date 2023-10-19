@@ -398,7 +398,7 @@
               mapTypeControl: false, // Remove map type control
         });
           locations.value.forEach((newLocation, i) => {
-              // console.log(newLocation.position)
+              console.log(newLocation.position)
               const marker = new google.maps.Marker({
                   position: newLocation.position,
                   map: googleMap.value,
