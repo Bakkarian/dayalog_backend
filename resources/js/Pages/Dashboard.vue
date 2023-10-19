@@ -367,8 +367,8 @@
             }
         });*/
         newLocations.forEach((newLocation, i) => {
-            // console.log(newLocations[i])
             let newPosition = newLocation.position
+            console.log(newPosition)
             try {
                 googleMapMarkers[i].setPosition(newPosition)
             } catch (e) {
