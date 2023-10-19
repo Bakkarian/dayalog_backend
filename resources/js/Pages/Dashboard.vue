@@ -212,20 +212,16 @@
   import useNavigation from '@/composable'
   import { Head, Link, usePage } from '@inertiajs/vue3';
   import { computed, onMounted, watch } from 'vue';
+  import { mapStyle } from '@/utils/index';
 
   defineOptions({ layout: Layout })
-
+  const props = defineProps(['devices', 'driver', 'drivers' ])
+  const page = usePage()
   const { positions : tracarPositions, devices : tracarDevices } = useTraccar();
   const mapContainer = ref(null);
   const googleMap = ref(null);
   const googleMapMarkers = [];
-  let selectedMarker = ref(-1);
-
-  const page = usePage()
   const user = computed(() => page.props.auth.user)
-
-  const props = defineProps(['devices', 'driver', 'drivers' ])
-
   const url = computed(() => usePage().url)
   const { navigation, userNavigation } = useNavigation()
 
@@ -243,91 +239,8 @@
   const loader = new Loader({
     apiKey: "AIzaSyAir29_hRhb99ll83YjLarlSbj-9su5zXI",
     version: "weekly",
-
   });
 
-  const mapStyle = [
-      /*{
-          "featureType": "administrative",
-          "elementType": "geometry",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      },*/
-      {
-          "featureType": "administrative.land_parcel",
-          "elementType": "geometry.fill",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      },
-      {
-          "featureType": "administrative.land_parcel",
-          "elementType": "labels",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      },
-      {
-          "featureType": "poi",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      },
-      {
-          "featureType": "poi",
-          "elementType": "labels.text",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      },
-      {
-          "featureType": "poi.park",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      },
-      {
-          "featureType": "road",
-          "elementType": "labels.icon",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      },
-      {
-          "featureType": "road.local",
-          "elementType": "labels",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      },
-      {
-          "featureType": "transit",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      }
-  ];
-
-  let map;
   const markerImage = markr;
   const locations = computed(()=> {
     return props.devices.map((device => {
