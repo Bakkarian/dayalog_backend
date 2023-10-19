@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 
-        $devices = Device::with(['vehicle'])->get();
+        $devices = Device::with(['vehicle', 'lastPosition'])->get();
 
 
         $selectedDriverId =  $request->driver;

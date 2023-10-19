@@ -331,18 +331,21 @@
   let map;
   const markerImage = markr;
   const locations = computed(()=> {
+    return props.devices.map((device => {
+            let latestPosition = tracarPositions.value.find(position => position.deviceId === device.id)
+            debugger
+            if(!latestPosition){
+                latestPosition = device.lastPosition
+            }
 
-    const devices = props.devices.map((device => {
-        const latestPosition = tracarPositions.value.find(position => position.deviceId === device.id)
-        return  {
-        position: { lat: latestPosition?.latitude, lng: latestPosition?.longitude },
-        title: device.name,
-        status: device.status,
-        positionData: latestPosition,
-        deviceData: device,
-    };
+            return  {
+            position: { lat: latestPosition?.latitude, lng: latestPosition?.longitude },
+            title: device.name,
+            status: device.status,
+            positionData: latestPosition,
+            deviceData: device,
+        };
     }));
-    return devices;
   })
 
   const selectedLocation = computed(()=>{
@@ -398,7 +401,6 @@
               mapTypeControl: false, // Remove map type control
         });
           locations.value.forEach((newLocation, i) => {
-              console.log(newLocation.position)
               const marker = new google.maps.Marker({
                   position: newLocation.position,
                   map: googleMap.value,
