@@ -343,7 +343,7 @@
     }));
     return devices;
   })
-  console.log(locations)
+  console.log(locations.value)
 
   const selectedLocation = computed(()=>{
     if(selectedDevice.value){
