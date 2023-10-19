@@ -369,7 +369,11 @@
         newLocations.forEach((newLocation, i) => {
             // console.log(newLocations[i])
             let newPosition = newLocation.position
-            googleMapMarkers[i].setPosition(newPosition)
+            try {
+                googleMapMarkers[i].setPosition(newPosition)
+            } catch (e) {
+                console.log(e)
+            }
 
         })
 
