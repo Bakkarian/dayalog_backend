@@ -331,9 +331,10 @@
   const markerImage = markr;
   const locations = computed(()=> {
     return props.devices.map((device => {
+        console.log(device.last_position)
             let latestPosition = tracarPositions.value.find(position => position.deviceId === device.id)
             if(!latestPosition){
-                latestPosition = device.lastPosition
+                latestPosition = device.last_position
             }
 
             return  {
