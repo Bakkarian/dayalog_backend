@@ -120,7 +120,6 @@
         <aside class="fixed bottom-0 left-20 top-16 hidden w-96 border-r border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block animate__animated animate__fadeIn">
           <!-- Secondary column (hidden on smaller screens) -->
           <div id="driver-list" class="mt-8 w-full overflow-y-auto bg-white h-40 shadow-lg rounded-md transition-all ease-in-out duration-300">
-            <p>Devices</p>
               <div  v-for="(location, index) in locations" @click="selectedDevice = location.deviceData.id;centerMapToPosition(location.positionData.latitude,location.positionData.longitude)">
                   <div class="flex p-4 cursor-pointer items-center" v-if="location.title.toLowerCase()!=='ivan tracker' && location.positionData ">
                       <p class="mr-2 text-gray-500 text-sm">{{index}}</p>
@@ -333,7 +332,7 @@
   const locations = computed(()=> {
     return props.devices.map((device => {
             let latestPosition = tracarPositions.value.find(position => position.deviceId === device.id)
-            debugger
+            // debugger
             if(!latestPosition){
                 latestPosition = device.lastPosition
             }
@@ -372,11 +371,13 @@
         newLocations.forEach((newLocation, i) => {
             let newPosition = newLocation.position
             console.log(newPosition)
-            try {
+            // try {
+            if (newPosition.lat!==undefined) {
                 googleMapMarkers[i].setPosition(newPosition)
-            } catch (e) {
-                console.log(e)
             }
+            /*} catch (e) {
+                console.log(e)
+            }*/
 
         })
 
@@ -401,38 +402,44 @@
               mapTypeControl: false, // Remove map type control
         });
           locations.value.forEach((newLocation, i) => {
-              const marker = new google.maps.Marker({
-                  position: newLocation.position,
-                  map: googleMap.value,
-                  title: newLocation.title,
-                  deviceId: newLocation.deviceData.id,
-                  icon: {
-                      url: markerImage,
-                      scaledSize: new google.maps.Size(40, 40)
-                  },
-                  clickable: true,
-                  draggable: false,
-              });
-              marker.set('markerData', newLocation);
-              googleMapMarkers.push(marker);
+              console.log(newLocation.position)
+              let marker;
+              if (newLocation.position.lat!==undefined) {
+                  marker = new google.maps.Marker({
+                      position: newLocation.position,
+                      map: googleMap.value,
+                      title: newLocation.title,
+                      deviceId: newLocation.deviceData.id,
+                      icon: {
+                          url: markerImage,
+                          scaledSize: new google.maps.Size(40, 40)
+                      },
+                      clickable: true,
+                      draggable: false,
+                  });
+                  marker.set('markerData', newLocation);
+                  googleMapMarkers.push(marker);
 
-              marker.addListener('click', () => {
-                // infowindow.open(map, marker);
-                selectedDevice.value = newLocation.deviceData.id
-                centerMapToPosition(newLocation.position.lat,newLocation.position.lng)
-              });
+                  marker.addListener('click', () => {
+                      // infowindow.open(map, marker);
+                      selectedDevice.value = newLocation.deviceData.id
+                      centerMapToPosition(newLocation.position.lat,newLocation.position.lng)
+                  });
 
-              const bounds = new google.maps.LatLngBounds();
-              locations.value.forEach(position => {
-                  try {
-                      bounds.extend(position.position);
-                  } catch (e) {
-                      console.log(e)
-                  }
-              });
+                  const bounds = new google.maps.LatLngBounds();
+                  locations.value.forEach(position => {
+                      // try {
+                      if (position.position.lat!==undefined) {
+                          bounds.extend(position.position);
+                      }
+                      /*} catch (e) {
+                          console.log(e)
+                      }*/
+                  });
 
-              const padding = 150; // Adjust this padding as needed
-            googleMap.value.fitBounds(bounds, padding);
+                  const padding = 150; // Adjust this padding as needed
+                  googleMap.value.fitBounds(bounds, padding);
+              }
           })
       });
   }
