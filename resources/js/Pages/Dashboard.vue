@@ -332,7 +332,6 @@
   const locations = computed(()=> {
     return props.devices.map((device => {
             let latestPosition = tracarPositions.value.find(position => position.deviceId === device.id)
-            // debugger
             if(!latestPosition){
                 latestPosition = device.lastPosition
             }
