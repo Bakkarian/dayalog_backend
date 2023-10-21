@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\HomeDriversResource;
 use App\Models\Device;
+use App\Models\DevicePosition;
 use App\Models\Driver;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
