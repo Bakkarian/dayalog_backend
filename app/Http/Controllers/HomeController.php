@@ -16,8 +16,11 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 
-        $devices = Device::with(['vehicle', 'lastPosition'])->get();
+        $devices = Device::with(['vehicle'])->get();
 
+        $devices->each(function ($device){
+          $device->last_position =  DevicePosition::where('deviceid', 1)->orderBy('id', 'desc')->first();
+        });
 
         $selectedDriverId =  $request->driver;
         if($selectedDriverId){
