@@ -339,21 +339,21 @@
                       centerMapToPosition(newLocation.position.lat,newLocation.position.lng)
                   });
 
-                  const bounds = new google.maps.LatLngBounds();
-                  locations.value.forEach(position => {
-                      // try {
-                      if (position.position.lat!==undefined) {
-                          bounds.extend(position.position);
-                      }
-                      /*} catch (e) {
-                          console.log(e)
-                      }*/
-                  });
-
-                  const padding = 150; // Adjust this padding as needed
-                  googleMap.value.fitBounds(bounds, padding);
               }
-          })
+          });
+          const bounds = new google.maps.LatLngBounds();
+          locations.value.forEach(position => {
+              // try {
+              if (position.position.lat!==undefined) {
+                  bounds.extend(position.position);
+              }
+              /*} catch (e) {
+                  console.log(e)
+              }*/
+          });
+
+          const padding = 150; // Adjust this padding as needed
+          googleMap.value.fitBounds(bounds, padding);
       });
   }
 
