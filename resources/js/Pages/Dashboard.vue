@@ -292,8 +292,8 @@
                 console.log(e)
             }
 
-        })
-
+        });
+        setBounds()
     }
     //look
    })
@@ -341,22 +341,25 @@
 
               }
           });
-          const bounds = new google.maps.LatLngBounds();
-          locations.value.forEach(position => {
-              // try {
-              if (position.position.lat!==undefined) {
-                  bounds.extend(position.position);
-              }
-              /*} catch (e) {
-                  console.log(e)
-              }*/
-          });
-
-          const padding = 150; // Adjust this padding as needed
-          googleMap.value.fitBounds(bounds, padding);
+          // setBounds()
       });
   }
 
+  function setBounds(){
+      const bounds = new google.maps.LatLngBounds();
+      locations.value.forEach(position => {
+          // try {
+          if (position.position.lat!==undefined) {
+              bounds.extend(position.position);
+          }
+          /*} catch (e) {
+              console.log(e)
+          }*/
+      });
+
+      const padding = 150; // Adjust this padding as needed
+      googleMap.value.fitBounds(bounds, padding);
+  }
 
 
   function centerMapToPosition(lat,lng){
