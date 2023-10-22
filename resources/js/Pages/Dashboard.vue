@@ -293,7 +293,7 @@
             }
 
         });
-        setBounds()
+        // setBounds()
     }
     //look
    })
@@ -341,7 +341,7 @@
 
               }
           });
-          // setBounds()
+          setBounds()
       });
   }
 
