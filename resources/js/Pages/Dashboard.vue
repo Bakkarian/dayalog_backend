@@ -315,7 +315,7 @@
               mapTypeControl: false, // Remove map type control
         });
           locations.value.forEach((newLocation, i) => {
-              // console.log(newLocation.position)
+              console.log(newLocation.position)
               let marker;
               if (newLocation.position.lat!==undefined) {
                   marker = new google.maps.Marker({
