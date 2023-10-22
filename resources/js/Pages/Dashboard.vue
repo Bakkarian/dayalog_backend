@@ -244,7 +244,7 @@
   const markerImage = markr;
   const locations = computed(()=> {
     return props.devices.map((device => {
-        console.log(device.last_position)
+        // console.log(device.last_position)
             let latestPosition = tracarPositions.value.find(position => position.deviceId === device.id)
             if(!latestPosition){
                 latestPosition = device.last_position
@@ -283,14 +283,14 @@
         });*/
         newLocations.forEach((newLocation, i) => {
             let newPosition = newLocation.position
-            console.log(newPosition)
-            // try {
+            // console.log(newPosition)
+            try {
             if (newPosition.lat!==undefined) {
                 googleMapMarkers[i].setPosition(newPosition)
             }
-            /*} catch (e) {
+            } catch (e) {
                 console.log(e)
-            }*/
+            }
 
         })
 
@@ -315,7 +315,7 @@
               mapTypeControl: false, // Remove map type control
         });
           locations.value.forEach((newLocation, i) => {
-              console.log(newLocation.position)
+              // console.log(newLocation.position)
               let marker;
               if (newLocation.position.lat!==undefined) {
                   marker = new google.maps.Marker({
