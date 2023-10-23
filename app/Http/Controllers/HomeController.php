@@ -19,8 +19,9 @@ class HomeController extends Controller
 
         $devices = Device::with(['vehicle'])->get();
 
-        $devices->each(function ($device){
-          $device->last_position =  DevicePosition::where('deviceid', 1)->orderBy('id', 'desc')->first();
+        $devices->map(function ($device){
+          $device->last_position =  DevicePosition::where('deviceid', $device->id )->orderBy('id', 'desc')->first();
+          return $device;
         });
 
         $selectedDriverId =  $request->driver;
