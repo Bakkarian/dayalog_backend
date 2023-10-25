@@ -285,7 +285,7 @@
             let newPosition = newLocation.position
             // console.log(newPosition)
             try {
-            if (newPosition.lat!==undefined) {
+            if (newPosition.lat!==undefined && newLocation.title.toLowerCase()!=='ivan tracker') {
                 googleMapMarkers[i].setPosition(newPosition)
             }
             } catch (e) {
@@ -317,7 +317,7 @@
           locations.value.forEach((newLocation, i) => {
               console.log(newLocation.position)
               let marker;
-              if (newLocation.position.lat!==undefined) {
+              if (newLocation.position.lat!==undefined && newLocation.title.toLowerCase()!=='ivan tracker') {
                   marker = new google.maps.Marker({
                       position: newLocation.position,
                       map: googleMap.value,
