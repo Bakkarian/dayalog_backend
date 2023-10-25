@@ -335,8 +335,8 @@
 
                   marker.addListener('click', () => {
                       // infowindow.open(map, marker);
-                      selectedDevice.value = newLocation.deviceData.id
-                      centerMapToPosition(newLocation.position.lat,newLocation.position.lng)
+                      // selectedDevice.value = newLocation.deviceData.id
+                      // centerMapToPosition(newLocation.position.lat,newLocation.position.lng)
                   });
 
               }
