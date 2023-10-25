@@ -38,8 +38,8 @@
                                     <a href="#">{{ device.positionid }}</a>
                                 </td>
                                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                    <CheckBadgeIcon v-if="device.disabled !== 0" class="h-6 w-6 text-green-500" aria-hidden="true" />
-                                    <ExclamationCircleIcon v-if="device.disabled === 0" class="h-6 w-6 text-red-500" aria-hidden="true" />
+                                    <CheckBadgeIcon v-if="device.disabled === 0" class="h-6 w-6 text-green-500" aria-hidden="true" />
+                                    <ExclamationCircleIcon v-if="device.disabled !== 0" class="h-6 w-6 text-red-500" aria-hidden="true" />
                                 </td>
                             </tr>
                             </tbody>
