@@ -169,7 +169,7 @@
                 <br />
                 <div class="flex my-2">
                     <p class="text-sm flex-1">Speed:</p>
-                    <p class="text-sm flex-1 text-gray-400">{{ (selectedLocation.positionData.speed * 1.852000).toFixed(1) }} Km/H</p>
+                    <p class="text-sm flex-1 text-gray-400">{{ (selectedLocation.positionData.speed * 1.852000).toFixed(1) }} Km/h</p>
                 </div>
                 <div class="flex my-2">
                     <p class="text-sm flex-1">Total Distance:</p>
@@ -315,7 +315,7 @@
               mapTypeControl: false, // Remove map type control
         });
           locations.value.forEach((newLocation, i) => {
-              console.log(newLocation.position)
+              // console.log(newLocation.position)
               let marker;
               if (newLocation.position.lat!==undefined && newLocation.title.toLowerCase()!=='ivan tracker') {
                   marker = new google.maps.Marker({
