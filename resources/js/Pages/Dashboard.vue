@@ -169,7 +169,7 @@
                 <br />
                 <div class="flex my-2">
                     <p class="text-sm flex-1">Speed:</p>
-                    <p class="text-sm flex-1 text-gray-400">{{selectedLocation.positionData.speed * 1.852000}} Km/H</p>
+                    <p class="text-sm flex-1 text-gray-400">{{ (selectedLocation.positionData.speed * 1.852000).toFixed(1) }} Km/H</p>
                 </div>
                 <div class="flex my-2">
                     <p class="text-sm flex-1">Total Distance:</p>
