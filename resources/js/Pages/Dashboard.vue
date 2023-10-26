@@ -3,7 +3,7 @@
     <div class="">
       <div class="absolute top-0 bottom-0 right-0 left-0 lg:left-[350px]">
         <!--      <img src="./assets/map.png" class="h-full" />-->
-        <div id="map" class="h-full w-full"></div>
+        <div ref="mapContainer" id="map" class="h-full w-full"></div>
       </div>
         <div class="bg-gradient-to-r from-gray-100 lg:left-[350px] top-0 bottom-0 w-[50px] absolute"></div>
 
@@ -92,9 +92,9 @@
                 <Menu as="div" class="relative">
                   <MenuButton class="-m-1.5 flex items-center p-1.5">
                     <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+                    <!-- <img class="h-8 w-8 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" /> -->
                     <span class="hidden lg:flex lg:items-center">
-                    <span class="ml-4 text-sm font-semibold leading-6 text-gray-900" aria-hidden="true">Tom Cook</span>
+                    <span class="ml-4 text-sm font-semibold leading-6 text-gray-900" aria-hidden="true">{{ user.name }}</span>
                     <ChevronDownIcon class="ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
                   </span>
                   </MenuButton>
@@ -120,10 +120,8 @@
         <aside class="fixed bottom-0 left-20 top-16 hidden w-96 border-r border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block animate__animated animate__fadeIn">
           <!-- Secondary column (hidden on smaller screens) -->
           <div id="driver-list" class="mt-8 w-full overflow-y-auto bg-white h-40 shadow-lg rounded-md transition-all ease-in-out duration-300">
-            <DriverList1 :routeFunction="showroute" />
-
-              <div v-if="locations.length>0" v-for="(location, index) in locations" @click="selectedMarker = index; centerMapToPosition(location.positionData.latitude,location.positionData.longitude)">
-                  <div class="flex p-4 cursor-pointer items-center" v-if="location.title.toLowerCase()!=='ivan tracker'">
+              <div  v-for="(location, index) in locations" @click="selectedDevice = location.deviceData.id;centerMapToPosition(location.positionData.latitude,location.positionData.longitude)">
+                  <div class="flex p-4 cursor-pointer items-center" v-if="location.title.toLowerCase()!=='ivan tracker' && location.positionData ">
                       <p class="mr-2 text-gray-500 text-sm">{{index}}</p>
                       <div
                           class="flex items-center justify-center rounded-full h-[40px] w-[40px] bg-gray-400 text-white">
@@ -152,17 +150,18 @@
                               }}</small>
                       </div>
                   </div></div>
+            <!-- <DriverList1 :routeFunction="showroute" :driver="props.driver" :drivers="props.drivers?.original" /> -->
           </div>
         </aside>
       </div>
 
-    <div v-if="selectedMarker > -1" class="absolute right-0 left-0 bottom-0 pb-4">
+    <div v-if="selectedLocation" class="absolute right-0 left-0 bottom-0 pb-4">
         <div class="w-[300px] mx-auto shadow-md rounded-md">
 
             <div class="p-4 bg-white">
                 <div class="flex">
-                    <p class="flex-auto">{{locations[selectedMarker].title}}</p>
-                    <button type="button" class="-m-2.5 p-2.5" @click="selectedMarker = -1">
+                    <p class="flex-auto">{{selectedLocation.title}}</p>
+                    <button type="button" class="-m-2.5 p-2.5" @click="selectedDevice = false">
                         <span class="sr-only">Close device</span>
                         <XMarkIcon class="h-6 w-6 text-gray-500" aria-hidden="true" />
                     </button>
@@ -170,15 +169,15 @@
                 <br />
                 <div class="flex my-2">
                     <p class="text-sm flex-1">Speed:</p>
-                    <p class="text-sm flex-1 text-gray-400">{{locations[selectedMarker].positionData.speed}}</p>
+                    <p class="text-sm flex-1 text-gray-400">{{selectedLocation.positionData.speed * 1.852000}} Km/H</p>
                 </div>
                 <div class="flex my-2">
                     <p class="text-sm flex-1">Total Distance:</p>
-                    <p class="text-sm flex-1 text-gray-400">{{(locations[selectedMarker].positionData.attributes["totalDistance"]/1000).toFixed(2)}} Km</p>
+                    <p class="text-sm flex-1 text-gray-400">{{(selectedLocation.positionData.attributes["totalDistance"]/1000).toFixed(2)}} Km</p>
                 </div>
                 <div class="flex my-2">
                     <p class="text-sm flex-1">Accuracy:</p>
-                    <p class="text-sm flex-1 text-gray-400">{{(locations[selectedMarker].positionData.accuracy).toFixed(1)}}</p>
+                    <p class="text-sm flex-1 text-gray-400">{{(selectedLocation.positionData.accuracy).toFixed(1)}}</p>
                 </div>
             </div>
         </div>
@@ -193,6 +192,7 @@
   import DriverList1 from "@/Containers/DriverList1.vue";
   import { Loader } from "@googlemaps/js-api-loader"
   import markr from "@/assets/marker.png"
+  import useTraccar from "@/composable/traccar"
   import {
     Dialog,
     DialogPanel,
@@ -211,12 +211,17 @@
   import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
   import useNavigation from '@/composable'
   import { Head, Link, usePage } from '@inertiajs/vue3';
-  import { computed, onMounted, defineProps } from 'vue';
+  import { computed, onMounted, watch } from 'vue';
+  import { mapStyle } from '@/utils/index';
 
   defineOptions({ layout: Layout })
-
-  const props = defineProps(['devices'])
-
+  const props = defineProps(['devices', 'driver', 'drivers' ])
+  const page = usePage()
+  const { positions : tracarPositions, devices : tracarDevices } = useTraccar();
+  const mapContainer = ref(null);
+  const googleMap = ref(null);
+  const googleMapMarkers = [];
+  const user = computed(() => page.props.auth.user)
   const url = computed(() => usePage().url)
   const { navigation, userNavigation } = useNavigation()
 
@@ -226,112 +231,80 @@
 
   setTimeout(function(){
     let element = document.getElementById("driver-list")
-    element.classList.remove("h-40")
-    element.classList.add("h-[85%]")
+    element?.classList?.remove("h-40")
+    element?.classList?.add("h-[85%]")
     loadingList.value = false;
   },1000)
 
   const loader = new Loader({
     apiKey: "AIzaSyAir29_hRhb99ll83YjLarlSbj-9su5zXI",
     version: "weekly",
-
   });
-  const mapStyle = [
-      /*{
-          "featureType": "administrative",
-          "elementType": "geometry",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      },*/
-      {
-          "featureType": "administrative.land_parcel",
-          "elementType": "geometry.fill",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      },
-      {
-          "featureType": "administrative.land_parcel",
-          "elementType": "labels",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      },
-      {
-          "featureType": "poi",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      },
-      {
-          "featureType": "poi",
-          "elementType": "labels.text",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      },
-      {
-          "featureType": "poi.park",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      },
-      {
-          "featureType": "road",
-          "elementType": "labels.icon",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      },
-      {
-          "featureType": "road.local",
-          "elementType": "labels",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      },
-      {
-          "featureType": "transit",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      }
-  ];
-  let map;
+
   const markerImage = markr;
-  let locations = [];
-  let locationMarkers = [];
-  let selectedMarker = ref(-1);
+  const locations = computed(()=> {
+    return props.devices.map((device => {
+        // console.log(device.last_position)
+            let latestPosition = tracarPositions.value.find(position => position.deviceId === device.id)
+            if(!latestPosition){
+                latestPosition = device.last_position
+            }
+
+            return  {
+            position: { lat: latestPosition?.latitude, lng: latestPosition?.longitude },
+            title: device.name,
+            status: device.status,
+            positionData: latestPosition,
+            deviceData: device,
+        };
+    }));
+  })
+
+  const selectedLocation = computed(()=>{
+    if(selectedDevice.value){
+          return locations.value.find(location => {
+            return location.deviceData.id == selectedDevice.value
+          });
+    }else{
+        return false;
+    }
+  })
+  const locationMarkers = ref([])
+
+    // watch works directly on a ref
+  watch(locations ,(newLocations, oldLocations) => {
+    if(googleMap.value){
+        /*googleMapMarkers.forEach((marker, index) => {
+            // console.log(marker.get('markerData').title, googleMapMarkers[index].get('markerData').position)
+            const markerData = marker.get('markerData');
+            if (!newLocations.find((newMarker) => newMarker === markerData)) {
+                // marker.setMap(null); // Remove the marker from the map
+            }
+        });*/
+        newLocations.forEach((newLocation, i) => {
+            let newPosition = newLocation.position
+            // console.log(newPosition)
+            try {
+            if (newPosition.lat!==undefined && newLocation.title.toLowerCase()!=='ivan tracker') {
+                googleMapMarkers[i].setPosition(newPosition)
+            }
+            } catch (e) {
+                console.log(e)
+            }
+
+        });
+        // setBounds()
+    }
+    //look
+   })
+
+  let selectedDevice = ref(false);
+
   function loadMap(){
+
       loader.load().then(async () => {
-          const { Map } = await google.maps.importLibrary("maps");
-          const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
-          // const { MarkerClusterer } = await google.maps.importLibrary("markerclusterer");
-          // const { DirectionsService, DirectionsRenderer } = await google.maps.importLibrary("directions");
-          let position = {lat: 0.297784, lng: 32.544896}
-
-
-          map = new Map(document.getElementById("map"), {
-              center: { lat: 0.297784, lng: 32.544896 },
+        googleMap.value = new window.google.maps.Map(mapContainer.value, {
+            center: { lat: 0.297784, lng: 32.544896 },
               zoom: 9,
               mapTypeId: 'roadmap',
               // mapId: "7c96e127d329f19d",
@@ -340,97 +313,60 @@
               streetViewControl: false, // Remove street view control
               // zoomControl: false, // Remove zoom control
               mapTypeControl: false, // Remove map type control
-          });
-
-
-          locations.forEach((mkr, i) => {
-              // console.log(mkr.positionData["attributes"]["batteryLevel"])
-              if (mkr.title.toLowerCase()!=='ivan tracker') {
-                  const marker = new google.maps.Marker({
-                      position: mkr.position,
-                      map: map,
-                      title: mkr.title,
+        });
+          locations.value.forEach((newLocation, i) => {
+              console.log(newLocation.position)
+              let marker;
+              if (newLocation.position.lat!==undefined && newLocation.title.toLowerCase()!=='ivan tracker') {
+                  marker = new google.maps.Marker({
+                      position: newLocation.position,
+                      map: googleMap.value,
+                      title: newLocation.title,
+                      deviceId: newLocation.deviceData.id,
                       icon: {
                           url: markerImage,
                           scaledSize: new google.maps.Size(40, 40)
                       },
-                      /*label: {
-                        text: mkr.title,
-                        // color: "white",
-                          className: 'custom-map-label',
-                      },*/
-                      // animation: google.maps.Animation.DROP,
                       clickable: true,
                       draggable: false,
-                      // zIndex: 0,
                   });
-
-                  const infowindow = new google.maps.InfoWindow({
-                      content: '' +
-                          '<div class="h-24 w-[300px]">\n' +
-                          '        <div class="cursor-pointer">\n' +
-                          '          <div class="sm:px-4">\n' +
-                          '            <div class="flex items-center justify-between">\n' +
-                          '              <p class="truncate text-sm font-medium text-gray-900">' + mkr.title + '</p>\n' +
-                          '              <div class="ml-2 flex flex-shrink-0">\n' +
-                          '                <p class="inline-flex rounded-full px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100">' + mkr.status + '</p>\n' +
-                          '              </div>\n' +
-                          '            </div>\n' +
-                          '            <!--<div class="mt-2 flex justify-between">\n' +
-                          '              <div class="flex">\n' +
-                          '                <p class="flex items-center text-sm text-gray-500">\n' +
-                          '                  Trip: 2 Hrs\n' +
-                          '                </p>\n' +
-                          '                <p class="mt-2 flex items-center text-sm text-gray-500 sm:ml-6 sm:mt-0">\n' +
-                          '                  To: Jinja\n' +
-                          '                </p>\n' +
-                          '              </div>\n' +
-                          '            </div>-->\n' +
-                          `<!--<div class="flex">
-                                <p class="flex-auto">${mkr.title}</p>
-                                <button type="button" class="-m-2.5 p-2.5" @click="selectedMarker = -1">
-                                    <span class="sr-only">Close device</span>
-                                    <XMarkIcon class="h-6 w-6 text-gray-500" aria-hidden="true" />
-                                </button>
-                            </div>-->
-                            <br />
-                            <div class="flex my-2">
-                                <p class="text-sm flex-1">Speed:</p>
-                                <p class="text-sm flex-1 text-gray-400">${mkr.positionData["speed"]}</p>
-                            </div>
-                            <div class="flex my-2">
-                                <p class="text-sm flex-1">Total Distance:</p>
-                                <p class="text-sm flex-1 text-gray-400">${(mkr.positionData.attributes["totalDistance"] / 1000).toFixed(2)} Km</p>
-                            </div>
-                            <div class="flex my-2">
-                                <p class="text-sm flex-1">Accuracy:</p>
-                                <p class="text-sm flex-1 text-gray-400">${(mkr.positionData["accuracy"]).toFixed(1)}</p>
-                            </div>` +
-                          '          </div>\n' +
-                          '        </div></div>'
-                  });
+                  marker.set('markerData', newLocation);
+                  googleMapMarkers.push(marker);
 
                   marker.addListener('click', () => {
-                      infowindow.open(map, marker);
+                      // infowindow.open(map, marker);
+                      // selectedDevice.value = newLocation.deviceData.id
+                      // centerMapToPosition(newLocation.position.lat,newLocation.position.lng)
                   });
 
-                  locationMarkers.push(marker);
-                  const bounds = new google.maps.LatLngBounds();
-                  locations.forEach(position => {
-                      bounds.extend(position.position);
-                  });
-
-                  const padding = 150; // Adjust this padding as needed
-                  map.fitBounds(bounds, padding);
               }
           });
+          setBounds()
       });
   }
+
+  function setBounds(){
+      const bounds = new google.maps.LatLngBounds();
+      locations.value.forEach(position => {
+          // try {
+          if (position.position.lat!==undefined) {
+              bounds.extend(position.position);
+          }
+          /*} catch (e) {
+              console.log(e)
+          }*/
+      });
+
+      const padding = 150; // Adjust this padding as needed
+      googleMap.value.fitBounds(bounds, padding);
+  }
+
+
   function centerMapToPosition(lat,lng){
-      map.setZoom(12);
+    googleMap.value.setZoom(12);
       setTimeout(function(){
-          map.panTo({lat: lat, lng: lng});
-          map.setZoom(15);
+        googleMap.value.panTo({lat: lat, lng: lng});
+        googleMap.value.setZoom(15);
       }, 400)
   }
   let marker, directionsService, directionsRenderer;
@@ -438,25 +374,22 @@
     { position: { lat: 0.297784, lng: 32.544896 }, title: "Marker 1" },
     { position: { lat: 0.292162, lng: 32.5485867 }, title: "Marker 2" },
   ];
-  function clearMarkers() {
-      locationMarkers.forEach(marker => {
-          marker.setMap(null); // Remove the marker from the map
-      });
 
-      locationMarkers.pop(); // Clear the MVCArray
-  }
+  const clearMarkers = () => {
+      // Loop through the markers array and set the map property to null
+      for (const marker of locationMarkers.value) {
+        marker.setMap(null);
+      }
+
+      // Clear the markers array
+      locationMarkers.value = [];
+    };
+
   const showroute  = () =>{
       clearMarkers();
     loader.load().then(async () => {
       const { Map } = await google.maps.importLibrary("maps");
       const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
-
-      /*map = new Map(document.getElementById("map"), {
-        center: { lat: 0.292162, lng: 32.5485867 },
-        zoom: 13,
-        mapTypeId: "roadmap",
-        styles: mapStyle
-      });*/
 
       marker = markers.map((marker) => {
         const { position, title } = marker;
@@ -470,29 +403,11 @@
       });
 
       let icons = {
-        start: /*new google.maps.MarkerImage(
-            // URL
-            "https://bishangatravel.com/wp-content/uploads/2022/07/marker.png",
-            // (width,height)
-            new google.maps.Size( 44, 32 ),
-            // The origin point (x,y)
-            new google.maps.Point( 0, 0 ),
-            // The anchor point (x,y)
-            new google.maps.Point( 22, 32 )
-        )*/{
+        start:{
             url: markerImage,
             scaledSize: new google.maps.Size(40, 40),
         },
-        end: /*new google.maps.MarkerImage(
-            // URL
-            "https://bishangatravel.com/wp-content/uploads/2022/07/marker.png",
-            // (width,height)
-            new google.maps.Size( 44, 32 ),
-            // The origin point (x,y)
-            new google.maps.Point( 0, 0 ),
-            // The anchor point (x,y)
-            new google.maps.Point( 22, 32 )
-        )*/{
+        end:{
             url: markerImage,
             scaledSize: new google.maps.Size(40, 40),
         }
@@ -502,7 +417,6 @@
       directionsRenderer = new google.maps.DirectionsRenderer({
         map,
         suppressMarkers: true,
-          // icons: icons,
       });
 
       // document.getElementById("show-route").addEventListener("click", () => {
@@ -539,6 +453,7 @@
       // });
     });
   }
+
   function makeMarker( position, icon, title ) {
     new google.maps.Marker({
       position: position,
@@ -548,93 +463,8 @@
     });
   }
 
-
-  function setInitDeviceLocation(position) {
-    const device =  props.devices.filter( x=> x.id == position.deviceId)
-    // console.log("position initial load", position, device);
-    let positionItem = {
-        id: position.deviceId,
-        position: { lat: position.latitude, lng: position.longitude },
-        title: device[0].name,
-        status: device[0].status,
-        positionData: position,
-        deviceData: device[0],
-    };
-    locations.push(positionItem);
-      loadMap()
-    // console.log(device[0], JSON.parse(device[0].attributes).deviceImage);
-    // bounds.extend({ lat: position.latitude, lng: position.longitude });
-  }
-
-  function updateDeviceLocation(position) {
-      // bounds = new google.maps.LatLngBounds();
-    console.log("position changes", position);
-    let markerIndex = locations.findIndex( x=> x["id"] === position.deviceId);
-    let newPosition = { lat: position.latitude, lng: position.longitude }
-      locationMarkers[markerIndex].setPosition(newPosition);
-      locationMarkers[markerIndex].positionData = position;
-      locations[markerIndex].latitude = position.latitude;
-      locations[markerIndex].longitude = position.longitude;
-      locations[markerIndex].positionData = position;
-      // bounds.extend(newPosition);
-      // console.log(locationMarkers);
-  }
-
-  let initialLocationDataLoad = ref(false);
-
   onMounted(() => {
-
-
-            var url =import.meta.env.VITE_TRACCAR_URL
-            var token = import.meta.env.VITE_TRACCAR_WEBSOCKET_TOKEN
-
-            var ajax = function (method, url, callback) {
-                var xhr = new XMLHttpRequest();
-                xhr.withCredentials = true;
-                xhr.open(method, url, true);
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState == 4) {
-                        callback(JSON.parse(xhr.responseText));
-                    }
-                };
-                if (method == 'POST') {
-                    xhr.setRequestHeader('Content-type', 'application/json');
-                }
-                xhr.send()
-            };
-
-                ajax('GET', url + '/api/session?token=' + token, function(user) {
-                    // debugger
-                    ajax('GET', url + '/api/devices', function(devices) {
-                        var socket = new WebSocket('ws' + url.substring(4) + '/api/socket');
-                        socket.onopen = () => {
-                            console.log('Connected to websocket Successfully')
-                        }
-                        socket.onerror = (error) => {
-                            console.log('socket error: ', error)
-                        }
-                        socket.onclose = function (event) {
-                            //TODO: Write code to reopen
-                        };
-                        socket.onmessage = function (event) {
-
-
-                            var data = JSON.parse(event.data);
-                            if(data.positions){
-                                // markers.pop();
-                                if (!initialLocationDataLoad.value) {
-                                    data.positions.forEach(setInitDeviceLocation)
-                                }else {
-                                    data.positions.forEach(updateDeviceLocation)
-                                }
-                                initialLocationDataLoad.value = true;
-                                // console.log(locations);
-                            }
-                        }
-                    });
-                });
-
-
+    loadMap()
   })
 
   </script>
