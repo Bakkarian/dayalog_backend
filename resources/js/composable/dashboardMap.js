@@ -30,20 +30,16 @@ export default () =>{
                 // zoomControl: false, // Remove zoom control
                 mapTypeControl: false, // Remove map type control
           });
-        setBounds()
+          setInitialBounds()
         loaded.value = true
         });
     }
 
     //to ensure bound is set every time a position is added
-    function setBounds(){
+    function setInitialBounds(){
         const bounds = new google.maps.LatLngBounds();
-        //locations.value.forEach(position => {
-            //TODO: to use markers
-            // if (position.position.lat!==undefined) {
-                // bounds.extend({});
-            // }
-        //});
+        bounds.extend({lat:0.501803719933128,lng:32.569388319449786});
+        bounds.extend({lat:2.501803719933128,lng:32.569388319449786});
 
         const padding = 150; // Adjust this padding as needed
         googleMap.value.fitBounds(bounds, padding);
@@ -106,5 +102,14 @@ export default () =>{
     })
 
 
-    return { mapContainer, googleMap, addMarker, addMarkers, updateMarker ,loaded, addMarkerFromPosition };
+    return {
+        mapContainer,
+        googleMap,
+        addMarker,
+        addMarkers,
+        updateMarker ,
+        loaded,
+        addMarkerFromPosition,
+        centerMapToPosition
+    };
 }
