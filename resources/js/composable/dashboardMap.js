@@ -79,11 +79,12 @@ export default () =>{
         })
 
 
-        //to do //set all other things
-        googleMapMarkers[markerIndex].setPosition(position.position)
-        googleMapMarkers[markerIndex].set('markerData', position);
-
-        return googleMapMarkers[markerIndex];
+        if(markerIndex != -1){
+            googleMapMarkers[markerIndex].setPosition(position.position)
+            googleMapMarkers[markerIndex].set('markerData', position);
+            return googleMapMarkers[markerIndex];
+        }
+        return false;
     }
 
     const addMarkerFromPosition = (position) => {
