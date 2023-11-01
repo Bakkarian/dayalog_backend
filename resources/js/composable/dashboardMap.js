@@ -64,7 +64,6 @@ export default () =>{
         return marker
     }
 
-
     const addMarkers = (positions) => {
         //TODO: add multiple markers
     }
@@ -86,6 +85,16 @@ export default () =>{
     const addMarkerFromPosition = (position) => {
 
     }
+    
+    const clearMarkers = () => {
+        // Loop through the markers array and set the map property to null
+        for (const marker of googleMapMarkers) {
+          marker.setMap(null);
+        }
+        // Clear the markers array
+        googleMapMarkers = [];
+    };
+
 
     const centerMapToPosition = (lat,lng) => {
         googleMap.value.setZoom(12);
@@ -110,6 +119,7 @@ export default () =>{
         updateMarker ,
         loaded,
         addMarkerFromPosition,
-        centerMapToPosition
+        centerMapToPosition,
+        clearMarkers
     };
 }
