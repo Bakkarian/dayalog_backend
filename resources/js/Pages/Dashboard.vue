@@ -190,7 +190,6 @@
   import { ref} from 'vue'
   import Layout from '@/Layouts/NoLayout.vue';
   import DriverList1 from "@/Containers/DriverList1.vue";
-  import { Loader } from "@googlemaps/js-api-loader"
   import markr from "@/assets/marker.png"
   import useTraccar from "@/composable/traccar"
   import {
@@ -210,20 +209,18 @@
   } from '@heroicons/vue/24/outline'
   import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
   import useNavigation from '@/composable'
+  import useDashboardMap from '@/composable/dashboardMap'
   import { Head, Link, usePage } from '@inertiajs/vue3';
   import { computed, onMounted, watch } from 'vue';
-  import { mapStyle } from '@/utils/index';
 
-  defineOptions({ layout: Layout })
   const props = defineProps(['devices', 'driver', 'drivers' ])
   const page = usePage()
   const { positions : tracarPositions, devices : tracarDevices } = useTraccar();
-  const mapContainer = ref(null);
-  const googleMap = ref(null);
   const googleMapMarkers = [];
   const user = computed(() => page.props.auth.user)
   const url = computed(() => usePage().url)
   const { navigation, userNavigation } = useNavigation()
+  const { mapContainer, googleMap } = useDashboardMap()
 
   const sidebarOpen = ref(false)
   let loadingList = ref(true)
@@ -236,10 +233,6 @@
     loadingList.value = false;
   },1000)
 
-  const loader = new Loader({
-    apiKey: "AIzaSyAir29_hRhb99ll83YjLarlSbj-9su5zXI",
-    version: "weekly",
-  });
 
   const markerImage = markr;
   const locations = computed(()=> {
@@ -296,79 +289,9 @@
         // setBounds()
     }
     //look
-   })
+  })
 
   let selectedDevice = ref(false);
-
-  function loadMap(){
-
-      loader.load().then(async () => {
-        googleMap.value = new window.google.maps.Map(mapContainer.value, {
-            center: { lat: 0.297784, lng: 32.544896 },
-              zoom: 9,
-              mapTypeId: 'roadmap',
-              // mapId: "7c96e127d329f19d",
-              styles: mapStyle,
-              // Remove Controls
-              streetViewControl: false, // Remove street view control
-              // zoomControl: false, // Remove zoom control
-              mapTypeControl: false, // Remove map type control
-        });
-          locations.value.forEach((newLocation, i) => {
-              // console.log(newLocation.position)
-              let marker;
-              if (newLocation.position.lat!==undefined && newLocation.title.toLowerCase()!=='ivan tracker') {
-                  marker = new google.maps.Marker({
-                      position: newLocation.position,
-                      map: googleMap.value,
-                      title: newLocation.title,
-                      deviceId: newLocation.deviceData.id,
-                      icon: {
-                          url: markerImage,
-                          scaledSize: new google.maps.Size(40, 40)
-                      },
-                      clickable: true,
-                      draggable: false,
-                  });
-                  marker.set('markerData', newLocation);
-                  googleMapMarkers.push(marker);
-
-                  marker.addListener('click', () => {
-                      // infowindow.open(map, marker);
-                      // selectedDevice.value = newLocation.deviceData.id
-                      // centerMapToPosition(newLocation.position.lat,newLocation.position.lng)
-                  });
-
-              }
-          });
-          setBounds()
-      });
-  }
-
-  function setBounds(){
-      const bounds = new google.maps.LatLngBounds();
-      locations.value.forEach(position => {
-          // try {
-          if (position.position.lat!==undefined) {
-              bounds.extend(position.position);
-          }
-          /*} catch (e) {
-              console.log(e)
-          }*/
-      });
-
-      const padding = 150; // Adjust this padding as needed
-      googleMap.value.fitBounds(bounds, padding);
-  }
-
-
-  function centerMapToPosition(lat,lng){
-    googleMap.value.setZoom(12);
-      setTimeout(function(){
-        googleMap.value.panTo({lat: lat, lng: lng});
-        googleMap.value.setZoom(15);
-      }, 400)
-  }
   let marker, directionsService, directionsRenderer;
   const markers = [
     { position: { lat: 0.297784, lng: 32.544896 }, title: "Marker 1" },
@@ -462,9 +385,5 @@
       title: title
     });
   }
-
-  onMounted(() => {
-    loadMap()
-  })
 
   </script>
