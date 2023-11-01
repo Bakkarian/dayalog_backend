@@ -216,11 +216,10 @@
   const props = defineProps(['devices', 'driver', 'drivers' ])
   const page = usePage()
   const { positions : tracarPositions, devices : tracarDevices } = useTraccar();
-  const googleMapMarkers = [];
   const user = computed(() => page.props.auth.user)
   const url = computed(() => usePage().url)
   const { navigation, userNavigation } = useNavigation()
-  const { mapContainer, googleMap } = useDashboardMap()
+  const { mapContainer, googleMap, loaded, addMarker, updateMarker } = useDashboardMap()
 
   const sidebarOpen = ref(false)
   let loadingList = ref(true)
@@ -264,27 +263,31 @@
   })
   const locationMarkers = ref([])
 
+  watch(loaded, (newLoaded, oldLoaded) => {
+    if(newLoaded){
+        locations.value.forEach((newLocation, i) => {
+
+                if (newLocation.position.lat!==undefined && newLocation.title.toLowerCase()!=='ivan tracker') {
+                    const marker = addMarker(newLocation)
+                    marker.addListener('click', () => {
+                        console.log("Hello");
+                        // infowindow.open(map, marker);
+                        // selectedDevice.value = newLocation.deviceData.id
+                        // centerMapToPosition(newLocation.position.lat,newLocation.position.lng)
+                    });
+
+                }
+            });
+    }
+  })
+
     // watch works directly on a ref
   watch(locations ,(newLocations, oldLocations) => {
     if(googleMap.value){
-        /*googleMapMarkers.forEach((marker, index) => {
-            // console.log(marker.get('markerData').title, googleMapMarkers[index].get('markerData').position)
-            const markerData = marker.get('markerData');
-            if (!newLocations.find((newMarker) => newMarker === markerData)) {
-                // marker.setMap(null); // Remove the marker from the map
-            }
-        });*/
         newLocations.forEach((newLocation, i) => {
-            let newPosition = newLocation.position
-            // console.log(newPosition)
-            try {
-            if (newPosition.lat!==undefined && newLocation.title.toLowerCase()!=='ivan tracker') {
-                googleMapMarkers[i].setPosition(newPosition)
+            if (newLocation.title.toLowerCase()!=='ivan tracker') {
+                updateMarker(newLocation)
             }
-            } catch (e) {
-                console.log(e)
-            }
-
         });
         // setBounds()
     }

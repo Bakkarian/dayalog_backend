@@ -1,12 +1,14 @@
 import { onMounted, ref } from "vue";
 import { Loader } from "@googlemaps/js-api-loader"
 import { mapStyle } from '@/utils/index';
+import markerImage from "@/assets/marker.png"
 
 export default () =>{
 
     const mapContainer = ref(null);
     const googleMap = ref(null);
-    const markers = ref([])
+    const loaded = ref(false);
+    const googleMapMarkers = [];
 
 
     const loader = new Loader({
@@ -28,56 +30,63 @@ export default () =>{
                 // zoomControl: false, // Remove zoom control
                 mapTypeControl: false, // Remove map type control
           });
-            locations.value.forEach((newLocation, i) => {
-                // console.log(newLocation.position)
-                let marker;
-                if (newLocation.position.lat!==undefined && newLocation.title.toLowerCase()!=='ivan tracker') {
-                    marker = new google.maps.Marker({
-                        position: newLocation.position,
-                        map: googleMap.value,
-                        title: newLocation.title,
-                        deviceId: newLocation.deviceData.id,
-                        icon: {
-                            url: markerImage,
-                            scaledSize: new google.maps.Size(40, 40)
-                        },
-                        clickable: true,
-                        draggable: false,
-                    });
-                    marker.set('markerData', newLocation);
-                    googleMapMarkers.push(marker);
-
-                    marker.addListener('click', () => {
-                        // infowindow.open(map, marker);
-                        // selectedDevice.value = newLocation.deviceData.id
-                        // centerMapToPosition(newLocation.position.lat,newLocation.position.lng)
-                    });
-
-                }
-            });
-            setBounds()
+        setBounds()
+        loaded.value = true
         });
     }
 
+    //to ensure bound is set every time a position is added
     function setBounds(){
         const bounds = new google.maps.LatLngBounds();
-        locations.value.forEach(position => {
-            if (position.position.lat!==undefined) {
-                bounds.extend(position.position);
-            }
-        });
+        //locations.value.forEach(position => {
+            //TODO: to use markers
+            // if (position.position.lat!==undefined) {
+                // bounds.extend({});
+            // }
+        //});
 
         const padding = 150; // Adjust this padding as needed
         googleMap.value.fitBounds(bounds, padding);
     }
 
 
-    const addMarker = (marker) => {
-
+    const addMarker = (newLocation) => {
+        const  { position, title } = newLocation
+        const marker = new google.maps.Marker({
+            position: position,
+            map: googleMap.value,
+            title: title,
+            icon: {
+                url: markerImage,
+                scaledSize: new google.maps.Size(40, 40)
+            },
+            clickable: true,
+            draggable: false,
+        });
+        marker.set('markerData', newLocation);
+        googleMapMarkers.push(marker);
+        return marker
     }
 
 
-    const addMarkers = (markers) => {
+    const addMarkers = (positions) => {
+        //TODO: add multiple markers
+    }
+
+    const updateMarker = (position) => {
+        const markerIndex  = googleMapMarkers.findIndex((marker) => {
+            return marker.markerData.positionData.deviceId == position.positionData.deviceId
+        })
+
+
+        //to do //set all other things
+        googleMapMarkers[markerIndex].setPosition(position.position)
+        googleMapMarkers[markerIndex].set('markerData', position);
+
+        return googleMapMarkers[markerIndex];
+    }
+
+    const addMarkerFromPosition = (position) => {
 
     }
 
@@ -96,5 +105,5 @@ export default () =>{
     })
 
 
-    return { mapContainer, googleMap, addMarker, addMarkers };
+    return { mapContainer, googleMap, addMarker, addMarkers, updateMarker ,loaded, addMarkerFromPosition };
 }
