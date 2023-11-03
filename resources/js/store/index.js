@@ -9,13 +9,21 @@ export const useMapStore = defineStore('map', () => {
     const loaded = ref(false);
 
     const googleMapMarkers = ref([]);
+    const googleRoutes = ref([]);
 
+
+
+    function increment() {
+      count.value++
+    }
 
     return {
         mapContainer,
         googleMap,
         loaded,
         googleMapMarkers,
+        increment,
+        googleRoutes
      }
 })
 

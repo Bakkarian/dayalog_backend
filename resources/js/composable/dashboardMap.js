@@ -20,7 +20,7 @@ const useDashboardMap = () => {
         return Date.now().toString(36) + Math.random().toString(36).substr(2);
     }
 
-    function loadMap(){
+    const loadMap = () => {
         loader.load().then(async () => {
           googleMap.value = new window.google.maps.Map(mapContainer.value, {
               center: { lat: 0.297784, lng: 32.544896 },
@@ -32,14 +32,20 @@ const useDashboardMap = () => {
                 streetViewControl: false, // Remove street view control
                 // zoomControl: false, // Remove zoom control
                 mapTypeControl: false, // Remove map type control
-          });
-          setInitialBounds()
-        loaded.value = true
+            });
+            setInitialBounds()
+            loaded.value = true
+                  //if not empty
+            if(googleMapMarkers.value.length != 0){
+                for (var i = 0; i < googleMapMarkers.value.length; i++) {
+                    googleMapMarkers.value[i].setMap(googleMap.value);
+                }
+            }
         });
     }
 
     //to ensure bound is set every time a position is added
-    function setInitialBounds(){
+    const setInitialBounds = () => {
         const bounds = new google.maps.LatLngBounds();
         bounds.extend({lat:0.501803719933128,lng:32.569388319449786});
         bounds.extend({lat:2.501803719933128,lng:32.569388319449786});
@@ -84,16 +90,9 @@ const useDashboardMap = () => {
     const addMarkerFromPosition = (position) => {
 
     }
-    
-    const clearMarkers = () => {
-        // Loop through the markers array and set the map property to null
-        for (const marker of googleMapMarkers) {
-          marker.setMap(null);
-        }
-        // Clear the markers array
-        googleMapMarkers = [];
-    };
 
+    const clearMarkers = () => {
+    };
 
     const centerMapToPosition = (lat,lng) => {
         googleMap.value.setZoom(12);
@@ -101,12 +100,71 @@ const useDashboardMap = () => {
             googleMap.value.panTo({lat: lat, lng: lng});
             googleMap.value.setZoom(15);
           }, 400)
-      }
+    }
+
+
+
+    const centerMapToDevice = (deviceId) => {
+
+        const marker  = googleMapMarkers.value.find((marker) => {
+            return marker.markerId == deviceId
+        })
+
+        if(marker){
+            const position  = marker.position
+            centerMapToPosition(position.lat(), position.lng())
+        }
+    }
+
+    const createRoute = (origin, destination, routeId = null) => {
+
+        const directionsService = new google.maps.DirectionsService();
+
+        const directionsRenderer = new google.maps.DirectionsRenderer({
+            map: googleMap.value,
+            suppressMarkers: true, // Suppress default markers
+        });
+
+        const originLatLng = new google.maps.LatLng(origin.lat, origin.lng);
+        const destinationLatLng = new google.maps.LatLng(destination.lat, destination.lng);
+
+        const request = {
+            origin: originLatLng,
+            destination: destinationLatLng,
+            travelMode: google.maps.TravelMode.DRIVING, // You can also use other modes like BICYCLING, TRANSIT, WALKING, etc.
+        };
+
+        directionsService.route(request, function (result, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsRenderer.setDirections(result);
+                directionsRenderer.setOptions({
+                    polylineOptions: {
+                        strokeColor: "#002c75", // Red color
+                        strokeWeight: 4, // Line thickness
+                        strokeOpacity: 0.7, // Line opacity (0-1)
+                    },
+                });
+
+            } else {
+                console.error("Directions request failed: " + status);
+            }
+        });
+
+        directionsRenderer.set('id', routeId ??  uid())
+
+        googleRoutes.value.push(directionsRenderer)
+
+        return directionsRenderer;
+    }
+
+
+    const removeRoute = (routeId) => {
+        debugger
+    }
 
 
 
     onMounted(()=>{
-        loadMap()
     })
 
 
@@ -119,7 +177,12 @@ const useDashboardMap = () => {
         loaded,
         addMarkerFromPosition,
         centerMapToPosition,
-        clearMarkers
+        clearMarkers,
+        centerMapToDevice,
+        loadMap,
+        createRoute,
+        removeRoute,
+        googleRoutes
     };
 }
 export default useDashboardMap;
