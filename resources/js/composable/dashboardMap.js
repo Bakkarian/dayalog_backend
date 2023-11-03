@@ -2,13 +2,13 @@ import { onMounted, ref } from "vue";
 import { Loader } from "@googlemaps/js-api-loader"
 import { mapStyle } from '@/utils/index';
 import markerImage from "@/assets/marker.png"
+import { useMapStore } from '@/store'
+import { storeToRefs } from 'pinia'
 
 export default () =>{
 
-    const mapContainer = ref(null);
-    const googleMap = ref(null);
-    const loaded = ref(false);
-    const googleMapMarkers = [];
+    const store = useMapStore()
+    const { mapContainer,googleMap ,loaded, googleMapMarkers, googleRoutes } = storeToRefs(store)
 
 
     const loader = new Loader({
