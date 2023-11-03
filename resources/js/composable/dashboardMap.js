@@ -5,7 +5,7 @@ import markerImage from "@/assets/marker.png"
 import { useMapStore } from '@/store'
 import { storeToRefs } from 'pinia'
 
-export default () =>{
+const useDashboardMap = () => {
 
     const store = useMapStore()
     const { mapContainer,googleMap ,loaded, googleMapMarkers, googleRoutes } = storeToRefs(store)
@@ -123,3 +123,4 @@ export default () =>{
         clearMarkers
     };
 }
+export default useDashboardMap;
