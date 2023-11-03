@@ -48,9 +48,8 @@ const useDashboardMap = () => {
         googleMap.value.fitBounds(bounds, padding);
     }
 
-
-    const addMarker = (newLocation) => {
-        const  { position, title } = newLocation
+    const addMarker = (newLocation ) => {
+        const  { position, title , id } = newLocation
         const marker = new google.maps.Marker({
             position: position,
             map: googleMap.value,
@@ -62,8 +61,8 @@ const useDashboardMap = () => {
             clickable: true,
             draggable: false,
         });
-        marker.set('markerData', newLocation);
-        googleMapMarkers.push(marker);
+        marker.set('markerId', id ?? uid() );
+        googleMapMarkers.value.push(marker);
         return marker
     }
 
@@ -71,16 +70,13 @@ const useDashboardMap = () => {
         //TODO: add multiple markers
     }
 
-    const updateMarker = (position) => {
-        const markerIndex  = googleMapMarkers.findIndex((marker) => {
-            return marker.markerData.positionData.deviceId == position.positionData.deviceId
+    const updateMarker = (position, id) => {
+        const markerIndex  = googleMapMarkers.value.findIndex((marker) => {
+            return marker.id == id
         })
-
-
         if(markerIndex != -1){
-            googleMapMarkers[markerIndex].setPosition(position.position)
-            googleMapMarkers[markerIndex].set('markerData', position);
-            return googleMapMarkers[markerIndex];
+            googleMapMarkers.value[markerIndex].setPosition(position.position)
+            return googleMapMarkers.value[markerIndex];
         }
         return false;
     }
