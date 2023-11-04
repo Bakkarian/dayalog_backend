@@ -81,7 +81,7 @@
                       <h5 class="font-bold">Driver Details</h5>
                       <div class="flex items-center justify-between my-4">
                         <p class="truncate font-medium text-gray-900">
-                          <button @click="openDetails = false; showRoute();" type="button" class="rounded-full bg-white px-2 py-1 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-green-300 hover:bg-gray-50">View Current Location</button>
+                          <button @click="openDetails = false;" type="button" class="rounded-full bg-white px-2 py-1 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-green-300 hover:bg-gray-50">View Current Location</button>
                         </p>
                         <div class="ml-2 flex flex-shrink-0">
                           <p class="inline-flex rounded-full px-2 text-xs font-semibold leading-5" :class="selectedDriver.onTrip?'text-green-800 bg-green-100':'text-red-800 bg-red-100'">{{ selectedDriver.onTrip?'On Trip':'Not On Trip' }}</p>

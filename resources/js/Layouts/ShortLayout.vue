@@ -1,14 +1,10 @@
 <template>
-    <div class="">
-      <div class="absolute top-0 bottom-0 right-0 left-0">
-        <!--      <img src="./assets/map.png" class="h-full" />-->
-        <div id="map" class="h-full w-full"></div>
-      </div>
+    <div>
       <div class="absolute right-0 left-0">
         <TransitionRoot as="template" :show="sidebarOpen">
           <Dialog as="div" class="relative z-50 lg:hidden" @close="sidebarOpen = false">
             <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
-              <div class="fixed inset-0 bg-gray-900/80" />
+              <div class="fixed inset-0 bg-gray-900/80" ></div>
             </TransitionChild>
 
             <div class="fixed inset-0 flex">
@@ -69,7 +65,7 @@
             </button>
 
             <!-- Separator -->
-            <div class="h-6 w-px bg-gray-900/10 lg:hidden" aria-hidden="true" />
+            <div class="h-6 w-px bg-gray-900/10 lg:hidden" aria-hidden="true" ></div>
 
             <div class="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
               <form class="relative flex flex-1" action="#" method="GET">
@@ -84,7 +80,7 @@
                 </button>
 
                 <!-- Separator -->
-                <div class="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-900/10" aria-hidden="true" />
+                <div class="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-900/10" aria-hidden="true" ></div>
 
                 <!-- Profile dropdown -->
                 <Menu as="div" class="relative">
@@ -109,26 +105,20 @@
           </div>
 
           <main class="xl:pl-96">
-            <slot />
           </main>
         </div>
 
         <aside class="fixed bottom-0 left-20 top-16 hidden w-96 border-r border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block animate__animated animate__fadeIn">
           <!-- Secondary column (hidden on smaller screens) -->
-          <slot name="aside" ></slot>
+
         </aside>
       </div>
-
-      <!--    <MapExample />-->
 
     </div>
   </template>
 
   <script setup>
-  import { ref} from 'vue'
-  import DriverList1 from "@/Containers/DriverList1.vue";
-  import  ProgressLoader from '@/Containers/loader.vue'
-  import { Loader } from "@googlemaps/js-api-loader"
+  import { ref, onMounted, computed} from 'vue'
   import {
     Dialog,
     DialogPanel,
@@ -147,246 +137,24 @@
   import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
   import useNavigation from '@/composable'
   import { Link, usePage } from '@inertiajs/vue3';
-  import { computed } from 'vue';
 
   const page = usePage()
   const user = computed(() => page.props.auth.user)
 
   const url = computed(() => usePage().url)
   const { navigation, userNavigation } = useNavigation()
-
   const sidebarOpen = ref(false)
-  let loadingList = ref(true)
 
-  setTimeout(function(){
-    let element = document.getElementById("driver-list")
-    element.classList.remove("h-40")
-    element.classList.add("h-[85%]")
-    loadingList.value = false;
-  },1000)
+  onMounted(() => {
 
-  const loader = new Loader({
-    apiKey: "AIzaSyAir29_hRhb99ll83YjLarlSbj-9su5zXI",
-    version: "weekly",
-
-  });
-  const mapStyle = [
-    {
-      "featureType": "administrative",
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "visibility": "off"
-        }
-      ]
-    },
-    {
-      "featureType": "administrative.land_parcel",
-      "elementType": "labels",
-      "stylers": [
-        {
-          "visibility": "off"
-        }
-      ]
-    },
-    {
-      "featureType": "poi",
-      "stylers": [
-        {
-          "visibility": "off"
-        }
-      ]
-    },
-    {
-      "featureType": "road",
-      "elementType": "labels.icon",
-      "stylers": [
-        {
-          "visibility": "off"
-        }
-      ]
-    },
-    {
-      "featureType": "road.local",
-      "elementType": "labels",
-      "stylers": [
-        {
-          "visibility": "off"
-        }
-      ]
-    },
-    {
-      "featureType": "transit",
-      "stylers": [
-        {
-          "visibility": "off"
-        }
-      ]
-    }
-  ];
-  let map;
-  loader.load().then(async () => {
-    const { Map } = await google.maps.importLibrary("maps");
-    const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
-    // const { DirectionsService, DirectionsRenderer } = await google.maps.importLibrary("directions");
-    let position = {lat: 0.297784, lng: 32.544896}
+    // setTimeout(function(){
+    //     let element = document.getElementById("driver-list")
+    //     element.classList.remove("h-40")
+    //     element.classList.add("h-[85%]")
+    //     loadingList.value = false;
+    // },1000)
 
 
-    map = new Map(document.getElementById("map"), {
-      center: { lat: 0.297784, lng: 32.544896 },
-      zoom: 15,
-      mapTypeId: 'roadmap',
-      // mapId: "7c96e127d329f19d",
-      styles: mapStyle,
-    });
+  })
 
-    const markers = [
-      { position: { lat: 0.297784, lng: 32.544896 }, title: "Marker 1" },
-      { position: { lat: 0.292162, lng: 32.5485867 }, title: "Marker 2" },
-      { position: { lat: 0.291834, lng: 32.553651 }, title: "Marker 3" }
-      // add more markers as needed
-    ];
-
-    markers.forEach((mkr) => {
-      const marker = new google.maps.Marker({
-        position: mkr.position,
-        map: map,
-        title: "Ivan Driver",
-        icon: {
-          url: "https://bishangatravel.com/wp-content/uploads/2022/07/marker.png",
-          scaledSize: new google.maps.Size(40, 40)
-        },
-        /*label: {
-          text: "A",
-          color: "white"
-        },*/
-        animation: google.maps.Animation.DROP,
-        clickable: true,
-        draggable: false
-      });
-      const infowindow = new google.maps.InfoWindow({
-        content: '' +
-            '<div class="h-24 w-72">\n' +
-            '        <div class="cursor-pointer">\n' +
-            '          <div class="sm:px-4">\n' +
-            '            <div class="flex items-center justify-between">\n' +
-            '              <p class="truncate text-sm font-medium text-gray-900">Ivan Driver</p>\n' +
-            '              <div class="ml-2 flex flex-shrink-0">\n' +
-            '                <p class="inline-flex rounded-full px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100">On Trip</p>\n' +
-            '              </div>\n' +
-            '            </div>\n' +
-            '            <div class="mt-2 flex justify-between">\n' +
-            '              <div class="flex">\n' +
-            '                <p class="flex items-center text-sm text-gray-500">\n' +
-            '                  Trip: 2 Hrs\n' +
-            '                </p>\n' +
-            '                <p class="mt-2 flex items-center text-sm text-gray-500 sm:ml-6 sm:mt-0">\n' +
-            '                  To: Jinja\n' +
-            '                </p>\n' +
-            '              </div>\n' +
-            '            </div>\n' +
-            '          </div>\n' +
-            '        </div></div>'
-      });
-
-      marker.addListener('click', () => {
-        infowindow.open(map, marker);
-      });
-    });
-  });
-  /*function clickAction(){
-    loader.deleteScript();
-  }*/
-  let marker, directionsService, directionsRenderer;
-  const markers = [
-    { position: { lat: 0.297784, lng: 32.544896 }, title: "Marker 1" },
-    { position: { lat: 0.292162, lng: 32.5485867 }, title: "Marker 2" },
-  ];
-  const showroute  = () =>{
-    loader.load().then(async () => {
-      const { Map } = await google.maps.importLibrary("maps");
-      const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
-
-      map = new Map(document.getElementById("map"), {
-        center: { lat: 0.292162, lng: 32.5485867 },
-        zoom: 13,
-        mapTypeId: "roadmap",
-        styles: mapStyle
-      });
-
-      marker = markers.map((marker) => {
-        const { position, title } = marker;
-
-        return new google.maps.Marker({
-          position,
-          title,
-          map,
-          // icon: markerIcon
-        });
-      });
-
-      var icons = {
-        start: new google.maps.MarkerImage(
-            // URL
-            "https://bishangatravel.com/wp-content/uploads/2022/07/marker.png",
-            // (width,height)
-            new google.maps.Size( 44, 32 ),
-            // The origin point (x,y)
-            new google.maps.Point( 0, 0 ),
-            // The anchor point (x,y)
-            new google.maps.Point( 22, 32 )
-        ),
-        end: new google.maps.MarkerImage(
-            // URL
-            "https://bishangatravel.com/wp-content/uploads/2022/07/marker.png",
-            // (width,height)
-            new google.maps.Size( 44, 32 ),
-            // The origin point (x,y)
-            new google.maps.Point( 0, 0 ),
-            // The anchor point (x,y)
-            new google.maps.Point( 22, 32 )
-        )
-      };
-
-      directionsService = new google.maps.DirectionsService();
-      directionsRenderer = new google.maps.DirectionsRenderer({
-        map,
-        suppressMarkers: true,
-      });
-
-      // document.getElementById("show-route").addEventListener("click", () => {
-      const waypoints = marker.map(({ position }) => ({ location: position }));
-      const origin = waypoints.shift().location;
-      const destination = waypoints.pop().location;
-
-      directionsService.route(
-          {
-            origin,
-            destination,
-            // waypoints,
-            travelMode: google.maps.TravelMode.DRIVING,
-          },
-          (response, status) => {
-            if (status === "OK") {
-              directionsRenderer.setDirections(response);
-              let leg = response.routes[ 0 ].legs[ 0 ];
-              console.log(response,leg.end_location);
-              makeMarker( origin, icons.start, "title" );
-              makeMarker( destination, icons.end, 'title' );
-            } else {
-              window.alert(`Directions request failed due to ${status}`);
-            }
-          }
-      );
-      // });
-    });
-  }
-  function makeMarker( position, icon, title ) {
-    new google.maps.Marker({
-      position: position,
-      map: map,
-      icon: icon,
-      title: title
-    });
-  }
   </script>
