@@ -88,7 +88,6 @@ const useDashboardMap = () => {
     }
 
     const addMarkerFromPosition = (position) => {
-
     }
 
     const clearMarkers = () => {
@@ -159,7 +158,15 @@ const useDashboardMap = () => {
 
 
     const removeRoute = (routeId) => {
-        debugger
+        const routeIndex  = googleRoutes.value.findIndex((route) => {
+            return route.id == routeId
+        })
+        if(routeIndex != -1){
+            googleRoutes.value[routeIndex].setMap(null)
+            googleRoutes.value.splice(routeIndex, 1);
+            return true;
+        }
+        return false;
     }
 
 
