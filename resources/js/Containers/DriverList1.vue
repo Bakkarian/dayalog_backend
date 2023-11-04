@@ -46,7 +46,7 @@
               <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-green-500 rounded-full">
                 <div class="h-1.5 w-1.5 rounded-full bg-green-100 ring-1 ring-white"></div>
               </div>
-              <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">{{driver.from}}</span> {{ driver.lastDispatch.origin }}, Pickup Point.</p>
+              <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">{{driver.from}}</span> {{ driver.lastDispatch?.origin }}, Pickup Point.</p>
               <time datetime="2023-01-23T10:32" class="flex-none py-0.5 text-xs leading-5 text-gray-500">"  "</time>
             </li>
 
@@ -87,7 +87,7 @@
               <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                 <MapPinIcon class="h-6 w-6 text-blue-600" />
               </div>
-              <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">{{ driver.lastDispatch.destination  }}.</span> Final Delivery Point.</p>
+              <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">{{ driver.lastDispatch?.destination  }}.</span> Final Delivery Point.</p>
               <time datetime="2023-01-24T09:20" class="flex-none py-0.5 text-xs leading-5 text-gray-500">...</time>
             </li>
           </ul>
