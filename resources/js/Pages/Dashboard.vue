@@ -236,13 +236,13 @@
  //When the map loads load available locations
   watch(loaded, (newLoaded, oldLoaded) => {
     if(newLoaded){
-        createRoute({ lat:0.3136, lng:32.5811},{ lat: 0.9136, lng:32.5811})
         locations.value.forEach((newLocation, i) => {
                 if (newLocation.position.lat!==undefined && newLocation.title.toLowerCase()!=='ivan tracker') {
                     newLocation.id = newLocation.deviceData.id
                     const marker = addMarker(newLocation)
                     marker.addListener('click', (e) => {
                         centerMapToPosition(marker.position.lat(),marker.position.lng())
+                        // createRoute({ lat:0.3136, lng:32.5811},{ lat: 0.9136, lng:32.5811})
                     });
 
                 }
