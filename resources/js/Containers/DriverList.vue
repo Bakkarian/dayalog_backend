@@ -12,7 +12,7 @@ const { centerMapToDevice }  =  useDashboardMap()
 
 <template>
     <div id="driver-list" class="mt-8 w-full overflow-y-auto bg-white h-40 shadow-lg rounded-md transition-all ease-in-out duration-300">
-    <!--     <div  v-for="(location, index) in locations" @click="centerMapToDevice(location.deviceData?.id)">
+         <div  v-for="(location, index) in locations" @click="centerMapToDevice(location.deviceData?.id)">
             <div class="flex p-4 cursor-pointer items-center" v-if="location.title.toLowerCase()!=='ivan tracker' && location.positionData ">
                 <div
                     class="flex items-center justify-center rounded-full h-[40px] w-[40px] bg-gray-400 text-white">
@@ -41,7 +41,7 @@ const { centerMapToDevice }  =  useDashboardMap()
                         }}</small>
                 </div>
             </div>
-        </div> -->
-        <DriverList1  />
+        </div>
+<!--        <DriverList1  />-->
     </div>
 </template>

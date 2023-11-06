@@ -13,6 +13,31 @@
                     <p class="text-xs mt-0">Field Marked with "<strong>*</strong>" are required</p>
                     <div class="mt-10 mb-4 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
 
+                        <div class="sm:col-span-5 sm:flex items-end">
+                            <Combobox class="flex-auto mr-1" as="div" v-model="selectedPerson">
+                                <ComboboxLabel class="block text-sm font-medium leading-6 text-gray-900">From (Search and select user)</ComboboxLabel>
+                                <div class="relative mt-2">
+                                    <ComboboxInput class="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" @change="query = $event.target.value" :display-value="(person) => person?.name" />
+                                    <ComboboxButton class="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none">
+                                        <ChevronUpDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
+                                    </ComboboxButton>
+
+                                    <ComboboxOptions v-if="filteredPeople.length > 0" class="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                                        <ComboboxOption v-for="person in filteredPeople" :key="person.id" :value="person" as="template" v-slot="{ active, selected }">
+                                            <li :class="['relative cursor-default select-none py-2 pl-3 pr-9', active ? 'bg-indigo-600 text-white' : 'text-gray-900']">
+                                                <span :class="['block truncate', selected && 'font-semibold']">
+                                                  {{ person.name }}
+                                                </span>
+                                                    <span v-if="selected" :class="['absolute inset-y-0 right-0 flex items-center pr-4', active ? 'text-white' : 'text-indigo-600']">
+                                                    <CheckIcon class="h-5 w-5" aria-hidden="true" />
+                                                </span>
+                                            </li>
+                                        </ComboboxOption>
+                                    </ComboboxOptions>
+                                </div>
+                            </Combobox>
+                            <button @click="openCreateAcc = !openCreateAcc" type="button" class="rounded-md ml-1 bg-indigo-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Create User</button>
+                        </div>
                         <div class="sm:col-span-5">
                             <InputLabel value="Deliver To *" />
                             <div class="mt-2">
@@ -67,7 +92,7 @@
                 </form>
             </div>
             <div class="">
-                <div class="text-center border border-dashed border-gray-400 rounded-md pb-4">
+<!--                <div class="text-center border border-dashed border-gray-400 rounded-md pb-4">
                     <img class="h-16 mx-auto" src="https://patasente.com/wp-content/uploads/2020/07/Logo-3.png" />
                     <h3 class="text-sm font-semibold text-gray-900">Account Not Connected</h3>
                     <p class="mt-1 text-sm text-gray-500">Get started by linking your Patasente account.</p>
@@ -77,6 +102,22 @@
                             Connect Account
                         </button>
                     </div>
+                </div>-->
+
+                <div v-if="openCreateAcc" class="bg-white p-4 rounded-md border max-w-[400px] animate__animated animate__fadeInRight">
+                    <div>
+                        <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Full Name</label>
+                        <div class="mt-2">
+                            <input type="text" name="full-name" id="name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Full Name" />
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email</label>
+                        <div class="mt-2">
+                            <input type="email" name="email" id="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="you@example.com" />
+                        </div>
+                    </div>
+                    <button type="button" class="rounded-md mt-4 bg-green-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500">Add User</button>
                 </div>
             </div>
         </div>
@@ -134,11 +175,36 @@ import FlashMessage from '@/Containers/FlashMessage.vue';
 import { Head, useForm } from '@inertiajs/vue3';
 import Layout from '@/Layouts/MainLayout.vue'
 import { LinkIcon, PlusIcon, XMarkIcon } from '@heroicons/vue/20/solid'
-import {ref} from "vue";
+import {computed, ref} from "vue";
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
 import { CheckIcon } from '@heroicons/vue/24/outline'
+import { ChevronUpDownIcon } from '@heroicons/vue/20/solid'
+import {
+    Combobox,
+    ComboboxButton,
+    ComboboxInput,
+    ComboboxLabel,
+    ComboboxOption,
+    ComboboxOptions,
+} from '@headlessui/vue'
+
+const accounts = [
+    { id: 1, name: 'Ivan Yiga' },
+    { id: 2, name: 'Afasha Isakiye' },
+]
+
+const query = ref('')
+const selectedPerson = ref(null)
+const filteredPeople = computed(() =>
+    query.value === ''
+        ? accounts
+        : accounts.filter((person) => {
+            return person.name.toLowerCase().includes(query.value.toLowerCase())
+        })
+)
 defineOptions({ layout: Layout })
 
 let openConnectModal = ref(false);
+let openCreateAcc = ref(false)
 
 </script>
