@@ -23,7 +23,7 @@ class DriverController extends Controller
 
        $user = (new UserService())->store($request->validated());
 
-       $driver = (new DriverService())->store([
+       (new DriverService())->store([
             ...$request->input(),
             'user_id' =>  $user->id
        ]);

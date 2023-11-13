@@ -27,15 +27,11 @@ export default function useNavigation() {
     { name: 'Vehicles', href: route('vehicle.view'), icon: TruckIcon, current: route('vehicle.create').endsWith(url) },
     { name: 'Add Vehicle', href: route('vehicle.create'), icon: UsersIcon, current: route('vehicle.create').endsWith(url) },
     { name: 'Orders', href: route('orders'), icon: ShoppingBagIcon, current: route('orders').endsWith(url) },
-    /*{ name: 'Projects', href: route('test'), icon: FolderIcon, current: route('test').endsWith(url) },
-    { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-    { name: 'Documents', href: '#', icon: DocumentDuplicateIcon, current: false },
-    { name: 'Reports', href: '#', icon: ChartPieIcon, current: false },*/
   ])
 
   const userNavigation = [
-    { name: 'Your profile', href: '#' },
-    { name: 'Sign out', href: '#' },
+    { name: 'Your profile', href: route('profile.edit') },
+    { name: 'Sign out', href: route('logout') , method:'post' },
   ]
 
   onMounted(()=>{
