@@ -59,6 +59,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'] )->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'] )->name('profile.destroy');
+
+    //Web app apis
+    Route::group(['prefix'=> 'api', 'as'=> 'web_api.'], function () {
+        Route::get('/users/search', [RegisteredUserController::class, 'getOptionUsers'])->name('searchUsers');
+        Route::get('/user/find', [RegisteredUserController::class, 'getOptionUser'])->name('findUser');
+        Route::post('user/create', [RegisteredUserController::class, 'createUser'])->name('createUser');
+    });
+
 });
 
 require __DIR__.'/auth.php';
