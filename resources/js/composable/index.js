@@ -34,8 +34,8 @@ export default function useNavigation() {
   ])
 
   const userNavigation = [
-    { name: 'Your profile', href: '#' },
-    { name: 'Sign out', href: '#' },
+    { name: 'Your profile', href: route('profile.edit') },
+    { name: 'Sign out', href: route('logout') , method:'post' },
   ]
 
   onMounted(()=>{
