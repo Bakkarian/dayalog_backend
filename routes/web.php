@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Web\DeviceController;
 use App\Http\Controllers\ProfileController;
@@ -37,13 +38,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/create-driver', [DriverController::class,'store'] )->name('driver.store');
     Route::get('/drivers/search', [DriverController::class,'search'] )->name('driver.search-json');
 
-//    Route::get('/view-orders', [OrdersController::class, 'index'] )->name('orders.view');
-    Route::get('/view-orders', function () {
-        return Inertia::render('Orders');
-    })->name('orders');
-    Route::get('/create-order', function () {
-        return Inertia::render('CreateOrder');
-    })->name('create-order');
+    Route::get('/view-orders', [OrdersController::class, 'index'])->name('orders');
+    Route::get('/create-order', [OrdersController::class, 'create'])->name('create-order');
+    Route::post('/order/store', [OrdersController::class, 'store'])->name('order.store');
 
     Route::get('/view-devices', [DeviceController::class, 'index'] )->name('devices.index');
     Route::get('/add-device', [DeviceController::class, 'create'] )->name('device.create');
