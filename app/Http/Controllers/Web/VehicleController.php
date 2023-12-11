@@ -6,11 +6,12 @@ use Inertia\Inertia;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\VehicleRequest;
+use App\Http\Resources\SelectVehicleOption;
 use App\Models\Device;
-use App\Models\Driver;
 use App\Models\Vehicle;
 use App\Models\VehicleDriver;
 use App\Services\VehicleService;
+use Illuminate\Support\Facades\DB;
 
 class VehicleController extends Controller
 {
@@ -74,4 +75,25 @@ class VehicleController extends Controller
 
         return redirect()->back()->with('success', 'Vehicle updated');
     }
+
+
+    public function getOptionVehicles(Request $request)
+    {
+        $search = $request->input('q');
+
+        $vehicles = Vehicle::where(
+                    //concatenate the columns and search
+                    DB::raw("CONCAT(`number_plate`, ' ', `make`, ' ', `model`)"),
+                    'LIKE', "%$search%"
+                )
+        ->limit(10)->get();
+
+        return SelectVehicleOption::collection($vehicles);
+    }
+
+
+   public function getOptionVehicle(Request $request){
+    return new SelectVehicleOption(Vehicle::find($request->input("id")));
+   }
+
 }
