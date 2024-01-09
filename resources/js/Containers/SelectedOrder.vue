@@ -8,7 +8,6 @@ import { InformationCircleIcon, MapPinIcon } from '@heroicons/vue/20/solid';
 
 const page = usePage();
 const selectedOrder = computed(() => page.props.selectedOrder)
-
 const openAssignModal = ref(false)
 
 </script>
@@ -73,16 +72,21 @@ const openAssignModal = ref(false)
                     <time datetime="2023-01-23T11:03" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Receiver Email</time>
                 </li>
 
-                <li class="relative flex gap-x-4">
-                    <div class="absolute left-0 top-0 flex w-6 justify-center h-6">
-                        <div class="w-px bg-gray-200"></div>
+                <li >
+
+                    <div class="relative flex gap-x-4">
+                        <div class="absolute left-0 top-0 flex w-6 justify-center h-6">
+                            <div class="w-px bg-gray-200"></div>
+                        </div>
+
+                        <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
+                            <MapPinIcon class="h-6 w-6 text-blue-600" />
+                        </div>
+
+                        <h2 class="flex-auto py-0.5 text-md leading-5 font-semibold">Trips</h2>
                     </div>
 
-                    <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
-                        <MapPinIcon class="h-6 w-6 text-blue-600" />
-                    </div>
 
-                    <h2 class="flex-auto py-0.5 text-md leading-5 font-semibold">Trips</h2>
                     <OrderTrips :vehiclesOrders="selectedOrder.order_vehicles" />
                 </li>
             </ul>
@@ -90,7 +94,7 @@ const openAssignModal = ref(false)
                 <button type="button" class="rounded bg-indigo-600 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 mr-2" @click="openAssignModal = true;">
                 {{  selectedOrder.order_vehicles[0]?  'Add a trip' : 'Assign For Delivery' }}
                 </button>
-              
+
             </div>
         </div>
     </div>

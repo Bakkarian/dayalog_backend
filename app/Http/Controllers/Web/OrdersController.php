@@ -22,7 +22,13 @@ class OrdersController extends Controller
         $selectedOrder = request()->query('order_id');
 
         if ($selectedOrder) {
-            $order = Order::with(['to','from','orderVehicles.dispatches'])->find($selectedOrder);
+            $order = Order::with([
+                'to',
+                'from',
+                'orderVehicles.dispatches',
+                'orderVehicles.vehicle.driver.bioData',
+                'orderVehicles.vehicle.device'
+            ])->find($selectedOrder);
         }
 
         $orders = Order::with(['to','from'])->paginate();
