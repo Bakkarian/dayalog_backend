@@ -130,7 +130,7 @@
             <div class="p-4 bg-white">
                 <div class="flex">
                     <p class="flex-auto">{{selectedLocation.title}}</p>
-                    <button type="button" class="-m-2.5 p-2.5">
+                    <button type="button" @click="selectedDevice = null" class="-m-2.5 p-2.5">
                         <span class="sr-only">Close device</span>
                         <XMarkIcon class="h-6 w-6 text-gray-500" aria-hidden="true" />
                     </button>
