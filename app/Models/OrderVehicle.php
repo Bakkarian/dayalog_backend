@@ -10,6 +10,8 @@ class OrderVehicle extends Model
 {
     use SoftDeletes;
 
+    protected $guarded = [];
+
     protected $table ='order_vehicle';
 
     public function vehicle()

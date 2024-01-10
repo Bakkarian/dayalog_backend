@@ -9,52 +9,51 @@
     });
     const emit = defineEmits(['update:modelValue']);
 
-    const accounts = ref([])
+    const vehicles = ref([])
     const search = ref("");
-    const selectedPerson = ref(null)
+    const selectedVehicle = ref(null)
 
 
-    const searchUserHandler = (value) => {
+    const searchVehicleHandler = (value) => {
         search.value = value
     }
 
     watch(search, () => {
-        searchUsers()
+        searchVehicles()
     })
 
-    watch(selectedPerson, (newPerson)=> {
+    watch(selectedVehicle, (newPerson)=> {
         emit('update:modelValue', newPerson);
     })
 
     watch(() => props.modelValue, (newValue, oldValue) => {
         if (newValue != oldValue) {
-            findUser(newValue)
+            findVehicle(newValue)
                 .then((result) => {
-                    debugger
-                    accounts.value = [...accounts.value ,result.data]
-                    selectedPerson.value = result.data.id
+                    vehicles.value = [...vehicles.value ,result.data]
+                    selectedVehicle.value = result.data.id
                 })
                 .catch((error) => {
                     console.error('Error finding user:', error);
                 });
         } else {
-            searchUsers();
+            searchVehicles();
         }
     })
 
-    const searchUsers = () => {
+    const searchVehicles = () => {
 
         //TODO : throttle this api request
-        fetch(route('web_api.searchUsers') + `?q=${search.value}`)
+        fetch(route('web_api.searchVehicles') + `?q=${search.value}`)
         .then(response => response.json())
         .then(results => {
-            accounts.value = results.data
+            vehicles.value = results.data
         });
 
     }
 
-    const findUser = (id) => {
-        return fetch(route('web_api.findUser') + `?id=${id}`)
+    const findVehicle = (id) => {
+        return fetch(route('web_api.findVehicle') + `?id=${id}`)
             .then(response => response.json())
             .then(results => {
                 return results; // You may want to return some value from here if needed
@@ -63,21 +62,21 @@
 
     onMounted(() => {
         if (props.modelValue) {
-            findUser(props.modelValue)
+            findVehicle(props.modelValue)
                 .then((result) => {
-                    accounts.value = [result.data]
-                    selectedPerson.value = result.data.id
+                    vehicles.value = [result.data]
+                    selectedVehicle.value = result.data.id
                 })
                 .catch((error) => {
-                    console.error('Error finding user:', error);
+                    console.error('Error finding vehicle:', error);
                 });
         } else {
-            searchUsers();
+            searchVehicles();
         }
     });
 
 </script>
 
 <template>
-    <CustomCombobox v-model="selectedPerson"  :items="accounts" :onSearch="searchUserHandler"  />
+    <CustomCombobox v-model="selectedVehicle"  :items="vehicles" :onSearch="searchVehicleHandler"  />
 </template>

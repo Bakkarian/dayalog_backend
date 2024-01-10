@@ -41,6 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/view-orders', [OrdersController::class, 'index'])->name('orders');
     Route::get('/create-order', [OrdersController::class, 'create'])->name('create-order');
     Route::post('/order/store', [OrdersController::class, 'store'])->name('order.store');
+    Route::post('/order/{order}/add/trip', [OrdersController::class, 'addTrip'])->name('order.add-trip');
 
     Route::get('/view-devices', [DeviceController::class, 'index'] )->name('devices.index');
     Route::get('/add-device', [DeviceController::class, 'create'] )->name('device.create');
@@ -58,10 +59,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'] )->name('profile.destroy');
 
     //Web app apis
-    Route::group(['prefix'=> 'api', 'as'=> 'web_api.'], function () {
+    Route::group(['prefix'=> 'web_api', 'as'=> 'web_api.'], function () {
         Route::get('/users/search', [RegisteredUserController::class, 'getOptionUsers'])->name('searchUsers');
         Route::get('/user/find', [RegisteredUserController::class, 'getOptionUser'])->name('findUser');
         Route::post('user/create', [RegisteredUserController::class, 'createUser'])->name('createUser');
+
+        Route::get('/vehicles/search', [VehicleController::class, 'getOptionVehicles'] )->name('searchVehicles');
+        Route::get('/vehicle/find', [VehicleController::class, 'getOptionVehicle'] )->name('findVehicle');
+        Route::post('/vehicle/create', [VehicleController::class, 'createVehicle'] )->name('createVehicle');
+        
     });
 
 });

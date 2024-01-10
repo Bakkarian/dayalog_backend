@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Models\OrderVehicle;
 use App\Services\OrderService;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -21,7 +22,13 @@ class OrdersController extends Controller
         $selectedOrder = request()->query('order_id');
 
         if ($selectedOrder) {
-            $order = Order::with(['to','from'])->find($selectedOrder);
+            $order = Order::with([
+                'to',
+                'from',
+                'orderVehicles.dispatches',
+                'orderVehicles.vehicle.driver.bioData',
+                'orderVehicles.vehicle.device'
+            ])->find($selectedOrder);
         }
 
         $orders = Order::with(['to','from'])->paginate();
@@ -101,5 +108,30 @@ class OrdersController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function addTrip(Request $request, Order $order)
+    {
+
+        //vehicle_id is required
+        $this->validate($request, [
+            'vehicle_id' => 'required|exists:vehicles,id',
+            'origin' => 'required|string',
+            'destination' => 'required|string',
+        ]);
+
+        $orderVehicle = OrderVehicle::firstOrCreate([
+            'order_id' => $order->id,
+            'vehicle_id' => $request->vehicle_id,
+        ]);
+
+        //add a dispatch (a trip)
+        $orderVehicle->dispatches()->create([
+            'origin' => $request->origin,
+            'destination' => $request->destination,
+            'notes' => $request->notes ?? '',
+        ]);
+
+        return redirect()->route('orders', ['order_id'=> $order->id])->with('success', 'Trip Added');
     }
 }

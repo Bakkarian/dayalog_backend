@@ -8,7 +8,7 @@ import { storeToRefs } from 'pinia'
 const useDashboardMap = () => {
 
     const store = useMapStore()
-    const { mapContainer,googleMap ,loaded, googleMapMarkers, googleRoutes } = storeToRefs(store)
+    const { mapContainer,googleMap ,loaded, googleMapMarkers, googleRoutes , selectedDevice } = storeToRefs(store)
 
 
     const loader = new Loader({
@@ -189,7 +189,8 @@ const useDashboardMap = () => {
         loadMap,
         createRoute,
         removeRoute,
-        googleRoutes
+        googleRoutes,
+        selectedDevice
     };
 }
 export default useDashboardMap;
