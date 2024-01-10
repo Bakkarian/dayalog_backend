@@ -10,7 +10,7 @@ export const useMapStore = defineStore('map', () => {
 
     const googleMapMarkers = ref([]);
     const googleRoutes = ref([]);
-
+    const selectedDevice = ref(null);
 
 
     function increment() {
@@ -18,12 +18,13 @@ export const useMapStore = defineStore('map', () => {
     }
 
     return {
+        selectedDevice,
         mapContainer,
         googleMap,
         loaded,
         googleMapMarkers,
         increment,
-        googleRoutes
+        googleRoutes,
      }
 })
 
