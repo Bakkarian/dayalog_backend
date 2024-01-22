@@ -20,11 +20,11 @@ import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
 import useNavigation from '@/composable'
 import { Link, usePage} from '@inertiajs/vue3'
 import { computed, ref } from 'vue'
+import useMisc from '@/composable/index'
 
 const url = computed(() => usePage().url)
-
 const { navigation, userNavigation, link } = useNavigation()
-
+const { shortLayout } = useMisc()
 const sidebarOpen = ref(false)
 const page = usePage()
 const user = computed(() => page.props.auth.user)
@@ -75,8 +75,26 @@ const user = computed(() => page.props.auth.user)
           </Dialog>
         </TransitionRoot>
 
+
+    <!-- Static sidebar for desktop short -->
+    <div v-if="shortLayout" class="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:z-50 lg:block lg:w-20 lg:overflow-y-auto lg:bg-[#002760] lg:pb-4 rounded-lg m-4 animate__animated animate__fadeInLeft animate__faster">
+          <div class="flex h-16 shrink-0 items-center justify-center">
+            <img class="h-8 w-auto" src="../assets/LOGO.png" alt="Dayalog" />
+          </div>
+          <nav class="mt-8">
+            <ul role="list" class="flex flex-col items-center space-y-1">
+              <li v-for="item in navigation" :key="item.name">
+                <Link :href="item.href" :class="[item.href.endsWith(url) ? 'bg-black bg-opacity-30 text-white' : 'text-gray-400 hover:text-white hover:bg-black hover:bg-opacity-20', 'group flex gap-x-3 rounded-md p-3 text-sm leading-6 font-semibold']">
+                  <component :is="item.icon" class="h-6 w-6 shrink-0" aria-hidden="true" />
+                  <span class="sr-only">{{ item.name }}</span>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
         <!-- Static sidebar for desktop -->
-        <div class="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:z-50 lg:block lg:w-72 lg:overflow-y-auto lg:bg-[#002760] lg:pb-4 rounded-lg m-4 animate__animated animate__fadeInLeft animate__faster">
+        <div v-else class="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:z-50 lg:block lg:w-72 lg:overflow-y-auto lg:bg-[#002760] lg:pb-4 rounded-lg m-4 animate__animated animate__fadeInLeft animate__faster">
           <div class="flex h-16 shrink-0 items-center justify-center">
             <img class="h-8 w-auto" src="../assets/LOGO.png" alt="Dayalog" />
           </div>
@@ -92,7 +110,7 @@ const user = computed(() => page.props.auth.user)
           </nav>
         </div>
 
-        <div class="lg:pl-72">
+        <div :class="[(!shortLayout)?'lg:pl-72':'lg:pl-20']">
           <div class="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-md sm:gap-x-6 sm:px-6 lg:px-8 lg:my-4 mr-4 ml-8 rounded-lg animate__animated animate__fadeInDown">
             <button type="button" class="-m-2.5 p-2.5 text-gray-700 lg:hidden" @click="sidebarOpen = true">
               <span class="sr-only">Open sidebar</span>

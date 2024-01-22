@@ -17,10 +17,20 @@ export default function useNavigation() {
   const host = ref(window.location.host)
   const protocol = ref(window.location.protocol);
 
+  const page = usePage()
+
+  const currentLink = computed(() =>{
+    const url = page.url;
+    const baseUrl = `${protocol.value}//${host.value}`;
+    return  baseUrl + (url == "/"?"": url)
+  })
+  
   const link = computed(() =>{
     const baseUrl = `${protocol}//${host.value}`;
     return  baseUrl + (url.value == "/"?"": url.value)
   })
+  
+  const shortLayout = computed(() => currentLink.value == route('dashboard'))
 
   const navigation = computed(() => [
     { name: 'Dashboard', href: route('dashboard'), icon: HomeIcon, current: route('dashboard').endsWith(url) },
@@ -41,5 +51,5 @@ export default function useNavigation() {
     host.value = window.location.host;
   })
 
-  return { navigation, userNavigation , link }
+  return { navigation, userNavigation , shortLayout }
 }
