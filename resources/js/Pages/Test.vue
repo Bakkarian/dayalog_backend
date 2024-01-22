@@ -1,6 +1,5 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
-import Layout from '@/Layouts/ShortLayout.vue'
+import { Head, Link } from '@inertiajs/vue3';'
 
 // defineOptions({ layout: Layout })
 
@@ -24,7 +23,6 @@ defineProps({
 
 <template>
 
-    <Layout>
     <Head title="Tests Page" />
 
     <template  #aside>
@@ -329,7 +327,6 @@ defineProps({
             </div>
         </div>
     </div>
-    </Layout>
 
 </template>
 

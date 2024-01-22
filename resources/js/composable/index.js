@@ -15,9 +15,15 @@ import { usePage } from '@inertiajs/vue3'
 export default function useNavigation() {
   const url = computed(() => usePage().url)
   const host = ref(window.location.host)
-  const link = computed(() =>{
-    return  host.value + (url.value == "/"?"": url.value)
+  const protocol = ref(window.location.protocol);
+  const page = usePage()
+
+  const currentLink = computed(() =>{
+    const url = page.url;
+    const baseUrl = `${protocol.value}//${host.value}`;
+    return  baseUrl + (url == "/"?"": url)
   })
+  const shortLayout = computed(() => currentLink.value == route('dashboard'))
 
   const navigation = computed(() => [
     { name: 'Dashboard', href: route('dashboard'), icon: HomeIcon, current: route('dashboard').endsWith(url) },
@@ -38,5 +44,5 @@ export default function useNavigation() {
     host.value = window.location.host;
   })
 
-  return { navigation, userNavigation , link }
+  return { navigation, userNavigation , shortLayout }
 }
