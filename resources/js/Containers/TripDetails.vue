@@ -51,8 +51,12 @@ const openDetails = ref(false)
                                     </DialogTitle>
                                     <div class="mt-2">
                                         <div class="mt-4">
-                                            <h5 class="font-bold">Driver Details</h5>
-                                            <div class="flex items-center justify-between my-4">
+                                            <h5 class="font-bold">Trip Notes</h5>
+
+
+
+                                            <div class="flex flex-col  justify-between my-4">
+                                                <p class="mb-3">{{ trip.notes }}</p>
                                                 <p class="truncate font-medium text-gray-900">
                                                     <button @click="openDetails = false;" type="button" class="rounded-full bg-white px-2 py-1 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-green-300 hover:bg-gray-50">View Current Location</button>
                                                 </p>

@@ -41,7 +41,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/view-orders', [OrdersController::class, 'index'])->name('orders');
     Route::get('/create-order', [OrdersController::class, 'create'])->name('create-order');
     Route::post('/order/store', [OrdersController::class, 'store'])->name('order.store');
+    Route::put('/order/{order}/update', [OrdersController::class, 'update'])->name('order.update');
     Route::post('/order/{order}/add/trip', [OrdersController::class, 'addTrip'])->name('order.add-trip');
+    Route::put('/trip/{dispatch}/update', [OrdersController::class, 'updateTrip'])->name('order.update-trip');
 
     Route::get('/view-devices', [DeviceController::class, 'index'] )->name('devices.index');
     Route::get('/add-device', [DeviceController::class, 'create'] )->name('device.create');
@@ -67,7 +69,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/vehicles/search', [VehicleController::class, 'getOptionVehicles'] )->name('searchVehicles');
         Route::get('/vehicle/find', [VehicleController::class, 'getOptionVehicle'] )->name('findVehicle');
         Route::post('/vehicle/create', [VehicleController::class, 'createVehicle'] )->name('createVehicle');
-        
+
     });
 
 });

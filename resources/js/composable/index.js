@@ -16,6 +16,7 @@ export default function useNavigation() {
   const url = computed(() => usePage().url)
   const host = ref(window.location.host)
   const protocol = ref(window.location.protocol);
+
   const page = usePage()
 
   const currentLink = computed(() =>{
@@ -23,6 +24,12 @@ export default function useNavigation() {
     const baseUrl = `${protocol.value}//${host.value}`;
     return  baseUrl + (url == "/"?"": url)
   })
+  
+  const link = computed(() =>{
+    const baseUrl = `${protocol}//${host.value}`;
+    return  baseUrl + (url.value == "/"?"": url.value)
+  })
+  
   const shortLayout = computed(() => currentLink.value == route('dashboard'))
 
   const navigation = computed(() => [
