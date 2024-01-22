@@ -1,5 +1,5 @@
 <script setup>
-import { usePage } from '@inertiajs/vue3';
+import { useForm, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
 import AssignForDelivery from './AssignForDelivery.vue';
 import OrderTrips from './OrderTrips.vue';
@@ -9,6 +9,31 @@ import { InformationCircleIcon, MapPinIcon } from '@heroicons/vue/20/solid';
 const page = usePage();
 const selectedOrder = computed(() => page.props.selectedOrder)
 const openAssignModal = ref(false)
+
+
+const form  = useForm({});
+
+const cancelOrder = () => {
+    form
+     .transform((data) => {
+        return {
+            ...data,
+            status: 'cancelled',
+        }
+     })
+     .put(route('order.update', selectedOrder.value?.id))
+}
+
+const completedOrder = () => {
+   form
+    .transform((data) => {
+    return {
+        ...data,
+        status: 'completed'
+    }
+    })
+    .put(route('order.update', selectedOrder.value?.id))
+}
 
 </script>
 
@@ -90,11 +115,14 @@ const openAssignModal = ref(false)
                     <OrderTrips :vehiclesOrders="selectedOrder.order_vehicles" />
                 </li>
             </ul>
-            <div class="p-6">
-                <button type="button" class="rounded bg-indigo-600 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 mr-2" @click="openAssignModal = true;">
+            <div v-if="selectedOrder.status != 'completed' && selectedOrder.status != 'cancelled' " class="p-6">
+                <button type="button" class="rounded bg-indigo-600 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 mr-2" @click.prevent="openAssignModal = true;">
                 {{  selectedOrder.order_vehicles[0]?  'Add a trip' : 'Assign For Delivery' }}
                 </button>
 
+                <button  type="button" class="rounded bg-indigo-600 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 mr-2" @click.prevent="completedOrder" >
+                    Mark as Complete
+                </button>
             </div>
         </div>
     </div>

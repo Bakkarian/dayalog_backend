@@ -15,8 +15,11 @@ import { usePage } from '@inertiajs/vue3'
 export default function useNavigation() {
   const url = computed(() => usePage().url)
   const host = ref(window.location.host)
+  const protocol = ref(window.location.protocol);
+
   const link = computed(() =>{
-    return  host.value + (url.value == "/"?"": url.value)
+    const baseUrl = `${protocol}//${host.value}`;
+    return  baseUrl + (url.value == "/"?"": url.value)
   })
 
   const navigation = computed(() => [

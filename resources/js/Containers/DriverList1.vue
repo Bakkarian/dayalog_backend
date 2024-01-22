@@ -1,27 +1,26 @@
 <template>
-
 <Loader v-if="loading" />
-  <div v-else class="bg-white sm:rounded-md">
+<div v-else class="bg-white sm:rounded-md">
     <ul role="list" class="divide-y divide-gray-200">
-      <li v-for="driver in drivers" :key="driver.id">
-        <Link :href="route('dashboard', { driver : driver.driver_id })">
+    <li v-for="driver in drivers" >
+        <Link :href="route('dashboard', { driver : 2 })">
             <div class="block hover:bg-gray-50 cursor-pointer">
             <div class="px-4 py-4 sm:px-6">
                 <div class="flex items-center justify-between">
-                <p class="truncate text-sm font-medium text-gray-900">{{ driver.name }}</p>
+                <p class="truncate text-sm font-medium text-gray-900">Isakiye Afasha</p>
                 <div class="ml-2 flex flex-shrink-0">
-                    <p class="inline-flex rounded-full px-2 text-xs font-semibold leading-5" :class="driver.lastDispatch?'text-green-800 bg-green-100':'text-red-800 bg-red-100'">{{ driver.onTrip?'On Trip':'Not On Trip' }}</p>
+                    <p class="inline-flex rounded-full px-2 text-xs font-semibold leading-5" :class="true ? 'text-green-800 bg-green-100':'text-red-800 bg-red-100'">{{ true ?'On Trip':'Not On Trip' }}</p>
                 </div>
                 </div>
                 <div class="mt-2 sm:flex sm:justify-between">
                 <div class="sm:flex">
                     <p class="flex items-center text-sm text-gray-500">
                     <ClockIcon class="mr-1.5 h-4 w-4 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                    Trip: {{ driver.lastDispatch ? dayjs(driver.lastDispatch?.created_at).fromNow():"" }}
+                    Trip: 5PM  <!-- {{ driver.lastDispatch ? dayjs(driver.lastDispatch?.created_at).fromNow():"" }} -->
                     </p>
                     <p class="mt-2 flex items-center text-sm text-gray-500 sm:ml-6 sm:mt-0">
                     <MapPinIcon class="mr-1.5 h-4 w-4 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                    To: {{ driver.lastDispatch?.destination }}
+                    To: Kawempe  <!--  {{ driver.lastDispatch?.destination }} -->
                     </p>
                 </div>
                 </div>
@@ -29,14 +28,14 @@
             </div>
         </Link>
 
-        <div :class="driver.driver_id == props.driver?.id ? 'h-[420px]':'h-0'" class="overflow-hidden bg-gray-50 transition-all ease-in-out duration-300">
-          <div class="p-3 flex items-center border-b border-t">
-            <div class="animate__animated" :class="driver.driver_id == props.driver?.id ?'animate__fadeInRight':'animate__fadeOutUp'">
-              <button type="button" class="rounded-full bg-white border p-1 text-gray-500 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+        <div :class="true ? 'h-[420px]':'h-0'" class="overflow-hidden bg-gray-50 transition-all ease-in-out duration-300">
+        <div class="p-3 flex items-center border-b border-t">
+            <div class="animate__animated" :class="true ?'animate__fadeInRight':'animate__fadeOutUp'">
+            <button type="button" class="rounded-full bg-white border p-1 text-gray-500 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
                 <ArrowLeftIcon class="h-5 w-5" aria-hidden="true" />
               </button>
             </div>
-            <h5 class="text-md font-bold ml-4 animate__animated animate__delay-0.3s" :class="driver.driver_id == props.driver?.id ?'animate__fadeInRight':'animate__fadeOutUp'">{{driver.name}}</h5>
+            <h5 class="text-md font-bold ml-4 animate__animated animate__delay-0.3s" :class="true ?'animate__fadeInRight':'animate__fadeOutUp'">{{'Hello'}}</h5>
           </div>
           <ul role="list" class="space-y-6 p-3 overflow-hidden">
             <li class="relative flex gap-x-4">
@@ -46,7 +45,7 @@
               <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-green-500 rounded-full">
                 <div class="h-1.5 w-1.5 rounded-full bg-green-100 ring-1 ring-white"></div>
               </div>
-              <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">{{driver.from}}</span> {{ driver.lastDispatch?.origin }}, Pickup Point.</p>
+              <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">{{'driver.from'}}</span> {{' driver.lastDispatch?.origin' }}, Pickup Point.</p>
               <time datetime="2023-01-23T10:32" class="flex-none py-0.5 text-xs leading-5 text-gray-500">"  "</time>
             </li>
 
@@ -71,7 +70,7 @@
               <img src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="relative mt-3 h-6 w-6 flex-none rounded-full bg-gray-50">
               <div class="flex-auto rounded-md p-3 ring-1 ring-inset ring-gray-200">
                 <div class="flex justify-between gap-x-4">
-                  <div class="py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">{{ driver.nameDriverList1 }}</span> Current Location</div>
+                  <div class="py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">{{' driver.nameDriverList1' }}</span> Current Location</div>
                   <time datetime="2023-01-23T15:56" class="flex-none py-0.5 text-xs leading-5 text-gray-500">now</time>
                 </div>
                 <p class="text-sm leading-6 text-gray-500">Mpigi - Masaka Kampala Rd</p>
@@ -84,49 +83,35 @@
                 <div class="w-px bg-gray-200"></div>
               </div>
 
-              <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
+            <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white">
                 <MapPinIcon class="h-6 w-6 text-blue-600" />
-              </div>
-              <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">{{ driver.lastDispatch?.destination  }}.</span> Final Delivery Point.</p>
-              <time datetime="2023-01-24T09:20" class="flex-none py-0.5 text-xs leading-5 text-gray-500">...</time>
+            </div>
+            <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">{{ 'driver.lastDispatch?.destination'  }}.</span> Final Delivery Point.</p>
+            <time datetime="2023-01-24T09:20" class="flex-none py-0.5 text-xs leading-5 text-gray-500">...</time>
             </li>
-          </ul>
-          <div class="w-full p-3">
-            <button type="button" @click="openDetails = !openDetails" :class="driver.detailOpened?'animate__fadeInDown':'animate__fadeOutUp'" class="animate__animated rounded-md w-full bg-[#002760] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">More Details</button>
-          </div>
+        </ul>
+        <div class="w-full p-3">
+            <button type="button" @click="true?'animate__fadeInDown':'animate__fadeOutUp'" class="animate__animated rounded-md w-full bg-[#002760] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">More Details</button>
         </div>
-      </li>
-    </ul>
+        </div>
+    </li>
+</ul>
   </div>
 
 </template>
 
 <script setup>
 import { MapPinIcon, ClockIcon, ArrowLeftIcon } from '@heroicons/vue/20/solid'
-import { Link } from '@inertiajs/vue3'
+import { Link, usePage } from '@inertiajs/vue3'
 import { onMounted, ref } from 'vue';
 import Loader from './Loader.vue';
 import dayjs from 'dayjs'
 import * as relativeTime from 'dayjs/plugin/relativeTime'
+import { computed } from 'vue';
 dayjs.extend(relativeTime)
-
 const loading = ref(false);
-const props = defineProps({
-  routeFunction: Function,
-  driver: Object,
-  drivers:Array,
-});
-
 const openDetails = ref(false)
-
-
-onMounted(()=>{
- /*    fetch(route('dashboard.drivers'))
-    .then(response => response.json())
-    .then(data => {
-        drivers.value = data;
-        loading.value = false;
-    }) */
-})
+const page = usePage();
+const drivers = computed(() => page.props.drivers)
 
 </script>

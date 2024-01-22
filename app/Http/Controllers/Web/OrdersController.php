@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Dispatch;
 use App\Models\Order;
 use App\Models\OrderVehicle;
 use App\Services\OrderService;
@@ -97,9 +98,12 @@ class OrdersController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Order $order)
     {
-        //
+        $order->status = $request->status;
+        $order->save();
+
+        return redirect()->back()->with('success', 'Order Updated');
     }
 
     /**
@@ -133,5 +137,17 @@ class OrdersController extends Controller
         ]);
 
         return redirect()->route('orders', ['order_id'=> $order->id])->with('success', 'Trip Added');
+    }
+
+    public function updateTrip(Request $request, Dispatch $dispatch)
+    {
+        $this->validate($request, [
+            'status' => 'required'
+        ]);
+
+        $dispatch->status = $request->status;
+        $dispatch->save();
+
+        return redirect()->back()->with('success', 'Trip Updated');
     }
 }
