@@ -1,18 +1,9 @@
 <template>
     <Head title="Dashboard" />
     <div class="">
-      <div class="absolute top-0 bottom-0 right-0 left-0 lg:left-[350px]">
-        <div ref="mapContainer" id="map" class="h-full w-full"></div>
-      </div>
-        <div class="bg-gradient-to-r from-gray-100 lg:left-[350px] top-0 bottom-0 w-[50px] absolute"></div>
-      <div class="absolute right-0 left-0">
-        <aside class="fixed bottom-0 left-20 top-16 hidden w-96 border-r border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block animate__animated animate__fadeIn">
-          <!-- Secondary column (hidden on smaller screens) -->
-          <DriverList :locations="locations" />
-          <!-- <DriverList1 :drivers="props.drivers" /> -->
-        </aside>
-      </div>
-
+        <MapWithSideBar>
+            <DriverList :locations="locations" />
+        </MapWithSideBar>
     <!-- The selected location -->
      <div v-if="selectedLocation" class="absolute right-0 left-0 bottom-0 pb-4">
         <div class="w-[300px] mx-auto shadow-md rounded-md">
@@ -48,7 +39,6 @@
 
   <script setup>
   import { ref} from 'vue'
-  import DriverList1 from "@/Containers/DriverList1.vue";
   import DriverList from '@/Containers/DriverList.vue';
   import useTraccar from "@/composable/traccar"
 
@@ -56,33 +46,26 @@
 
     XMarkIcon,
   } from '@heroicons/vue/24/outline'
-  import useNavigation from '@/composable'
   import useDashboardMap from '@/composable/dashboardMap'
-  import { Head, usePage } from '@inertiajs/vue3';
+  import { Head } from '@inertiajs/vue3';
   import { computed, watch } from 'vue';
-  import { onMounted } from 'vue';
+
   import Layout from '@/Layouts/MainLayout.vue'
+  import MapWithSideBar from '@/Layouts/MapWithSideBar.vue';
 
   defineOptions({ layout: Layout })
 
   const props = defineProps(['devices', 'driver', 'drivers', 'selectedDeviceId' ])
-  const page = usePage()
-  const { positions : tracarPositions, devices : tracarDevices } = useTraccar();
-  const user = computed(() => page.props.auth.user)
-  const url = computed(() => usePage().url)
-  const { navigation, userNavigation } = useNavigation()
+  const { positions : tracarPositions } = useTraccar();
   const {
-    mapContainer,
     googleMap,
     loaded,
     addMarker,
     updateMarker,
     centerMapToPosition,
-    loadMap,
     selectedDevice
    } = useDashboardMap()
 
-  const sidebarOpen = ref(false)
   let loadingList = ref(true)
 
 
@@ -119,7 +102,7 @@
 
 
  //When the map loads load available locations
-  watch(loaded, (newLoaded, oldLoaded) => {
+  watch(loaded, (newLoaded) => {
     if(newLoaded){
         locations.value.forEach((newLocation, i) => {
                 if (newLocation.position.lat!==undefined && newLocation.title.toLowerCase()!=='ivan tracker') {
@@ -134,7 +117,6 @@
             });
     }
   })
-
     // watch works directly on a ref
   watch(locations ,(newLocations, oldLocations) => {
     if(googleMap.value){
@@ -143,13 +125,7 @@
                 updateMarker(newLocation, newLocation.deviceData.id)
             }
         });
-        // setBounds()
     }
-    //look
-  })
-
-  onMounted(() => {
-    loadMap();
   })
 
   </script>
