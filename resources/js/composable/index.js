@@ -24,13 +24,16 @@ export default function useNavigation() {
     const baseUrl = `${protocol.value}//${host.value}`;
     return  baseUrl + (url == "/"?"": url)
   })
-  
+
   const link = computed(() =>{
     const baseUrl = `${protocol}//${host.value}`;
     return  baseUrl + (url.value == "/"?"": url.value)
   })
-  
-  const shortLayout = computed(() => currentLink.value == route('dashboard'))
+
+  const shortLayout = () => {
+    return  route().current('order.view-order-map') ||
+            route().current('dashboard')
+  }
 
   const navigation = computed(() => [
     { name: 'Dashboard', href: route('dashboard'), icon: HomeIcon, current: route('dashboard').endsWith(url) },

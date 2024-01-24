@@ -51,20 +51,14 @@
   import DriverList1 from "@/Containers/DriverList1.vue";
   import DriverList from '@/Containers/DriverList.vue';
   import useTraccar from "@/composable/traccar"
-  import {
-    Dialog,
-    DialogPanel,
-    TransitionChild,
-    TransitionRoot,
-  } from '@headlessui/vue'
+
   import {
 
     XMarkIcon,
   } from '@heroicons/vue/24/outline'
-  import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
   import useNavigation from '@/composable'
   import useDashboardMap from '@/composable/dashboardMap'
-  import { Head, Link, usePage } from '@inertiajs/vue3';
+  import { Head, usePage } from '@inertiajs/vue3';
   import { computed, watch } from 'vue';
   import { onMounted } from 'vue';
   import Layout from '@/Layouts/MainLayout.vue'
