@@ -38,94 +38,38 @@
 
 
   <script setup>
-  import { ref} from 'vue'
   import DriverList from '@/Containers/DriverList.vue';
-  import useTraccar from "@/composable/traccar"
-
   import {
 
     XMarkIcon,
   } from '@heroicons/vue/24/outline'
   import useDashboardMap from '@/composable/dashboardMap'
   import { Head } from '@inertiajs/vue3';
-  import { computed, watch } from 'vue';
+  import { computed } from 'vue';
 
   import Layout from '@/Layouts/MainLayout.vue'
   import MapWithSideBar from '@/Layouts/MapWithSideBar.vue';
 
   defineOptions({ layout: Layout })
 
-  const props = defineProps(['devices', 'driver', 'drivers', 'selectedDeviceId' ])
-  const { positions : tracarPositions } = useTraccar();
-  const {
-    googleMap,
-    loaded,
-    addMarker,
-    updateMarker,
-    centerMapToPosition,
-    selectedDevice
-   } = useDashboardMap()
+    const props = defineProps(['devices', 'driver', 'drivers', 'selectedDeviceId' ])
+    const { selectedDevice, buildLocationFromDevice, onMapLoaded, addMarkerWithClickEvent, centerMapToPosition } = useDashboardMap()
 
-  let loadingList = ref(true)
+    const locations = computed(()=> {
+        return props.devices.map((device) =>  buildLocationFromDevice(device))
+    })
 
+    const selectedLocation = computed(() => locations.value.find(position => {
+        return position.deviceData.id === selectedDevice.value
+    } ))
 
-
-  setTimeout(function(){
-    let element = document.getElementById("driver-list")
-    element?.classList?.remove("h-40")
-    element?.classList?.add("h-[85%]")
-    loadingList.value = false;
-  },1000)
-
-
-  const locations = computed(()=> {
-    return props.devices.map((device => {
-        // console.log(device.last_position)
-            let latestPosition = tracarPositions.value.find(position => position.deviceId === device.id)
-            if(!latestPosition){
-                latestPosition = device.last_position
-            }
-
-            return  {
-            position: { lat: latestPosition?.latitude, lng: latestPosition?.longitude },
-            title: device.name,
-            status: device.status,
-            positionData: latestPosition,
-            deviceData: device,
-        };
-    }));
-  })
-
-  const selectedLocation = computed(() => locations.value.find(position => {
-    return position.deviceData.id === selectedDevice.value
-  } ))
-
-
- //When the map loads load available locations
-  watch(loaded, (newLoaded) => {
-    if(newLoaded){
-        locations.value.forEach((newLocation, i) => {
-                if (newLocation.position.lat!==undefined && newLocation.title.toLowerCase()!=='ivan tracker') {
-                    newLocation.id = newLocation.deviceData.id
-                    const marker = addMarker(newLocation)
-                    marker.addListener('click', (e) => {
-                        centerMapToPosition(marker.position.lat(),marker.position.lng())
-                        selectedDevice.value = marker.markerId
-                    });
-
-                }
-            });
-    }
-  })
-    // watch works directly on a ref
-  watch(locations ,(newLocations, oldLocations) => {
-    if(googleMap.value){
-        newLocations.forEach((newLocation, i) => {
-            if (newLocation.title.toLowerCase()!=='ivan tracker') {
-                updateMarker(newLocation, newLocation.deviceData.id)
-            }
-        });
-    }
-  })
+    onMapLoaded(() => {
+        locations.value.forEach((location) => {
+            addMarkerWithClickEvent(location, (e, marker) => {
+                centerMapToPosition(marker.position.lat(),marker.position.lng())
+                selectedDevice.value = marker.markerId
+            })
+        })
+    })
 
   </script>

@@ -1,15 +1,28 @@
-import { onMounted, ref } from "vue";
+import { ref, watch } from "vue";
 import { Loader } from "@googlemaps/js-api-loader"
 import { mapStyle } from '@/utils/index';
 import markerImage from "@/assets/marker.png"
 import { useMapStore } from '@/store'
 import { storeToRefs } from 'pinia'
+import useTraccar from "@/composable/traccar"
 
 const useDashboardMap = () => {
 
     const store = useMapStore()
-    const { mapContainer,googleMap ,loaded, googleMapMarkers, googleRoutes , selectedDevice } = storeToRefs(store)
 
+    const {
+        mapContainer,
+        googleMap,
+        loaded,
+        googleMapMarkers,
+        googleRoutes,
+        selectedDevice,
+        devices
+    } = storeToRefs(store)
+
+    const { positions : tracarPositions, events:tracarEvents, onDevicePositionChanged } = useTraccar();
+
+    const onLoadedFunction = ref(false);
 
     const loader = new Loader({
         apiKey: "AIzaSyAir29_hRhb99ll83YjLarlSbj-9su5zXI",
@@ -78,16 +91,17 @@ const useDashboardMap = () => {
 
     const updateMarker = (position, id) => {
         const markerIndex  = googleMapMarkers.value.findIndex((marker) => {
-            return marker.id == id
+            return marker.markerId == id
         })
         if(markerIndex != -1){
-            googleMapMarkers.value[markerIndex].setPosition(position.position)
+            googleMapMarkers.value[markerIndex].setPosition({ lat: position?.latitude, lng: position?.longitude },)
             return googleMapMarkers.value[markerIndex];
         }
         return false;
     }
 
     const addMarkerFromPosition = (position) => {
+
     }
 
     const clearMarkers = () => {
@@ -101,10 +115,8 @@ const useDashboardMap = () => {
           }, 400)
     }
 
-
-
     const centerMapToDevice = (deviceId) => {
-
+        debugger
         const marker  = googleMapMarkers.value.find((marker) => {
             return marker.markerId == deviceId
         })
@@ -171,12 +183,50 @@ const useDashboardMap = () => {
 
 
 
-    onMounted(()=>{
+    const buildLocationFromDevice = (device) => {
+        // console.log(device.last_position)
+            let latestPosition = tracarPositions.value.find(position => position.deviceId === device.id)
+
+            if(!latestPosition){
+                latestPosition = device.last_position
+            }
+
+            return  {
+                position: { lat: latestPosition?.latitude, lng: latestPosition?.longitude },
+                title: device.name,
+                status: device.status,
+                positionData: latestPosition,
+                deviceData: device,
+        };
+    }
+
+
+    const addMarkerWithClickEvent = (newLocation, callback, ...args) => {
+        newLocation.id = newLocation.deviceData.id
+        const marker = addMarker(newLocation);
+        marker.addListener('click', (e) => callback(e,marker, ...args));
+    };
+
+
+
+    const onMapLoaded = (callback ) => {
+        onLoadedFunction.value = callback;
+    };
+
+    watch(loaded, (newLoaded) => {
+        if(newLoaded && onLoadedFunction.value){
+            onLoadedFunction.value()
+        }
+    })
+
+    onDevicePositionChanged((position) => {
+        updateMarker(position, position.deviceId)
     })
 
 
     return {
         mapContainer,
+        devices,
         googleMap,
         addMarker,
         addMarkers,
@@ -190,7 +240,10 @@ const useDashboardMap = () => {
         createRoute,
         removeRoute,
         googleRoutes,
-        selectedDevice
+        selectedDevice,
+        buildLocationFromDevice,
+        onMapLoaded,
+        addMarkerWithClickEvent
     };
 }
 export default useDashboardMap;

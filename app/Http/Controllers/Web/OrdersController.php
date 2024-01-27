@@ -150,4 +150,13 @@ class OrdersController extends Controller
 
         return redirect()->back()->with('success', 'Trip Updated');
     }
+    public function orderMap(Request $request,  $order)
+    {
+
+        $order =  Order::with(['orderVehicles.vehicle.device.lastPosition'])->find($order);
+        
+        return Inertia::render('OrderMap', [
+            'order' => $order,
+        ]);
+    }
 }
