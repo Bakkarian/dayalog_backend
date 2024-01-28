@@ -77,7 +77,7 @@ const user = computed(() => page.props.auth.user)
 
 
     <!-- Static sidebar for desktop short -->
-    <div v-if="shortLayout" class="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:z-50 lg:block lg:w-20 lg:overflow-y-auto lg:bg-[#002760] lg:pb-4 rounded-lg m-4 animate__animated animate__fadeInLeft animate__faster">
+    <div v-if="shortLayout()" class="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:z-50 lg:block lg:w-20 lg:overflow-y-auto lg:bg-[#002760] lg:pb-4 rounded-lg m-4 animate__animated animate__fadeInLeft animate__faster">
           <div class="flex h-16 shrink-0 items-center justify-center">
             <img class="h-8 w-auto" src="../assets/LOGO.png" alt="Dayalog" />
           </div>
@@ -110,7 +110,7 @@ const user = computed(() => page.props.auth.user)
           </nav>
         </div>
 
-        <div :class="[(!shortLayout)?'lg:pl-72':'lg:pl-20']">
+        <div :class="[(!shortLayout())?'lg:pl-72':'lg:pl-20']">
           <div class="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-md sm:gap-x-6 sm:px-6 lg:px-8 lg:my-4 mr-4 ml-8 rounded-lg animate__animated animate__fadeInDown">
             <button type="button" class="-m-2.5 p-2.5 text-gray-700 lg:hidden" @click="sidebarOpen = true">
               <span class="sr-only">Open sidebar</span>

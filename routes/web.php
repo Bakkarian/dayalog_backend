@@ -44,6 +44,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/order/{order}/update', [OrdersController::class, 'update'])->name('order.update');
     Route::post('/order/{order}/add/trip', [OrdersController::class, 'addTrip'])->name('order.add-trip');
     Route::put('/trip/{dispatch}/update', [OrdersController::class, 'updateTrip'])->name('order.update-trip');
+    Route::get('view-order-map/{order}', [OrdersController::class, 'orderMap'])->name('order.view-order-map');
 
     Route::get('/view-devices', [DeviceController::class, 'index'] )->name('devices.index');
     Route::get('/add-device', [DeviceController::class, 'create'] )->name('device.create');

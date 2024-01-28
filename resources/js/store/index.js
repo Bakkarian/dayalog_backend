@@ -1,8 +1,10 @@
 import { defineStore } from 'pinia'
-import { computed, reactive, ref } from 'vue';
+import { ref } from 'vue';
 
 
 export const useMapStore = defineStore('map', () => {
+
+    const devices = ref([])
 
     const mapContainer = ref(null);
     const googleMap = ref(null);
@@ -25,6 +27,7 @@ export const useMapStore = defineStore('map', () => {
         googleMapMarkers,
         increment,
         googleRoutes,
+        devices,
      }
 })
 
