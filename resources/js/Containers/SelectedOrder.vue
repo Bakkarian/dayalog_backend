@@ -1,5 +1,5 @@
 <script setup>
-import { useForm, usePage } from '@inertiajs/vue3';
+import { Link, useForm, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
 import AssignForDelivery from './AssignForDelivery.vue';
 import OrderTrips from './OrderTrips.vue';
@@ -115,15 +115,25 @@ const completedOrder = () => {
                     <OrderTrips :vehiclesOrders="selectedOrder.order_vehicles" />
                 </li>
             </ul>
-            <div v-if="selectedOrder.status != 'completed' && selectedOrder.status != 'cancelled' " class="p-6">
-                <button type="button" class="rounded bg-indigo-600 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 mr-2" @click.prevent="openAssignModal = true;">
-                {{  selectedOrder.order_vehicles[0]?  'Add a trip' : 'Assign For Delivery' }}
-                </button>
+            <div  class="p-6">
 
-                <button  type="button" class="rounded bg-indigo-600 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 mr-2" @click.prevent="completedOrder" >
-                    Mark as Complete
-                </button>
+                <template v-if="selectedOrder.status != 'completed' && selectedOrder.status != 'cancelled' ">
+                    <button type="button" class="rounded bg-indigo-600 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 mr-2" @click.prevent="openAssignModal = true;">
+                    {{  selectedOrder.order_vehicles[0]?  'Add a trip' : 'Assign For Delivery' }}
+                    </button>
+
+                    <button  type="button" class="rounded bg-indigo-600 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 mr-2" @click.prevent="completedOrder" >
+                        Mark as Complete
+                    </button>
+
+                </template>
+                    <Link :href="route('order.view-order-map', selectedOrder.id)"   class="rounded bg-indigo-600 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 mr-2"  >
+                        View on map
+                    </Link>
+
             </div>
+
+
         </div>
     </div>
     <AssignForDelivery v-if="openAssignModal" @close="openAssignModal = false" :orderId="selectedOrder.id" />

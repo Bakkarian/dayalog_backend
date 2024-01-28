@@ -5,26 +5,26 @@
     <li v-for="driver in drivers" >
         <Link :href="route('dashboard', { driver : 2 })">
             <div class="block hover:bg-gray-50 cursor-pointer">
-            <div class="px-4 py-4 sm:px-6">
-                <div class="flex items-center justify-between">
-                <p class="truncate text-sm font-medium text-gray-900">Isakiye Afasha</p>
-                <div class="ml-2 flex flex-shrink-0">
-                    <p class="inline-flex rounded-full px-2 text-xs font-semibold leading-5" :class="true ? 'text-green-800 bg-green-100':'text-red-800 bg-red-100'">{{ true ?'On Trip':'Not On Trip' }}</p>
+                <div class="px-4 py-4 sm:px-6">
+                    <div class="flex items-center justify-between">
+                    <p class="truncate text-sm font-medium text-gray-900">Isakiye Afasha</p>
+                    <div class="ml-2 flex flex-shrink-0">
+                        <p class="inline-flex rounded-full px-2 text-xs font-semibold leading-5" :class="true ? 'text-green-800 bg-green-100':'text-red-800 bg-red-100'">{{ true ?'On Trip':'Not On Trip' }}</p>
+                    </div>
+                    </div>
+                    <div class="mt-2 sm:flex sm:justify-between">
+                    <div class="sm:flex">
+                        <p class="flex items-center text-sm text-gray-500">
+                        <ClockIcon class="mr-1.5 h-4 w-4 flex-shrink-0 text-gray-400" aria-hidden="true" />
+                        Trip: 5PM  <!-- {{ driver.lastDispatch ? dayjs(driver.lastDispatch?.created_at).fromNow():"" }} -->
+                        </p>
+                        <p class="mt-2 flex items-center text-sm text-gray-500 sm:ml-6 sm:mt-0">
+                        <MapPinIcon class="mr-1.5 h-4 w-4 flex-shrink-0 text-gray-400" aria-hidden="true" />
+                        To: Kawempe  <!--  {{ driver.lastDispatch?.destination }} -->
+                        </p>
+                    </div>
+                    </div>
                 </div>
-                </div>
-                <div class="mt-2 sm:flex sm:justify-between">
-                <div class="sm:flex">
-                    <p class="flex items-center text-sm text-gray-500">
-                    <ClockIcon class="mr-1.5 h-4 w-4 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                    Trip: 5PM  <!-- {{ driver.lastDispatch ? dayjs(driver.lastDispatch?.created_at).fromNow():"" }} -->
-                    </p>
-                    <p class="mt-2 flex items-center text-sm text-gray-500 sm:ml-6 sm:mt-0">
-                    <MapPinIcon class="mr-1.5 h-4 w-4 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                    To: Kawempe  <!--  {{ driver.lastDispatch?.destination }} -->
-                    </p>
-                </div>
-                </div>
-            </div>
             </div>
         </Link>
 

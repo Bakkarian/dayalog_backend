@@ -153,10 +153,19 @@ class OrdersController extends Controller
     public function orderMap(Request $request,  $order)
     {
 
-        $order =  Order::with(['orderVehicles.vehicle.device.lastPosition'])->find($order);
-        
+        $order =  Order::with(['orderVehicles.vehicle.device', 'orderVehicles.vehicle.driver.bioData', 'orderVehicles.dispatches'])->find($order);
+        $devices = $order->orderVehicles->map(function ($orderVehicle){
+        $device = $orderVehicle->vehicle()->with(['device'])->first()->device;
+        $lastPosition = $device->lastPosition;
+
+        $device->lastPosition = $lastPosition;
+             return $device;
+        });
+
+
         return Inertia::render('OrderMap', [
             'order' => $order,
+            'devices' => $devices
         ]);
     }
 }
