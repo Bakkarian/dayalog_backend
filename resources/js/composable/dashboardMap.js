@@ -1,4 +1,4 @@
-import { ref, watch } from "vue";
+import { onMounted, onUnmounted, ref, watch } from "vue";
 import { Loader } from "@googlemaps/js-api-loader"
 import { mapStyle } from '@/utils/index';
 import markerImage from "@/assets/marker.png"
@@ -48,6 +48,7 @@ const useDashboardMap = () => {
             });
             setInitialBounds()
             loaded.value = true
+
                   //if not empty
             if(googleMapMarkers.value.length != 0){
                 for (var i = 0; i < googleMapMarkers.value.length; i++) {
@@ -105,6 +106,10 @@ const useDashboardMap = () => {
     }
 
     const clearMarkers = () => {
+        for (var i = 0; i < googleMapMarkers.value.length; i++) {
+            googleMapMarkers.value[i].setMap(null);
+        }
+        googleMapMarkers.value = [];
     };
 
     const centerMapToPosition = (lat,lng) => {
@@ -116,7 +121,7 @@ const useDashboardMap = () => {
     }
 
     const centerMapToDevice = (deviceId) => {
-        debugger
+
         const marker  = googleMapMarkers.value.find((marker) => {
             return marker.markerId == deviceId
         })
@@ -181,6 +186,63 @@ const useDashboardMap = () => {
         return false;
     }
 
+    const createRouteWithPlaces = (originName, destinationName, routeId = null) => {
+        const geocoder = new google.maps.Geocoder();
+        const directionsService = new google.maps.DirectionsService();
+        const directionsRenderer = new google.maps.DirectionsRenderer({
+            map: googleMap.value,
+            suppressMarkers: true,
+        });
+
+        // Geocode origin and destination names to get coordinates
+        const geocodePromises = [geocodePlace(geocoder, originName), geocodePlace(geocoder, destinationName)];
+
+        Promise.all(geocodePromises)
+        .then(([originLatLng, destinationLatLng]) => {
+            const request = {
+                origin: originLatLng,
+                destination: destinationLatLng,
+                travelMode: google.maps.TravelMode.DRIVING,
+            };
+
+            directionsService.route(request, function (result, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsRenderer.setDirections(result);
+                    directionsRenderer.setOptions({
+                        polylineOptions: {
+                            strokeColor: "#002c75",
+                            strokeWeight: 4,
+                            strokeOpacity: 0.7,
+                        },
+                    });
+                } else {
+                    console.error("Directions request failed: " + status);
+                }
+            });
+
+            directionsRenderer.set('id', routeId ??  uid());
+            googleRoutes.value.push(directionsRenderer);
+        })
+        .catch(error => {
+            console.error("Geocoding failed: ", error);
+        });
+
+        return directionsRenderer;
+    };
+
+    const geocodePlace = (geocoder, placeName) => {
+        return new Promise((resolve, reject) => {
+            geocoder.geocode({ 'address': placeName }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    resolve(results[0].geometry.location);
+                } else {
+                    reject("Geocoding failed for place: " + placeName);
+                }
+            });
+        });
+    };
+
+
 
 
     const buildLocationFromDevice = (device) => {
@@ -213,15 +275,26 @@ const useDashboardMap = () => {
         onLoadedFunction.value = callback;
     };
 
-    watch(loaded, (newLoaded) => {
-        if(newLoaded && onLoadedFunction.value){
-            onLoadedFunction.value()
-        }
-    })
+     watch(loaded, (newLoaded) => {
+         if(newLoaded && onLoadedFunction.value){
+             onLoadedFunction.value()
+         }
+     })
 
     onDevicePositionChanged((position) => {
         updateMarker(position, position.deviceId)
     })
+
+
+    onMounted( () => {
+        //     // debugger
+     });
+
+     onUnmounted( () => {
+        clearMarkers()
+        loaded.value = false;
+        onLoadedFunction.value = undefined;
+     })
 
 
     return {
@@ -243,7 +316,8 @@ const useDashboardMap = () => {
         selectedDevice,
         buildLocationFromDevice,
         onMapLoaded,
-        addMarkerWithClickEvent
+        addMarkerWithClickEvent,
+        createRouteWithPlaces
     };
 }
 export default useDashboardMap;

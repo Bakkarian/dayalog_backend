@@ -154,18 +154,35 @@ class OrdersController extends Controller
     {
 
         $order =  Order::with(['orderVehicles.vehicle.device', 'orderVehicles.vehicle.driver.bioData', 'orderVehicles.dispatches'])->find($order);
-        $devices = $order->orderVehicles->map(function ($orderVehicle){
-        $device = $orderVehicle->vehicle()->with(['device'])->first()->device;
-        $lastPosition = $device->lastPosition;
 
-        $device->lastPosition = $lastPosition;
-             return $device;
+        $devices = $order->orderVehicles->map(function ($orderVehicle){
+            $device = $orderVehicle->vehicle()->with(['device'])->first()->device;
+            $lastPosition = $device->lastPosition;
+            $device->lastPosition = $lastPosition;
+            return $device;
         });
+
+        $dispatches = $order->orderVehicles->flatMap(function ($orderVehicle) {
+            return $orderVehicle->dispatches;
+        });
+
+
+       if(isset($request->dispatch)){
+            $selectedDispatch = Dispatch::with([
+                'orderVehicle.vehicle.device',
+                'orderVehicle.vehicle.driver.bioData',
+                'deviceEvents',
+                'stops',
+            ])->find($request->dispatch);
+        }
+
 
 
         return Inertia::render('OrderMap', [
             'order' => $order,
-            'devices' => $devices
+            'devices' => $devices,
+            'dispatches' => $dispatches,
+            'selectedDispatch' => $selectedDispatch ?? null,
         ]);
     }
 }
