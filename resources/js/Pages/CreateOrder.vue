@@ -4,7 +4,7 @@
 
     <div class="px-4 py-10 sm:px-6 lg:px-8 lg:py-6 max-w-7xl">
         <!-- Main area -->
-        <div class="mb-8">
+        <div class="mb-2">
             <h1 class="text-xl">Create Order</h1>
         </div>
         <div class="grid lg:grid-cols-2 gap-8">

@@ -1,6 +1,6 @@
 <template>
         <div v-if="flash.success || flash.error" :class="[
-                                'rounded-md p-4 mt-4 border',
+                                'rounded-md p-4 mt-2 border',
                                 success ? 'bg-green-50 border-green-300' : '',
                                 error ? 'bg-red-50 border-red-400' : '',
                             ]">

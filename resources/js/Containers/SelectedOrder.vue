@@ -57,14 +57,16 @@ const completedOrder = () => {
                     <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-orange-200 rounded-full">
                         <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                     </div>
-                    <div class="flex-auto rounded-md p-3 ring-1 ring-inset ring-gray-200 sm:grid sm:grid-cols-2 gap-4 animate__animated animate__fadeIn">
+                    <div class="flex-auto rounded-md p-3 ring-1 ring-inset ring-gray-200 animate__animated animate__fadeIn">
                         <h4 class="col-span-2">Order Items</h4>
-                        <div v-for="item in selectedOrder.items" class="border border-orange-400 rounded-md p-2 bg-orange-400 bg-opacity-5">
+                        <div class="sm:grid sm:grid-cols-2 gap-4 pr-4 h-[200px] overflow-y-scroll">
+                            <div v-for="item in selectedOrder.items" class="border border-orange-400 rounded-md p-2 bg-orange-400 bg-opacity-5">
                             <p class="sm:flex sm:justify-between">
                                 <span>{{item.item}}</span>
                                 <span class="text-sm font-bold">Total: {{item.total}}</span>
                             </p>
                             <p class="text-sm">Qty: {{item.qty}}</p>
+                        </div>
                         </div>
                     </div>
                 </li>
@@ -122,13 +124,13 @@ const completedOrder = () => {
                     {{  selectedOrder.order_vehicles[0]?  'Add a trip' : 'Assign For Delivery' }}
                     </button>
 
-                    <button  type="button" class="rounded bg-indigo-600 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 mr-2" @click.prevent="completedOrder" >
+                    <button  type="button" class="rounded bg-green-600 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-green-500 mr-2" @click.prevent="completedOrder" >
                         Mark as Complete
                     </button>
 
                 </template>
-                    <Link :href="route('order.view-order-map', selectedOrder.id)"   class="rounded bg-indigo-600 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 mr-2"  >
-                        View on map
+                    <Link :href="route('order.view-order-map', selectedOrder.id)"   class="rounded inline-flex px-2 py-1 text-sm font-semibold text-blue-400 mr-2"  >
+                        <MapPinIcon class="h-4 w-4 text-blue-400" /> View on map
                     </Link>
 
             </div>
