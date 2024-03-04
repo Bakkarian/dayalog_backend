@@ -29,6 +29,9 @@
                     <p class="text-sm flex-1">Accuracy:</p>
                     <p class="text-sm flex-1 text-gray-400">{{(selectedLocation.positionData.accuracy).toFixed(1)}}</p>
                 </div>
+                <div class="flex my-2 border-t">
+                    <a href="" class="p-2 bg-gray-100 rounded-full mt-2 hover:bg-green-400" title="History"><BackwardIcon class="h-5 w-5"></BackwardIcon></a>
+                </div>
             </div>
         </div>
     </div>
@@ -40,8 +43,8 @@
   <script setup>
   import DriverList from '@/Containers/DriverList.vue';
   import {
-
     XMarkIcon,
+    BackwardIcon
   } from '@heroicons/vue/24/outline'
   import useDashboardMap from '@/composable/dashboardMap'
   import { Head } from '@inertiajs/vue3';
