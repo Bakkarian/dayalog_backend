@@ -51,7 +51,7 @@ onMounted(()=>{
 <div>
     <hr />
     <p class="mt-2">Order Items</p>
-    <div class="grid grid-cols-2 gap-4 mt-4">
+    <div class="grid grid-cols-2 gap-2 mt-4">
         <div>
             <TextInput v-model="newItem.item" class="my-2" type="text"   placeholder="Item Name"  />
             <TextInput  v-model="newItem.qty" class="my-2" type="text"   placeholder="Quantity"  />
@@ -65,7 +65,7 @@ onMounted(()=>{
                 Add Item
             </button>
         </div>
-        <div class="border-l border-dashed min-h-[420px]">
+        <div class="border-l border-dashed h-[240px] overflow-y-scroll pr-3">
             <div v-for="item in items"  :key="item.id" class="ml-4 mb-4 border border-orange-400 rounded-md p-2 bg-orange-400 bg-opacity-5">
                 <p class="sm:flex sm:justify-between">
                     <span>{{item.item}}</span>
@@ -73,7 +73,7 @@ onMounted(()=>{
                 </p>
                 <p class="sm:flex sm:justify-between">
                     <span class="text-sm">Qty: {{ item.qty }} {{ item.qty_measure }}</span>
-                    <span class="text-sm font-bold">Total: UGX {{ item.price * item.qty }}</span>
+                    <span class="text-sm font-bold">Total: UGX {{ (item.price * item.qty).toLocaleString("en-US") }}</span>
                 </p>
             </div>
         </div>

@@ -4,7 +4,7 @@
 
     <div class="px-4 py-10 sm:px-6 lg:px-8 lg:py-6 max-w-7xl">
         <!-- Main area -->
-        <div class="mb-8">
+        <div class="mb-2">
             <h1 class="text-xl">Create Order</h1>
         </div>
         <div class="grid lg:grid-cols-2 gap-8">
@@ -66,11 +66,15 @@
                     <InputError class="mt-2" :message="form.errors.orderItems" />
                     <CreateOrderItems  v-model="form.orderItems"  />
 
-                    <FlashMessage />
-                    <button type="submit"
-                            class="rounded-md mt-12 bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                        Create Order
-                    </button>
+                    <div class="mt-2 pt-1 border-t">
+                        <FlashMessage />
+                        <div class="flex flex-row-reverse">
+                            <button type="submit"
+                                class="rounded-md mt-1 bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                            Create Order
+                        </button>
+                        </div>
+                    </div>
                 </form>
             </div>
 
