@@ -65,7 +65,7 @@ onMounted(()=>{
                 Add Item
             </button>
         </div>
-        <div class="border-l border-dashed min-h-[420px]">
+        <div class="border-l border-dashed min-h-[300px]">
             <div v-for="item in items"  :key="item.id" class="ml-4 mb-4 border border-orange-400 rounded-md p-2 bg-orange-400 bg-opacity-5">
                 <p class="sm:flex sm:justify-between">
                     <span>{{item.item}}</span>

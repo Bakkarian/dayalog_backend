@@ -66,11 +66,15 @@
                     <InputError class="mt-2" :message="form.errors.orderItems" />
                     <CreateOrderItems  v-model="form.orderItems"  />
 
-                    <FlashMessage />
-                    <button type="submit"
-                            class="rounded-md mt-12 bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                        Create Order
-                    </button>
+                    <div class="mt-2 pt-1 border-t">
+                        <FlashMessage />
+                        <div class="flex flex-row-reverse">
+                            <button type="submit"
+                                class="rounded-md mt-1 bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                            Create Order
+                        </button>
+                        </div>
+                    </div>
                 </form>
             </div>
 
