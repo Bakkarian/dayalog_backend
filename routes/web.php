@@ -30,6 +30,11 @@ Route::get('/', function (){
     return Inertia::render("Landing");
 })->name('Dayalog');
 
+Route::get('/track-order', function () {
+    return Inertia::render('TrackOrder', [
+    ]);
+})->name('trackorder');
+
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
     Route::get('/home/drivers', [HomeController::class, 'drivers'])->name('dashboard.drivers');
