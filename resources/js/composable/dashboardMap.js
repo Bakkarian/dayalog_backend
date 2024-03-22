@@ -244,7 +244,6 @@ const useDashboardMap = () => {
 
 
 
-
     const buildLocationFromDevice = (device) => {
         // console.log(device.last_position)
             let latestPosition = tracarPositions.value.find(position => position.deviceId === device.id)
