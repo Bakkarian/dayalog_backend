@@ -23,13 +23,13 @@ class DriverRequest extends FormRequest
     {
         return [
             'license' => [''] ,
-            'user_id' => [
+           /*  'user_id' => [
                 'required_without_all:email,patasente_id,phone_number',
                  'exists:users,id',
                  'unique:drivers,user_id'
-            ],
+            ], */
             'name' => ['required_if:user_id,null'],
-            'email' => [
+          /*   'email' => [
                 'required_without_all:user_id,patasente_id,phone_number',
                 'unique:users,email',
 
@@ -41,7 +41,7 @@ class DriverRequest extends FormRequest
             'phone_number' => [
                 'required_without_all:user_id,email,patasente_id',
                 'unique:users,phone_number',
-            ]
+            ] */
 
         ];
     }

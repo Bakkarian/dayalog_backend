@@ -19,23 +19,23 @@
                             </div>
                         </div>
                         <div class="sm:col-span-5">
-                            <InputLabel for="email" value="Vin Number *" />
+                            <InputLabel for="email" value="Vin Number " />
                             <div class="mt-2">
-                                <TextInput type="text" required placeholder="VIN" v-model="form.vin" />
+                                <TextInput type="text"  placeholder="VIN" v-model="form.vin" />
                                 <InputError class="mt-2" :message="form.errors.vin" />
                             </div>
                         </div>
                         <div class="sm:col-span-5">
-                            <InputLabel for="email" value="Make *" />
+                            <InputLabel for="email" value="Make" />
                             <div class="mt-2">
-                                <TextInput type="text" required placeholder="Eg: Mercedes" v-model="form.make" />
+                                <TextInput type="text" placeholder="Eg: Mercedes" v-model="form.make" />
                                 <InputError class="mt-2" :message="form.errors.make" />
                             </div>
                         </div>
                         <div class="sm:col-span-5">
-                            <InputLabel for="email" value="Model *" />
+                            <InputLabel for="email" value="Model" />
                             <div class="mt-2">
-                                <TextInput type="text" required placeholder="Eg: Actros 2330" v-model="form.model" />
+                                <TextInput type="text" placeholder="Eg: Actros 2330" v-model="form.model" />
                                 <InputError class="mt-2" :message="form.errors.model" />
                             </div>
                         </div>
@@ -52,30 +52,30 @@
                     </div>
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
                         <div class="sm:col-span-5">
-                            <InputLabel for="email" value="Capacity Weight (Kgs) *" />
+                            <InputLabel for="email" value="Capacity Weight (Kgs) " />
                             <div class="mt-2">
-                                <TextInput type="number" required placeholder="Weight Capacity of vehicle" v-model="form.capacity_weight" />
+                                <TextInput type="number"  placeholder="Weight Capacity of vehicle" v-model="form.capacity_weight" />
                                 <InputError class="mt-2" :message="form.errors.capacity_weight" />
                             </div>
                         </div>
                         <div class="sm:col-span-5">
-                            <InputLabel for="email" value="Capacity Volume (litres)*" />
+                            <InputLabel for="email" value="Capacity Volume (litres)" />
                             <div class="mt-2">
-                                <TextInput type="number" required placeholder="Cargo Space of the Vehicle" v-model="form.capacity_volume" />
+                                <TextInput type="number"  placeholder="Cargo Space of the Vehicle" v-model="form.capacity_volume" />
                                 <InputError class="mt-2" :message="form.errors.capacity_volume" />
                             </div>
                         </div>
                         <div class="sm:col-span-5">
-                            <InputLabel for="email" value="Insurance Policy Number *" />
+                            <InputLabel for="email" value="Insurance Policy Number" />
                             <div class="mt-2">
-                                <TextInput type="text" required placeholder="Insurance" v-model="form.insurance_policy_number" />
+                                <TextInput type="text"  placeholder="Insurance" v-model="form.insurance_policy_number" />
                                 <InputError class="mt-2" :message="form.errors.insurance_policy_number" />
                             </div>
                         </div>
                         <div class="sm:col-span-5">
                             <InputLabel for="email" value="Insurance Coverage" />
                             <div class="mt-2">
-                                <TextInput type="text" required placeholder="Coverage" v-model="form.insurance_coverage" />
+                                <TextInput type="text" placeholder="Coverage" v-model="form.insurance_coverage" />
                                 <InputError class="mt-2" :message="form.errors.insurance_coverage" />
                             </div>
                         </div>
