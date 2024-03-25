@@ -21,15 +21,16 @@ class VehicleRequest extends FormRequest
      */
     public function rules(): array
     {
+
         return [
-            'vin' => 'required|string|unique:vehicles',
+            'vin' => 'nullable|string|unique:vehicles',
             'number_plate' => 'required|string|unique:vehicles',
-            'make' => 'required|string',
-            'model' => 'required|string',
+            'make' => 'nullable|string',
+            'model' => 'nullable|string',
 
             'availability' => 'boolean',
-            'capacity_weight' => 'required|numeric',
-            'capacity_volume' => 'required|numeric',
+            'capacity_weight' => 'nullable|numeric',
+            'capacity_volume' => 'nullable|numeric',
 
             'insurance_policy_number' => 'nullable|string',
             'insurance_coverage' => 'nullable|string',

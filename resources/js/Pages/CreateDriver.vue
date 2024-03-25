@@ -27,23 +27,23 @@
                             </div>
                         </div>
                         <div class="sm:col-span-5">
-                            <InputLabel for="email" value="Patasente Merchant Code *" />
+                            <InputLabel for="email" value="Patasente Merchant Code" />
                             <div class="mt-2">
                                 <TextInput id="patasente_id" type="text"   placeholder="Merchant Code"  v-model="form.patasente_id" />
                                 <InputError class="mt-2" :message="form.errors.patasente_id" />
                             </div>
                         </div>
                         <div class="sm:col-span-5">
-                            <InputLabel for="email" value="Phone Number*" />
+                            <InputLabel for="email" value="Phone Number" />
                             <div class="mt-2">
                                 <TextInput id="patasente_id" type="text"   placeholder="Driver's Phone Number"  v-model="form.phone_number" />
                                 <InputError class="mt-2" :message="form.errors.phone_number" />
                             </div>
                         </div>
                         <div class="sm:col-span-5">
-                            <InputLabel for="email" value="Drivers Licence Number *" />
+                            <InputLabel for="email" value="Drivers Licence Number" />
                             <div class="mt-2">
-                                <TextInput id="license_no" type="text" required  placeholder="Drivers Licence Number"  v-model="form.license" />
+                                <TextInput id="license_no" type="text"  placeholder="Drivers Licence Number"  v-model="form.license" />
                                 <InputError class="mt-2" :message="form.errors.license" />
                             </div>
                         </div>
