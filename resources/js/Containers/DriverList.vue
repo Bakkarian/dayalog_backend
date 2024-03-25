@@ -3,6 +3,7 @@ import useDashboardMap from "@/composable/dashboardMap"
 import DriverList1 from "./DriverList1.vue";
 import { useMapStore } from '@/store'
 import { storeToRefs } from 'pinia'
+import { onMounted } from "vue";
 
 const props  = defineProps(["locations"])
 const { centerMapToDevice }  =  useDashboardMap()
@@ -10,6 +11,17 @@ const { centerMapToDevice }  =  useDashboardMap()
 const store = useMapStore()
 const {selectedDevice } = storeToRefs(store)
 
+
+
+
+onMounted(() => {
+    setTimeout(function(){
+        let element = document.getElementById("driver-list")
+        element.classList.remove("h-40")
+        element.classList.add("h-[85%]")
+        loadingList.value = false;
+    },1000)
+})
 
 
 </script>
