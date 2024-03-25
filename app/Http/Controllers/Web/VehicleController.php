@@ -81,12 +81,20 @@ class VehicleController extends Controller
     {
         $search = $request->input('q');
 
-        $vehicles = Vehicle::where(
-                    //concatenate the columns and search
-                    DB::raw("CONCAT(`number_plate`, ' ', `make`, ' ', `model`)"),
+
+        // TODO: fix this query and revert
+       /*  $vehicles = Vehicle::where(
+                        //concatenate the columns and search
+                        DB::raw("CONCAT(`number_plate`, ' ', `make`, ' ', `model`)"),
                     'LIKE', "%$search%"
                 )
-        ->limit(10)->get();
+        ->limit(10)->get(); */
+
+
+        $vehicles = Vehicle::where('number_plate' ,'like' ,  "%$search%")
+            ->oRwhere('make' ,'like' ,  "%$search%")
+            ->orWhere('model' ,'like' ,  "%$search%")
+            ->limit(10)->get();
 
         return SelectVehicleOption::collection($vehicles);
     }
