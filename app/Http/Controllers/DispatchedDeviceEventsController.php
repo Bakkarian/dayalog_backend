@@ -79,7 +79,9 @@ class DispatchedDeviceEventsController extends Controller
             ->latest()
             ->first();
 
+
         if ($dispatch) {
+
             if ($dispatch->deviceEvents->isEmpty()) {
                 if($position->speed > 0.2 ){
                     DispatchedDeviceEvents::create([
@@ -92,15 +94,22 @@ class DispatchedDeviceEventsController extends Controller
             } else {
 
                 $event = $dispatch->deviceEvents()->with('devicePosition')->latest()->first();
+
                 $lastDevicePosition = $event->devicePosition;
+
                 if ($this->calculatePercentage($lastDevicePosition->speed, $position->speed) > 30 ){
 
-                    DispatchedDeviceEvents::create([
-                        'dispatch_id' => $dispatch->id,
-                        'device_id' => $deviceId,
-                        'device_position_id' => $position->id,
-                        'status' => ($position->speed < 0.2 ) ? "stopped" : (($lastDevicePosition->speed < 0.3 ) ?  "started" : "moving")
-                    ]);
+                    $status = ($position->speed < 0.2 ) ? "stopped" : (($lastDevicePosition->speed < 0.3 ) ?  "started" : "moving");
+
+                    if($status != $event->status){
+                        DispatchedDeviceEvents::create([
+                            'dispatch_id' => $dispatch->id,
+                            'device_id' => $deviceId,
+                            'device_position_id' => $position->id,
+                            'status' => $status
+                        ]);
+                    }
+
                 }
             }
         }
