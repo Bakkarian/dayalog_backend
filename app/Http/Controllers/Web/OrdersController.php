@@ -176,8 +176,9 @@ class OrdersController extends Controller
                 'orderVehicle.vehicle.device',
                 'orderVehicle.vehicle.driver.bioData',
                 'deviceEvents',
-                'stops.devicePosition',
+                'devicePositions',
             ])->find($request->dispatch);
+            $selectedDispatch->stops = $selectedDispatch->getStops();
         }
 
 
