@@ -40,4 +40,10 @@ class Dispatch extends Model
         return $this->deviceEvents()->where('status','stopped');
     }
 
+
+    public function devicePositions()
+    {
+        return $this->belongsToMany(DevicePosition::class);
+    }
+
 }
