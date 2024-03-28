@@ -19,7 +19,6 @@ onMounted(() => {
         let element = document.getElementById("driver-list")
         element.classList.remove("h-40")
         element.classList.add("h-[85%]")
-        loadingList.value = false;
     },1000)
 })
 

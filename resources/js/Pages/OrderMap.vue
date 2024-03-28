@@ -107,7 +107,7 @@ import { computed } from 'vue';
                             </div>
 
                             <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Stop: 1</span> Mbarara town -
-                                <a href="#" class="text-blue-400">{{ stop.device_position?.latitude }},{{ stop.device_position?.longitude }} </a></p>
+                                <a href="#" class="text-blue-400">{{ stop.start.latitude }},{{ stop.start.longitude }} </a></p>
                             <time datetime="2023-01-23T11:03" class="flex-none py-0.5 text-xs leading-5 text-gray-500">11:14am</time>
                         </li>
 

@@ -82,40 +82,49 @@ class DispatchedDeviceEventsController extends Controller
 
         if ($dispatch) {
 
-            if ($dispatch->deviceEvents->isEmpty()) {
-                if($position->speed > 0.2 ){
-                    DispatchedDeviceEvents::create([
-                        'dispatch_id' => $dispatch->id,
-                        'device_id' => $deviceId,
-                        'device_position_id' => $position->id,
-                        'status' => 'started'
-                    ]);
-                }
-            } else {
+            $dispatch->devicePositions()->attach($position->id);
 
-                $event = $dispatch->deviceEvents()->with('devicePosition')->latest()->first();
+            //ALL THE TIME i WAISTED ON THIS i CAN'T JUST REMOVE IT
+            // if ($dispatch->deviceEvents->isEmpty()) {
+            //     if($position->speed > 0.2 ){
+            //         DispatchedDeviceEvents::create([
+            //             'dispatch_id' => $dispatch->id,
+            //             'device_id' => $deviceId,
+            //             'device_position_id' => $position->id,
+            //             'status' => 'started'
+            //         ]);
+            //     }
+            // } else {
 
-                $lastDevicePosition = $event->devicePosition;
+            //     $event = $dispatch->deviceEvents()->with('devicePosition')->latest()->first();
 
-                if ($this->calculatePercentage($lastDevicePosition->speed, $position->speed) > 30 ){
+            //     $lastDevicePosition = $event->devicePosition;
 
-                    $status = ($position->speed < 0.2 ) ? "stopped" : (($lastDevicePosition->speed < 0.3 ) ?  "started" : "moving");
+            //     //get the speed percentage difference
+            //     if ($this->calculatePercentage(
+            //         $lastDevicePosition->speed,
+            //         $position->speed
+            //     ) > 30 ){
 
-                    if($status != $event->status){
-                        DispatchedDeviceEvents::create([
-                            'dispatch_id' => $dispatch->id,
-                            'device_id' => $deviceId,
-                            'device_position_id' => $position->id,
-                            'status' => $status
-                        ]);
-                    }
+            //         $status = ($position->speed < 0 ) ? "stopped" :  "moving";
 
-                }
-            }
+            //         if($status != $event->status){
+            //             error_log("State changes from  (Event ID: $event->id, Position: id $lastDevicePosition->id ,  Status : $event->status  ) to " . $status );
+            //             DispatchedDeviceEvents::create([
+            //                 'dispatch_id' => $dispatch->id,
+            //                 'device_id' => $deviceId,
+            //                 'device_position_id' => $position->id,
+            //                 'status' => $status
+            //             ]);
+            //         }
+
+            //     }
+            // }
         }
 
 
     }
+
 
     function calculatePercentage($original, $given)
     {
