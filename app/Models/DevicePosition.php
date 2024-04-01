@@ -11,5 +11,9 @@ class DevicePosition extends Model
 
     protected $table = 'device_positions';
 
-    
+    public function dispatches()
+    {
+        return $this->belongsToMany(Dispatch::class);
+    }
+
 }
