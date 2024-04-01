@@ -6,7 +6,7 @@ trait Dispatch
 {
 
 
-    public function getStops($minSpeed = 1.2, $maxDuration = 2 )
+    public function getStops($minSpeed = 0.2, $maxDuration = 2 )
     {
 
         $positions = $this->devicePositions;
