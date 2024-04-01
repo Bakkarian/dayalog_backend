@@ -70,6 +70,7 @@ const useDashboardMap = () => {
 
     const addMarker = (newLocation ) => {
         const  { position, title , id } = newLocation
+
         const marker = new google.maps.Marker({
             position: position,
             map: googleMap.value,
@@ -82,6 +83,7 @@ const useDashboardMap = () => {
             draggable: false,
         });
         marker.set('markerId', id ?? uid() );
+
         googleMapMarkers.value.push(marker);
         return marker
     }
@@ -264,8 +266,10 @@ const useDashboardMap = () => {
 
     const addMarkerWithClickEvent = (newLocation, callback, ...args) => {
         newLocation.id = newLocation.deviceData.id
-        const marker = addMarker(newLocation);
-        marker.addListener('click', (e) => callback(e,marker, ...args));
+        if(newLocation.positionData){
+            const marker = addMarker(newLocation);
+            marker.addListener('click', (e) => callback(e,marker, ...args));
+        }
     };
 
 
