@@ -50,4 +50,19 @@ trait Dispatch
         return $stops;
     }
 
+
+    /**
+     *
+     * Returns the distance covered on a dispatch in meters
+     *
+     */
+
+    public function getDistance()
+    {
+        $devicePositions = $this->devicePositions();
+        $start_position = $devicePositions->first();
+        $last_position = $devicePositions->latest()->first();
+        return json_decode($last_position->attributes["attributes"])->totalDistance -  json_decode($start_position->attributes["attributes"])->totalDistance;
+    }
+
 }
