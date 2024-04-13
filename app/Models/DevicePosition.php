@@ -11,6 +11,10 @@ class DevicePosition extends Model
 
     protected $table = 'device_positions';
 
+    const CREATED_AT = 'servertime';
+
+    const UPDATED_AT = 'servertime';
+
     public function dispatches()
     {
         return $this->belongsToMany(Dispatch::class);
