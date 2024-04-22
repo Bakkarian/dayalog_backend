@@ -28,7 +28,7 @@ class Device extends Model
 
     public function lastPosition()
     {
-        return $this->hasOne(DevicePosition::class, 'deviceid')->orderByDesc('id');
+        return $this->belongsTo(DevicePosition::class, 'positionid');
     }
 
     //TODO: Create a custom delete that caters for the tc_user_device table
