@@ -45,7 +45,7 @@ class DriverSummaryEmails extends Command
             ])->get();
 
 
-                    // Group the dispatches by driver
+            // Group the dispatches by driver
             $dispatchesGroupedByDriver = $dispatches->groupBy(function ($dispatch) {
                 $dispatch->distance = $dispatch->getDistance();
                 return optional($dispatch->orderVehicle->vehicle->driver->bioData)->id ?? '0';
@@ -60,11 +60,11 @@ class DriverSummaryEmails extends Command
 
                 $user = $data[0]->orderVehicle->vehicle->driver->bioData;
 
-            return [$key => [
-                'user' =>  $user,
-                'distance' => $totalDistance,
-                'number_of_dispatches' => count($data),
-            ]];
+                return [$key => [
+                    'user' =>  $user,
+                    'distance' => $totalDistance / 1000,
+                    'number_of_dispatches' => count($data),
+                ]];
 
             });
 
