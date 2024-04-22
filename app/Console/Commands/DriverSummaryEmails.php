@@ -69,8 +69,7 @@ class DriverSummaryEmails extends Command
             });
 
             $data = $data->values();
-            Mail::to(User::first())->send(
-            new DailyDriversSummary($data)
-            );
+
+            Mail::to(['afashaisakiye@gmail.com', 'ivanatresyn@gmail.com'])->send(new DailyDriversSummary($data));
     }
 }
