@@ -29,12 +29,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"user_id":5,"license":"Ut qui odio quo aute","created_at":"2023-07-15T17:53:20.000000Z","updated_at":"2023-07-15T17:53:20.000000Z"}],"links":{"first":"http:\/\/localhost:8000\/api\/drivers?page=1","last":"http:\/\/localhost:8000\/api\/drivers?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/drivers?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost:8000\/api\/drivers","per_page":25,"to":1,"total":1}}'
+        content: '{"data":[{"id":1,"user_id":2,"license":null,"created_at":"2024-03-28T13:28:02.000000Z","updated_at":"2024-03-28T13:28:02.000000Z"}],"links":{"first":"http:\/\/dayalog_api.test\/api\/drivers?page=1","last":"http:\/\/dayalog_api.test\/api\/drivers?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/dayalog_api.test\/api\/drivers?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/dayalog_api.test\/api\/drivers","per_page":25,"to":1,"total":1}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '57'
+          x-ratelimit-remaining: '54'
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
         description: null
@@ -72,13 +72,8 @@ endpoints:
         required: false
         example: null
         type: string
-        custom: []
-      user_id:
-        name: user_id
-        description: 'This field is required when none of <code>email</code>, <code>patasente_id</code>, and <code>phone_number</code> are present.'
-        required: false
-        example: null
-        type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       name:
         name: name
@@ -86,31 +81,27 @@ endpoints:
         required: false
         example: null
         type: string
-        custom: []
-      email:
-        name: email
-        description: 'This field is required when none of <code>user_id</code>, <code>patasente_id</code>, and <code>phone_number</code> are present.'
-        required: false
-        example: null
-        type: string
-        custom: []
-      patasente_id:
-        name: patasente_id
-        description: 'This field is required when none of <code>user_id</code>, <code>email</code>, and <code>phone_number</code> are present.'
-        required: false
-        example: null
-        type: string
-        custom: []
-      phone_number:
-        name: phone_number
-        description: 'This field is required when none of <code>user_id</code>, <code>email</code>, and <code>patasente_id</code> are present.'
-        required: false
-        example: null
-        type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 500
+        content: |-
+          {
+              "message": "Server Error"
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '53'
+          access-control-allow-origin: 'localhost:8000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -140,6 +131,8 @@ endpoints:
         required: true
         example: 1
         type: integer
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
       id: 1
@@ -151,12 +144,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"user_id":5,"license":"Ut qui odio quo aute","created_at":"2023-07-15T17:53:20.000000Z","updated_at":"2023-07-15T17:53:20.000000Z"}}'
+        content: '{"data":{"id":1,"user_id":2,"license":null,"created_at":"2024-03-28T13:28:02.000000Z","updated_at":"2024-03-28T13:28:02.000000Z"}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '56'
+          x-ratelimit-remaining: '52'
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
         description: null
@@ -191,6 +184,8 @@ endpoints:
         required: true
         example: 1
         type: integer
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
       id: 1
@@ -203,6 +198,8 @@ endpoints:
         required: false
         example: null
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       user_id:
         name: user_id
@@ -210,10 +207,24 @@ endpoints:
         required: false
         example: null
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":1,"user_id":2,"license":null,"created_at":"2024-03-28T13:28:02.000000Z","updated_at":"2024-03-28T13:28:02.000000Z"}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '51'
+          access-control-allow-origin: 'localhost:8000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -243,6 +254,8 @@ endpoints:
         required: true
         example: 1
         type: integer
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
       id: 1
@@ -251,7 +264,18 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 204
+        content: ''
+        headers:
+          cache-control: 'no-cache, private'
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '50'
+          access-control-allow-origin: 'localhost:8000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -261,7 +285,7 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: 'api/drivers/{driver_id}/vehicles/{vehicle}'
+    uri: 'api/drivers/{driver_id}/vehicles/{vehicle_id}'
     metadata:
       groupName: Drivers
       groupDescription: ''
@@ -281,23 +305,39 @@ endpoints:
         required: true
         example: 1
         type: integer
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
-      vehicle:
-        name: vehicle
-        description: 'The vehicle.'
+      vehicle_id:
+        name: vehicle_id
+        description: 'The ID of the vehicle.'
         required: true
         example: 1
         type: integer
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
       driver_id: 1
-      vehicle: 1
+      vehicle_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 403
+        content: '{"message":"Vehicle is already attached to a driver.","driver":{"id":1,"user_id":2,"license":null,"created_at":"2024-03-28T13:28:02.000000Z","updated_at":"2024-03-28T13:28:02.000000Z","laravel_through_key":1}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '49'
+          access-control-allow-origin: 'localhost:8000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -307,7 +347,7 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/drivers/{driver_id}/vehicles/{vehicle}'
+    uri: 'api/drivers/{driver_id}/vehicles/{vehicle_id}'
     metadata:
       groupName: Drivers
       groupDescription: ''
@@ -327,23 +367,39 @@ endpoints:
         required: true
         example: 1
         type: integer
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
-      vehicle:
-        name: vehicle
-        description: 'The vehicle.'
+      vehicle_id:
+        name: vehicle_id
+        description: 'The ID of the vehicle.'
         required: true
         example: 1
         type: integer
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
       driver_id: 1
-      vehicle: 1
+      vehicle_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"message":"Vehicle removed successfully."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '48'
+          access-control-allow-origin: 'localhost:8000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null

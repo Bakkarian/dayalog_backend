@@ -28,45 +28,67 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: yhclzeiobdiz
+        example: kin
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       email:
         name: email
         description: 'This field is required when none of <code>phone_number</code> and <code>patasente_id</code> are present.  Must be a valid email address. Must not be greater than 255 characters.'
         required: false
-        example: kerluke.ruben@example.net
+        example: knikolaus@example.net
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       patasente_id:
         name: patasente_id
         description: 'TODO : rename to patasente merchant code. This field is required when none of <code>email</code> and <code>phone_number</code> are present.'
         required: false
-        example: consequuntur
+        example: deserunt
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       phone_number:
         name: phone_number
         description: 'This field is required when none of <code>email</code> and <code>patasente_id</code> are present.'
         required: false
-        example: ipsa
+        example: voluptas
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: et
+        example: culpa
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: yhclzeiobdiz
-      email: kerluke.ruben@example.net
-      patasente_id: consequuntur
-      phone_number: ipsa
-      password: et
+      name: kin
+      email: knikolaus@example.net
+      patasente_id: deserunt
+      phone_number: voluptas
+      password: culpa
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"message":"Registered successfully","user":{"name":"kin","email":"knikolaus@example.net","patasente_id":"deserunt","phone_number":"voluptas","updated_at":"2024-04-23T17:16:34.000000Z","created_at":"2024-04-23T17:16:34.000000Z","id":4}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '26'
+          access-control-allow-origin: 'localhost:8000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -98,29 +120,47 @@ endpoints:
         name: user_id
         description: ''
         required: true
-        example: dolorem
+        example: doloribus
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: '$@l+nn[Q'
+        example: 'l^N<anz"1(^WL-i'
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       token_name:
         name: token_name
         description: ''
         required: true
-        example: consequatur
+        example: a
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      user_id: dolorem
-      password: '$@l+nn[Q'
-      token_name: consequatur
+      user_id: doloribus
+      password: 'l^N<anz"1(^WL-i'
+      token_name: a
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 422
+        content: '{"message":"These credentials do not match our records.","errors":{"user_id":["These credentials do not match our records."]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '25'
+          access-control-allow-origin: 'localhost:8000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -152,13 +192,27 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: hilma.gaylord@example.net
+        example: kmedhurst@example.net
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: hilma.gaylord@example.net
+      email: kmedhurst@example.net
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 422
+        content: '{"message":"We can''t find a user with that email address.","errors":{"email":["We can''t find a user with that email address."]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '24'
+          access-control-allow-origin: 'localhost:8000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -190,29 +244,47 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: consequatur
+        example: amet
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       email:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: gabriella55@example.org
+        example: trycia.vandervort@example.org
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: sit
+        example: cumque
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      token: consequatur
-      email: gabriella55@example.org
-      password: sit
+      token: amet
+      email: trycia.vandervort@example.org
+      password: cumque
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 422
+        content: '{"message":"The password field confirmation does not match. (and 1 more error)","errors":{"password":["The password field confirmation does not match.","The password field must be at least 8 characters."]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '23'
+          access-control-allow-origin: 'localhost:8000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -240,19 +312,23 @@ endpoints:
         name: id
         description: 'The ID of the verify email.'
         required: true
-        example: minus
+        example: voluptas
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       hash:
         name: hash
         description: ''
         required: true
-        example: eum
+        example: quis
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: minus
-      hash: eum
+      id: voluptas
+      hash: quis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -298,7 +374,17 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: 'localhost:8000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -328,7 +414,17 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: 'localhost:8000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null

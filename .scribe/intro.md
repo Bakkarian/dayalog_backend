@@ -3,7 +3,7 @@
 Documentation for dayalog api
 
 <aside>
-    <strong>Base URL</strong>: <code>https://daylog.example.com</code>
+    <strong>Base URL</strong>: <code>https://dayalog.co</code>
 </aside>
 
 This documentation aims to provide all the information you need to work with our API.
