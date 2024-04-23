@@ -3,10 +3,8 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Http;
-use App\Models\Dispatch;
-use App\Models\User;
 use App\Mail\DailyDriversSummary;
+use App\Models\Device;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
 
@@ -32,44 +30,55 @@ class DriverSummaryEmails extends Command
     public function handle()
     {
 
-                        // Get the current date and time
-            $today = Carbon::now();
+        $today = Carbon::now();
+        $yesterday = $today->subDays(1);
 
-            // Subtract one day to get yesterday's date
-            $yesterday = $today->subDay();
+        //$DevicePosition::whereDate('servertime', $yesterday)->get()
 
-            // Query dispatches created yesterday
-            $dispatches = Dispatch::whereDate('created_at', $yesterday)->with([
-                'orderVehicle.vehicle.device',
-                'orderVehicle.vehicle.driver.bioData',
-            ])->get();
+        $devices = Device::all();
+        $data = $devices->map(function ($device) use ($yesterday){
+
+              $devicePositions = $device->positions()->whereDate('servertime', $yesterday)->get();
+
+              $firstPosition = $devicePositions->first();
+              $lastPosition = $devicePositions->last();
+
+              if($firstPosition){
+                $lastTotalDistance = json_decode($lastPosition?->attributes, true)['totalDistance'];
+                $firstTotalDistance = json_decode($firstPosition?->attributes, true)['totalDistance'];
+
+                $totalDailydistance = ($lastTotalDistance - $firstTotalDistance) / 1000;
+
+              }
 
 
-            // Group the dispatches by driver
-            $dispatchesGroupedByDriver = $dispatches->groupBy(function ($dispatch) {
-                $dispatch->distance = $dispatch->getDistance();
-                return optional($dispatch->orderVehicle->vehicle->driver->bioData)->id ?? '0';
-            });
+              $vehicle = $device->vehicle;
+
+              if($vehicle){
+                $user = $vehicle->driver?->bioData;
+              }
 
 
-            $data = $dispatchesGroupedByDriver->mapWithKeys(function($data, $key){
+              if($vehicle){
+                    $dispatches = $vehicle->dispatches()->get();
+                    $dispatchDistance = ($dispatches->reduce(
+                                          function (?int $carry, $item) {
+                                                return $carry + $item->distance;
+                                        })) / 1000;
+              }
 
-                $totalDistance = $data->reduce(function (?int $carry, $item) {
-                        return $carry + $item->distance;
-                });
+              return  [
+                'user' =>  $user ?? null,
+                'totalDailydistance' => $totalDailydistance ?? 0,
+                'dispatchDistance' => $dispatchDistance ?? 0,
+            ];
+        });
 
-                $user = $data[0]->orderVehicle->vehicle->driver->bioData;
 
-                return [$key => [
-                    'user' =>  $user,
-                    'distance' => $totalDistance / 1000,
-                    'number_of_dispatches' => count($data),
-                ]];
 
-            });
-
-            $data = $data->values();
-
-            Mail::to(['afashaisakiye@gmail.com', 'ivanatresyn@gmail.com'])->send(new DailyDriversSummary($data));
+            Mail::to([
+                'afashaisakiye@gmail.com',
+                'ivanatresyn@gmail.com'
+            ])->send(new DailyDriversSummary($data));
     }
 }
