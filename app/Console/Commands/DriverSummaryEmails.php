@@ -69,6 +69,7 @@ class DriverSummaryEmails extends Command
 
               return  [
                 'user' =>  $user ?? null,
+                'device' => $device,
                 'totalDailydistance' => $totalDailydistance ?? 0,
                 'dispatchDistance' => $dispatchDistance ?? 0,
             ];
