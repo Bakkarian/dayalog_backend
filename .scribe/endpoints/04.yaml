@@ -27,12 +27,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"from":1,"to":1,"patasente_purchase_order_id":"89498349","reference":"he there","notes":"Hello world order","status":"pending","created_at":"2023-06-19T13:39:03.000000Z","updated_at":"2023-06-19T13:39:03.000000Z","assignedVehicles":[{"order_vehicle_ref":10,"vehicle":{"id":1,"device":[{"id":1,"name":"Hello Kampal","uniqueid":"038020188471","lastupdate":"2023-04-26 18:10:38","positionid":5981,"groupid":1,"attributes":"{}","phone":null,"model":"tk103","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":{"id":5981,"protocol":"tk103","deviceid":1,"servertime":"2023-04-26 18:10:38","devicetime":"2023-04-26 18:10:33","fixtime":"2023-04-26 18:10:33","valid":1,"latitude":0.3830516666666667,"longitude":32.601295,"altitude":0,"speed":0,"course":80.88,"address":null,"attributes":"{\"charge\":true,\"ignition\":false,\"in2\":0,\"panic\":0,\"out2\":0,\"fuel\":0,\"odometer\":0,\"distance\":0.0,\"totalDistance\":113569.28,\"motion\":false,\"hours\":9359000}","accuracy":0,"network":"null"}},{"id":2,"name":"Hello world","uniqueid":"43893489348943","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":null,"contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":3,"name":"new device","uniqueid":"89834843849843","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"text2","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":4,"name":"new device","uniqueid":"89834843849844","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"text2","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":5,"name":"new device","uniqueid":"19834843849844","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"text2","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":6,"name":"new device","uniqueid":"13834843849844","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"text2","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":7,"name":"new device","uniqueid":"11834843849844","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"text2","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":8,"name":"new device","uniqueid":"11134843849844","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"text2","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":9,"name":"new device","uniqueid":"11114843849844","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"text2","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":10,"name":"new device","uniqueid":"11111843849844","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"tk103","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":11,"name":"dfghjk","uniqueid":"sdfghjk","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":null,"contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":12,"name":"From Api","uniqueid":"11111943849844","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"text2","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":13,"name":"From Api","uniqueid":"11111743849844","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"text2","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":14,"name":"Sophia Parks","uniqueid":"28","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Optio voluptatum de","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":15,"name":"Sophia Parks","uniqueid":"282","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Optio voluptatum de","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":16,"name":"Angela Russell","uniqueid":"232","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Dolore ipsam saepe s","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":17,"name":"Rhoda Goff","uniqueid":"4","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Sed sint inventore","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":18,"name":"Lester Gallagher","uniqueid":"2","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"In quibusdam enim si","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":19,"name":"Zia Steele","uniqueid":"3","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Quam autem illo quae","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":20,"name":"Amery Curtis","uniqueid":"123456","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Dignissimos adipisic","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":21,"name":"Zahir Oconnor","uniqueid":"27","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Sint nobis qui nostr","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":22,"name":"Zahir Oconnor","uniqueid":"277","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Sint nobis qui nostr","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":23,"name":"Zahir Oconnor","uniqueid":"271","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Sint nobis qui nostr","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":24,"name":"XXXXX","uniqueid":"038020188473","lastupdate":"2023-04-26 18:10:38","positionid":5981,"groupid":1,"attributes":"{}","phone":null,"model":"tk102","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":27,"name":"Donovan Fowler","uniqueid":"39","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Voluptatem ipsa ear","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":28,"name":"Haley Wooten","uniqueid":"75","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Sequi iure totam con","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null}]},"dispatches":[{"id":1,"order_vehicle_id":10,"origin":"Kawempe Tttula road","destination":"49e994,434344","notes":"Hello world dispatch notes","status":"not_started","created_at":"2023-06-19T13:56:27.000000Z","updated_at":"2023-06-19T13:58:14.000000Z","deleted_at":null}]}]}],"links":{"first":"http:\/\/localhost:8000\/api\/orders?page=1","last":"http:\/\/localhost:8000\/api\/orders?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/orders?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost:8000\/api\/orders","per_page":25,"to":1,"total":1}}'
+        content: '{"data":[{"id":1,"from":2,"to":2,"patasente_purchase_order_id":null,"reference":"1c4f1e85-c90b-4841-8bd3-d9caa4f18a96","notes":"Notes","status":"completed","created_at":"2024-03-28T13:36:57.000000Z","updated_at":"2024-03-28T16:34:13.000000Z","payload":"{\"to\": 2, \"from\": 2, \"notes\": \"Notes\", \"orderItems\": [{\"id\": \"8550d100-9a29-4fed-86a9-063eb4d2b9f0\", \"qty\": \"23\", \"item\": \"Beans\", \"price\": \"2300\", \"qty_measure\": \"Litres\"}]}","items":[{"id":"8550d100-9a29-4fed-86a9-063eb4d2b9f0","qty":"23","item":"Beans","price":"2300","qty_measure":"Litres"}],"assignedVehicles":[{"order_vehicle_ref":1,"vehicle":{"id":1,"device":[{"id":48,"name":"Afasha","uniqueid":"835881","lastupdate":"2024-03-28 22:09:21","positionid":66949,"groupid":null,"attributes":"{}","phone":null,"model":null,"contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":"2024-03-28 22:09:20","motiondistance":102575587.22,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":1,"last_position":{"id":66949,"protocol":"osmand","deviceid":48,"servertime":"2024-03-28T22:09:21.000000Z","devicetime":"2024-03-28 22:09:20","fixtime":"2024-03-28 22:09:20","valid":1,"latitude":0.3576947,"longitude":32.5976538,"altitude":1178,"speed":0.00365728,"course":0,"address":null,"attributes":"{\"batteryLevel\":45.0,\"distance\":0.02,\"totalDistance\":1.0257558722E8,\"motion\":false}","accuracy":30,"network":"null"}},{"id":49,"name":"Solomon","uniqueid":"265412","lastupdate":"2023-10-20 19:15:22","positionid":29323,"groupid":null,"attributes":"{}","phone":null,"model":"Phone Model","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":{"id":29323,"protocol":"osmand","deviceid":49,"servertime":"2023-10-20T19:15:22.000000Z","devicetime":"2023-10-20 19:15:18","fixtime":"2023-10-20 19:15:18","valid":1,"latitude":0.3764655,"longitude":32.6551186,"altitude":0,"speed":0,"course":0,"address":null,"attributes":"{\"batteryLevel\":19.0,\"distance\":751.12,\"totalDistance\":53108.43,\"motion\":false}","accuracy":1500,"network":"null"}},{"id":50,"name":"Afasha","uniqueid":"43989383484834","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"tk340","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null}]},"dispatches":[{"id":1,"order_vehicle_id":1,"origin":"Bukoto Kisasi","destination":"Ndeeba","notes":"Wabodda","status":"transit","created_at":"2024-03-28T13:37:24.000000Z","updated_at":"2024-03-28T13:37:41.000000Z","deleted_at":null}]}]}],"links":{"first":"http:\/\/dayalog_api.test\/api\/orders?page=1","last":"http:\/\/dayalog_api.test\/api\/orders?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/dayalog_api.test\/api\/orders?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/dayalog_api.test\/api\/orders","per_page":25,"to":1,"total":1}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '53'
+          x-ratelimit-remaining: '40'
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
         description: null
@@ -68,45 +68,67 @@ endpoints:
         name: from
         description: ''
         required: true
-        example: ex
+        example: facere
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       to:
         name: to
         description: ''
         required: true
-        example: qui
+        example: est
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       patasente_purchase_order_id:
         name: patasente_purchase_order_id
         description: ''
         required: false
-        example: 3
+        example: 18
         type: integer
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       reference:
         name: reference
         description: ''
         required: true
-        example: nostrum
+        example: dolor
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       notes:
         name: notes
         description: ''
         required: false
-        example: quia
+        example: similique
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      from: ex
-      to: qui
-      patasente_purchase_order_id: 3
-      reference: nostrum
-      notes: quia
+      from: facere
+      to: est
+      patasente_purchase_order_id: 18
+      reference: dolor
+      notes: similique
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 422
+        content: '{"message":"The selected from is invalid. (and 1 more error)","errors":{"from":["The selected from is invalid."],"to":["The selected to is invalid."]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '39'
+          access-control-allow-origin: 'localhost:8000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -136,6 +158,8 @@ endpoints:
         required: true
         example: 1
         type: integer
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
       id: 1
@@ -147,12 +171,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"from":1,"to":1,"patasente_purchase_order_id":"89498349","reference":"he there","notes":"Hello world order","status":"pending","created_at":"2023-06-19T13:39:03.000000Z","updated_at":"2023-06-19T13:39:03.000000Z","assignedVehicles":[{"order_vehicle_ref":10,"vehicle":{"id":1,"device":[{"id":1,"name":"Hello Kampal","uniqueid":"038020188471","lastupdate":"2023-04-26 18:10:38","positionid":5981,"groupid":1,"attributes":"{}","phone":null,"model":"tk103","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":{"id":5981,"protocol":"tk103","deviceid":1,"servertime":"2023-04-26 18:10:38","devicetime":"2023-04-26 18:10:33","fixtime":"2023-04-26 18:10:33","valid":1,"latitude":0.3830516666666667,"longitude":32.601295,"altitude":0,"speed":0,"course":80.88,"address":null,"attributes":"{\"charge\":true,\"ignition\":false,\"in2\":0,\"panic\":0,\"out2\":0,\"fuel\":0,\"odometer\":0,\"distance\":0.0,\"totalDistance\":113569.28,\"motion\":false,\"hours\":9359000}","accuracy":0,"network":"null"}},{"id":2,"name":"Hello world","uniqueid":"43893489348943","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":null,"contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":3,"name":"new device","uniqueid":"89834843849843","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"text2","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":4,"name":"new device","uniqueid":"89834843849844","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"text2","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":5,"name":"new device","uniqueid":"19834843849844","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"text2","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":6,"name":"new device","uniqueid":"13834843849844","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"text2","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":7,"name":"new device","uniqueid":"11834843849844","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"text2","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":8,"name":"new device","uniqueid":"11134843849844","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"text2","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":9,"name":"new device","uniqueid":"11114843849844","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"text2","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":10,"name":"new device","uniqueid":"11111843849844","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"tk103","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":11,"name":"dfghjk","uniqueid":"sdfghjk","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":null,"contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":12,"name":"From Api","uniqueid":"11111943849844","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"text2","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":13,"name":"From Api","uniqueid":"11111743849844","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"text2","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":14,"name":"Sophia Parks","uniqueid":"28","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Optio voluptatum de","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":15,"name":"Sophia Parks","uniqueid":"282","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Optio voluptatum de","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":16,"name":"Angela Russell","uniqueid":"232","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Dolore ipsam saepe s","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":17,"name":"Rhoda Goff","uniqueid":"4","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Sed sint inventore","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":18,"name":"Lester Gallagher","uniqueid":"2","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"In quibusdam enim si","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":19,"name":"Zia Steele","uniqueid":"3","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Quam autem illo quae","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":20,"name":"Amery Curtis","uniqueid":"123456","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Dignissimos adipisic","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":21,"name":"Zahir Oconnor","uniqueid":"27","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Sint nobis qui nostr","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":22,"name":"Zahir Oconnor","uniqueid":"277","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Sint nobis qui nostr","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":23,"name":"Zahir Oconnor","uniqueid":"271","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Sint nobis qui nostr","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":24,"name":"XXXXX","uniqueid":"038020188473","lastupdate":"2023-04-26 18:10:38","positionid":5981,"groupid":1,"attributes":"{}","phone":null,"model":"tk102","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":27,"name":"Donovan Fowler","uniqueid":"39","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Voluptatem ipsa ear","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":28,"name":"Haley Wooten","uniqueid":"75","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"Sequi iure totam con","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null}]},"dispatches":[{"id":1,"order_vehicle_id":10,"origin":"Kawempe Tttula road","destination":"49e994,434344","notes":"Hello world dispatch notes","status":"not_started","created_at":"2023-06-19T13:56:27.000000Z","updated_at":"2023-06-19T13:58:14.000000Z","deleted_at":null}]}]}}'
+        content: '{"data":{"id":1,"from":2,"to":2,"patasente_purchase_order_id":null,"reference":"1c4f1e85-c90b-4841-8bd3-d9caa4f18a96","notes":"Notes","status":"completed","created_at":"2024-03-28T13:36:57.000000Z","updated_at":"2024-03-28T16:34:13.000000Z","payload":"{\"to\": 2, \"from\": 2, \"notes\": \"Notes\", \"orderItems\": [{\"id\": \"8550d100-9a29-4fed-86a9-063eb4d2b9f0\", \"qty\": \"23\", \"item\": \"Beans\", \"price\": \"2300\", \"qty_measure\": \"Litres\"}]}","items":[{"id":"8550d100-9a29-4fed-86a9-063eb4d2b9f0","qty":"23","item":"Beans","price":"2300","qty_measure":"Litres"}],"assignedVehicles":[{"order_vehicle_ref":1,"vehicle":{"id":1,"device":[{"id":48,"name":"Afasha","uniqueid":"835881","lastupdate":"2024-03-28 22:09:21","positionid":66949,"groupid":null,"attributes":"{}","phone":null,"model":null,"contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":"2024-03-28 22:09:20","motiondistance":102575587.22,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":1,"last_position":{"id":66949,"protocol":"osmand","deviceid":48,"servertime":"2024-03-28T22:09:21.000000Z","devicetime":"2024-03-28 22:09:20","fixtime":"2024-03-28 22:09:20","valid":1,"latitude":0.3576947,"longitude":32.5976538,"altitude":1178,"speed":0.00365728,"course":0,"address":null,"attributes":"{\"batteryLevel\":45.0,\"distance\":0.02,\"totalDistance\":1.0257558722E8,\"motion\":false}","accuracy":30,"network":"null"}},{"id":49,"name":"Solomon","uniqueid":"265412","lastupdate":"2023-10-20 19:15:22","positionid":29323,"groupid":null,"attributes":"{}","phone":null,"model":"Phone Model","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":{"id":29323,"protocol":"osmand","deviceid":49,"servertime":"2023-10-20T19:15:22.000000Z","devicetime":"2023-10-20 19:15:18","fixtime":"2023-10-20 19:15:18","valid":1,"latitude":0.3764655,"longitude":32.6551186,"altitude":0,"speed":0,"course":0,"address":null,"attributes":"{\"batteryLevel\":19.0,\"distance\":751.12,\"totalDistance\":53108.43,\"motion\":false}","accuracy":1500,"network":"null"}},{"id":50,"name":"Afasha","uniqueid":"43989383484834","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"tk340","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null}]},"dispatches":[{"id":1,"order_vehicle_id":1,"origin":"Bukoto Kisasi","destination":"Ndeeba","notes":"Wabodda","status":"transit","created_at":"2024-03-28T13:37:24.000000Z","updated_at":"2024-03-28T13:37:41.000000Z","deleted_at":null}]}]}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '52'
+          x-ratelimit-remaining: '38'
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
         description: null
@@ -187,6 +211,8 @@ endpoints:
         required: true
         example: 1
         type: integer
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
       id: 1
@@ -195,7 +221,22 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 500
+        content: |-
+          {
+              "message": "Server Error"
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '37'
+          access-control-allow-origin: 'localhost:8000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -225,6 +266,8 @@ endpoints:
         required: true
         example: 1
         type: integer
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
       id: 1
@@ -233,7 +276,22 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 500
+        content: |-
+          {
+              "message": "Server Error"
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '36'
+          access-control-allow-origin: 'localhost:8000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -263,6 +321,8 @@ endpoints:
         required: true
         example: 1
         type: integer
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       vehicle_id:
         name: vehicle_id
@@ -270,6 +330,8 @@ endpoints:
         required: true
         example: 1
         type: integer
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
       order_id: 1
@@ -279,7 +341,19 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"message":"Vehicle attached successfully.","orderVehicle":{"order_id":1,"vehicle_id":1,"created_at":"2024-04-23T17:16:34.000000Z","updated_at":"2024-04-23T17:16:34.000000Z","id":3}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '35'
+          access-control-allow-origin: 'localhost:8000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -309,6 +383,8 @@ endpoints:
         required: true
         example: 1
         type: integer
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       vehicle_id:
         name: vehicle_id
@@ -316,6 +392,8 @@ endpoints:
         required: true
         example: 1
         type: integer
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
       order_id: 1
@@ -325,7 +403,19 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"message":"Vehicle detached successfully."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '34'
+          access-control-allow-origin: 'localhost:8000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -355,13 +445,17 @@ endpoints:
         required: true
         example: 1
         type: integer
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       newStatus:
         name: newStatus
         description: ''
         required: true
-        example: possimus
+        example: magni
         type: string
+        enumValues: []
+        exampleWasSpecified: false
         custom: []
       string:
         name: string
@@ -369,17 +463,34 @@ endpoints:
         required: false
         example: cancelled
         type: string
+        enumValues: []
+        exampleWasSpecified: true
         custom: []
     cleanUrlParameters:
       order_id: 1
-      newStatus: possimus
+      newStatus: magni
       string: cancelled
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 500
+        content: |-
+          {
+              "message": "Server Error"
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '33'
+          access-control-allow-origin: 'localhost:8000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
