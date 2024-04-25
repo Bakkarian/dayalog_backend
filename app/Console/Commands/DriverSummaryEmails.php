@@ -79,7 +79,11 @@ class DriverSummaryEmails extends Command
 
             Mail::to([
                 'afashaisakiye@gmail.com',
-                'ivanatresyn@gmail.com'
+                'ivanatresyn@gmail.com',
+                'bakkarian@gmail.com',
+                'myvonnesandra@gmail.com',
+                'Robertkainamura@gmail.com',
+                'innocent.muhangib@gmail.com',
             ])->send(new DailyDriversSummary($data));
     }
 }

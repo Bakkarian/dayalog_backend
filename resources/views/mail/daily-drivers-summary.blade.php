@@ -6,7 +6,7 @@
 | No.   | Name              | Total Distance (KM) | Disptach Distance |
 | :---- | :----------------- | :----------------- | :---------------- |
 @foreach($data as $item)
-| {{ $loop->index + 1 }} | {{ $item['user']?->name ?? ($item['device']?->name ?? 'No Identifier') }} | {{  number_format($item['totalDailydistance'], 2) }}  | {{ number_format($item['dispatchDistance'], 2) }} |
+| {{ $loop->index + 1 }} | {{ ($item['device']?->name ?? 'No Identifier') }} | {{  number_format($item['totalDailydistance'], 2) }}  | {{ number_format($item['dispatchDistance'], 2) }} |
 @endforeach
 </x-mail::table>
 
