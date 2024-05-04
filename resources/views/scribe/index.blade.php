@@ -244,7 +244,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: April 23, 2024</li>
+        <li>Last updated: May 4, 2024</li>
     </ul>
 </div>
 
@@ -286,11 +286,11 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"kin\",
-    \"email\": \"knikolaus@example.net\",
-    \"patasente_id\": \"deserunt\",
-    \"phone_number\": \"voluptas\",
-    \"password\": \"culpa\"
+    \"name\": \"vvwegqytmu\",
+    \"email\": \"luettgen.daphney@example.com\",
+    \"patasente_id\": \"architecto\",
+    \"phone_number\": \"voluptatem\",
+    \"password\": \"consequatur\"
 }"
 </code></pre></div>
 
@@ -306,11 +306,11 @@ const headers = {
 };
 
 let body = {
-    "name": "kin",
-    "email": "knikolaus@example.net",
-    "patasente_id": "deserunt",
-    "phone_number": "voluptas",
-    "password": "culpa"
+    "name": "vvwegqytmu",
+    "email": "luettgen.daphney@example.com",
+    "patasente_id": "architecto",
+    "phone_number": "voluptatem",
+    "password": "consequatur"
 };
 
 fetch(url, {
@@ -331,11 +331,11 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'name' =&gt; 'kin',
-            'email' =&gt; 'knikolaus@example.net',
-            'patasente_id' =&gt; 'deserunt',
-            'phone_number' =&gt; 'voluptas',
-            'password' =&gt; 'culpa',
+            'name' =&gt; 'vvwegqytmu',
+            'email' =&gt; 'luettgen.daphney@example.com',
+            'patasente_id' =&gt; 'architecto',
+            'phone_number' =&gt; 'voluptatem',
+            'password' =&gt; 'consequatur',
         ],
     ]
 );
@@ -349,11 +349,11 @@ import json
 
 url = 'https://dayalog.co/api/register'
 payload = {
-    "name": "kin",
-    "email": "knikolaus@example.net",
-    "patasente_id": "deserunt",
-    "phone_number": "voluptas",
-    "password": "culpa"
+    "name": "vvwegqytmu",
+    "email": "luettgen.daphney@example.com",
+    "patasente_id": "architecto",
+    "phone_number": "voluptatem",
+    "password": "consequatur"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -384,13 +384,13 @@ access-control-allow-credentials: true
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Registered successfully&quot;,
     &quot;user&quot;: {
-        &quot;name&quot;: &quot;kin&quot;,
-        &quot;email&quot;: &quot;knikolaus@example.net&quot;,
-        &quot;patasente_id&quot;: &quot;deserunt&quot;,
-        &quot;phone_number&quot;: &quot;voluptas&quot;,
-        &quot;updated_at&quot;: &quot;2024-04-23T17:16:34.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2024-04-23T17:16:34.000000Z&quot;,
-        &quot;id&quot;: 4
+        &quot;name&quot;: &quot;vvwegqytmu&quot;,
+        &quot;email&quot;: &quot;luettgen.daphney@example.com&quot;,
+        &quot;patasente_id&quot;: &quot;architecto&quot;,
+        &quot;phone_number&quot;: &quot;voluptatem&quot;,
+        &quot;updated_at&quot;: &quot;2024-05-04T19:55:44.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2024-05-04T19:55:44.000000Z&quot;,
+        &quot;id&quot;: 5
     }
 }</code>
  </pre>
@@ -454,10 +454,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-register"
-               value="kin"
+               value="vvwegqytmu"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>kin</code></p>
+<p>Must not be greater than 255 characters. Example: <code>vvwegqytmu</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -465,10 +465,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-register"
-               value="knikolaus@example.net"
+               value="luettgen.daphney@example.com"
                data-component="body">
     <br>
-<p>This field is required when none of <code>phone_number</code> and <code>patasente_id</code> are present.  Must be a valid email address. Must not be greater than 255 characters. Example: <code>knikolaus@example.net</code></p>
+<p>This field is required when none of <code>phone_number</code> and <code>patasente_id</code> are present.  Must be a valid email address. Must not be greater than 255 characters. Example: <code>luettgen.daphney@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>patasente_id</code></b>&nbsp;&nbsp;
@@ -476,10 +476,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="patasente_id"                data-endpoint="POSTapi-register"
-               value="deserunt"
+               value="architecto"
                data-component="body">
     <br>
-<p>TODO : rename to patasente merchant code. This field is required when none of <code>email</code> and <code>phone_number</code> are present. Example: <code>deserunt</code></p>
+<p>TODO : rename to patasente merchant code. This field is required when none of <code>email</code> and <code>phone_number</code> are present. Example: <code>architecto</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>phone_number</code></b>&nbsp;&nbsp;
@@ -487,10 +487,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="phone_number"                data-endpoint="POSTapi-register"
-               value="voluptas"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>This field is required when none of <code>email</code> and <code>patasente_id</code> are present. Example: <code>voluptas</code></p>
+<p>This field is required when none of <code>email</code> and <code>patasente_id</code> are present. Example: <code>voluptatem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -498,10 +498,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-register"
-               value="culpa"
+               value="consequatur"
                data-component="body">
     <br>
-<p>Example: <code>culpa</code></p>
+<p>Example: <code>consequatur</code></p>
         </div>
         </form>
 
@@ -522,9 +522,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": \"doloribus\",
-    \"password\": \"l^N&lt;anz\\\"1(^WL-i\",
-    \"token_name\": \"a\"
+    \"user_id\": \"consectetur\",
+    \"password\": \"2f3(h\'\",
+    \"token_name\": \"quis\"
 }"
 </code></pre></div>
 
@@ -540,9 +540,9 @@ const headers = {
 };
 
 let body = {
-    "user_id": "doloribus",
-    "password": "l^N&lt;anz\"1(^WL-i",
-    "token_name": "a"
+    "user_id": "consectetur",
+    "password": "2f3(h'",
+    "token_name": "quis"
 };
 
 fetch(url, {
@@ -563,9 +563,9 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'user_id' =&gt; 'doloribus',
-            'password' =&gt; 'l^N&lt;anz"1(^WL-i',
-            'token_name' =&gt; 'a',
+            'user_id' =&gt; 'consectetur',
+            'password' =&gt; '2f3(h\'',
+            'token_name' =&gt; 'quis',
         ],
     ]
 );
@@ -579,9 +579,9 @@ import json
 
 url = 'https://dayalog.co/api/tokens/create'
 payload = {
-    "user_id": "doloribus",
-    "password": "l^N&lt;anz\"1(^WL-i",
-    "token_name": "a"
+    "user_id": "consectetur",
+    "password": "2f3(h'",
+    "token_name": "quis"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -678,10 +678,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="user_id"                data-endpoint="POSTapi-tokens-create"
-               value="doloribus"
+               value="consectetur"
                data-component="body">
     <br>
-<p>Example: <code>doloribus</code></p>
+<p>Example: <code>consectetur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -689,10 +689,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-tokens-create"
-               value="l^N<anz"1(^WL-i"
+               value="2f3(h'"
                data-component="body">
     <br>
-<p>Example: <code>l^N&lt;anz"1(^WL-i</code></p>
+<p>Example: <code>2f3(h'</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>token_name</code></b>&nbsp;&nbsp;
@@ -700,10 +700,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="token_name"                data-endpoint="POSTapi-tokens-create"
-               value="a"
+               value="quis"
                data-component="body">
     <br>
-<p>Example: <code>a</code></p>
+<p>Example: <code>quis</code></p>
         </div>
         </form>
 
@@ -724,7 +724,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"kmedhurst@example.net\"
+    \"email\": \"dkoepp@example.com\"
 }"
 </code></pre></div>
 
@@ -740,7 +740,7 @@ const headers = {
 };
 
 let body = {
-    "email": "kmedhurst@example.net"
+    "email": "dkoepp@example.com"
 };
 
 fetch(url, {
@@ -761,7 +761,7 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'email' =&gt; 'kmedhurst@example.net',
+            'email' =&gt; 'dkoepp@example.com',
         ],
     ]
 );
@@ -775,7 +775,7 @@ import json
 
 url = 'https://dayalog.co/api/forgot-password'
 payload = {
-    "email": "kmedhurst@example.net"
+    "email": "dkoepp@example.com"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -872,10 +872,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-forgot-password"
-               value="kmedhurst@example.net"
+               value="dkoepp@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>kmedhurst@example.net</code></p>
+<p>Must be a valid email address. Example: <code>dkoepp@example.com</code></p>
         </div>
         </form>
 
@@ -896,9 +896,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"amet\",
-    \"email\": \"trycia.vandervort@example.org\",
-    \"password\": \"cumque\"
+    \"token\": \"in\",
+    \"email\": \"cartwright.mireille@example.net\",
+    \"password\": \"qui\"
 }"
 </code></pre></div>
 
@@ -914,9 +914,9 @@ const headers = {
 };
 
 let body = {
-    "token": "amet",
-    "email": "trycia.vandervort@example.org",
-    "password": "cumque"
+    "token": "in",
+    "email": "cartwright.mireille@example.net",
+    "password": "qui"
 };
 
 fetch(url, {
@@ -937,9 +937,9 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'token' =&gt; 'amet',
-            'email' =&gt; 'trycia.vandervort@example.org',
-            'password' =&gt; 'cumque',
+            'token' =&gt; 'in',
+            'email' =&gt; 'cartwright.mireille@example.net',
+            'password' =&gt; 'qui',
         ],
     ]
 );
@@ -953,9 +953,9 @@ import json
 
 url = 'https://dayalog.co/api/reset-password'
 payload = {
-    "token": "amet",
-    "email": "trycia.vandervort@example.org",
-    "password": "cumque"
+    "token": "in",
+    "email": "cartwright.mireille@example.net",
+    "password": "qui"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -1053,10 +1053,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="token"                data-endpoint="POSTapi-reset-password"
-               value="amet"
+               value="in"
                data-component="body">
     <br>
-<p>Example: <code>amet</code></p>
+<p>Example: <code>in</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -1064,10 +1064,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-reset-password"
-               value="trycia.vandervort@example.org"
+               value="cartwright.mireille@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>trycia.vandervort@example.org</code></p>
+<p>Must be a valid email address. Example: <code>cartwright.mireille@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -1075,10 +1075,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-reset-password"
-               value="cumque"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>cumque</code></p>
+<p>Example: <code>qui</code></p>
         </div>
         </form>
 
@@ -1095,14 +1095,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.co/api/verify-email/voluptas/quis" \
+    --get "https://dayalog.co/api/verify-email/dicta/accusantium" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/verify-email/voluptas/quis"
+    "https://dayalog.co/api/verify-email/dicta/accusantium"
 );
 
 const headers = {
@@ -1118,7 +1118,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/verify-email/voluptas/quis';
+$url = 'https://dayalog.co/api/verify-email/dicta/accusantium';
 $response = $client-&gt;get(
     $url,
     [
@@ -1136,7 +1136,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/verify-email/voluptas/quis'
+url = 'https://dayalog.co/api/verify-email/dicta/accusantium'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -1225,10 +1225,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-verify-email--id---hash-"
-               value="voluptas"
+               value="dicta"
                data-component="url">
     <br>
-<p>The ID of the verify email. Example: <code>voluptas</code></p>
+<p>The ID of the verify email. Example: <code>dicta</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>hash</code></b>&nbsp;&nbsp;
@@ -1236,10 +1236,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="hash"                data-endpoint="GETapi-verify-email--id---hash-"
-               value="quis"
+               value="accusantium"
                data-component="url">
     <br>
-<p>Example: <code>quis</code></p>
+<p>Example: <code>accusantium</code></p>
             </div>
                     </form>
 
@@ -1607,30 +1607,6 @@ access-control-allow-credentials: true
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 48,
-            &quot;name&quot;: &quot;Afasha&quot;,
-            &quot;uniqueid&quot;: &quot;835881&quot;,
-            &quot;lastupdate&quot;: &quot;2024-03-28 22:09:21&quot;,
-            &quot;positionid&quot;: 66949,
-            &quot;groupid&quot;: null,
-            &quot;attributes&quot;: &quot;{}&quot;,
-            &quot;phone&quot;: null,
-            &quot;model&quot;: null,
-            &quot;contact&quot;: null,
-            &quot;category&quot;: null,
-            &quot;disabled&quot;: 0,
-            &quot;status&quot;: &quot;offline&quot;,
-            &quot;geofenceids&quot;: null,
-            &quot;expirationtime&quot;: null,
-            &quot;motionstate&quot;: 0,
-            &quot;motiontime&quot;: &quot;2024-03-28 22:09:20&quot;,
-            &quot;motiondistance&quot;: 102575587.22,
-            &quot;overspeedstate&quot;: 0,
-            &quot;overspeedtime&quot;: null,
-            &quot;overspeedgeofenceid&quot;: 0,
-            &quot;motionstreak&quot;: 1
-        },
-        {
             &quot;id&quot;: 49,
             &quot;name&quot;: &quot;Solomon&quot;,
             &quot;uniqueid&quot;: &quot;265412&quot;,
@@ -1652,7 +1628,25 @@ access-control-allow-credentials: true
             &quot;overspeedstate&quot;: 0,
             &quot;overspeedtime&quot;: null,
             &quot;overspeedgeofenceid&quot;: 0,
-            &quot;motionstreak&quot;: 0
+            &quot;motionstreak&quot;: 0,
+            &quot;lastPosition&quot;: {
+                &quot;id&quot;: 29323,
+                &quot;protocol&quot;: &quot;osmand&quot;,
+                &quot;deviceid&quot;: 49,
+                &quot;servertime&quot;: &quot;2023-10-20T16:15:22.000000Z&quot;,
+                &quot;devicetime&quot;: &quot;2023-10-20 19:15:18&quot;,
+                &quot;fixtime&quot;: &quot;2023-10-20 19:15:18&quot;,
+                &quot;valid&quot;: 1,
+                &quot;latitude&quot;: 0.3764655,
+                &quot;longitude&quot;: 32.6551186,
+                &quot;altitude&quot;: 0,
+                &quot;speed&quot;: 0,
+                &quot;course&quot;: 0,
+                &quot;address&quot;: null,
+                &quot;attributes&quot;: &quot;{\&quot;batteryLevel\&quot;:19.0,\&quot;distance\&quot;:751.12,\&quot;totalDistance\&quot;:53108.43,\&quot;motion\&quot;:false}&quot;,
+                &quot;accuracy&quot;: 1500,
+                &quot;network&quot;: &quot;null&quot;
+            }
         },
         {
             &quot;id&quot;: 50,
@@ -1676,7 +1670,50 @@ access-control-allow-credentials: true
             &quot;overspeedstate&quot;: 0,
             &quot;overspeedtime&quot;: null,
             &quot;overspeedgeofenceid&quot;: 0,
-            &quot;motionstreak&quot;: 0
+            &quot;motionstreak&quot;: 0,
+            &quot;lastPosition&quot;: null
+        },
+        {
+            &quot;id&quot;: 48,
+            &quot;name&quot;: &quot;Afasha&quot;,
+            &quot;uniqueid&quot;: &quot;835881&quot;,
+            &quot;lastupdate&quot;: &quot;2024-03-28 22:09:21&quot;,
+            &quot;positionid&quot;: 66949,
+            &quot;groupid&quot;: null,
+            &quot;attributes&quot;: &quot;{}&quot;,
+            &quot;phone&quot;: null,
+            &quot;model&quot;: null,
+            &quot;contact&quot;: null,
+            &quot;category&quot;: null,
+            &quot;disabled&quot;: 0,
+            &quot;status&quot;: &quot;offline&quot;,
+            &quot;geofenceids&quot;: null,
+            &quot;expirationtime&quot;: null,
+            &quot;motionstate&quot;: 0,
+            &quot;motiontime&quot;: &quot;2024-03-28 22:09:20&quot;,
+            &quot;motiondistance&quot;: 102575587.22,
+            &quot;overspeedstate&quot;: 0,
+            &quot;overspeedtime&quot;: null,
+            &quot;overspeedgeofenceid&quot;: 0,
+            &quot;motionstreak&quot;: 1,
+            &quot;lastPosition&quot;: {
+                &quot;id&quot;: 66949,
+                &quot;protocol&quot;: &quot;osmand&quot;,
+                &quot;deviceid&quot;: 48,
+                &quot;servertime&quot;: &quot;2024-03-28T19:09:21.000000Z&quot;,
+                &quot;devicetime&quot;: &quot;2024-03-28 22:09:20&quot;,
+                &quot;fixtime&quot;: &quot;2024-03-28 22:09:20&quot;,
+                &quot;valid&quot;: 1,
+                &quot;latitude&quot;: 0.3576947,
+                &quot;longitude&quot;: 32.5976538,
+                &quot;altitude&quot;: 1178,
+                &quot;speed&quot;: 0.00365728,
+                &quot;course&quot;: 0,
+                &quot;address&quot;: null,
+                &quot;attributes&quot;: &quot;{\&quot;batteryLevel\&quot;:45.0,\&quot;distance\&quot;:0.02,\&quot;totalDistance\&quot;:1.0257558722E8,\&quot;motion\&quot;:false}&quot;,
+                &quot;accuracy&quot;: 30,
+                &quot;network&quot;: &quot;null&quot;
+            }
         }
     ],
     &quot;links&quot;: {
@@ -1785,10 +1822,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"ea\",
-    \"uniqueid\": \"cvtjt\",
-    \"model\": \"debitis\",
-    \"tc_user_id\": 8.575284
+    \"name\": \"voluptatem\",
+    \"uniqueid\": \"bdlgmbxvceofqzf\",
+    \"model\": \"omnis\",
+    \"tc_user_id\": 457.52519
 }"
 </code></pre></div>
 
@@ -1804,10 +1841,10 @@ const headers = {
 };
 
 let body = {
-    "name": "ea",
-    "uniqueid": "cvtjt",
-    "model": "debitis",
-    "tc_user_id": 8.575284
+    "name": "voluptatem",
+    "uniqueid": "bdlgmbxvceofqzf",
+    "model": "omnis",
+    "tc_user_id": 457.52519
 };
 
 fetch(url, {
@@ -1828,10 +1865,10 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'name' =&gt; 'ea',
-            'uniqueid' =&gt; 'cvtjt',
-            'model' =&gt; 'debitis',
-            'tc_user_id' =&gt; 8.575284,
+            'name' =&gt; 'voluptatem',
+            'uniqueid' =&gt; 'bdlgmbxvceofqzf',
+            'model' =&gt; 'omnis',
+            'tc_user_id' =&gt; 457.52519,
         ],
     ]
 );
@@ -1845,10 +1882,10 @@ import json
 
 url = 'https://dayalog.co/api/devices'
 payload = {
-    "name": "ea",
-    "uniqueid": "cvtjt",
-    "model": "debitis",
-    "tc_user_id": 8.575284
+    "name": "voluptatem",
+    "uniqueid": "bdlgmbxvceofqzf",
+    "model": "omnis",
+    "tc_user_id": 457.52519
 }
 headers = {
   'Content-Type': 'application/json',
@@ -1940,10 +1977,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-devices"
-               value="ea"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>Example: <code>ea</code></p>
+<p>Example: <code>voluptatem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>uniqueid</code></b>&nbsp;&nbsp;
@@ -1951,10 +1988,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="uniqueid"                data-endpoint="POSTapi-devices"
-               value="cvtjt"
+               value="bdlgmbxvceofqzf"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>cvtjt</code></p>
+<p>Must not be greater than 255 characters. Example: <code>bdlgmbxvceofqzf</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model</code></b>&nbsp;&nbsp;
@@ -1962,10 +1999,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="model"                data-endpoint="POSTapi-devices"
-               value="debitis"
+               value="omnis"
                data-component="body">
     <br>
-<p>Example: <code>debitis</code></p>
+<p>Example: <code>omnis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>tc_user_id</code></b>&nbsp;&nbsp;
@@ -1973,10 +2010,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="tc_user_id"                data-endpoint="POSTapi-devices"
-               value="8.575284"
+               value="457.52519"
                data-component="body">
     <br>
-<p>Example: <code>8.575284</code></p>
+<p>Example: <code>457.52519</code></p>
         </div>
         </form>
 
@@ -1993,14 +2030,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.co/api/devices/48" \
+    --get "https://dayalog.co/api/devices/49" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/devices/48"
+    "https://dayalog.co/api/devices/49"
 );
 
 const headers = {
@@ -2016,7 +2053,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/devices/48';
+$url = 'https://dayalog.co/api/devices/49';
 $response = $client-&gt;get(
     $url,
     [
@@ -2034,7 +2071,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/devices/48'
+url = 'https://dayalog.co/api/devices/49'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -2063,15 +2100,15 @@ access-control-allow-credentials: true
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 48,
-        &quot;name&quot;: &quot;Afasha&quot;,
-        &quot;uniqueid&quot;: &quot;835881&quot;,
-        &quot;lastupdate&quot;: &quot;2024-03-28 22:09:21&quot;,
-        &quot;positionid&quot;: 66949,
+        &quot;id&quot;: 49,
+        &quot;name&quot;: &quot;Solomon&quot;,
+        &quot;uniqueid&quot;: &quot;265412&quot;,
+        &quot;lastupdate&quot;: &quot;2023-10-20 19:15:22&quot;,
+        &quot;positionid&quot;: 29323,
         &quot;groupid&quot;: null,
         &quot;attributes&quot;: &quot;{}&quot;,
         &quot;phone&quot;: null,
-        &quot;model&quot;: null,
+        &quot;model&quot;: &quot;Phone Model&quot;,
         &quot;contact&quot;: null,
         &quot;category&quot;: null,
         &quot;disabled&quot;: 0,
@@ -2079,12 +2116,30 @@ access-control-allow-credentials: true
         &quot;geofenceids&quot;: null,
         &quot;expirationtime&quot;: null,
         &quot;motionstate&quot;: 0,
-        &quot;motiontime&quot;: &quot;2024-03-28 22:09:20&quot;,
-        &quot;motiondistance&quot;: 102575587.22,
+        &quot;motiontime&quot;: null,
+        &quot;motiondistance&quot;: 0,
         &quot;overspeedstate&quot;: 0,
         &quot;overspeedtime&quot;: null,
         &quot;overspeedgeofenceid&quot;: 0,
-        &quot;motionstreak&quot;: 1
+        &quot;motionstreak&quot;: 0,
+        &quot;lastPosition&quot;: {
+            &quot;id&quot;: 29323,
+            &quot;protocol&quot;: &quot;osmand&quot;,
+            &quot;deviceid&quot;: 49,
+            &quot;servertime&quot;: &quot;2023-10-20T16:15:22.000000Z&quot;,
+            &quot;devicetime&quot;: &quot;2023-10-20 19:15:18&quot;,
+            &quot;fixtime&quot;: &quot;2023-10-20 19:15:18&quot;,
+            &quot;valid&quot;: 1,
+            &quot;latitude&quot;: 0.3764655,
+            &quot;longitude&quot;: 32.6551186,
+            &quot;altitude&quot;: 0,
+            &quot;speed&quot;: 0,
+            &quot;course&quot;: 0,
+            &quot;address&quot;: null,
+            &quot;attributes&quot;: &quot;{\&quot;batteryLevel\&quot;:19.0,\&quot;distance\&quot;:751.12,\&quot;totalDistance\&quot;:53108.43,\&quot;motion\&quot;:false}&quot;,
+            &quot;accuracy&quot;: 1500,
+            &quot;network&quot;: &quot;null&quot;
+        }
     }
 }</code>
  </pre>
@@ -2148,10 +2203,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-devices--id-"
-               value="48"
+               value="49"
                data-component="url">
     <br>
-<p>The ID of the device. Example: <code>48</code></p>
+<p>The ID of the device. Example: <code>49</code></p>
             </div>
                     </form>
 
@@ -2168,14 +2223,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.co/api/devices/48" \
+    "https://dayalog.co/api/devices/49" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/devices/48"
+    "https://dayalog.co/api/devices/49"
 );
 
 const headers = {
@@ -2191,7 +2246,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/devices/48';
+$url = 'https://dayalog.co/api/devices/49';
 $response = $client-&gt;put(
     $url,
     [
@@ -2209,7 +2264,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/devices/48'
+url = 'https://dayalog.co/api/devices/49'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -2304,10 +2359,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-devices--id-"
-               value="48"
+               value="49"
                data-component="url">
     <br>
-<p>The ID of the device. Example: <code>48</code></p>
+<p>The ID of the device. Example: <code>49</code></p>
             </div>
                     </form>
 
@@ -2324,14 +2379,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://dayalog.co/api/devices/48" \
+    "https://dayalog.co/api/devices/49" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/devices/48"
+    "https://dayalog.co/api/devices/49"
 );
 
 const headers = {
@@ -2347,7 +2402,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/devices/48';
+$url = 'https://dayalog.co/api/devices/49';
 $response = $client-&gt;delete(
     $url,
     [
@@ -2365,7 +2420,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/devices/48'
+url = 'https://dayalog.co/api/devices/49'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -2456,10 +2511,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-devices--id-"
-               value="48"
+               value="49"
                data-component="url">
     <br>
-<p>The ID of the device. Example: <code>48</code></p>
+<p>The ID of the device. Example: <code>49</code></p>
             </div>
                     </form>
 
@@ -2557,8 +2612,8 @@ access-control-allow-credentials: true
             &quot;destination&quot;: &quot;Ndeeba&quot;,
             &quot;notes&quot;: &quot;Wabodda&quot;,
             &quot;status&quot;: &quot;transit&quot;,
-            &quot;created_at&quot;: &quot;2024-03-28T13:37:24.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2024-03-28T13:37:41.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2024-03-28T10:37:24.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-03-28T10:37:41.000000Z&quot;,
             &quot;deleted_at&quot;: null
         }
     ],
@@ -2668,10 +2723,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"order_vehicle_id\": \"zgapqplmldbhvxiz\",
-    \"origin\": \"non\",
-    \"destination\": \"sit\",
-    \"notes\": \"nihil\"
+    \"order_vehicle_id\": \"viayzqdnddztojkvbosmnxx\",
+    \"origin\": \"odio\",
+    \"destination\": \"doloribus\",
+    \"notes\": \"deserunt\"
 }"
 </code></pre></div>
 
@@ -2687,10 +2742,10 @@ const headers = {
 };
 
 let body = {
-    "order_vehicle_id": "zgapqplmldbhvxiz",
-    "origin": "non",
-    "destination": "sit",
-    "notes": "nihil"
+    "order_vehicle_id": "viayzqdnddztojkvbosmnxx",
+    "origin": "odio",
+    "destination": "doloribus",
+    "notes": "deserunt"
 };
 
 fetch(url, {
@@ -2711,10 +2766,10 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'order_vehicle_id' =&gt; 'zgapqplmldbhvxiz',
-            'origin' =&gt; 'non',
-            'destination' =&gt; 'sit',
-            'notes' =&gt; 'nihil',
+            'order_vehicle_id' =&gt; 'viayzqdnddztojkvbosmnxx',
+            'origin' =&gt; 'odio',
+            'destination' =&gt; 'doloribus',
+            'notes' =&gt; 'deserunt',
         ],
     ]
 );
@@ -2728,10 +2783,10 @@ import json
 
 url = 'https://dayalog.co/api/dispatches'
 payload = {
-    "order_vehicle_id": "zgapqplmldbhvxiz",
-    "origin": "non",
-    "destination": "sit",
-    "notes": "nihil"
+    "order_vehicle_id": "viayzqdnddztojkvbosmnxx",
+    "origin": "odio",
+    "destination": "doloribus",
+    "notes": "deserunt"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -2828,10 +2883,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="order_vehicle_id"                data-endpoint="POSTapi-dispatches"
-               value="zgapqplmldbhvxiz"
+               value="viayzqdnddztojkvbosmnxx"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>zgapqplmldbhvxiz</code></p>
+<p>Must not be greater than 255 characters. Example: <code>viayzqdnddztojkvbosmnxx</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>origin</code></b>&nbsp;&nbsp;
@@ -2839,10 +2894,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="origin"                data-endpoint="POSTapi-dispatches"
-               value="non"
+               value="odio"
                data-component="body">
     <br>
-<p>Example: <code>non</code></p>
+<p>Example: <code>odio</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>destination</code></b>&nbsp;&nbsp;
@@ -2850,10 +2905,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="destination"                data-endpoint="POSTapi-dispatches"
-               value="sit"
+               value="doloribus"
                data-component="body">
     <br>
-<p>Example: <code>sit</code></p>
+<p>Example: <code>doloribus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -2861,10 +2916,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes"                data-endpoint="POSTapi-dispatches"
-               value="nihil"
+               value="deserunt"
                data-component="body">
     <br>
-<p>Example: <code>nihil</code></p>
+<p>Example: <code>deserunt</code></p>
         </div>
         </form>
 
@@ -2957,8 +3012,8 @@ access-control-allow-credentials: true
         &quot;destination&quot;: &quot;Ndeeba&quot;,
         &quot;notes&quot;: &quot;Wabodda&quot;,
         &quot;status&quot;: &quot;transit&quot;,
-        &quot;created_at&quot;: &quot;2024-03-28T13:37:24.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2024-03-28T13:37:41.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2024-03-28T10:37:24.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2024-03-28T10:37:41.000000Z&quot;,
         &quot;deleted_at&quot;: null
     }
 }</code>
@@ -3119,8 +3174,8 @@ access-control-allow-credentials: true
         &quot;destination&quot;: &quot;Ndeeba&quot;,
         &quot;notes&quot;: &quot;Wabodda&quot;,
         &quot;status&quot;: &quot;transit&quot;,
-        &quot;created_at&quot;: &quot;2024-03-28T13:37:24.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2024-03-28T13:37:41.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2024-03-28T10:37:24.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2024-03-28T10:37:41.000000Z&quot;,
         &quot;deleted_at&quot;: null
     }
 }</code>
@@ -3357,14 +3412,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.co/api/dispatches/1/status/eos" \
+    "https://dayalog.co/api/dispatches/1/status/nesciunt" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/dispatches/1/status/eos"
+    "https://dayalog.co/api/dispatches/1/status/nesciunt"
 );
 
 const headers = {
@@ -3380,7 +3435,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/dispatches/1/status/eos';
+$url = 'https://dayalog.co/api/dispatches/1/status/nesciunt';
 $response = $client-&gt;put(
     $url,
     [
@@ -3398,7 +3453,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/dispatches/1/status/eos'
+url = 'https://dayalog.co/api/dispatches/1/status/nesciunt'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -3500,10 +3555,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="newStatus"                data-endpoint="PUTapi-dispatches--dispatch_id--status--newStatus-"
-               value="eos"
+               value="nesciunt"
                data-component="url">
     <br>
-<p>Example: <code>eos</code></p>
+<p>Example: <code>nesciunt</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>string</code></b>&nbsp;&nbsp;
@@ -3609,8 +3664,8 @@ access-control-allow-credentials: true
             &quot;id&quot;: 1,
             &quot;user_id&quot;: 2,
             &quot;license&quot;: null,
-            &quot;created_at&quot;: &quot;2024-03-28T13:28:02.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2024-03-28T13:28:02.000000Z&quot;
+            &quot;created_at&quot;: &quot;2024-03-28T10:28:02.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-03-28T10:28:02.000000Z&quot;
         }
     ],
     &quot;links&quot;: {
@@ -3952,8 +4007,8 @@ access-control-allow-credentials: true
         &quot;id&quot;: 1,
         &quot;user_id&quot;: 2,
         &quot;license&quot;: null,
-        &quot;created_at&quot;: &quot;2024-03-28T13:28:02.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2024-03-28T13:28:02.000000Z&quot;
+        &quot;created_at&quot;: &quot;2024-03-28T10:28:02.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2024-03-28T10:28:02.000000Z&quot;
     }
 }</code>
  </pre>
@@ -4111,8 +4166,8 @@ access-control-allow-credentials: true
         &quot;id&quot;: 1,
         &quot;user_id&quot;: 2,
         &quot;license&quot;: null,
-        &quot;created_at&quot;: &quot;2024-03-28T13:28:02.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2024-03-28T13:28:02.000000Z&quot;
+        &quot;created_at&quot;: &quot;2024-03-28T10:28:02.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2024-03-28T10:28:02.000000Z&quot;
     }
 }</code>
  </pre>
@@ -4445,8 +4500,8 @@ access-control-allow-credentials: true
         &quot;id&quot;: 1,
         &quot;user_id&quot;: 2,
         &quot;license&quot;: null,
-        &quot;created_at&quot;: &quot;2024-03-28T13:28:02.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2024-03-28T13:28:02.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2024-03-28T10:28:02.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2024-03-28T10:28:02.000000Z&quot;,
         &quot;laravel_through_key&quot;: 1
     }
 }</code>
@@ -4787,8 +4842,8 @@ access-control-allow-credentials: true
             &quot;reference&quot;: &quot;1c4f1e85-c90b-4841-8bd3-d9caa4f18a96&quot;,
             &quot;notes&quot;: &quot;Notes&quot;,
             &quot;status&quot;: &quot;completed&quot;,
-            &quot;created_at&quot;: &quot;2024-03-28T13:36:57.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2024-03-28T16:34:13.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2024-03-28T10:36:57.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-03-28T13:34:13.000000Z&quot;,
             &quot;payload&quot;: &quot;{\&quot;to\&quot;: 2, \&quot;from\&quot;: 2, \&quot;notes\&quot;: \&quot;Notes\&quot;, \&quot;orderItems\&quot;: [{\&quot;id\&quot;: \&quot;8550d100-9a29-4fed-86a9-063eb4d2b9f0\&quot;, \&quot;qty\&quot;: \&quot;23\&quot;, \&quot;item\&quot;: \&quot;Beans\&quot;, \&quot;price\&quot;: \&quot;2300\&quot;, \&quot;qty_measure\&quot;: \&quot;Litres\&quot;}]}&quot;,
             &quot;items&quot;: [
                 {
@@ -4805,48 +4860,6 @@ access-control-allow-credentials: true
                     &quot;vehicle&quot;: {
                         &quot;id&quot;: 1,
                         &quot;device&quot;: [
-                            {
-                                &quot;id&quot;: 48,
-                                &quot;name&quot;: &quot;Afasha&quot;,
-                                &quot;uniqueid&quot;: &quot;835881&quot;,
-                                &quot;lastupdate&quot;: &quot;2024-03-28 22:09:21&quot;,
-                                &quot;positionid&quot;: 66949,
-                                &quot;groupid&quot;: null,
-                                &quot;attributes&quot;: &quot;{}&quot;,
-                                &quot;phone&quot;: null,
-                                &quot;model&quot;: null,
-                                &quot;contact&quot;: null,
-                                &quot;category&quot;: null,
-                                &quot;disabled&quot;: 0,
-                                &quot;status&quot;: &quot;offline&quot;,
-                                &quot;geofenceids&quot;: null,
-                                &quot;expirationtime&quot;: null,
-                                &quot;motionstate&quot;: 0,
-                                &quot;motiontime&quot;: &quot;2024-03-28 22:09:20&quot;,
-                                &quot;motiondistance&quot;: 102575587.22,
-                                &quot;overspeedstate&quot;: 0,
-                                &quot;overspeedtime&quot;: null,
-                                &quot;overspeedgeofenceid&quot;: 0,
-                                &quot;motionstreak&quot;: 1,
-                                &quot;last_position&quot;: {
-                                    &quot;id&quot;: 66949,
-                                    &quot;protocol&quot;: &quot;osmand&quot;,
-                                    &quot;deviceid&quot;: 48,
-                                    &quot;servertime&quot;: &quot;2024-03-28T22:09:21.000000Z&quot;,
-                                    &quot;devicetime&quot;: &quot;2024-03-28 22:09:20&quot;,
-                                    &quot;fixtime&quot;: &quot;2024-03-28 22:09:20&quot;,
-                                    &quot;valid&quot;: 1,
-                                    &quot;latitude&quot;: 0.3576947,
-                                    &quot;longitude&quot;: 32.5976538,
-                                    &quot;altitude&quot;: 1178,
-                                    &quot;speed&quot;: 0.00365728,
-                                    &quot;course&quot;: 0,
-                                    &quot;address&quot;: null,
-                                    &quot;attributes&quot;: &quot;{\&quot;batteryLevel\&quot;:45.0,\&quot;distance\&quot;:0.02,\&quot;totalDistance\&quot;:1.0257558722E8,\&quot;motion\&quot;:false}&quot;,
-                                    &quot;accuracy&quot;: 30,
-                                    &quot;network&quot;: &quot;null&quot;
-                                }
-                            },
                             {
                                 &quot;id&quot;: 49,
                                 &quot;name&quot;: &quot;Solomon&quot;,
@@ -4874,7 +4887,7 @@ access-control-allow-credentials: true
                                     &quot;id&quot;: 29323,
                                     &quot;protocol&quot;: &quot;osmand&quot;,
                                     &quot;deviceid&quot;: 49,
-                                    &quot;servertime&quot;: &quot;2023-10-20T19:15:22.000000Z&quot;,
+                                    &quot;servertime&quot;: &quot;2023-10-20T16:15:22.000000Z&quot;,
                                     &quot;devicetime&quot;: &quot;2023-10-20 19:15:18&quot;,
                                     &quot;fixtime&quot;: &quot;2023-10-20 19:15:18&quot;,
                                     &quot;valid&quot;: 1,
@@ -4913,6 +4926,48 @@ access-control-allow-credentials: true
                                 &quot;overspeedgeofenceid&quot;: 0,
                                 &quot;motionstreak&quot;: 0,
                                 &quot;last_position&quot;: null
+                            },
+                            {
+                                &quot;id&quot;: 48,
+                                &quot;name&quot;: &quot;Afasha&quot;,
+                                &quot;uniqueid&quot;: &quot;835881&quot;,
+                                &quot;lastupdate&quot;: &quot;2024-03-28 22:09:21&quot;,
+                                &quot;positionid&quot;: 66949,
+                                &quot;groupid&quot;: null,
+                                &quot;attributes&quot;: &quot;{}&quot;,
+                                &quot;phone&quot;: null,
+                                &quot;model&quot;: null,
+                                &quot;contact&quot;: null,
+                                &quot;category&quot;: null,
+                                &quot;disabled&quot;: 0,
+                                &quot;status&quot;: &quot;offline&quot;,
+                                &quot;geofenceids&quot;: null,
+                                &quot;expirationtime&quot;: null,
+                                &quot;motionstate&quot;: 0,
+                                &quot;motiontime&quot;: &quot;2024-03-28 22:09:20&quot;,
+                                &quot;motiondistance&quot;: 102575587.22,
+                                &quot;overspeedstate&quot;: 0,
+                                &quot;overspeedtime&quot;: null,
+                                &quot;overspeedgeofenceid&quot;: 0,
+                                &quot;motionstreak&quot;: 1,
+                                &quot;last_position&quot;: {
+                                    &quot;id&quot;: 66949,
+                                    &quot;protocol&quot;: &quot;osmand&quot;,
+                                    &quot;deviceid&quot;: 48,
+                                    &quot;servertime&quot;: &quot;2024-03-28T19:09:21.000000Z&quot;,
+                                    &quot;devicetime&quot;: &quot;2024-03-28 22:09:20&quot;,
+                                    &quot;fixtime&quot;: &quot;2024-03-28 22:09:20&quot;,
+                                    &quot;valid&quot;: 1,
+                                    &quot;latitude&quot;: 0.3576947,
+                                    &quot;longitude&quot;: 32.5976538,
+                                    &quot;altitude&quot;: 1178,
+                                    &quot;speed&quot;: 0.00365728,
+                                    &quot;course&quot;: 0,
+                                    &quot;address&quot;: null,
+                                    &quot;attributes&quot;: &quot;{\&quot;batteryLevel\&quot;:45.0,\&quot;distance\&quot;:0.02,\&quot;totalDistance\&quot;:1.0257558722E8,\&quot;motion\&quot;:false}&quot;,
+                                    &quot;accuracy&quot;: 30,
+                                    &quot;network&quot;: &quot;null&quot;
+                                }
                             }
                         ]
                     },
@@ -4924,8 +4979,8 @@ access-control-allow-credentials: true
                             &quot;destination&quot;: &quot;Ndeeba&quot;,
                             &quot;notes&quot;: &quot;Wabodda&quot;,
                             &quot;status&quot;: &quot;transit&quot;,
-                            &quot;created_at&quot;: &quot;2024-03-28T13:37:24.000000Z&quot;,
-                            &quot;updated_at&quot;: &quot;2024-03-28T13:37:41.000000Z&quot;,
+                            &quot;created_at&quot;: &quot;2024-03-28T10:37:24.000000Z&quot;,
+                            &quot;updated_at&quot;: &quot;2024-03-28T10:37:41.000000Z&quot;,
                             &quot;deleted_at&quot;: null
                         }
                     ]
@@ -5039,11 +5094,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"from\": \"facere\",
-    \"to\": \"est\",
-    \"patasente_purchase_order_id\": 18,
-    \"reference\": \"dolor\",
-    \"notes\": \"similique\"
+    \"from\": \"dolor\",
+    \"to\": \"blanditiis\",
+    \"patasente_purchase_order_id\": 19,
+    \"reference\": \"non\",
+    \"notes\": \"repudiandae\"
 }"
 </code></pre></div>
 
@@ -5059,11 +5114,11 @@ const headers = {
 };
 
 let body = {
-    "from": "facere",
-    "to": "est",
-    "patasente_purchase_order_id": 18,
-    "reference": "dolor",
-    "notes": "similique"
+    "from": "dolor",
+    "to": "blanditiis",
+    "patasente_purchase_order_id": 19,
+    "reference": "non",
+    "notes": "repudiandae"
 };
 
 fetch(url, {
@@ -5084,11 +5139,11 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'from' =&gt; 'facere',
-            'to' =&gt; 'est',
-            'patasente_purchase_order_id' =&gt; 18,
-            'reference' =&gt; 'dolor',
-            'notes' =&gt; 'similique',
+            'from' =&gt; 'dolor',
+            'to' =&gt; 'blanditiis',
+            'patasente_purchase_order_id' =&gt; 19,
+            'reference' =&gt; 'non',
+            'notes' =&gt; 'repudiandae',
         ],
     ]
 );
@@ -5102,11 +5157,11 @@ import json
 
 url = 'https://dayalog.co/api/orders'
 payload = {
-    "from": "facere",
-    "to": "est",
-    "patasente_purchase_order_id": 18,
-    "reference": "dolor",
-    "notes": "similique"
+    "from": "dolor",
+    "to": "blanditiis",
+    "patasente_purchase_order_id": 19,
+    "reference": "non",
+    "notes": "repudiandae"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -5206,10 +5261,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="from"                data-endpoint="POSTapi-orders"
-               value="facere"
+               value="dolor"
                data-component="body">
     <br>
-<p>Example: <code>facere</code></p>
+<p>Example: <code>dolor</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>to</code></b>&nbsp;&nbsp;
@@ -5217,10 +5272,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="to"                data-endpoint="POSTapi-orders"
-               value="est"
+               value="blanditiis"
                data-component="body">
     <br>
-<p>Example: <code>est</code></p>
+<p>Example: <code>blanditiis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>patasente_purchase_order_id</code></b>&nbsp;&nbsp;
@@ -5228,10 +5283,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="patasente_purchase_order_id"                data-endpoint="POSTapi-orders"
-               value="18"
+               value="19"
                data-component="body">
     <br>
-<p>Example: <code>18</code></p>
+<p>Example: <code>19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>reference</code></b>&nbsp;&nbsp;
@@ -5239,10 +5294,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="reference"                data-endpoint="POSTapi-orders"
-               value="dolor"
+               value="non"
                data-component="body">
     <br>
-<p>Example: <code>dolor</code></p>
+<p>Example: <code>non</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -5250,10 +5305,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes"                data-endpoint="POSTapi-orders"
-               value="similique"
+               value="repudiandae"
                data-component="body">
     <br>
-<p>Example: <code>similique</code></p>
+<p>Example: <code>repudiandae</code></p>
         </div>
         </form>
 
@@ -5347,8 +5402,8 @@ access-control-allow-credentials: true
         &quot;reference&quot;: &quot;1c4f1e85-c90b-4841-8bd3-d9caa4f18a96&quot;,
         &quot;notes&quot;: &quot;Notes&quot;,
         &quot;status&quot;: &quot;completed&quot;,
-        &quot;created_at&quot;: &quot;2024-03-28T13:36:57.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2024-03-28T16:34:13.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2024-03-28T10:36:57.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2024-03-28T13:34:13.000000Z&quot;,
         &quot;payload&quot;: &quot;{\&quot;to\&quot;: 2, \&quot;from\&quot;: 2, \&quot;notes\&quot;: \&quot;Notes\&quot;, \&quot;orderItems\&quot;: [{\&quot;id\&quot;: \&quot;8550d100-9a29-4fed-86a9-063eb4d2b9f0\&quot;, \&quot;qty\&quot;: \&quot;23\&quot;, \&quot;item\&quot;: \&quot;Beans\&quot;, \&quot;price\&quot;: \&quot;2300\&quot;, \&quot;qty_measure\&quot;: \&quot;Litres\&quot;}]}&quot;,
         &quot;items&quot;: [
             {
@@ -5365,48 +5420,6 @@ access-control-allow-credentials: true
                 &quot;vehicle&quot;: {
                     &quot;id&quot;: 1,
                     &quot;device&quot;: [
-                        {
-                            &quot;id&quot;: 48,
-                            &quot;name&quot;: &quot;Afasha&quot;,
-                            &quot;uniqueid&quot;: &quot;835881&quot;,
-                            &quot;lastupdate&quot;: &quot;2024-03-28 22:09:21&quot;,
-                            &quot;positionid&quot;: 66949,
-                            &quot;groupid&quot;: null,
-                            &quot;attributes&quot;: &quot;{}&quot;,
-                            &quot;phone&quot;: null,
-                            &quot;model&quot;: null,
-                            &quot;contact&quot;: null,
-                            &quot;category&quot;: null,
-                            &quot;disabled&quot;: 0,
-                            &quot;status&quot;: &quot;offline&quot;,
-                            &quot;geofenceids&quot;: null,
-                            &quot;expirationtime&quot;: null,
-                            &quot;motionstate&quot;: 0,
-                            &quot;motiontime&quot;: &quot;2024-03-28 22:09:20&quot;,
-                            &quot;motiondistance&quot;: 102575587.22,
-                            &quot;overspeedstate&quot;: 0,
-                            &quot;overspeedtime&quot;: null,
-                            &quot;overspeedgeofenceid&quot;: 0,
-                            &quot;motionstreak&quot;: 1,
-                            &quot;last_position&quot;: {
-                                &quot;id&quot;: 66949,
-                                &quot;protocol&quot;: &quot;osmand&quot;,
-                                &quot;deviceid&quot;: 48,
-                                &quot;servertime&quot;: &quot;2024-03-28T22:09:21.000000Z&quot;,
-                                &quot;devicetime&quot;: &quot;2024-03-28 22:09:20&quot;,
-                                &quot;fixtime&quot;: &quot;2024-03-28 22:09:20&quot;,
-                                &quot;valid&quot;: 1,
-                                &quot;latitude&quot;: 0.3576947,
-                                &quot;longitude&quot;: 32.5976538,
-                                &quot;altitude&quot;: 1178,
-                                &quot;speed&quot;: 0.00365728,
-                                &quot;course&quot;: 0,
-                                &quot;address&quot;: null,
-                                &quot;attributes&quot;: &quot;{\&quot;batteryLevel\&quot;:45.0,\&quot;distance\&quot;:0.02,\&quot;totalDistance\&quot;:1.0257558722E8,\&quot;motion\&quot;:false}&quot;,
-                                &quot;accuracy&quot;: 30,
-                                &quot;network&quot;: &quot;null&quot;
-                            }
-                        },
                         {
                             &quot;id&quot;: 49,
                             &quot;name&quot;: &quot;Solomon&quot;,
@@ -5434,7 +5447,7 @@ access-control-allow-credentials: true
                                 &quot;id&quot;: 29323,
                                 &quot;protocol&quot;: &quot;osmand&quot;,
                                 &quot;deviceid&quot;: 49,
-                                &quot;servertime&quot;: &quot;2023-10-20T19:15:22.000000Z&quot;,
+                                &quot;servertime&quot;: &quot;2023-10-20T16:15:22.000000Z&quot;,
                                 &quot;devicetime&quot;: &quot;2023-10-20 19:15:18&quot;,
                                 &quot;fixtime&quot;: &quot;2023-10-20 19:15:18&quot;,
                                 &quot;valid&quot;: 1,
@@ -5473,6 +5486,48 @@ access-control-allow-credentials: true
                             &quot;overspeedgeofenceid&quot;: 0,
                             &quot;motionstreak&quot;: 0,
                             &quot;last_position&quot;: null
+                        },
+                        {
+                            &quot;id&quot;: 48,
+                            &quot;name&quot;: &quot;Afasha&quot;,
+                            &quot;uniqueid&quot;: &quot;835881&quot;,
+                            &quot;lastupdate&quot;: &quot;2024-03-28 22:09:21&quot;,
+                            &quot;positionid&quot;: 66949,
+                            &quot;groupid&quot;: null,
+                            &quot;attributes&quot;: &quot;{}&quot;,
+                            &quot;phone&quot;: null,
+                            &quot;model&quot;: null,
+                            &quot;contact&quot;: null,
+                            &quot;category&quot;: null,
+                            &quot;disabled&quot;: 0,
+                            &quot;status&quot;: &quot;offline&quot;,
+                            &quot;geofenceids&quot;: null,
+                            &quot;expirationtime&quot;: null,
+                            &quot;motionstate&quot;: 0,
+                            &quot;motiontime&quot;: &quot;2024-03-28 22:09:20&quot;,
+                            &quot;motiondistance&quot;: 102575587.22,
+                            &quot;overspeedstate&quot;: 0,
+                            &quot;overspeedtime&quot;: null,
+                            &quot;overspeedgeofenceid&quot;: 0,
+                            &quot;motionstreak&quot;: 1,
+                            &quot;last_position&quot;: {
+                                &quot;id&quot;: 66949,
+                                &quot;protocol&quot;: &quot;osmand&quot;,
+                                &quot;deviceid&quot;: 48,
+                                &quot;servertime&quot;: &quot;2024-03-28T19:09:21.000000Z&quot;,
+                                &quot;devicetime&quot;: &quot;2024-03-28 22:09:20&quot;,
+                                &quot;fixtime&quot;: &quot;2024-03-28 22:09:20&quot;,
+                                &quot;valid&quot;: 1,
+                                &quot;latitude&quot;: 0.3576947,
+                                &quot;longitude&quot;: 32.5976538,
+                                &quot;altitude&quot;: 1178,
+                                &quot;speed&quot;: 0.00365728,
+                                &quot;course&quot;: 0,
+                                &quot;address&quot;: null,
+                                &quot;attributes&quot;: &quot;{\&quot;batteryLevel\&quot;:45.0,\&quot;distance\&quot;:0.02,\&quot;totalDistance\&quot;:1.0257558722E8,\&quot;motion\&quot;:false}&quot;,
+                                &quot;accuracy&quot;: 30,
+                                &quot;network&quot;: &quot;null&quot;
+                            }
                         }
                     ]
                 },
@@ -5484,8 +5539,8 @@ access-control-allow-credentials: true
                         &quot;destination&quot;: &quot;Ndeeba&quot;,
                         &quot;notes&quot;: &quot;Wabodda&quot;,
                         &quot;status&quot;: &quot;transit&quot;,
-                        &quot;created_at&quot;: &quot;2024-03-28T13:37:24.000000Z&quot;,
-                        &quot;updated_at&quot;: &quot;2024-03-28T13:37:41.000000Z&quot;,
+                        &quot;created_at&quot;: &quot;2024-03-28T10:37:24.000000Z&quot;,
+                        &quot;updated_at&quot;: &quot;2024-03-28T10:37:41.000000Z&quot;,
                         &quot;deleted_at&quot;: null
                     }
                 ]
@@ -5955,9 +6010,9 @@ access-control-allow-credentials: true
     &quot;orderVehicle&quot;: {
         &quot;order_id&quot;: 1,
         &quot;vehicle_id&quot;: 1,
-        &quot;created_at&quot;: &quot;2024-04-23T17:16:34.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2024-04-23T17:16:34.000000Z&quot;,
-        &quot;id&quot;: 3
+        &quot;created_at&quot;: &quot;2024-05-04T19:55:44.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2024-05-04T19:55:44.000000Z&quot;,
+        &quot;id&quot;: 4
     }
 }</code>
  </pre>
@@ -6215,14 +6270,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.co/api/orders/1/status/magni" \
+    "https://dayalog.co/api/orders/1/status/quidem" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/orders/1/status/magni"
+    "https://dayalog.co/api/orders/1/status/quidem"
 );
 
 const headers = {
@@ -6238,7 +6293,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/orders/1/status/magni';
+$url = 'https://dayalog.co/api/orders/1/status/quidem';
 $response = $client-&gt;put(
     $url,
     [
@@ -6256,7 +6311,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/orders/1/status/magni'
+url = 'https://dayalog.co/api/orders/1/status/quidem'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -6358,10 +6413,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="newStatus"                data-endpoint="PUTapi-orders--order_id--status--newStatus-"
-               value="magni"
+               value="quidem"
                data-component="url">
     <br>
-<p>Example: <code>magni</code></p>
+<p>Example: <code>quidem</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>string</code></b>&nbsp;&nbsp;
@@ -6617,8 +6672,8 @@ access-control-allow-credentials: true
             &quot;insurance_policy_number&quot;: null,
             &quot;insurance_coverage&quot;: null,
             &quot;insurance_expiration&quot;: null,
-            &quot;created_at&quot;: &quot;2024-03-28T13:28:44.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2024-03-28T13:28:44.000000Z&quot;
+            &quot;created_at&quot;: &quot;2024-03-28T10:28:44.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-03-28T10:28:44.000000Z&quot;
         }
     ],
     &quot;links&quot;: {
@@ -6727,16 +6782,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"vin\": \"excepturi\",
-    \"number_plate\": \"et\",
-    \"make\": \"est\",
-    \"model\": \"ex\",
+    \"vin\": \"perferendis\",
+    \"number_plate\": \"eos\",
+    \"make\": \"vitae\",
+    \"model\": \"aut\",
     \"availability\": false,
-    \"capacity_weight\": 7,
-    \"capacity_volume\": 19,
-    \"insurance_policy_number\": \"et\",
-    \"insurance_coverage\": \"nisi\",
-    \"insurance_expiration\": \"2024-04-23T17:16:34\",
+    \"capacity_weight\": 32522086.4138,
+    \"capacity_volume\": 7518898.137,
+    \"insurance_policy_number\": \"dolor\",
+    \"insurance_coverage\": \"officia\",
+    \"insurance_expiration\": \"2024-05-04T22:55:44\",
     \"attached_device_id\": 13
 }"
 </code></pre></div>
@@ -6753,16 +6808,16 @@ const headers = {
 };
 
 let body = {
-    "vin": "excepturi",
-    "number_plate": "et",
-    "make": "est",
-    "model": "ex",
+    "vin": "perferendis",
+    "number_plate": "eos",
+    "make": "vitae",
+    "model": "aut",
     "availability": false,
-    "capacity_weight": 7,
-    "capacity_volume": 19,
-    "insurance_policy_number": "et",
-    "insurance_coverage": "nisi",
-    "insurance_expiration": "2024-04-23T17:16:34",
+    "capacity_weight": 32522086.4138,
+    "capacity_volume": 7518898.137,
+    "insurance_policy_number": "dolor",
+    "insurance_coverage": "officia",
+    "insurance_expiration": "2024-05-04T22:55:44",
     "attached_device_id": 13
 };
 
@@ -6784,16 +6839,16 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'vin' =&gt; 'excepturi',
-            'number_plate' =&gt; 'et',
-            'make' =&gt; 'est',
-            'model' =&gt; 'ex',
+            'vin' =&gt; 'perferendis',
+            'number_plate' =&gt; 'eos',
+            'make' =&gt; 'vitae',
+            'model' =&gt; 'aut',
             'availability' =&gt; false,
-            'capacity_weight' =&gt; 7.0,
-            'capacity_volume' =&gt; 19.0,
-            'insurance_policy_number' =&gt; 'et',
-            'insurance_coverage' =&gt; 'nisi',
-            'insurance_expiration' =&gt; '2024-04-23T17:16:34',
+            'capacity_weight' =&gt; 32522086.4138,
+            'capacity_volume' =&gt; 7518898.137,
+            'insurance_policy_number' =&gt; 'dolor',
+            'insurance_coverage' =&gt; 'officia',
+            'insurance_expiration' =&gt; '2024-05-04T22:55:44',
             'attached_device_id' =&gt; 13,
         ],
     ]
@@ -6808,16 +6863,16 @@ import json
 
 url = 'https://dayalog.co/api/vehicles'
 payload = {
-    "vin": "excepturi",
-    "number_plate": "et",
-    "make": "est",
-    "model": "ex",
+    "vin": "perferendis",
+    "number_plate": "eos",
+    "make": "vitae",
+    "model": "aut",
     "availability": false,
-    "capacity_weight": 7,
-    "capacity_volume": 19,
-    "insurance_policy_number": "et",
-    "insurance_coverage": "nisi",
-    "insurance_expiration": "2024-04-23T17:16:34",
+    "capacity_weight": 32522086.4138,
+    "capacity_volume": 7518898.137,
+    "insurance_policy_number": "dolor",
+    "insurance_coverage": "officia",
+    "insurance_expiration": "2024-05-04T22:55:44",
     "attached_device_id": 13
 }
 headers = {
@@ -6848,18 +6903,18 @@ access-control-allow-credentials: true
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;vin&quot;: &quot;excepturi&quot;,
-        &quot;number_plate&quot;: &quot;et&quot;,
-        &quot;make&quot;: &quot;est&quot;,
-        &quot;model&quot;: &quot;ex&quot;,
-        &quot;capacity_weight&quot;: 7,
-        &quot;capacity_volume&quot;: 19,
-        &quot;insurance_policy_number&quot;: &quot;et&quot;,
-        &quot;insurance_coverage&quot;: &quot;nisi&quot;,
-        &quot;insurance_expiration&quot;: &quot;2024-04-23T17:16:34&quot;,
-        &quot;updated_at&quot;: &quot;2024-04-23T17:16:34.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2024-04-23T17:16:34.000000Z&quot;,
-        &quot;id&quot;: 2
+        &quot;vin&quot;: &quot;perferendis&quot;,
+        &quot;number_plate&quot;: &quot;eos&quot;,
+        &quot;make&quot;: &quot;vitae&quot;,
+        &quot;model&quot;: &quot;aut&quot;,
+        &quot;capacity_weight&quot;: 32522086.4138,
+        &quot;capacity_volume&quot;: 7518898.137,
+        &quot;insurance_policy_number&quot;: &quot;dolor&quot;,
+        &quot;insurance_coverage&quot;: &quot;officia&quot;,
+        &quot;insurance_expiration&quot;: &quot;2024-05-04T22:55:44&quot;,
+        &quot;updated_at&quot;: &quot;2024-05-04T19:55:44.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2024-05-04T19:55:44.000000Z&quot;,
+        &quot;id&quot;: 3
     }
 }</code>
  </pre>
@@ -6923,10 +6978,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="vin"                data-endpoint="POSTapi-vehicles"
-               value="excepturi"
+               value="perferendis"
                data-component="body">
     <br>
-<p>Example: <code>excepturi</code></p>
+<p>Example: <code>perferendis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>number_plate</code></b>&nbsp;&nbsp;
@@ -6934,10 +6989,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="number_plate"                data-endpoint="POSTapi-vehicles"
-               value="et"
+               value="eos"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>eos</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>make</code></b>&nbsp;&nbsp;
@@ -6945,10 +7000,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="make"                data-endpoint="POSTapi-vehicles"
-               value="est"
+               value="vitae"
                data-component="body">
     <br>
-<p>Example: <code>est</code></p>
+<p>Example: <code>vitae</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model</code></b>&nbsp;&nbsp;
@@ -6956,10 +7011,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="model"                data-endpoint="POSTapi-vehicles"
-               value="ex"
+               value="aut"
                data-component="body">
     <br>
-<p>Example: <code>ex</code></p>
+<p>Example: <code>aut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>availability</code></b>&nbsp;&nbsp;
@@ -6988,10 +7043,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="capacity_weight"                data-endpoint="POSTapi-vehicles"
-               value="7"
+               value="32522086.4138"
                data-component="body">
     <br>
-<p>Example: <code>7</code></p>
+<p>Example: <code>32522086.4138</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>capacity_volume</code></b>&nbsp;&nbsp;
@@ -6999,10 +7054,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="capacity_volume"                data-endpoint="POSTapi-vehicles"
-               value="19"
+               value="7518898.137"
                data-component="body">
     <br>
-<p>Example: <code>19</code></p>
+<p>Example: <code>7518898.137</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>insurance_policy_number</code></b>&nbsp;&nbsp;
@@ -7010,10 +7065,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="insurance_policy_number"                data-endpoint="POSTapi-vehicles"
-               value="et"
+               value="dolor"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>dolor</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>insurance_coverage</code></b>&nbsp;&nbsp;
@@ -7021,10 +7076,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="insurance_coverage"                data-endpoint="POSTapi-vehicles"
-               value="nisi"
+               value="officia"
                data-component="body">
     <br>
-<p>Example: <code>nisi</code></p>
+<p>Example: <code>officia</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>insurance_expiration</code></b>&nbsp;&nbsp;
@@ -7032,10 +7087,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="insurance_expiration"                data-endpoint="POSTapi-vehicles"
-               value="2024-04-23T17:16:34"
+               value="2024-05-04T22:55:44"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-04-23T17:16:34</code></p>
+<p>Must be a valid date. Example: <code>2024-05-04T22:55:44</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>attached_device_id</code></b>&nbsp;&nbsp;
@@ -7144,8 +7199,8 @@ access-control-allow-credentials: true
         &quot;insurance_policy_number&quot;: null,
         &quot;insurance_coverage&quot;: null,
         &quot;insurance_expiration&quot;: null,
-        &quot;created_at&quot;: &quot;2024-03-28T13:28:44.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2024-03-28T13:28:44.000000Z&quot;
+        &quot;created_at&quot;: &quot;2024-03-28T10:28:44.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2024-03-28T10:28:44.000000Z&quot;
     }
 }</code>
  </pre>
@@ -7310,8 +7365,8 @@ access-control-allow-credentials: true
         &quot;insurance_policy_number&quot;: null,
         &quot;insurance_coverage&quot;: null,
         &quot;insurance_expiration&quot;: null,
-        &quot;created_at&quot;: &quot;2024-03-28T13:28:44.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2024-03-28T13:28:44.000000Z&quot;
+        &quot;created_at&quot;: &quot;2024-03-28T10:28:44.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2024-03-28T10:28:44.000000Z&quot;
     }
 }</code>
  </pre>
@@ -7555,7 +7610,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"device_id\": \"vero\"
+    \"device_id\": \"nobis\"
 }"
 </code></pre></div>
 
@@ -7571,7 +7626,7 @@ const headers = {
 };
 
 let body = {
-    "device_id": "vero"
+    "device_id": "nobis"
 };
 
 fetch(url, {
@@ -7592,7 +7647,7 @@ $response = $client-&gt;put(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'device_id' =&gt; 'vero',
+            'device_id' =&gt; 'nobis',
         ],
     ]
 );
@@ -7606,7 +7661,7 @@ import json
 
 url = 'https://dayalog.co/api/vehicles/1/attach-device'
 payload = {
-    "device_id": "vero"
+    "device_id": "nobis"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -7721,10 +7776,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="device_id"                data-endpoint="PUTapi-vehicles--vehicle--attach-device"
-               value="vero"
+               value="nobis"
                data-component="body">
     <br>
-<p>Example: <code>vero</code></p>
+<p>Example: <code>nobis</code></p>
         </div>
         </form>
 

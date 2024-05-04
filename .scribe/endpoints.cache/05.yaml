@@ -29,7 +29,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"order_vehicle_id":1,"origin":"Bukoto Kisasi","destination":"Ndeeba","notes":"Wabodda","status":"transit","created_at":"2024-03-28T13:37:24.000000Z","updated_at":"2024-03-28T13:37:41.000000Z","deleted_at":null}],"links":{"first":"http:\/\/dayalog_api.test\/api\/dispatches?page=1","last":"http:\/\/dayalog_api.test\/api\/dispatches?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/dayalog_api.test\/api\/dispatches?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/dayalog_api.test\/api\/dispatches","per_page":25,"to":1,"total":1}}'
+        content: '{"data":[{"id":1,"order_vehicle_id":1,"origin":"Bukoto Kisasi","destination":"Ndeeba","notes":"Wabodda","status":"transit","created_at":"2024-03-28T10:37:24.000000Z","updated_at":"2024-03-28T10:37:41.000000Z","deleted_at":null}],"links":{"first":"http:\/\/dayalog_api.test\/api\/dispatches?page=1","last":"http:\/\/dayalog_api.test\/api\/dispatches?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/dayalog_api.test\/api\/dispatches?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/dayalog_api.test\/api\/dispatches","per_page":25,"to":1,"total":1}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -70,7 +70,7 @@ endpoints:
         name: order_vehicle_id
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: zgapqplmldbhvxiz
+        example: viayzqdnddztojkvbosmnxx
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -79,7 +79,7 @@ endpoints:
         name: origin
         description: ''
         required: true
-        example: non
+        example: odio
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: destination
         description: ''
         required: true
-        example: sit
+        example: doloribus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -97,16 +97,16 @@ endpoints:
         name: notes
         description: ''
         required: false
-        example: nihil
+        example: deserunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      order_vehicle_id: zgapqplmldbhvxiz
-      origin: non
-      destination: sit
-      notes: nihil
+      order_vehicle_id: viayzqdnddztojkvbosmnxx
+      origin: odio
+      destination: doloribus
+      notes: deserunt
     fileParameters: []
     responses:
       -
@@ -163,7 +163,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"order_vehicle_id":1,"origin":"Bukoto Kisasi","destination":"Ndeeba","notes":"Wabodda","status":"transit","created_at":"2024-03-28T13:37:24.000000Z","updated_at":"2024-03-28T13:37:41.000000Z","deleted_at":null}}'
+        content: '{"data":{"id":1,"order_vehicle_id":1,"origin":"Bukoto Kisasi","destination":"Ndeeba","notes":"Wabodda","status":"transit","created_at":"2024-03-28T10:37:24.000000Z","updated_at":"2024-03-28T10:37:41.000000Z","deleted_at":null}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -216,7 +216,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"order_vehicle_id":1,"origin":"Bukoto Kisasi","destination":"Ndeeba","notes":"Wabodda","status":"transit","created_at":"2024-03-28T13:37:24.000000Z","updated_at":"2024-03-28T13:37:41.000000Z","deleted_at":null}}'
+        content: '{"data":{"id":1,"order_vehicle_id":1,"origin":"Bukoto Kisasi","destination":"Ndeeba","notes":"Wabodda","status":"transit","created_at":"2024-03-28T10:37:24.000000Z","updated_at":"2024-03-28T10:37:41.000000Z","deleted_at":null}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -313,7 +313,7 @@ endpoints:
         name: newStatus
         description: ''
         required: true
-        example: eos
+        example: nesciunt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -329,7 +329,7 @@ endpoints:
         custom: []
     cleanUrlParameters:
       dispatch_id: 1
-      newStatus: eos
+      newStatus: nesciunt
       string: in_progress
     queryParameters: []
     cleanQueryParameters: []

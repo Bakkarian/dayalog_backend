@@ -29,7 +29,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":48,"name":"Afasha","uniqueid":"835881","lastupdate":"2024-03-28 22:09:21","positionid":66949,"groupid":null,"attributes":"{}","phone":null,"model":null,"contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":"2024-03-28 22:09:20","motiondistance":102575587.22,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":1},{"id":49,"name":"Solomon","uniqueid":"265412","lastupdate":"2023-10-20 19:15:22","positionid":29323,"groupid":null,"attributes":"{}","phone":null,"model":"Phone Model","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0},{"id":50,"name":"Afasha","uniqueid":"43989383484834","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"tk340","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0}],"links":{"first":"http:\/\/dayalog_api.test\/api\/devices?page=1","last":"http:\/\/dayalog_api.test\/api\/devices?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/dayalog_api.test\/api\/devices?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/dayalog_api.test\/api\/devices","per_page":25,"to":3,"total":3}}'
+        content: '{"data":[{"id":49,"name":"Solomon","uniqueid":"265412","lastupdate":"2023-10-20 19:15:22","positionid":29323,"groupid":null,"attributes":"{}","phone":null,"model":"Phone Model","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"lastPosition":{"id":29323,"protocol":"osmand","deviceid":49,"servertime":"2023-10-20T16:15:22.000000Z","devicetime":"2023-10-20 19:15:18","fixtime":"2023-10-20 19:15:18","valid":1,"latitude":0.3764655,"longitude":32.6551186,"altitude":0,"speed":0,"course":0,"address":null,"attributes":"{\"batteryLevel\":19.0,\"distance\":751.12,\"totalDistance\":53108.43,\"motion\":false}","accuracy":1500,"network":"null"}},{"id":50,"name":"Afasha","uniqueid":"43989383484834","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"tk340","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"lastPosition":null},{"id":48,"name":"Afasha","uniqueid":"835881","lastupdate":"2024-03-28 22:09:21","positionid":66949,"groupid":null,"attributes":"{}","phone":null,"model":null,"contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":"2024-03-28 22:09:20","motiondistance":102575587.22,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":1,"lastPosition":{"id":66949,"protocol":"osmand","deviceid":48,"servertime":"2024-03-28T19:09:21.000000Z","devicetime":"2024-03-28 22:09:20","fixtime":"2024-03-28 22:09:20","valid":1,"latitude":0.3576947,"longitude":32.5976538,"altitude":1178,"speed":0.00365728,"course":0,"address":null,"attributes":"{\"batteryLevel\":45.0,\"distance\":0.02,\"totalDistance\":1.0257558722E8,\"motion\":false}","accuracy":30,"network":"null"}}],"links":{"first":"http:\/\/dayalog_api.test\/api\/devices?page=1","last":"http:\/\/dayalog_api.test\/api\/devices?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/dayalog_api.test\/api\/devices?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/dayalog_api.test\/api\/devices","per_page":25,"to":3,"total":3}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -70,7 +70,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: ea
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -79,7 +79,7 @@ endpoints:
         name: uniqueid
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: cvtjt
+        example: bdlgmbxvceofqzf
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: model
         description: ''
         required: true
-        example: debitis
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -97,16 +97,16 @@ endpoints:
         name: tc_user_id
         description: ''
         required: false
-        example: 8.575284
+        example: 457.52519
         type: number
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: ea
-      uniqueid: cvtjt
-      model: debitis
-      tc_user_id: 8.575284
+      name: voluptatem
+      uniqueid: bdlgmbxvceofqzf
+      model: omnis
+      tc_user_id: 457.52519
     fileParameters: []
     responses:
       -
@@ -151,13 +151,13 @@ endpoints:
         name: id
         description: 'The ID of the device.'
         required: true
-        example: 48
+        example: 49
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 48
+      id: 49
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -166,7 +166,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":48,"name":"Afasha","uniqueid":"835881","lastupdate":"2024-03-28 22:09:21","positionid":66949,"groupid":null,"attributes":"{}","phone":null,"model":null,"contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":"2024-03-28 22:09:20","motiondistance":102575587.22,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":1}}'
+        content: '{"data":{"id":49,"name":"Solomon","uniqueid":"265412","lastupdate":"2023-10-20 19:15:22","positionid":29323,"groupid":null,"attributes":"{}","phone":null,"model":"Phone Model","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"lastPosition":{"id":29323,"protocol":"osmand","deviceid":49,"servertime":"2023-10-20T16:15:22.000000Z","devicetime":"2023-10-20 19:15:18","fixtime":"2023-10-20 19:15:18","valid":1,"latitude":0.3764655,"longitude":32.6551186,"altitude":0,"speed":0,"course":0,"address":null,"attributes":"{\"batteryLevel\":19.0,\"distance\":751.12,\"totalDistance\":53108.43,\"motion\":false}","accuracy":1500,"network":"null"}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -204,13 +204,13 @@ endpoints:
         name: id
         description: 'The ID of the device.'
         required: true
-        example: 48
+        example: 49
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 48
+      id: 49
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -259,13 +259,13 @@ endpoints:
         name: id
         description: 'The ID of the device.'
         required: true
-        example: 48
+        example: 49
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 48
+      id: 49
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

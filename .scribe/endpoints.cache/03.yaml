@@ -29,7 +29,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"vin":null,"number_plate":"UAE 345B","make":null,"model":null,"capacity_weight":null,"capacity_volume":null,"availability":1,"insurance_policy_number":null,"insurance_coverage":null,"insurance_expiration":null,"created_at":"2024-03-28T13:28:44.000000Z","updated_at":"2024-03-28T13:28:44.000000Z"}],"links":{"first":"http:\/\/dayalog_api.test\/api\/vehicles?page=1","last":"http:\/\/dayalog_api.test\/api\/vehicles?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/dayalog_api.test\/api\/vehicles?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/dayalog_api.test\/api\/vehicles","per_page":25,"to":1,"total":1}}'
+        content: '{"data":[{"id":1,"vin":null,"number_plate":"UAE 345B","make":null,"model":null,"capacity_weight":null,"capacity_volume":null,"availability":1,"insurance_policy_number":null,"insurance_coverage":null,"insurance_expiration":null,"created_at":"2024-03-28T10:28:44.000000Z","updated_at":"2024-03-28T10:28:44.000000Z"}],"links":{"first":"http:\/\/dayalog_api.test\/api\/vehicles?page=1","last":"http:\/\/dayalog_api.test\/api\/vehicles?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/dayalog_api.test\/api\/vehicles?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/dayalog_api.test\/api\/vehicles","per_page":25,"to":1,"total":1}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -70,7 +70,7 @@ endpoints:
         name: vin
         description: ''
         required: false
-        example: excepturi
+        example: perferendis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -79,7 +79,7 @@ endpoints:
         name: number_plate
         description: ''
         required: true
-        example: et
+        example: eos
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: make
         description: ''
         required: false
-        example: est
+        example: vitae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -97,7 +97,7 @@ endpoints:
         name: model
         description: ''
         required: false
-        example: ex
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -115,7 +115,7 @@ endpoints:
         name: capacity_weight
         description: ''
         required: false
-        example: 7.0
+        example: 32522086.4138
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -124,7 +124,7 @@ endpoints:
         name: capacity_volume
         description: ''
         required: false
-        example: 19.0
+        example: 7518898.137
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -133,7 +133,7 @@ endpoints:
         name: insurance_policy_number
         description: ''
         required: false
-        example: et
+        example: dolor
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -142,7 +142,7 @@ endpoints:
         name: insurance_coverage
         description: ''
         required: false
-        example: nisi
+        example: officia
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -151,7 +151,7 @@ endpoints:
         name: insurance_expiration
         description: 'Must be a valid date.'
         required: false
-        example: '2024-04-23T17:16:34'
+        example: '2024-05-04T22:55:44'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -166,22 +166,22 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      vin: excepturi
-      number_plate: et
-      make: est
-      model: ex
+      vin: perferendis
+      number_plate: eos
+      make: vitae
+      model: aut
       availability: false
-      capacity_weight: 7.0
-      capacity_volume: 19.0
-      insurance_policy_number: et
-      insurance_coverage: nisi
-      insurance_expiration: '2024-04-23T17:16:34'
+      capacity_weight: 32522086.4138
+      capacity_volume: 7518898.137
+      insurance_policy_number: dolor
+      insurance_coverage: officia
+      insurance_expiration: '2024-05-04T22:55:44'
       attached_device_id: 13
     fileParameters: []
     responses:
       -
         status: 201
-        content: '{"data":{"vin":"excepturi","number_plate":"et","make":"est","model":"ex","capacity_weight":7,"capacity_volume":19,"insurance_policy_number":"et","insurance_coverage":"nisi","insurance_expiration":"2024-04-23T17:16:34","updated_at":"2024-04-23T17:16:34.000000Z","created_at":"2024-04-23T17:16:34.000000Z","id":2}}'
+        content: '{"data":{"vin":"perferendis","number_plate":"eos","make":"vitae","model":"aut","capacity_weight":32522086.4138,"capacity_volume":7518898.137,"insurance_policy_number":"dolor","insurance_coverage":"officia","insurance_expiration":"2024-05-04T22:55:44","updated_at":"2024-05-04T19:55:44.000000Z","created_at":"2024-05-04T19:55:44.000000Z","id":3}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -233,7 +233,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"vin":null,"number_plate":"UAE 345B","make":null,"model":null,"capacity_weight":null,"capacity_volume":null,"availability":1,"insurance_policy_number":null,"insurance_coverage":null,"insurance_expiration":null,"created_at":"2024-03-28T13:28:44.000000Z","updated_at":"2024-03-28T13:28:44.000000Z"}}'
+        content: '{"data":{"id":1,"vin":null,"number_plate":"UAE 345B","make":null,"model":null,"capacity_weight":null,"capacity_volume":null,"availability":1,"insurance_policy_number":null,"insurance_coverage":null,"insurance_expiration":null,"created_at":"2024-03-28T10:28:44.000000Z","updated_at":"2024-03-28T10:28:44.000000Z"}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -286,7 +286,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"vin":null,"number_plate":"UAE 345B","make":null,"model":null,"capacity_weight":null,"capacity_volume":null,"availability":1,"insurance_policy_number":null,"insurance_coverage":null,"insurance_expiration":null,"created_at":"2024-03-28T13:28:44.000000Z","updated_at":"2024-03-28T13:28:44.000000Z"}}'
+        content: '{"data":{"id":1,"vin":null,"number_plate":"UAE 345B","make":null,"model":null,"capacity_weight":null,"capacity_volume":null,"availability":1,"insurance_policy_number":null,"insurance_coverage":null,"insurance_expiration":null,"created_at":"2024-03-28T10:28:44.000000Z","updated_at":"2024-03-28T10:28:44.000000Z"}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -401,13 +401,13 @@ endpoints:
         name: device_id
         description: ''
         required: true
-        example: vero
+        example: nobis
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      device_id: vero
+      device_id: nobis
     fileParameters: []
     responses:
       -
