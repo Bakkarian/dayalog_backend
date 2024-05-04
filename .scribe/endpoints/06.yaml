@@ -26,7 +26,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: kin
+        example: vvwegqytmu
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -35,7 +35,7 @@ endpoints:
         name: email
         description: 'This field is required when none of <code>phone_number</code> and <code>patasente_id</code> are present.  Must be a valid email address. Must not be greater than 255 characters.'
         required: false
-        example: knikolaus@example.net
+        example: luettgen.daphney@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -44,7 +44,7 @@ endpoints:
         name: patasente_id
         description: 'TODO : rename to patasente merchant code. This field is required when none of <code>email</code> and <code>phone_number</code> are present.'
         required: false
-        example: deserunt
+        example: architecto
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -53,7 +53,7 @@ endpoints:
         name: phone_number
         description: 'This field is required when none of <code>email</code> and <code>patasente_id</code> are present.'
         required: false
-        example: voluptas
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -62,22 +62,22 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: culpa
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: kin
-      email: knikolaus@example.net
-      patasente_id: deserunt
-      phone_number: voluptas
-      password: culpa
+      name: vvwegqytmu
+      email: luettgen.daphney@example.com
+      patasente_id: architecto
+      phone_number: voluptatem
+      password: consequatur
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"message":"Registered successfully","user":{"name":"kin","email":"knikolaus@example.net","patasente_id":"deserunt","phone_number":"voluptas","updated_at":"2024-04-23T17:16:34.000000Z","created_at":"2024-04-23T17:16:34.000000Z","id":4}}'
+        content: '{"message":"Registered successfully","user":{"name":"vvwegqytmu","email":"luettgen.daphney@example.com","patasente_id":"architecto","phone_number":"voluptatem","updated_at":"2024-05-04T19:55:44.000000Z","created_at":"2024-05-04T19:55:44.000000Z","id":5}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -118,7 +118,7 @@ endpoints:
         name: user_id
         description: ''
         required: true
-        example: doloribus
+        example: consectetur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -127,7 +127,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: 'l^N<anz"1(^WL-i'
+        example: "2f3(h'"
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -136,15 +136,15 @@ endpoints:
         name: token_name
         description: ''
         required: true
-        example: a
+        example: quis
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      user_id: doloribus
-      password: 'l^N<anz"1(^WL-i'
-      token_name: a
+      user_id: consectetur
+      password: "2f3(h'"
+      token_name: quis
     fileParameters: []
     responses:
       -
@@ -190,13 +190,13 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: kmedhurst@example.net
+        example: dkoepp@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: kmedhurst@example.net
+      email: dkoepp@example.com
     fileParameters: []
     responses:
       -
@@ -242,7 +242,7 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: amet
+        example: in
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -251,7 +251,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: trycia.vandervort@example.org
+        example: cartwright.mireille@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -260,15 +260,15 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: cumque
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      token: amet
-      email: trycia.vandervort@example.org
-      password: cumque
+      token: in
+      email: cartwright.mireille@example.net
+      password: qui
     fileParameters: []
     responses:
       -
@@ -310,7 +310,7 @@ endpoints:
         name: id
         description: 'The ID of the verify email.'
         required: true
-        example: voluptas
+        example: dicta
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -319,14 +319,14 @@ endpoints:
         name: hash
         description: ''
         required: true
-        example: quis
+        example: accusantium
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: voluptas
-      hash: quis
+      id: dicta
+      hash: accusantium
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

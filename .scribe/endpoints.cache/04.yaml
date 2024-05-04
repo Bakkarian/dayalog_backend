@@ -29,7 +29,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"from":2,"to":2,"patasente_purchase_order_id":null,"reference":"1c4f1e85-c90b-4841-8bd3-d9caa4f18a96","notes":"Notes","status":"completed","created_at":"2024-03-28T13:36:57.000000Z","updated_at":"2024-03-28T16:34:13.000000Z","payload":"{\"to\": 2, \"from\": 2, \"notes\": \"Notes\", \"orderItems\": [{\"id\": \"8550d100-9a29-4fed-86a9-063eb4d2b9f0\", \"qty\": \"23\", \"item\": \"Beans\", \"price\": \"2300\", \"qty_measure\": \"Litres\"}]}","items":[{"id":"8550d100-9a29-4fed-86a9-063eb4d2b9f0","qty":"23","item":"Beans","price":"2300","qty_measure":"Litres"}],"assignedVehicles":[{"order_vehicle_ref":1,"vehicle":{"id":1,"device":[{"id":48,"name":"Afasha","uniqueid":"835881","lastupdate":"2024-03-28 22:09:21","positionid":66949,"groupid":null,"attributes":"{}","phone":null,"model":null,"contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":"2024-03-28 22:09:20","motiondistance":102575587.22,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":1,"last_position":{"id":66949,"protocol":"osmand","deviceid":48,"servertime":"2024-03-28T22:09:21.000000Z","devicetime":"2024-03-28 22:09:20","fixtime":"2024-03-28 22:09:20","valid":1,"latitude":0.3576947,"longitude":32.5976538,"altitude":1178,"speed":0.00365728,"course":0,"address":null,"attributes":"{\"batteryLevel\":45.0,\"distance\":0.02,\"totalDistance\":1.0257558722E8,\"motion\":false}","accuracy":30,"network":"null"}},{"id":49,"name":"Solomon","uniqueid":"265412","lastupdate":"2023-10-20 19:15:22","positionid":29323,"groupid":null,"attributes":"{}","phone":null,"model":"Phone Model","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":{"id":29323,"protocol":"osmand","deviceid":49,"servertime":"2023-10-20T19:15:22.000000Z","devicetime":"2023-10-20 19:15:18","fixtime":"2023-10-20 19:15:18","valid":1,"latitude":0.3764655,"longitude":32.6551186,"altitude":0,"speed":0,"course":0,"address":null,"attributes":"{\"batteryLevel\":19.0,\"distance\":751.12,\"totalDistance\":53108.43,\"motion\":false}","accuracy":1500,"network":"null"}},{"id":50,"name":"Afasha","uniqueid":"43989383484834","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"tk340","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null}]},"dispatches":[{"id":1,"order_vehicle_id":1,"origin":"Bukoto Kisasi","destination":"Ndeeba","notes":"Wabodda","status":"transit","created_at":"2024-03-28T13:37:24.000000Z","updated_at":"2024-03-28T13:37:41.000000Z","deleted_at":null}]}]}],"links":{"first":"http:\/\/dayalog_api.test\/api\/orders?page=1","last":"http:\/\/dayalog_api.test\/api\/orders?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/dayalog_api.test\/api\/orders?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/dayalog_api.test\/api\/orders","per_page":25,"to":1,"total":1}}'
+        content: '{"data":[{"id":1,"from":2,"to":2,"patasente_purchase_order_id":null,"reference":"1c4f1e85-c90b-4841-8bd3-d9caa4f18a96","notes":"Notes","status":"completed","created_at":"2024-03-28T10:36:57.000000Z","updated_at":"2024-03-28T13:34:13.000000Z","payload":"{\"to\": 2, \"from\": 2, \"notes\": \"Notes\", \"orderItems\": [{\"id\": \"8550d100-9a29-4fed-86a9-063eb4d2b9f0\", \"qty\": \"23\", \"item\": \"Beans\", \"price\": \"2300\", \"qty_measure\": \"Litres\"}]}","items":[{"id":"8550d100-9a29-4fed-86a9-063eb4d2b9f0","qty":"23","item":"Beans","price":"2300","qty_measure":"Litres"}],"assignedVehicles":[{"order_vehicle_ref":1,"vehicle":{"id":1,"device":[{"id":49,"name":"Solomon","uniqueid":"265412","lastupdate":"2023-10-20 19:15:22","positionid":29323,"groupid":null,"attributes":"{}","phone":null,"model":"Phone Model","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":{"id":29323,"protocol":"osmand","deviceid":49,"servertime":"2023-10-20T16:15:22.000000Z","devicetime":"2023-10-20 19:15:18","fixtime":"2023-10-20 19:15:18","valid":1,"latitude":0.3764655,"longitude":32.6551186,"altitude":0,"speed":0,"course":0,"address":null,"attributes":"{\"batteryLevel\":19.0,\"distance\":751.12,\"totalDistance\":53108.43,\"motion\":false}","accuracy":1500,"network":"null"}},{"id":50,"name":"Afasha","uniqueid":"43989383484834","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"tk340","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":48,"name":"Afasha","uniqueid":"835881","lastupdate":"2024-03-28 22:09:21","positionid":66949,"groupid":null,"attributes":"{}","phone":null,"model":null,"contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":"2024-03-28 22:09:20","motiondistance":102575587.22,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":1,"last_position":{"id":66949,"protocol":"osmand","deviceid":48,"servertime":"2024-03-28T19:09:21.000000Z","devicetime":"2024-03-28 22:09:20","fixtime":"2024-03-28 22:09:20","valid":1,"latitude":0.3576947,"longitude":32.5976538,"altitude":1178,"speed":0.00365728,"course":0,"address":null,"attributes":"{\"batteryLevel\":45.0,\"distance\":0.02,\"totalDistance\":1.0257558722E8,\"motion\":false}","accuracy":30,"network":"null"}}]},"dispatches":[{"id":1,"order_vehicle_id":1,"origin":"Bukoto Kisasi","destination":"Ndeeba","notes":"Wabodda","status":"transit","created_at":"2024-03-28T10:37:24.000000Z","updated_at":"2024-03-28T10:37:41.000000Z","deleted_at":null}]}]}],"links":{"first":"http:\/\/dayalog_api.test\/api\/orders?page=1","last":"http:\/\/dayalog_api.test\/api\/orders?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/dayalog_api.test\/api\/orders?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/dayalog_api.test\/api\/orders","per_page":25,"to":1,"total":1}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -70,7 +70,7 @@ endpoints:
         name: from
         description: ''
         required: true
-        example: facere
+        example: dolor
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -79,7 +79,7 @@ endpoints:
         name: to
         description: ''
         required: true
-        example: est
+        example: blanditiis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: patasente_purchase_order_id
         description: ''
         required: false
-        example: 18
+        example: 19
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -97,7 +97,7 @@ endpoints:
         name: reference
         description: ''
         required: true
-        example: dolor
+        example: non
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -106,17 +106,17 @@ endpoints:
         name: notes
         description: ''
         required: false
-        example: similique
+        example: repudiandae
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      from: facere
-      to: est
-      patasente_purchase_order_id: 18
-      reference: dolor
-      notes: similique
+      from: dolor
+      to: blanditiis
+      patasente_purchase_order_id: 19
+      reference: non
+      notes: repudiandae
     fileParameters: []
     responses:
       -
@@ -173,7 +173,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"from":2,"to":2,"patasente_purchase_order_id":null,"reference":"1c4f1e85-c90b-4841-8bd3-d9caa4f18a96","notes":"Notes","status":"completed","created_at":"2024-03-28T13:36:57.000000Z","updated_at":"2024-03-28T16:34:13.000000Z","payload":"{\"to\": 2, \"from\": 2, \"notes\": \"Notes\", \"orderItems\": [{\"id\": \"8550d100-9a29-4fed-86a9-063eb4d2b9f0\", \"qty\": \"23\", \"item\": \"Beans\", \"price\": \"2300\", \"qty_measure\": \"Litres\"}]}","items":[{"id":"8550d100-9a29-4fed-86a9-063eb4d2b9f0","qty":"23","item":"Beans","price":"2300","qty_measure":"Litres"}],"assignedVehicles":[{"order_vehicle_ref":1,"vehicle":{"id":1,"device":[{"id":48,"name":"Afasha","uniqueid":"835881","lastupdate":"2024-03-28 22:09:21","positionid":66949,"groupid":null,"attributes":"{}","phone":null,"model":null,"contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":"2024-03-28 22:09:20","motiondistance":102575587.22,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":1,"last_position":{"id":66949,"protocol":"osmand","deviceid":48,"servertime":"2024-03-28T22:09:21.000000Z","devicetime":"2024-03-28 22:09:20","fixtime":"2024-03-28 22:09:20","valid":1,"latitude":0.3576947,"longitude":32.5976538,"altitude":1178,"speed":0.00365728,"course":0,"address":null,"attributes":"{\"batteryLevel\":45.0,\"distance\":0.02,\"totalDistance\":1.0257558722E8,\"motion\":false}","accuracy":30,"network":"null"}},{"id":49,"name":"Solomon","uniqueid":"265412","lastupdate":"2023-10-20 19:15:22","positionid":29323,"groupid":null,"attributes":"{}","phone":null,"model":"Phone Model","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":{"id":29323,"protocol":"osmand","deviceid":49,"servertime":"2023-10-20T19:15:22.000000Z","devicetime":"2023-10-20 19:15:18","fixtime":"2023-10-20 19:15:18","valid":1,"latitude":0.3764655,"longitude":32.6551186,"altitude":0,"speed":0,"course":0,"address":null,"attributes":"{\"batteryLevel\":19.0,\"distance\":751.12,\"totalDistance\":53108.43,\"motion\":false}","accuracy":1500,"network":"null"}},{"id":50,"name":"Afasha","uniqueid":"43989383484834","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"tk340","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null}]},"dispatches":[{"id":1,"order_vehicle_id":1,"origin":"Bukoto Kisasi","destination":"Ndeeba","notes":"Wabodda","status":"transit","created_at":"2024-03-28T13:37:24.000000Z","updated_at":"2024-03-28T13:37:41.000000Z","deleted_at":null}]}]}}'
+        content: '{"data":{"id":1,"from":2,"to":2,"patasente_purchase_order_id":null,"reference":"1c4f1e85-c90b-4841-8bd3-d9caa4f18a96","notes":"Notes","status":"completed","created_at":"2024-03-28T10:36:57.000000Z","updated_at":"2024-03-28T13:34:13.000000Z","payload":"{\"to\": 2, \"from\": 2, \"notes\": \"Notes\", \"orderItems\": [{\"id\": \"8550d100-9a29-4fed-86a9-063eb4d2b9f0\", \"qty\": \"23\", \"item\": \"Beans\", \"price\": \"2300\", \"qty_measure\": \"Litres\"}]}","items":[{"id":"8550d100-9a29-4fed-86a9-063eb4d2b9f0","qty":"23","item":"Beans","price":"2300","qty_measure":"Litres"}],"assignedVehicles":[{"order_vehicle_ref":1,"vehicle":{"id":1,"device":[{"id":49,"name":"Solomon","uniqueid":"265412","lastupdate":"2023-10-20 19:15:22","positionid":29323,"groupid":null,"attributes":"{}","phone":null,"model":"Phone Model","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":{"id":29323,"protocol":"osmand","deviceid":49,"servertime":"2023-10-20T16:15:22.000000Z","devicetime":"2023-10-20 19:15:18","fixtime":"2023-10-20 19:15:18","valid":1,"latitude":0.3764655,"longitude":32.6551186,"altitude":0,"speed":0,"course":0,"address":null,"attributes":"{\"batteryLevel\":19.0,\"distance\":751.12,\"totalDistance\":53108.43,\"motion\":false}","accuracy":1500,"network":"null"}},{"id":50,"name":"Afasha","uniqueid":"43989383484834","lastupdate":null,"positionid":null,"groupid":null,"attributes":"{}","phone":null,"model":"tk340","contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":null,"motiondistance":0,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":0,"last_position":null},{"id":48,"name":"Afasha","uniqueid":"835881","lastupdate":"2024-03-28 22:09:21","positionid":66949,"groupid":null,"attributes":"{}","phone":null,"model":null,"contact":null,"category":null,"disabled":0,"status":"offline","geofenceids":null,"expirationtime":null,"motionstate":0,"motiontime":"2024-03-28 22:09:20","motiondistance":102575587.22,"overspeedstate":0,"overspeedtime":null,"overspeedgeofenceid":0,"motionstreak":1,"last_position":{"id":66949,"protocol":"osmand","deviceid":48,"servertime":"2024-03-28T19:09:21.000000Z","devicetime":"2024-03-28 22:09:20","fixtime":"2024-03-28 22:09:20","valid":1,"latitude":0.3576947,"longitude":32.5976538,"altitude":1178,"speed":0.00365728,"course":0,"address":null,"attributes":"{\"batteryLevel\":45.0,\"distance\":0.02,\"totalDistance\":1.0257558722E8,\"motion\":false}","accuracy":30,"network":"null"}}]},"dispatches":[{"id":1,"order_vehicle_id":1,"origin":"Bukoto Kisasi","destination":"Ndeeba","notes":"Wabodda","status":"transit","created_at":"2024-03-28T10:37:24.000000Z","updated_at":"2024-03-28T10:37:41.000000Z","deleted_at":null}]}]}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -346,7 +346,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"message":"Vehicle attached successfully.","orderVehicle":{"order_id":1,"vehicle_id":1,"created_at":"2024-04-23T17:16:34.000000Z","updated_at":"2024-04-23T17:16:34.000000Z","id":3}}'
+        content: '{"message":"Vehicle attached successfully.","orderVehicle":{"order_id":1,"vehicle_id":1,"created_at":"2024-05-04T19:55:44.000000Z","updated_at":"2024-05-04T19:55:44.000000Z","id":4}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -454,7 +454,7 @@ endpoints:
         name: newStatus
         description: ''
         required: true
-        example: magni
+        example: quidem
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -470,7 +470,7 @@ endpoints:
         custom: []
     cleanUrlParameters:
       order_id: 1
-      newStatus: magni
+      newStatus: quidem
       string: cancelled
     queryParameters: []
     cleanQueryParameters: []
