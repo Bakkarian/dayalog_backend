@@ -15,6 +15,10 @@ class DevicePosition extends Model
 
     const UPDATED_AT = 'servertime';
 
+    protected $casts = [
+        'servertime' => 'datetime:Y-m-d H:i:s',
+    ];
+
     public function dispatches()
     {
         return $this->belongsToMany(Dispatch::class);
