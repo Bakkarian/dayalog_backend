@@ -15,9 +15,11 @@ class DevicePosition extends Model
 
     const UPDATED_AT = 'servertime';
 
-    protected $casts = [
-        'servertime' => 'datetime:Y-m-d H:i:s',
-    ];
+
+    public function getServertimeAttribute($value)
+    {
+        return $value->timezone(config('app.timezone'));
+    }
 
     public function dispatches()
     {
