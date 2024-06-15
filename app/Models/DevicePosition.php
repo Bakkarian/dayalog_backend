@@ -16,11 +16,6 @@ class DevicePosition extends Model
     const UPDATED_AT = 'servertime';
 
 
-    public function getServertimeAttribute($value)
-    {
-        return $value->timezone(config('app.timezone'));
-    }
-
     public function dispatches()
     {
         return $this->belongsToMany(Dispatch::class);

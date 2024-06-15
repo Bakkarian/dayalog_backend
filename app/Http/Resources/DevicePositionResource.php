@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Carbon;
 
 class DevicePositionResource extends JsonResource
 {
@@ -14,6 +15,6 @@ class DevicePositionResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [...parent::toArray($request), 'servertime' => Carbon::parse($this->servertime)->toDateTimeString()];
     }
 }
