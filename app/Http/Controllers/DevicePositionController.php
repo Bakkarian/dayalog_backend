@@ -14,14 +14,17 @@ class DevicePositionController extends Controller
     public function index(Request $request, $device)
     {
         $validatedData = $request->validate([
-            'from' => 'required|date|date_format:Y-m-d H:i:s',
-            'to' => 'required|date|date_format:Y-m-d H:i:s',
+            'from' => 'required|date_format:Y-m-d H:i:s',
+            'to' => 'required|date_format:Y-m-d H:i:s',
         ]);
 
-        $from = date($validatedData['from']);
-        $to = date($validatedData['to']);
+        $from = $validatedData['from'];
+        $to = $validatedData['to'];
 
-        $devices =  DevicePosition::where('deviceid', $device)->whereBetween('servertime', [$from, $to])->get();
+        $devices =  DevicePosition::where('deviceid', $device)
+            ->whereBetween('servertime', [$from, $to])
+            ->orderBy('servertime', 'desc')
+            ->get();
 
         return DevicePositionResource::collection($devices);
     }
