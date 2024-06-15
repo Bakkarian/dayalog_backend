@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\DevicePositionController;
 use App\Http\Controllers\DispatchController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\OrderController;
@@ -30,6 +31,7 @@ Route::middleware(['auth:sanctum'])->get(
 );
 
 Route::apiResource('devices', DeviceController::class);
+Route::get('devices/{device}/positions', [DevicePositionController::class, 'index']);
 
 Route::apiResource('drivers', DriverController::class);
 Route::post('/drivers/{driver}/vehicles/{vehicle}', [DriverController::class, 'assignVehicle']);
@@ -43,7 +45,6 @@ Route::apiResource('orders', OrderController::class);
 Route::post('/orders/{order}/vehicle/{vehicle}', [OrderController::class, 'attachVehicle']);
 Route::delete('/orders/{order}/vehicle/{vehicle}', [OrderController::class, 'detachVehicle']);
 Route::put('/orders/{order}/status/{newStatus}', [OrderController::class, 'changeStatus']);
-
 
 Route::apiResource('dispatches', DispatchController::class);
 Route::put('/dispatches/{dispatch}/status/{newStatus}', [DispatchController::class, 'changeStatusOfAnOrder']);
