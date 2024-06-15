@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\DevicePositionResource;
 use App\Models\DevicePosition;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class DevicePositionController extends Controller
 {
@@ -20,6 +21,9 @@ class DevicePositionController extends Controller
 
         $from = $validatedData['from'];
         $to = $validatedData['to'];
+
+        $from = Carbon::parse($from);
+        $to = Carbon::parse($to);
 
         $devices =  DevicePosition::where('deviceid', $device)
             ->whereBetween('servertime', [$from, $to])
