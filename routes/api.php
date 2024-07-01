@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\API\AuthenticatedSessionController;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\DevicePositionController;
 use App\Http\Controllers\DispatchController;
@@ -24,11 +25,7 @@ use Illuminate\Support\Facades\Route;
 /**
  * @group Users
  */
-Route::middleware(['auth:sanctum'])->get(
-    '/user', function (Request $request) {
-        return $request->user();
-    }
-);
+Route::middleware(['auth:sanctum'])->get('/user', [AuthenticatedSessionController::class, 'index']);
 
 Route::apiResource('devices', DeviceController::class);
 Route::get('devices/{device}/positions', [DevicePositionController::class, 'index']);
@@ -48,4 +45,6 @@ Route::put('/orders/{order}/status/{newStatus}', [OrderController::class, 'chang
 
 Route::apiResource('dispatches', DispatchController::class);
 Route::put('/dispatches/{dispatch}/status/{newStatus}', [DispatchController::class, 'changeStatusOfAnOrder']);
+
+
 require __DIR__.'/api_auth.php';
