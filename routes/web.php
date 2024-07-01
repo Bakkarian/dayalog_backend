@@ -6,6 +6,7 @@ use App\Http\Controllers\Web\DeviceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Web\DriverController;
 use App\Http\Controllers\Web\OrdersController;
+use App\Http\Controllers\Web\UserManagementController;
 use App\Http\Controllers\Web\VehicleController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -36,6 +37,7 @@ Route::get('/track-order', function () {
 })->name('trackorder');
 
 Route::middleware('auth')->group(function () {
+
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
     Route::get('/home/drivers', [HomeController::class, 'drivers'])->name('dashboard.drivers');
 
@@ -65,6 +67,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'] )->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'] )->name('profile.destroy');
+    Route::resource('users', UserManagementController::class);
 
     //Web app apis
     Route::group(['prefix'=> 'web_api', 'as'=> 'web_api.'], function () {
