@@ -1,5 +1,5 @@
 <script setup>
-import { watch } from 'vue';
+import { computed } from 'vue';
 import { Head, Link, useForm} from '@inertiajs/vue3'
 import Layout from '@/Layouts/MainLayout.vue'
 import {
@@ -31,13 +31,34 @@ const form = useForm({
 
 
 
-const disabledPermissions = computed(() => {
-    return props.permissions;
+const selectablePermissions = computed(() => {
+
+    //get selected roles
+    const selectedRoles = props.roles.filter(role => form.roles.includes(role.name));
+
+    const selectedPermissions = selectedRoles.reduce((accumulator, role) => {
+        return [...accumulator, ...role.permissions];
+    }, []);
+
+
+    const permissions = props.permissions.filter(permission => !selectedPermissions.map(e=> e.name).includes(permission.name));
+
+    return permissions;
 });
 
-const extraSelectedPermissions = computed(() => {
+const submit = () => {
+    form.transform((data) => {
+        return {
+            ...data,
+            permissions: data.permissions.filter(
+                permission => selectablePermissions.value
+                            .map(e=> e.name)
+                                .includes(permission)),
+        }
+    }).put(route('users.update', props.user.id))
+}
 
-})
+
 
 </script>
 
@@ -50,7 +71,7 @@ const extraSelectedPermissions = computed(() => {
             <h1 class="text-xl">Edit User, {{ user.name }}</h1>
         </div>
         <div class="">
-            <form   @submit.prevent="form.put(route('users.update', user.id))" >
+            <form   @submit.prevent="submit" >
             <div class="bg-white p-8 rounded-md border">
 
                 <div class="grid lg:grid-cols-2 gap-8">
@@ -86,23 +107,26 @@ const extraSelectedPermissions = computed(() => {
                     </div>
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
                         <div class="sm:col-span-5">
-                            <div>
-                                <label for="roles" class="block text-sm font-medium leading-6 text-gray-900">Roles</label>
-                                <select v-model="form.roles" id="roles" name="roles" multiple class="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                    <option v-for="role in roles" :value="role.name">{{ role.name }}</option>
-                                </select>
-                                <InputError class="mt-2" :message="form.errors.roles" />
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Roles</h3>
+                            <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Select user roles</p>
+                        </div>
+                        <div class="sm:col-span-5 grid grid-cols-3 gap-2">
+                            <div v-for="role in roles" :key="role.id">
+                                <div class="flex items-center">
+                                    <input type="checkbox" :value="role.name" v-model="form.roles" class="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500">
+                                    <label class="ml-2 block text-sm font-medium leading-6 text-gray-900">{{ role.name }}</label>
+                                </div>
                             </div>
                         </div>
-                        <di v class="sm:col-span-5">
+                        <div class="sm:col-span-5">
                             <div>
                                 <label for="permissions" class="block text-sm font-medium leading-6 text-gray-900">Permissions</label>
                                 <select v-model="form.permissions" id="permissions" name="permissions" multiple class="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                    <option v-for="permission in permissions" :value="permission.name">{{ permission.name }}</option>
+                                    <option :key="permission.name" v-for="permission in selectablePermissions" :value="permission.name">{{ permission.name }}</option>
                                 </select>
                                 <InputError class="mt-2" :message="form.errors.permissions" />
                             </div>
-                        </di>
+                        </div>
                     </div>
                 </div>
                 <FlashMessage />
