@@ -4,6 +4,7 @@ import {
   ChartPieIcon,
   DocumentDuplicateIcon,
   ShoppingBagIcon,
+  UserIcon,
   HomeIcon,
     UsersIcon,
   DeviceTabletIcon,
@@ -43,6 +44,7 @@ export default function useNavigation() {
     { name: 'Vehicles', href: route('vehicle.view'), icon: TruckIcon, current: route('vehicle.create').endsWith(url) },
     { name: 'Add Vehicle', href: route('vehicle.create'), icon: UsersIcon, current: route('vehicle.create').endsWith(url) },
     { name: 'Orders', href: route('orders'), icon: ShoppingBagIcon, current: route('orders').endsWith(url) },
+    { name: 'Users', href: route('users.index'), icon: UserIcon, current: route('users.index').endsWith(url) },
   ])
 
   const userNavigation = [
