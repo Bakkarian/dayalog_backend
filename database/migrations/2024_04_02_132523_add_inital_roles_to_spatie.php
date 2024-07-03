@@ -13,6 +13,12 @@ return new class extends Migration
     public function up(): void
     {
         Role::create(['name' => 'Super User']);
+
+        Role::create(['name' => 'Admin']);
+
+        Role::create(['name' => 'User']);
+
+
     }
 
     /**
@@ -21,5 +27,11 @@ return new class extends Migration
     public function down(): void
     {
         Role::findByName('Super User')->delete();
+
+        Role::findByName('Admin')->delete();
+
+        Role::findByName('User')->delete();
+
+        
     }
 };
