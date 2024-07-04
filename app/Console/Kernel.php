@@ -14,6 +14,8 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
         $schedule->command('app:driver-summary-emails')->dailyAt('03:00');
+
+        $schedule->command('telescope:prune  --hours=180')->daily();
     }
 
     /**
