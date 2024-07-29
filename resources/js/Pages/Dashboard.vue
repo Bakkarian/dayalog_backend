@@ -4,6 +4,7 @@
         <MapWithSideBar>
             <DriverList :locations="locations" />
         </MapWithSideBar>
+        
     <!-- The selected location -->
      <div v-if="selectedLocation" class="absolute right-0 left-0 bottom-0 pb-4">
         <div class="w-[300px] mx-auto shadow-md rounded-md">

@@ -33,10 +33,15 @@ class HomeController extends Controller
             ])->findOrFail($selectedDriverId);
         }
 
+        if($request->device){
+            $device = $devices->where('id', $request->device)->first();
+        }
+
         return Inertia::render('Dashboard', [
             'devices' => $devices,
             'drivers' => fn() => $this->drivers(),
-            'driver' => $driver ?? null
+            'driver' => $driver ?? null,
+            'device' => $device ?? null
         ]);
     }
 
