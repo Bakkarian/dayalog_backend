@@ -1,3 +1,41 @@
+<script setup>
+  import DriverList from '@/Containers/DriverList.vue';
+  import {
+    XMarkIcon,
+    BackwardIcon
+  } from '@heroicons/vue/24/outline'
+  import useDashboardMap from '@/composable/dashboardMap'
+  import { Head } from '@inertiajs/vue3';
+  import { computed } from 'vue';
+
+  import Layout from '@/Layouts/MainLayout.vue'
+  import MapWithSideBar from '@/Layouts/MapWithSideBar.vue';
+
+  defineOptions({ layout: Layout })
+
+    const props = defineProps(['devices', 'driver', 'drivers', 'selectedDeviceId' ])
+    const { selectedDevice, buildLocationFromDevice, onMapLoaded, addMarkerWithClickEvent, centerMapToPosition } = useDashboardMap()
+
+    const locations = computed(()=> {
+        return props.devices.map((device) =>  buildLocationFromDevice(device))
+    })
+
+    const selectedLocation = computed(() => locations.value.find(position => {
+        return position.deviceData.id === selectedDevice.value
+    } ))
+
+    onMapLoaded(() => {
+        locations.value.forEach((location) => {
+            addMarkerWithClickEvent(location, (e, marker) => {
+                centerMapToPosition(marker.position.lat(),marker.position.lng())
+                selectedDevice.value = marker.markerId
+            })
+        })
+    })
+
+  </script>
+
+
 <template>
     <Head title="Dashboard" />
     <div class="">
@@ -41,39 +79,4 @@
   </template>
 
 
-  <script setup>
-  import DriverList from '@/Containers/DriverList.vue';
-  import {
-    XMarkIcon,
-    BackwardIcon
-  } from '@heroicons/vue/24/outline'
-  import useDashboardMap from '@/composable/dashboardMap'
-  import { Head } from '@inertiajs/vue3';
-  import { computed } from 'vue';
-
-  import Layout from '@/Layouts/MainLayout.vue'
-  import MapWithSideBar from '@/Layouts/MapWithSideBar.vue';
-
-  defineOptions({ layout: Layout })
-
-    const props = defineProps(['devices', 'driver', 'drivers', 'selectedDeviceId' ])
-    const { selectedDevice, buildLocationFromDevice, onMapLoaded, addMarkerWithClickEvent, centerMapToPosition } = useDashboardMap()
-
-    const locations = computed(()=> {
-        return props.devices.map((device) =>  buildLocationFromDevice(device))
-    })
-
-    const selectedLocation = computed(() => locations.value.find(position => {
-        return position.deviceData.id === selectedDevice.value
-    } ))
-
-    onMapLoaded(() => {
-        locations.value.forEach((location) => {
-            addMarkerWithClickEvent(location, (e, marker) => {
-                centerMapToPosition(marker.position.lat(),marker.position.lng())
-                selectedDevice.value = marker.markerId
-            })
-        })
-    })
-
-  </script>
+  
