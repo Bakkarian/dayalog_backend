@@ -16,7 +16,6 @@ const useDashboardMap = () => {
         loaded,
         googleMapMarkers,
         googleRoutes,
-        selectedDevice,
         devices
     } = storeToRefs(store)
 
@@ -316,7 +315,6 @@ const useDashboardMap = () => {
         createRoute,
         removeRoute,
         googleRoutes,
-        selectedDevice,
         buildLocationFromDevice,
         onMapLoaded,
         addMarkerWithClickEvent,

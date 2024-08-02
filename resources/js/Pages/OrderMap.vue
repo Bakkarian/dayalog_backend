@@ -8,7 +8,7 @@ import { computed } from 'vue';
 
     defineOptions({ layout: Layout })
 
-    const { selectedDevice, buildLocationFromDevice, onMapLoaded, addMarkerWithClickEvent, centerMapToPosition, createRouteWithPlaces } = useDashboardMap()
+    const { buildLocationFromDevice, onMapLoaded, addMarkerWithClickEvent, centerMapToPosition, createRouteWithPlaces } = useDashboardMap()
 
     const props = defineProps({
         order: {
@@ -40,7 +40,6 @@ import { computed } from 'vue';
             locations.value.forEach((location) => {
                 addMarkerWithClickEvent(location, (e, marker) => {
                     centerMapToPosition(marker.position.lat(),marker.position.lng())
-                    selectedDevice.value = marker.markerId
                 })
             })
         }else{

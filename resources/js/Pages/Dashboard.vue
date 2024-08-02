@@ -5,33 +5,42 @@
     BackwardIcon
   } from '@heroicons/vue/24/outline'
   import useDashboardMap from '@/composable/dashboardMap'
-  import { Head } from '@inertiajs/vue3';
-  import { computed } from 'vue';
+  import { Head, Link, router } from '@inertiajs/vue3';
+  import { computed, watch } from 'vue';
 
   import Layout from '@/Layouts/MainLayout.vue'
   import MapWithSideBar from '@/Layouts/MapWithSideBar.vue';
 
-  defineOptions({ layout: Layout })
+    defineOptions({ layout: Layout })
 
-    const props = defineProps(['devices', 'driver', 'drivers', 'selectedDeviceId' ])
-    const { selectedDevice, buildLocationFromDevice, onMapLoaded, addMarkerWithClickEvent, centerMapToPosition } = useDashboardMap()
-
+    const props = defineProps(['devices', 'driver', 'drivers', 'device' ])
+    const { centerMapToDevice, buildLocationFromDevice, onMapLoaded, addMarkerWithClickEvent } = useDashboardMap()
     const locations = computed(()=> {
         return props.devices.map((device) =>  buildLocationFromDevice(device))
     })
 
     const selectedLocation = computed(() => locations.value.find(position => {
-        return position.deviceData.id === selectedDevice.value
+        return position.deviceData.id === props.device?.id
     } ))
 
     onMapLoaded(() => {
         locations.value.forEach((location) => {
             addMarkerWithClickEvent(location, (e, marker) => {
-                centerMapToPosition(marker.position.lat(),marker.position.lng())
-                selectedDevice.value = marker.markerId
+                router.visit(route('dashboard', { device : location.deviceData.id }), { only:['device'],  preserveState: true });
             })
         })
+
+        if(props.device) {
+            centerMapToDevice(props.device.id);
+        }
     })
+
+    watch(() => props.device, (device) => {
+        if(device) {
+            centerMapToDevice(device.id);
+        }
+    })
+
 
   </script>
 
@@ -50,10 +59,10 @@
             <div class="p-4 bg-white">
                 <div class="flex">
                     <p class="flex-auto">{{selectedLocation.title}}</p>
-                    <button type="button" @click="selectedDevice = null" class="-m-2.5 p-2.5">
+                    <Link :only="['device']" :href="route('dashboard')" class="-m-2.5 p-2.5"  preserve-state>
                         <span class="sr-only">Close device</span>
                         <XMarkIcon class="h-6 w-6 text-gray-500" aria-hidden="true" />
-                    </button>
+                    </Link>
                 </div>
                 <br />
                 <div class="flex my-2">
