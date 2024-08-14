@@ -6,6 +6,7 @@ use App\Http\Resources\HomeDriversResource;
 use App\Models\Device;
 use App\Models\DevicePosition;
 use App\Models\Driver;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -33,10 +34,29 @@ class HomeController extends Controller
             ])->findOrFail($selectedDriverId);
         }
 
+        if($request->device){
+            $device = $devices->where('id', $request->device)->first();
+        }
+
+        if($request->history){
+            // "historyFrom" => "2024-8-6 00:00:00"
+            //  "historyTo" => "2024-8-6 19:4:24"
+            $positions = $device->positions()
+                                ->whereBetween('devicetime', [  /* Carbon::parse($request->historyFrom ) */ Carbon::now()->subMinutes(181),/* Carbon::parse($request->historyTo)*/ Carbon::now() ])
+                                ->latest()
+                                    ->get();
+
+            // dd($request->all() ,$positions);
+        }
+
         return Inertia::render('Dashboard', [
             'devices' => $devices,
             'drivers' => fn() => $this->drivers(),
-            'driver' => $driver ?? null
+            'driver' => $driver ?? null,
+            'device' => $device ?? null,
+            'history' => $request->history ?? 0,
+            'historyPositions' => $positions ?? null,
+            'currentHistoryPosition' => $request->historyPosition ?? 0
         ]);
     }
 

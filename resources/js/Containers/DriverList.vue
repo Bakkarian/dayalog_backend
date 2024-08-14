@@ -1,17 +1,14 @@
 <script setup>
-import useDashboardMap from "@/composable/dashboardMap"
-import DriverList1 from "./DriverList1.vue";
-import { useMapStore } from '@/store'
-import { storeToRefs } from 'pinia'
 import { onMounted } from "vue";
-
+import { router } from '@inertiajs/vue3'
 const props  = defineProps(["locations"])
-const { centerMapToDevice }  =  useDashboardMap()
 
-const store = useMapStore()
-const {selectedDevice } = storeToRefs(store)
-
-
+const selectDevice = (deviceId) => {
+    router.visit(
+        route('dashboard', { device : deviceId }),
+        { except:['devices'],  preserveState: true }
+    );
+}
 
 
 onMounted(() => {
@@ -27,7 +24,7 @@ onMounted(() => {
 
 <template>
     <div id="driver-list" class="mt-8 w-full overflow-y-auto bg-white h-40 shadow-lg rounded-md transition-all ease-in-out duration-300">
-         <div  v-for="(location, index) in locations" @click="centerMapToDevice(location.deviceData?.id);selectedDevice = location.deviceData?.id ">
+         <div  v-for="(location, index) in locations" @click="selectDevice(location.deviceData.id)">
             <div class="flex p-4 cursor-pointer items-center" v-if="location.title.toLowerCase()!=='ivan tracker' && location.positionData ">
                 <div
                     class="flex items-center justify-center rounded-full h-[40px] w-[40px] bg-gray-400 text-white">
@@ -51,7 +48,8 @@ onMounted(() => {
                             d="M3.75 6.75a3 3 0 00-3 3v6a3 3 0 003 3h15a3 3 0 003-3v-.037c.856-.174 1.5-.93 1.5-1.838v-2.25c0-.907-.644-1.664-1.5-1.837V9.75a3 3 0 00-3-3h-15zm15 1.5a1.5 1.5 0 011.5 1.5v6a1.5 1.5 0 01-1.5 1.5h-15a1.5 1.5 0 01-1.5-1.5v-6a1.5 1.5 0 011.5-1.5h15zM4.5 9.75a.75.75 0 00-.75.75V15c0 .414.336.75.75.75H18a.75.75 0 00.75-.75v-4.5a.75.75 0 00-.75-.75H4.5z"
                             clip-rule="evenodd"/>
                     </svg>
-                    <small>{{ location.positionData["attributes"]["batteryLevel"] }}{{
+                    <small>
+                        {{ location.positionData["attributes"]["batteryLevel"] }}{{
                             location.positionData["attributes"]["batteryLevel"] ? '%' : ''
                         }}</small>
                 </div>

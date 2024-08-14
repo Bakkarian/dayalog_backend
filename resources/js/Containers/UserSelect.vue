@@ -30,7 +30,6 @@
         if (newValue != oldValue) {
             findUser(newValue)
                 .then((result) => {
-                    debugger
                     accounts.value = [...accounts.value ,result.data]
                     selectedPerson.value = result.data.id
                 })
