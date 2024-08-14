@@ -16,8 +16,12 @@ const useDashboardMap = () => {
         loaded,
         googleMapMarkers,
         googleRoutes,
-        devices
+        devices,
+        googlePolylines
     } = storeToRefs(store)
+
+
+    //TODO: Change this whole file to event driven (If a variable changes it re renders for example if a marker is added or removed the map is rendered again)
 
     const { positions : tracarPositions, events:tracarEvents, onDevicePositionChanged } = useTraccar();
 
@@ -38,11 +42,8 @@ const useDashboardMap = () => {
               center: { lat: 0.297784, lng: 32.544896 },
                 zoom: 9,
                 mapTypeId: 'roadmap',
-                // mapId: "7c96e127d329f19d",
                 styles: mapStyle,
-                // Remove Controls
                 streetViewControl: false, // Remove street view control
-                // zoomControl: false, // Remove zoom control
                 mapTypeControl: false, // Remove map type control
             });
             setInitialBounds()
@@ -243,6 +244,58 @@ const useDashboardMap = () => {
         });
     };
 
+    const plotHistory = (locations, currentPosition, pathId = null ) => {
+        console.log("plotting",pathId)
+        locations = locations.map((position) => {
+            return { lat: position.latitude, lng: position.longitude }
+        })
+        // Draw lines connecting the markers
+        const path = new google.maps.Polyline({
+          path: locations,
+          strokeColor: "#FF0000",
+          strokeOpacity: 1.0,
+          strokeWeight: 2,
+        });
+
+        path.set('pathId', pathId ??  uid());
+        path.setMap(googleMap.value);
+
+        const pathIndex  = googlePolylines.value.findIndex((path) => {
+            return path.get('pathId') == pathId
+        })
+        if(pathIndex != -1){
+            googlePolylines.value[pathIndex].setMap(null);
+            googlePolylines.value.splice(pathIndex,1);
+        }
+
+        path.setMap(googleMap.value);
+        googlePolylines.value.push(path);
+        
+
+        return path
+    }
+
+
+    const clearPolylines = () => {
+        console.log("clearing all polylines")
+        for (var i = 0; i < googlePolylines.value.length; i++) {
+            googlePolylines.value[i].setMap(null);
+        }
+        googlePolylines.value = [];
+    }
+
+    const removePolyline = (pathId) => {
+        const pathIndex  = googlePolylines.value.findIndex((path) => {
+            return path.get('pathId') == pathId
+        })
+        if(pathIndex != -1){
+            googlePolylines.value[pathIndex].setMap(null)
+            googlePolylines.value.splice(pathIndex,1);
+            return true;
+        }
+        return false;
+    }
+
 
 
     const buildLocationFromDevice = (device) => {
@@ -289,7 +342,6 @@ const useDashboardMap = () => {
 
 
     onMounted( () => {
-        //     // debugger
      });
 
      onUnmounted( () => {
@@ -318,7 +370,10 @@ const useDashboardMap = () => {
         buildLocationFromDevice,
         onMapLoaded,
         addMarkerWithClickEvent,
-        createRouteWithPlaces
+        createRouteWithPlaces,
+        plotHistory,
+        removePolyline,
+        clearPolylines
     };
 }
 export default useDashboardMap;

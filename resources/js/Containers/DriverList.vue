@@ -1,16 +1,12 @@
 <script setup>
-import { useMapStore } from '@/store'
 import { onMounted } from "vue";
 import { router } from '@inertiajs/vue3'
 const props  = defineProps(["locations"])
 
-const store = useMapStore()
-
-
 const selectDevice = (deviceId) => {
     router.visit(
         route('dashboard', { device : deviceId }),
-        { only:['device'],  preserveState: true }
+        { except:['devices'],  preserveState: true }
     );
 }
 
