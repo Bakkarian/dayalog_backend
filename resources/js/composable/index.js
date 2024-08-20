@@ -31,9 +31,13 @@ export default function useNavigation() {
     return  baseUrl + (url.value == "/"?"": url.value)
   })
 
+  /**Define routes which have a short layout */
   const shortLayout = () => {
-    return  route().current('order.view-order-map') ||
-            route().current('dashboard')
+    return [
+      route().current('order.view-order-map'),
+      route().current('dashboard'),
+      route().current('client.dashboard'),
+    ].some(r => r)
   }
 
   const navigation = computed(() => [
@@ -45,6 +49,7 @@ export default function useNavigation() {
     { name: 'Add Vehicle', href: route('vehicle.create'), icon: UsersIcon, current: route('vehicle.create').endsWith(url) },
     { name: 'Orders', href: route('orders'), icon: ShoppingBagIcon, current: route('orders').endsWith(url) },
     { name: 'Users', href: route('users.index'), icon: UserIcon, current: route('users.index').endsWith(url) },
+    { name: 'Client Dashboard ', href: route('client.dashboard'), icon: ChartPieIcon, current: route('client.dashboard').endsWith(url) },
   ])
 
   const userNavigation = [

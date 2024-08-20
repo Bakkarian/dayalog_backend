@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Web\DeviceController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\Web\DriverController;
 use App\Http\Controllers\Web\OrdersController;
 use App\Http\Controllers\Web\UserManagementController;
@@ -39,6 +40,9 @@ Route::get('/track-order', function () {
 Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+
+    Route::get('client/dashboard', [TestController::class, 'client'])->name('client.dashboard');
+
     Route::get('/home/drivers', [HomeController::class, 'drivers'])->name('dashboard.drivers');
 
     Route::get('/create-driver',  [DriverController::class,'create'] )->name('driver.create');
