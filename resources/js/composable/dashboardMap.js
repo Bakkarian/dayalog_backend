@@ -17,7 +17,7 @@ const useDashboardMap = () => {
         googleMapMarkers,
         googleRoutes,
         devices,
-        googlePolylines
+        googlePolyline
     } = storeToRefs(store)
 
 
@@ -37,8 +37,9 @@ const useDashboardMap = () => {
     }
 
     const loadMap = () => {
-        loader.load().then(async () => {
-          googleMap.value = new window.google.maps.Map(mapContainer.value, {
+        console.log('map loaded')
+        loader.importLibrary('maps').then(async () => {
+          googleMap.value = new window.google.maps.Map( mapContainer.value, {
               center: { lat: 0.297784, lng: 32.544896 },
                 zoom: 9,
                 mapTypeId: 'roadmap',
@@ -48,13 +49,6 @@ const useDashboardMap = () => {
             });
             setInitialBounds()
             loaded.value = true
-
-                  //if not empty
-            if(googleMapMarkers.value.length != 0){
-                for (var i = 0; i < googleMapMarkers.value.length; i++) {
-                    googleMapMarkers.value[i].setMap(googleMap.value);
-                }
-            }
         });
     }
 
@@ -108,9 +102,6 @@ const useDashboardMap = () => {
     }
 
     const clearMarkers = () => {
-        for (var i = 0; i < googleMapMarkers.value.length; i++) {
-            googleMapMarkers.value[i].setMap(null);
-        }
         googleMapMarkers.value = [];
     };
 
@@ -181,7 +172,6 @@ const useDashboardMap = () => {
             return route.id == routeId
         })
         if(routeIndex != -1){
-            googleRoutes.value[routeIndex].setMap(null)
             googleRoutes.value.splice(routeIndex, 1);
             return true;
         }
@@ -245,55 +235,31 @@ const useDashboardMap = () => {
     };
 
     const plotHistory = (locations, currentPosition, pathId = null ) => {
-        console.log("plotting",pathId)
         locations = locations.map((position) => {
             return { lat: position.latitude, lng: position.longitude }
         })
         // Draw lines connecting the markers
-        const path = new google.maps.Polyline({
+        googlePolyline.value = new google.maps.Polyline({
           path: locations,
           strokeColor: "#FF0000",
           strokeOpacity: 1.0,
           strokeWeight: 2,
         });
 
-        path.set('pathId', pathId ??  uid());
-        path.setMap(googleMap.value);
-
-        const pathIndex  = googlePolylines.value.findIndex((path) => {
-            return path.get('pathId') == pathId
-        })
-        if(pathIndex != -1){
-            googlePolylines.value[pathIndex].setMap(null);
-            googlePolylines.value.splice(pathIndex,1);
-        }
-
-        path.setMap(googleMap.value);
-        googlePolylines.value.push(path);
-        
-
-        return path
     }
 
 
     const clearPolylines = () => {
-        console.log("clearing all polylines")
-        for (var i = 0; i < googlePolylines.value.length; i++) {
-            googlePolylines.value[i].setMap(null);
+        console.log('clear polylines')
+        if (googlePolyline.value) {
+            googlePolyline.value = null;
         }
-        googlePolylines.value = [];
     }
 
     const removePolyline = (pathId) => {
-        const pathIndex  = googlePolylines.value.findIndex((path) => {
-            return path.get('pathId') == pathId
-        })
-        if(pathIndex != -1){
-            googlePolylines.value[pathIndex].setMap(null)
-            googlePolylines.value.splice(pathIndex,1);
-            return true;
+        if(googlePolyline.value){
+            googlePolyline.value = null;
         }
-        return false;
     }
 
 
