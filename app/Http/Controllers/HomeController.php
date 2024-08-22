@@ -17,6 +17,7 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
+        
 
         $devices = Device::with(['vehicle'])->get();
 
@@ -41,10 +42,19 @@ class HomeController extends Controller
         if($request->history){
             // "historyFrom" => "2024-8-6 00:00:00"
             //  "historyTo" => "2024-8-6 19:4:24"
+
+
+            $historyFrom = Carbon::createFromTimestamp($request->historyFrom)->format("Y-m-d H:i:s");
+            $historyTo = Carbon::createFromTimestamp($request->historyTo)->format("Y-m-d H:i:s");
+
+
             $positions = $device->positions()
-                                ->whereBetween('devicetime', [  /* Carbon::parse($request->historyFrom ) */ Carbon::now()->subMinutes(181),/* Carbon::parse($request->historyTo)*/ Carbon::now() ])
+                                ->whereBetween('devicetime', [   
+                                        Carbon::parse($historyFrom ), 
+                                        Carbon::parse($historyTo)
+                                    ])
                                 ->latest()
-                                    ->get();
+                                ->get();
 
             // dd($request->all() ,$positions);
         }
@@ -59,6 +69,7 @@ class HomeController extends Controller
             'currentHistoryPosition' => $request->historyPosition ?? 0
         ]);
     }
+
 
 
     public function drivers()

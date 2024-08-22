@@ -6,7 +6,7 @@ const props  = defineProps(["locations"])
 const selectDevice = (deviceId) => {
     router.visit(
         route('dashboard', { device : deviceId }),
-        { except:['devices'],  preserveState: true }
+        { except:['devices', 'historyPositions' ],  preserveState: true, replace : true }
     );
 }
 

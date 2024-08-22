@@ -5,13 +5,12 @@
     BackwardIcon,
     ForwardIcon, 
     PauseIcon, 
-    PlayIcon,
-    //revind icon
-    ChevronRightIcon 
+    PlayIcon, 
   } from '@heroicons/vue/24/outline'
   import useDashboardMap from '@/composable/dashboardMap'
   import { Head, Link, router } from '@inertiajs/vue3';
   import { computed, watch } from 'vue';
+  import dayjs from 'dayjs';
 
   import Layout from '@/Layouts/MainLayout.vue'
   import MapWithSideBar from '@/Layouts/MapWithSideBar.vue';
@@ -26,7 +25,6 @@
         onMapLoaded, 
         addMarkerWithClickEvent, 
         plotHistory,
-        removePolyline,
         clearPolylines,
     } = useDashboardMap()
 
@@ -42,7 +40,7 @@
     onMapLoaded(() => {
         locations.value.forEach((location) => {
             addMarkerWithClickEvent(location, (e, marker) => {
-                router.visit(route('dashboard', { device : location.deviceData.id }), { except:['devices'],  preserveState: true });
+                router.visit(route('dashboard', { device : location.deviceData.id }), { except:['devices', 'historyPositions'],  preserveState: true });
             })
         })
 
@@ -62,7 +60,7 @@
             centerMapToDevice(device.id);
         }
             
-            if(props.history){
+            if(props.history && props.historyPositions){
                 console.log("history", props.history)
                 plotHistory(props.historyPositions, props.currentHistoryPosition, 'history')
             }
@@ -77,17 +75,12 @@
 
 
     const historyLink = computed(() => {
-        const now = new Date();
-        
-        const today = new Date(now.getFullYear(), now.getMonth() , now.getDate() + 1);
-        const formattedStartOfDay = today.toISOString().slice(0, 10) + ' 00:00:00'; // Get 'YYYY-MM-DD 00:00:00' format
-        const formattedNow = today.toISOString().slice(0, 10) + ' ' + now.toISOString().slice(11, 19); // Get 'YYYY-MM-DD HH:MM:SS' format
       
         return route('dashboard', {
             device: props.device?.id,
             history: true,
-            historyFrom: formattedStartOfDay,
-            historyTo: formattedNow
+            historyFrom: dayjs('2024-08-13 00:00:00').startOf('day').unix(),
+            historyTo: dayjs().unix()
         })
     })
 
@@ -141,7 +134,7 @@
                             <div v-if="!props.history" class="flex my-2 border-t">
                                 <Link 
                                     :href="historyLink" 
-                                    :except="['devices']"
+                                    :except="['devices','historyPositions']"
                                     class="p-2 bg-gray-100 rounded-full mt-2 hover:bg-green-400"
                                     preserve-state
                                     ><div class="h-5 w-5">
