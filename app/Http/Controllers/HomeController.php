@@ -53,7 +53,6 @@ class HomeController extends Controller
                                         Carbon::parse($historyFrom ), 
                                         Carbon::parse($historyTo)
                                     ])
-                                ->latest()
                                 ->get();
 
             // dd($request->all() ,$positions);
@@ -66,7 +65,9 @@ class HomeController extends Controller
             'device' => $device ?? null,
             'history' => $request->history ?? 0,
             'historyPositions' => $positions ?? null,
-            'currentHistoryPosition' => $request->historyPosition ?? 0
+            'currentHistoryPosition' => $request->historyPosition ?? 0,
+            'historyFrom' => $request->historyFrom ?? null,
+            'historyTo' => $request->historyTo ?? null
         ]);
     }
 

@@ -17,7 +17,7 @@
 
     defineOptions({ layout: Layout })
 
-    const props = defineProps(['devices', 'driver', 'drivers', 'device', 'history', 'historyPositions', 'currentHistoryPosition' ])
+    const props = defineProps(['devices', 'driver', 'drivers', 'device', 'history', 'historyPositions', 'currentHistoryPosition', 'historyFrom', 'historyTo' ])
 
     const { 
         centerMapToDevice, 
@@ -49,19 +49,21 @@
         }
         
         if(props.history){
-            console.log("history", props.history)
-            plotHistory(props.historyPositions, props.currentHistoryPosition, 'history')
+            plotHistory(props.historyPositions, 'history')
+
+            if(props.currentHistoryPosition){
+                //create a maker to show current location
+            }
         }
 
     })
 
     watch(() => props.device, (device) => {
-        if(device) {
-            centerMapToDevice(device.id);
-        }
+            if(device) {
+                centerMapToDevice(device.id);
+            }
             
             if(props.history && props.historyPositions){
-                console.log("history", props.history)
                 plotHistory(props.historyPositions, props.currentHistoryPosition, 'history')
             }
     })
@@ -79,13 +81,12 @@
         return route('dashboard', {
             device: props.device?.id,
             history: true,
-            historyFrom: dayjs('2024-08-13 00:00:00').startOf('day').unix(),
+            historyFrom: dayjs('2024-08-14 15:00:00').startOf('day').unix(),
             historyTo: dayjs().unix()
         })
     })
 
     watch(()=> props, () => {
-       // console.log("props", props)
     })
   </script>
 
@@ -104,7 +105,12 @@
             <div class="flex w-full header">
               <div class="flex w-full  justify-content-end align-items-end">
                    <div class="flex w-full justify-end">
-                        <Link :only="['device']" :href="route('dashboard')" class="-m-2.5 p-2.5 inline-flex items-center justify-center rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"  preserve-state>
+                        <Link 
+                            :only="['device']" 
+                            :href="route('dashboard')" 
+                            class="-m-2.5 p-2.5 inline-flex items-center justify-center rounded-md \
+                            text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none  \
+                             focus:ring-2 focus:ring-inset focus:ring-indigo-500"  preserve-state>
                             <span class="sr-only">Close device</span>
                             <XMarkIcon class="h-6 w-6 text-gray-500" aria-hidden="true" />
                         </Link>

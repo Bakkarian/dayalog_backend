@@ -1,7 +1,8 @@
-import { onMounted, onUnmounted, ref, watch } from "vue";
+import { onMounted, onUnmounted, ref, toRaw, watch } from "vue";
 import { Loader } from "@googlemaps/js-api-loader"
 import { mapStyle } from '@/utils/index';
 import markerImage from "@/assets/marker.png"
+import directionMarker from "@/assets/direction-arrow.svg"
 import { useMapStore } from '@/store'
 import { storeToRefs } from 'pinia'
 import useTraccar from "@/composable/traccar"
@@ -37,7 +38,6 @@ const useDashboardMap = () => {
     }
 
     const loadMap = () => {
-        console.log('map loaded')
         loader.importLibrary('maps').then(async () => {
           googleMap.value = new window.google.maps.Map( mapContainer.value, {
               center: { lat: 0.297784, lng: 32.544896 },
@@ -64,10 +64,8 @@ const useDashboardMap = () => {
 
     const addMarker = (newLocation ) => {
         const  { position, title , id } = newLocation
-
         const marker = new google.maps.Marker({
             position: position,
-            map: googleMap.value,
             title: title,
             icon: {
                 url: markerImage,
@@ -78,7 +76,7 @@ const useDashboardMap = () => {
         });
         marker.set('markerId', id ?? uid() );
 
-        googleMapMarkers.value.push(marker);
+        googleMapMarkers.value = [...googleMapMarkers.value, marker];
         return marker
     }
 
@@ -234,24 +232,51 @@ const useDashboardMap = () => {
         });
     };
 
-    const plotHistory = (locations, currentPosition, pathId = null ) => {
+    const plotHistory = (locations, pathId = null ) => {
+        
+        const markers = [];
+
         locations = locations.map((position) => {
-            return { lat: position.latitude, lng: position.longitude }
+            return { lat: position.latitude, lng: position.longitude, ...position }
         })
+
+        locations.forEach((location, index) => {
+            const marker = new google.maps.Marker({
+                position: location,
+                icon: {
+                    path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                    scale: 2,
+                    rotation : location?.course ?? 0,
+                },
+            });
+            marker.markerId = uid();
+            marker.setMap(googleMap.value);    
+            googleMapMarkers.value = [...googleMapMarkers.value, marker];
+            markers.push(marker);
+        });
         // Draw lines connecting the markers
-        googlePolyline.value = new google.maps.Polyline({
+        const polyline = new google.maps.Polyline({
           path: locations,
           strokeColor: "#FF0000",
           strokeOpacity: 1.0,
           strokeWeight: 2,
         });
 
+        polyline.set('markers', markers );
+        googlePolyline.value = polyline
+
     }
 
 
     const clearPolylines = () => {
-        console.log('clear polylines')
         if (googlePolyline.value) {
+            const markers = googlePolyline.value.get('markers');
+            const markersIds = markers.map(marker => marker.markerId);
+
+            markersIds.forEach(markerId => {
+               googleMapMarkers.value = googleMapMarkers.value.filter(marker => marker.markerId !== markerId);
+            });
+
             googlePolyline.value = null;
         }
     }
@@ -265,7 +290,6 @@ const useDashboardMap = () => {
 
 
     const buildLocationFromDevice = (device) => {
-        // console.log(device.last_position)
             let latestPosition = tracarPositions.value.find(position => position.deviceId === device.id)
 
             if(!latestPosition){
@@ -323,7 +347,6 @@ const useDashboardMap = () => {
         googleMap,
         addMarker,
         addMarkers,
-        updateMarker ,
         loaded,
         addMarkerFromPosition,
         centerMapToPosition,
