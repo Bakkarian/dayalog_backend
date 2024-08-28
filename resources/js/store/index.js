@@ -16,15 +16,17 @@ export const useMapStore = defineStore('map', () => {
     const googleRoutes = ref([]);
 
     watch([() => googleMapMarkers.value ],([newGoogleMapMarkers],[oldGoogleMapMarkers]) => {
-        if(oldGoogleMapMarkers){
-            for (var i = 0; i < oldGoogleMapMarkers.length; i++) {
-                oldGoogleMapMarkers[i].setMap(null);
-            }
+        if (oldGoogleMapMarkers?.length > 0) {
+            toRaw(oldGoogleMapMarkers).forEach((marker) => { 
+                //check if is a Proxy
+               toRaw(marker).setMap(null)
+            });
         }
-        if(newGoogleMapMarkers){
-            for (var i = 0; i < newGoogleMapMarkers.length; i++) {
-                newGoogleMapMarkers[i].setMap(googleMap.value)
-            }
+
+        if (newGoogleMapMarkers?.length > 0) {
+            toRaw(newGoogleMapMarkers).forEach((marker) => {
+                toRaw(marker).setMap(googleMap.value)
+            });
         }
     })
 
