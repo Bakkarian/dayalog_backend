@@ -12,4 +12,7 @@ class TestController extends Controller
     public function client(){
         return Inertia::render( 'ClientDashboard' );
     }
+    public function clientCreatePackage(){
+        return Inertia::render( 'ClientCreatePackage' );
+    }
 }
