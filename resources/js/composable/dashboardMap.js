@@ -1,7 +1,8 @@
-import { onMounted, onUnmounted, ref, watch } from "vue";
+import { onMounted, onUnmounted, ref, toRaw, watch } from "vue";
 import { Loader } from "@googlemaps/js-api-loader"
 import { mapStyle } from '@/utils/index';
 import markerImage from "@/assets/marker.png"
+import directionMarker from "@/assets/direction-arrow.svg"
 import { useMapStore } from '@/store'
 import { storeToRefs } from 'pinia'
 import useTraccar from "@/composable/traccar"
@@ -17,7 +18,7 @@ const useDashboardMap = () => {
         googleMapMarkers,
         googleRoutes,
         devices,
-        googlePolylines
+        googlePolyline
     } = storeToRefs(store)
 
 
@@ -37,8 +38,8 @@ const useDashboardMap = () => {
     }
 
     const loadMap = () => {
-        loader.load().then(async () => {
-          googleMap.value = new window.google.maps.Map(mapContainer.value, {
+        loader.importLibrary('maps').then(async () => {
+          googleMap.value = new window.google.maps.Map( mapContainer.value, {
               center: { lat: 0.297784, lng: 32.544896 },
                 zoom: 9,
                 mapTypeId: 'roadmap',
@@ -48,13 +49,6 @@ const useDashboardMap = () => {
             });
             setInitialBounds()
             loaded.value = true
-
-                  //if not empty
-            if(googleMapMarkers.value.length != 0){
-                for (var i = 0; i < googleMapMarkers.value.length; i++) {
-                    googleMapMarkers.value[i].setMap(googleMap.value);
-                }
-            }
         });
     }
 
@@ -70,10 +64,8 @@ const useDashboardMap = () => {
 
     const addMarker = (newLocation ) => {
         const  { position, title , id } = newLocation
-
         const marker = new google.maps.Marker({
             position: position,
-            map: googleMap.value,
             title: title,
             icon: {
                 url: markerImage,
@@ -84,7 +76,7 @@ const useDashboardMap = () => {
         });
         marker.set('markerId', id ?? uid() );
 
-        googleMapMarkers.value.push(marker);
+        googleMapMarkers.value = [...googleMapMarkers.value, marker];
         return marker
     }
 
@@ -108,9 +100,6 @@ const useDashboardMap = () => {
     }
 
     const clearMarkers = () => {
-        for (var i = 0; i < googleMapMarkers.value.length; i++) {
-            googleMapMarkers.value[i].setMap(null);
-        }
         googleMapMarkers.value = [];
     };
 
@@ -181,7 +170,6 @@ const useDashboardMap = () => {
             return route.id == routeId
         })
         if(routeIndex != -1){
-            googleRoutes.value[routeIndex].setMap(null)
             googleRoutes.value.splice(routeIndex, 1);
             return true;
         }
@@ -244,62 +232,64 @@ const useDashboardMap = () => {
         });
     };
 
-    const plotHistory = (locations, currentPosition, pathId = null ) => {
-        console.log("plotting",pathId)
+    const plotHistory = (locations, pathId = null ) => {
+        
+        const markers = [];
+
         locations = locations.map((position) => {
-            return { lat: position.latitude, lng: position.longitude }
+            return { lat: position.latitude, lng: position.longitude, ...position }
         })
+
+        locations.forEach((location, index) => {
+            const marker = new google.maps.Marker({
+                position: location,
+                icon: {
+                    path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                    scale: 2,
+                    rotation : location?.course ?? 0,
+                },
+            });
+            marker.markerId = uid();
+            marker.setMap(googleMap.value);    
+            googleMapMarkers.value = [...googleMapMarkers.value, marker];
+            markers.push(marker);
+        });
         // Draw lines connecting the markers
-        const path = new google.maps.Polyline({
+        const polyline = new google.maps.Polyline({
           path: locations,
           strokeColor: "#FF0000",
           strokeOpacity: 1.0,
           strokeWeight: 2,
         });
 
-        path.set('pathId', pathId ??  uid());
-        path.setMap(googleMap.value);
+        polyline.set('markers', markers );
+        googlePolyline.value = polyline
 
-        const pathIndex  = googlePolylines.value.findIndex((path) => {
-            return path.get('pathId') == pathId
-        })
-        if(pathIndex != -1){
-            googlePolylines.value[pathIndex].setMap(null);
-            googlePolylines.value.splice(pathIndex,1);
-        }
-
-        path.setMap(googleMap.value);
-        googlePolylines.value.push(path);
-        
-
-        return path
     }
 
 
     const clearPolylines = () => {
-        console.log("clearing all polylines")
-        for (var i = 0; i < googlePolylines.value.length; i++) {
-            googlePolylines.value[i].setMap(null);
+        if (googlePolyline.value) {
+            const markers = googlePolyline.value.get('markers');
+            const markersIds = markers.map(marker => marker.markerId);
+
+            markersIds.forEach(markerId => {
+               googleMapMarkers.value = googleMapMarkers.value.filter(marker => marker.markerId !== markerId);
+            });
+
+            googlePolyline.value = null;
         }
-        googlePolylines.value = [];
     }
 
     const removePolyline = (pathId) => {
-        const pathIndex  = googlePolylines.value.findIndex((path) => {
-            return path.get('pathId') == pathId
-        })
-        if(pathIndex != -1){
-            googlePolylines.value[pathIndex].setMap(null)
-            googlePolylines.value.splice(pathIndex,1);
-            return true;
+        if(googlePolyline.value){
+            googlePolyline.value = null;
         }
-        return false;
     }
 
 
 
     const buildLocationFromDevice = (device) => {
-        // console.log(device.last_position)
             let latestPosition = tracarPositions.value.find(position => position.deviceId === device.id)
 
             if(!latestPosition){
@@ -357,7 +347,6 @@ const useDashboardMap = () => {
         googleMap,
         addMarker,
         addMarkers,
-        updateMarker ,
         loaded,
         addMarkerFromPosition,
         centerMapToPosition,

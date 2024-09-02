@@ -5,20 +5,19 @@
     BackwardIcon,
     ForwardIcon, 
     PauseIcon, 
-    PlayIcon,
-    //revind icon
-    ChevronRightIcon 
+    PlayIcon, 
   } from '@heroicons/vue/24/outline'
   import useDashboardMap from '@/composable/dashboardMap'
   import { Head, Link, router } from '@inertiajs/vue3';
   import { computed, watch } from 'vue';
+  import dayjs from 'dayjs';
 
   import Layout from '@/Layouts/MainLayout.vue'
   import MapWithSideBar from '@/Layouts/MapWithSideBar.vue';
 
     defineOptions({ layout: Layout })
 
-    const props = defineProps(['devices', 'driver', 'drivers', 'device', 'history', 'historyPositions', 'currentHistoryPosition' ])
+    const props = defineProps(['devices', 'driver', 'drivers', 'device', 'history', 'historyPositions', 'currentHistoryPosition', 'historyFrom', 'historyTo' ])
 
     const { 
         centerMapToDevice, 
@@ -26,7 +25,6 @@
         onMapLoaded, 
         addMarkerWithClickEvent, 
         plotHistory,
-        removePolyline,
         clearPolylines,
     } = useDashboardMap()
 
@@ -42,7 +40,7 @@
     onMapLoaded(() => {
         locations.value.forEach((location) => {
             addMarkerWithClickEvent(location, (e, marker) => {
-                router.visit(route('dashboard', { device : location.deviceData.id }), { except:['devices'],  preserveState: true });
+                router.visit(route('dashboard', { device : location.deviceData.id }), { except:['devices', 'historyPositions'],  preserveState: true });
             })
         })
 
@@ -51,19 +49,21 @@
         }
         
         if(props.history){
-            console.log("history", props.history)
-            plotHistory(props.historyPositions, props.currentHistoryPosition, 'history')
+            plotHistory(props.historyPositions, 'history')
+
+            if(props.currentHistoryPosition){
+                //create a maker to show current location
+            }
         }
 
     })
 
     watch(() => props.device, (device) => {
-        if(device) {
-            centerMapToDevice(device.id);
-        }
+            if(device) {
+                centerMapToDevice(device.id);
+            }
             
-            if(props.history){
-                console.log("history", props.history)
+            if(props.history && props.historyPositions){
                 plotHistory(props.historyPositions, props.currentHistoryPosition, 'history')
             }
     })
@@ -77,22 +77,16 @@
 
 
     const historyLink = computed(() => {
-        const now = new Date();
-        
-        const today = new Date(now.getFullYear(), now.getMonth() , now.getDate() + 1);
-        const formattedStartOfDay = today.toISOString().slice(0, 10) + ' 00:00:00'; // Get 'YYYY-MM-DD 00:00:00' format
-        const formattedNow = today.toISOString().slice(0, 10) + ' ' + now.toISOString().slice(11, 19); // Get 'YYYY-MM-DD HH:MM:SS' format
       
         return route('dashboard', {
             device: props.device?.id,
             history: true,
-            historyFrom: formattedStartOfDay,
-            historyTo: formattedNow
+            historyFrom: dayjs('2024-08-14 15:00:00').startOf('day').unix(),
+            historyTo: dayjs().unix()
         })
     })
 
     watch(()=> props, () => {
-       // console.log("props", props)
     })
   </script>
 
@@ -111,7 +105,12 @@
             <div class="flex w-full header">
               <div class="flex w-full  justify-content-end align-items-end">
                    <div class="flex w-full justify-end">
-                        <Link :only="['device']" :href="route('dashboard')" class="-m-2.5 p-2.5 inline-flex items-center justify-center rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"  preserve-state>
+                        <Link 
+                            :only="['device']" 
+                            :href="route('dashboard')" 
+                            class="-m-2.5 p-2.5 inline-flex items-center justify-center rounded-md \
+                            text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none  \
+                             focus:ring-2 focus:ring-inset focus:ring-indigo-500"  preserve-state>
                             <span class="sr-only">Close device</span>
                             <XMarkIcon class="h-6 w-6 text-gray-500" aria-hidden="true" />
                         </Link>
@@ -141,7 +140,7 @@
                             <div v-if="!props.history" class="flex my-2 border-t">
                                 <Link 
                                     :href="historyLink" 
-                                    :except="['devices']"
+                                    :except="['devices','historyPositions']"
                                     class="p-2 bg-gray-100 rounded-full mt-2 hover:bg-green-400"
                                     preserve-state
                                     ><div class="h-5 w-5">
