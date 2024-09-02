@@ -2,6 +2,7 @@ import { computed, onMounted, ref } from 'vue'
 import {
   CalendarIcon,
   ChartPieIcon,
+  BriefcaseIcon,
   DocumentDuplicateIcon,
   ShoppingBagIcon,
   UserIcon,
@@ -37,6 +38,7 @@ export default function useNavigation() {
       route().current('order.view-order-map'),
       route().current('dashboard'),
       route().current('client.dashboard'),
+      route().current('clientCreatePackage.addPackage'),
     ].some(r => r)
   }
 
@@ -50,6 +52,7 @@ export default function useNavigation() {
     { name: 'Orders', href: route('orders'), icon: ShoppingBagIcon, current: route('orders').endsWith(url) },
     { name: 'Users', href: route('users.index'), icon: UserIcon, current: route('users.index').endsWith(url) },
     { name: 'Client Dashboard ', href: route('client.dashboard'), icon: ChartPieIcon, current: route('client.dashboard').endsWith(url) },
+    { name: 'Add Package ', href: route('clientCreatePackage.addPackage'), icon: BriefcaseIcon, current: route('clientCreatePackage.addPackage').endsWith(url) },
   ])
 
   const userNavigation = [
