@@ -276,11 +276,13 @@ const useDashboardMap = () => {
         
         const markers = [];
 
-        locations = locations.filter((_, index) => index % 15 === 0).map((position) => {
+        locations = locations.map((position) => {
             return { lat: position.latitude, lng: position.longitude, ...position }
         })
 
-        locations.forEach((location, index) => {
+        const markersPoints = locations.filter((_, index) => index % 15 === 0)
+
+        markersPoints.forEach((location, index) => {
             const marker = new google.maps.Marker({
                 position: location,
                 icon: {
