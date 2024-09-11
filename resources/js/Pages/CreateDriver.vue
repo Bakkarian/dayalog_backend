@@ -15,7 +15,7 @@
                         <div class="sm:col-span-5">
                             <InputLabel for="name" value="Full Name *" />
                             <div class="mt-2">
-                                <TextInput id="name" type="text" placeholder="Plate number of the vehicle" v-model="form.name" />
+                                <TextInput id="name" type="text" placeholder="Enter Driver's full name" v-model="form.name" />
                                 <InputError class="mt-2" :message="form.errors.name" />
                             </div>
                         </div>

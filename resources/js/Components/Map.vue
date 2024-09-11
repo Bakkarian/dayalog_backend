@@ -1,10 +1,16 @@
 <script setup>
  import useDashboardMap from '@/composable/dashboardMap'
- import { onMounted } from 'vue';
- const { mapContainer, loadMap } = useDashboardMap()
+ import { onMounted, onUnmounted } from 'vue';
+ const { mapContainer, loadMap, resetMapStore } = useDashboardMap()
 
     onMounted(() => {
+        console.log('map mounted')
         loadMap();
+    })
+
+    onUnmounted(()=> {
+        console.log('map unmounted')
+        resetMapStore();
     })
 
 </script>

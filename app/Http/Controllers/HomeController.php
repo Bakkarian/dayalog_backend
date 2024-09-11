@@ -18,15 +18,8 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         
-
-        $devices = Device::with(['vehicle'])->get();
-
-        $devices->map(function ($device){
-          $device->last_position =  DevicePosition::where('deviceid', $device->id )->orderBy('id', 'desc')->first();
-          return $device;
-        });
-
         $selectedDriverId =  $request->driver;
+        
         if($selectedDriverId){
             $driver = Driver::with([
                 'vehicles.device',
@@ -36,17 +29,13 @@ class HomeController extends Controller
         }
 
         if($request->device){
-            $device = $devices->where('id', $request->device)->first();
+            $device = Device::with(['vehicle', 'lastPosition' ])->where('id', $request->device)->first();
         }
 
         if($request->history){
-            // "historyFrom" => "2024-8-6 00:00:00"
-            //  "historyTo" => "2024-8-6 19:4:24"
-
 
             $historyFrom = Carbon::createFromTimestamp($request->historyFrom)->format("Y-m-d H:i:s");
             $historyTo = Carbon::createFromTimestamp($request->historyTo)->format("Y-m-d H:i:s");
-
 
             $positions = $device->positions()
                                 ->whereBetween('devicetime', [   
@@ -54,12 +43,10 @@ class HomeController extends Controller
                                         Carbon::parse($historyTo)
                                     ])
                                 ->get();
-
-            // dd($request->all() ,$positions);
         }
 
         return Inertia::render('Dashboard', [
-            'devices' => $devices,
+            'devices' => fn() => $this->devices(),
             'drivers' => fn() => $this->drivers(),
             'driver' => $driver ?? null,
             'device' => $device ?? null,
@@ -72,8 +59,20 @@ class HomeController extends Controller
     }
 
 
+    private function devices(){
+        $devices = Device::with(['vehicle'])->get();
 
-    public function drivers()
+        $devices->map(function ($device){
+          $device->last_position =  DevicePosition::where('deviceid', $device->id )->orderBy('id', 'desc')->first();
+          return $device;
+        });
+        
+        return  $devices;
+    }
+
+
+
+    private function drivers()
     {
         $drivers = Driver::with(['vehicles.dispatches', 'bioData'])->get();
         return response()->json(HomeDriversResource::collection($drivers));

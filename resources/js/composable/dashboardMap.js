@@ -2,7 +2,6 @@ import { onMounted, onUnmounted, ref, toRaw, watch } from "vue";
 import { Loader } from "@googlemaps/js-api-loader"
 import { mapStyle } from '@/utils/index';
 import markerImage from "@/assets/marker.png"
-import directionMarker from "@/assets/direction-arrow.svg"
 import { useMapStore } from '@/store'
 import { storeToRefs } from 'pinia'
 import useTraccar from "@/composable/traccar"
@@ -18,13 +17,13 @@ const useDashboardMap = () => {
         googleMapMarkers,
         googleRoutes,
         devices,
-        googlePolyline
+        googlePolyline,
     } = storeToRefs(store)
 
 
     //TODO: Change this whole file to event driven (If a variable changes it re renders for example if a marker is added or removed the map is rendered again)
 
-    const { positions : tracarPositions, events:tracarEvents, onDevicePositionChanged } = useTraccar();
+    const { positions : tracarPositions, devices:traccarDevices, events:tracarEvents, onDevicePositionChanged } = useTraccar();
 
     const onLoadedFunction = ref(false);
 
@@ -39,16 +38,17 @@ const useDashboardMap = () => {
 
     const loadMap = () => {
         loader.importLibrary('maps').then(async () => {
-          googleMap.value = new window.google.maps.Map( mapContainer.value, {
-              center: { lat: 0.297784, lng: 32.544896 },
-                zoom: 9,
-                mapTypeId: 'roadmap',
-                styles: mapStyle,
-                streetViewControl: false, // Remove street view control
-                mapTypeControl: false, // Remove map type control
-            });
-            setInitialBounds()
-            loaded.value = true
+            if(!mapContainer.value) return
+                googleMap.value = new window.google.maps.Map( mapContainer.value, {
+                    center: { lat: 0.297784, lng: 32.544896 },
+                    zoom: 9,
+                    mapTypeId: 'roadmap',
+                    styles: mapStyle,
+                    streetViewControl: false, // Remove street view control
+                    mapTypeControl: false, // Remove map type control
+                });
+                setInitialBounds()
+                loaded.value = true
         });
     }
 
@@ -62,20 +62,20 @@ const useDashboardMap = () => {
         googleMap.value.fitBounds(bounds, padding);
     }
 
-    const addMarker = (newLocation ) => {
+    const addMarker = (newLocation, markerId = null ,options = {} ) => {
         const  { position, title , id } = newLocation
         const marker = new google.maps.Marker({
             position: position,
-            title: title,
+            title: title ?? '',
             icon: {
                 url: markerImage,
                 scaledSize: new google.maps.Size(40, 40)
             },
             clickable: true,
             draggable: false,
+            ...options
         });
-        marker.set('markerId', id ?? uid() );
-
+        marker.set('markerId',  markerId ?? (id ?? uid()) );
         googleMapMarkers.value = [...googleMapMarkers.value, marker];
         return marker
     }
@@ -95,8 +95,48 @@ const useDashboardMap = () => {
         return false;
     }
 
-    const addMarkerFromPosition = (position) => {
+    const removeMarker = (id) => {
+        const markerIndex  = googleMapMarkers.value.findIndex((marker) => {
+            return marker.markerId == id
+        })
+        if(markerIndex != -1){
+            googleMapMarkers.value = [...googleMapMarkers.value.filter((marker) => marker.markerId != id )]
+            return true;
+        }
+        return false;
+    }
 
+    const addMarkerFromPosition = (position, markerId = null ,options = {} ) => {
+        position = { ...position, lat: position.latitude, lng: position.longitude }
+        const marker = new google.maps.Marker({
+            position: position,
+            icon: {
+                url: markerImage,
+                scaledSize: new google.maps.Size(40, 40)
+            },
+            clickable: true,
+            draggable: false,
+            ...options
+        });
+        marker.set('markerId',  markerId ?? (id ?? uid()) );
+        googleMapMarkers.value = [...googleMapMarkers.value, marker];
+        return marker
+    }
+
+    const updateAddMarkerFromPosition = (position, id) => {
+        
+        position = { ...position, lat: position.latitude, lng: position.longitude }
+
+        const markerIndex  = googleMapMarkers.value.findIndex((marker) => {
+            return marker.markerId == id
+        })
+
+        if(markerIndex != -1){
+            googleMapMarkers.value[markerIndex].setPosition({ lat: position?.latitude, lng: position?.longitude },)
+            return googleMapMarkers.value[markerIndex];
+        }
+
+        return false;
     }
 
     const clearMarkers = () => {
@@ -236,7 +276,7 @@ const useDashboardMap = () => {
         
         const markers = [];
 
-        locations = locations.map((position) => {
+        locations = locations.filter((_, index) => index % 15 === 0).map((position) => {
             return { lat: position.latitude, lng: position.longitude, ...position }
         })
 
@@ -297,18 +337,19 @@ const useDashboardMap = () => {
             }
 
             return  {
-                position: { lat: latestPosition?.latitude, lng: latestPosition?.longitude },
+                position: { 
+                    lat: latestPosition?.latitude, 
+                    lng: latestPosition?.longitude 
+                },
                 title: device.name,
-                status: device.status,
                 positionData: latestPosition,
-                deviceData: device,
+                ...device
         };
     }
 
 
     const addMarkerWithClickEvent = (newLocation, callback, ...args) => {
-        newLocation.id = newLocation.deviceData.id
-        if(newLocation.positionData){
+        if(newLocation){
             const marker = addMarker(newLocation);
             marker.addListener('click', (e) => callback(e,marker, ...args));
         }
@@ -319,6 +360,10 @@ const useDashboardMap = () => {
     const onMapLoaded = (callback ) => {
         onLoadedFunction.value = callback;
     };
+
+    const resetMapStore = () => {
+        store.$reset()
+    }
 
      watch(loaded, (newLoaded) => {
          if(newLoaded && onLoadedFunction.value){
@@ -331,15 +376,6 @@ const useDashboardMap = () => {
     })
 
 
-    onMounted( () => {
-     });
-
-     onUnmounted( () => {
-        clearMarkers()
-        loaded.value = false;
-        onLoadedFunction.value = undefined;
-     })
-
 
     return {
         mapContainer,
@@ -349,6 +385,7 @@ const useDashboardMap = () => {
         addMarkers,
         loaded,
         addMarkerFromPosition,
+        updateAddMarkerFromPosition,
         centerMapToPosition,
         clearMarkers,
         centerMapToDevice,
@@ -362,7 +399,11 @@ const useDashboardMap = () => {
         createRouteWithPlaces,
         plotHistory,
         removePolyline,
-        clearPolylines
+        clearPolylines,
+        removeMarker,
+        resetMapStore,
+        tracarPositions,
+        traccarDevices
     };
 }
 export default useDashboardMap;

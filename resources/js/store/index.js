@@ -15,6 +15,15 @@ export const useMapStore = defineStore('map', () => {
     const googleMapMarkers = ref([]);
     const googleRoutes = ref([]);
 
+    function $reset() {
+        googlePolyline.value = null,
+        googleMapMarkers.value = [];
+        googleRoutes.value = [];
+        loaded.value = false;
+
+      }
+    
+
     watch([() => googleMapMarkers.value ],([newGoogleMapMarkers],[oldGoogleMapMarkers]) => {
         if (oldGoogleMapMarkers?.length > 0) {
             toRaw(oldGoogleMapMarkers).forEach((marker) => { 
@@ -50,6 +59,7 @@ export const useMapStore = defineStore('map', () => {
         googleRoutes,
         devices,
         googlePolyline,
+        $reset
      }
 })
 
