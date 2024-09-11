@@ -2,8 +2,8 @@
 import { computed } from 'vue';
 import TripDetails from './TripDetails.vue';
 import TripStatusSelect from './TripStatusSelect.vue';
-import { ClockIcon, } from '@heroicons/vue/20/solid';
-import { CheckCircleIcon, } from '@heroicons/vue/24/outline';
+import { ClockIcon,  } from '@heroicons/vue/20/solid';
+import { CheckCircleIcon } from '@heroicons/vue/24/outline';
 
 
 const props = defineProps({
@@ -33,7 +33,7 @@ const trips = computed(() => {
         <div class="flex-shrink-0">
             <CheckCircleIcon v-if="trip.status === 'reached'" class="h-6 w-6 text-green-500" />
             <ClockIcon v-else-if="trip.status === 'in_transit'" class="h-6 w-6 text-blue-500" />
-            <PackageIcon v-else class="h-6 w-6 text-gray-400" />
+            <ClockIcon v-else class="h-6 w-6 text-gray-400" />
         </div>
         <div class="flex-grow ml-4">
             <h3 class="text-base font-medium text-gray-900">

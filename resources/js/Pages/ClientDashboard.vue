@@ -293,10 +293,6 @@ import {
   } from '@heroicons/vue/24/outline'
 import { CheckCircleIcon, StarIcon } from '@heroicons/vue/20/solid'
 
-import { useRouter, useRoute } from 'vue-router'
-
-const router = useRouter()
-const route = useRoute()
 
 let orders = [0];
 
