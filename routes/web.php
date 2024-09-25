@@ -40,6 +40,7 @@ Route::get('/track-order', function () {
 Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+    Route::get('/device/{device}/history', [HomeController::class, 'history'])->name('device.history');
 
     Route::get('client/dashboard', [TestController::class, 'client'])->name('client.dashboard');
     Route::get('client/add-package', [TestController::class, 'clientCreatePackage'])->name('clientCreatePackage.addPackage');

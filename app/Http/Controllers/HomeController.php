@@ -59,6 +59,35 @@ class HomeController extends Controller
     }
 
 
+    public function history(Request $request, $device){
+
+        $device = Device::with(['vehicle', 'lastPosition' ])
+                            ->where('id', $device)
+                            ->first();
+
+        
+        if($request->history){
+
+            $historyFrom = Carbon::createFromTimestamp($request->historyFrom)->format("Y-m-d H:i:s");
+            $historyTo = Carbon::createFromTimestamp($request->historyTo)->format("Y-m-d H:i:s");
+            $positions = $device->positions()
+                                    ->whereBetween('devicetime', [   
+                                            Carbon::parse($historyFrom ), 
+                                            Carbon::parse($historyTo)
+                                        ])
+                                    ->get();
+        }
+
+        return Inertia::render('Dashboard', [
+            'history' => $request->history ?? 0,
+            'historyPositions' => $positions ?? null,
+            'currentHistoryPosition' => $request->historyPosition ?? 0,
+            'historyFrom' => $request->historyFrom ?? null,
+            'historyTo' => $request->historyTo ?? null
+        ]);
+    }
+
+
     private function devices(){
         $devices = Device::with(['vehicle'])->get();
 

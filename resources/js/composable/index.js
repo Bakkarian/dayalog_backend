@@ -36,6 +36,7 @@ export default function useNavigation() {
   const shortLayout = () => {
     return [
       route().current('order.view-order-map'),
+      route().current('device.history'),
       route().current('dashboard'),
       route().current('client.dashboard'),
       route().current('clientCreatePackage.addPackage'),

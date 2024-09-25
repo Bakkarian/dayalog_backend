@@ -162,6 +162,22 @@ const useDashboardMap = () => {
             centerMapToPosition(position.lat(), position.lng())
         }
     }
+    const centerAndZoomMap = (locations) => {
+        // Create a new LatLngBounds object
+        const bounds = new google.maps.LatLngBounds();
+        // Extend bounds for each location point
+        locations.forEach((location) => {
+            const latLng = new google.maps.LatLng(location.lat, location.lng);
+            bounds.extend(latLng);
+        });
+
+        googleMap.value.fitBounds(bounds);
+
+        const currentZoom = googleMap.value.getZoom();
+        googleMap.value.setZoom(currentZoom - 0.3); // Zoom in sligh
+    }
+
+    
 
     const createRoute = (origin, destination, routeId = null) => {
 
@@ -405,7 +421,8 @@ const useDashboardMap = () => {
         removeMarker,
         resetMapStore,
         tracarPositions,
-        traccarDevices
+        traccarDevices,
+        centerAndZoomMap
     };
 }
 export default useDashboardMap;
