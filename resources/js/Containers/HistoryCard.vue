@@ -1,6 +1,6 @@
 <script setup>
     import LocalDateTimeStampInput from '@/Components/LocalDateTimeStampInput.vue';
-import useDashboardMap from '@/composable/dashboardMap';
+    import useDashboardMap from '@/composable/dashboardMap';
     import {
         BackwardIcon,
         ForwardIcon, 
@@ -9,8 +9,9 @@ import useDashboardMap from '@/composable/dashboardMap';
     } from '@heroicons/vue/24/outline'
     import { Link, useForm, usePage } from '@inertiajs/vue3';
     import { computed, onMounted, onUnmounted, reactive, ref, watch } from 'vue';
+    import markerImage from '@/assets/trackMarker.png';
 
-    const { removeMarker, addMarkerFromPosition, updateAddMarkerFromPosition, plotHistory, clearPolylines } = useDashboardMap()
+    const { removeMarker, addMarkerFromPosition, updateAddMarkerFromPosition, plotHistory, clearPolylines, centerAndZoomMap, centerMapToDevice } = useDashboardMap()
 
     const props = computed(() => usePage().props)
     const history = computed(() => props.value.history)
@@ -29,9 +30,7 @@ import useDashboardMap from '@/composable/dashboardMap';
     watch(() => currentPosition.value, (newCurrentPosition) => {
         if(historyPositions.value[newCurrentPosition]){
             updateAddMarkerFromPosition(historyPositions.value[newCurrentPosition], 'current' )
-
         }else{
-            console.log('position not found', newCurrentPosition, historyPositions.value)
         }
     })
 
@@ -42,8 +41,28 @@ import useDashboardMap from '@/composable/dashboardMap';
 
     watch(()=> historyPositions.value, (newHistoryPositions) => {
         if(newHistoryPositions){
+
+            if(historyPositions.value[currentHistoryPosition.value]){
+                removeMarker('current')
+                addMarkerFromPosition(
+                    historyPositions.value[currentHistoryPosition.value],
+                    'current', {
+                        icon: {
+                            url: markerImage,
+                            scaledSize: new google.maps.Size(40, 40)
+                        }
+                } )
+            }
+
             clearPolylines();
             plotHistory(newHistoryPositions, 'history');
+            const x = newHistoryPositions.map(position => {return {lat: position.latitude, lng: position.longitude}});
+            
+            if(x.length > 0){
+                centerAndZoomMap(x)
+            }else{
+                centerMapToDevice(device.value.id)
+            }
             currentPosition.value = 0;          
         }
 
@@ -51,10 +70,28 @@ import useDashboardMap from '@/composable/dashboardMap';
 
     onMounted(() => {
         plotHistory(historyPositions.value, 'history')
-        if(historyPositions.value[currentHistoryPosition.value]){
-            addMarkerFromPosition(historyPositions.value[currentHistoryPosition.value], 'current' )
-        }
         currentPosition.value = currentHistoryPosition.value
+
+        if(historyPositions.value[currentHistoryPosition.value]){
+                removeMarker('current')
+                addMarkerFromPosition(
+                    historyPositions.value[currentHistoryPosition.value],
+                    'current', {
+                        icon: {
+                            url: markerImage,
+                            scaledSize: new google.maps.Size(40, 40)
+                        }
+                } )
+            }
+
+        const x = historyPositions.value.map(position => {return {lat: position.latitude, lng: position.longitude}});
+
+        if(x.length > 0){
+            centerAndZoomMap(x)
+        }else{
+            centerMapToDevice(device.value.id)
+        }
+
     })
 
     onUnmounted(() => {
@@ -65,11 +102,13 @@ import useDashboardMap from '@/composable/dashboardMap';
 
 
 
+
     const play = () => {
         if(playing.value){
             return
         }
         playing.value = true
+
         intervalId.value = setInterval(() => {
             if(currentPosition.value >= historyPositions.length -1){
                 pause();
@@ -78,6 +117,7 @@ import useDashboardMap from '@/composable/dashboardMap';
             }
             updateCurrentPosition((++currentPosition.value))
         }, 500)
+        
     }
 
     const pause = () => {
@@ -125,7 +165,7 @@ import useDashboardMap from '@/composable/dashboardMap';
                     <div class="h-6"></div>
                     <Link
                             :href="historyRoute"  
-                            
+                            @click="pause"
                              preserve-state
                             class="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold text-white \
                                      shadow-sm ring-1 ring-inset ring-indigo-600 hover:bg-indigo-500">
@@ -136,7 +176,7 @@ import useDashboardMap from '@/composable/dashboardMap';
         </div>
     </div>
 
-    <div>
+    <div class="mb-4">
         <input type="range" v-model.number="currentPosition" class="w-full" id="points" name="points" min="0" :max="historyPositions.length">
         <br />
         <div class="flex w-full justify-center space-x-2">

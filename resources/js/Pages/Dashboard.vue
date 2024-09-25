@@ -1,7 +1,6 @@
 <script setup>
   import DeviceCard from '@/Containers/DeviceCard.vue';
   import DriverList from '@/Containers/DriverList.vue';
-  import HistoryCard from '@/Containers/HistoryCard.vue';
   import Layout from '@/Layouts/MainLayout.vue'
   import MapWithSideBar from '@/Layouts/MapWithSideBar.vue';
   import { Head } from '@inertiajs/vue3';
@@ -20,7 +19,7 @@
     <Head title="Dashboard" />
     <div>
         <MapWithSideBar>
-            <template #aside>
+            <template v-if="props.devices" #aside>
               <DriverList />
             </template>
 

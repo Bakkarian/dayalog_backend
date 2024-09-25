@@ -1,12 +1,12 @@
 <script setup>
-import { computed, onMounted, watch } from 'vue';
+import { computed, onMounted, onUnmounted, watch } from 'vue';
 import { router } from '@inertiajs/vue3';
 import useDashboardMap from '@/composable/dashboardMap';
 
 const { device } = defineProps(['device'])
 const location = device
 
-const { addMarkerWithClickEvent, buildLocationFromDevice, traccarDevices  } = useDashboardMap()
+const { addMarkerWithClickEvent, buildLocationFromDevice, traccarDevices, removeMarker  } = useDashboardMap()
 
 const selectDevice = (deviceId) => {
     router.visit(
@@ -21,6 +21,10 @@ onMounted(()=>{
     addMarkerWithClickEvent(buildLocationFromDevice(location), (e, marker) => {
         selectDevice(device.id)
     })
+})
+
+onUnmounted(()=> {
+   removeMarker(device.id)
 })
 
 const liveLocation = computed(() => {
