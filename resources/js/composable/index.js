@@ -38,8 +38,6 @@ export default function useNavigation() {
       route().current('order.view-order-map'),
       route().current('device.history'),
       route().current('dashboard'),
-      route().current('client.dashboard'),
-      route().current('clientCreatePackage.addPackage'),
     ].some(r => r)
   }
 
