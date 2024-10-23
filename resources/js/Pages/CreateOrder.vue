@@ -1,3 +1,49 @@
+<script setup>
+import InputError from '@/Components/InputError.vue';
+import InputLabel from '@/Components/InputLabel.vue';
+import TextArea from '@/Components/TextArea.vue';
+import FlashMessage from '@/Containers/FlashMessage.vue';
+import { Head, useForm, usePage } from '@inertiajs/vue3';
+import Layout from '@/Layouts/MainLayout.vue'
+import UserSelect from '@/Containers/UserSelect.vue';
+import CreateOrderItems from '@/Containers/CreateOrderItems.vue'
+import CreateNewOrderUser from '@/Containers/CreateNewOrderUser.vue'
+import { ref } from 'vue';
+
+defineOptions({ layout: Layout })
+
+const creatingNewFromUser = ref(false)
+const creatingNewToUser = ref(false)
+
+
+const handleNewFromUser = (user) => {
+
+    form.from = user.id;
+    creatingNewFromUser.value = false
+}
+
+const handleNewToUser = (user) => {
+    form.to = user.id;
+    creatingNewToUser.value = false
+}
+
+const form = useForm('CreateOrder',{
+  from: "",
+  to: "",
+  notes: "",
+  orderItems: []
+})
+
+
+const submitOrder = () => {
+    form.post(route('order.store'), {
+        onSuccess: () => form.reset(),
+    })
+}
+
+
+</script>
+
 <template>
 
     <Head title="Add Order" />
@@ -92,49 +138,3 @@
 
 
 </template>
-
-<script setup>
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import TextArea from '@/Components/TextArea.vue';
-import FlashMessage from '@/Containers/FlashMessage.vue';
-import { Head, useForm, usePage } from '@inertiajs/vue3';
-import Layout from '@/Layouts/MainLayout.vue'
-import UserSelect from '@/Containers/UserSelect.vue';
-import CreateOrderItems from '@/Containers/CreateOrderItems.vue'
-import CreateNewOrderUser from '@/Containers/CreateNewOrderUser.vue'
-import { ref } from 'vue';
-
-defineOptions({ layout: Layout })
-
-const creatingNewFromUser = ref(false)
-const creatingNewToUser = ref(false)
-
-
-const handleNewFromUser = (user) => {
-
-    form.from = user.id;
-    creatingNewFromUser.value = false
-}
-
-const handleNewToUser = (user) => {
-    form.to = user.id;
-    creatingNewToUser.value = false
-}
-
-const form = useForm('CreateOrder',{
-  from: "",
-  to: "",
-  notes: "",
-  orderItems: []
-})
-
-
-const submitOrder = () => {
-    form.post(route('order.store'), {
-        onSuccess: () => form.reset(),
-    })
-}
-
-
-</script>
