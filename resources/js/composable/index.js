@@ -1,16 +1,14 @@
 import { computed, onMounted, ref } from 'vue'
 import {
-  CalendarIcon,
   ChartPieIcon,
-  BriefcaseIcon,
-  DocumentDuplicateIcon,
   ShoppingBagIcon,
   UserIcon,
   HomeIcon,
-    UsersIcon,
+  UsersIcon,
   DeviceTabletIcon,
-    QueueListIcon,
-    TruckIcon
+  QueueListIcon,
+  TruckIcon,
+  MagnifyingGlassIcon
 } from '@heroicons/vue/24/outline'
 import { usePage } from '@inertiajs/vue3'
 
@@ -18,8 +16,8 @@ export default function useNavigation() {
   const url = computed(() => usePage().url)
   const host = ref(window.location.host)
   const protocol = ref(window.location.protocol);
-
-  const page = usePage()
+  const page = usePage();
+  const permissions =  computed(() => page.props.auth.permissions).value
 
   const currentLink = computed(() =>{
     const url = page.url;
@@ -42,16 +40,91 @@ export default function useNavigation() {
   }
 
   const navigation = computed(() => [
-    { name: 'Dashboard', href: route('dashboard'), icon: HomeIcon, current: route('dashboard').endsWith(url) },
-    { name: 'Add Device', href: route('device.create'), icon: DeviceTabletIcon, current: route('device.create').endsWith(url) },
-    { name: 'View Devices', href: route('devices.index'), icon: QueueListIcon, current: route('devices.index').endsWith(url) },
-    { name: 'Create Driver', href: route('driver.create'), icon: UsersIcon, current: route('driver.create').endsWith(url) },
-    { name: 'Vehicles', href: route('vehicle.view'), icon: TruckIcon, current: route('vehicle.create').endsWith(url) },
-    { name: 'Add Vehicle', href: route('vehicle.create'), icon: UsersIcon, current: route('vehicle.create').endsWith(url) },
-    { name: 'Orders', href: route('orders'), icon: ShoppingBagIcon, current: route('orders').endsWith(url) },
-    { name: 'Users', href: route('users.index'), icon: UserIcon, current: route('users.index').endsWith(url) },
-    { name: 'Client Dashboard ', href: route('client.dashboard'), icon: ChartPieIcon, current: route('client.dashboard').endsWith(url) },
-    { name: 'Add Package ', href: route('clientCreatePackage.addPackage'), icon: BriefcaseIcon, current: route('clientCreatePackage.addPackage').endsWith(url) },
+    {
+        name: 'Dashboard',
+        href: route('dashboard'),
+        icon: HomeIcon,
+        current: route('dashboard').endsWith(url),
+        permissions: [
+            'devices.view',
+            'devices.track',
+        ]
+     },
+     {
+        name: 'Client Dashboard ',
+        href: route('client.dashboard'),
+        icon: ChartPieIcon,
+        current: route('client.dashboard').endsWith(url),
+        permissions:[
+            'view.client.dashboard',
+        ]
+    },
+    {
+        name: 'Add Device',
+        href: route('device.create'),
+        icon: DeviceTabletIcon,
+        current: route('device.create').endsWith(url),
+        permissions: [
+            'devices.add',
+        ]
+     },
+    {
+        name: 'View Devices',
+        href: route('devices.index'),
+        icon: QueueListIcon,
+         current: route('devices.index').endsWith(url),
+        permissions :[
+            'devices.view',
+        ]
+     },
+    {
+        name: 'Create Driver',
+        href: route('driver.create'),
+        icon: UsersIcon,
+        current: route('driver.create').endsWith(url),
+        permissions :[
+            'drivers.create',
+        ]
+    },
+    {
+        name: 'Vehicles',
+        href: route('vehicle.view'),
+        icon: TruckIcon,
+        current: route('vehicle.create').endsWith(url),
+        permissions:[
+           'vehicles.view',
+        ]
+    },
+    {
+        name: 'Add Vehicle',
+        href: route('vehicle.create'),
+         icon: UsersIcon,
+         current: route('vehicle.create').endsWith(url),
+         permissions:[
+            'vehicles.add',
+        ]
+    },
+    {
+        name: 'Orders',
+        href: route('orders'),
+        icon: ShoppingBagIcon,
+        current: route('orders').endsWith(url),
+        permissions:[
+            'orders.view',
+            'owned.order.view',
+        ]
+    },
+    {
+        name: 'Users',
+        href: route('users.index'),
+        icon: UserIcon,
+        current: route('users.index').endsWith(url),
+        permissions:[
+            'users.create',
+        ]
+    },
+
+    // { name: 'Search Package ', href: route('clientCreatePackage.addPackage'), icon: MagnifyingGlassIcon, current: route('clientCreatePackage.addPackage').endsWith(url) },
   ])
 
   const userNavigation = [
@@ -63,5 +136,9 @@ export default function useNavigation() {
     host.value = window.location.host;
   })
 
-  return { navigation, userNavigation , shortLayout }
+
+ const filteredNavigation = (navigation) => navigation.value.filter((navigation)=>{ return navigation.permissions.some(permission => permissions.includes(permission)); });
+
+
+  return { navigation:filteredNavigation(navigation) , userNavigation , shortLayout }
 }

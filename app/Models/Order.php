@@ -32,4 +32,9 @@ class Order extends Model
     }
 
 
+    public function trips()
+    {
+        return $this->hasMany(OrderTrip::class);
+    }
+    
 }

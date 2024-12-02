@@ -8,7 +8,7 @@ import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
 import InputError from '@/Components/InputError.vue';
 import TextArea from '@/Components/TextArea.vue';
-
+import { Switch, SwitchGroup, SwitchLabel } from '@headlessui/vue'
 
 const props = defineProps({
     orderId:{type:Number, required:true }
@@ -17,6 +17,7 @@ const props = defineProps({
 const emit = defineEmits(['close'])
 
 const form = useForm({
+    vehicleSelected: false,
     vehicle_id: null,
     origin: null,
     destination: null,
@@ -24,7 +25,12 @@ const form = useForm({
 })
 
 const submit = () => {
-    form.post(route('order.add-trip', props.orderId), {
+    form.transform((data)=>{
+        if(!data.vehicleSelected){
+            delete data.vehicle_id;
+        }
+        return data;
+    }).post(route('order.add-trip', props.orderId), {
         preserveScroll: true,
         onSuccess: () => {
             emit('close')
@@ -53,10 +59,21 @@ const submit = () => {
                                         <DialogTitle as="h3" class="text-base text-center font-semibold leading-6 text-gray-900">Assign Order For Delivery</DialogTitle>
                                         <hr class="my-2" />
 
-                                        <InputLabel value="Select Vehicle *" />
-                                       <div class="mt-2">
-                                           <VehicleSelect v-model="form.vehicle_id" />
-                                       </div>
+                                        <SwitchGroup as="div" class="flex items-center py-3">
+                                            <Switch v-model="form.vehicleSelected" :class="[form.vehicleSelected ? 'bg-indigo-600' : 'bg-gray-200', 'relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2']">
+                                                <span aria-hidden="true" :class="[form.vehicleSelected ? 'translate-x-5' : 'translate-x-0', 'pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out']" />
+                                            </Switch>
+                                            <SwitchLabel as="span" class="ml-3 text-sm">
+                                                <span class="font-medium text-gray-900">Selecting a vehicle</span>
+                                            </SwitchLabel>
+                                        </SwitchGroup>
+
+                                        <div class="py-2" v-if="form.vehicleSelected">
+                                            <InputLabel value="Select Vehicle *" />
+                                            <div class="mt-2">
+                                                <VehicleSelect v-model="form.vehicle_id" />
+                                            </div>
+                                        </div>
 
                                        <div class="sm:col-span-5 mt-2">
 

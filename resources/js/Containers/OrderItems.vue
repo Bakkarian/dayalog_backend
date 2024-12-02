@@ -31,7 +31,7 @@ import { Link } from '@inertiajs/vue3';
                                 </div>
                                 <div class="sm:flex">
                                     <p class="mt-2 flex items-center text-sm text-gray-500 sm:ml-2 sm:mt-0">
-                                        Delivery Status: <span class="font-bold"> {{ order.status }}</span>
+                                        Order Status: <span class="font-bold"> {{ order.status }}</span>
                                     </p>
                                 </div>
                             </div>
