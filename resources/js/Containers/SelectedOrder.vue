@@ -46,7 +46,7 @@ const completedOrder = () => {
                         <InformationCircleIcon class="h-5 w-5" aria-hidden="true" />
                     </button>
                 </div>
-                <h5 class="text-md font-bold ml-4 animate__animated animate__delay-0.3s" :class="'animate__fadeInRight'">Delivery Status: <span class="font-bold"> {{ selectedOrder.status }}</span></h5>
+                <h5 class="text-md font-bold ml-4 animate__animated animate__delay-0.3s" :class="'animate__fadeInRight'">Order Status: <span class="font-bold"> {{ selectedOrder.status }}</span></h5>
             </div>
             <ul role="list" class="space-y-6 p-3 overflow-hidden">
 
@@ -63,7 +63,7 @@ const completedOrder = () => {
                             <div v-for="item in selectedOrder.items" class="border border-orange-400 rounded-md p-2 bg-orange-400 bg-opacity-5">
                             <p class="sm:flex sm:justify-between">
                                 <span>{{item.item}}</span>
-                                <span class="text-sm font-bold">Total: {{item.total}}</span>
+                                <span class="text-sm font-bold">Total:  {{ (item.price * item.qty).toLocaleString("en-US") }}</span>
                             </p>
                             <p class="text-sm">Qty: {{item.qty}}</p>
                         </div>

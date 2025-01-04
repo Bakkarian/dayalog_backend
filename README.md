@@ -1,4 +1,4 @@
-
+    
 ##Dayalog
 
 DAYALOG logistics system tracks vehicles that deliver goods and it would involve several key activities, including:

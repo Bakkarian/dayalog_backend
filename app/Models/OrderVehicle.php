@@ -23,4 +23,8 @@ class OrderVehicle extends Model
     {
         return $this->hasMany(Dispatch::class);
     }
+
+    public function activeDispatches(){
+        return $this->dispatches()->where('status', 'transit');
+    }
 }

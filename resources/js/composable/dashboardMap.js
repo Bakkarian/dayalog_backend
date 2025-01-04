@@ -36,16 +36,20 @@ const useDashboardMap = () => {
         return Date.now().toString(36) + Math.random().toString(36).substr(2);
     }
 
-    const loadMap = () => {
+    const loadMap = (options = {}) => {
         loader.importLibrary('maps').then(async () => {
             if(!mapContainer.value) return
                 googleMap.value = new window.google.maps.Map( mapContainer.value, {
-                    center: { lat: 0.297784, lng: 32.544896 },
+                    center: {
+                        lat: 0.297784,
+                        lng: 32.544896
+                    },
                     zoom: 9,
                     mapTypeId: 'roadmap',
                     styles: mapStyle,
                     streetViewControl: false, // Remove street view control
                     mapTypeControl: false, // Remove map type control
+                    ...options,
                 });
                 setInitialBounds()
                 loaded.value = true
@@ -124,7 +128,7 @@ const useDashboardMap = () => {
     }
 
     const updateAddMarkerFromPosition = (position, id) => {
-        
+
         position = { ...position, lat: position.latitude, lng: position.longitude }
 
         const markerIndex  = googleMapMarkers.value.findIndex((marker) => {
@@ -177,7 +181,7 @@ const useDashboardMap = () => {
         googleMap.value.setZoom(currentZoom - 0.3); // Zoom in sligh
     }
 
-    
+
 
     const createRoute = (origin, destination, routeId = null) => {
 
@@ -289,7 +293,7 @@ const useDashboardMap = () => {
     };
 
     const plotHistory = (locations, pathId = null ) => {
-        
+
         const markers = [];
 
         locations = locations.map((position) => {
@@ -308,7 +312,7 @@ const useDashboardMap = () => {
                 },
             });
             marker.markerId = uid();
-            marker.setMap(googleMap.value);    
+            marker.setMap(googleMap.value);
             googleMapMarkers.value = [...googleMapMarkers.value, marker];
             markers.push(marker);
         });
@@ -355,9 +359,9 @@ const useDashboardMap = () => {
             }
 
             return  {
-                position: { 
-                    lat: latestPosition?.latitude, 
-                    lng: latestPosition?.longitude 
+                position: {
+                    lat: latestPosition?.latitude,
+                    lng: latestPosition?.longitude
                 },
                 title: device.name,
                 positionData: latestPosition,

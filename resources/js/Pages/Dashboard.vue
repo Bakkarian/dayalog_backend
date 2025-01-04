@@ -24,8 +24,7 @@
             </template>
 
             <DeviceCard v-if="props.device" />
-            
-        </MapWithSideBar> 
+        </MapWithSideBar>
     </div>
   </template>
 

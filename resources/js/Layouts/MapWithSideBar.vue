@@ -3,7 +3,7 @@
  import useDashboardMap from '@/composable/dashboardMap';
 import { onUnmounted } from 'vue';
 
- const { loaded, onMapLoaded, resetMapStore } = useDashboardMap()
+ const { loaded } = useDashboardMap()
 
 </script>
 

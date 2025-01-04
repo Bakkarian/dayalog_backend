@@ -18,6 +18,7 @@ createInertiaApp({
             .use(plugin)
             .use(pinia)
             .use(ZiggyVue, Ziggy)
+            .use(Window.Echo, Echo)
             .mount(el);
     },
     progress: {

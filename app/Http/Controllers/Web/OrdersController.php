@@ -32,7 +32,14 @@ class OrdersController extends Controller
             ])->find($selectedOrder);
         }
 
-        $orders = Order::with(['to','from'])->paginate();
+        if (auth()->user()->can('view.orders')) {
+            $orders = Order::with(['to','from']);
+        } else {
+            $orders = Order::with(['to','from'])->where('created_by', operator: auth()->user()->id);
+        }
+
+        $orders =  $orders->latest()->paginate(5);
+
 
 
         return Inertia::render('Orders', [
@@ -58,23 +65,52 @@ class OrdersController extends Controller
     {
         //TODO: make api and web share all requests
         //TODO: write tests
-        $this->validate($request, [
+        $validated = $this->validate($request, [
             'from' => 'required|exists:users,id',
             'to' => 'required|exists:users,id',
             'notes' => 'nullable|string',
             'orderItems' => 'required|array|min:1',
+            'singleShipment' => ['required','boolean'],
+            'singleShipmentOrigin' => ['required_if:singleShipment,true'],
+            'singleShipmentDestination' => ['required_if:singleShipment,true'],
+            'vehicleSelected' => ['required','boolean'],
+            'vehicle_id' => ['required_if:vehicleSelected,true,exists:vehicles,id'],
         ]);
 
-
         $uuid =  ( Str::uuid())->toString();
-
 
         $order = (new OrderService())->store([
             ...$request->only(['from','to','notes']),
             'items' => $request->input('orderItems'),
             'reference' =>  $uuid,
             'payload' => json_encode($request->all()),
+            'created_by' => auth()->user()->id,
        ]);
+
+       if($validated['singleShipment']){
+            if($validated['vehicleSelected']){
+
+                $orderVehicle = OrderVehicle::firstOrCreate([
+                    'order_id' => $order->id,
+                    'vehicle_id' => $request->vehicle_id,
+                ]);
+
+                //add a dispatch (a trip)
+                $orderVehicle->dispatches()->create([
+                    'origin' => $request->singleShipmentOrigin,
+                    'destination' => $request->singleShipmentDestination,
+                    'notes' => $request->notes ?? '',
+                ]);
+            }else{
+                $order->trips()->create([
+                    'origin'=> $request->singleShipmentOrigin,
+                    'destination'=> $request->singleShipmentDestination,
+                    'notes' => $request->notes ?? '',
+                ]);
+            }
+       }
+
+
 
        return redirect()->route('orders', ['order'=> $order->id])->with('success', 'Order Created');
     }
@@ -118,23 +154,32 @@ class OrdersController extends Controller
     {
 
         //vehicle_id is required
-        $this->validate($request, [
-            'vehicle_id' => 'required|exists:vehicles,id',
+        $validated = $this->validate($request, [
+            'vehicleSelected' => 'required|boolean',
+            'vehicle_id' => 'exists:vehicles,id',
             'origin' => 'required|string',
             'destination' => 'required|string',
         ]);
+        if($validated['vehicleSelected']){
 
-        $orderVehicle = OrderVehicle::firstOrCreate([
-            'order_id' => $order->id,
-            'vehicle_id' => $request->vehicle_id,
-        ]);
+            $orderVehicle = OrderVehicle::firstOrCreate([
+                'order_id' => $order->id,
+                'vehicle_id' => $request->vehicle_id,
+            ]);
 
-        //add a dispatch (a trip)
-        $orderVehicle->dispatches()->create([
-            'origin' => $request->origin,
-            'destination' => $request->destination,
-            'notes' => $request->notes ?? '',
-        ]);
+            //add a dispatch (a trip)
+            $orderVehicle->dispatches()->create([
+                'origin' => $request->origin,
+                'destination' => $request->destination,
+                'notes' => $request->notes ?? '',
+            ]);
+        }else{
+            $order->trips()->create([
+                'origin'=> $request->origin,
+                'destination'=> $request->destination,
+                'notes' => $request->notes ?? '',
+            ]);
+        }
 
         return redirect()->route('orders', ['order_id'=> $order->id])->with('success', 'Trip Added');
     }

@@ -42,7 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
     Route::get('/device/{device}/history', [HomeController::class, 'history'])->name('device.history');
 
-    Route::get('client/dashboard', [TestController::class, 'client'])->name('client.dashboard');
+    Route::get('dashboard/client', [TestController::class, 'client'])->name('client.dashboard');
     Route::get('client/add-package', [TestController::class, 'clientCreatePackage'])->name('clientCreatePackage.addPackage');
 
     Route::get('/home/drivers', [HomeController::class, 'drivers'])->name('dashboard.drivers');
@@ -69,6 +69,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/vehicle/store', [VehicleController::class, 'store'] )->name('vehicle.store');
     Route::post('/vehicle/{vehicle}/attach/driver', [VehicleController::class, 'attachDriver'])->name('vehicle.attach-driver');
     Route::delete('/vehicle/detach/driver', [VehicleController::class, 'detachDriver'])->name('vehicle.detach-driver');
+    Route::get('/vehicle/{vehicle}/send/request', [VehicleController::class, 'sendVehicleRequest'])->name('vehicle.send-request');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'] )->name('profile.update');

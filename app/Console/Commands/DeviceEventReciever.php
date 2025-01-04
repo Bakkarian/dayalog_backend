@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Events\TraccarEvent;
 use App\Http\Controllers\DispatchedDeviceEventsController;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
@@ -49,7 +50,9 @@ class DeviceEventReciever extends Command
             ["Cookie" =>  $data->header("Set-Cookie")]
         )->then(function(WebSocket $conn) {
             $conn->on('message', function(MessageInterface $msg){
+
                 $payload = json_decode($msg->__toString());
+                TraccarEvent::dispatch($payload);
                 $positions = $payload?->positions ?? null;
                 if($positions){
                     collect($positions)->each(function ($postion){

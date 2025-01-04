@@ -19,7 +19,13 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return OrderResource::collection(Order::paginate(25));
+        if (auth()->user()->can('view.orders')) {
+            $orders = Order::paginate(5);
+        } else {
+            $orders = Order::where('user_id', auth()->user()->id)->paginate(5);
+        }
+
+        return OrderResource::collection($orders);
     }
 
     /**
