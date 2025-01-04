@@ -17,17 +17,23 @@ class TestController extends Controller
                             ->orWhere('created_by', auth()->id())
                             ->get();
 
-        $selectedOrder = $orders->first();
 
         if(request()->selectedOrder){
-            $selectedOrder = Order::find(request()->selectedOrder);
+            $selectedOrder = Order::with([
+                'to',
+                'from',
+                'trips',
+                'orderVehicles.vehicle',
+                'orderVehicles.dispatches',
+                'orderVehicles.activeDispatches'
+            ])->find(request()->selectedOrder);
         }
 
 
 
         return Inertia::render( 'ClientDashboard', [
             'orders' => $orders,
-            'selectedOrder' => $selectedOrder
+            'selectedOrder' => $selectedOrder ?? null
         ] );
     }
     public function clientCreatePackage(){
