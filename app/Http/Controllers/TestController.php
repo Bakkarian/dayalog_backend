@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Vehicle;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -37,6 +38,9 @@ class TestController extends Controller
         ] );
     }
     public function clientCreatePackage(){
-        return Inertia::render( 'ClientCreatePackage' );
+        $vehicles = Vehicle::all();
+        return Inertia::render( 'ClientCreatePackage' ,[
+            'vehicles' => $vehicles
+        ]);
     }
 }

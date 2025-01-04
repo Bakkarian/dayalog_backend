@@ -1,8 +1,48 @@
+<script setup>
+import Layout from '@/Layouts/MainLayout.vue'
+defineOptions({ layout: Layout })
+
+
+import { computed, ref } from 'vue'
+import { CheckIcon, ChevronRightIcon, ChevronUpDownIcon } from '@heroicons/vue/20/solid'
+import {
+  Combobox,
+  ComboboxButton,
+  ComboboxInput,
+  ComboboxLabel,
+  ComboboxOption,
+  ComboboxOptions,
+} from '@headlessui/vue'
+import { Link, useForm, usePage } from '@inertiajs/vue3'
+
+const vehicles = usePage().props.vehicles
+console.log(vehicles)
+const locationPred = [
+  { id: 1, name: 'Kampala, Uganda' },
+]
+
+const query = ref('')
+const selectedLocation = ref(null)
+const filteredLocation = computed(() =>
+  query.value === ''
+    ? locationPred
+    : locationPred.filter((location) => {
+        return location.name.toLowerCase().includes(query.value.toLowerCase())
+      }),
+)
+
+let selectedResult = ref(0);
+
+
+
+
+
+</script>
 <template>
     <div class="px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 items-start">
 
-            <div class="col-span-2 mb-12">
+            <!-- <div class="col-span-2 mb-12">
                 <div class="p-4 bg-white rounded-md">
                     <div class="flex">
                         <div class="flex-auto mr-2">
@@ -77,17 +117,16 @@
                         </div>
                     </div>
                     <div class="flex mt-4">
-                        <button type="button" class=" mr-4 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline">Search Trucks</button>
                         <button type="button" class="rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline">Post Load Package</button>
                     </div>
                 </div>
                 <hr />
-            </div>
+            </div> -->
 
             <div class="col-span-2 mb-12 bg-white bg-opacity-50 p-6">
-                <h2 class="mb-4">Results</h2>
+                <h2 class="mb-4">Vehicles Available</h2>
                 <ul role="list" class="row-auto divide-y divide-gray-100 overflow-hidden bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl overflow-y-scroll">
-                    <li v-for="i in 12" @click="selectedResult = i" class="relative gap-x-6 px-4 py-5 hover:bg-gray-50 sm:px-6 cursor-pointer">
+                    <li v-for="vehicle in vehicles" :key="vehicle.id" @click="selectedResult = vehicle.id" class="relative gap-x-6 px-4 py-5 hover:bg-gray-50 sm:px-6 cursor-pointer">
                         <div class="flex justify-between">
                             <div class="flex gap-x-4">
                                 <div class="h-12 w-12 flex-none rounded-full bg-gray-200 flex items-center">
@@ -100,11 +139,11 @@
                                     <p class="text-sm font-semibold leading-6 text-gray-900">
                                         <a>
                                             <span class="absolute inset-x-0 -top-px bottom-0" />
-                                            UBG 699U
+                                            {{ vehicle.number_plate }}
                                         </a>
                                     </p>
                                     <p class="mt-1 flex text-xs leading-5 text-gray-500">
-                                        <a class="relative truncate hover:underline">Isuzu</a>
+                                        <a class="relative truncate hover:underline">{{ vehicle.make }}</a>
                                     </p>
                                 </div>
                             </div>
@@ -123,21 +162,21 @@
                                 <ChevronRightIcon class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
                             </div>
                         </div>
-                        <div v-if="i == selectedResult" class="p-5 bg-gray-50 rounded shadow-md mt-2 animate__animated animate__fadeIn">
+                        <div v-if="vehicle.id == selectedResult" class="p-5 bg-gray-50 rounded shadow-md mt-2 animate__animated animate__fadeIn">
                             <div class="flex items-center">
-                                <button type="button" class="rounded mr-4 bg-indigo-600 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Send Request</button>
+                                <Link  as="button" :href="route('vehicle.send-request', vehicle.id)" type="button"  class="rounded mr-4 bg-indigo-600 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" >Send Request</Link>
                                 <div class="flex-auto flex justify-between">
                                     <div>
                                         <h3 class="text-xs text-gray-500">Vehicle Model</h3>
-                                        <p class="text-sm">Canter</p>
+                                        <p class="text-sm">{{ vehicle.model }}</p>
                                     </div>
                                     <div>
                                         <h3 class="text-xs text-gray-500">Weight Capacity</h3>
-                                        <p class="text-sm">1450Kg</p>
+                                        <p class="text-sm">{{ vehicle.capacity_weight  }} Kg</p>
                                     </div>
                                     <div>
-                                        <h3 class="text-xs text-gray-500">Length</h3>
-                                        <p class="text-sm">40ft</p>
+                                        <h3 class="text-xs text-gray-500">Volume</h3>
+                                        <p class="text-sm">{{ vehicle.capacity_volume }} m<sup>3</sup></p>
                                     </div>
                                 </div>
                             </div>
@@ -150,40 +189,7 @@
     </div>
 </template>
 
-<script setup>
-import Layout from '@/Layouts/MainLayout.vue'
-defineOptions({ layout: Layout })
 
-
-import { computed, ref } from 'vue'
-import { CheckIcon, ChevronRightIcon, ChevronUpDownIcon } from '@heroicons/vue/20/solid'
-import {
-  Combobox,
-  ComboboxButton,
-  ComboboxInput,
-  ComboboxLabel,
-  ComboboxOption,
-  ComboboxOptions,
-} from '@headlessui/vue'
-
-
-const locationPred = [
-  { id: 1, name: 'Kampala, Uganda' },
-  // More users...
-]
-
-const query = ref('')
-const selectedLocation = ref(null)
-const filteredLocation = computed(() =>
-  query.value === ''
-    ? locationPred
-    : locationPred.filter((location) => {
-        return location.name.toLowerCase().includes(query.value.toLowerCase())
-      }),
-)
-
-let selectedResult = ref(0);
-</script>
 
 <style scoped>
 </style>

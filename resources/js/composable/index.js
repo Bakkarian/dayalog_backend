@@ -124,7 +124,15 @@ export default function useNavigation() {
         ]
     },
 
-    // { name: 'Search Package ', href: route('clientCreatePackage.addPackage'), icon: MagnifyingGlassIcon, current: route('clientCreatePackage.addPackage').endsWith(url) },
+    {
+        name: 'Search Vehicle ',
+        href: route('clientCreatePackage.addPackage'),
+        icon: MagnifyingGlassIcon, current: route('clientCreatePackage.addPackage').endsWith(url),
+        permissions:[
+            'view.client.dashboard',
+        ]
+
+    },
   ])
 
   const userNavigation = [

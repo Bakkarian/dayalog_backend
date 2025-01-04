@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.8",
         "ratchet/pawl": "^0.4.1",
         "spatie/laravel-permission": "^6.4",
+        "symfony/mailer": "~7.1.0",
         "tightenco/ziggy": "^1.0"
     },
     "require-dev": {

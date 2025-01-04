@@ -10,6 +10,7 @@ use App\Http\Resources\SelectVehicleOption;
 use App\Models\Device;
 use App\Models\Vehicle;
 use App\Models\VehicleDriver;
+use App\Notifications\VehicleRequestNotification;
 use App\Services\VehicleService;
 use Illuminate\Support\Facades\DB;
 
@@ -102,6 +103,18 @@ class VehicleController extends Controller
 
    public function getOptionVehicle(Request $request){
     return new SelectVehicleOption(Vehicle::find($request->input("id")));
+   }
+
+
+   public function sendVehicleRequest(Request $request, Vehicle $vehicle)
+   {
+
+      $user = $vehicle->driver->bioData;
+      if($user->email){
+         $user->notify(new VehicleRequestNotification($vehicle));
+      }
+
+      return redirect()->back()->with('success', 'Request sent');
    }
 
 }
