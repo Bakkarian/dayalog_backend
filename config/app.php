@@ -192,7 +192,7 @@ return [
 
     'admins' => [
         'afashaisakiye@gmail.com',
-        'ivanatresyn@gmail.com'
+        'ivanatresyn@gmail.com' 
     ]
 
 ];
