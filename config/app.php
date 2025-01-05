@@ -189,4 +189,10 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+
+    'admins' => [
+        'afashaisakiye@gmail.com',
+        'ivanatresyn@gmail.com'
+    ]
+
 ];
