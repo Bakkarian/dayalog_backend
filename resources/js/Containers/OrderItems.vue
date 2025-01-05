@@ -8,7 +8,7 @@ import { Link } from '@inertiajs/vue3';
 </script>
 <template>
     <li v-for="order in orders.data" :key="order.id">
-            <Link :href="route('orders',{order_id: order.id})" >
+            <Link :href="route('orders', {order_id: order.id, page: orders.current_page})" >
                 <div class="block hover:bg-gray-50 cursor-pointer">
                         <div class="px-4 py-4 sm:px-6">
                             <div class="flex items-center justify-between">
