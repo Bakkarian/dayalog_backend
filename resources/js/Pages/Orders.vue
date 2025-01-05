@@ -20,6 +20,11 @@
                     </ul>
                 </div>
 
+                <div class="pt-5">
+                    <Pagination :links="orders2.links" />
+                </div>
+
+
             </div>
             <SelectedOrder v-if="order" />
         </div>
@@ -35,6 +40,7 @@ import Layout from '@/Layouts/MainLayout.vue'
 import OrderItems from '@/Containers/OrderItems.vue'
 import SelectedOrder from '@/Containers/SelectedOrder.vue'
 import { usePage } from '@inertiajs/vue3';
+import Pagination from "@/Components/Pagination.vue";
 
 
 defineOptions({ layout: Layout })
