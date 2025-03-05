@@ -28,15 +28,20 @@ class SyncAuthorization extends Command
     {
         $permissions = config('custom.permissions');
         $roles = config('custom.roles');
+        $permissionList = array_keys($permissions);
 
-        foreach ($permissions as $permission) {
-            Permission::firstOrCreate(['name' => $permission]);
+        foreach ($permissionList as $permission) {
+            Permission::updateOrCreate(['name' => $permission]);
         }
         
         foreach ($roles as $roleName => $roleData) {
-            $role = Role::firstOrCreate(['name' => $roleName]);
-            $role->syncPermissions($roleData['permissions']);
+            Role::firstOrCreate(['name' => $roleName]);
         }
+
+        Permission::all()->each(function ($permission) use ($permissions) {
+            // dd($permissions[$permission->name]['allowed']);
+           $permission->syncRoles($permissions[$permission->name]['allowed'] ?? []); 
+        });
 
     }
 }
