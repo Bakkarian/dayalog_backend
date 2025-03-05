@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Organization extends Model
 {
+
+    public $fillable = ['name', 'created_by', 'slug'];
     
         /**
      * The users that belong to the role.
@@ -16,5 +18,6 @@ class Organization extends Model
         return $this->belongsToMany(User::class);
     }
 
+    
     
 }

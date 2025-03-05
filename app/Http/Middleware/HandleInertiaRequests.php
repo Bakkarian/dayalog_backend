@@ -34,6 +34,7 @@ class HandleInertiaRequests extends Middleware
         return array_merge(parent::share($request), [
             'auth' => [
                 'user' => $request->user(),
+                'organizations' => $request->user() ? $request->user()->organizations()->get() : [],
                 'permissions' =>    $request->user() ? Permission::all()->filter(function ($permision){
                     return auth()->user()->can($permision->name);
                   })->pluck('name')->values()->toArray() : [],

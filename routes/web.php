@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\Web\DeviceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\Web\DriverController;
 use App\Http\Controllers\Web\OrdersController;
 use App\Http\Controllers\Web\UserManagementController;
 use App\Http\Controllers\Web\VehicleController;
+use App\Http\Middleware\ShouldSelectOrganization;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -38,6 +40,14 @@ Route::get('/track-order', function () {
 })->name('trackorder');
 
 Route::middleware('auth')->group(function () {
+
+    Route::get('/org/create', [OrganizationController::class, 'create'])->name('org.create');
+    Route::get('/org/select' , [OrganizationController::class, 'select'])->name('org.select');
+    Route::post('/org/store/{organization}/selection', [OrganizationController::class, 'storeSelection'])->name('org.store.selection');
+    Route::post('/org/store', [OrganizationController::class, 'store'])->name('org.store');
+    
+    Route::middleware([ShouldSelectOrganization::class])->group(function (){
+    // Start of organization routes
 
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
     Route::get('/device/{device}/history', [HomeController::class, 'history'])->name('device.history');
@@ -71,9 +81,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/vehicle/detach/driver', [VehicleController::class, 'detachDriver'])->name('vehicle.detach-driver');
     Route::get('/vehicle/{vehicle}/send/request', [VehicleController::class, 'sendVehicleRequest'])->name('vehicle.send-request');
 
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'] )->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'] )->name('profile.destroy');
+
     Route::resource('users', UserManagementController::class);
 
     //Web app apis
@@ -87,6 +95,13 @@ Route::middleware('auth')->group(function () {
         Route::post('/vehicle/create', [VehicleController::class, 'createVehicle'] )->name('createVehicle');
 
     });
+
+    });
+    //End of Organization routes
+
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'] )->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'] )->name('profile.destroy');
 
 });
 
