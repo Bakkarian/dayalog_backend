@@ -70,7 +70,7 @@ const openDetails = ref(false)
                                             <p class="text-gray-700 text-sm">Driver Name: <strong>{{ trip.vehicle.driver.bio_data.name }}</strong></p>
                                             <p class="text-gray-700 text-sm">Driver Phone: <strong>{{ trip.vehicle.driver.bio_data.phone_number }}</strong></p>
                                             <p class="text-gray-700 text-sm">Plate Number: <strong>{{ trip.vehicle.number_plate }}</strong></p>
-                                            <p class="text-gray-700 text-sm">Device ID: <strong>{{  trip.vehicle.device.uniqueid }}</strong></p>
+                                            <p class="text-gray-700 text-sm">Device ID: <strong>{{  trip.vehicle.vehicleDevice.device.uniqueid }}</strong></p>
                                             <!-- TODO: link to Patasente profile -->
                                             <p class="text-gray-700 text-sm">Patasente ID: <a href="#" target="_blank" class="font-bold text-blue-400">{{ trip.vehicle.driver.bio_data.patasente_id }}</a></p>
                                         </div>

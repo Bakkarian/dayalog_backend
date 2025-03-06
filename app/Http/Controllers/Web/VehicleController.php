@@ -9,6 +9,7 @@ use App\Http\Requests\VehicleRequest;
 use App\Http\Resources\SelectVehicleOption;
 use App\Models\Device;
 use App\Models\Vehicle;
+use App\Models\VehicleDevice;
 use App\Models\VehicleDriver;
 use App\Notifications\VehicleRequestNotification;
 use App\Services\VehicleService;
@@ -31,7 +32,14 @@ class VehicleController extends Controller
     }
     public function create(Request $request)
     {
-        $free_devices = Device::with('vehicle')->whereDoesntHave('vehicle')->get();
+        
+        // Fetch device IDs with VehicleDevice (from pgsql)
+        $linkedIds = VehicleDevice::on('mysql')->pluck('device_id');
+
+        // Fetch devices without VehicleDevice (from mysql)
+        $free_devices = Device::on('traccar')
+            ->whereNotIn('id', $linkedIds)
+            ->get();
         return Inertia::render('AddVehicle', [
             'devices' => $free_devices,
         ]);

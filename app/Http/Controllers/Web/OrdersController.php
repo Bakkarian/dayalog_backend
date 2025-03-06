@@ -28,7 +28,7 @@ class OrdersController extends Controller
                 'from',
                 'orderVehicles.dispatches',
                 'orderVehicles.vehicle.driver.bioData',
-                'orderVehicles.vehicle.device'
+                'orderVehicles.vehicle.vehicleDevice.device'
             ])->find($selectedOrder);
         }
 
@@ -199,7 +199,7 @@ class OrdersController extends Controller
     {
 
         $order =  Order::with([
-            'orderVehicles.vehicle.device',
+            'orderVehicles.vehicle.vehicleDevice.device',
             'orderVehicles.vehicle.driver.bioData',
             'orderVehicles.dispatches'
         ])->find($order);
@@ -218,7 +218,7 @@ class OrdersController extends Controller
 
        if(isset($request->dispatch)){
             $selectedDispatch = Dispatch::with([
-                'orderVehicle.vehicle.device',
+                'orderVehicle.vehicle.vehicleDevice.device',
                 'orderVehicle.vehicle.driver.bioData',
                 'deviceEvents',
                 'devicePositions',

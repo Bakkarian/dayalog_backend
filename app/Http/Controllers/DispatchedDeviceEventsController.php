@@ -72,7 +72,7 @@ class DispatchedDeviceEventsController extends Controller
         $deviceId = $position->deviceId;
 
         $dispatch = Dispatch::with(['deviceEvents'])
-            ->whereHas('orderVehicle.vehicle.device',function ($q) use ($deviceId) {
+            ->whereHas('orderVehicle.vehicle.vehicleDevice.device',function ($q) use ($deviceId) {
                 $q->where('devices.id', $deviceId);
             })
             ->where('status', 'transit')

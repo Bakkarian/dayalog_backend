@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\DriverRequest;
 use App\Http\Resources\DriverWebJsonResource;
 use App\Models\Driver;
+use App\Models\Organization;
 use App\Services\DriverService;
 use App\Services\UserService;
 use Illuminate\Http\Request;
@@ -23,10 +24,14 @@ class DriverController extends Controller
 
        $user = (new UserService())->store($request->validated());
 
+       $user->organizations()->attach(Organization::find(session('organization_id')));
+
        (new DriverService())->store([
             ...$request->input(),
             'user_id' =>  $user->id
        ]);
+
+
 
        return redirect()
            ->back()

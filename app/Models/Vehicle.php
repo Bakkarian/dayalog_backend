@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Vehicle extends Model
 {
@@ -21,21 +22,28 @@ class Vehicle extends Model
         'insurance_expiration',
     ];
 
-    /**
-     * Get the device associated with the vehicle.
-     *
-     */
-    public function device()
+
+
+    public function vehicleDevice(): HasOne
     {
-        return $this->hasOneThrough(
-            Device::class,
-            VehicleDevice::class,
-            'vehicle_id', // Foreign key on the "vehicle_devices" table
-            'id', // Foreign key on the "devices" table
-            'id', // Local key on the "vehicles" table
-            'device_id' // Local key on the "vehicle_devices" table
-        );
+        return $this->hasOne(VehicleDevice::class);
     }
+
+    // /**
+    //  * Get the device associated with the vehicle.
+    //  *
+    //  */
+    // public function device()
+    // {
+    //     return $this->hasOneThrough(
+    //         Device::class,
+    //         VehicleDevice::class,
+    //         'vehicle_id', // Foreign key on the "vehicle_devices" table
+    //         'id', // Foreign key on the "devices" table
+    //         'id', // Local key on the "vehicles" table
+    //         'device_id' // Local key on the "vehicle_devices" table
+    //     );
+    // }
 
     public function driver()
     {
