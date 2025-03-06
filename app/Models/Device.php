@@ -5,7 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Support\Facades\DB;
 
 class Device extends Model
 {
@@ -15,14 +17,59 @@ class Device extends Model
 
     protected $table = 'tc_devices';
 
-      /**
+    public $timestamps = false;
+
+    protected $attributes = [
+        'attributes' => '{}',
+    ];
+
+    protected $fillable = [
+        'name',
+        'uniqueid',
+        'model',
+        'status'
+    ];
+    
+     /**
      * The "booted" method of the model.
      */
     protected static function booted(): void
     {
         static::addGlobalScope('removeIvan', function (Builder $builder) {
-            $builder->where('uniqueid', '!=', '038020188471');
+
+            $devices = DeviceOrganization::where('organization_id',  session()->get('organization_id') )->get()->pluck('device_id')->toArray();
+
+
+
+            $builder->where('uniqueid', '!=', '038020188471')->whereIn('id', $devices);
+            
         });
+    }
+
+
+    public static function create(array $attributes = [])
+    {
+        $device = static::query()->create([...$attributes , 'status' => 'offline']);
+        $connectionName = (new static())->getConnectionName();
+
+        DB::connection($connectionName)->table('tc_user_device')->insert([
+            'userid'=> $attributes['tc_user_id'] ?? 1,
+            'deviceid'=> $device->id,
+            
+        ]);
+
+        return $device;
+    }
+
+
+    /**
+     * The roles that belong to the user.
+     */
+    public function organizations(): BelongsToMany
+    {
+        $this->setConnection(config('database.default'));
+
+        return $this->belongsToMany(Organization::class);
     }
 
     public function vehicleDevice(): HasOne
@@ -33,6 +80,7 @@ class Device extends Model
 
     public function vehicle()
     {
+        $this->setConnection(config('database.default'));
         return $this->setConnection(config('database.default'))->hasOneThrough(
             Vehicle::class,
             VehicleDevice::class,
