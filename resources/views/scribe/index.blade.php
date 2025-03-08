@@ -28,7 +28,7 @@
             </style>
 
 
-    <script src="{{ asset("/vendor/scribe/js/theme-default-4.35.0.js") }}"></script>
+    <script src="{{ asset("/vendor/scribe/js/theme-default-4.40.0.js") }}"></script>
 
 </head>
 
@@ -134,8 +134,8 @@
                                                                                 <li class="tocify-item level-2" data-unique="dispatch-DELETEapi-dispatches--id-">
                                 <a href="#dispatch-DELETEapi-dispatches--id-">Remove the specified resource from storage.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="dispatch-PUTapi-dispatches--dispatch_id--status--newStatus-">
-                                <a href="#dispatch-PUTapi-dispatches--dispatch_id--status--newStatus-">Change status of a dispatch</a>
+                                                                                <li class="tocify-item level-2" data-unique="dispatch-PUTapi-dispatches--dispatch--status--newStatus-">
+                                <a href="#dispatch-PUTapi-dispatches--dispatch--status--newStatus-">Change status of a dispatch</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -159,11 +159,30 @@
                                                                                 <li class="tocify-item level-2" data-unique="drivers-DELETEapi-drivers--id-">
                                 <a href="#drivers-DELETEapi-drivers--id-">Remove driver from the system.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="drivers-POSTapi-drivers--driver_id--vehicles--vehicle_id-">
-                                <a href="#drivers-POSTapi-drivers--driver_id--vehicles--vehicle_id-">Assign Vehicle to Driver</a>
+                                                                                <li class="tocify-item level-2" data-unique="drivers-POSTapi-drivers--driver--vehicles--vehicle-">
+                                <a href="#drivers-POSTapi-drivers--driver--vehicles--vehicle-">Assign Vehicle to Driver</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="drivers-DELETEapi-drivers--driver_id--vehicles--vehicle_id-">
-                                <a href="#drivers-DELETEapi-drivers--driver_id--vehicles--vehicle_id-">Remove Vehicle from Driver</a>
+                                                                                <li class="tocify-item level-2" data-unique="drivers-DELETEapi-drivers--driver--vehicles--vehicle-">
+                                <a href="#drivers-DELETEapi-drivers--driver--vehicles--vehicle-">Remove Vehicle from Driver</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-endpoints" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endpoints">
+                    <a href="#endpoints">Endpoints</a>
+                </li>
+                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
+                                <a href="#endpoints-GETapi-user">GET api/user</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-organizations">
+                                <a href="#endpoints-GETapi-organizations">GET api/organizations</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-organizations">
+                                <a href="#endpoints-POSTapi-organizations">Store a newly created resource in storage.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-devices--device--positions">
+                                <a href="#endpoints-GETapi-devices--device--positions">Display a listing of the resource.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -187,24 +206,14 @@
                                                                                 <li class="tocify-item level-2" data-unique="orders-DELETEapi-orders--id-">
                                 <a href="#orders-DELETEapi-orders--id-">Delete an order.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="orders-POSTapi-orders--order_id--vehicle--vehicle_id-">
-                                <a href="#orders-POSTapi-orders--order_id--vehicle--vehicle_id-">Attach Vehicle to an order</a>
+                                                                                <li class="tocify-item level-2" data-unique="orders-POSTapi-orders--order--vehicle--vehicle-">
+                                <a href="#orders-POSTapi-orders--order--vehicle--vehicle-">Attach Vehicle to an order</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="orders-DELETEapi-orders--order_id--vehicle--vehicle_id-">
-                                <a href="#orders-DELETEapi-orders--order_id--vehicle--vehicle_id-">Detach Vehicle from an order</a>
+                                                                                <li class="tocify-item level-2" data-unique="orders-DELETEapi-orders--order--vehicle--vehicle-">
+                                <a href="#orders-DELETEapi-orders--order--vehicle--vehicle-">Detach Vehicle from an order</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="orders-PUTapi-orders--order_id--status--newStatus-">
-                                <a href="#orders-PUTapi-orders--order_id--status--newStatus-">Change Order status</a>
-                            </li>
-                                                                        </ul>
-                            </ul>
-                    <ul id="tocify-header-users" class="tocify-header">
-                <li class="tocify-item level-1" data-unique="users">
-                    <a href="#users">Users</a>
-                </li>
-                                    <ul id="tocify-subheader-users" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="users-GETapi-user">
-                                <a href="#users-GETapi-user">GET api/user</a>
+                                                                                <li class="tocify-item level-2" data-unique="orders-PUTapi-orders--order--status--newStatus-">
+                                <a href="#orders-PUTapi-orders--order--status--newStatus-">Change Order status</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -231,8 +240,8 @@
                                                                                 <li class="tocify-item level-2" data-unique="vehicles-PUTapi-vehicles--vehicle--attach-device">
                                 <a href="#vehicles-PUTapi-vehicles--vehicle--attach-device">Attach device to a vehicle</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="vehicles-PUTapi-vehicles--vehicle_id--detach-devices">
-                                <a href="#vehicles-PUTapi-vehicles--vehicle_id--detach-devices">Remove devices attached to a vehicle.</a>
+                                                                                <li class="tocify-item level-2" data-unique="vehicles-PUTapi-vehicles--vehicle--detach-devices">
+                                <a href="#vehicles-PUTapi-vehicles--vehicle--detach-devices">Remove devices attached to a vehicle.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -244,7 +253,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: May 4, 2024</li>
+        <li>Last updated: March 8, 2025</li>
     </ul>
 </div>
 
@@ -254,7 +263,7 @@
         <h1 id="introduction">Introduction</h1>
 <p>Documentation for dayalog api</p>
 <aside>
-    <strong>Base URL</strong>: <code>https://dayalog.co</code>
+    <strong>Base URL</strong>: <code>https://dayalog.test</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
@@ -282,22 +291,22 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://dayalog.co/api/register" \
+    "https://dayalog.test/api/register" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"vvwegqytmu\",
-    \"email\": \"luettgen.daphney@example.com\",
-    \"patasente_id\": \"architecto\",
-    \"phone_number\": \"voluptatem\",
-    \"password\": \"consequatur\"
+    \"name\": \"afosdqhbjt\",
+    \"email\": \"gonzalo48@example.com\",
+    \"patasente_id\": \"laboriosam\",
+    \"phone_number\": \"doloremque\",
+    \"password\": \"enim\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/register"
+    "https://dayalog.test/api/register"
 );
 
 const headers = {
@@ -306,11 +315,11 @@ const headers = {
 };
 
 let body = {
-    "name": "vvwegqytmu",
-    "email": "luettgen.daphney@example.com",
-    "patasente_id": "architecto",
-    "phone_number": "voluptatem",
-    "password": "consequatur"
+    "name": "afosdqhbjt",
+    "email": "gonzalo48@example.com",
+    "patasente_id": "laboriosam",
+    "phone_number": "doloremque",
+    "password": "enim"
 };
 
 fetch(url, {
@@ -322,7 +331,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/register';
+$url = 'https://dayalog.test/api/register';
 $response = $client-&gt;post(
     $url,
     [
@@ -331,11 +340,11 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'name' =&gt; 'vvwegqytmu',
-            'email' =&gt; 'luettgen.daphney@example.com',
-            'patasente_id' =&gt; 'architecto',
-            'phone_number' =&gt; 'voluptatem',
-            'password' =&gt; 'consequatur',
+            'name' =&gt; 'afosdqhbjt',
+            'email' =&gt; 'gonzalo48@example.com',
+            'patasente_id' =&gt; 'laboriosam',
+            'phone_number' =&gt; 'doloremque',
+            'password' =&gt; 'enim',
         ],
     ]
 );
@@ -347,13 +356,13 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/register'
+url = 'https://dayalog.test/api/register'
 payload = {
-    "name": "vvwegqytmu",
-    "email": "luettgen.daphney@example.com",
-    "patasente_id": "architecto",
-    "phone_number": "voluptatem",
-    "password": "consequatur"
+    "name": "afosdqhbjt",
+    "email": "gonzalo48@example.com",
+    "patasente_id": "laboriosam",
+    "phone_number": "doloremque",
+    "password": "enim"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -366,35 +375,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-POSTapi-register">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 26
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Registered successfully&quot;,
-    &quot;user&quot;: {
-        &quot;name&quot;: &quot;vvwegqytmu&quot;,
-        &quot;email&quot;: &quot;luettgen.daphney@example.com&quot;,
-        &quot;patasente_id&quot;: &quot;architecto&quot;,
-        &quot;phone_number&quot;: &quot;voluptatem&quot;,
-        &quot;updated_at&quot;: &quot;2024-05-04T19:55:44.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2024-05-04T19:55:44.000000Z&quot;,
-        &quot;id&quot;: 5
-    }
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-POSTapi-register" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-register"></span>:
@@ -454,10 +435,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-register"
-               value="vvwegqytmu"
+               value="afosdqhbjt"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>vvwegqytmu</code></p>
+<p>Must not be greater than 255 characters. Example: <code>afosdqhbjt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -465,10 +446,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-register"
-               value="luettgen.daphney@example.com"
+               value="gonzalo48@example.com"
                data-component="body">
     <br>
-<p>This field is required when none of <code>phone_number</code> and <code>patasente_id</code> are present.  Must be a valid email address. Must not be greater than 255 characters. Example: <code>luettgen.daphney@example.com</code></p>
+<p>This field is required when none of <code>phone_number</code> and <code>patasente_id</code> are present.  Must be a valid email address. Must not be greater than 255 characters. Example: <code>gonzalo48@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>patasente_id</code></b>&nbsp;&nbsp;
@@ -476,10 +457,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="patasente_id"                data-endpoint="POSTapi-register"
-               value="architecto"
+               value="laboriosam"
                data-component="body">
     <br>
-<p>TODO : rename to patasente merchant code. This field is required when none of <code>email</code> and <code>phone_number</code> are present. Example: <code>architecto</code></p>
+<p>TODO : rename to patasente merchant code. This field is required when none of <code>email</code> and <code>phone_number</code> are present. Example: <code>laboriosam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>phone_number</code></b>&nbsp;&nbsp;
@@ -487,10 +468,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="phone_number"                data-endpoint="POSTapi-register"
-               value="voluptatem"
+               value="doloremque"
                data-component="body">
     <br>
-<p>This field is required when none of <code>email</code> and <code>patasente_id</code> are present. Example: <code>voluptatem</code></p>
+<p>This field is required when none of <code>email</code> and <code>patasente_id</code> are present. Example: <code>doloremque</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -498,10 +479,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-register"
-               value="consequatur"
+               value="enim"
                data-component="body">
     <br>
-<p>Example: <code>consequatur</code></p>
+<p>Example: <code>enim</code></p>
         </div>
         </form>
 
@@ -518,20 +499,20 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://dayalog.co/api/tokens/create" \
+    "https://dayalog.test/api/tokens/create" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": \"consectetur\",
-    \"password\": \"2f3(h\'\",
-    \"token_name\": \"quis\"
+    \"user_id\": \"aspernatur\",
+    \"password\": \"21\\\"D!`U\",
+    \"token_name\": \"facere\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/tokens/create"
+    "https://dayalog.test/api/tokens/create"
 );
 
 const headers = {
@@ -540,9 +521,9 @@ const headers = {
 };
 
 let body = {
-    "user_id": "consectetur",
-    "password": "2f3(h'",
-    "token_name": "quis"
+    "user_id": "aspernatur",
+    "password": "21\"D!`U",
+    "token_name": "facere"
 };
 
 fetch(url, {
@@ -554,7 +535,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/tokens/create';
+$url = 'https://dayalog.test/api/tokens/create';
 $response = $client-&gt;post(
     $url,
     [
@@ -563,9 +544,9 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'user_id' =&gt; 'consectetur',
-            'password' =&gt; '2f3(h\'',
-            'token_name' =&gt; 'quis',
+            'user_id' =&gt; 'aspernatur',
+            'password' =&gt; '21"D!`U',
+            'token_name' =&gt; 'facere',
         ],
     ]
 );
@@ -577,11 +558,11 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/tokens/create'
+url = 'https://dayalog.test/api/tokens/create'
 payload = {
-    "user_id": "consectetur",
-    "password": "2f3(h'",
-    "token_name": "quis"
+    "user_id": "aspernatur",
+    "password": "21\"D!`U",
+    "token_name": "facere"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -594,31 +575,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-POSTapi-tokens-create">
-            <blockquote>
-            <p>Example response (422):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 25
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;These credentials do not match our records.&quot;,
-    &quot;errors&quot;: {
-        &quot;user_id&quot;: [
-            &quot;These credentials do not match our records.&quot;
-        ]
-    }
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-POSTapi-tokens-create" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-tokens-create"></span>:
@@ -678,10 +635,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="user_id"                data-endpoint="POSTapi-tokens-create"
-               value="consectetur"
+               value="aspernatur"
                data-component="body">
     <br>
-<p>Example: <code>consectetur</code></p>
+<p>Example: <code>aspernatur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -689,10 +646,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-tokens-create"
-               value="2f3(h'"
+               value="21"D!`U"
                data-component="body">
     <br>
-<p>Example: <code>2f3(h'</code></p>
+<p>Example: <code>21"D!</code>U`</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>token_name</code></b>&nbsp;&nbsp;
@@ -700,10 +657,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="token_name"                data-endpoint="POSTapi-tokens-create"
-               value="quis"
+               value="facere"
                data-component="body">
     <br>
-<p>Example: <code>quis</code></p>
+<p>Example: <code>facere</code></p>
         </div>
         </form>
 
@@ -720,18 +677,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://dayalog.co/api/forgot-password" \
+    "https://dayalog.test/api/forgot-password" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"dkoepp@example.com\"
+    \"email\": \"bradford64@example.com\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/forgot-password"
+    "https://dayalog.test/api/forgot-password"
 );
 
 const headers = {
@@ -740,7 +697,7 @@ const headers = {
 };
 
 let body = {
-    "email": "dkoepp@example.com"
+    "email": "bradford64@example.com"
 };
 
 fetch(url, {
@@ -752,7 +709,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/forgot-password';
+$url = 'https://dayalog.test/api/forgot-password';
 $response = $client-&gt;post(
     $url,
     [
@@ -761,7 +718,7 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'email' =&gt; 'dkoepp@example.com',
+            'email' =&gt; 'bradford64@example.com',
         ],
     ]
 );
@@ -773,9 +730,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/forgot-password'
+url = 'https://dayalog.test/api/forgot-password'
 payload = {
-    "email": "dkoepp@example.com"
+    "email": "bradford64@example.com"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -788,31 +745,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-POSTapi-forgot-password">
-            <blockquote>
-            <p>Example response (422):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 24
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;We can&#039;t find a user with that email address.&quot;,
-    &quot;errors&quot;: {
-        &quot;email&quot;: [
-            &quot;We can&#039;t find a user with that email address.&quot;
-        ]
-    }
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-POSTapi-forgot-password" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-forgot-password"></span>:
@@ -872,10 +805,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-forgot-password"
-               value="dkoepp@example.com"
+               value="bradford64@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>dkoepp@example.com</code></p>
+<p>Must be a valid email address. Example: <code>bradford64@example.com</code></p>
         </div>
         </form>
 
@@ -892,20 +825,20 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://dayalog.co/api/reset-password" \
+    "https://dayalog.test/api/reset-password" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"in\",
-    \"email\": \"cartwright.mireille@example.net\",
-    \"password\": \"qui\"
+    \"token\": \"et\",
+    \"email\": \"shanel91@example.com\",
+    \"password\": \"quos\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/reset-password"
+    "https://dayalog.test/api/reset-password"
 );
 
 const headers = {
@@ -914,9 +847,9 @@ const headers = {
 };
 
 let body = {
-    "token": "in",
-    "email": "cartwright.mireille@example.net",
-    "password": "qui"
+    "token": "et",
+    "email": "shanel91@example.com",
+    "password": "quos"
 };
 
 fetch(url, {
@@ -928,7 +861,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/reset-password';
+$url = 'https://dayalog.test/api/reset-password';
 $response = $client-&gt;post(
     $url,
     [
@@ -937,9 +870,9 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'token' =&gt; 'in',
-            'email' =&gt; 'cartwright.mireille@example.net',
-            'password' =&gt; 'qui',
+            'token' =&gt; 'et',
+            'email' =&gt; 'shanel91@example.com',
+            'password' =&gt; 'quos',
         ],
     ]
 );
@@ -951,11 +884,11 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/reset-password'
+url = 'https://dayalog.test/api/reset-password'
 payload = {
-    "token": "in",
-    "email": "cartwright.mireille@example.net",
-    "password": "qui"
+    "token": "et",
+    "email": "shanel91@example.com",
+    "password": "quos"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -968,32 +901,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-POSTapi-reset-password">
-            <blockquote>
-            <p>Example response (422):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 23
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The password field confirmation does not match. (and 1 more error)&quot;,
-    &quot;errors&quot;: {
-        &quot;password&quot;: [
-            &quot;The password field confirmation does not match.&quot;,
-            &quot;The password field must be at least 8 characters.&quot;
-        ]
-    }
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-POSTapi-reset-password" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-reset-password"></span>:
@@ -1053,10 +961,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="token"                data-endpoint="POSTapi-reset-password"
-               value="in"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>in</code></p>
+<p>Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -1064,10 +972,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-reset-password"
-               value="cartwright.mireille@example.net"
+               value="shanel91@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>cartwright.mireille@example.net</code></p>
+<p>Must be a valid email address. Example: <code>shanel91@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -1075,10 +983,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-reset-password"
-               value="qui"
+               value="quos"
                data-component="body">
     <br>
-<p>Example: <code>qui</code></p>
+<p>Example: <code>quos</code></p>
         </div>
         </form>
 
@@ -1095,14 +1003,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.co/api/verify-email/dicta/accusantium" \
+    --get "https://dayalog.test/api/verify-email/temporibus/aut" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/verify-email/dicta/accusantium"
+    "https://dayalog.test/api/verify-email/temporibus/aut"
 );
 
 const headers = {
@@ -1118,7 +1026,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/verify-email/dicta/accusantium';
+$url = 'https://dayalog.test/api/verify-email/temporibus/aut';
 $response = $client-&gt;get(
     $url,
     [
@@ -1136,7 +1044,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/verify-email/dicta/accusantium'
+url = 'https://dayalog.test/api/verify-email/temporibus/aut'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -1159,6 +1067,7 @@ response.json()</code></pre></div>
 content-type: application/json
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
+set-cookie: dayalog_session=izRr8BHbN64x6CrYbqnIYOzwB1tKn0SfHvBn6Ufi; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -1225,10 +1134,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-verify-email--id---hash-"
-               value="dicta"
+               value="temporibus"
                data-component="url">
     <br>
-<p>The ID of the verify email. Example: <code>dicta</code></p>
+<p>The ID of the verify email. Example: <code>temporibus</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>hash</code></b>&nbsp;&nbsp;
@@ -1236,10 +1145,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="hash"                data-endpoint="GETapi-verify-email--id---hash-"
-               value="accusantium"
+               value="aut"
                data-component="url">
     <br>
-<p>Example: <code>accusantium</code></p>
+<p>Example: <code>aut</code></p>
             </div>
                     </form>
 
@@ -1256,14 +1165,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://dayalog.co/api/email/verification-notification" \
+    "https://dayalog.test/api/email/verification-notification" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/email/verification-notification"
+    "https://dayalog.test/api/email/verification-notification"
 );
 
 const headers = {
@@ -1279,7 +1188,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/email/verification-notification';
+$url = 'https://dayalog.test/api/email/verification-notification';
 $response = $client-&gt;post(
     $url,
     [
@@ -1297,7 +1206,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/email/verification-notification'
+url = 'https://dayalog.test/api/email/verification-notification'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -1309,24 +1218,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-POSTapi-email-verification-notification">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-POSTapi-email-verification-notification" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-email-verification-notification"></span>:
@@ -1394,14 +1286,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://dayalog.co/api/logout" \
+    "https://dayalog.test/api/logout" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/logout"
+    "https://dayalog.test/api/logout"
 );
 
 const headers = {
@@ -1417,7 +1309,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/logout';
+$url = 'https://dayalog.test/api/logout';
 $response = $client-&gt;post(
     $url,
     [
@@ -1435,7 +1327,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/logout'
+url = 'https://dayalog.test/api/logout'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -1447,24 +1339,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-POSTapi-logout">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-POSTapi-logout" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-logout"></span>:
@@ -1536,14 +1411,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.co/api/devices" \
+    --get "https://dayalog.test/api/devices" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/devices"
+    "https://dayalog.test/api/devices"
 );
 
 const headers = {
@@ -1559,7 +1434,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/devices';
+$url = 'https://dayalog.test/api/devices';
 $response = $client-&gt;get(
     $url,
     [
@@ -1577,7 +1452,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/devices'
+url = 'https://dayalog.test/api/devices'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -1590,7 +1465,7 @@ response.json()</code></pre></div>
 
 <span id="example-responses-GETapi-devices">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -1598,156 +1473,13 @@ response.json()</code></pre></div>
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 59
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
+set-cookie: dayalog_session=Ntt8cxHy2qEtbtl0fpYva66NJN33dvoHetKzqFr1; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 49,
-            &quot;name&quot;: &quot;Solomon&quot;,
-            &quot;uniqueid&quot;: &quot;265412&quot;,
-            &quot;lastupdate&quot;: &quot;2023-10-20 19:15:22&quot;,
-            &quot;positionid&quot;: 29323,
-            &quot;groupid&quot;: null,
-            &quot;attributes&quot;: &quot;{}&quot;,
-            &quot;phone&quot;: null,
-            &quot;model&quot;: &quot;Phone Model&quot;,
-            &quot;contact&quot;: null,
-            &quot;category&quot;: null,
-            &quot;disabled&quot;: 0,
-            &quot;status&quot;: &quot;offline&quot;,
-            &quot;geofenceids&quot;: null,
-            &quot;expirationtime&quot;: null,
-            &quot;motionstate&quot;: 0,
-            &quot;motiontime&quot;: null,
-            &quot;motiondistance&quot;: 0,
-            &quot;overspeedstate&quot;: 0,
-            &quot;overspeedtime&quot;: null,
-            &quot;overspeedgeofenceid&quot;: 0,
-            &quot;motionstreak&quot;: 0,
-            &quot;lastPosition&quot;: {
-                &quot;id&quot;: 29323,
-                &quot;protocol&quot;: &quot;osmand&quot;,
-                &quot;deviceid&quot;: 49,
-                &quot;servertime&quot;: &quot;2023-10-20T16:15:22.000000Z&quot;,
-                &quot;devicetime&quot;: &quot;2023-10-20 19:15:18&quot;,
-                &quot;fixtime&quot;: &quot;2023-10-20 19:15:18&quot;,
-                &quot;valid&quot;: 1,
-                &quot;latitude&quot;: 0.3764655,
-                &quot;longitude&quot;: 32.6551186,
-                &quot;altitude&quot;: 0,
-                &quot;speed&quot;: 0,
-                &quot;course&quot;: 0,
-                &quot;address&quot;: null,
-                &quot;attributes&quot;: &quot;{\&quot;batteryLevel\&quot;:19.0,\&quot;distance\&quot;:751.12,\&quot;totalDistance\&quot;:53108.43,\&quot;motion\&quot;:false}&quot;,
-                &quot;accuracy&quot;: 1500,
-                &quot;network&quot;: &quot;null&quot;
-            }
-        },
-        {
-            &quot;id&quot;: 50,
-            &quot;name&quot;: &quot;Afasha&quot;,
-            &quot;uniqueid&quot;: &quot;43989383484834&quot;,
-            &quot;lastupdate&quot;: null,
-            &quot;positionid&quot;: null,
-            &quot;groupid&quot;: null,
-            &quot;attributes&quot;: &quot;{}&quot;,
-            &quot;phone&quot;: null,
-            &quot;model&quot;: &quot;tk340&quot;,
-            &quot;contact&quot;: null,
-            &quot;category&quot;: null,
-            &quot;disabled&quot;: 0,
-            &quot;status&quot;: &quot;offline&quot;,
-            &quot;geofenceids&quot;: null,
-            &quot;expirationtime&quot;: null,
-            &quot;motionstate&quot;: 0,
-            &quot;motiontime&quot;: null,
-            &quot;motiondistance&quot;: 0,
-            &quot;overspeedstate&quot;: 0,
-            &quot;overspeedtime&quot;: null,
-            &quot;overspeedgeofenceid&quot;: 0,
-            &quot;motionstreak&quot;: 0,
-            &quot;lastPosition&quot;: null
-        },
-        {
-            &quot;id&quot;: 48,
-            &quot;name&quot;: &quot;Afasha&quot;,
-            &quot;uniqueid&quot;: &quot;835881&quot;,
-            &quot;lastupdate&quot;: &quot;2024-03-28 22:09:21&quot;,
-            &quot;positionid&quot;: 66949,
-            &quot;groupid&quot;: null,
-            &quot;attributes&quot;: &quot;{}&quot;,
-            &quot;phone&quot;: null,
-            &quot;model&quot;: null,
-            &quot;contact&quot;: null,
-            &quot;category&quot;: null,
-            &quot;disabled&quot;: 0,
-            &quot;status&quot;: &quot;offline&quot;,
-            &quot;geofenceids&quot;: null,
-            &quot;expirationtime&quot;: null,
-            &quot;motionstate&quot;: 0,
-            &quot;motiontime&quot;: &quot;2024-03-28 22:09:20&quot;,
-            &quot;motiondistance&quot;: 102575587.22,
-            &quot;overspeedstate&quot;: 0,
-            &quot;overspeedtime&quot;: null,
-            &quot;overspeedgeofenceid&quot;: 0,
-            &quot;motionstreak&quot;: 1,
-            &quot;lastPosition&quot;: {
-                &quot;id&quot;: 66949,
-                &quot;protocol&quot;: &quot;osmand&quot;,
-                &quot;deviceid&quot;: 48,
-                &quot;servertime&quot;: &quot;2024-03-28T19:09:21.000000Z&quot;,
-                &quot;devicetime&quot;: &quot;2024-03-28 22:09:20&quot;,
-                &quot;fixtime&quot;: &quot;2024-03-28 22:09:20&quot;,
-                &quot;valid&quot;: 1,
-                &quot;latitude&quot;: 0.3576947,
-                &quot;longitude&quot;: 32.5976538,
-                &quot;altitude&quot;: 1178,
-                &quot;speed&quot;: 0.00365728,
-                &quot;course&quot;: 0,
-                &quot;address&quot;: null,
-                &quot;attributes&quot;: &quot;{\&quot;batteryLevel\&quot;:45.0,\&quot;distance\&quot;:0.02,\&quot;totalDistance\&quot;:1.0257558722E8,\&quot;motion\&quot;:false}&quot;,
-                &quot;accuracy&quot;: 30,
-                &quot;network&quot;: &quot;null&quot;
-            }
-        }
-    ],
-    &quot;links&quot;: {
-        &quot;first&quot;: &quot;http://dayalog_api.test/api/devices?page=1&quot;,
-        &quot;last&quot;: &quot;http://dayalog_api.test/api/devices?page=1&quot;,
-        &quot;prev&quot;: null,
-        &quot;next&quot;: null
-    },
-    &quot;meta&quot;: {
-        &quot;current_page&quot;: 1,
-        &quot;from&quot;: 1,
-        &quot;last_page&quot;: 1,
-        &quot;links&quot;: [
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;http://dayalog_api.test/api/devices?page=1&quot;,
-                &quot;label&quot;: &quot;1&quot;,
-                &quot;active&quot;: true
-            },
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
-                &quot;active&quot;: false
-            }
-        ],
-        &quot;path&quot;: &quot;http://dayalog_api.test/api/devices&quot;,
-        &quot;per_page&quot;: 25,
-        &quot;to&quot;: 3,
-        &quot;total&quot;: 3
-    }
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
 }</code>
  </pre>
     </span>
@@ -1818,21 +1550,21 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://dayalog.co/api/devices" \
+    "https://dayalog.test/api/devices" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"voluptatem\",
-    \"uniqueid\": \"bdlgmbxvceofqzf\",
-    \"model\": \"omnis\",
-    \"tc_user_id\": 457.52519
+    \"name\": \"maiores\",
+    \"uniqueid\": \"dccilkmuemhduvb\",
+    \"model\": \"non\",
+    \"tc_user_id\": 469947.776411878
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/devices"
+    "https://dayalog.test/api/devices"
 );
 
 const headers = {
@@ -1841,10 +1573,10 @@ const headers = {
 };
 
 let body = {
-    "name": "voluptatem",
-    "uniqueid": "bdlgmbxvceofqzf",
-    "model": "omnis",
-    "tc_user_id": 457.52519
+    "name": "maiores",
+    "uniqueid": "dccilkmuemhduvb",
+    "model": "non",
+    "tc_user_id": 469947.776411878
 };
 
 fetch(url, {
@@ -1856,7 +1588,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/devices';
+$url = 'https://dayalog.test/api/devices';
 $response = $client-&gt;post(
     $url,
     [
@@ -1865,10 +1597,10 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'name' =&gt; 'voluptatem',
-            'uniqueid' =&gt; 'bdlgmbxvceofqzf',
-            'model' =&gt; 'omnis',
-            'tc_user_id' =&gt; 457.52519,
+            'name' =&gt; 'maiores',
+            'uniqueid' =&gt; 'dccilkmuemhduvb',
+            'model' =&gt; 'non',
+            'tc_user_id' =&gt; 469947.776411878,
         ],
     ]
 );
@@ -1880,12 +1612,12 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/devices'
+url = 'https://dayalog.test/api/devices'
 payload = {
-    "name": "voluptatem",
-    "uniqueid": "bdlgmbxvceofqzf",
-    "model": "omnis",
-    "tc_user_id": 457.52519
+    "name": "maiores",
+    "uniqueid": "dccilkmuemhduvb",
+    "model": "non",
+    "tc_user_id": 469947.776411878
 }
 headers = {
   'Content-Type': 'application/json',
@@ -1898,26 +1630,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-POSTapi-devices">
-            <blockquote>
-            <p>Example response (500):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Server Error&quot;
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-POSTapi-devices" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-devices"></span>:
@@ -1977,10 +1690,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-devices"
-               value="voluptatem"
+               value="maiores"
                data-component="body">
     <br>
-<p>Example: <code>voluptatem</code></p>
+<p>Example: <code>maiores</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>uniqueid</code></b>&nbsp;&nbsp;
@@ -1988,10 +1701,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="uniqueid"                data-endpoint="POSTapi-devices"
-               value="bdlgmbxvceofqzf"
+               value="dccilkmuemhduvb"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>bdlgmbxvceofqzf</code></p>
+<p>Must not be greater than 255 characters. Example: <code>dccilkmuemhduvb</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model</code></b>&nbsp;&nbsp;
@@ -1999,10 +1712,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="model"                data-endpoint="POSTapi-devices"
-               value="omnis"
+               value="non"
                data-component="body">
     <br>
-<p>Example: <code>omnis</code></p>
+<p>Example: <code>non</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>tc_user_id</code></b>&nbsp;&nbsp;
@@ -2010,10 +1723,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="tc_user_id"                data-endpoint="POSTapi-devices"
-               value="457.52519"
+               value="469947.77641188"
                data-component="body">
     <br>
-<p>Example: <code>457.52519</code></p>
+<p>Example: <code>469947.77641188</code></p>
         </div>
         </form>
 
@@ -2030,14 +1743,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.co/api/devices/49" \
+    --get "https://dayalog.test/api/devices/odio" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/devices/49"
+    "https://dayalog.test/api/devices/odio"
 );
 
 const headers = {
@@ -2053,7 +1766,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/devices/49';
+$url = 'https://dayalog.test/api/devices/odio';
 $response = $client-&gt;get(
     $url,
     [
@@ -2071,7 +1784,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/devices/49'
+url = 'https://dayalog.test/api/devices/odio'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -2084,7 +1797,7 @@ response.json()</code></pre></div>
 
 <span id="example-responses-GETapi-devices--id-">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -2092,55 +1805,13 @@ response.json()</code></pre></div>
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 57
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
+set-cookie: dayalog_session=iHinGYr6u9JV7xemd0wQSJSZfycKWVacJCu4QKZV; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: {
-        &quot;id&quot;: 49,
-        &quot;name&quot;: &quot;Solomon&quot;,
-        &quot;uniqueid&quot;: &quot;265412&quot;,
-        &quot;lastupdate&quot;: &quot;2023-10-20 19:15:22&quot;,
-        &quot;positionid&quot;: 29323,
-        &quot;groupid&quot;: null,
-        &quot;attributes&quot;: &quot;{}&quot;,
-        &quot;phone&quot;: null,
-        &quot;model&quot;: &quot;Phone Model&quot;,
-        &quot;contact&quot;: null,
-        &quot;category&quot;: null,
-        &quot;disabled&quot;: 0,
-        &quot;status&quot;: &quot;offline&quot;,
-        &quot;geofenceids&quot;: null,
-        &quot;expirationtime&quot;: null,
-        &quot;motionstate&quot;: 0,
-        &quot;motiontime&quot;: null,
-        &quot;motiondistance&quot;: 0,
-        &quot;overspeedstate&quot;: 0,
-        &quot;overspeedtime&quot;: null,
-        &quot;overspeedgeofenceid&quot;: 0,
-        &quot;motionstreak&quot;: 0,
-        &quot;lastPosition&quot;: {
-            &quot;id&quot;: 29323,
-            &quot;protocol&quot;: &quot;osmand&quot;,
-            &quot;deviceid&quot;: 49,
-            &quot;servertime&quot;: &quot;2023-10-20T16:15:22.000000Z&quot;,
-            &quot;devicetime&quot;: &quot;2023-10-20 19:15:18&quot;,
-            &quot;fixtime&quot;: &quot;2023-10-20 19:15:18&quot;,
-            &quot;valid&quot;: 1,
-            &quot;latitude&quot;: 0.3764655,
-            &quot;longitude&quot;: 32.6551186,
-            &quot;altitude&quot;: 0,
-            &quot;speed&quot;: 0,
-            &quot;course&quot;: 0,
-            &quot;address&quot;: null,
-            &quot;attributes&quot;: &quot;{\&quot;batteryLevel\&quot;:19.0,\&quot;distance\&quot;:751.12,\&quot;totalDistance\&quot;:53108.43,\&quot;motion\&quot;:false}&quot;,
-            &quot;accuracy&quot;: 1500,
-            &quot;network&quot;: &quot;null&quot;
-        }
-    }
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
 }</code>
  </pre>
     </span>
@@ -2199,14 +1870,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="GETapi-devices--id-"
-               value="49"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-devices--id-"
+               value="odio"
                data-component="url">
     <br>
-<p>The ID of the device. Example: <code>49</code></p>
+<p>The ID of the device. Example: <code>odio</code></p>
             </div>
                     </form>
 
@@ -2223,14 +1894,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.co/api/devices/49" \
+    "https://dayalog.test/api/devices/et" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/devices/49"
+    "https://dayalog.test/api/devices/et"
 );
 
 const headers = {
@@ -2246,7 +1917,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/devices/49';
+$url = 'https://dayalog.test/api/devices/et';
 $response = $client-&gt;put(
     $url,
     [
@@ -2264,7 +1935,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/devices/49'
+url = 'https://dayalog.test/api/devices/et'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -2276,26 +1947,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-PUTapi-devices--id-">
-            <blockquote>
-            <p>Example response (500):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 56
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Server Error&quot;
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-PUTapi-devices--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-PUTapi-devices--id-"></span>:
@@ -2355,14 +2007,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="PUTapi-devices--id-"
-               value="49"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="PUTapi-devices--id-"
+               value="et"
                data-component="url">
     <br>
-<p>The ID of the device. Example: <code>49</code></p>
+<p>The ID of the device. Example: <code>et</code></p>
             </div>
                     </form>
 
@@ -2379,14 +2031,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://dayalog.co/api/devices/49" \
+    "https://dayalog.test/api/devices/nemo" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/devices/49"
+    "https://dayalog.test/api/devices/nemo"
 );
 
 const headers = {
@@ -2402,7 +2054,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/devices/49';
+$url = 'https://dayalog.test/api/devices/nemo';
 $response = $client-&gt;delete(
     $url,
     [
@@ -2420,7 +2072,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/devices/49'
+url = 'https://dayalog.test/api/devices/nemo'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -2432,26 +2084,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-DELETEapi-devices--id-">
-            <blockquote>
-            <p>Example response (500):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Server Error&quot;
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-DELETEapi-devices--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-DELETEapi-devices--id-"></span>:
@@ -2507,14 +2140,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="DELETEapi-devices--id-"
-               value="49"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-devices--id-"
+               value="nemo"
                data-component="url">
     <br>
-<p>The ID of the device. Example: <code>49</code></p>
+<p>The ID of the device. Example: <code>nemo</code></p>
             </div>
                     </form>
 
@@ -2535,14 +2168,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.co/api/dispatches" \
+    --get "https://dayalog.test/api/dispatches" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/dispatches"
+    "https://dayalog.test/api/dispatches"
 );
 
 const headers = {
@@ -2558,7 +2191,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/dispatches';
+$url = 'https://dayalog.test/api/dispatches';
 $response = $client-&gt;get(
     $url,
     [
@@ -2576,7 +2209,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/dispatches'
+url = 'https://dayalog.test/api/dispatches'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -2589,7 +2222,7 @@ response.json()</code></pre></div>
 
 <span id="example-responses-GETapi-dispatches">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -2597,58 +2230,13 @@ response.json()</code></pre></div>
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 32
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
+set-cookie: dayalog_session=BiT9aTG2A9YhM9oqLoaOC6JGBtG82TJbRtZZFUXy; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;order_vehicle_id&quot;: 1,
-            &quot;origin&quot;: &quot;Bukoto Kisasi&quot;,
-            &quot;destination&quot;: &quot;Ndeeba&quot;,
-            &quot;notes&quot;: &quot;Wabodda&quot;,
-            &quot;status&quot;: &quot;transit&quot;,
-            &quot;created_at&quot;: &quot;2024-03-28T10:37:24.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2024-03-28T10:37:41.000000Z&quot;,
-            &quot;deleted_at&quot;: null
-        }
-    ],
-    &quot;links&quot;: {
-        &quot;first&quot;: &quot;http://dayalog_api.test/api/dispatches?page=1&quot;,
-        &quot;last&quot;: &quot;http://dayalog_api.test/api/dispatches?page=1&quot;,
-        &quot;prev&quot;: null,
-        &quot;next&quot;: null
-    },
-    &quot;meta&quot;: {
-        &quot;current_page&quot;: 1,
-        &quot;from&quot;: 1,
-        &quot;last_page&quot;: 1,
-        &quot;links&quot;: [
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;http://dayalog_api.test/api/dispatches?page=1&quot;,
-                &quot;label&quot;: &quot;1&quot;,
-                &quot;active&quot;: true
-            },
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
-                &quot;active&quot;: false
-            }
-        ],
-        &quot;path&quot;: &quot;http://dayalog_api.test/api/dispatches&quot;,
-        &quot;per_page&quot;: 25,
-        &quot;to&quot;: 1,
-        &quot;total&quot;: 1
-    }
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
 }</code>
  </pre>
     </span>
@@ -2719,21 +2307,21 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://dayalog.co/api/dispatches" \
+    "https://dayalog.test/api/dispatches" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"order_vehicle_id\": \"viayzqdnddztojkvbosmnxx\",
-    \"origin\": \"odio\",
-    \"destination\": \"doloribus\",
-    \"notes\": \"deserunt\"
+    \"order_vehicle_id\": \"hdmpgbtxlwwtckupqoumuph\",
+    \"origin\": \"laboriosam\",
+    \"destination\": \"cum\",
+    \"notes\": \"qui\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/dispatches"
+    "https://dayalog.test/api/dispatches"
 );
 
 const headers = {
@@ -2742,10 +2330,10 @@ const headers = {
 };
 
 let body = {
-    "order_vehicle_id": "viayzqdnddztojkvbosmnxx",
-    "origin": "odio",
-    "destination": "doloribus",
-    "notes": "deserunt"
+    "order_vehicle_id": "hdmpgbtxlwwtckupqoumuph",
+    "origin": "laboriosam",
+    "destination": "cum",
+    "notes": "qui"
 };
 
 fetch(url, {
@@ -2757,7 +2345,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/dispatches';
+$url = 'https://dayalog.test/api/dispatches';
 $response = $client-&gt;post(
     $url,
     [
@@ -2766,10 +2354,10 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'order_vehicle_id' =&gt; 'viayzqdnddztojkvbosmnxx',
-            'origin' =&gt; 'odio',
-            'destination' =&gt; 'doloribus',
-            'notes' =&gt; 'deserunt',
+            'order_vehicle_id' =&gt; 'hdmpgbtxlwwtckupqoumuph',
+            'origin' =&gt; 'laboriosam',
+            'destination' =&gt; 'cum',
+            'notes' =&gt; 'qui',
         ],
     ]
 );
@@ -2781,12 +2369,12 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/dispatches'
+url = 'https://dayalog.test/api/dispatches'
 payload = {
-    "order_vehicle_id": "viayzqdnddztojkvbosmnxx",
-    "origin": "odio",
-    "destination": "doloribus",
-    "notes": "deserunt"
+    "order_vehicle_id": "hdmpgbtxlwwtckupqoumuph",
+    "origin": "laboriosam",
+    "destination": "cum",
+    "notes": "qui"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -2799,31 +2387,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-POSTapi-dispatches">
-            <blockquote>
-            <p>Example response (422):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 31
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The selected order vehicle id is invalid.&quot;,
-    &quot;errors&quot;: {
-        &quot;order_vehicle_id&quot;: [
-            &quot;The selected order vehicle id is invalid.&quot;
-        ]
-    }
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-POSTapi-dispatches" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-dispatches"></span>:
@@ -2883,10 +2447,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="order_vehicle_id"                data-endpoint="POSTapi-dispatches"
-               value="viayzqdnddztojkvbosmnxx"
+               value="hdmpgbtxlwwtckupqoumuph"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>viayzqdnddztojkvbosmnxx</code></p>
+<p>The <code>id</code> of an existing record in the order_vehicle table. Must not be greater than 255 characters. Example: <code>hdmpgbtxlwwtckupqoumuph</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>origin</code></b>&nbsp;&nbsp;
@@ -2894,10 +2458,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="origin"                data-endpoint="POSTapi-dispatches"
-               value="odio"
+               value="laboriosam"
                data-component="body">
     <br>
-<p>Example: <code>odio</code></p>
+<p>Example: <code>laboriosam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>destination</code></b>&nbsp;&nbsp;
@@ -2905,10 +2469,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="destination"                data-endpoint="POSTapi-dispatches"
-               value="doloribus"
+               value="cum"
                data-component="body">
     <br>
-<p>Example: <code>doloribus</code></p>
+<p>Example: <code>cum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -2916,10 +2480,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes"                data-endpoint="POSTapi-dispatches"
-               value="deserunt"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>deserunt</code></p>
+<p>Example: <code>qui</code></p>
         </div>
         </form>
 
@@ -2936,14 +2500,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.co/api/dispatches/1" \
+    --get "https://dayalog.test/api/dispatches/dignissimos" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/dispatches/1"
+    "https://dayalog.test/api/dispatches/dignissimos"
 );
 
 const headers = {
@@ -2959,7 +2523,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/dispatches/1';
+$url = 'https://dayalog.test/api/dispatches/dignissimos';
 $response = $client-&gt;get(
     $url,
     [
@@ -2977,7 +2541,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/dispatches/1'
+url = 'https://dayalog.test/api/dispatches/dignissimos'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -2990,7 +2554,7 @@ response.json()</code></pre></div>
 
 <span id="example-responses-GETapi-dispatches--id-">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -2998,24 +2562,13 @@ response.json()</code></pre></div>
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 30
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
+set-cookie: dayalog_session=FI0acFqsv28lJBEEC4opyI801xtqycrOGeibFecO; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;order_vehicle_id&quot;: 1,
-        &quot;origin&quot;: &quot;Bukoto Kisasi&quot;,
-        &quot;destination&quot;: &quot;Ndeeba&quot;,
-        &quot;notes&quot;: &quot;Wabodda&quot;,
-        &quot;status&quot;: &quot;transit&quot;,
-        &quot;created_at&quot;: &quot;2024-03-28T10:37:24.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2024-03-28T10:37:41.000000Z&quot;,
-        &quot;deleted_at&quot;: null
-    }
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
 }</code>
  </pre>
     </span>
@@ -3074,14 +2627,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="GETapi-dispatches--id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-dispatches--id-"
+               value="dignissimos"
                data-component="url">
     <br>
-<p>The ID of the dispatch. Example: <code>1</code></p>
+<p>The ID of the dispatch. Example: <code>dignissimos</code></p>
             </div>
                     </form>
 
@@ -3098,14 +2651,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.co/api/dispatches/1" \
+    "https://dayalog.test/api/dispatches/vel" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/dispatches/1"
+    "https://dayalog.test/api/dispatches/vel"
 );
 
 const headers = {
@@ -3121,7 +2674,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/dispatches/1';
+$url = 'https://dayalog.test/api/dispatches/vel';
 $response = $client-&gt;put(
     $url,
     [
@@ -3139,7 +2692,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/dispatches/1'
+url = 'https://dayalog.test/api/dispatches/vel'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -3151,36 +2704,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-PUTapi-dispatches--id-">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 29
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;order_vehicle_id&quot;: 1,
-        &quot;origin&quot;: &quot;Bukoto Kisasi&quot;,
-        &quot;destination&quot;: &quot;Ndeeba&quot;,
-        &quot;notes&quot;: &quot;Wabodda&quot;,
-        &quot;status&quot;: &quot;transit&quot;,
-        &quot;created_at&quot;: &quot;2024-03-28T10:37:24.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2024-03-28T10:37:41.000000Z&quot;,
-        &quot;deleted_at&quot;: null
-    }
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-PUTapi-dispatches--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-PUTapi-dispatches--id-"></span>:
@@ -3240,14 +2764,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="PUTapi-dispatches--id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="PUTapi-dispatches--id-"
+               value="vel"
                data-component="url">
     <br>
-<p>The ID of the dispatch. Example: <code>1</code></p>
+<p>The ID of the dispatch. Example: <code>vel</code></p>
             </div>
                     </form>
 
@@ -3264,14 +2788,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://dayalog.co/api/dispatches/1" \
+    "https://dayalog.test/api/dispatches/accusamus" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/dispatches/1"
+    "https://dayalog.test/api/dispatches/accusamus"
 );
 
 const headers = {
@@ -3287,7 +2811,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/dispatches/1';
+$url = 'https://dayalog.test/api/dispatches/accusamus';
 $response = $client-&gt;delete(
     $url,
     [
@@ -3305,7 +2829,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/dispatches/1'
+url = 'https://dayalog.test/api/dispatches/accusamus'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -3317,22 +2841,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-DELETEapi-dispatches--id-">
-            <blockquote>
-            <p>Example response (204):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 28
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-<code>Empty response</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-DELETEapi-dispatches--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-DELETEapi-dispatches--id-"></span>:
@@ -3388,38 +2897,38 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="DELETEapi-dispatches--id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-dispatches--id-"
+               value="accusamus"
                data-component="url">
     <br>
-<p>The ID of the dispatch. Example: <code>1</code></p>
+<p>The ID of the dispatch. Example: <code>accusamus</code></p>
             </div>
                     </form>
 
-                    <h2 id="dispatch-PUTapi-dispatches--dispatch_id--status--newStatus-">Change status of a dispatch</h2>
+                    <h2 id="dispatch-PUTapi-dispatches--dispatch--status--newStatus-">Change status of a dispatch</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-PUTapi-dispatches--dispatch_id--status--newStatus-">
+<span id="example-requests-PUTapi-dispatches--dispatch--status--newStatus-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.co/api/dispatches/1/status/nesciunt" \
+    "https://dayalog.test/api/dispatches/beatae/status/commodi" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/dispatches/1/status/nesciunt"
+    "https://dayalog.test/api/dispatches/beatae/status/commodi"
 );
 
 const headers = {
@@ -3435,7 +2944,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/dispatches/1/status/nesciunt';
+$url = 'https://dayalog.test/api/dispatches/beatae/status/commodi';
 $response = $client-&gt;put(
     $url,
     [
@@ -3453,7 +2962,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/dispatches/1/status/nesciunt'
+url = 'https://dayalog.test/api/dispatches/beatae/status/commodi'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -3464,55 +2973,36 @@ response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-PUTapi-dispatches--dispatch_id--status--newStatus-">
-            <blockquote>
-            <p>Example response (500):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 27
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Server Error&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-PUTapi-dispatches--dispatch_id--status--newStatus-" hidden>
+<span id="example-responses-PUTapi-dispatches--dispatch--status--newStatus-">
+</span>
+<span id="execution-results-PUTapi-dispatches--dispatch--status--newStatus-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-PUTapi-dispatches--dispatch_id--status--newStatus-"></span>:
+                id="execution-response-status-PUTapi-dispatches--dispatch--status--newStatus-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-dispatches--dispatch_id--status--newStatus-"
+    <pre class="json"><code id="execution-response-content-PUTapi-dispatches--dispatch--status--newStatus-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-PUTapi-dispatches--dispatch_id--status--newStatus-" hidden>
+<span id="execution-error-PUTapi-dispatches--dispatch--status--newStatus-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-dispatches--dispatch_id--status--newStatus-">
+    <pre><code id="execution-error-message-PUTapi-dispatches--dispatch--status--newStatus-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-PUTapi-dispatches--dispatch_id--status--newStatus-" data-method="PUT"
-      data-path="api/dispatches/{dispatch_id}/status/{newStatus}"
+<form id="form-PUTapi-dispatches--dispatch--status--newStatus-" data-method="PUT"
+      data-path="api/dispatches/{dispatch}/status/{newStatus}"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-dispatches--dispatch_id--status--newStatus-', this);">
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-dispatches--dispatch--status--newStatus-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
             </h3>
             <p>
             <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/dispatches/{dispatch_id}/status/{newStatus}</code></b>
+            <b><code>api/dispatches/{dispatch}/status/{newStatus}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -3520,7 +3010,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="PUTapi-dispatches--dispatch_id--status--newStatus-"
+                              name="Content-Type"                data-endpoint="PUTapi-dispatches--dispatch--status--newStatus-"
                value="application/json"
                data-component="header">
     <br>
@@ -3531,7 +3021,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="PUTapi-dispatches--dispatch_id--status--newStatus-"
+                              name="Accept"                data-endpoint="PUTapi-dispatches--dispatch--status--newStatus-"
                value="application/json"
                data-component="header">
     <br>
@@ -3539,33 +3029,33 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>dispatch_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+                <b style="line-height: 2;"><code>dispatch</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="dispatch_id"                data-endpoint="PUTapi-dispatches--dispatch_id--status--newStatus-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="dispatch"                data-endpoint="PUTapi-dispatches--dispatch--status--newStatus-"
+               value="beatae"
                data-component="url">
     <br>
-<p>The ID of the dispatch. Example: <code>1</code></p>
+<p>The dispatch. Example: <code>beatae</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>newStatus</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="newStatus"                data-endpoint="PUTapi-dispatches--dispatch_id--status--newStatus-"
-               value="nesciunt"
+                              name="newStatus"                data-endpoint="PUTapi-dispatches--dispatch--status--newStatus-"
+               value="commodi"
                data-component="url">
     <br>
-<p>Example: <code>nesciunt</code></p>
+<p>Example: <code>commodi</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>string</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
-                              name="string"                data-endpoint="PUTapi-dispatches--dispatch_id--status--newStatus-"
+                              name="string"                data-endpoint="PUTapi-dispatches--dispatch--status--newStatus-"
                value="in_progress"
                data-component="url">
     <br>
@@ -3590,14 +3080,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.co/api/drivers" \
+    --get "https://dayalog.test/api/drivers" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/drivers"
+    "https://dayalog.test/api/drivers"
 );
 
 const headers = {
@@ -3613,7 +3103,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/drivers';
+$url = 'https://dayalog.test/api/drivers';
 $response = $client-&gt;get(
     $url,
     [
@@ -3631,7 +3121,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/drivers'
+url = 'https://dayalog.test/api/drivers'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -3644,7 +3134,7 @@ response.json()</code></pre></div>
 
 <span id="example-responses-GETapi-drivers">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -3652,54 +3142,13 @@ response.json()</code></pre></div>
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
+set-cookie: dayalog_session=6SNmnntcZyEJSJvOI3ax9ncf4ZZr63p2NtZEOyAF; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;user_id&quot;: 2,
-            &quot;license&quot;: null,
-            &quot;created_at&quot;: &quot;2024-03-28T10:28:02.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2024-03-28T10:28:02.000000Z&quot;
-        }
-    ],
-    &quot;links&quot;: {
-        &quot;first&quot;: &quot;http://dayalog_api.test/api/drivers?page=1&quot;,
-        &quot;last&quot;: &quot;http://dayalog_api.test/api/drivers?page=1&quot;,
-        &quot;prev&quot;: null,
-        &quot;next&quot;: null
-    },
-    &quot;meta&quot;: {
-        &quot;current_page&quot;: 1,
-        &quot;from&quot;: 1,
-        &quot;last_page&quot;: 1,
-        &quot;links&quot;: [
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;http://dayalog_api.test/api/drivers?page=1&quot;,
-                &quot;label&quot;: &quot;1&quot;,
-                &quot;active&quot;: true
-            },
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
-                &quot;active&quot;: false
-            }
-        ],
-        &quot;path&quot;: &quot;http://dayalog_api.test/api/drivers&quot;,
-        &quot;per_page&quot;: 25,
-        &quot;to&quot;: 1,
-        &quot;total&quot;: 1
-    }
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
 }</code>
  </pre>
     </span>
@@ -3770,7 +3219,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://dayalog.co/api/drivers" \
+    "https://dayalog.test/api/drivers" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
 </code></pre></div>
@@ -3778,7 +3227,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/drivers"
+    "https://dayalog.test/api/drivers"
 );
 
 const headers = {
@@ -3794,7 +3243,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/drivers';
+$url = 'https://dayalog.test/api/drivers';
 $response = $client-&gt;post(
     $url,
     [
@@ -3812,7 +3261,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/drivers'
+url = 'https://dayalog.test/api/drivers'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -3824,26 +3273,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-POSTapi-drivers">
-            <blockquote>
-            <p>Example response (500):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 53
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Server Error&quot;
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-POSTapi-drivers" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-drivers"></span>:
@@ -3909,6 +3339,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="user_id"                data-endpoint="POSTapi-drivers"
+               value=""
+               data-component="body">
+    <br>
+<p>This field is required when none of <code>email</code>, <code>patasente_id</code>, and <code>phone_number</code> are present.  The <code>id</code> of an existing record in the users table.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
 <i>optional</i> &nbsp;
@@ -3918,6 +3359,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>This field is required when <code>user_id</code> is <code>null</code>.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-drivers"
+               value=""
+               data-component="body">
+    <br>
+<p>This field is required when none of <code>user_id</code>, <code>patasente_id</code>, and <code>phone_number</code> are present.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>patasente_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="patasente_id"                data-endpoint="POSTapi-drivers"
+               value=""
+               data-component="body">
+    <br>
+<p>This field is required when none of <code>user_id</code>, <code>email</code>, and <code>phone_number</code> are present.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>phone_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="phone_number"                data-endpoint="POSTapi-drivers"
+               value=""
+               data-component="body">
+    <br>
+<p>This field is required when none of <code>user_id</code>, <code>email</code>, and <code>patasente_id</code> are present.</p>
         </div>
         </form>
 
@@ -3934,14 +3408,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.co/api/drivers/1" \
+    --get "https://dayalog.test/api/drivers/distinctio" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/drivers/1"
+    "https://dayalog.test/api/drivers/distinctio"
 );
 
 const headers = {
@@ -3957,7 +3431,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/drivers/1';
+$url = 'https://dayalog.test/api/drivers/distinctio';
 $response = $client-&gt;get(
     $url,
     [
@@ -3975,7 +3449,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/drivers/1'
+url = 'https://dayalog.test/api/drivers/distinctio'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -3988,7 +3462,7 @@ response.json()</code></pre></div>
 
 <span id="example-responses-GETapi-drivers--id-">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -3996,20 +3470,13 @@ response.json()</code></pre></div>
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 52
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
+set-cookie: dayalog_session=H7AJKTQcQfJNwwrW8Ac7gbqlMVfiX41bPET8qSK1; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;user_id&quot;: 2,
-        &quot;license&quot;: null,
-        &quot;created_at&quot;: &quot;2024-03-28T10:28:02.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2024-03-28T10:28:02.000000Z&quot;
-    }
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
 }</code>
  </pre>
     </span>
@@ -4068,14 +3535,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="GETapi-drivers--id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-drivers--id-"
+               value="distinctio"
                data-component="url">
     <br>
-<p>The ID of the driver. Example: <code>1</code></p>
+<p>The ID of the driver. Example: <code>distinctio</code></p>
             </div>
                     </form>
 
@@ -4092,7 +3559,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.co/api/drivers/1" \
+    "https://dayalog.test/api/drivers/praesentium" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
 </code></pre></div>
@@ -4100,7 +3567,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/drivers/1"
+    "https://dayalog.test/api/drivers/praesentium"
 );
 
 const headers = {
@@ -4116,7 +3583,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/drivers/1';
+$url = 'https://dayalog.test/api/drivers/praesentium';
 $response = $client-&gt;put(
     $url,
     [
@@ -4134,7 +3601,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/drivers/1'
+url = 'https://dayalog.test/api/drivers/praesentium'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -4146,32 +3613,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-PUTapi-drivers--id-">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 51
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;user_id&quot;: 2,
-        &quot;license&quot;: null,
-        &quot;created_at&quot;: &quot;2024-03-28T10:28:02.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2024-03-28T10:28:02.000000Z&quot;
-    }
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-PUTapi-drivers--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-PUTapi-drivers--id-"></span>:
@@ -4231,14 +3673,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="PUTapi-drivers--id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="PUTapi-drivers--id-"
+               value="praesentium"
                data-component="url">
     <br>
-<p>The ID of the driver. Example: <code>1</code></p>
+<p>The ID of the driver. Example: <code>praesentium</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -4250,7 +3692,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-
+<p>The <code>id</code> of an existing record in the drivers table.</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
@@ -4261,7 +3703,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-
+<p>The <code>id</code> of an existing record in the users table.</p>
         </div>
         </form>
 
@@ -4278,14 +3720,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://dayalog.co/api/drivers/1" \
+    "https://dayalog.test/api/drivers/quaerat" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/drivers/1"
+    "https://dayalog.test/api/drivers/quaerat"
 );
 
 const headers = {
@@ -4301,7 +3743,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/drivers/1';
+$url = 'https://dayalog.test/api/drivers/quaerat';
 $response = $client-&gt;delete(
     $url,
     [
@@ -4319,7 +3761,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/drivers/1'
+url = 'https://dayalog.test/api/drivers/quaerat'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -4331,22 +3773,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-DELETEapi-drivers--id-">
-            <blockquote>
-            <p>Example response (204):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 50
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-<code>Empty response</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-DELETEapi-drivers--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-DELETEapi-drivers--id-"></span>:
@@ -4402,38 +3829,38 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="DELETEapi-drivers--id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-drivers--id-"
+               value="quaerat"
                data-component="url">
     <br>
-<p>The ID of the driver. Example: <code>1</code></p>
+<p>The ID of the driver. Example: <code>quaerat</code></p>
             </div>
                     </form>
 
-                    <h2 id="drivers-POSTapi-drivers--driver_id--vehicles--vehicle_id-">Assign Vehicle to Driver</h2>
+                    <h2 id="drivers-POSTapi-drivers--driver--vehicles--vehicle-">Assign Vehicle to Driver</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-POSTapi-drivers--driver_id--vehicles--vehicle_id-">
+<span id="example-requests-POSTapi-drivers--driver--vehicles--vehicle-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://dayalog.co/api/drivers/1/vehicles/1" \
+    "https://dayalog.test/api/drivers/et/vehicles/fugiat" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/drivers/1/vehicles/1"
+    "https://dayalog.test/api/drivers/et/vehicles/fugiat"
 );
 
 const headers = {
@@ -4449,7 +3876,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/drivers/1/vehicles/1';
+$url = 'https://dayalog.test/api/drivers/et/vehicles/fugiat';
 $response = $client-&gt;post(
     $url,
     [
@@ -4467,7 +3894,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/drivers/1/vehicles/1'
+url = 'https://dayalog.test/api/drivers/et/vehicles/fugiat'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -4478,63 +3905,36 @@ response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-POSTapi-drivers--driver_id--vehicles--vehicle_id-">
-            <blockquote>
-            <p>Example response (403):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 49
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Vehicle is already attached to a driver.&quot;,
-    &quot;driver&quot;: {
-        &quot;id&quot;: 1,
-        &quot;user_id&quot;: 2,
-        &quot;license&quot;: null,
-        &quot;created_at&quot;: &quot;2024-03-28T10:28:02.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2024-03-28T10:28:02.000000Z&quot;,
-        &quot;laravel_through_key&quot;: 1
-    }
-}</code>
- </pre>
-    </span>
-<span id="execution-results-POSTapi-drivers--driver_id--vehicles--vehicle_id-" hidden>
+<span id="example-responses-POSTapi-drivers--driver--vehicles--vehicle-">
+</span>
+<span id="execution-results-POSTapi-drivers--driver--vehicles--vehicle-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTapi-drivers--driver_id--vehicles--vehicle_id-"></span>:
+                id="execution-response-status-POSTapi-drivers--driver--vehicles--vehicle-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-drivers--driver_id--vehicles--vehicle_id-"
+    <pre class="json"><code id="execution-response-content-POSTapi-drivers--driver--vehicles--vehicle-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTapi-drivers--driver_id--vehicles--vehicle_id-" hidden>
+<span id="execution-error-POSTapi-drivers--driver--vehicles--vehicle-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-drivers--driver_id--vehicles--vehicle_id-">
+    <pre><code id="execution-error-message-POSTapi-drivers--driver--vehicles--vehicle-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-POSTapi-drivers--driver_id--vehicles--vehicle_id-" data-method="POST"
-      data-path="api/drivers/{driver_id}/vehicles/{vehicle_id}"
+<form id="form-POSTapi-drivers--driver--vehicles--vehicle-" data-method="POST"
+      data-path="api/drivers/{driver}/vehicles/{vehicle}"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-drivers--driver_id--vehicles--vehicle_id-', this);">
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-drivers--driver--vehicles--vehicle-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
             </h3>
             <p>
             <small class="badge badge-black">POST</small>
-            <b><code>api/drivers/{driver_id}/vehicles/{vehicle_id}</code></b>
+            <b><code>api/drivers/{driver}/vehicles/{vehicle}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -4542,7 +3942,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-drivers--driver_id--vehicles--vehicle_id-"
+                              name="Content-Type"                data-endpoint="POSTapi-drivers--driver--vehicles--vehicle-"
                value="application/json"
                data-component="header">
     <br>
@@ -4553,7 +3953,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-drivers--driver_id--vehicles--vehicle_id-"
+                              name="Accept"                data-endpoint="POSTapi-drivers--driver--vehicles--vehicle-"
                value="application/json"
                data-component="header">
     <br>
@@ -4561,50 +3961,50 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>driver_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+                <b style="line-height: 2;"><code>driver</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="driver_id"                data-endpoint="POSTapi-drivers--driver_id--vehicles--vehicle_id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="driver"                data-endpoint="POSTapi-drivers--driver--vehicles--vehicle-"
+               value="et"
                data-component="url">
     <br>
-<p>The ID of the driver. Example: <code>1</code></p>
+<p>The driver. Example: <code>et</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>vehicle_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+                <b style="line-height: 2;"><code>vehicle</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="vehicle_id"                data-endpoint="POSTapi-drivers--driver_id--vehicles--vehicle_id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="vehicle"                data-endpoint="POSTapi-drivers--driver--vehicles--vehicle-"
+               value="fugiat"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>1</code></p>
+<p>The vehicle. Example: <code>fugiat</code></p>
             </div>
                     </form>
 
-                    <h2 id="drivers-DELETEapi-drivers--driver_id--vehicles--vehicle_id-">Remove Vehicle from Driver</h2>
+                    <h2 id="drivers-DELETEapi-drivers--driver--vehicles--vehicle-">Remove Vehicle from Driver</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-DELETEapi-drivers--driver_id--vehicles--vehicle_id-">
+<span id="example-requests-DELETEapi-drivers--driver--vehicles--vehicle-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://dayalog.co/api/drivers/1/vehicles/1" \
+    "https://dayalog.test/api/drivers/velit/vehicles/dolorem" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/drivers/1/vehicles/1"
+    "https://dayalog.test/api/drivers/velit/vehicles/dolorem"
 );
 
 const headers = {
@@ -4620,7 +4020,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/drivers/1/vehicles/1';
+$url = 'https://dayalog.test/api/drivers/velit/vehicles/dolorem';
 $response = $client-&gt;delete(
     $url,
     [
@@ -4638,7 +4038,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/drivers/1/vehicles/1'
+url = 'https://dayalog.test/api/drivers/velit/vehicles/dolorem'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -4649,55 +4049,36 @@ response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-DELETEapi-drivers--driver_id--vehicles--vehicle_id-">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 48
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Vehicle removed successfully.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-DELETEapi-drivers--driver_id--vehicles--vehicle_id-" hidden>
+<span id="example-responses-DELETEapi-drivers--driver--vehicles--vehicle-">
+</span>
+<span id="execution-results-DELETEapi-drivers--driver--vehicles--vehicle-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-drivers--driver_id--vehicles--vehicle_id-"></span>:
+                id="execution-response-status-DELETEapi-drivers--driver--vehicles--vehicle-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-drivers--driver_id--vehicles--vehicle_id-"
+    <pre class="json"><code id="execution-response-content-DELETEapi-drivers--driver--vehicles--vehicle-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-DELETEapi-drivers--driver_id--vehicles--vehicle_id-" hidden>
+<span id="execution-error-DELETEapi-drivers--driver--vehicles--vehicle-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-drivers--driver_id--vehicles--vehicle_id-">
+    <pre><code id="execution-error-message-DELETEapi-drivers--driver--vehicles--vehicle-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-DELETEapi-drivers--driver_id--vehicles--vehicle_id-" data-method="DELETE"
-      data-path="api/drivers/{driver_id}/vehicles/{vehicle_id}"
+<form id="form-DELETEapi-drivers--driver--vehicles--vehicle-" data-method="DELETE"
+      data-path="api/drivers/{driver}/vehicles/{vehicle}"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-drivers--driver_id--vehicles--vehicle_id-', this);">
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-drivers--driver--vehicles--vehicle-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
             </h3>
             <p>
             <small class="badge badge-red">DELETE</small>
-            <b><code>api/drivers/{driver_id}/vehicles/{vehicle_id}</code></b>
+            <b><code>api/drivers/{driver}/vehicles/{vehicle}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -4705,7 +4086,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="DELETEapi-drivers--driver_id--vehicles--vehicle_id-"
+                              name="Content-Type"                data-endpoint="DELETEapi-drivers--driver--vehicles--vehicle-"
                value="application/json"
                data-component="header">
     <br>
@@ -4716,7 +4097,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="DELETEapi-drivers--driver_id--vehicles--vehicle_id-"
+                              name="Accept"                data-endpoint="DELETEapi-drivers--driver--vehicles--vehicle-"
                value="application/json"
                data-component="header">
     <br>
@@ -4724,28 +4105,651 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>driver_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+                <b style="line-height: 2;"><code>driver</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="driver_id"                data-endpoint="DELETEapi-drivers--driver_id--vehicles--vehicle_id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="driver"                data-endpoint="DELETEapi-drivers--driver--vehicles--vehicle-"
+               value="velit"
                data-component="url">
     <br>
-<p>The ID of the driver. Example: <code>1</code></p>
+<p>The driver. Example: <code>velit</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>vehicle_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+                <b style="line-height: 2;"><code>vehicle</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="vehicle_id"                data-endpoint="DELETEapi-drivers--driver_id--vehicles--vehicle_id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="vehicle"                data-endpoint="DELETEapi-drivers--driver--vehicles--vehicle-"
+               value="dolorem"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>1</code></p>
+<p>The vehicle. Example: <code>dolorem</code></p>
             </div>
                     </form>
+
+                <h1 id="endpoints">Endpoints</h1>
+
+    
+
+                                <h2 id="endpoints-GETapi-user">GET api/user</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-user">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://dayalog.test/api/user" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://dayalog.test/api/user"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://dayalog.test/api/user';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'https://dayalog.test/api/user'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-user">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: localhost:8000
+access-control-allow-credentials: true
+set-cookie: dayalog_session=hZR04yWC4z0CQir8NAdDd02preU8maUP6YgoCPa5; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-user" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-user"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-user" data-method="GET"
+      data-path="api/user"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-user', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/user</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-user"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-user"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-GETapi-organizations">GET api/organizations</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-organizations">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://dayalog.test/api/organizations" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://dayalog.test/api/organizations"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://dayalog.test/api/organizations';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'https://dayalog.test/api/organizations'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-organizations">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: localhost:8000
+access-control-allow-credentials: true
+set-cookie: dayalog_session=X4fjWC5eadn0yOtFg6R3xf91ykXhEYb3NMo00Ph8; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-organizations" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-organizations"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-organizations"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-organizations" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-organizations">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-organizations" data-method="GET"
+      data-path="api/organizations"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-organizations', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/organizations</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-organizations"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-organizations"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-POSTapi-organizations">Store a newly created resource in storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-organizations">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://dayalog.test/api/organizations" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"culpa\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://dayalog.test/api/organizations"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "culpa"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://dayalog.test/api/organizations';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'culpa',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'https://dayalog.test/api/organizations'
+payload = {
+    "name": "culpa"
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-organizations">
+</span>
+<span id="execution-results-POSTapi-organizations" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-organizations"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-organizations"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-organizations" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-organizations">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-organizations" data-method="POST"
+      data-path="api/organizations"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-organizations', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/organizations</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-organizations"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-organizations"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="POSTapi-organizations"
+               value="culpa"
+               data-component="body">
+    <br>
+<p>Example: <code>culpa</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-GETapi-devices--device--positions">Display a listing of the resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-devices--device--positions">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://dayalog.test/api/devices/odit/positions" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"from\": \"2025-03-08 23:20:30\",
+    \"to\": \"2025-03-08 23:20:30\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://dayalog.test/api/devices/odit/positions"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "from": "2025-03-08 23:20:30",
+    "to": "2025-03-08 23:20:30"
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://dayalog.test/api/devices/odit/positions';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'from' =&gt; '2025-03-08 23:20:30',
+            'to' =&gt; '2025-03-08 23:20:30',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'https://dayalog.test/api/devices/odit/positions'
+payload = {
+    "from": "2025-03-08 23:20:30",
+    "to": "2025-03-08 23:20:30"
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers, json=payload)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-devices--device--positions">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: localhost:8000
+access-control-allow-credentials: true
+set-cookie: dayalog_session=OeCcjuzryKedoYsHF3lInajgM79fZNLW1I1rHpAh; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-devices--device--positions" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-devices--device--positions"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-devices--device--positions"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-devices--device--positions" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-devices--device--positions">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-devices--device--positions" data-method="GET"
+      data-path="api/devices/{device}/positions"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-devices--device--positions', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/devices/{device}/positions</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-devices--device--positions"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-devices--device--positions"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>device</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="device"                data-endpoint="GETapi-devices--device--positions"
+               value="odit"
+               data-component="url">
+    <br>
+<p>The device. Example: <code>odit</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>from</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="from"                data-endpoint="GETapi-devices--device--positions"
+               value="2025-03-08 23:20:30"
+               data-component="body">
+    <br>
+<p>Must be a valid date in the format <code>Y-m-d H:i:s</code>. Example: <code>2025-03-08 23:20:30</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>to</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="to"                data-endpoint="GETapi-devices--device--positions"
+               value="2025-03-08 23:20:30"
+               data-component="body">
+    <br>
+<p>Must be a valid date in the format <code>Y-m-d H:i:s</code>. Example: <code>2025-03-08 23:20:30</code></p>
+        </div>
+        </form>
 
                 <h1 id="orders">Orders</h1>
 
@@ -4764,14 +4768,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.co/api/orders" \
+    --get "https://dayalog.test/api/orders" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/orders"
+    "https://dayalog.test/api/orders"
 );
 
 const headers = {
@@ -4787,7 +4791,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/orders';
+$url = 'https://dayalog.test/api/orders';
 $response = $client-&gt;get(
     $url,
     [
@@ -4805,7 +4809,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/orders'
+url = 'https://dayalog.test/api/orders'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -4818,7 +4822,7 @@ response.json()</code></pre></div>
 
 <span id="example-responses-GETapi-orders">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -4826,200 +4830,13 @@ response.json()</code></pre></div>
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 40
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
+set-cookie: dayalog_session=sMubRHomeKaBEsUx2vjk2CTYq2jsdZ3evyYVHi2F; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;from&quot;: 2,
-            &quot;to&quot;: 2,
-            &quot;patasente_purchase_order_id&quot;: null,
-            &quot;reference&quot;: &quot;1c4f1e85-c90b-4841-8bd3-d9caa4f18a96&quot;,
-            &quot;notes&quot;: &quot;Notes&quot;,
-            &quot;status&quot;: &quot;completed&quot;,
-            &quot;created_at&quot;: &quot;2024-03-28T10:36:57.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2024-03-28T13:34:13.000000Z&quot;,
-            &quot;payload&quot;: &quot;{\&quot;to\&quot;: 2, \&quot;from\&quot;: 2, \&quot;notes\&quot;: \&quot;Notes\&quot;, \&quot;orderItems\&quot;: [{\&quot;id\&quot;: \&quot;8550d100-9a29-4fed-86a9-063eb4d2b9f0\&quot;, \&quot;qty\&quot;: \&quot;23\&quot;, \&quot;item\&quot;: \&quot;Beans\&quot;, \&quot;price\&quot;: \&quot;2300\&quot;, \&quot;qty_measure\&quot;: \&quot;Litres\&quot;}]}&quot;,
-            &quot;items&quot;: [
-                {
-                    &quot;id&quot;: &quot;8550d100-9a29-4fed-86a9-063eb4d2b9f0&quot;,
-                    &quot;qty&quot;: &quot;23&quot;,
-                    &quot;item&quot;: &quot;Beans&quot;,
-                    &quot;price&quot;: &quot;2300&quot;,
-                    &quot;qty_measure&quot;: &quot;Litres&quot;
-                }
-            ],
-            &quot;assignedVehicles&quot;: [
-                {
-                    &quot;order_vehicle_ref&quot;: 1,
-                    &quot;vehicle&quot;: {
-                        &quot;id&quot;: 1,
-                        &quot;device&quot;: [
-                            {
-                                &quot;id&quot;: 49,
-                                &quot;name&quot;: &quot;Solomon&quot;,
-                                &quot;uniqueid&quot;: &quot;265412&quot;,
-                                &quot;lastupdate&quot;: &quot;2023-10-20 19:15:22&quot;,
-                                &quot;positionid&quot;: 29323,
-                                &quot;groupid&quot;: null,
-                                &quot;attributes&quot;: &quot;{}&quot;,
-                                &quot;phone&quot;: null,
-                                &quot;model&quot;: &quot;Phone Model&quot;,
-                                &quot;contact&quot;: null,
-                                &quot;category&quot;: null,
-                                &quot;disabled&quot;: 0,
-                                &quot;status&quot;: &quot;offline&quot;,
-                                &quot;geofenceids&quot;: null,
-                                &quot;expirationtime&quot;: null,
-                                &quot;motionstate&quot;: 0,
-                                &quot;motiontime&quot;: null,
-                                &quot;motiondistance&quot;: 0,
-                                &quot;overspeedstate&quot;: 0,
-                                &quot;overspeedtime&quot;: null,
-                                &quot;overspeedgeofenceid&quot;: 0,
-                                &quot;motionstreak&quot;: 0,
-                                &quot;last_position&quot;: {
-                                    &quot;id&quot;: 29323,
-                                    &quot;protocol&quot;: &quot;osmand&quot;,
-                                    &quot;deviceid&quot;: 49,
-                                    &quot;servertime&quot;: &quot;2023-10-20T16:15:22.000000Z&quot;,
-                                    &quot;devicetime&quot;: &quot;2023-10-20 19:15:18&quot;,
-                                    &quot;fixtime&quot;: &quot;2023-10-20 19:15:18&quot;,
-                                    &quot;valid&quot;: 1,
-                                    &quot;latitude&quot;: 0.3764655,
-                                    &quot;longitude&quot;: 32.6551186,
-                                    &quot;altitude&quot;: 0,
-                                    &quot;speed&quot;: 0,
-                                    &quot;course&quot;: 0,
-                                    &quot;address&quot;: null,
-                                    &quot;attributes&quot;: &quot;{\&quot;batteryLevel\&quot;:19.0,\&quot;distance\&quot;:751.12,\&quot;totalDistance\&quot;:53108.43,\&quot;motion\&quot;:false}&quot;,
-                                    &quot;accuracy&quot;: 1500,
-                                    &quot;network&quot;: &quot;null&quot;
-                                }
-                            },
-                            {
-                                &quot;id&quot;: 50,
-                                &quot;name&quot;: &quot;Afasha&quot;,
-                                &quot;uniqueid&quot;: &quot;43989383484834&quot;,
-                                &quot;lastupdate&quot;: null,
-                                &quot;positionid&quot;: null,
-                                &quot;groupid&quot;: null,
-                                &quot;attributes&quot;: &quot;{}&quot;,
-                                &quot;phone&quot;: null,
-                                &quot;model&quot;: &quot;tk340&quot;,
-                                &quot;contact&quot;: null,
-                                &quot;category&quot;: null,
-                                &quot;disabled&quot;: 0,
-                                &quot;status&quot;: &quot;offline&quot;,
-                                &quot;geofenceids&quot;: null,
-                                &quot;expirationtime&quot;: null,
-                                &quot;motionstate&quot;: 0,
-                                &quot;motiontime&quot;: null,
-                                &quot;motiondistance&quot;: 0,
-                                &quot;overspeedstate&quot;: 0,
-                                &quot;overspeedtime&quot;: null,
-                                &quot;overspeedgeofenceid&quot;: 0,
-                                &quot;motionstreak&quot;: 0,
-                                &quot;last_position&quot;: null
-                            },
-                            {
-                                &quot;id&quot;: 48,
-                                &quot;name&quot;: &quot;Afasha&quot;,
-                                &quot;uniqueid&quot;: &quot;835881&quot;,
-                                &quot;lastupdate&quot;: &quot;2024-03-28 22:09:21&quot;,
-                                &quot;positionid&quot;: 66949,
-                                &quot;groupid&quot;: null,
-                                &quot;attributes&quot;: &quot;{}&quot;,
-                                &quot;phone&quot;: null,
-                                &quot;model&quot;: null,
-                                &quot;contact&quot;: null,
-                                &quot;category&quot;: null,
-                                &quot;disabled&quot;: 0,
-                                &quot;status&quot;: &quot;offline&quot;,
-                                &quot;geofenceids&quot;: null,
-                                &quot;expirationtime&quot;: null,
-                                &quot;motionstate&quot;: 0,
-                                &quot;motiontime&quot;: &quot;2024-03-28 22:09:20&quot;,
-                                &quot;motiondistance&quot;: 102575587.22,
-                                &quot;overspeedstate&quot;: 0,
-                                &quot;overspeedtime&quot;: null,
-                                &quot;overspeedgeofenceid&quot;: 0,
-                                &quot;motionstreak&quot;: 1,
-                                &quot;last_position&quot;: {
-                                    &quot;id&quot;: 66949,
-                                    &quot;protocol&quot;: &quot;osmand&quot;,
-                                    &quot;deviceid&quot;: 48,
-                                    &quot;servertime&quot;: &quot;2024-03-28T19:09:21.000000Z&quot;,
-                                    &quot;devicetime&quot;: &quot;2024-03-28 22:09:20&quot;,
-                                    &quot;fixtime&quot;: &quot;2024-03-28 22:09:20&quot;,
-                                    &quot;valid&quot;: 1,
-                                    &quot;latitude&quot;: 0.3576947,
-                                    &quot;longitude&quot;: 32.5976538,
-                                    &quot;altitude&quot;: 1178,
-                                    &quot;speed&quot;: 0.00365728,
-                                    &quot;course&quot;: 0,
-                                    &quot;address&quot;: null,
-                                    &quot;attributes&quot;: &quot;{\&quot;batteryLevel\&quot;:45.0,\&quot;distance\&quot;:0.02,\&quot;totalDistance\&quot;:1.0257558722E8,\&quot;motion\&quot;:false}&quot;,
-                                    &quot;accuracy&quot;: 30,
-                                    &quot;network&quot;: &quot;null&quot;
-                                }
-                            }
-                        ]
-                    },
-                    &quot;dispatches&quot;: [
-                        {
-                            &quot;id&quot;: 1,
-                            &quot;order_vehicle_id&quot;: 1,
-                            &quot;origin&quot;: &quot;Bukoto Kisasi&quot;,
-                            &quot;destination&quot;: &quot;Ndeeba&quot;,
-                            &quot;notes&quot;: &quot;Wabodda&quot;,
-                            &quot;status&quot;: &quot;transit&quot;,
-                            &quot;created_at&quot;: &quot;2024-03-28T10:37:24.000000Z&quot;,
-                            &quot;updated_at&quot;: &quot;2024-03-28T10:37:41.000000Z&quot;,
-                            &quot;deleted_at&quot;: null
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    &quot;links&quot;: {
-        &quot;first&quot;: &quot;http://dayalog_api.test/api/orders?page=1&quot;,
-        &quot;last&quot;: &quot;http://dayalog_api.test/api/orders?page=1&quot;,
-        &quot;prev&quot;: null,
-        &quot;next&quot;: null
-    },
-    &quot;meta&quot;: {
-        &quot;current_page&quot;: 1,
-        &quot;from&quot;: 1,
-        &quot;last_page&quot;: 1,
-        &quot;links&quot;: [
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;http://dayalog_api.test/api/orders?page=1&quot;,
-                &quot;label&quot;: &quot;1&quot;,
-                &quot;active&quot;: true
-            },
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
-                &quot;active&quot;: false
-            }
-        ],
-        &quot;path&quot;: &quot;http://dayalog_api.test/api/orders&quot;,
-        &quot;per_page&quot;: 25,
-        &quot;to&quot;: 1,
-        &quot;total&quot;: 1
-    }
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
 }</code>
  </pre>
     </span>
@@ -5090,22 +4907,22 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://dayalog.co/api/orders" \
+    "https://dayalog.test/api/orders" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"from\": \"dolor\",
-    \"to\": \"blanditiis\",
-    \"patasente_purchase_order_id\": 19,
-    \"reference\": \"non\",
-    \"notes\": \"repudiandae\"
+    \"from\": \"aut\",
+    \"to\": \"et\",
+    \"patasente_purchase_order_id\": 2,
+    \"reference\": \"voluptatem\",
+    \"notes\": \"ut\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/orders"
+    "https://dayalog.test/api/orders"
 );
 
 const headers = {
@@ -5114,11 +4931,11 @@ const headers = {
 };
 
 let body = {
-    "from": "dolor",
-    "to": "blanditiis",
-    "patasente_purchase_order_id": 19,
-    "reference": "non",
-    "notes": "repudiandae"
+    "from": "aut",
+    "to": "et",
+    "patasente_purchase_order_id": 2,
+    "reference": "voluptatem",
+    "notes": "ut"
 };
 
 fetch(url, {
@@ -5130,7 +4947,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/orders';
+$url = 'https://dayalog.test/api/orders';
 $response = $client-&gt;post(
     $url,
     [
@@ -5139,11 +4956,11 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'from' =&gt; 'dolor',
-            'to' =&gt; 'blanditiis',
-            'patasente_purchase_order_id' =&gt; 19,
-            'reference' =&gt; 'non',
-            'notes' =&gt; 'repudiandae',
+            'from' =&gt; 'aut',
+            'to' =&gt; 'et',
+            'patasente_purchase_order_id' =&gt; 2,
+            'reference' =&gt; 'voluptatem',
+            'notes' =&gt; 'ut',
         ],
     ]
 );
@@ -5155,13 +4972,13 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/orders'
+url = 'https://dayalog.test/api/orders'
 payload = {
-    "from": "dolor",
-    "to": "blanditiis",
-    "patasente_purchase_order_id": 19,
-    "reference": "non",
-    "notes": "repudiandae"
+    "from": "aut",
+    "to": "et",
+    "patasente_purchase_order_id": 2,
+    "reference": "voluptatem",
+    "notes": "ut"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -5174,34 +4991,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-POSTapi-orders">
-            <blockquote>
-            <p>Example response (422):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 39
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The selected from is invalid. (and 1 more error)&quot;,
-    &quot;errors&quot;: {
-        &quot;from&quot;: [
-            &quot;The selected from is invalid.&quot;
-        ],
-        &quot;to&quot;: [
-            &quot;The selected to is invalid.&quot;
-        ]
-    }
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-POSTapi-orders" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-orders"></span>:
@@ -5261,10 +5051,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="from"                data-endpoint="POSTapi-orders"
-               value="dolor"
+               value="aut"
                data-component="body">
     <br>
-<p>Example: <code>dolor</code></p>
+<p>The <code>id</code> of an existing record in the users table. Example: <code>aut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>to</code></b>&nbsp;&nbsp;
@@ -5272,10 +5062,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="to"                data-endpoint="POSTapi-orders"
-               value="blanditiis"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>blanditiis</code></p>
+<p>The <code>id</code> of an existing record in the users table. Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>patasente_purchase_order_id</code></b>&nbsp;&nbsp;
@@ -5283,10 +5073,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="patasente_purchase_order_id"                data-endpoint="POSTapi-orders"
-               value="19"
+               value="2"
                data-component="body">
     <br>
-<p>Example: <code>19</code></p>
+<p>Example: <code>2</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>reference</code></b>&nbsp;&nbsp;
@@ -5294,10 +5084,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="reference"                data-endpoint="POSTapi-orders"
-               value="non"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>Example: <code>non</code></p>
+<p>Example: <code>voluptatem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -5305,10 +5095,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes"                data-endpoint="POSTapi-orders"
-               value="repudiandae"
+               value="ut"
                data-component="body">
     <br>
-<p>Example: <code>repudiandae</code></p>
+<p>Example: <code>ut</code></p>
         </div>
         </form>
 
@@ -5325,14 +5115,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.co/api/orders/1" \
+    --get "https://dayalog.test/api/orders/voluptatem" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/orders/1"
+    "https://dayalog.test/api/orders/voluptatem"
 );
 
 const headers = {
@@ -5348,7 +5138,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/orders/1';
+$url = 'https://dayalog.test/api/orders/voluptatem';
 $response = $client-&gt;get(
     $url,
     [
@@ -5366,7 +5156,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/orders/1'
+url = 'https://dayalog.test/api/orders/voluptatem'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -5379,7 +5169,7 @@ response.json()</code></pre></div>
 
 <span id="example-responses-GETapi-orders--id-">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -5387,166 +5177,13 @@ response.json()</code></pre></div>
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 38
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
+set-cookie: dayalog_session=NQ0RlWacHUYgwQgU5yOHSapOMMApdZnpM5wRBgxJ; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;from&quot;: 2,
-        &quot;to&quot;: 2,
-        &quot;patasente_purchase_order_id&quot;: null,
-        &quot;reference&quot;: &quot;1c4f1e85-c90b-4841-8bd3-d9caa4f18a96&quot;,
-        &quot;notes&quot;: &quot;Notes&quot;,
-        &quot;status&quot;: &quot;completed&quot;,
-        &quot;created_at&quot;: &quot;2024-03-28T10:36:57.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2024-03-28T13:34:13.000000Z&quot;,
-        &quot;payload&quot;: &quot;{\&quot;to\&quot;: 2, \&quot;from\&quot;: 2, \&quot;notes\&quot;: \&quot;Notes\&quot;, \&quot;orderItems\&quot;: [{\&quot;id\&quot;: \&quot;8550d100-9a29-4fed-86a9-063eb4d2b9f0\&quot;, \&quot;qty\&quot;: \&quot;23\&quot;, \&quot;item\&quot;: \&quot;Beans\&quot;, \&quot;price\&quot;: \&quot;2300\&quot;, \&quot;qty_measure\&quot;: \&quot;Litres\&quot;}]}&quot;,
-        &quot;items&quot;: [
-            {
-                &quot;id&quot;: &quot;8550d100-9a29-4fed-86a9-063eb4d2b9f0&quot;,
-                &quot;qty&quot;: &quot;23&quot;,
-                &quot;item&quot;: &quot;Beans&quot;,
-                &quot;price&quot;: &quot;2300&quot;,
-                &quot;qty_measure&quot;: &quot;Litres&quot;
-            }
-        ],
-        &quot;assignedVehicles&quot;: [
-            {
-                &quot;order_vehicle_ref&quot;: 1,
-                &quot;vehicle&quot;: {
-                    &quot;id&quot;: 1,
-                    &quot;device&quot;: [
-                        {
-                            &quot;id&quot;: 49,
-                            &quot;name&quot;: &quot;Solomon&quot;,
-                            &quot;uniqueid&quot;: &quot;265412&quot;,
-                            &quot;lastupdate&quot;: &quot;2023-10-20 19:15:22&quot;,
-                            &quot;positionid&quot;: 29323,
-                            &quot;groupid&quot;: null,
-                            &quot;attributes&quot;: &quot;{}&quot;,
-                            &quot;phone&quot;: null,
-                            &quot;model&quot;: &quot;Phone Model&quot;,
-                            &quot;contact&quot;: null,
-                            &quot;category&quot;: null,
-                            &quot;disabled&quot;: 0,
-                            &quot;status&quot;: &quot;offline&quot;,
-                            &quot;geofenceids&quot;: null,
-                            &quot;expirationtime&quot;: null,
-                            &quot;motionstate&quot;: 0,
-                            &quot;motiontime&quot;: null,
-                            &quot;motiondistance&quot;: 0,
-                            &quot;overspeedstate&quot;: 0,
-                            &quot;overspeedtime&quot;: null,
-                            &quot;overspeedgeofenceid&quot;: 0,
-                            &quot;motionstreak&quot;: 0,
-                            &quot;last_position&quot;: {
-                                &quot;id&quot;: 29323,
-                                &quot;protocol&quot;: &quot;osmand&quot;,
-                                &quot;deviceid&quot;: 49,
-                                &quot;servertime&quot;: &quot;2023-10-20T16:15:22.000000Z&quot;,
-                                &quot;devicetime&quot;: &quot;2023-10-20 19:15:18&quot;,
-                                &quot;fixtime&quot;: &quot;2023-10-20 19:15:18&quot;,
-                                &quot;valid&quot;: 1,
-                                &quot;latitude&quot;: 0.3764655,
-                                &quot;longitude&quot;: 32.6551186,
-                                &quot;altitude&quot;: 0,
-                                &quot;speed&quot;: 0,
-                                &quot;course&quot;: 0,
-                                &quot;address&quot;: null,
-                                &quot;attributes&quot;: &quot;{\&quot;batteryLevel\&quot;:19.0,\&quot;distance\&quot;:751.12,\&quot;totalDistance\&quot;:53108.43,\&quot;motion\&quot;:false}&quot;,
-                                &quot;accuracy&quot;: 1500,
-                                &quot;network&quot;: &quot;null&quot;
-                            }
-                        },
-                        {
-                            &quot;id&quot;: 50,
-                            &quot;name&quot;: &quot;Afasha&quot;,
-                            &quot;uniqueid&quot;: &quot;43989383484834&quot;,
-                            &quot;lastupdate&quot;: null,
-                            &quot;positionid&quot;: null,
-                            &quot;groupid&quot;: null,
-                            &quot;attributes&quot;: &quot;{}&quot;,
-                            &quot;phone&quot;: null,
-                            &quot;model&quot;: &quot;tk340&quot;,
-                            &quot;contact&quot;: null,
-                            &quot;category&quot;: null,
-                            &quot;disabled&quot;: 0,
-                            &quot;status&quot;: &quot;offline&quot;,
-                            &quot;geofenceids&quot;: null,
-                            &quot;expirationtime&quot;: null,
-                            &quot;motionstate&quot;: 0,
-                            &quot;motiontime&quot;: null,
-                            &quot;motiondistance&quot;: 0,
-                            &quot;overspeedstate&quot;: 0,
-                            &quot;overspeedtime&quot;: null,
-                            &quot;overspeedgeofenceid&quot;: 0,
-                            &quot;motionstreak&quot;: 0,
-                            &quot;last_position&quot;: null
-                        },
-                        {
-                            &quot;id&quot;: 48,
-                            &quot;name&quot;: &quot;Afasha&quot;,
-                            &quot;uniqueid&quot;: &quot;835881&quot;,
-                            &quot;lastupdate&quot;: &quot;2024-03-28 22:09:21&quot;,
-                            &quot;positionid&quot;: 66949,
-                            &quot;groupid&quot;: null,
-                            &quot;attributes&quot;: &quot;{}&quot;,
-                            &quot;phone&quot;: null,
-                            &quot;model&quot;: null,
-                            &quot;contact&quot;: null,
-                            &quot;category&quot;: null,
-                            &quot;disabled&quot;: 0,
-                            &quot;status&quot;: &quot;offline&quot;,
-                            &quot;geofenceids&quot;: null,
-                            &quot;expirationtime&quot;: null,
-                            &quot;motionstate&quot;: 0,
-                            &quot;motiontime&quot;: &quot;2024-03-28 22:09:20&quot;,
-                            &quot;motiondistance&quot;: 102575587.22,
-                            &quot;overspeedstate&quot;: 0,
-                            &quot;overspeedtime&quot;: null,
-                            &quot;overspeedgeofenceid&quot;: 0,
-                            &quot;motionstreak&quot;: 1,
-                            &quot;last_position&quot;: {
-                                &quot;id&quot;: 66949,
-                                &quot;protocol&quot;: &quot;osmand&quot;,
-                                &quot;deviceid&quot;: 48,
-                                &quot;servertime&quot;: &quot;2024-03-28T19:09:21.000000Z&quot;,
-                                &quot;devicetime&quot;: &quot;2024-03-28 22:09:20&quot;,
-                                &quot;fixtime&quot;: &quot;2024-03-28 22:09:20&quot;,
-                                &quot;valid&quot;: 1,
-                                &quot;latitude&quot;: 0.3576947,
-                                &quot;longitude&quot;: 32.5976538,
-                                &quot;altitude&quot;: 1178,
-                                &quot;speed&quot;: 0.00365728,
-                                &quot;course&quot;: 0,
-                                &quot;address&quot;: null,
-                                &quot;attributes&quot;: &quot;{\&quot;batteryLevel\&quot;:45.0,\&quot;distance\&quot;:0.02,\&quot;totalDistance\&quot;:1.0257558722E8,\&quot;motion\&quot;:false}&quot;,
-                                &quot;accuracy&quot;: 30,
-                                &quot;network&quot;: &quot;null&quot;
-                            }
-                        }
-                    ]
-                },
-                &quot;dispatches&quot;: [
-                    {
-                        &quot;id&quot;: 1,
-                        &quot;order_vehicle_id&quot;: 1,
-                        &quot;origin&quot;: &quot;Bukoto Kisasi&quot;,
-                        &quot;destination&quot;: &quot;Ndeeba&quot;,
-                        &quot;notes&quot;: &quot;Wabodda&quot;,
-                        &quot;status&quot;: &quot;transit&quot;,
-                        &quot;created_at&quot;: &quot;2024-03-28T10:37:24.000000Z&quot;,
-                        &quot;updated_at&quot;: &quot;2024-03-28T10:37:41.000000Z&quot;,
-                        &quot;deleted_at&quot;: null
-                    }
-                ]
-            }
-        ]
-    }
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
 }</code>
  </pre>
     </span>
@@ -5605,14 +5242,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="GETapi-orders--id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-orders--id-"
+               value="voluptatem"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>1</code></p>
+<p>The ID of the order. Example: <code>voluptatem</code></p>
             </div>
                     </form>
 
@@ -5629,14 +5266,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.co/api/orders/1" \
+    "https://dayalog.test/api/orders/libero" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/orders/1"
+    "https://dayalog.test/api/orders/libero"
 );
 
 const headers = {
@@ -5652,7 +5289,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/orders/1';
+$url = 'https://dayalog.test/api/orders/libero';
 $response = $client-&gt;put(
     $url,
     [
@@ -5670,7 +5307,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/orders/1'
+url = 'https://dayalog.test/api/orders/libero'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -5682,26 +5319,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-PUTapi-orders--id-">
-            <blockquote>
-            <p>Example response (500):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 37
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Server Error&quot;
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-PUTapi-orders--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-PUTapi-orders--id-"></span>:
@@ -5761,14 +5379,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="PUTapi-orders--id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="PUTapi-orders--id-"
+               value="libero"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>1</code></p>
+<p>The ID of the order. Example: <code>libero</code></p>
             </div>
                     </form>
 
@@ -5785,14 +5403,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://dayalog.co/api/orders/1" \
+    "https://dayalog.test/api/orders/eum" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/orders/1"
+    "https://dayalog.test/api/orders/eum"
 );
 
 const headers = {
@@ -5808,7 +5426,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/orders/1';
+$url = 'https://dayalog.test/api/orders/eum';
 $response = $client-&gt;delete(
     $url,
     [
@@ -5826,7 +5444,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/orders/1'
+url = 'https://dayalog.test/api/orders/eum'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -5838,26 +5456,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-DELETEapi-orders--id-">
-            <blockquote>
-            <p>Example response (500):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 36
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Server Error&quot;
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-DELETEapi-orders--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-DELETEapi-orders--id-"></span>:
@@ -5913,38 +5512,38 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="DELETEapi-orders--id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-orders--id-"
+               value="eum"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>1</code></p>
+<p>The ID of the order. Example: <code>eum</code></p>
             </div>
                     </form>
 
-                    <h2 id="orders-POSTapi-orders--order_id--vehicle--vehicle_id-">Attach Vehicle to an order</h2>
+                    <h2 id="orders-POSTapi-orders--order--vehicle--vehicle-">Attach Vehicle to an order</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-POSTapi-orders--order_id--vehicle--vehicle_id-">
+<span id="example-requests-POSTapi-orders--order--vehicle--vehicle-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://dayalog.co/api/orders/1/vehicle/1" \
+    "https://dayalog.test/api/orders/iste/vehicle/sunt" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/orders/1/vehicle/1"
+    "https://dayalog.test/api/orders/iste/vehicle/sunt"
 );
 
 const headers = {
@@ -5960,7 +5559,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/orders/1/vehicle/1';
+$url = 'https://dayalog.test/api/orders/iste/vehicle/sunt';
 $response = $client-&gt;post(
     $url,
     [
@@ -5978,7 +5577,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/orders/1/vehicle/1'
+url = 'https://dayalog.test/api/orders/iste/vehicle/sunt'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -5989,62 +5588,36 @@ response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-POSTapi-orders--order_id--vehicle--vehicle_id-">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 35
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Vehicle attached successfully.&quot;,
-    &quot;orderVehicle&quot;: {
-        &quot;order_id&quot;: 1,
-        &quot;vehicle_id&quot;: 1,
-        &quot;created_at&quot;: &quot;2024-05-04T19:55:44.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2024-05-04T19:55:44.000000Z&quot;,
-        &quot;id&quot;: 4
-    }
-}</code>
- </pre>
-    </span>
-<span id="execution-results-POSTapi-orders--order_id--vehicle--vehicle_id-" hidden>
+<span id="example-responses-POSTapi-orders--order--vehicle--vehicle-">
+</span>
+<span id="execution-results-POSTapi-orders--order--vehicle--vehicle-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTapi-orders--order_id--vehicle--vehicle_id-"></span>:
+                id="execution-response-status-POSTapi-orders--order--vehicle--vehicle-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-orders--order_id--vehicle--vehicle_id-"
+    <pre class="json"><code id="execution-response-content-POSTapi-orders--order--vehicle--vehicle-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTapi-orders--order_id--vehicle--vehicle_id-" hidden>
+<span id="execution-error-POSTapi-orders--order--vehicle--vehicle-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-orders--order_id--vehicle--vehicle_id-">
+    <pre><code id="execution-error-message-POSTapi-orders--order--vehicle--vehicle-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-POSTapi-orders--order_id--vehicle--vehicle_id-" data-method="POST"
-      data-path="api/orders/{order_id}/vehicle/{vehicle_id}"
+<form id="form-POSTapi-orders--order--vehicle--vehicle-" data-method="POST"
+      data-path="api/orders/{order}/vehicle/{vehicle}"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-orders--order_id--vehicle--vehicle_id-', this);">
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-orders--order--vehicle--vehicle-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
             </h3>
             <p>
             <small class="badge badge-black">POST</small>
-            <b><code>api/orders/{order_id}/vehicle/{vehicle_id}</code></b>
+            <b><code>api/orders/{order}/vehicle/{vehicle}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -6052,7 +5625,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-orders--order_id--vehicle--vehicle_id-"
+                              name="Content-Type"                data-endpoint="POSTapi-orders--order--vehicle--vehicle-"
                value="application/json"
                data-component="header">
     <br>
@@ -6063,7 +5636,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-orders--order_id--vehicle--vehicle_id-"
+                              name="Accept"                data-endpoint="POSTapi-orders--order--vehicle--vehicle-"
                value="application/json"
                data-component="header">
     <br>
@@ -6071,50 +5644,50 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>order_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+                <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="order_id"                data-endpoint="POSTapi-orders--order_id--vehicle--vehicle_id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="order"                data-endpoint="POSTapi-orders--order--vehicle--vehicle-"
+               value="iste"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>1</code></p>
+<p>The order. Example: <code>iste</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>vehicle_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+                <b style="line-height: 2;"><code>vehicle</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="vehicle_id"                data-endpoint="POSTapi-orders--order_id--vehicle--vehicle_id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="vehicle"                data-endpoint="POSTapi-orders--order--vehicle--vehicle-"
+               value="sunt"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>1</code></p>
+<p>The vehicle. Example: <code>sunt</code></p>
             </div>
                     </form>
 
-                    <h2 id="orders-DELETEapi-orders--order_id--vehicle--vehicle_id-">Detach Vehicle from an order</h2>
+                    <h2 id="orders-DELETEapi-orders--order--vehicle--vehicle-">Detach Vehicle from an order</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-DELETEapi-orders--order_id--vehicle--vehicle_id-">
+<span id="example-requests-DELETEapi-orders--order--vehicle--vehicle-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://dayalog.co/api/orders/1/vehicle/1" \
+    "https://dayalog.test/api/orders/illo/vehicle/dolores" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/orders/1/vehicle/1"
+    "https://dayalog.test/api/orders/illo/vehicle/dolores"
 );
 
 const headers = {
@@ -6130,7 +5703,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/orders/1/vehicle/1';
+$url = 'https://dayalog.test/api/orders/illo/vehicle/dolores';
 $response = $client-&gt;delete(
     $url,
     [
@@ -6148,7 +5721,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/orders/1/vehicle/1'
+url = 'https://dayalog.test/api/orders/illo/vehicle/dolores'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -6159,55 +5732,36 @@ response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-DELETEapi-orders--order_id--vehicle--vehicle_id-">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 34
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Vehicle detached successfully.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-DELETEapi-orders--order_id--vehicle--vehicle_id-" hidden>
+<span id="example-responses-DELETEapi-orders--order--vehicle--vehicle-">
+</span>
+<span id="execution-results-DELETEapi-orders--order--vehicle--vehicle-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-orders--order_id--vehicle--vehicle_id-"></span>:
+                id="execution-response-status-DELETEapi-orders--order--vehicle--vehicle-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-orders--order_id--vehicle--vehicle_id-"
+    <pre class="json"><code id="execution-response-content-DELETEapi-orders--order--vehicle--vehicle-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-DELETEapi-orders--order_id--vehicle--vehicle_id-" hidden>
+<span id="execution-error-DELETEapi-orders--order--vehicle--vehicle-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-orders--order_id--vehicle--vehicle_id-">
+    <pre><code id="execution-error-message-DELETEapi-orders--order--vehicle--vehicle-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-DELETEapi-orders--order_id--vehicle--vehicle_id-" data-method="DELETE"
-      data-path="api/orders/{order_id}/vehicle/{vehicle_id}"
+<form id="form-DELETEapi-orders--order--vehicle--vehicle-" data-method="DELETE"
+      data-path="api/orders/{order}/vehicle/{vehicle}"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-orders--order_id--vehicle--vehicle_id-', this);">
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-orders--order--vehicle--vehicle-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
             </h3>
             <p>
             <small class="badge badge-red">DELETE</small>
-            <b><code>api/orders/{order_id}/vehicle/{vehicle_id}</code></b>
+            <b><code>api/orders/{order}/vehicle/{vehicle}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -6215,7 +5769,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="DELETEapi-orders--order_id--vehicle--vehicle_id-"
+                              name="Content-Type"                data-endpoint="DELETEapi-orders--order--vehicle--vehicle-"
                value="application/json"
                data-component="header">
     <br>
@@ -6226,7 +5780,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="DELETEapi-orders--order_id--vehicle--vehicle_id-"
+                              name="Accept"                data-endpoint="DELETEapi-orders--order--vehicle--vehicle-"
                value="application/json"
                data-component="header">
     <br>
@@ -6234,50 +5788,50 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>order_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+                <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="order_id"                data-endpoint="DELETEapi-orders--order_id--vehicle--vehicle_id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="order"                data-endpoint="DELETEapi-orders--order--vehicle--vehicle-"
+               value="illo"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>1</code></p>
+<p>The order. Example: <code>illo</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>vehicle_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+                <b style="line-height: 2;"><code>vehicle</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="vehicle_id"                data-endpoint="DELETEapi-orders--order_id--vehicle--vehicle_id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="vehicle"                data-endpoint="DELETEapi-orders--order--vehicle--vehicle-"
+               value="dolores"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>1</code></p>
+<p>The vehicle. Example: <code>dolores</code></p>
             </div>
                     </form>
 
-                    <h2 id="orders-PUTapi-orders--order_id--status--newStatus-">Change Order status</h2>
+                    <h2 id="orders-PUTapi-orders--order--status--newStatus-">Change Order status</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-PUTapi-orders--order_id--status--newStatus-">
+<span id="example-requests-PUTapi-orders--order--status--newStatus-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.co/api/orders/1/status/quidem" \
+    "https://dayalog.test/api/orders/et/status/officia" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/orders/1/status/quidem"
+    "https://dayalog.test/api/orders/et/status/officia"
 );
 
 const headers = {
@@ -6293,7 +5847,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/orders/1/status/quidem';
+$url = 'https://dayalog.test/api/orders/et/status/officia';
 $response = $client-&gt;put(
     $url,
     [
@@ -6311,7 +5865,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/orders/1/status/quidem'
+url = 'https://dayalog.test/api/orders/et/status/officia'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -6322,55 +5876,36 @@ response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-PUTapi-orders--order_id--status--newStatus-">
-            <blockquote>
-            <p>Example response (500):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 33
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Server Error&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-PUTapi-orders--order_id--status--newStatus-" hidden>
+<span id="example-responses-PUTapi-orders--order--status--newStatus-">
+</span>
+<span id="execution-results-PUTapi-orders--order--status--newStatus-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-PUTapi-orders--order_id--status--newStatus-"></span>:
+                id="execution-response-status-PUTapi-orders--order--status--newStatus-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-orders--order_id--status--newStatus-"
+    <pre class="json"><code id="execution-response-content-PUTapi-orders--order--status--newStatus-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-PUTapi-orders--order_id--status--newStatus-" hidden>
+<span id="execution-error-PUTapi-orders--order--status--newStatus-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-orders--order_id--status--newStatus-">
+    <pre><code id="execution-error-message-PUTapi-orders--order--status--newStatus-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-PUTapi-orders--order_id--status--newStatus-" data-method="PUT"
-      data-path="api/orders/{order_id}/status/{newStatus}"
+<form id="form-PUTapi-orders--order--status--newStatus-" data-method="PUT"
+      data-path="api/orders/{order}/status/{newStatus}"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-orders--order_id--status--newStatus-', this);">
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-orders--order--status--newStatus-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
             </h3>
             <p>
             <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/orders/{order_id}/status/{newStatus}</code></b>
+            <b><code>api/orders/{order}/status/{newStatus}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -6378,7 +5913,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="PUTapi-orders--order_id--status--newStatus-"
+                              name="Content-Type"                data-endpoint="PUTapi-orders--order--status--newStatus-"
                value="application/json"
                data-component="header">
     <br>
@@ -6389,7 +5924,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="PUTapi-orders--order_id--status--newStatus-"
+                              name="Accept"                data-endpoint="PUTapi-orders--order--status--newStatus-"
                value="application/json"
                data-component="header">
     <br>
@@ -6397,181 +5932,39 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>order_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+                <b style="line-height: 2;"><code>order</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="order_id"                data-endpoint="PUTapi-orders--order_id--status--newStatus-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="order"                data-endpoint="PUTapi-orders--order--status--newStatus-"
+               value="et"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>1</code></p>
+<p>The order. Example: <code>et</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>newStatus</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="newStatus"                data-endpoint="PUTapi-orders--order_id--status--newStatus-"
-               value="quidem"
+                              name="newStatus"                data-endpoint="PUTapi-orders--order--status--newStatus-"
+               value="officia"
                data-component="url">
     <br>
-<p>Example: <code>quidem</code></p>
+<p>Example: <code>officia</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>string</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
-                              name="string"                data-endpoint="PUTapi-orders--order_id--status--newStatus-"
+                              name="string"                data-endpoint="PUTapi-orders--order--status--newStatus-"
                value="cancelled"
                data-component="url">
     <br>
 <p>$newStatus The new status value (possible values: 'not_started', 'transit', 'reached', 'cancelled'). Example: <code>cancelled</code></p>
             </div>
                     </form>
-
-                <h1 id="users">Users</h1>
-
-    
-
-                                <h2 id="users-GETapi-user">GET api/user</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-user">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.co/api/user" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/user"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-
-<div class="php-example">
-    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/user';
-$response = $client-&gt;get(
-    $url,
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre></div>
-
-
-<div class="python-example">
-    <pre><code class="language-python">import requests
-import json
-
-url = 'https://dayalog.co/api/user'
-headers = {
-  'Content-Type': 'application/json',
-  'Accept': 'application/json'
-}
-
-response = requests.request('GET', url, headers=headers)
-response.json()</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-user">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-user" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-user"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-user"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-user" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-user">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-user" data-method="GET"
-      data-path="api/user"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-user', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/user</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-user"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-user"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
 
                 <h1 id="vehicles">Vehicles</h1>
 
@@ -6590,14 +5983,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.co/api/vehicles" \
+    --get "https://dayalog.test/api/vehicles" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/vehicles"
+    "https://dayalog.test/api/vehicles"
 );
 
 const headers = {
@@ -6613,7 +6006,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/vehicles';
+$url = 'https://dayalog.test/api/vehicles';
 $response = $client-&gt;get(
     $url,
     [
@@ -6631,7 +6024,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/vehicles'
+url = 'https://dayalog.test/api/vehicles'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -6644,7 +6037,7 @@ response.json()</code></pre></div>
 
 <span id="example-responses-GETapi-vehicles">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -6652,62 +6045,13 @@ response.json()</code></pre></div>
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 47
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
+set-cookie: dayalog_session=Pdt4eXYAyi3mjkaFNUG2kMJGjKC1VrzG7F6rTnfo; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;vin&quot;: null,
-            &quot;number_plate&quot;: &quot;UAE 345B&quot;,
-            &quot;make&quot;: null,
-            &quot;model&quot;: null,
-            &quot;capacity_weight&quot;: null,
-            &quot;capacity_volume&quot;: null,
-            &quot;availability&quot;: 1,
-            &quot;insurance_policy_number&quot;: null,
-            &quot;insurance_coverage&quot;: null,
-            &quot;insurance_expiration&quot;: null,
-            &quot;created_at&quot;: &quot;2024-03-28T10:28:44.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2024-03-28T10:28:44.000000Z&quot;
-        }
-    ],
-    &quot;links&quot;: {
-        &quot;first&quot;: &quot;http://dayalog_api.test/api/vehicles?page=1&quot;,
-        &quot;last&quot;: &quot;http://dayalog_api.test/api/vehicles?page=1&quot;,
-        &quot;prev&quot;: null,
-        &quot;next&quot;: null
-    },
-    &quot;meta&quot;: {
-        &quot;current_page&quot;: 1,
-        &quot;from&quot;: 1,
-        &quot;last_page&quot;: 1,
-        &quot;links&quot;: [
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
-                &quot;active&quot;: false
-            },
-            {
-                &quot;url&quot;: &quot;http://dayalog_api.test/api/vehicles?page=1&quot;,
-                &quot;label&quot;: &quot;1&quot;,
-                &quot;active&quot;: true
-            },
-            {
-                &quot;url&quot;: null,
-                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
-                &quot;active&quot;: false
-            }
-        ],
-        &quot;path&quot;: &quot;http://dayalog_api.test/api/vehicles&quot;,
-        &quot;per_page&quot;: 25,
-        &quot;to&quot;: 1,
-        &quot;total&quot;: 1
-    }
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
 }</code>
  </pre>
     </span>
@@ -6778,28 +6122,28 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://dayalog.co/api/vehicles" \
+    "https://dayalog.test/api/vehicles" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"vin\": \"perferendis\",
-    \"number_plate\": \"eos\",
-    \"make\": \"vitae\",
-    \"model\": \"aut\",
-    \"availability\": false,
-    \"capacity_weight\": 32522086.4138,
-    \"capacity_volume\": 7518898.137,
-    \"insurance_policy_number\": \"dolor\",
-    \"insurance_coverage\": \"officia\",
-    \"insurance_expiration\": \"2024-05-04T22:55:44\",
-    \"attached_device_id\": 13
+    \"vin\": \"et\",
+    \"number_plate\": \"et\",
+    \"make\": \"saepe\",
+    \"model\": \"tenetur\",
+    \"availability\": true,
+    \"capacity_weight\": 224.441146109,
+    \"capacity_volume\": 32.966978,
+    \"insurance_policy_number\": \"officiis\",
+    \"insurance_coverage\": \"quo\",
+    \"insurance_expiration\": \"2025-03-08T23:20:30\",
+    \"attached_device_id\": 15
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/vehicles"
+    "https://dayalog.test/api/vehicles"
 );
 
 const headers = {
@@ -6808,17 +6152,17 @@ const headers = {
 };
 
 let body = {
-    "vin": "perferendis",
-    "number_plate": "eos",
-    "make": "vitae",
-    "model": "aut",
-    "availability": false,
-    "capacity_weight": 32522086.4138,
-    "capacity_volume": 7518898.137,
-    "insurance_policy_number": "dolor",
-    "insurance_coverage": "officia",
-    "insurance_expiration": "2024-05-04T22:55:44",
-    "attached_device_id": 13
+    "vin": "et",
+    "number_plate": "et",
+    "make": "saepe",
+    "model": "tenetur",
+    "availability": true,
+    "capacity_weight": 224.441146109,
+    "capacity_volume": 32.966978,
+    "insurance_policy_number": "officiis",
+    "insurance_coverage": "quo",
+    "insurance_expiration": "2025-03-08T23:20:30",
+    "attached_device_id": 15
 };
 
 fetch(url, {
@@ -6830,7 +6174,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/vehicles';
+$url = 'https://dayalog.test/api/vehicles';
 $response = $client-&gt;post(
     $url,
     [
@@ -6839,17 +6183,17 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'vin' =&gt; 'perferendis',
-            'number_plate' =&gt; 'eos',
-            'make' =&gt; 'vitae',
-            'model' =&gt; 'aut',
-            'availability' =&gt; false,
-            'capacity_weight' =&gt; 32522086.4138,
-            'capacity_volume' =&gt; 7518898.137,
-            'insurance_policy_number' =&gt; 'dolor',
-            'insurance_coverage' =&gt; 'officia',
-            'insurance_expiration' =&gt; '2024-05-04T22:55:44',
-            'attached_device_id' =&gt; 13,
+            'vin' =&gt; 'et',
+            'number_plate' =&gt; 'et',
+            'make' =&gt; 'saepe',
+            'model' =&gt; 'tenetur',
+            'availability' =&gt; true,
+            'capacity_weight' =&gt; 224.441146109,
+            'capacity_volume' =&gt; 32.966978,
+            'insurance_policy_number' =&gt; 'officiis',
+            'insurance_coverage' =&gt; 'quo',
+            'insurance_expiration' =&gt; '2025-03-08T23:20:30',
+            'attached_device_id' =&gt; 15,
         ],
     ]
 );
@@ -6861,19 +6205,19 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/vehicles'
+url = 'https://dayalog.test/api/vehicles'
 payload = {
-    "vin": "perferendis",
-    "number_plate": "eos",
-    "make": "vitae",
-    "model": "aut",
-    "availability": false,
-    "capacity_weight": 32522086.4138,
-    "capacity_volume": 7518898.137,
-    "insurance_policy_number": "dolor",
-    "insurance_coverage": "officia",
-    "insurance_expiration": "2024-05-04T22:55:44",
-    "attached_device_id": 13
+    "vin": "et",
+    "number_plate": "et",
+    "make": "saepe",
+    "model": "tenetur",
+    "availability": true,
+    "capacity_weight": 224.441146109,
+    "capacity_volume": 32.966978,
+    "insurance_policy_number": "officiis",
+    "insurance_coverage": "quo",
+    "insurance_expiration": "2025-03-08T23:20:30",
+    "attached_device_id": 15
 }
 headers = {
   'Content-Type': 'application/json',
@@ -6886,39 +6230,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-POSTapi-vehicles">
-            <blockquote>
-            <p>Example response (201):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 46
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: {
-        &quot;vin&quot;: &quot;perferendis&quot;,
-        &quot;number_plate&quot;: &quot;eos&quot;,
-        &quot;make&quot;: &quot;vitae&quot;,
-        &quot;model&quot;: &quot;aut&quot;,
-        &quot;capacity_weight&quot;: 32522086.4138,
-        &quot;capacity_volume&quot;: 7518898.137,
-        &quot;insurance_policy_number&quot;: &quot;dolor&quot;,
-        &quot;insurance_coverage&quot;: &quot;officia&quot;,
-        &quot;insurance_expiration&quot;: &quot;2024-05-04T22:55:44&quot;,
-        &quot;updated_at&quot;: &quot;2024-05-04T19:55:44.000000Z&quot;,
-        &quot;created_at&quot;: &quot;2024-05-04T19:55:44.000000Z&quot;,
-        &quot;id&quot;: 3
-    }
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-POSTapi-vehicles" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-vehicles"></span>:
@@ -6978,10 +6290,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="vin"                data-endpoint="POSTapi-vehicles"
-               value="perferendis"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>perferendis</code></p>
+<p>Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>number_plate</code></b>&nbsp;&nbsp;
@@ -6989,10 +6301,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="number_plate"                data-endpoint="POSTapi-vehicles"
-               value="eos"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>eos</code></p>
+<p>Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>make</code></b>&nbsp;&nbsp;
@@ -7000,10 +6312,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="make"                data-endpoint="POSTapi-vehicles"
-               value="vitae"
+               value="saepe"
                data-component="body">
     <br>
-<p>Example: <code>vitae</code></p>
+<p>Example: <code>saepe</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model</code></b>&nbsp;&nbsp;
@@ -7011,10 +6323,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="model"                data-endpoint="POSTapi-vehicles"
-               value="aut"
+               value="tenetur"
                data-component="body">
     <br>
-<p>Example: <code>aut</code></p>
+<p>Example: <code>tenetur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>availability</code></b>&nbsp;&nbsp;
@@ -7035,7 +6347,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>Example: <code>true</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>capacity_weight</code></b>&nbsp;&nbsp;
@@ -7043,10 +6355,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="capacity_weight"                data-endpoint="POSTapi-vehicles"
-               value="32522086.4138"
+               value="224.441146109"
                data-component="body">
     <br>
-<p>Example: <code>32522086.4138</code></p>
+<p>Example: <code>224.441146109</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>capacity_volume</code></b>&nbsp;&nbsp;
@@ -7054,10 +6366,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="capacity_volume"                data-endpoint="POSTapi-vehicles"
-               value="7518898.137"
+               value="32.966978"
                data-component="body">
     <br>
-<p>Example: <code>7518898.137</code></p>
+<p>Example: <code>32.966978</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>insurance_policy_number</code></b>&nbsp;&nbsp;
@@ -7065,10 +6377,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="insurance_policy_number"                data-endpoint="POSTapi-vehicles"
-               value="dolor"
+               value="officiis"
                data-component="body">
     <br>
-<p>Example: <code>dolor</code></p>
+<p>Example: <code>officiis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>insurance_coverage</code></b>&nbsp;&nbsp;
@@ -7076,10 +6388,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="insurance_coverage"                data-endpoint="POSTapi-vehicles"
-               value="officia"
+               value="quo"
                data-component="body">
     <br>
-<p>Example: <code>officia</code></p>
+<p>Example: <code>quo</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>insurance_expiration</code></b>&nbsp;&nbsp;
@@ -7087,10 +6399,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="insurance_expiration"                data-endpoint="POSTapi-vehicles"
-               value="2024-05-04T22:55:44"
+               value="2025-03-08T23:20:30"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-05-04T22:55:44</code></p>
+<p>Must be a valid date. Example: <code>2025-03-08T23:20:30</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>attached_device_id</code></b>&nbsp;&nbsp;
@@ -7098,10 +6410,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="attached_device_id"                data-endpoint="POSTapi-vehicles"
-               value="13"
+               value="15"
                data-component="body">
     <br>
-<p>Example: <code>13</code></p>
+<p>Example: <code>15</code></p>
         </div>
         </form>
 
@@ -7118,14 +6430,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.co/api/vehicles/1" \
+    --get "https://dayalog.test/api/vehicles/eveniet" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/vehicles/1"
+    "https://dayalog.test/api/vehicles/eveniet"
 );
 
 const headers = {
@@ -7141,7 +6453,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/vehicles/1';
+$url = 'https://dayalog.test/api/vehicles/eveniet';
 $response = $client-&gt;get(
     $url,
     [
@@ -7159,7 +6471,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/vehicles/1'
+url = 'https://dayalog.test/api/vehicles/eveniet'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -7172,7 +6484,7 @@ response.json()</code></pre></div>
 
 <span id="example-responses-GETapi-vehicles--id-">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -7180,28 +6492,13 @@ response.json()</code></pre></div>
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 45
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
+set-cookie: dayalog_session=dTwJYJu8dOrxC6BSjXleQF1hAUdTtOTD0YOexXx8; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;vin&quot;: null,
-        &quot;number_plate&quot;: &quot;UAE 345B&quot;,
-        &quot;make&quot;: null,
-        &quot;model&quot;: null,
-        &quot;capacity_weight&quot;: null,
-        &quot;capacity_volume&quot;: null,
-        &quot;availability&quot;: 1,
-        &quot;insurance_policy_number&quot;: null,
-        &quot;insurance_coverage&quot;: null,
-        &quot;insurance_expiration&quot;: null,
-        &quot;created_at&quot;: &quot;2024-03-28T10:28:44.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2024-03-28T10:28:44.000000Z&quot;
-    }
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
 }</code>
  </pre>
     </span>
@@ -7260,14 +6557,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="GETapi-vehicles--id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-vehicles--id-"
+               value="eveniet"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>1</code></p>
+<p>The ID of the vehicle. Example: <code>eveniet</code></p>
             </div>
                     </form>
 
@@ -7284,14 +6581,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.co/api/vehicles/1" \
+    "https://dayalog.test/api/vehicles/laborum" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/vehicles/1"
+    "https://dayalog.test/api/vehicles/laborum"
 );
 
 const headers = {
@@ -7307,7 +6604,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/vehicles/1';
+$url = 'https://dayalog.test/api/vehicles/laborum';
 $response = $client-&gt;put(
     $url,
     [
@@ -7325,7 +6622,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/vehicles/1'
+url = 'https://dayalog.test/api/vehicles/laborum'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -7337,40 +6634,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-PUTapi-vehicles--id-">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 44
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;vin&quot;: null,
-        &quot;number_plate&quot;: &quot;UAE 345B&quot;,
-        &quot;make&quot;: null,
-        &quot;model&quot;: null,
-        &quot;capacity_weight&quot;: null,
-        &quot;capacity_volume&quot;: null,
-        &quot;availability&quot;: 1,
-        &quot;insurance_policy_number&quot;: null,
-        &quot;insurance_coverage&quot;: null,
-        &quot;insurance_expiration&quot;: null,
-        &quot;created_at&quot;: &quot;2024-03-28T10:28:44.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2024-03-28T10:28:44.000000Z&quot;
-    }
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-PUTapi-vehicles--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-PUTapi-vehicles--id-"></span>:
@@ -7430,14 +6694,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="PUTapi-vehicles--id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="PUTapi-vehicles--id-"
+               value="laborum"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>1</code></p>
+<p>The ID of the vehicle. Example: <code>laborum</code></p>
             </div>
                     </form>
 
@@ -7454,14 +6718,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://dayalog.co/api/vehicles/1" \
+    "https://dayalog.test/api/vehicles/et" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/vehicles/1"
+    "https://dayalog.test/api/vehicles/et"
 );
 
 const headers = {
@@ -7477,7 +6741,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/vehicles/1';
+$url = 'https://dayalog.test/api/vehicles/et';
 $response = $client-&gt;delete(
     $url,
     [
@@ -7495,7 +6759,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/vehicles/1'
+url = 'https://dayalog.test/api/vehicles/et'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -7507,26 +6771,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-DELETEapi-vehicles--id-">
-            <blockquote>
-            <p>Example response (500):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 43
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Server Error&quot;
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-DELETEapi-vehicles--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-DELETEapi-vehicles--id-"></span>:
@@ -7582,14 +6827,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="DELETEapi-vehicles--id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-vehicles--id-"
+               value="et"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>1</code></p>
+<p>The ID of the vehicle. Example: <code>et</code></p>
             </div>
                     </form>
 
@@ -7606,18 +6851,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.co/api/vehicles/1/attach-device" \
+    "https://dayalog.test/api/vehicles/aut/attach-device" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"device_id\": \"nobis\"
+    \"device_id\": \"rerum\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/vehicles/1/attach-device"
+    "https://dayalog.test/api/vehicles/aut/attach-device"
 );
 
 const headers = {
@@ -7626,7 +6871,7 @@ const headers = {
 };
 
 let body = {
-    "device_id": "nobis"
+    "device_id": "rerum"
 };
 
 fetch(url, {
@@ -7638,7 +6883,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/vehicles/1/attach-device';
+$url = 'https://dayalog.test/api/vehicles/aut/attach-device';
 $response = $client-&gt;put(
     $url,
     [
@@ -7647,7 +6892,7 @@ $response = $client-&gt;put(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'device_id' =&gt; 'nobis',
+            'device_id' =&gt; 'rerum',
         ],
     ]
 );
@@ -7659,9 +6904,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/vehicles/1/attach-device'
+url = 'https://dayalog.test/api/vehicles/aut/attach-device'
 payload = {
-    "device_id": "nobis"
+    "device_id": "rerum"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -7674,26 +6919,7 @@ response.json()</code></pre></div>
 </span>
 
 <span id="example-responses-PUTapi-vehicles--vehicle--attach-device">
-            <blockquote>
-            <p>Example response (500):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 42
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Server Error&quot;
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-PUTapi-vehicles--vehicle--attach-device" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-PUTapi-vehicles--vehicle--attach-device"></span>:
@@ -7749,14 +6975,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>vehicle</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="vehicle"                data-endpoint="PUTapi-vehicles--vehicle--attach-device"
-               value="1"
+                <input type="text" style="display: none"
+                              name="vehicle"                data-endpoint="PUTapi-vehicles--vehicle--attach-device"
+               value="aut"
                data-component="url">
     <br>
-<p>The vehicle. Example: <code>1</code></p>
+<p>The vehicle. Example: <code>aut</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -7768,7 +6994,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-
+<p>The <code>id</code> of an existing record in the vehicles table.</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>device_id</code></b>&nbsp;&nbsp;
@@ -7776,27 +7002,27 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="device_id"                data-endpoint="PUTapi-vehicles--vehicle--attach-device"
-               value="nobis"
+               value="rerum"
                data-component="body">
     <br>
-<p>Example: <code>nobis</code></p>
+<p>The <code>id</code> of an existing record in the traccar.tc_devices table. Example: <code>rerum</code></p>
         </div>
         </form>
 
-                    <h2 id="vehicles-PUTapi-vehicles--vehicle_id--detach-devices">Remove devices attached to a vehicle.</h2>
+                    <h2 id="vehicles-PUTapi-vehicles--vehicle--detach-devices">Remove devices attached to a vehicle.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-PUTapi-vehicles--vehicle_id--detach-devices">
+<span id="example-requests-PUTapi-vehicles--vehicle--detach-devices">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.co/api/vehicles/1/detach-devices" \
+    "https://dayalog.test/api/vehicles/sint/detach-devices" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
 </code></pre></div>
@@ -7804,7 +7030,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.co/api/vehicles/1/detach-devices"
+    "https://dayalog.test/api/vehicles/sint/detach-devices"
 );
 
 const headers = {
@@ -7820,7 +7046,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.co/api/vehicles/1/detach-devices';
+$url = 'https://dayalog.test/api/vehicles/sint/detach-devices';
 $response = $client-&gt;put(
     $url,
     [
@@ -7838,7 +7064,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.co/api/vehicles/1/detach-devices'
+url = 'https://dayalog.test/api/vehicles/sint/detach-devices'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -7849,60 +7075,36 @@ response.json()</code></pre></div>
 
 </span>
 
-<span id="example-responses-PUTapi-vehicles--vehicle_id--detach-devices">
-            <blockquote>
-            <p>Example response (422):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 41
-access-control-allow-origin: localhost:8000
-access-control-allow-credentials: true
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The selected vehicle is invalid.&quot;,
-    &quot;errors&quot;: {
-        &quot;vehicle&quot;: [
-            &quot;The selected vehicle is invalid.&quot;
-        ]
-    }
-}</code>
- </pre>
-    </span>
-<span id="execution-results-PUTapi-vehicles--vehicle_id--detach-devices" hidden>
+<span id="example-responses-PUTapi-vehicles--vehicle--detach-devices">
+</span>
+<span id="execution-results-PUTapi-vehicles--vehicle--detach-devices" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-PUTapi-vehicles--vehicle_id--detach-devices"></span>:
+                id="execution-response-status-PUTapi-vehicles--vehicle--detach-devices"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-vehicles--vehicle_id--detach-devices"
+    <pre class="json"><code id="execution-response-content-PUTapi-vehicles--vehicle--detach-devices"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-PUTapi-vehicles--vehicle_id--detach-devices" hidden>
+<span id="execution-error-PUTapi-vehicles--vehicle--detach-devices" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-vehicles--vehicle_id--detach-devices">
+    <pre><code id="execution-error-message-PUTapi-vehicles--vehicle--detach-devices">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-PUTapi-vehicles--vehicle_id--detach-devices" data-method="PUT"
-      data-path="api/vehicles/{vehicle_id}/detach-devices"
+<form id="form-PUTapi-vehicles--vehicle--detach-devices" data-method="PUT"
+      data-path="api/vehicles/{vehicle}/detach-devices"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-vehicles--vehicle_id--detach-devices', this);">
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-vehicles--vehicle--detach-devices', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
             </h3>
             <p>
             <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/vehicles/{vehicle_id}/detach-devices</code></b>
+            <b><code>api/vehicles/{vehicle}/detach-devices</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -7910,7 +7112,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="PUTapi-vehicles--vehicle_id--detach-devices"
+                              name="Content-Type"                data-endpoint="PUTapi-vehicles--vehicle--detach-devices"
                value="application/json"
                data-component="header">
     <br>
@@ -7921,7 +7123,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="PUTapi-vehicles--vehicle_id--detach-devices"
+                              name="Accept"                data-endpoint="PUTapi-vehicles--vehicle--detach-devices"
                value="application/json"
                data-component="header">
     <br>
@@ -7929,15 +7131,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>vehicle_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+                <b style="line-height: 2;"><code>vehicle</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="vehicle_id"                data-endpoint="PUTapi-vehicles--vehicle_id--detach-devices"
-               value="1"
+                <input type="text" style="display: none"
+                              name="vehicle"                data-endpoint="PUTapi-vehicles--vehicle--detach-devices"
+               value="sint"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>1</code></p>
+<p>The vehicle. Example: <code>sint</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -7945,11 +7147,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <small>string</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
-                              name="vehicle"                data-endpoint="PUTapi-vehicles--vehicle_id--detach-devices"
+                              name="vehicle"                data-endpoint="PUTapi-vehicles--vehicle--detach-devices"
                value=""
                data-component="body">
     <br>
-
+<p>The <code>id</code> of an existing record in the vehicles table.</p>
         </div>
         </form>
 

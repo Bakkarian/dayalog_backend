@@ -43,7 +43,7 @@ class OrderTripController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(OrderTrip $orderTrip)
+    public function edit( $orderTrip)
     {
         //
     }
@@ -51,7 +51,7 @@ class OrderTripController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateOrderTripRequest $request, OrderTrip $orderTrip)
+    public function update(UpdateOrderTripRequest $request,  $orderTrip)
     {
         //
     }
@@ -59,7 +59,7 @@ class OrderTripController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(OrderTrip $orderTrip)
+    public function destroy( $orderTrip)
     {
         //
     }

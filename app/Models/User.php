@@ -53,9 +53,9 @@ class User extends Authenticatable
     protected static function booted(): void
     {
         static::addGlobalScope('onlyForOrganization', function (Builder $builder) {
-            $builder->when(session()->get('organization_id') ,  function ($q){
+            $builder->when(session()->get('organization_id') || getPermissionsTeamId() ,  function ($q){
                 $q->whereHas('organizations' , function ($q){
-                    $q->whereIn('organizations.id', [session()->get('organization_id')]);
+                    $q->whereIn('organizations.id', [session()->get('organization_id') ?? getPermissionsTeamId() ]  );
                 });
             });
         });
@@ -73,7 +73,7 @@ class User extends Authenticatable
     public function currentOrganizationUser()
     {
         //TO attempt tp keep it in session
-        return  $this->organizationUser()->where('organization_id', session()->get('organization_id'))->first();
+        return  $this->organizationUser()->where('organization_id', session()->get('organization_id') ?? getPermissionsTeamId() )->first();
     }
 
 

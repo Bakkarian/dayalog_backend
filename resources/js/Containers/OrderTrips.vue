@@ -2,8 +2,7 @@
 import { computed } from 'vue';
 import TripDetails from './TripDetails.vue';
 import TripStatusSelect from './TripStatusSelect.vue';
-import { ClockIcon,  } from '@heroicons/vue/20/solid';
-import { CheckCircleIcon } from '@heroicons/vue/24/outline';
+import { ClockIcon, CheckCircleIcon } from '@heroicons/vue/24/outline';
 
 
 const props = defineProps({
@@ -27,26 +26,32 @@ const trips = computed(() => {
 </script>
 
 <template>
-   <div class="flex flex-col space-y-4">
-    <template v-for="trip in trips">
-        <div class="flex items-center py-4 px-6 border-b border-gray-200 hover:bg-gray-50">
-        <div class="flex-shrink-0">
+  <div class="space-y-4 pt-5">
+    <div v-for="trip in trips" :key="trip.id" class="bg-white rounded-lg border border-gray-200 p-4 transition duration-300 ease-in-out hover:bg-gray-50">
+      <div class="flex items-start justify-between">
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
             <CheckCircleIcon v-if="trip.status === 'reached'" class="h-6 w-6 text-green-500" />
             <ClockIcon v-else-if="trip.status === 'in_transit'" class="h-6 w-6 text-blue-500" />
             <ClockIcon v-else class="h-6 w-6 text-gray-400" />
-        </div>
-        <div class="flex-grow ml-4">
-            <h3 class="text-base font-medium text-gray-900">
-            {{ trip.origin }} to {{ trip.destination }}
+          </div>
+          <div class="ml-4">
+            <h3 class="text-lg font-semibold text-gray-900">
+              {{ trip.origin }} &rarr; {{ trip.destination }}
             </h3>
-            <p class="text-sm text-gray-500">
-                <TripStatusSelect :trip="trip" />
-            </p>
+            <p class="text-gray-500 text-sm">{{ trip.vehicle.license_plate }}</p>
+          </div>
         </div>
-            <TripDetails :trip="trip" class="ml-auto" />
-        </div>
-  </template>
-</div>
 
+        <div class="ml-auto">
+          <TripDetails :trip="trip" class="flex items-center" />
+        </div>
+      </div>
+      
+      <TripStatusSelect :trip="trip" class="mt-2" />
+
+    </div>
+  </div>
 
 </template>
+

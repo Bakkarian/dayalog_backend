@@ -34,8 +34,11 @@ class HandleInertiaRequests extends Middleware
 
         
 
-        if(session()->has('organization_id')) {
+        if(auth()->check()&& session()->has('organization_id')  ) {
             setPermissionsTeamId(session()->get('organization_id'));
+        }else{
+            session()->forget('organization_id');
+            setPermissionsTeamId(null);
         }
 
         return array_merge(parent::share($request), [

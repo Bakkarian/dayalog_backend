@@ -114,7 +114,13 @@ const completedOrder = () => {
                     </div>
 
 
-                    <OrderTrips :vehiclesOrders="selectedOrder?.order_vehicles" />
+                    <div class="overflow-y-auto h-96">
+                        <!-- Customize scrollbar -->
+                        <div class="scroll-smooth scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-gray-400">
+                            <OrderTrips :vehiclesOrders="selectedOrder?.order_vehicles" />
+                        </div>
+                    </div>
+
                 </li>
             </ul>
             <div  class="p-6">

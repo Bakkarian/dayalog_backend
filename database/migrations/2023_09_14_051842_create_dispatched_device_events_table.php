@@ -22,15 +22,6 @@ return new class extends Migration
 
             $table->integer('device_id')->index();
             $table->integer('device_position_id')->index();
-            $table->foreign('device_id')
-                  ->references('id')
-                  ->on('devices')
-                  ->cascadeOnDelete();
-            $table->foreign('device_position_id')
-                    ->references('id')
-                    ->on('device_positions')
-                    ->cascadeOnDelete();
-
             $table->enum('status', [
                 'started',
                 'stopped',

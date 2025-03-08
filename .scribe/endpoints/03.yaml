@@ -26,15 +26,14 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"data":[{"id":1,"vin":null,"number_plate":"UAE 345B","make":null,"model":null,"capacity_weight":null,"capacity_volume":null,"availability":1,"insurance_policy_number":null,"insurance_coverage":null,"insurance_expiration":null,"created_at":"2024-03-28T10:28:44.000000Z","updated_at":"2024-03-28T10:28:44.000000Z"}],"links":{"first":"http:\/\/dayalog_api.test\/api\/vehicles?page=1","last":"http:\/\/dayalog_api.test\/api\/vehicles?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/dayalog_api.test\/api\/vehicles?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/dayalog_api.test\/api\/vehicles","per_page":25,"to":1,"total":1}}'
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '47'
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
+          set-cookie: 'dayalog_session=Pdt4eXYAyi3mjkaFNUG2kMJGjKC1VrzG7F6rTnfo; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -68,127 +67,126 @@ endpoints:
         name: vin
         description: ''
         required: false
-        example: perferendis
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       number_plate:
         name: number_plate
         description: ''
         required: true
-        example: eos
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       make:
         name: make
         description: ''
         required: false
-        example: vitae
+        example: saepe
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       model:
         name: model
         description: ''
         required: false
-        example: aut
+        example: tenetur
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       availability:
         name: availability
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       capacity_weight:
         name: capacity_weight
         description: ''
         required: false
-        example: 32522086.4138
+        example: 224.441146109
         type: number
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       capacity_volume:
         name: capacity_volume
         description: ''
         required: false
-        example: 7518898.137
+        example: 32.966978
         type: number
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       insurance_policy_number:
         name: insurance_policy_number
         description: ''
         required: false
-        example: dolor
+        example: officiis
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       insurance_coverage:
         name: insurance_coverage
         description: ''
         required: false
-        example: officia
+        example: quo
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       insurance_expiration:
         name: insurance_expiration
         description: 'Must be a valid date.'
         required: false
-        example: '2024-05-04T22:55:44'
+        example: '2025-03-08T23:20:30'
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       attached_device_id:
         name: attached_device_id
         description: ''
         required: false
-        example: 13
+        example: 15
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanBodyParameters:
-      vin: perferendis
-      number_plate: eos
-      make: vitae
-      model: aut
-      availability: false
-      capacity_weight: 32522086.4138
-      capacity_volume: 7518898.137
-      insurance_policy_number: dolor
-      insurance_coverage: officia
-      insurance_expiration: '2024-05-04T22:55:44'
-      attached_device_id: 13
+      vin: et
+      number_plate: et
+      make: saepe
+      model: tenetur
+      availability: true
+      capacity_weight: 224.441146109
+      capacity_volume: 32.966978
+      insurance_policy_number: officiis
+      insurance_coverage: quo
+      insurance_expiration: '2025-03-08T23:20:30'
+      attached_device_id: 15
     fileParameters: []
-    responses:
-      -
-        status: 201
-        content: '{"data":{"vin":"perferendis","number_plate":"eos","make":"vitae","model":"aut","capacity_weight":32522086.4138,"capacity_volume":7518898.137,"insurance_policy_number":"dolor","insurance_coverage":"officia","insurance_expiration":"2024-05-04T22:55:44","updated_at":"2024-05-04T19:55:44.000000Z","created_at":"2024-05-04T19:55:44.000000Z","id":3}}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '46'
-          access-control-allow-origin: 'localhost:8000'
-          access-control-allow-credentials: 'true'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -216,13 +214,14 @@ endpoints:
         name: id
         description: 'The ID of the vehicle.'
         required: true
-        example: 1
-        type: integer
+        example: eveniet
+        type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: eveniet
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -230,15 +229,14 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"data":{"id":1,"vin":null,"number_plate":"UAE 345B","make":null,"model":null,"capacity_weight":null,"capacity_volume":null,"availability":1,"insurance_policy_number":null,"insurance_coverage":null,"insurance_expiration":null,"created_at":"2024-03-28T10:28:44.000000Z","updated_at":"2024-03-28T10:28:44.000000Z"}}'
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '45'
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
+          set-cookie: 'dayalog_session=dTwJYJu8dOrxC6BSjXleQF1hAUdTtOTD0YOexXx8; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -269,31 +267,20 @@ endpoints:
         name: id
         description: 'The ID of the vehicle.'
         required: true
-        example: 1
-        type: integer
+        example: laborum
+        type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: laborum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":{"id":1,"vin":null,"number_plate":"UAE 345B","make":null,"model":null,"capacity_weight":null,"capacity_volume":null,"availability":1,"insurance_policy_number":null,"insurance_coverage":null,"insurance_expiration":null,"created_at":"2024-03-28T10:28:44.000000Z","updated_at":"2024-03-28T10:28:44.000000Z"}}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '44'
-          access-control-allow-origin: 'localhost:8000'
-          access-control-allow-credentials: 'true'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -321,34 +308,20 @@ endpoints:
         name: id
         description: 'The ID of the vehicle.'
         required: true
-        example: 1
-        type: integer
+        example: et
+        type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses:
-      -
-        status: 500
-        content: |-
-          {
-              "message": "Server Error"
-          }
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '43'
-          access-control-allow-origin: 'localhost:8000'
-          access-control-allow-credentials: 'true'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -376,53 +349,41 @@ endpoints:
         name: vehicle
         description: 'The vehicle.'
         required: true
-        example: 1
-        type: integer
+        example: aut
+        type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
-      vehicle: 1
+      vehicle: aut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
       vehicle:
         name: vehicle
-        description: ''
+        description: 'The <code>id</code> of an existing record in the vehicles table.'
         required: false
         example: null
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       device_id:
         name: device_id
-        description: ''
+        description: 'The <code>id</code> of an existing record in the traccar.tc_devices table.'
         required: true
-        example: nobis
+        example: rerum
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanBodyParameters:
-      device_id: nobis
+      device_id: rerum
     fileParameters: []
-    responses:
-      -
-        status: 500
-        content: |-
-          {
-              "message": "Server Error"
-          }
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '42'
-          access-control-allow-origin: 'localhost:8000'
-          access-control-allow-credentials: 'true'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -432,7 +393,7 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: 'api/vehicles/{vehicle_id}/detach-devices'
+    uri: 'api/vehicles/{vehicle}/detach-devices'
     metadata:
       groupName: Vehicles
       groupDescription: ''
@@ -446,44 +407,34 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      vehicle_id:
-        name: vehicle_id
-        description: 'The ID of the vehicle.'
+      vehicle:
+        name: vehicle
+        description: 'The vehicle.'
         required: true
-        example: 1
-        type: integer
+        example: sint
+        type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
-      vehicle_id: 1
+      vehicle: sint
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
       vehicle:
         name: vehicle
-        description: ''
+        description: 'The <code>id</code> of an existing record in the vehicles table.'
         required: false
         example: null
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanBodyParameters: []
     fileParameters: []
-    responses:
-      -
-        status: 422
-        content: '{"message":"The selected vehicle is invalid.","errors":{"vehicle":["The selected vehicle is invalid."]}}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '41'
-          access-control-allow-origin: 'localhost:8000'
-          access-control-allow-credentials: 'true'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
     auth: []
     controller: null

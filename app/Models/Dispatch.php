@@ -23,10 +23,5 @@ class Dispatch extends Model
     {
         return $this->hasMany(DispatchedDeviceEvents::class);
     }
-
-    public function devicePositions()
-    {
-        return $this->belongsToMany(DevicePosition::class);
-    }
-
+    
 }

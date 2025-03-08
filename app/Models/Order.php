@@ -21,9 +21,9 @@ class Order extends Model
     protected static function booted(): void
     {
         static::addGlobalScope('onlyForOrganization', function (Builder $builder) {
-            $builder->when(session()->get('organization_id') ,  function ($q){
+            $builder->when(session()->get('organization_id') || getPermissionsTeamId() ,  function ($q){
                 $q->whereHas('organizations' , function ($q){
-                    $q->whereIn('organizations.id', [session()->get('organization_id')]);
+                    $q->whereIn('organizations.id', [session()->get('organization_id')  ?? getPermissionsTeamId() ]  );
                 });
             });
         });

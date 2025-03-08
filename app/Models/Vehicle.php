@@ -29,7 +29,7 @@ class Vehicle extends Model
     protected static function booted(): void
     {
         static::addGlobalScope('onlyForOrganization', function (Builder $builder) {
-            $builder->where('organization_id', session()->get('organization_id')); 
+            $builder->where('organization_id', session()->get('organization_id') ?? getPermissionsTeamId()); 
         });
     }
 

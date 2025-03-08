@@ -40,6 +40,7 @@ class OrderController extends Controller
             'reference'=> $request->reference,
             'notes'=> $request->notes,
         ]);
+        $order->organizations()->attach(getPermissionsTeamId());
 
         return new OrderResource($order);
     }
@@ -47,16 +48,19 @@ class OrderController extends Controller
     /**
      * Get all details of an order
      */
-    public function show(Order $order)
+    public function show( $order)
     {
+        $order = Order::findOrFail($order);
+
         return new OrderResource($order);
     }
 
     /**
      * Update Update order details.
      */
-    public function update(Request $request, Order $order)
+    public function update(Request $request, $order)
     {
+        $order = Order::findOrFail($order);
         $order->update($request->only([
             'from',
             'to',
@@ -70,8 +74,9 @@ class OrderController extends Controller
     /**
      * Delete an order.
      */
-    public function destroy(Order $order)
+    public function destroy($order)
     {
+        $order = Order::findOrFail($order);
         $order->delete();
         return response()->json([
             'message'=>'Deletes successfully'
@@ -82,8 +87,10 @@ class OrderController extends Controller
     /**
      * Attach Vehicle to an order
      */
-    public function attachVehicle(Order $order, Vehicle $vehicle)
+    public function attachVehicle( $order,  $vehicle)
     {
+        $order = Order::findOrFail($order);
+        $vehicle = Vehicle::findOrFail($vehicle);
         // TODO: To avoid attaching of vehicle to multiple orders or even same order
         $orderVehicle = new OrderVehicle();
         $orderVehicle->order_id = $order->id;
@@ -101,8 +108,11 @@ class OrderController extends Controller
     /**
      * Detach Vehicle from an order
      */
-    public function detachVehicle( Order $order, Vehicle $vehicle)
+    public function detachVehicle(  $order,  $vehicle)
     {
+        $order = Order::findOrFail($order);
+        $vehicle = Vehicle::findOrFail($vehicle);
+
         $orderVehicle = OrderVehicle::where('order_id', $order->id)
         ->where('vehicle_id', $vehicle->id)
         ->firstOrFail();
@@ -120,8 +130,9 @@ class OrderController extends Controller
      *
      */
 
-    public function changeStatus(Order $order, $newStatus)
+    public function changeStatus( $order, $newStatus)
     {
+        $order = Order::findOrFail($order);
         $order->status = $newStatus;
         $order->save();
 

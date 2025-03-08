@@ -30,6 +30,8 @@ class DeviceController extends Controller
             'model' => $request->model,
         ]);
 
+        $device->organizations()->attach(getPermissionsTeamId());
+
         $device = Device::find($device->id);
         return new DeviceResource($device);
     }
@@ -38,8 +40,10 @@ class DeviceController extends Controller
      * Get information on a device
      * @group  Devices
      */
-    public function show(Device $device)
+    public function show( $device)
     {
+        $device = Device::findOrFail($device);
+
         return new DeviceResource($device);
     }
 
@@ -47,8 +51,9 @@ class DeviceController extends Controller
      * Update the specified device.
      * @group  Devices
      */
-    public function update(Request $request, Device $device)
+    public function update(Request $request,  $device)
     {
+        $device = Device::findOrFail($device);
         $device->update($request->only(['name', 'uniqueid', 'model']));
         $device = Device::find($device->id);
         return new DeviceResource($device);
@@ -58,8 +63,9 @@ class DeviceController extends Controller
      * Remove the specified device.
      * @group  Devices
      */
-    public function destroy(Device $device)
+    public function destroy( $device)
     {
+        $device = Device::findOrFail($device);
         $device->delete();
         return response()->json([
             'message'=>'Deletes successfully'

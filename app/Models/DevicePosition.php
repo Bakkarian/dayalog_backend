@@ -20,7 +20,9 @@ class DevicePosition extends Model
 
     public function dispatches()
     {
-        return $this->setConnection(config('database.default'))->belongsToMany(Dispatch::class);
+        $this->setConnection(config('database.default'));
+        
+        return $this->belongsToMany(Dispatch::class);
     }
 
 }

@@ -72,53 +72,15 @@ class DispatchedDeviceEventsController extends Controller
         $deviceId = $position->deviceId;
 
         $dispatch = Dispatch::with(['deviceEvents'])
-            ->whereHas('orderVehicle.vehicle.vehicleDevice.device',function ($q) use ($deviceId) {
-                $q->where('devices.id', $deviceId);
-            })
+            // ->whereHas('orderVehicle.vehicle.vehicleDevice.device',function ($q) use ($deviceId) {
+            //     $q->where('devices.id', $deviceId);
+            // })
             ->where('status', 'transit')
             ->latest()
             ->first();
 
         if ($dispatch) {
-
             $dispatch->devicePositions()->attach($position->id);
-
-            //ALL THE TIME i WAISTED ON THIS i CAN'T JUST REMOVE IT
-            // if ($dispatch->deviceEvents->isEmpty()) {
-            //     if($position->speed > 0.2 ){
-            //         DispatchedDeviceEvents::create([
-            //             'dispatch_id' => $dispatch->id,
-            //             'device_id' => $deviceId,
-            //             'device_position_id' => $position->id,
-            //             'status' => 'started'
-            //         ]);
-            //     }
-            // } else {
-
-            //     $event = $dispatch->deviceEvents()->with('devicePosition')->latest()->first();
-
-            //     $lastDevicePosition = $event->devicePosition;
-
-            //     //get the speed percentage difference
-            //     if ($this->calculatePercentage(
-            //         $lastDevicePosition->speed,
-            //         $position->speed
-            //     ) > 30 ){
-
-            //         $status = ($position->speed < 0 ) ? "stopped" :  "moving";
-
-            //         if($status != $event->status){
-            //             error_log("State changes from  (Event ID: $event->id, Position: id $lastDevicePosition->id ,  Status : $event->status  ) to " . $status );
-            //             DispatchedDeviceEvents::create([
-            //                 'dispatch_id' => $dispatch->id,
-            //                 'device_id' => $deviceId,
-            //                 'device_position_id' => $position->id,
-            //                 'status' => $status
-            //             ]);
-            //         }
-
-            //     }
-            // }
         }
 
 

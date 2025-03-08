@@ -11,7 +11,7 @@ return [
 
 
 
-    'base_url' => "https://dayalog.co",
+    'base_url' => env('APP_URL', 'http://localhost'),
 
     'routes' => [
         [

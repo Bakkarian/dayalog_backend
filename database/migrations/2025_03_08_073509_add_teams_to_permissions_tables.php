@@ -27,7 +27,9 @@ return new class extends Migration
 
         Schema::table($tableNames['roles'], function (Blueprint $table) use ($teams, $columnNames) {
           
-            $table->unsignedBigInteger($columnNames['team_foreign_key'])->nullable();
+            if (!Schema::hasColumn($table->getTable(), $columnNames['team_foreign_key'])) {
+                $table->unsignedBigInteger($columnNames['team_foreign_key'])->nullable();
+            }
             
         });
 
@@ -35,7 +37,9 @@ return new class extends Migration
         Schema::table($tableNames['model_has_permissions'], function (Blueprint $table) use ($tableNames, $columnNames, $pivotPermission, $teams) {
              
         
-            $table->unsignedBigInteger($columnNames['team_foreign_key']);
+            if (!Schema::hasColumn($table->getTable(), $columnNames['team_foreign_key'])) {
+                $table->unsignedBigInteger($columnNames['team_foreign_key']);
+            }
             
 
         });
@@ -44,7 +48,9 @@ return new class extends Migration
         Schema::table($tableNames['model_has_roles'], function (Blueprint $table) use ($tableNames, $columnNames, $pivotRole, $teams) {
 
             
-            $table->unsignedBigInteger($columnNames['team_foreign_key']);
+            if (!Schema::hasColumn($table->getTable(), $columnNames['team_foreign_key'])) {
+                $table->unsignedBigInteger($columnNames['team_foreign_key']);
+            }
         });
 
     }

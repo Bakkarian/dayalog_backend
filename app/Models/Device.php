@@ -36,9 +36,10 @@ class Device extends Model
     protected static function booted(): void
     {
         static::addGlobalScope('removeIvan', function (Builder $builder) {
+            
+            $devices = DeviceOrganization::where('organization_id',  (session()->get('organization_id') ?? getPermissionsTeamId()) )->get()->pluck('device_id')->toArray();
 
-            $devices = DeviceOrganization::where('organization_id',  session()->get('organization_id') )->get()->pluck('device_id')->toArray();
-            $builder->where('uniqueid', '!=', '038020188471')->whereIn('id', $devices);
+            $builder->whereIn('id', $devices);
             
         });
     }

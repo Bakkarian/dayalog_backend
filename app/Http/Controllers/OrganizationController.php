@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Organization;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class OrganizationController extends Controller
@@ -49,7 +50,12 @@ class OrganizationController extends Controller
     }
 
     public function storeSelection(Request $request, Organization $organization){
+
+        $user = Auth::user();
+        $user->unsetRelation('roles')->unsetRelation('permissions');
+
         $request->session()->put('organization_id', $organization->id); 
+        setPermissionsTeamId(session()->get('organization_id') ?? getPermissionsTeamId() );        
         return redirect()->route('dashboard');
     }
 }

@@ -88,7 +88,7 @@ class OrdersController extends Controller
             'created_by' => auth()->user()->id,
        ]);
 
-       $order->organizations()->attach(session()->get('organization_id'));
+       $order->organizations()->attach(session()->get('organization_id') ?? getPermissionsTeamId() );
 
        if($validated['singleShipment']){
             if($validated['vehicleSelected']){
@@ -194,11 +194,43 @@ class OrdersController extends Controller
             'status' => 'required'
         ]);
 
+        if($request->status){
+            $this->updateTripStatus($dispatch, $request->status);
+        }
+
         $dispatch->status = $request->status;
+        
         $dispatch->save();
 
         return redirect()->back()->with('success', 'Trip Updated');
     }
+
+    public function updateTripStatus(Dispatch &$dispatch, $newStatus){
+        
+        if($newStatus == 'cancelled'){
+            $dispatch->cancelled_at = now();
+        }
+
+        if($newStatus == 'reached'){
+            $dispatch->cancelled_at = null;
+            $dispatch->delivered_at = now();
+        }
+
+        if($newStatus == 'transit'){
+            $dispatch->cancelled_at = null;
+            $dispatch->delivered_at = null;
+            $dispatch->dispatched_at = now();
+        }
+
+        if($newStatus == 'not_started'){
+            $dispatch->cancelled_at = null;
+            $dispatch->delivered_at = null;
+            $dispatch->dispatched_at = null;
+        }
+
+        $dispatch->status = $newStatus;
+    }
+
     public function orderMap(Request $request,  $order)
     {
 
@@ -209,7 +241,7 @@ class OrdersController extends Controller
         ])->find($order);
 
         $devices = $order->orderVehicles->map(function ($orderVehicle){
-            $device = $orderVehicle->vehicle()->with(['device'])->first()->device;
+            $device = $orderVehicle->vehicle()->with(['vehicleDevice.device'])->first()->vehicleDevice->device;
             $lastPosition = $device->lastPosition;
             $device->lastPosition = $lastPosition;
             return $device;
@@ -225,8 +257,10 @@ class OrdersController extends Controller
                 'orderVehicle.vehicle.vehicleDevice.device',
                 'orderVehicle.vehicle.driver.bioData',
                 'deviceEvents',
-                'devicePositions',
             ])->find($request->dispatch);
+
+            $selectedDispatch->devicePositions = $selectedDispatch->getDevicePositions();
+
             $selectedDispatch->stops = $selectedDispatch->getStops();
         }
 

@@ -13,7 +13,7 @@ class DeviceService {
 
      DeviceOrganization::create([
          'device_id' => $device->id,
-         'organization_id' => session()->get('organization_id')
+         'organization_id' => (session()->get('organization_id') ?? getPermissionsTeamId())
      ]);
      
      return $device;

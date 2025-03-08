@@ -26,15 +26,14 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"data":[{"id":1,"user_id":2,"license":null,"created_at":"2024-03-28T10:28:02.000000Z","updated_at":"2024-03-28T10:28:02.000000Z"}],"links":{"first":"http:\/\/dayalog_api.test\/api\/drivers?page=1","last":"http:\/\/dayalog_api.test\/api\/drivers?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/dayalog_api.test\/api\/drivers?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/dayalog_api.test\/api\/drivers","per_page":25,"to":1,"total":1}}'
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '54'
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
+          set-cookie: 'dayalog_session=6SNmnntcZyEJSJvOI3ax9ncf4ZZr63p2NtZEOyAF; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -72,6 +71,17 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
+        custom: []
+      user_id:
+        name: user_id
+        description: 'This field is required when none of <code>email</code>, <code>patasente_id</code>, and <code>phone_number</code> are present.  The <code>id</code> of an existing record in the users table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
         custom: []
       name:
         name: name
@@ -81,25 +91,41 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
+        custom: []
+      email:
+        name: email
+        description: 'This field is required when none of <code>user_id</code>, <code>patasente_id</code>, and <code>phone_number</code> are present.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      patasente_id:
+        name: patasente_id
+        description: 'This field is required when none of <code>user_id</code>, <code>email</code>, and <code>phone_number</code> are present.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      phone_number:
+        name: phone_number
+        description: 'This field is required when none of <code>user_id</code>, <code>email</code>, and <code>patasente_id</code> are present.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanBodyParameters: []
     fileParameters: []
-    responses:
-      -
-        status: 500
-        content: |-
-          {
-              "message": "Server Error"
-          }
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '53'
-          access-control-allow-origin: 'localhost:8000'
-          access-control-allow-credentials: 'true'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -127,13 +153,14 @@ endpoints:
         name: id
         description: 'The ID of the driver.'
         required: true
-        example: 1
-        type: integer
+        example: distinctio
+        type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: distinctio
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -141,15 +168,14 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"data":{"id":1,"user_id":2,"license":null,"created_at":"2024-03-28T10:28:02.000000Z","updated_at":"2024-03-28T10:28:02.000000Z"}}'
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '52'
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
+          set-cookie: 'dayalog_session=H7AJKTQcQfJNwwrW8Ac7gbqlMVfiX41bPET8qSK1; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -180,49 +206,40 @@ endpoints:
         name: id
         description: 'The ID of the driver.'
         required: true
-        example: 1
-        type: integer
+        example: praesentium
+        type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: praesentium
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
       driver:
         name: driver
-        description: ''
+        description: 'The <code>id</code> of an existing record in the drivers table.'
         required: false
         example: null
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       user_id:
         name: user_id
-        description: ''
+        description: 'The <code>id</code> of an existing record in the users table.'
         required: false
         example: null
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanBodyParameters: []
     fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":{"id":1,"user_id":2,"license":null,"created_at":"2024-03-28T10:28:02.000000Z","updated_at":"2024-03-28T10:28:02.000000Z"}}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '51'
-          access-control-allow-origin: 'localhost:8000'
-          access-control-allow-credentials: 'true'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -250,30 +267,20 @@ endpoints:
         name: id
         description: 'The ID of the driver.'
         required: true
-        example: 1
-        type: integer
+        example: quaerat
+        type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: quaerat
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses:
-      -
-        status: 204
-        content: ''
-        headers:
-          cache-control: 'no-cache, private'
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '50'
-          access-control-allow-origin: 'localhost:8000'
-          access-control-allow-credentials: 'true'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -283,7 +290,7 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: 'api/drivers/{driver_id}/vehicles/{vehicle_id}'
+    uri: 'api/drivers/{driver}/vehicles/{vehicle}'
     metadata:
       groupName: Drivers
       groupDescription: ''
@@ -297,45 +304,35 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      driver_id:
-        name: driver_id
-        description: 'The ID of the driver.'
+      driver:
+        name: driver
+        description: 'The driver.'
         required: true
-        example: 1
-        type: integer
+        example: et
+        type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
-      vehicle_id:
-        name: vehicle_id
-        description: 'The ID of the vehicle.'
+      vehicle:
+        name: vehicle
+        description: 'The vehicle.'
         required: true
-        example: 1
-        type: integer
+        example: fugiat
+        type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
-      driver_id: 1
-      vehicle_id: 1
+      driver: et
+      vehicle: fugiat
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses:
-      -
-        status: 403
-        content: '{"message":"Vehicle is already attached to a driver.","driver":{"id":1,"user_id":2,"license":null,"created_at":"2024-03-28T10:28:02.000000Z","updated_at":"2024-03-28T10:28:02.000000Z","laravel_through_key":1}}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '49'
-          access-control-allow-origin: 'localhost:8000'
-          access-control-allow-credentials: 'true'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -345,7 +342,7 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/drivers/{driver_id}/vehicles/{vehicle_id}'
+    uri: 'api/drivers/{driver}/vehicles/{vehicle}'
     metadata:
       groupName: Drivers
       groupDescription: ''
@@ -359,45 +356,35 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      driver_id:
-        name: driver_id
-        description: 'The ID of the driver.'
+      driver:
+        name: driver
+        description: 'The driver.'
         required: true
-        example: 1
-        type: integer
+        example: velit
+        type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
-      vehicle_id:
-        name: vehicle_id
-        description: 'The ID of the vehicle.'
+      vehicle:
+        name: vehicle
+        description: 'The vehicle.'
         required: true
-        example: 1
-        type: integer
+        example: dolorem
+        type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
-      driver_id: 1
-      vehicle_id: 1
+      driver: velit
+      vehicle: dolorem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"message":"Vehicle removed successfully."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '48'
-          access-control-allow-origin: 'localhost:8000'
-          access-control-allow-credentials: 'true'
-        description: null
-        custom: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
