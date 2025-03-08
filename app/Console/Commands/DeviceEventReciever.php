@@ -53,12 +53,13 @@ class DeviceEventReciever extends Command
 
                 $payload = json_decode($msg->__toString());
                 TraccarEvent::dispatch($payload);
-                $positions = $payload?->positions ?? null;
-                if($positions){
-                    collect($positions)->each(function ($postion){
-                        (new DispatchedDeviceEventsController())->processTraccarPosition($postion);
-                    });
-                }
+                // $positions = $payload?->positions ?? null;
+
+                // if($positions){
+                //     collect($positions)->each(function ($postion){
+                //         (new DispatchedDeviceEventsController())->processTraccarPosition($postion);
+                //     });
+                // }
             });
 
             $conn->on('close', function($code = null, $reason = null) {

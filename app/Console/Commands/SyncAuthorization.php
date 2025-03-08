@@ -39,7 +39,6 @@ class SyncAuthorization extends Command
         }
 
         Permission::all()->each(function ($permission) use ($permissions) {
-            // dd($permissions[$permission->name]['allowed']);
            $permission->syncRoles($permissions[$permission->name]['allowed'] ?? []); 
         });
 
