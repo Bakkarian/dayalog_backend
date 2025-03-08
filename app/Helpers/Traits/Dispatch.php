@@ -2,14 +2,37 @@
 
 namespace App\Helpers\Traits;
 
+use App\Models\DevicePosition;
+
 trait Dispatch
 {
 
-
-    public function getStops($minSpeed = 0.2, $maxDuration = 2 )
+    public function getDevicePositions()
     {
+        $deviceId = $this->orderVehicle->vehicle->vehicleDevice->device_id ?? null;
 
-        $positions = $this->devicePositions;
+        $positions = DevicePosition::where('deviceid', $deviceId)
+                                      ->whereBetween('fixtime' , [
+                                            $this->dispatched_at , 
+                                            $this->delivered_at  ?? $this->cancelled_at ?? now()                                    
+                                        ] )
+                                        ->orderBy('id', 'desc')->get();
+        return $positions;
+
+    }
+
+
+    public function getStops($minSpeed = 0.2, $maxDuration = 0.1 )
+    {
+        $deviceId = $this->orderVehicle->vehicle->vehicleDevice->device_id ?? null;
+
+        $positions = DevicePosition::where('deviceid', $deviceId)
+                                      ->whereBetween('fixtime' , [
+                                            $this->dispatched_at , 
+                                            $this->delivered_at  ?? $this->cancelled_at ?? now() 
+                                        ] )
+                                        ->orderBy('id', 'desc')->get();
+        
         $stops = [];
         $currentStop = null;
 
