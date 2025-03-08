@@ -43,6 +43,7 @@ return [
            'name' => 'View Orders',
            'allowed' => [
                 'Administrator',
+                'Driver',
            ]
        ],
        'orders.create' => [
@@ -55,6 +56,7 @@ return [
            'name' => 'View Owned Orders',
            'allowed' => [
                 'Administrator',
+                'Driver',
                 'client',
            ]
        ],
@@ -62,6 +64,7 @@ return [
            'name' => 'Create Owned Order',
            'allowed' => [
                 'Administrator',
+                'Driver',
                 'client',
            ]
        ],
@@ -80,6 +83,7 @@ return [
        'search.package' => [
            'name' => 'Search Package',
            'allowed' => [
+                'Driver',
                 'client',
            ]
        ],
@@ -88,6 +92,10 @@ return [
     'roles' => [
         'Administrator' => [
             'name' => 'Administrator',   
+        ],
+        'Driver' => [
+            'name' => 'Driver',
+            
         ],
         'client' => [
             'name' => 'Client',

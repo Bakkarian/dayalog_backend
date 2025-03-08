@@ -30,4 +30,30 @@ class UserService
     }
 
 
+    public function firstOrCreate(array $data): User
+    {
+
+        $user = User::withoutGlobalScope('onlyForOrganization')->when(isset($data['email']), function ($query) use ($data) {
+            $query->where('email', $data['email']);
+        });
+
+
+        $user = $user->when(isset($data['phone_number']), function ($query) use ($data) {
+            $query->orWhere('phone_number', $data['phone_number']);
+        });
+
+        $user = $user->when(isset($data['patasente_id']), function ($query) use ($data) {
+            $query->orWhere('patasente_id', $data['patasente_id']);
+        })->first();
+
+
+        if ($user) {
+            return $user;
+        } else {
+            return $this->store($data);
+        }
+
+    }
+
+
 }

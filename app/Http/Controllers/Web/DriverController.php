@@ -22,10 +22,11 @@ class DriverController extends Controller
     public function store(DriverRequest $request)
     {
 
-       $user = (new UserService())->store($request->validated());
-       $user->organizations()->attach(session()->get('organization_id'));
+        //TODO: Change to invitation flow
+       $user = (new UserService())->firstOrCreate($request->validated());
 
-       $user->organizations()->attach(Organization::find(session('organization_id')));
+       $user->organizations()->attach(session()->get('organization_id') ?? getPermissionsTeamId() );
+       $user->assignRole('Driver');
 
        (new DriverService())->store([
             ...$request->input(),

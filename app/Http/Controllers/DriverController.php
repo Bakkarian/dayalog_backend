@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\DriverRequest;
 use App\Http\Resources\DriverResource;
 use App\Models\Driver;
+use App\Models\User;
 use App\Models\Vehicle;
 use App\Models\VehicleDriver;
 use Illuminate\Http\Request;
@@ -32,14 +33,18 @@ class DriverController extends Controller
             'license' => $request->license,
         ]);
 
+        $user = User::withoutGlobalScope('onlyForOrganization')->find($request->user_id);
+        $user->assignRole('Driver');
+
         return new DriverResource($driver);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Driver $driver)
+    public function show( $driver)
     {
+        $driver = Driver::findOrFail($driver);
         return new DriverResource($driver);
     }
 
@@ -65,8 +70,9 @@ class DriverController extends Controller
     /**
      * Remove driver from the system.
      */
-    public function destroy(Driver $driver)
+    public function destroy($driver)
     {
+        $driver = Driver::findOrFail($driver);
         $driver->delete();
         return response()->json([
             'message'=>'Deletes successfully'
@@ -76,8 +82,10 @@ class DriverController extends Controller
     /**
      * Assign Vehicle to Driver
      */
-    public function assignVehicle(Driver $driver, Vehicle $vehicle)
+    public function assignVehicle( $driver,  $vehicle)
     {
+        $driver = Driver::findOrFail($driver);
+        $vehicle = Vehicle::findOrFail($vehicle);
 
         if($vehicle->driver != null ){
             return response()->json([
@@ -102,8 +110,11 @@ class DriverController extends Controller
      /**
      * Remove Vehicle from Driver
      */
-    public function removeVehicle(Driver $driver, Vehicle $vehicle)
+    public function removeVehicle( $driver, $vehicle)
     {
+        $driver = Driver::findOrFail($driver);
+        $vehicle = Vehicle::findOrFail($vehicle);
+        
         $vehicleDriver = VehicleDriver::where('vehicle_id', $vehicle->id)
             ->where('driver_id', $driver->id)
             ->first();
