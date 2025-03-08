@@ -38,9 +38,6 @@ class Device extends Model
         static::addGlobalScope('removeIvan', function (Builder $builder) {
 
             $devices = DeviceOrganization::where('organization_id',  session()->get('organization_id') )->get()->pluck('device_id')->toArray();
-
-
-
             $builder->where('uniqueid', '!=', '038020188471')->whereIn('id', $devices);
             
         });

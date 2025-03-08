@@ -10,6 +10,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class User extends Authenticatable
 {
@@ -46,6 +48,33 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    protected static function booted(): void
+    {
+        static::addGlobalScope('onlyForOrganization', function (Builder $builder) {
+            $builder->when(session()->get('organization_id') ,  function ($q){
+                $q->whereHas('organizations' , function ($q){
+                    $q->whereIn('organizations.id', [session()->get('organization_id')]);
+                });
+            });
+        });
+    }
+
+
+
+    public function organizationUser():hasMany
+    {
+        return $this->hasMany(OrganizationUser::class);
+
+    }
+
+
+    public function currentOrganizationUser()
+    {
+        //TO attempt tp keep it in session
+        return  $this->organizationUser()->where('organization_id', session()->get('organization_id'))->first();
+    }
 
 
     /**

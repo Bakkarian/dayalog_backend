@@ -20,7 +20,8 @@ class ShouldSelectOrganization
             return redirect()->route('org.select');
         }
 
-
+        setPermissionsTeamId($request->session()->get('organization_id'));
+        
         return $next($request);
     }
 }

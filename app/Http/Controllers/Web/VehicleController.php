@@ -47,7 +47,10 @@ class VehicleController extends Controller
 
     public function store(VehicleRequest $request)
     {
-        (new VehicleService())->store($request->validated());
+        (new VehicleService())->store([
+            ...$request->validated(),
+            'organization_id' => session()->get('organization_id')
+        ]);
 
         return redirect()->back()->with('success', 'Added Vehicle');
     }

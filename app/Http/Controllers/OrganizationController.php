@@ -38,6 +38,9 @@ class OrganizationController extends Controller
         //Set as current organization in sesstion
         $request->session()->put('organization_id', $organization->id); 
 
+        setPermissionsTeamId($organization->id);
+        $request->user()->assignRole('Administrator');
+
         return redirect()->route('dashboard');
     }
     public function select()

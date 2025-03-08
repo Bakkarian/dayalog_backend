@@ -23,6 +23,7 @@ class DriverController extends Controller
     {
 
        $user = (new UserService())->store($request->validated());
+       $user->organizations()->attach(session()->get('organization_id'));
 
        $user->organizations()->attach(Organization::find(session('organization_id')));
 

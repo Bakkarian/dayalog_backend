@@ -64,7 +64,7 @@ class OrderController extends Controller
             'reference',
             'notes',
         ]));
-        return new Order($order);
+        return new OrderResource($order);
     }
 
     /**

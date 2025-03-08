@@ -6,66 +6,69 @@ return [
        'devices.add' => [
            'name' => 'Add Device',
            'allowed' => [
-                'admin',
+                'Administrator',
             ]      
        ],
        'devices.track' => [
            'name' => 'Track Device',
            'allowed' => [
-                'admin',
+                'Administrator',
            ]
        ],
        'devices.view' => [
            'name' => 'View Device',
+           'allowed' => [
+            'Administrator'
+           ]
         ],
        'drivers.create' => [
            'name' => 'Create Driver',
            'allowed' => [
-                'admin',
+                'Administrator',
            ]
        ],
        'vehicles.view' => [
            'name' => 'View Vehicles',
            'allowed' => [
-                'admin',
+                'Administrator',
            ]
        ],
        'vehicles.add' => [
             'name' => 'Add Vehicle',
             'allowed' => [
-                'admin',
+                'Administrator',
             ]
        ],
        'orders.view' => [
            'name' => 'View Orders',
            'allowed' => [
-                'admin',
+                'Administrator',
            ]
        ],
        'orders.create' => [
            'name' => 'Create Order',
            'allowed' => [
-                'admin',
+                'Administrator',
            ]
        ],
        'owned.order.view' => [
            'name' => 'View Owned Orders',
            'allowed' => [
-                'admin',
+                'Administrator',
                 'client',
            ]
        ],
        'owned.orders.create' => [
            'name' => 'Create Owned Order',
            'allowed' => [
-                'admin',
+                'Administrator',
                 'client',
            ]
        ],
        'users.create' => [
            'name' => 'Create User',
            'allowed' => [
-                'admin',
+                'Administrator',
            ]
        ],
        'view.client.dashboard' =>[
@@ -83,14 +86,14 @@ return [
     ],
 
     'roles' => [
-        'admin' => [
+        'Administrator' => [
             'name' => 'Administrator',   
         ],
         'client' => [
-            'name'=> 'User',
+            'name' => 'Client',
         ]
     ],
 
-    'defaultRole' => 'admin'
+    'defaultRole' => 'Administrator',
 
 ];

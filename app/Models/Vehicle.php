@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Builder;
 
 class Vehicle extends Model
 {
@@ -20,8 +21,17 @@ class Vehicle extends Model
         'insurance_policy_number',
         'insurance_coverage',
         'insurance_expiration',
+        'organization_id'
     ];
 
+
+
+    protected static function booted(): void
+    {
+        static::addGlobalScope('onlyForOrganization', function (Builder $builder) {
+            $builder->where('organization_id', session()->get('organization_id')); 
+        });
+    }
 
 
     public function vehicleDevice(): HasOne

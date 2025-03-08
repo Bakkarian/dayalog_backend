@@ -14,10 +14,7 @@ class UserService
             $userData['password'] = Hash::make($data['password']);
         }
         $user = User::create($userData);
-
-        //Assign a client user role
-        $user->assignRole(config('custom.defaultRole'));
-
+        
         event(new Registered($user));
         return $user;
     }

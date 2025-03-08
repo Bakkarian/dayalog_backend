@@ -18,6 +18,10 @@ class Organization extends Model
         return $this->belongsToMany(User::class);
     }
 
+    public function orders(): BelongsToMany
+    {
+        return $this->belongsToMany(Order::class);
+    }
     
     
 }

@@ -19,6 +19,7 @@ class OrdersController extends Controller
      */
     public function index()
     {
+        
 
         $selectedOrder = request()->query('order_id');
 
@@ -32,7 +33,7 @@ class OrdersController extends Controller
             ])->find($selectedOrder);
         }
 
-        if (auth()->user()->can('view.orders')) {
+        if (auth()->user()->can('orders.view')) {
             $orders = Order::with(['to','from']);
         } else {
             $orders = Order::with(['to','from'])->where('created_by', operator: auth()->user()->id);
@@ -87,6 +88,8 @@ class OrdersController extends Controller
             'created_by' => auth()->user()->id,
        ]);
 
+       $order->organizations()->attach(session()->get('organization_id'));
+
        if($validated['singleShipment']){
             if($validated['vehicleSelected']){
 
@@ -101,6 +104,7 @@ class OrdersController extends Controller
                     'destination' => $request->singleShipmentDestination,
                     'notes' => $request->notes ?? '',
                 ]);
+
             }else{
                 $order->trips()->create([
                     'origin'=> $request->singleShipmentOrigin,

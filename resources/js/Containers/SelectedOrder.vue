@@ -94,8 +94,8 @@ const completedOrder = () => {
                         <div class="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300"></div>
                     </div>
                     <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500">
-                        <span class="font-medium text-gray-900">{{ selectedOrder.to?.email_address==null?selectedOrder.to.name + ' Phone':selectedOrder.to.email+' Email' }}: </span>
-                        <a :href="selectedOrder.to.email== null ? 'tel:' + selectedOrder.to.phone:'mailto:'+selectedOrder.to.email" class="text-blue-400 font-bold">{{ selectedOrder.to.email==null?selectedOrder.to.phone_number:selectedOrder.to.email }}</a></p>
+                        <span class="font-medium text-gray-900">{{ selectedOrder?.to?.email_address==null?selectedOrder?.to?.name + ' Phone':selectedOrder?.to?.email+' Email' }}: </span>
+                        <a :href="selectedOrder?.to?.email== null ? 'tel:' + selectedOrder?.to?.phone:'mailto:'+selectedOrder?.to?.email" class="text-blue-400 font-bold">{{ selectedOrder?.to?.email==null?selectedOrder?.to?.phone_number:selectedOrder?.to?.email }}</a></p>
                     <time datetime="2023-01-23T11:03" class="flex-none py-0.5 text-xs leading-5 text-gray-500">Receiver Email</time>
                 </li>
 
@@ -114,7 +114,7 @@ const completedOrder = () => {
                     </div>
 
 
-                    <OrderTrips :vehiclesOrders="selectedOrder.order_vehicles" />
+                    <OrderTrips :vehiclesOrders="selectedOrder?.order_vehicles" />
                 </li>
             </ul>
             <div  class="p-6">
