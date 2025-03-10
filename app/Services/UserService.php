@@ -14,10 +14,7 @@ class UserService
             $userData['password'] = Hash::make($data['password']);
         }
         $user = User::create($userData);
-
-        //Assign a client user role
-        $user->assignRole(config('custom.defaultRole'));
-
+        
         event(new Registered($user));
         return $user;
     }
@@ -30,6 +27,32 @@ class UserService
         }
         $user->update($userData);
         return $user;
+    }
+
+
+    public function firstOrCreate(array $data): User
+    {
+
+        $user = User::withoutGlobalScope('onlyForOrganization')->when(isset($data['email']), function ($query) use ($data) {
+            $query->where('email', $data['email']);
+        });
+
+
+        $user = $user->when(isset($data['phone_number']), function ($query) use ($data) {
+            $query->orWhere('phone_number', $data['phone_number']);
+        });
+
+        $user = $user->when(isset($data['patasente_id']), function ($query) use ($data) {
+            $query->orWhere('patasente_id', $data['patasente_id']);
+        })->first();
+
+
+        if ($user) {
+            return $user;
+        } else {
+            return $this->store($data);
+        }
+
     }
 
 

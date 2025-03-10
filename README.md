@@ -60,6 +60,13 @@ e.g http://localhost:8000/docs
 - [ ] Terms and conditions management
 > **Warning:** This task list is still under development and review.
 
+
+
+#### Retirements
+  - A running Traccar system  (you can tunnel e.g `autossh -M 0 -R afasha:80:localhost:8082 serveo.net` ) 
+
+  - Traccar client on your phone to use as a device
+  
 #### Setup Project
 
 step 1 
@@ -71,16 +78,18 @@ step 2
 cp .env.example .env
 ```
 
-step 3 
+step 3
+ - Setup  Traccar db config in the .env
+step 4
 
 Setup the .env environment variables required
 
-step 4
+step 5
 
 ```
  php artisan migrate:fresh
 ```
-step 5
+step 6
 
 ```
 php artisan db:seed

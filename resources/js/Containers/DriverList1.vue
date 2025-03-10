@@ -73,8 +73,7 @@
                   <div class="py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">{{' driver.nameDriverList1' }}</span> Current Location</div>
                   <time datetime="2023-01-23T15:56" class="flex-none py-0.5 text-xs leading-5 text-gray-500">now</time>
                 </div>
-                <p class="text-sm leading-6 text-gray-500">Mpigi - Masaka Kampala Rd</p>
-                <p class="text-xs leading-6 text-gray-500">Speed: 40km/h</p>
+              
               </div>
             </li>
 

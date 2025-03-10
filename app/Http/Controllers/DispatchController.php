@@ -38,16 +38,18 @@ class DispatchController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Dispatch $dispatch)
+    public function show( $dispatch)
     {
+        $dispatch = Dispatch::findOrFail($dispatch);
         return new DispatchResource($dispatch);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Dispatch $dispatch)
+    public function update(Request $request, $dispatch)
     {
+        $dispatch = Dispatch::findOrFail($dispatch);
         $dispatch->update($request->only([
             'order_vehicle_id',
             'origin',
@@ -60,8 +62,9 @@ class DispatchController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Dispatch $dispatch)
+    public function destroy($dispatch)
     {
+        $dispatch = Dispatch::findOrFail($dispatch);
         $dispatch->delete();
         return response()->json([
             'message'=>'Deleted successfully'
@@ -76,8 +79,10 @@ class DispatchController extends Controller
      *
      */
 
-     public function changeStatusOfAnOrder(Dispatch $dispatch, $newStatus)
+     public function changeStatusOfAnOrder($dispatch, $newStatus)
      {
+        $dispatch = Dispatch::findOrFail($dispatch);
+        
         $dispatch->status = $newStatus;
         $dispatch->save();
 

@@ -26,12 +26,12 @@ import { Link } from '@inertiajs/vue3';
                                 <div class="sm:flex">
                                     <p class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
                                         <MapPinIcon class="mr-1.5 h-4 w-4 flex-shrink-0 text-gray-400" aria-hidden="true" />
-                                        Deliver To: <span class="font-bold"> {{ order.to.name }}</span>
+                                        Deliver To: <span class="font-bold"> {{ order?.to?.name }}</span>
                                     </p>
                                 </div>
                                 <div class="sm:flex">
                                     <p class="mt-2 flex items-center text-sm text-gray-500 sm:ml-2 sm:mt-0">
-                                        Order Status: <span class="font-bold"> {{ order.status }}</span>
+                                        Order Status: <span class="font-bold"> {{ order?.status }}</span>
                                     </p>
                                 </div>
                             </div>

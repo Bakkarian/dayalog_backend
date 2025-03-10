@@ -15,10 +15,10 @@ class HomeDriversResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'name' => $this->bioData->name,
+            'name' => $this->bioData?->name,
             'driver_id' => $this->id,
-            'user_id' => $this->bioData->id,
-            'patasente_id' => $this->bioData->patasente_id,
+            'user_id' => $this->bioData?->id,
+            'patasente_id' => $this->bioData?->patasente_id,
             'lastDispatch' => $this->vehicles->map(function ($vehicle){
                 return $vehicle->dispatches;
             })->flatten()->where('status', 'transit')->first(),

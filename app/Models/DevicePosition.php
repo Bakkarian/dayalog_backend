@@ -9,7 +9,9 @@ class DevicePosition extends Model
 {
     use HasFactory;
 
-    protected $table = 'device_positions';
+    protected $connection = 'traccar';
+
+    protected $table = 'tc_positions';
 
     const CREATED_AT = 'servertime';
 
@@ -18,6 +20,8 @@ class DevicePosition extends Model
 
     public function dispatches()
     {
+        $this->setConnection(config('database.default'));
+        
         return $this->belongsToMany(Dispatch::class);
     }
 

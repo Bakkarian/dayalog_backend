@@ -40,6 +40,8 @@ class VehiclesController extends Controller
             'insurance_expiration' => $request->insurance_expiration
         ]);
 
+        $vehicle->organizations()->attach(getPermissionsTeamId());
+
         return new VehicleResource($vehicle);
     }
 
@@ -48,8 +50,9 @@ class VehiclesController extends Controller
      *
      * @group Vehicles
      */
-    public function show(Vehicle $vehicle)
+    public function show( $vehicle)
     {
+        $vehicle = Vehicle::findOrFail($vehicle);
         return new VehicleResource($vehicle);
     }
 
@@ -58,8 +61,9 @@ class VehiclesController extends Controller
      *
      * @group Vehicles
      */
-    public function update(Request $request, Vehicle $vehicle)
+    public function update(Request $request,  $vehicle)
     {
+        $vehicle = Vehicle::findOrFail($vehicle);
         $vehicle->update($request->only([
             'make',
             'model',
@@ -78,8 +82,9 @@ class VehiclesController extends Controller
      *
      * @group Vehicles
      */
-    public function destroy(Vehicle $vehicle)
+    public function destroy( $vehicle)
     {
+        $vehicle = Vehicle::findOrFail($vehicle);
         $vehicle->delete();
         return response()->json([
             'message'=>'Deletes successfully'
@@ -117,8 +122,9 @@ class VehiclesController extends Controller
      *
      * @group Vehicles
      */
-    public function detachDevices(Request $request, Vehicle $vehicle)
+    public function detachDevices(Request $request, $vehicle)
     {
+        $vehicle = Vehicle::findOrFail($vehicle);
         $request->merge(['vehicle' => $request->route('vehicle')]);
         $request->validate([
             'vehicle' => 'exists:vehicles,id',

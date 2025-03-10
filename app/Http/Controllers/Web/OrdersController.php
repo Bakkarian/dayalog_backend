@@ -19,6 +19,7 @@ class OrdersController extends Controller
      */
     public function index()
     {
+        
 
         $selectedOrder = request()->query('order_id');
 
@@ -28,11 +29,11 @@ class OrdersController extends Controller
                 'from',
                 'orderVehicles.dispatches',
                 'orderVehicles.vehicle.driver.bioData',
-                'orderVehicles.vehicle.device'
+                'orderVehicles.vehicle.vehicleDevice.device'
             ])->find($selectedOrder);
         }
 
-        if (auth()->user()->can('view.orders')) {
+        if (auth()->user()->can('orders.view')) {
             $orders = Order::with(['to','from']);
         } else {
             $orders = Order::with(['to','from'])->where('created_by', operator: auth()->user()->id);
@@ -87,6 +88,8 @@ class OrdersController extends Controller
             'created_by' => auth()->user()->id,
        ]);
 
+       $order->organizations()->attach(session()->get('organization_id') ?? getPermissionsTeamId() );
+
        if($validated['singleShipment']){
             if($validated['vehicleSelected']){
 
@@ -101,6 +104,7 @@ class OrdersController extends Controller
                     'destination' => $request->singleShipmentDestination,
                     'notes' => $request->notes ?? '',
                 ]);
+
             }else{
                 $order->trips()->create([
                     'origin'=> $request->singleShipmentOrigin,
@@ -190,22 +194,54 @@ class OrdersController extends Controller
             'status' => 'required'
         ]);
 
+        if($request->status){
+            $this->updateTripStatus($dispatch, $request->status);
+        }
+
         $dispatch->status = $request->status;
+        
         $dispatch->save();
 
         return redirect()->back()->with('success', 'Trip Updated');
     }
+
+    public function updateTripStatus(Dispatch &$dispatch, $newStatus){
+        
+        if($newStatus == 'cancelled'){
+            $dispatch->cancelled_at = now();
+        }
+
+        if($newStatus == 'reached'){
+            $dispatch->cancelled_at = null;
+            $dispatch->delivered_at = now();
+        }
+
+        if($newStatus == 'transit'){
+            $dispatch->cancelled_at = null;
+            $dispatch->delivered_at = null;
+            $dispatch->dispatched_at = now();
+        }
+
+        if($newStatus == 'not_started'){
+            $dispatch->cancelled_at = null;
+            $dispatch->delivered_at = null;
+            $dispatch->dispatched_at = null;
+        }
+
+        $dispatch->status = $newStatus;
+    }
+
     public function orderMap(Request $request,  $order)
     {
 
         $order =  Order::with([
-            'orderVehicles.vehicle.device',
+            'orderVehicles.vehicle.vehicleDevice.device',
             'orderVehicles.vehicle.driver.bioData',
             'orderVehicles.dispatches'
         ])->find($order);
 
         $devices = $order->orderVehicles->map(function ($orderVehicle){
-            $device = $orderVehicle->vehicle()->with(['device'])->first()->device;
+            $device = $orderVehicle->vehicle()->with(['vehicleDevice.device'])->first()->vehicleDevice->device;
             $lastPosition = $device->lastPosition;
             $device->lastPosition = $lastPosition;
             return $device;
@@ -218,11 +254,13 @@ class OrdersController extends Controller
 
        if(isset($request->dispatch)){
             $selectedDispatch = Dispatch::with([
-                'orderVehicle.vehicle.device',
+                'orderVehicle.vehicle.vehicleDevice.device',
                 'orderVehicle.vehicle.driver.bioData',
                 'deviceEvents',
-                'devicePositions',
             ])->find($request->dispatch);
+
+            $selectedDispatch->devicePositions = $selectedDispatch->getDevicePositions();
+
             $selectedDispatch->stops = $selectedDispatch->getStops();
         }
 

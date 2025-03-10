@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\DriverRequest;
 use App\Http\Resources\DriverWebJsonResource;
 use App\Models\Driver;
+use App\Models\Organization;
 use App\Services\DriverService;
 use App\Services\UserService;
 use Illuminate\Http\Request;
@@ -21,12 +22,18 @@ class DriverController extends Controller
     public function store(DriverRequest $request)
     {
 
-       $user = (new UserService())->store($request->validated());
+        //TODO: Change to invitation flow
+       $user = (new UserService())->firstOrCreate($request->validated());
+
+       $user->organizations()->attach(session()->get('organization_id') ?? getPermissionsTeamId() );
+       $user->assignRole('Driver');
 
        (new DriverService())->store([
             ...$request->input(),
             'user_id' =>  $user->id
        ]);
+
+
 
        return redirect()
            ->back()

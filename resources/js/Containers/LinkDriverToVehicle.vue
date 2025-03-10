@@ -21,10 +21,10 @@
                                 <div class="flex justify-between">
                                     <h2 class="font-bold">{{ selectedVehicle.number_plate }}</h2>
                                     <div class="mt-1 flex items-center gap-x-1.5">
-                                        <div class="flex-none rounded-full p-1" :class="selectedVehicle.device?'bg-emerald-500/20':'bg-orange-500/20'">
-                                            <div class="h-1.5 w-1.5 rounded-full" :class="selectedVehicle.device?'bg-emerald-500':'bg-orange-500'"/>
+                                        <div class="flex-none rounded-full p-1" :class="selectedvehicle?.vehicleDevice?.device?'bg-emerald-500/20':'bg-orange-500/20'">
+                                            <div class="h-1.5 w-1.5 rounded-full" :class="selectedvehicle?.vehicleDevice?.device?'bg-emerald-500':'bg-orange-500'"/>
                                         </div>
-                                        <p class="text-xs leading-5 text-gray-500">{{ selectedVehicle.device?'Attached':'Not Attached' }} to driver</p>
+                                        <p class="text-xs leading-5 text-gray-500">{{ selectedvehicle?.vehicleDevice?.device?'Attached':'Not Attached' }} to driver</p>
                                     </div>
                                 </div>
                                 <p>{{ selectedVehicle.model }}</p>

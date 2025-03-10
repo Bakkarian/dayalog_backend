@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\DeviceRequest;
 use App\Http\Resources\DeviceResource;
 use App\Models\Device;
-use App\Models\TCDevice;
 use Illuminate\Http\Request;
 
 class DeviceController extends Controller
@@ -25,11 +24,13 @@ class DeviceController extends Controller
      */
     public function store(DeviceRequest $request)
     {
-        $device = TCDevice::create([
+        $device = Device::create([
             'name' =>  $request->name,
             'uniqueid' => $request->uniqueid,
             'model' => $request->model,
         ]);
+
+        $device->organizations()->attach(getPermissionsTeamId());
 
         $device = Device::find($device->id);
         return new DeviceResource($device);
@@ -39,8 +40,10 @@ class DeviceController extends Controller
      * Get information on a device
      * @group  Devices
      */
-    public function show(Device $device)
+    public function show( $device)
     {
+        $device = Device::findOrFail($device);
+
         return new DeviceResource($device);
     }
 
@@ -48,8 +51,9 @@ class DeviceController extends Controller
      * Update the specified device.
      * @group  Devices
      */
-    public function update(Request $request, TCDevice $device)
+    public function update(Request $request,  $device)
     {
+        $device = Device::findOrFail($device);
         $device->update($request->only(['name', 'uniqueid', 'model']));
         $device = Device::find($device->id);
         return new DeviceResource($device);
@@ -59,8 +63,9 @@ class DeviceController extends Controller
      * Remove the specified device.
      * @group  Devices
      */
-    public function destroy(TCDevice $device)
+    public function destroy( $device)
     {
+        $device = Device::findOrFail($device);
         $device->delete();
         return response()->json([
             'message'=>'Deletes successfully'

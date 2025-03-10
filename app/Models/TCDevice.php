@@ -29,7 +29,6 @@ class TCDevice extends Model
     public static function create(array $attributes = [])
     {
         $device = static::query()->create($attributes);
-
         $connectionName = (new static())->getConnectionName();
 
         DB::connection($connectionName)->table('tc_user_device')->insert([
