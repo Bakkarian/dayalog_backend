@@ -22,6 +22,7 @@ class DriverRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'business_name' => ['string', 'nullable'],
             'license' => [''] ,
             'user_id' => [
                 'required_without_all:email,patasente_id,phone_number',

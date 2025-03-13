@@ -1,11 +1,11 @@
 <template>
 
-    <Head title="Add Drivers" />
+    <Head title="Add User" />
 
     <div class="px-4 py-10 sm:px-6 lg:px-8 lg:py-6 max-w-7xl">
         <!-- Main area -->
         <div class="mb-8">
-            <h1 class="text-xl">Create Driver</h1>
+            <h1 class="text-xl">Create Client</h1>
         </div>
         <div class="grid lg:grid-cols-2 gap-8">
             <div class="bg-white p-8 rounded-md border">
@@ -41,10 +41,10 @@
                             </div>
                         </div>
                         <div class="sm:col-span-5">
-                            <InputLabel for="email" value="Drivers Licence Number" />
+                            <InputLabel for="email" value="Business Name" />
                             <div class="mt-2">
-                                <TextInput id="license_no" type="text"  placeholder="Drivers Licence Number"  v-model="form.license" />
-                                <InputError class="mt-2" :message="form.errors.license" />
+                                <TextInput id="business_name" type="text"  placeholder="Business Name"  v-model="form.business_name" />
+                                <InputError class="mt-2" :message="form.errors.business_name" />
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                 </form>
             </div>
             <div class="hidden lg:block">
-                <img class="max-w-md mx-auto" src="../assets/create-driver.svg">
+                <img class="max-w-md mx-auto" src="@/assets/create-driver.svg">
             </div>
         </div>
     </div>
@@ -75,16 +75,16 @@ defineOptions({ layout: Layout })
 
 
     const form = useForm({
-        name:"",
-        email: "",
-        patasente_id:"",
-        phone_number:"",
-        license:""
+    name:"",
+    email: "",
+    patasente_id:"",
+    phone_number:"",
+    business_name:""
     })
+
     const submitForm = async () => {
-        form.post( route('driver.store'),{
+        form.post(route('client.store'), {
             onSuccess:() => {
-                debugger
                 form.reset()
             }
         })

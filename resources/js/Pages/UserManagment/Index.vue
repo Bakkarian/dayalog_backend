@@ -22,13 +22,10 @@ const props = defineProps({
     <div class="px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div class="sm:flex sm:items-center">
             <div class="sm:flex-auto">
-                <h1 class="text-base font-semibold leading-6 text-gray-900">Add Driver</h1>
-                <p class="mt-2 text-sm text-gray-700">A list of all the users registered in the system.</p>
+                <h1 class="text-base font-semibold leading-6 text-gray-900">Users</h1>
+                <p class="mt-2 text-sm text-gray-700">A list of all the users registered in the system. drivers, admins, clients </p>
             </div>
-            <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-
-                <Link href="/create-driver" class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"> Add User</Link>
-            </div>
+           
         </div>
         <div class="mt-8 flow-root">
             <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">

@@ -74,6 +74,7 @@ return [
                 'Administrator',
            ]
        ],
+       
        'view.client.dashboard' =>[
            'name' => 'View Client Dashboard',
            'allowed' => [

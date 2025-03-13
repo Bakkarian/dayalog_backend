@@ -65,7 +65,11 @@ class RegisteredUserController extends Controller
             'email'=> ['required','string'],
         ]);
 
-        $user = (new UserService())->store($request->all());
+        $user = (new UserService())->firstOrCreate($request->all());
+
+
+       $user->organizations()->attach(session()->get('organization_id') ?? getPermissionsTeamId() );
+       $user->assignRole('client');
 
         return response()->json($user);
     }

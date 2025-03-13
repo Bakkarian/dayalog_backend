@@ -82,11 +82,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/vehicle/{vehicle}/send/request', [VehicleController::class, 'sendVehicleRequest'])->name('vehicle.send-request');
 
 
+    Route::get('client/create',[ UserManagementController::class, 'createClient'])->name('client.create');
+    Route::post('client/store', [UserManagementController::class, 'storeClient'])->name('client.store');
     Route::resource('users', UserManagementController::class);
 
     //Web app apis
     Route::group(['prefix'=> 'web_api', 'as'=> 'web_api.'], function () {
-        Route::get('/users/search', [RegisteredUserController::class, 'getOptionUsers'])->name('searchUsers');
+        Route::get('/users/search', [RegisteredUserController::class, 'getOp    tionUsers'])->name('searchUsers');
         Route::get('/user/find', [RegisteredUserController::class, 'getOptionUser'])->name('findUser');
         Route::post('user/create', [RegisteredUserController::class, 'createUser'])->name('createUser');
 
