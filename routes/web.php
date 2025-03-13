@@ -88,7 +88,7 @@ Route::middleware('auth')->group(function () {
 
     //Web app apis
     Route::group(['prefix'=> 'web_api', 'as'=> 'web_api.'], function () {
-        Route::get('/users/search', [RegisteredUserController::class, 'getOp    tionUsers'])->name('searchUsers');
+        Route::get('/users/search', [RegisteredUserController::class, 'getOptionUsers'])->name('searchUsers');
         Route::get('/user/find', [RegisteredUserController::class, 'getOptionUser'])->name('findUser');
         Route::post('user/create', [RegisteredUserController::class, 'createUser'])->name('createUser');
 

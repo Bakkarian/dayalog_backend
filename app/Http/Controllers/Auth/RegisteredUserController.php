@@ -47,7 +47,7 @@ class RegisteredUserController extends Controller
         $search = $request->input('q'); // Assuming the search parameter is sent as a query parameter
 
         // Use the where clause to filter users based on the search parameter
-        $users = User::where('name', 'like', "%$search%")->limit(10)->get();
+        $users = User::role('client')->where('name', 'like', "%$search%")->limit(10)->get();
 
         // Return the filtered users using the SelectUserResource
         return SelectUserResource::collection($users);
