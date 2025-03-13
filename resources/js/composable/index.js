@@ -77,8 +77,17 @@ export default function useNavigation() {
             'devices.view',
         ]
      },
+     {
+      name: 'Add Client',
+      href: route('client.create'),
+      icon: UsersIcon,
+      current: route('client.create').endsWith(url),
+      permissions :[
+          'users.create',
+      ]
+    },
     {
-        name: 'Create Driver',
+        name: 'Add Driver',
         href: route('driver.create'),
         icon: UsersIcon,
         current: route('driver.create').endsWith(url),
@@ -86,6 +95,7 @@ export default function useNavigation() {
             'drivers.create',
         ]
     },
+
     {
         name: 'Vehicles',
         href: route('vehicle.view'),

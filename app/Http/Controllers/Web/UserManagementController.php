@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\DriverRequest;
 use App\Models\User;
+use App\Services\UserService;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Spatie\Permission\Models\Permission;
@@ -99,4 +101,28 @@ class UserManagementController extends Controller
     {
         //
     }
+
+
+    public function createClient()
+    {
+        return Inertia::render('UserManagment/CreateClient');
+    }
+
+    public function storeClient(DriverRequest $request)
+    {
+        
+       $user = (new UserService)->firstOrCreate($request->validated());
+
+
+       $user->organizations()->attach(session()->get('organization_id') ?? getPermissionsTeamId() );
+       $user->assignRole('client');
+
+
+       return redirect()
+           ->back()
+           ->with('success', 'Client added Successfully');
+
+    }
+
+
 }
