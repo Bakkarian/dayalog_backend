@@ -15,14 +15,14 @@
                         <div class="sm:col-span-5">
                             <InputLabel for="name" value="Full Name *" />
                             <div class="mt-2">
-                                <TextInput id="name" type="text" placeholder="Enter Driver's full name" v-model="form.name" />
+                                <TextInput id="name" type="text" placeholder="Enter Client's full name" v-model="form.name" />
                                 <InputError class="mt-2" :message="form.errors.name" />
                             </div>
                         </div>
                         <div class="sm:col-span-5">
                             <InputLabel for="email" value="Email  Address (Optional)" />
                             <div class="mt-2">
-                                <TextInput id="email" type="text" placeholder="Driver's email address" v-model="form.email" />
+                                <TextInput id="email" type="text" placeholder="Client's email address" v-model="form.email" />
                                 <InputError class="mt-2" :message="form.errors.email" />
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                         <div class="sm:col-span-5">
                             <InputLabel for="email" value="Phone Number" />
                             <div class="mt-2">
-                                <TextInput id="patasente_id" type="text"   placeholder="Driver's Phone Number"  v-model="form.phone_number" />
+                                <TextInput id="patasente_id" type="text"   placeholder="Client's Phone Number"  v-model="form.phone_number" />
                                 <InputError class="mt-2" :message="form.errors.phone_number" />
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                 </form>
             </div>
             <div class="hidden lg:block">
-                <img class="max-w-md mx-auto" src="@/assets/create-driver.svg">
+                <img class="max-w-md mx-auto" src="@/assets/create-Client.svg">
             </div>
         </div>
     </div>
