@@ -58,7 +58,7 @@
                 </form>
             </div>
             <div class="hidden lg:block">
-                <img class="max-w-md mx-auto" src="@/assets/create-Client.svg">
+                <img class="max-w-md mx-auto" src="./../../assets/create-driver.svg">
             </div>
         </div>
     </div>
