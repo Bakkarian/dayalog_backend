@@ -131,6 +131,12 @@ class UserManagementController extends Controller
 
        return redirect()
            ->back()
+           ->with('actions',[ [
+                'type' => 'href',
+                'name' => 'Continue Editing',
+                'url' => route('users.edit', $user->id),
+            ]])
+            ->with('error', 'Client added Successfully')
            ->with('success', 'Client added Successfully');
 
     }
