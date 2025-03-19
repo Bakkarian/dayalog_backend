@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Organization;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -16,9 +17,9 @@ return new class extends Migration
             $table->id();
             
             $table->foreignIdFor(User::class);
+            $table->foreignIdFor(Organization::class);
             $table->string('key');
             $table->text('value');
-
             $table->timestamps();
         });
     }

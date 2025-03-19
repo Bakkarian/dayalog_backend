@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DriverRequest;
 use App\Models\User;
+use App\Models\UserMeta;
 use App\Services\UserService;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -54,11 +55,8 @@ class UserManagementController extends Controller
     public function edit(string $id)
     {
         $user = User::with(['permissions','roles'])->find($id);
-
         $roles = Role::with(['permissions'])->get();
-
         $permissions = Permission::all();
-
         $roles->each(function ($role) use ($permissions) {
             if ($role->name == 'Super User') {
                 unset($role->permissions);
@@ -72,13 +70,14 @@ class UserManagementController extends Controller
             }
         });
 
-
-
+        $userMeta = UserMeta::getAllUserMeta($user->id);
 
         return Inertia::render('UserManagment/Edit',[
             'user' => $user,
             'roles' => $roles,
-            'permissions' => $permissions
+            'permissions' => $permissions,
+            'user_meta' => $userMeta,
+            'addresses' => config('address'),
         ]);
     }
 
@@ -89,9 +88,21 @@ class UserManagementController extends Controller
     {
         $user = User::find($id);
         $user->update($request->all());
-
         $user->syncRoles($request->roles);
         $user->syncPermissions($request->permissions);
+
+
+        $user_meta = $request->user_meta;
+
+        foreach ($user_meta as $key => $value) {
+            UserMeta::updateMeta($user->id, $key, $value);
+        }
+
+
+        return redirect()
+            ->back()
+            ->with('success', 'User updated Successfully');
+
     }
 
     /**

@@ -90,4 +90,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Organization::class, 'created_by');
     }
+
+
+    public function meta(): HasMany
+    {
+        return $this->hasMany(UserMeta::class);
+    }
+    
 }
