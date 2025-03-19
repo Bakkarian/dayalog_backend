@@ -48,7 +48,7 @@
                             </div>
                         </div>
                     </div>
-                    <FlashMessage />
+                    <FlashMessage  />
                     <button type="submit"
                             class="rounded-md mt-12 bg-indigo-600 px-3 py-2 text-sm font-semibold \
                                 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 \
@@ -84,7 +84,8 @@ defineOptions({ layout: Layout })
 
     const submitForm = async () => {
         form.post(route('client.store'), {
-            onSuccess:() => {
+            onSuccess:(response) => {
+                debugger
                 form.reset()
             }
         })

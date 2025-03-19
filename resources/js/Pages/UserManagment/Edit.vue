@@ -28,7 +28,7 @@ const countries  = computed(()=>{
 
 
 const regions  = computed(()=>{
-    if(form.user_meta.country == null || form.user_meta.country == ""){
+    if(form.user_meta.country == null || form.user_meta.country == ""){ 
          return []
     };
     const x = Object.values( addressData.value.countries);
@@ -224,7 +224,7 @@ const submit = () => {
                             </div>
                         </div>
                         <div class="sm:col-span-5">
-                            <InputLabel for="email" value="Bing Merchant ID" />
+                            <InputLabel for="email" value="Binjii Merchant ID" />
                             <div class="mt-2">
                                 <TextInput type="text" placeholder="" v-model="form.patasente_id" />
                                 <InputError class="mt-2" :message="form.errors.patasente_id" />
