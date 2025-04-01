@@ -33,7 +33,7 @@ endpoints:
           content-type: application/json
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
-          set-cookie: 'dayalog_session=BiT9aTG2A9YhM9oqLoaOC6JGBtG82TJbRtZZFUXy; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
+          set-cookie: 'dayalog_session=Fh2jTWELgJffZ3f1fBOfLdaa7xnuOduRAV8cW1rj; expires=Tue, 01 Apr 2025 14:50:28 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -67,7 +67,7 @@ endpoints:
         name: order_vehicle_id
         description: 'The <code>id</code> of an existing record in the order_vehicle table. Must not be greater than 255 characters.'
         required: true
-        example: hdmpgbtxlwwtckupqoumuph
+        example: rrrjuyfhak
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -77,7 +77,7 @@ endpoints:
         name: origin
         description: ''
         required: true
-        example: laboriosam
+        example: error
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -87,7 +87,7 @@ endpoints:
         name: destination
         description: ''
         required: true
-        example: cum
+        example: adipisci
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -97,17 +97,17 @@ endpoints:
         name: notes
         description: ''
         required: false
-        example: qui
+        example: nulla
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      order_vehicle_id: hdmpgbtxlwwtckupqoumuph
-      origin: laboriosam
-      destination: cum
-      notes: qui
+      order_vehicle_id: rrrjuyfhak
+      origin: error
+      destination: adipisci
+      notes: nulla
     fileParameters: []
     responses: []
     responseFields: []
@@ -137,14 +137,14 @@ endpoints:
         name: id
         description: 'The ID of the dispatch.'
         required: true
-        example: dignissimos
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: dignissimos
+      id: aut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -159,7 +159,7 @@ endpoints:
           content-type: application/json
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
-          set-cookie: 'dayalog_session=FI0acFqsv28lJBEEC4opyI801xtqycrOGeibFecO; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
+          set-cookie: 'dayalog_session=xn7mOsdjkA5KtK2h0z6wp6TXOddiEFFPMV2efA0n; expires=Tue, 01 Apr 2025 14:50:28 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -190,14 +190,14 @@ endpoints:
         name: id
         description: 'The ID of the dispatch.'
         required: true
-        example: vel
+        example: laudantium
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: vel
+      id: laudantium
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -231,14 +231,14 @@ endpoints:
         name: id
         description: 'The ID of the dispatch.'
         required: true
-        example: accusamus
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: accusamus
+      id: aut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -272,7 +272,7 @@ endpoints:
         name: dispatch
         description: 'The dispatch.'
         required: true
-        example: beatae
+        example: in
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -282,7 +282,7 @@ endpoints:
         name: newStatus
         description: ''
         required: true
-        example: commodi
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -299,8 +299,8 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      dispatch: beatae
-      newStatus: commodi
+      dispatch: in
+      newStatus: voluptatem
       string: in_progress
     queryParameters: []
     cleanQueryParameters: []

@@ -35,7 +35,7 @@ endpoints:
           content-type: application/json
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
-          set-cookie: 'dayalog_session=6SNmnntcZyEJSJvOI3ax9ncf4ZZr63p2NtZEOyAF; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
+          set-cookie: 'dayalog_session=4DPyWYTjzOvHEVYYdIttepADGrq62CWYqbLMC31R; expires=Tue, 01 Apr 2025 14:50:27 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -65,6 +65,16 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
+      business_name:
+        name: business_name
+        description: ''
+        required: false
+        example: velit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
       license:
         name: license
         description: ''
@@ -125,7 +135,8 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         custom: []
-    cleanBodyParameters: []
+    cleanBodyParameters:
+      business_name: velit
     fileParameters: []
     responses: []
     responseFields: []
@@ -155,14 +166,14 @@ endpoints:
         name: id
         description: 'The ID of the driver.'
         required: true
-        example: distinctio
+        example: hic
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: distinctio
+      id: hic
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -177,7 +188,7 @@ endpoints:
           content-type: application/json
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
-          set-cookie: 'dayalog_session=H7AJKTQcQfJNwwrW8Ac7gbqlMVfiX41bPET8qSK1; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
+          set-cookie: 'dayalog_session=oVWBydt0BsqOfLpQdKSBnKobZADTNgHHyYDQOfAl; expires=Tue, 01 Apr 2025 14:50:28 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -208,14 +219,14 @@ endpoints:
         name: id
         description: 'The ID of the driver.'
         required: true
-        example: praesentium
+        example: occaecati
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: praesentium
+      id: occaecati
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -269,14 +280,14 @@ endpoints:
         name: id
         description: 'The ID of the driver.'
         required: true
-        example: quaerat
+        example: cumque
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: quaerat
+      id: cumque
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -310,7 +321,7 @@ endpoints:
         name: driver
         description: 'The driver.'
         required: true
-        example: et
+        example: sit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -320,15 +331,15 @@ endpoints:
         name: vehicle
         description: 'The vehicle.'
         required: true
-        example: fugiat
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      driver: et
-      vehicle: fugiat
+      driver: sit
+      vehicle: qui
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -362,7 +373,7 @@ endpoints:
         name: driver
         description: 'The driver.'
         required: true
-        example: velit
+        example: libero
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -372,15 +383,15 @@ endpoints:
         name: vehicle
         description: 'The vehicle.'
         required: true
-        example: dolorem
+        example: recusandae
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      driver: velit
-      vehicle: dolorem
+      driver: libero
+      vehicle: recusandae
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

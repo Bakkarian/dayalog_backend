@@ -35,7 +35,7 @@ endpoints:
           content-type: application/json
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
-          set-cookie: 'dayalog_session=sMubRHomeKaBEsUx2vjk2CTYq2jsdZ3evyYVHi2F; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
+          set-cookie: 'dayalog_session=bjl8RDnQOmfWKciNrpoeQvXhTkkyKhA09Xn8TdWk; expires=Tue, 01 Apr 2025 14:50:28 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -69,7 +69,7 @@ endpoints:
         name: from
         description: 'The <code>id</code> of an existing record in the users table.'
         required: true
-        example: aut
+        example: enim
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -79,7 +79,7 @@ endpoints:
         name: to
         description: 'The <code>id</code> of an existing record in the users table.'
         required: true
-        example: et
+        example: consequuntur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -89,7 +89,7 @@ endpoints:
         name: patasente_purchase_order_id
         description: ''
         required: false
-        example: 2
+        example: 11
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -99,7 +99,7 @@ endpoints:
         name: reference
         description: ''
         required: true
-        example: voluptatem
+        example: vel
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -109,18 +109,18 @@ endpoints:
         name: notes
         description: ''
         required: false
-        example: ut
+        example: eum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         custom: []
     cleanBodyParameters:
-      from: aut
-      to: et
-      patasente_purchase_order_id: 2
-      reference: voluptatem
-      notes: ut
+      from: enim
+      to: consequuntur
+      patasente_purchase_order_id: 11
+      reference: vel
+      notes: eum
     fileParameters: []
     responses: []
     responseFields: []
@@ -150,14 +150,14 @@ endpoints:
         name: id
         description: 'The ID of the order.'
         required: true
-        example: voluptatem
+        example: necessitatibus
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: voluptatem
+      id: necessitatibus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -172,7 +172,7 @@ endpoints:
           content-type: application/json
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
-          set-cookie: 'dayalog_session=NQ0RlWacHUYgwQgU5yOHSapOMMApdZnpM5wRBgxJ; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
+          set-cookie: 'dayalog_session=hsIuLSJqGHv5eJMeAQuEFCk5CHqrDJGmdle4UdkX; expires=Tue, 01 Apr 2025 14:50:28 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -203,14 +203,14 @@ endpoints:
         name: id
         description: 'The ID of the order.'
         required: true
-        example: libero
+        example: id
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: libero
+      id: id
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -244,14 +244,14 @@ endpoints:
         name: id
         description: 'The ID of the order.'
         required: true
-        example: eum
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: eum
+      id: et
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -285,7 +285,7 @@ endpoints:
         name: order
         description: 'The order.'
         required: true
-        example: iste
+        example: sit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -295,15 +295,15 @@ endpoints:
         name: vehicle
         description: 'The vehicle.'
         required: true
-        example: sunt
+        example: animi
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      order: iste
-      vehicle: sunt
+      order: sit
+      vehicle: animi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -337,7 +337,7 @@ endpoints:
         name: order
         description: 'The order.'
         required: true
-        example: illo
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -347,15 +347,15 @@ endpoints:
         name: vehicle
         description: 'The vehicle.'
         required: true
-        example: dolores
+        example: suscipit
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      order: illo
-      vehicle: dolores
+      order: et
+      vehicle: suscipit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -389,7 +389,7 @@ endpoints:
         name: order
         description: 'The order.'
         required: true
-        example: et
+        example: officiis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -399,7 +399,7 @@ endpoints:
         name: newStatus
         description: ''
         required: true
-        example: officia
+        example: nam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -416,8 +416,8 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      order: et
-      newStatus: officia
+      order: officiis
+      newStatus: nam
       string: cancelled
     queryParameters: []
     cleanQueryParameters: []
