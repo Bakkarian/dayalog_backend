@@ -104,10 +104,12 @@ import { MapPinIcon, ClockIcon, ArrowLeftIcon } from '@heroicons/vue/20/solid'
 import { Link, usePage } from '@inertiajs/vue3'
 import { onMounted, ref } from 'vue';
 import Loader from './Loader.vue';
-import dayjs from 'dayjs'
-import * as relativeTime from 'dayjs/plugin/relativeTime'
 import { computed } from 'vue';
+import * as relativeTime from 'dayjs/plugin/relativeTime'
+import dayjs from 'dayjs'
 dayjs.extend(relativeTime)
+
+
 const loading = ref(false);
 const openDetails = ref(false)
 const page = usePage();
