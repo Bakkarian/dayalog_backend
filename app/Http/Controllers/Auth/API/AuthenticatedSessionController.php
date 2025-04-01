@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers\Auth\API;
 
+use App\Actions\MagicLink\LoginAction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\CreateTokenRequest;
 use App\Http\Resources\AutheticatedUserResource;
-use App\Models\User;
 use App\Rules\ValidSystemToken;
 use App\Services\UserService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
-use MagicLink\Actions\LoginAction;
 use MagicLink\MagicLink;
 
 class AuthenticatedSessionController extends Controller
@@ -65,7 +64,7 @@ class AuthenticatedSessionController extends Controller
             'name' => $request->name,
         ]);
 
-        $action = new LoginAction(User::first());
+        $action = new LoginAction($user);
         $action->response(redirect('/dashboard'));
 
         return response()->json([
