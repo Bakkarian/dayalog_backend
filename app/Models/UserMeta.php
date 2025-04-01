@@ -46,14 +46,24 @@ class UserMeta extends Model
         return self::where('user_id', $user_id)->where('key', $key)->first();
     }
 
-    public static function updateMeta($user_id, $key, $value ="")
+    public static function updateMeta($user_id, $key, $value = "")
     {
         
+
+
         $meta = self::where('user_id', $user_id)->where('key', $key)->first();
         
         if ($meta) {
+
+            if($value == null || $value == "") {
+                self::deleteMeta($user_id, $key);
+                return;
+            }
+
             $meta->value = $value;
             $meta->save();
+
+       
         } else {
             self::create([
                 'user_id' => $user_id, 
