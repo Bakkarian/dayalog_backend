@@ -184,6 +184,9 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-devices--device--positions">
                                 <a href="#endpoints-GETapi-devices--device--positions">Display a listing of the resource.</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-login-by-system">
+                                <a href="#endpoints-POSTapi-login-by-system">POST api/login/by/system</a>
+                            </li>
                                                                         </ul>
                             </ul>
                     <ul id="tocify-header-orders" class="tocify-header">
@@ -253,7 +256,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: March 8, 2025</li>
+        <li>Last updated: April 1, 2025</li>
     </ul>
 </div>
 
@@ -295,11 +298,11 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"afosdqhbjt\",
-    \"email\": \"gonzalo48@example.com\",
-    \"patasente_id\": \"laboriosam\",
-    \"phone_number\": \"doloremque\",
-    \"password\": \"enim\"
+    \"name\": \"rctkancpkygacwms\",
+    \"email\": \"clarissa.rutherford@example.org\",
+    \"patasente_id\": \"nihil\",
+    \"phone_number\": \"est\",
+    \"password\": \"autem\"
 }"
 </code></pre></div>
 
@@ -315,11 +318,11 @@ const headers = {
 };
 
 let body = {
-    "name": "afosdqhbjt",
-    "email": "gonzalo48@example.com",
-    "patasente_id": "laboriosam",
-    "phone_number": "doloremque",
-    "password": "enim"
+    "name": "rctkancpkygacwms",
+    "email": "clarissa.rutherford@example.org",
+    "patasente_id": "nihil",
+    "phone_number": "est",
+    "password": "autem"
 };
 
 fetch(url, {
@@ -340,11 +343,11 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'name' =&gt; 'afosdqhbjt',
-            'email' =&gt; 'gonzalo48@example.com',
-            'patasente_id' =&gt; 'laboriosam',
-            'phone_number' =&gt; 'doloremque',
-            'password' =&gt; 'enim',
+            'name' =&gt; 'rctkancpkygacwms',
+            'email' =&gt; 'clarissa.rutherford@example.org',
+            'patasente_id' =&gt; 'nihil',
+            'phone_number' =&gt; 'est',
+            'password' =&gt; 'autem',
         ],
     ]
 );
@@ -358,11 +361,11 @@ import json
 
 url = 'https://dayalog.test/api/register'
 payload = {
-    "name": "afosdqhbjt",
-    "email": "gonzalo48@example.com",
-    "patasente_id": "laboriosam",
-    "phone_number": "doloremque",
-    "password": "enim"
+    "name": "rctkancpkygacwms",
+    "email": "clarissa.rutherford@example.org",
+    "patasente_id": "nihil",
+    "phone_number": "est",
+    "password": "autem"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -435,10 +438,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-register"
-               value="afosdqhbjt"
+               value="rctkancpkygacwms"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>afosdqhbjt</code></p>
+<p>Must not be greater than 255 characters. Example: <code>rctkancpkygacwms</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -446,10 +449,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-register"
-               value="gonzalo48@example.com"
+               value="clarissa.rutherford@example.org"
                data-component="body">
     <br>
-<p>This field is required when none of <code>phone_number</code> and <code>patasente_id</code> are present.  Must be a valid email address. Must not be greater than 255 characters. Example: <code>gonzalo48@example.com</code></p>
+<p>This field is required when none of <code>phone_number</code> and <code>patasente_id</code> are present.  Must be a valid email address. Must not be greater than 255 characters. Example: <code>clarissa.rutherford@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>patasente_id</code></b>&nbsp;&nbsp;
@@ -457,10 +460,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="patasente_id"                data-endpoint="POSTapi-register"
-               value="laboriosam"
+               value="nihil"
                data-component="body">
     <br>
-<p>TODO : rename to patasente merchant code. This field is required when none of <code>email</code> and <code>phone_number</code> are present. Example: <code>laboriosam</code></p>
+<p>TODO : rename to patasente merchant code. This field is required when none of <code>email</code> and <code>phone_number</code> are present. Example: <code>nihil</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>phone_number</code></b>&nbsp;&nbsp;
@@ -468,10 +471,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="phone_number"                data-endpoint="POSTapi-register"
-               value="doloremque"
+               value="est"
                data-component="body">
     <br>
-<p>This field is required when none of <code>email</code> and <code>patasente_id</code> are present. Example: <code>doloremque</code></p>
+<p>This field is required when none of <code>email</code> and <code>patasente_id</code> are present. Example: <code>est</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -479,10 +482,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-register"
-               value="enim"
+               value="autem"
                data-component="body">
     <br>
-<p>Example: <code>enim</code></p>
+<p>Example: <code>autem</code></p>
         </div>
         </form>
 
@@ -503,9 +506,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": \"aspernatur\",
-    \"password\": \"21\\\"D!`U\",
-    \"token_name\": \"facere\"
+    \"user_id\": \"fugiat\",
+    \"password\": \"#]Fam&gt;Znm.bMQ=}uA\",
+    \"token_name\": \"dicta\"
 }"
 </code></pre></div>
 
@@ -521,9 +524,9 @@ const headers = {
 };
 
 let body = {
-    "user_id": "aspernatur",
-    "password": "21\"D!`U",
-    "token_name": "facere"
+    "user_id": "fugiat",
+    "password": "#]Fam&gt;Znm.bMQ=}uA",
+    "token_name": "dicta"
 };
 
 fetch(url, {
@@ -544,9 +547,9 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'user_id' =&gt; 'aspernatur',
-            'password' =&gt; '21"D!`U',
-            'token_name' =&gt; 'facere',
+            'user_id' =&gt; 'fugiat',
+            'password' =&gt; '#]Fam&gt;Znm.bMQ=}uA',
+            'token_name' =&gt; 'dicta',
         ],
     ]
 );
@@ -560,9 +563,9 @@ import json
 
 url = 'https://dayalog.test/api/tokens/create'
 payload = {
-    "user_id": "aspernatur",
-    "password": "21\"D!`U",
-    "token_name": "facere"
+    "user_id": "fugiat",
+    "password": "#]Fam&gt;Znm.bMQ=}uA",
+    "token_name": "dicta"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -635,10 +638,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="user_id"                data-endpoint="POSTapi-tokens-create"
-               value="aspernatur"
+               value="fugiat"
                data-component="body">
     <br>
-<p>Example: <code>aspernatur</code></p>
+<p>Example: <code>fugiat</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -646,10 +649,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-tokens-create"
-               value="21"D!`U"
+               value="#]Fam>Znm.bMQ=}uA"
                data-component="body">
     <br>
-<p>Example: <code>21"D!</code>U`</p>
+<p>Example: <code>#]Fam&gt;Znm.bMQ=}uA</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>token_name</code></b>&nbsp;&nbsp;
@@ -657,10 +660,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="token_name"                data-endpoint="POSTapi-tokens-create"
-               value="facere"
+               value="dicta"
                data-component="body">
     <br>
-<p>Example: <code>facere</code></p>
+<p>Example: <code>dicta</code></p>
         </div>
         </form>
 
@@ -681,7 +684,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"bradford64@example.com\"
+    \"email\": \"glemke@example.org\"
 }"
 </code></pre></div>
 
@@ -697,7 +700,7 @@ const headers = {
 };
 
 let body = {
-    "email": "bradford64@example.com"
+    "email": "glemke@example.org"
 };
 
 fetch(url, {
@@ -718,7 +721,7 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'email' =&gt; 'bradford64@example.com',
+            'email' =&gt; 'glemke@example.org',
         ],
     ]
 );
@@ -732,7 +735,7 @@ import json
 
 url = 'https://dayalog.test/api/forgot-password'
 payload = {
-    "email": "bradford64@example.com"
+    "email": "glemke@example.org"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -805,10 +808,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-forgot-password"
-               value="bradford64@example.com"
+               value="glemke@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>bradford64@example.com</code></p>
+<p>Must be a valid email address. Example: <code>glemke@example.org</code></p>
         </div>
         </form>
 
@@ -829,9 +832,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"et\",
-    \"email\": \"shanel91@example.com\",
-    \"password\": \"quos\"
+    \"token\": \"est\",
+    \"email\": \"stephania63@example.net\",
+    \"password\": \"necessitatibus\"
 }"
 </code></pre></div>
 
@@ -847,9 +850,9 @@ const headers = {
 };
 
 let body = {
-    "token": "et",
-    "email": "shanel91@example.com",
-    "password": "quos"
+    "token": "est",
+    "email": "stephania63@example.net",
+    "password": "necessitatibus"
 };
 
 fetch(url, {
@@ -870,9 +873,9 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'token' =&gt; 'et',
-            'email' =&gt; 'shanel91@example.com',
-            'password' =&gt; 'quos',
+            'token' =&gt; 'est',
+            'email' =&gt; 'stephania63@example.net',
+            'password' =&gt; 'necessitatibus',
         ],
     ]
 );
@@ -886,9 +889,9 @@ import json
 
 url = 'https://dayalog.test/api/reset-password'
 payload = {
-    "token": "et",
-    "email": "shanel91@example.com",
-    "password": "quos"
+    "token": "est",
+    "email": "stephania63@example.net",
+    "password": "necessitatibus"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -961,10 +964,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="token"                data-endpoint="POSTapi-reset-password"
-               value="et"
+               value="est"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>est</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -972,10 +975,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-reset-password"
-               value="shanel91@example.com"
+               value="stephania63@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>shanel91@example.com</code></p>
+<p>Must be a valid email address. Example: <code>stephania63@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -983,10 +986,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-reset-password"
-               value="quos"
+               value="necessitatibus"
                data-component="body">
     <br>
-<p>Example: <code>quos</code></p>
+<p>Example: <code>necessitatibus</code></p>
         </div>
         </form>
 
@@ -1003,14 +1006,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.test/api/verify-email/temporibus/aut" \
+    --get "https://dayalog.test/api/verify-email/provident/quis" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/verify-email/temporibus/aut"
+    "https://dayalog.test/api/verify-email/provident/quis"
 );
 
 const headers = {
@@ -1026,7 +1029,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/verify-email/temporibus/aut';
+$url = 'https://dayalog.test/api/verify-email/provident/quis';
 $response = $client-&gt;get(
     $url,
     [
@@ -1044,7 +1047,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/verify-email/temporibus/aut'
+url = 'https://dayalog.test/api/verify-email/provident/quis'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -1067,7 +1070,7 @@ response.json()</code></pre></div>
 content-type: application/json
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
-set-cookie: dayalog_session=izRr8BHbN64x6CrYbqnIYOzwB1tKn0SfHvBn6Ufi; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
+set-cookie: dayalog_session=EZmjjbUSyAphMkRlsD6E6Ifox8lCZ5lahg9OL2sv; expires=Tue, 01 Apr 2025 14:50:28 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -1134,10 +1137,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-verify-email--id---hash-"
-               value="temporibus"
+               value="provident"
                data-component="url">
     <br>
-<p>The ID of the verify email. Example: <code>temporibus</code></p>
+<p>The ID of the verify email. Example: <code>provident</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>hash</code></b>&nbsp;&nbsp;
@@ -1145,10 +1148,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="hash"                data-endpoint="GETapi-verify-email--id---hash-"
-               value="aut"
+               value="quis"
                data-component="url">
     <br>
-<p>Example: <code>aut</code></p>
+<p>Example: <code>quis</code></p>
             </div>
                     </form>
 
@@ -1475,7 +1478,7 @@ response.json()</code></pre></div>
 content-type: application/json
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
-set-cookie: dayalog_session=Ntt8cxHy2qEtbtl0fpYva66NJN33dvoHetKzqFr1; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
+set-cookie: dayalog_session=GuOJcCjtT4xgW2JK06COyQzHdpvAEThfgumh5GIy; expires=Tue, 01 Apr 2025 14:50:27 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -1554,10 +1557,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"maiores\",
-    \"uniqueid\": \"dccilkmuemhduvb\",
-    \"model\": \"non\",
-    \"tc_user_id\": 469947.776411878
+    \"name\": \"corporis\",
+    \"uniqueid\": \"itvltnqnyzj\",
+    \"model\": \"ipsam\",
+    \"tc_user_id\": 455779.475386
 }"
 </code></pre></div>
 
@@ -1573,10 +1576,10 @@ const headers = {
 };
 
 let body = {
-    "name": "maiores",
-    "uniqueid": "dccilkmuemhduvb",
-    "model": "non",
-    "tc_user_id": 469947.776411878
+    "name": "corporis",
+    "uniqueid": "itvltnqnyzj",
+    "model": "ipsam",
+    "tc_user_id": 455779.475386
 };
 
 fetch(url, {
@@ -1597,10 +1600,10 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'name' =&gt; 'maiores',
-            'uniqueid' =&gt; 'dccilkmuemhduvb',
-            'model' =&gt; 'non',
-            'tc_user_id' =&gt; 469947.776411878,
+            'name' =&gt; 'corporis',
+            'uniqueid' =&gt; 'itvltnqnyzj',
+            'model' =&gt; 'ipsam',
+            'tc_user_id' =&gt; 455779.475386,
         ],
     ]
 );
@@ -1614,10 +1617,10 @@ import json
 
 url = 'https://dayalog.test/api/devices'
 payload = {
-    "name": "maiores",
-    "uniqueid": "dccilkmuemhduvb",
-    "model": "non",
-    "tc_user_id": 469947.776411878
+    "name": "corporis",
+    "uniqueid": "itvltnqnyzj",
+    "model": "ipsam",
+    "tc_user_id": 455779.475386
 }
 headers = {
   'Content-Type': 'application/json',
@@ -1690,10 +1693,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-devices"
-               value="maiores"
+               value="corporis"
                data-component="body">
     <br>
-<p>Example: <code>maiores</code></p>
+<p>Example: <code>corporis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>uniqueid</code></b>&nbsp;&nbsp;
@@ -1701,10 +1704,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="uniqueid"                data-endpoint="POSTapi-devices"
-               value="dccilkmuemhduvb"
+               value="itvltnqnyzj"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>dccilkmuemhduvb</code></p>
+<p>Must not be greater than 255 characters. Example: <code>itvltnqnyzj</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model</code></b>&nbsp;&nbsp;
@@ -1712,10 +1715,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="model"                data-endpoint="POSTapi-devices"
-               value="non"
+               value="ipsam"
                data-component="body">
     <br>
-<p>Example: <code>non</code></p>
+<p>Example: <code>ipsam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>tc_user_id</code></b>&nbsp;&nbsp;
@@ -1723,10 +1726,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="tc_user_id"                data-endpoint="POSTapi-devices"
-               value="469947.77641188"
+               value="455779.475386"
                data-component="body">
     <br>
-<p>Example: <code>469947.77641188</code></p>
+<p>Example: <code>455779.475386</code></p>
         </div>
         </form>
 
@@ -1743,14 +1746,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.test/api/devices/odio" \
+    --get "https://dayalog.test/api/devices/praesentium" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/devices/odio"
+    "https://dayalog.test/api/devices/praesentium"
 );
 
 const headers = {
@@ -1766,7 +1769,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/devices/odio';
+$url = 'https://dayalog.test/api/devices/praesentium';
 $response = $client-&gt;get(
     $url,
     [
@@ -1784,7 +1787,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/devices/odio'
+url = 'https://dayalog.test/api/devices/praesentium'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -1807,7 +1810,7 @@ response.json()</code></pre></div>
 content-type: application/json
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
-set-cookie: dayalog_session=iHinGYr6u9JV7xemd0wQSJSZfycKWVacJCu4QKZV; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
+set-cookie: dayalog_session=0TZ2qwjvSpTLFtwUN6HzSeMVnYAWSjy1jc3wNicB; expires=Tue, 01 Apr 2025 14:50:27 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -1874,10 +1877,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-devices--id-"
-               value="odio"
+               value="praesentium"
                data-component="url">
     <br>
-<p>The ID of the device. Example: <code>odio</code></p>
+<p>The ID of the device. Example: <code>praesentium</code></p>
             </div>
                     </form>
 
@@ -1894,14 +1897,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.test/api/devices/et" \
+    "https://dayalog.test/api/devices/adipisci" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/devices/et"
+    "https://dayalog.test/api/devices/adipisci"
 );
 
 const headers = {
@@ -1917,7 +1920,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/devices/et';
+$url = 'https://dayalog.test/api/devices/adipisci';
 $response = $client-&gt;put(
     $url,
     [
@@ -1935,7 +1938,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/devices/et'
+url = 'https://dayalog.test/api/devices/adipisci'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -2011,10 +2014,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-devices--id-"
-               value="et"
+               value="adipisci"
                data-component="url">
     <br>
-<p>The ID of the device. Example: <code>et</code></p>
+<p>The ID of the device. Example: <code>adipisci</code></p>
             </div>
                     </form>
 
@@ -2031,14 +2034,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://dayalog.test/api/devices/nemo" \
+    "https://dayalog.test/api/devices/exercitationem" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/devices/nemo"
+    "https://dayalog.test/api/devices/exercitationem"
 );
 
 const headers = {
@@ -2054,7 +2057,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/devices/nemo';
+$url = 'https://dayalog.test/api/devices/exercitationem';
 $response = $client-&gt;delete(
     $url,
     [
@@ -2072,7 +2075,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/devices/nemo'
+url = 'https://dayalog.test/api/devices/exercitationem'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -2144,10 +2147,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-devices--id-"
-               value="nemo"
+               value="exercitationem"
                data-component="url">
     <br>
-<p>The ID of the device. Example: <code>nemo</code></p>
+<p>The ID of the device. Example: <code>exercitationem</code></p>
             </div>
                     </form>
 
@@ -2232,7 +2235,7 @@ response.json()</code></pre></div>
 content-type: application/json
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
-set-cookie: dayalog_session=BiT9aTG2A9YhM9oqLoaOC6JGBtG82TJbRtZZFUXy; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
+set-cookie: dayalog_session=Fh2jTWELgJffZ3f1fBOfLdaa7xnuOduRAV8cW1rj; expires=Tue, 01 Apr 2025 14:50:28 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -2311,10 +2314,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"order_vehicle_id\": \"hdmpgbtxlwwtckupqoumuph\",
-    \"origin\": \"laboriosam\",
-    \"destination\": \"cum\",
-    \"notes\": \"qui\"
+    \"order_vehicle_id\": \"rrrjuyfhak\",
+    \"origin\": \"error\",
+    \"destination\": \"adipisci\",
+    \"notes\": \"nulla\"
 }"
 </code></pre></div>
 
@@ -2330,10 +2333,10 @@ const headers = {
 };
 
 let body = {
-    "order_vehicle_id": "hdmpgbtxlwwtckupqoumuph",
-    "origin": "laboriosam",
-    "destination": "cum",
-    "notes": "qui"
+    "order_vehicle_id": "rrrjuyfhak",
+    "origin": "error",
+    "destination": "adipisci",
+    "notes": "nulla"
 };
 
 fetch(url, {
@@ -2354,10 +2357,10 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'order_vehicle_id' =&gt; 'hdmpgbtxlwwtckupqoumuph',
-            'origin' =&gt; 'laboriosam',
-            'destination' =&gt; 'cum',
-            'notes' =&gt; 'qui',
+            'order_vehicle_id' =&gt; 'rrrjuyfhak',
+            'origin' =&gt; 'error',
+            'destination' =&gt; 'adipisci',
+            'notes' =&gt; 'nulla',
         ],
     ]
 );
@@ -2371,10 +2374,10 @@ import json
 
 url = 'https://dayalog.test/api/dispatches'
 payload = {
-    "order_vehicle_id": "hdmpgbtxlwwtckupqoumuph",
-    "origin": "laboriosam",
-    "destination": "cum",
-    "notes": "qui"
+    "order_vehicle_id": "rrrjuyfhak",
+    "origin": "error",
+    "destination": "adipisci",
+    "notes": "nulla"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -2447,10 +2450,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="order_vehicle_id"                data-endpoint="POSTapi-dispatches"
-               value="hdmpgbtxlwwtckupqoumuph"
+               value="rrrjuyfhak"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the order_vehicle table. Must not be greater than 255 characters. Example: <code>hdmpgbtxlwwtckupqoumuph</code></p>
+<p>The <code>id</code> of an existing record in the order_vehicle table. Must not be greater than 255 characters. Example: <code>rrrjuyfhak</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>origin</code></b>&nbsp;&nbsp;
@@ -2458,10 +2461,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="origin"                data-endpoint="POSTapi-dispatches"
-               value="laboriosam"
+               value="error"
                data-component="body">
     <br>
-<p>Example: <code>laboriosam</code></p>
+<p>Example: <code>error</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>destination</code></b>&nbsp;&nbsp;
@@ -2469,10 +2472,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="destination"                data-endpoint="POSTapi-dispatches"
-               value="cum"
+               value="adipisci"
                data-component="body">
     <br>
-<p>Example: <code>cum</code></p>
+<p>Example: <code>adipisci</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -2480,10 +2483,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes"                data-endpoint="POSTapi-dispatches"
-               value="qui"
+               value="nulla"
                data-component="body">
     <br>
-<p>Example: <code>qui</code></p>
+<p>Example: <code>nulla</code></p>
         </div>
         </form>
 
@@ -2500,14 +2503,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.test/api/dispatches/dignissimos" \
+    --get "https://dayalog.test/api/dispatches/aut" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/dispatches/dignissimos"
+    "https://dayalog.test/api/dispatches/aut"
 );
 
 const headers = {
@@ -2523,7 +2526,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/dispatches/dignissimos';
+$url = 'https://dayalog.test/api/dispatches/aut';
 $response = $client-&gt;get(
     $url,
     [
@@ -2541,7 +2544,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/dispatches/dignissimos'
+url = 'https://dayalog.test/api/dispatches/aut'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -2564,7 +2567,7 @@ response.json()</code></pre></div>
 content-type: application/json
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
-set-cookie: dayalog_session=FI0acFqsv28lJBEEC4opyI801xtqycrOGeibFecO; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
+set-cookie: dayalog_session=xn7mOsdjkA5KtK2h0z6wp6TXOddiEFFPMV2efA0n; expires=Tue, 01 Apr 2025 14:50:28 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -2631,10 +2634,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-dispatches--id-"
-               value="dignissimos"
+               value="aut"
                data-component="url">
     <br>
-<p>The ID of the dispatch. Example: <code>dignissimos</code></p>
+<p>The ID of the dispatch. Example: <code>aut</code></p>
             </div>
                     </form>
 
@@ -2651,14 +2654,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.test/api/dispatches/vel" \
+    "https://dayalog.test/api/dispatches/laudantium" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/dispatches/vel"
+    "https://dayalog.test/api/dispatches/laudantium"
 );
 
 const headers = {
@@ -2674,7 +2677,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/dispatches/vel';
+$url = 'https://dayalog.test/api/dispatches/laudantium';
 $response = $client-&gt;put(
     $url,
     [
@@ -2692,7 +2695,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/dispatches/vel'
+url = 'https://dayalog.test/api/dispatches/laudantium'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -2768,10 +2771,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-dispatches--id-"
-               value="vel"
+               value="laudantium"
                data-component="url">
     <br>
-<p>The ID of the dispatch. Example: <code>vel</code></p>
+<p>The ID of the dispatch. Example: <code>laudantium</code></p>
             </div>
                     </form>
 
@@ -2788,14 +2791,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://dayalog.test/api/dispatches/accusamus" \
+    "https://dayalog.test/api/dispatches/aut" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/dispatches/accusamus"
+    "https://dayalog.test/api/dispatches/aut"
 );
 
 const headers = {
@@ -2811,7 +2814,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/dispatches/accusamus';
+$url = 'https://dayalog.test/api/dispatches/aut';
 $response = $client-&gt;delete(
     $url,
     [
@@ -2829,7 +2832,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/dispatches/accusamus'
+url = 'https://dayalog.test/api/dispatches/aut'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -2901,10 +2904,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-dispatches--id-"
-               value="accusamus"
+               value="aut"
                data-component="url">
     <br>
-<p>The ID of the dispatch. Example: <code>accusamus</code></p>
+<p>The ID of the dispatch. Example: <code>aut</code></p>
             </div>
                     </form>
 
@@ -2921,14 +2924,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.test/api/dispatches/beatae/status/commodi" \
+    "https://dayalog.test/api/dispatches/in/status/voluptatem" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/dispatches/beatae/status/commodi"
+    "https://dayalog.test/api/dispatches/in/status/voluptatem"
 );
 
 const headers = {
@@ -2944,7 +2947,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/dispatches/beatae/status/commodi';
+$url = 'https://dayalog.test/api/dispatches/in/status/voluptatem';
 $response = $client-&gt;put(
     $url,
     [
@@ -2962,7 +2965,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/dispatches/beatae/status/commodi'
+url = 'https://dayalog.test/api/dispatches/in/status/voluptatem'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -3034,10 +3037,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="dispatch"                data-endpoint="PUTapi-dispatches--dispatch--status--newStatus-"
-               value="beatae"
+               value="in"
                data-component="url">
     <br>
-<p>The dispatch. Example: <code>beatae</code></p>
+<p>The dispatch. Example: <code>in</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>newStatus</code></b>&nbsp;&nbsp;
@@ -3045,10 +3048,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="newStatus"                data-endpoint="PUTapi-dispatches--dispatch--status--newStatus-"
-               value="commodi"
+               value="voluptatem"
                data-component="url">
     <br>
-<p>Example: <code>commodi</code></p>
+<p>Example: <code>voluptatem</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>string</code></b>&nbsp;&nbsp;
@@ -3144,7 +3147,7 @@ response.json()</code></pre></div>
 content-type: application/json
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
-set-cookie: dayalog_session=6SNmnntcZyEJSJvOI3ax9ncf4ZZr63p2NtZEOyAF; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
+set-cookie: dayalog_session=4DPyWYTjzOvHEVYYdIttepADGrq62CWYqbLMC31R; expires=Tue, 01 Apr 2025 14:50:27 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -3222,6 +3225,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "https://dayalog.test/api/drivers" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
+    --data "{
+    \"business_name\": \"velit\"
+}"
 </code></pre></div>
 
 
@@ -3235,9 +3241,14 @@ const headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "business_name": "velit"
+};
+
 fetch(url, {
     method: "POST",
     headers,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 
@@ -3251,6 +3262,9 @@ $response = $client-&gt;post(
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
         ],
+        'json' =&gt; [
+            'business_name' =&gt; 'velit',
+        ],
     ]
 );
 $body = $response-&gt;getBody();
@@ -3262,12 +3276,15 @@ print_r(json_decode((string) $body));</code></pre></div>
 import json
 
 url = 'https://dayalog.test/api/drivers'
+payload = {
+    "business_name": "velit"
+}
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 }
 
-response = requests.request('POST', url, headers=headers)
+response = requests.request('POST', url, headers=headers, json=payload)
 response.json()</code></pre></div>
 
 </span>
@@ -3328,6 +3345,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>business_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="business_name"                data-endpoint="POSTapi-drivers"
+               value="velit"
+               data-component="body">
+    <br>
+<p>Example: <code>velit</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>license</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
 <i>optional</i> &nbsp;
@@ -3408,14 +3436,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.test/api/drivers/distinctio" \
+    --get "https://dayalog.test/api/drivers/hic" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/drivers/distinctio"
+    "https://dayalog.test/api/drivers/hic"
 );
 
 const headers = {
@@ -3431,7 +3459,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/drivers/distinctio';
+$url = 'https://dayalog.test/api/drivers/hic';
 $response = $client-&gt;get(
     $url,
     [
@@ -3449,7 +3477,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/drivers/distinctio'
+url = 'https://dayalog.test/api/drivers/hic'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -3472,7 +3500,7 @@ response.json()</code></pre></div>
 content-type: application/json
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
-set-cookie: dayalog_session=H7AJKTQcQfJNwwrW8Ac7gbqlMVfiX41bPET8qSK1; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
+set-cookie: dayalog_session=oVWBydt0BsqOfLpQdKSBnKobZADTNgHHyYDQOfAl; expires=Tue, 01 Apr 2025 14:50:28 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -3539,10 +3567,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-drivers--id-"
-               value="distinctio"
+               value="hic"
                data-component="url">
     <br>
-<p>The ID of the driver. Example: <code>distinctio</code></p>
+<p>The ID of the driver. Example: <code>hic</code></p>
             </div>
                     </form>
 
@@ -3559,7 +3587,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.test/api/drivers/praesentium" \
+    "https://dayalog.test/api/drivers/occaecati" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
 </code></pre></div>
@@ -3567,7 +3595,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/drivers/praesentium"
+    "https://dayalog.test/api/drivers/occaecati"
 );
 
 const headers = {
@@ -3583,7 +3611,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/drivers/praesentium';
+$url = 'https://dayalog.test/api/drivers/occaecati';
 $response = $client-&gt;put(
     $url,
     [
@@ -3601,7 +3629,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/drivers/praesentium'
+url = 'https://dayalog.test/api/drivers/occaecati'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -3677,10 +3705,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-drivers--id-"
-               value="praesentium"
+               value="occaecati"
                data-component="url">
     <br>
-<p>The ID of the driver. Example: <code>praesentium</code></p>
+<p>The ID of the driver. Example: <code>occaecati</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -3720,14 +3748,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://dayalog.test/api/drivers/quaerat" \
+    "https://dayalog.test/api/drivers/cumque" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/drivers/quaerat"
+    "https://dayalog.test/api/drivers/cumque"
 );
 
 const headers = {
@@ -3743,7 +3771,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/drivers/quaerat';
+$url = 'https://dayalog.test/api/drivers/cumque';
 $response = $client-&gt;delete(
     $url,
     [
@@ -3761,7 +3789,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/drivers/quaerat'
+url = 'https://dayalog.test/api/drivers/cumque'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -3833,10 +3861,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-drivers--id-"
-               value="quaerat"
+               value="cumque"
                data-component="url">
     <br>
-<p>The ID of the driver. Example: <code>quaerat</code></p>
+<p>The ID of the driver. Example: <code>cumque</code></p>
             </div>
                     </form>
 
@@ -3853,14 +3881,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://dayalog.test/api/drivers/et/vehicles/fugiat" \
+    "https://dayalog.test/api/drivers/sit/vehicles/qui" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/drivers/et/vehicles/fugiat"
+    "https://dayalog.test/api/drivers/sit/vehicles/qui"
 );
 
 const headers = {
@@ -3876,7 +3904,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/drivers/et/vehicles/fugiat';
+$url = 'https://dayalog.test/api/drivers/sit/vehicles/qui';
 $response = $client-&gt;post(
     $url,
     [
@@ -3894,7 +3922,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/drivers/et/vehicles/fugiat'
+url = 'https://dayalog.test/api/drivers/sit/vehicles/qui'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -3966,10 +3994,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="driver"                data-endpoint="POSTapi-drivers--driver--vehicles--vehicle-"
-               value="et"
+               value="sit"
                data-component="url">
     <br>
-<p>The driver. Example: <code>et</code></p>
+<p>The driver. Example: <code>sit</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>vehicle</code></b>&nbsp;&nbsp;
@@ -3977,10 +4005,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="vehicle"                data-endpoint="POSTapi-drivers--driver--vehicles--vehicle-"
-               value="fugiat"
+               value="qui"
                data-component="url">
     <br>
-<p>The vehicle. Example: <code>fugiat</code></p>
+<p>The vehicle. Example: <code>qui</code></p>
             </div>
                     </form>
 
@@ -3997,14 +4025,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://dayalog.test/api/drivers/velit/vehicles/dolorem" \
+    "https://dayalog.test/api/drivers/libero/vehicles/recusandae" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/drivers/velit/vehicles/dolorem"
+    "https://dayalog.test/api/drivers/libero/vehicles/recusandae"
 );
 
 const headers = {
@@ -4020,7 +4048,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/drivers/velit/vehicles/dolorem';
+$url = 'https://dayalog.test/api/drivers/libero/vehicles/recusandae';
 $response = $client-&gt;delete(
     $url,
     [
@@ -4038,7 +4066,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/drivers/velit/vehicles/dolorem'
+url = 'https://dayalog.test/api/drivers/libero/vehicles/recusandae'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -4110,10 +4138,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="driver"                data-endpoint="DELETEapi-drivers--driver--vehicles--vehicle-"
-               value="velit"
+               value="libero"
                data-component="url">
     <br>
-<p>The driver. Example: <code>velit</code></p>
+<p>The driver. Example: <code>libero</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>vehicle</code></b>&nbsp;&nbsp;
@@ -4121,10 +4149,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="vehicle"                data-endpoint="DELETEapi-drivers--driver--vehicles--vehicle-"
-               value="dolorem"
+               value="recusandae"
                data-component="url">
     <br>
-<p>The vehicle. Example: <code>dolorem</code></p>
+<p>The vehicle. Example: <code>recusandae</code></p>
             </div>
                     </form>
 
@@ -4209,7 +4237,7 @@ response.json()</code></pre></div>
 content-type: application/json
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
-set-cookie: dayalog_session=hZR04yWC4z0CQir8NAdDd02preU8maUP6YgoCPa5; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
+set-cookie: dayalog_session=m5y2X7GAGHVOY95F7YUFKjRn1Agal1gvE9EyFB0d; expires=Tue, 01 Apr 2025 14:50:27 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -4348,7 +4376,7 @@ response.json()</code></pre></div>
 content-type: application/json
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
-set-cookie: dayalog_session=X4fjWC5eadn0yOtFg6R3xf91ykXhEYb3NMo00Ph8; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
+set-cookie: dayalog_session=ydGjdoK2Mwz1E2d9HxJ2AAQVIn5yZvj7kjjd2Rix; expires=Tue, 01 Apr 2025 14:50:27 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -4427,7 +4455,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"culpa\"
+    \"name\": \"beatae\"
 }"
 </code></pre></div>
 
@@ -4443,7 +4471,7 @@ const headers = {
 };
 
 let body = {
-    "name": "culpa"
+    "name": "beatae"
 };
 
 fetch(url, {
@@ -4464,7 +4492,7 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'name' =&gt; 'culpa',
+            'name' =&gt; 'beatae',
         ],
     ]
 );
@@ -4478,7 +4506,7 @@ import json
 
 url = 'https://dayalog.test/api/organizations'
 payload = {
-    "name": "culpa"
+    "name": "beatae"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -4551,10 +4579,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-organizations"
-               value="culpa"
+               value="beatae"
                data-component="body">
     <br>
-<p>Example: <code>culpa</code></p>
+<p>Example: <code>beatae</code></p>
         </div>
         </form>
 
@@ -4571,19 +4599,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.test/api/devices/odit/positions" \
+    --get "https://dayalog.test/api/devices/voluptatem/positions" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"from\": \"2025-03-08 23:20:30\",
-    \"to\": \"2025-03-08 23:20:30\"
+    \"from\": \"2025-04-01 15:50:27\",
+    \"to\": \"2025-04-01 15:50:27\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/devices/odit/positions"
+    "https://dayalog.test/api/devices/voluptatem/positions"
 );
 
 const headers = {
@@ -4592,8 +4620,8 @@ const headers = {
 };
 
 let body = {
-    "from": "2025-03-08 23:20:30",
-    "to": "2025-03-08 23:20:30"
+    "from": "2025-04-01 15:50:27",
+    "to": "2025-04-01 15:50:27"
 };
 
 fetch(url, {
@@ -4605,7 +4633,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/devices/odit/positions';
+$url = 'https://dayalog.test/api/devices/voluptatem/positions';
 $response = $client-&gt;get(
     $url,
     [
@@ -4614,8 +4642,8 @@ $response = $client-&gt;get(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'from' =&gt; '2025-03-08 23:20:30',
-            'to' =&gt; '2025-03-08 23:20:30',
+            'from' =&gt; '2025-04-01 15:50:27',
+            'to' =&gt; '2025-04-01 15:50:27',
         ],
     ]
 );
@@ -4627,10 +4655,10 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/devices/odit/positions'
+url = 'https://dayalog.test/api/devices/voluptatem/positions'
 payload = {
-    "from": "2025-03-08 23:20:30",
-    "to": "2025-03-08 23:20:30"
+    "from": "2025-04-01 15:50:27",
+    "to": "2025-04-01 15:50:27"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -4654,7 +4682,7 @@ response.json()</code></pre></div>
 content-type: application/json
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
-set-cookie: dayalog_session=OeCcjuzryKedoYsHF3lInajgM79fZNLW1I1rHpAh; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
+set-cookie: dayalog_session=iZ9zIgBXIXD36I0WYCMIQgU1urpQyRYI8Y30ix3i; expires=Tue, 01 Apr 2025 14:50:27 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -4721,10 +4749,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="device"                data-endpoint="GETapi-devices--device--positions"
-               value="odit"
+               value="voluptatem"
                data-component="url">
     <br>
-<p>The device. Example: <code>odit</code></p>
+<p>The device. Example: <code>voluptatem</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -4733,10 +4761,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="from"                data-endpoint="GETapi-devices--device--positions"
-               value="2025-03-08 23:20:30"
+               value="2025-04-01 15:50:27"
                data-component="body">
     <br>
-<p>Must be a valid date in the format <code>Y-m-d H:i:s</code>. Example: <code>2025-03-08 23:20:30</code></p>
+<p>Must be a valid date in the format <code>Y-m-d H:i:s</code>. Example: <code>2025-04-01 15:50:27</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>to</code></b>&nbsp;&nbsp;
@@ -4744,10 +4772,233 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="to"                data-endpoint="GETapi-devices--device--positions"
-               value="2025-03-08 23:20:30"
+               value="2025-04-01 15:50:27"
                data-component="body">
     <br>
-<p>Must be a valid date in the format <code>Y-m-d H:i:s</code>. Example: <code>2025-03-08 23:20:30</code></p>
+<p>Must be a valid date in the format <code>Y-m-d H:i:s</code>. Example: <code>2025-04-01 15:50:27</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-login-by-system">POST api/login/by/system</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-login-by-system">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://dayalog.test/api/login/by/system" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"neil57@example.net\",
+    \"patasente_id\": \"sit\",
+    \"phone_number\": \"qui\",
+    \"name\": \"vslpxpywvaster\",
+    \"system_id\": \"fmsgxxcfbxskyhwiqunwcwvg\",
+    \"system_access_token\": \"jxjjln\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://dayalog.test/api/login/by/system"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "neil57@example.net",
+    "patasente_id": "sit",
+    "phone_number": "qui",
+    "name": "vslpxpywvaster",
+    "system_id": "fmsgxxcfbxskyhwiqunwcwvg",
+    "system_access_token": "jxjjln"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'https://dayalog.test/api/login/by/system';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'email' =&gt; 'neil57@example.net',
+            'patasente_id' =&gt; 'sit',
+            'phone_number' =&gt; 'qui',
+            'name' =&gt; 'vslpxpywvaster',
+            'system_id' =&gt; 'fmsgxxcfbxskyhwiqunwcwvg',
+            'system_access_token' =&gt; 'jxjjln',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'https://dayalog.test/api/login/by/system'
+payload = {
+    "email": "neil57@example.net",
+    "patasente_id": "sit",
+    "phone_number": "qui",
+    "name": "vslpxpywvaster",
+    "system_id": "fmsgxxcfbxskyhwiqunwcwvg",
+    "system_access_token": "jxjjln"
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-login-by-system">
+</span>
+<span id="execution-results-POSTapi-login-by-system" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-login-by-system"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-login-by-system"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-login-by-system" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-login-by-system">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-login-by-system" data-method="POST"
+      data-path="api/login/by/system"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-login-by-system', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/login/by/system</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-login-by-system"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-login-by-system"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-login-by-system"
+               value="neil57@example.net"
+               data-component="body">
+    <br>
+<p>This field is required when none of <code>phone_number</code> and <code>patasente_id</code> are present.  Must be a valid email address. Must not be greater than 255 characters. Example: <code>neil57@example.net</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>patasente_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="patasente_id"                data-endpoint="POSTapi-login-by-system"
+               value="sit"
+               data-component="body">
+    <br>
+<p>This field is required when none of <code>email</code> and <code>phone_number</code> are present. Example: <code>sit</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>phone_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="phone_number"                data-endpoint="POSTapi-login-by-system"
+               value="qui"
+               data-component="body">
+    <br>
+<p>This field is required when none of <code>email</code> and <code>patasente_id</code> are present. Example: <code>qui</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="POSTapi-login-by-system"
+               value="vslpxpywvaster"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>vslpxpywvaster</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>system_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="system_id"                data-endpoint="POSTapi-login-by-system"
+               value="fmsgxxcfbxskyhwiqunwcwvg"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>fmsgxxcfbxskyhwiqunwcwvg</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>system_access_token</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="system_access_token"                data-endpoint="POSTapi-login-by-system"
+               value="jxjjln"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>jxjjln</code></p>
         </div>
         </form>
 
@@ -4832,7 +5083,7 @@ response.json()</code></pre></div>
 content-type: application/json
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
-set-cookie: dayalog_session=sMubRHomeKaBEsUx2vjk2CTYq2jsdZ3evyYVHi2F; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
+set-cookie: dayalog_session=bjl8RDnQOmfWKciNrpoeQvXhTkkyKhA09Xn8TdWk; expires=Tue, 01 Apr 2025 14:50:28 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -4911,11 +5162,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"from\": \"aut\",
-    \"to\": \"et\",
-    \"patasente_purchase_order_id\": 2,
-    \"reference\": \"voluptatem\",
-    \"notes\": \"ut\"
+    \"from\": \"enim\",
+    \"to\": \"consequuntur\",
+    \"patasente_purchase_order_id\": 11,
+    \"reference\": \"vel\",
+    \"notes\": \"eum\"
 }"
 </code></pre></div>
 
@@ -4931,11 +5182,11 @@ const headers = {
 };
 
 let body = {
-    "from": "aut",
-    "to": "et",
-    "patasente_purchase_order_id": 2,
-    "reference": "voluptatem",
-    "notes": "ut"
+    "from": "enim",
+    "to": "consequuntur",
+    "patasente_purchase_order_id": 11,
+    "reference": "vel",
+    "notes": "eum"
 };
 
 fetch(url, {
@@ -4956,11 +5207,11 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'from' =&gt; 'aut',
-            'to' =&gt; 'et',
-            'patasente_purchase_order_id' =&gt; 2,
-            'reference' =&gt; 'voluptatem',
-            'notes' =&gt; 'ut',
+            'from' =&gt; 'enim',
+            'to' =&gt; 'consequuntur',
+            'patasente_purchase_order_id' =&gt; 11,
+            'reference' =&gt; 'vel',
+            'notes' =&gt; 'eum',
         ],
     ]
 );
@@ -4974,11 +5225,11 @@ import json
 
 url = 'https://dayalog.test/api/orders'
 payload = {
-    "from": "aut",
-    "to": "et",
-    "patasente_purchase_order_id": 2,
-    "reference": "voluptatem",
-    "notes": "ut"
+    "from": "enim",
+    "to": "consequuntur",
+    "patasente_purchase_order_id": 11,
+    "reference": "vel",
+    "notes": "eum"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -5051,10 +5302,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="from"                data-endpoint="POSTapi-orders"
-               value="aut"
+               value="enim"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the users table. Example: <code>aut</code></p>
+<p>The <code>id</code> of an existing record in the users table. Example: <code>enim</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>to</code></b>&nbsp;&nbsp;
@@ -5062,10 +5313,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="to"                data-endpoint="POSTapi-orders"
-               value="et"
+               value="consequuntur"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the users table. Example: <code>et</code></p>
+<p>The <code>id</code> of an existing record in the users table. Example: <code>consequuntur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>patasente_purchase_order_id</code></b>&nbsp;&nbsp;
@@ -5073,10 +5324,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="patasente_purchase_order_id"                data-endpoint="POSTapi-orders"
-               value="2"
+               value="11"
                data-component="body">
     <br>
-<p>Example: <code>2</code></p>
+<p>Example: <code>11</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>reference</code></b>&nbsp;&nbsp;
@@ -5084,10 +5335,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="reference"                data-endpoint="POSTapi-orders"
-               value="voluptatem"
+               value="vel"
                data-component="body">
     <br>
-<p>Example: <code>voluptatem</code></p>
+<p>Example: <code>vel</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -5095,10 +5346,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="notes"                data-endpoint="POSTapi-orders"
-               value="ut"
+               value="eum"
                data-component="body">
     <br>
-<p>Example: <code>ut</code></p>
+<p>Example: <code>eum</code></p>
         </div>
         </form>
 
@@ -5115,14 +5366,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.test/api/orders/voluptatem" \
+    --get "https://dayalog.test/api/orders/necessitatibus" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/orders/voluptatem"
+    "https://dayalog.test/api/orders/necessitatibus"
 );
 
 const headers = {
@@ -5138,7 +5389,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/orders/voluptatem';
+$url = 'https://dayalog.test/api/orders/necessitatibus';
 $response = $client-&gt;get(
     $url,
     [
@@ -5156,7 +5407,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/orders/voluptatem'
+url = 'https://dayalog.test/api/orders/necessitatibus'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -5179,7 +5430,7 @@ response.json()</code></pre></div>
 content-type: application/json
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
-set-cookie: dayalog_session=NQ0RlWacHUYgwQgU5yOHSapOMMApdZnpM5wRBgxJ; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
+set-cookie: dayalog_session=hsIuLSJqGHv5eJMeAQuEFCk5CHqrDJGmdle4UdkX; expires=Tue, 01 Apr 2025 14:50:28 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -5246,10 +5497,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-orders--id-"
-               value="voluptatem"
+               value="necessitatibus"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>voluptatem</code></p>
+<p>The ID of the order. Example: <code>necessitatibus</code></p>
             </div>
                     </form>
 
@@ -5266,14 +5517,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.test/api/orders/libero" \
+    "https://dayalog.test/api/orders/id" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/orders/libero"
+    "https://dayalog.test/api/orders/id"
 );
 
 const headers = {
@@ -5289,7 +5540,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/orders/libero';
+$url = 'https://dayalog.test/api/orders/id';
 $response = $client-&gt;put(
     $url,
     [
@@ -5307,7 +5558,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/orders/libero'
+url = 'https://dayalog.test/api/orders/id'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -5383,10 +5634,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-orders--id-"
-               value="libero"
+               value="id"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>libero</code></p>
+<p>The ID of the order. Example: <code>id</code></p>
             </div>
                     </form>
 
@@ -5403,14 +5654,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://dayalog.test/api/orders/eum" \
+    "https://dayalog.test/api/orders/et" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/orders/eum"
+    "https://dayalog.test/api/orders/et"
 );
 
 const headers = {
@@ -5426,7 +5677,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/orders/eum';
+$url = 'https://dayalog.test/api/orders/et';
 $response = $client-&gt;delete(
     $url,
     [
@@ -5444,7 +5695,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/orders/eum'
+url = 'https://dayalog.test/api/orders/et'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -5516,10 +5767,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-orders--id-"
-               value="eum"
+               value="et"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>eum</code></p>
+<p>The ID of the order. Example: <code>et</code></p>
             </div>
                     </form>
 
@@ -5536,14 +5787,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://dayalog.test/api/orders/iste/vehicle/sunt" \
+    "https://dayalog.test/api/orders/sit/vehicle/animi" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/orders/iste/vehicle/sunt"
+    "https://dayalog.test/api/orders/sit/vehicle/animi"
 );
 
 const headers = {
@@ -5559,7 +5810,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/orders/iste/vehicle/sunt';
+$url = 'https://dayalog.test/api/orders/sit/vehicle/animi';
 $response = $client-&gt;post(
     $url,
     [
@@ -5577,7 +5828,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/orders/iste/vehicle/sunt'
+url = 'https://dayalog.test/api/orders/sit/vehicle/animi'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -5649,10 +5900,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="order"                data-endpoint="POSTapi-orders--order--vehicle--vehicle-"
-               value="iste"
+               value="sit"
                data-component="url">
     <br>
-<p>The order. Example: <code>iste</code></p>
+<p>The order. Example: <code>sit</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>vehicle</code></b>&nbsp;&nbsp;
@@ -5660,10 +5911,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="vehicle"                data-endpoint="POSTapi-orders--order--vehicle--vehicle-"
-               value="sunt"
+               value="animi"
                data-component="url">
     <br>
-<p>The vehicle. Example: <code>sunt</code></p>
+<p>The vehicle. Example: <code>animi</code></p>
             </div>
                     </form>
 
@@ -5680,14 +5931,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://dayalog.test/api/orders/illo/vehicle/dolores" \
+    "https://dayalog.test/api/orders/et/vehicle/suscipit" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/orders/illo/vehicle/dolores"
+    "https://dayalog.test/api/orders/et/vehicle/suscipit"
 );
 
 const headers = {
@@ -5703,7 +5954,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/orders/illo/vehicle/dolores';
+$url = 'https://dayalog.test/api/orders/et/vehicle/suscipit';
 $response = $client-&gt;delete(
     $url,
     [
@@ -5721,7 +5972,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/orders/illo/vehicle/dolores'
+url = 'https://dayalog.test/api/orders/et/vehicle/suscipit'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -5793,10 +6044,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="order"                data-endpoint="DELETEapi-orders--order--vehicle--vehicle-"
-               value="illo"
+               value="et"
                data-component="url">
     <br>
-<p>The order. Example: <code>illo</code></p>
+<p>The order. Example: <code>et</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>vehicle</code></b>&nbsp;&nbsp;
@@ -5804,10 +6055,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="vehicle"                data-endpoint="DELETEapi-orders--order--vehicle--vehicle-"
-               value="dolores"
+               value="suscipit"
                data-component="url">
     <br>
-<p>The vehicle. Example: <code>dolores</code></p>
+<p>The vehicle. Example: <code>suscipit</code></p>
             </div>
                     </form>
 
@@ -5824,14 +6075,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.test/api/orders/et/status/officia" \
+    "https://dayalog.test/api/orders/officiis/status/nam" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/orders/et/status/officia"
+    "https://dayalog.test/api/orders/officiis/status/nam"
 );
 
 const headers = {
@@ -5847,7 +6098,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/orders/et/status/officia';
+$url = 'https://dayalog.test/api/orders/officiis/status/nam';
 $response = $client-&gt;put(
     $url,
     [
@@ -5865,7 +6116,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/orders/et/status/officia'
+url = 'https://dayalog.test/api/orders/officiis/status/nam'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -5937,10 +6188,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="order"                data-endpoint="PUTapi-orders--order--status--newStatus-"
-               value="et"
+               value="officiis"
                data-component="url">
     <br>
-<p>The order. Example: <code>et</code></p>
+<p>The order. Example: <code>officiis</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>newStatus</code></b>&nbsp;&nbsp;
@@ -5948,10 +6199,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="newStatus"                data-endpoint="PUTapi-orders--order--status--newStatus-"
-               value="officia"
+               value="nam"
                data-component="url">
     <br>
-<p>Example: <code>officia</code></p>
+<p>Example: <code>nam</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>string</code></b>&nbsp;&nbsp;
@@ -6047,7 +6298,7 @@ response.json()</code></pre></div>
 content-type: application/json
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
-set-cookie: dayalog_session=Pdt4eXYAyi3mjkaFNUG2kMJGjKC1VrzG7F6rTnfo; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
+set-cookie: dayalog_session=iMyn1zIZs30pq4OFjOrQTKvqYsQyIWQ8CL58QV6r; expires=Tue, 01 Apr 2025 14:50:28 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -6126,17 +6377,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"vin\": \"et\",
-    \"number_plate\": \"et\",
-    \"make\": \"saepe\",
-    \"model\": \"tenetur\",
-    \"availability\": true,
-    \"capacity_weight\": 224.441146109,
-    \"capacity_volume\": 32.966978,
-    \"insurance_policy_number\": \"officiis\",
-    \"insurance_coverage\": \"quo\",
-    \"insurance_expiration\": \"2025-03-08T23:20:30\",
-    \"attached_device_id\": 15
+    \"vin\": \"nulla\",
+    \"number_plate\": \"assumenda\",
+    \"make\": \"voluptatum\",
+    \"model\": \"fugit\",
+    \"availability\": false,
+    \"capacity_weight\": 0.2,
+    \"capacity_volume\": 470815587.075149,
+    \"insurance_policy_number\": \"deserunt\",
+    \"insurance_coverage\": \"aut\",
+    \"insurance_expiration\": \"2025-04-01T15:50:28\",
+    \"attached_device_id\": 19
 }"
 </code></pre></div>
 
@@ -6152,17 +6403,17 @@ const headers = {
 };
 
 let body = {
-    "vin": "et",
-    "number_plate": "et",
-    "make": "saepe",
-    "model": "tenetur",
-    "availability": true,
-    "capacity_weight": 224.441146109,
-    "capacity_volume": 32.966978,
-    "insurance_policy_number": "officiis",
-    "insurance_coverage": "quo",
-    "insurance_expiration": "2025-03-08T23:20:30",
-    "attached_device_id": 15
+    "vin": "nulla",
+    "number_plate": "assumenda",
+    "make": "voluptatum",
+    "model": "fugit",
+    "availability": false,
+    "capacity_weight": 0.2,
+    "capacity_volume": 470815587.075149,
+    "insurance_policy_number": "deserunt",
+    "insurance_coverage": "aut",
+    "insurance_expiration": "2025-04-01T15:50:28",
+    "attached_device_id": 19
 };
 
 fetch(url, {
@@ -6183,17 +6434,17 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'vin' =&gt; 'et',
-            'number_plate' =&gt; 'et',
-            'make' =&gt; 'saepe',
-            'model' =&gt; 'tenetur',
-            'availability' =&gt; true,
-            'capacity_weight' =&gt; 224.441146109,
-            'capacity_volume' =&gt; 32.966978,
-            'insurance_policy_number' =&gt; 'officiis',
-            'insurance_coverage' =&gt; 'quo',
-            'insurance_expiration' =&gt; '2025-03-08T23:20:30',
-            'attached_device_id' =&gt; 15,
+            'vin' =&gt; 'nulla',
+            'number_plate' =&gt; 'assumenda',
+            'make' =&gt; 'voluptatum',
+            'model' =&gt; 'fugit',
+            'availability' =&gt; false,
+            'capacity_weight' =&gt; 0.2,
+            'capacity_volume' =&gt; 470815587.075149,
+            'insurance_policy_number' =&gt; 'deserunt',
+            'insurance_coverage' =&gt; 'aut',
+            'insurance_expiration' =&gt; '2025-04-01T15:50:28',
+            'attached_device_id' =&gt; 19,
         ],
     ]
 );
@@ -6207,17 +6458,17 @@ import json
 
 url = 'https://dayalog.test/api/vehicles'
 payload = {
-    "vin": "et",
-    "number_plate": "et",
-    "make": "saepe",
-    "model": "tenetur",
-    "availability": true,
-    "capacity_weight": 224.441146109,
-    "capacity_volume": 32.966978,
-    "insurance_policy_number": "officiis",
-    "insurance_coverage": "quo",
-    "insurance_expiration": "2025-03-08T23:20:30",
-    "attached_device_id": 15
+    "vin": "nulla",
+    "number_plate": "assumenda",
+    "make": "voluptatum",
+    "model": "fugit",
+    "availability": false,
+    "capacity_weight": 0.2,
+    "capacity_volume": 470815587.075149,
+    "insurance_policy_number": "deserunt",
+    "insurance_coverage": "aut",
+    "insurance_expiration": "2025-04-01T15:50:28",
+    "attached_device_id": 19
 }
 headers = {
   'Content-Type': 'application/json',
@@ -6290,10 +6541,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="vin"                data-endpoint="POSTapi-vehicles"
-               value="et"
+               value="nulla"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>nulla</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>number_plate</code></b>&nbsp;&nbsp;
@@ -6301,10 +6552,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="number_plate"                data-endpoint="POSTapi-vehicles"
-               value="et"
+               value="assumenda"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>assumenda</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>make</code></b>&nbsp;&nbsp;
@@ -6312,10 +6563,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="make"                data-endpoint="POSTapi-vehicles"
-               value="saepe"
+               value="voluptatum"
                data-component="body">
     <br>
-<p>Example: <code>saepe</code></p>
+<p>Example: <code>voluptatum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model</code></b>&nbsp;&nbsp;
@@ -6323,10 +6574,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="model"                data-endpoint="POSTapi-vehicles"
-               value="tenetur"
+               value="fugit"
                data-component="body">
     <br>
-<p>Example: <code>tenetur</code></p>
+<p>Example: <code>fugit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>availability</code></b>&nbsp;&nbsp;
@@ -6347,7 +6598,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>capacity_weight</code></b>&nbsp;&nbsp;
@@ -6355,10 +6606,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="capacity_weight"                data-endpoint="POSTapi-vehicles"
-               value="224.441146109"
+               value="0.2"
                data-component="body">
     <br>
-<p>Example: <code>224.441146109</code></p>
+<p>Example: <code>0.2</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>capacity_volume</code></b>&nbsp;&nbsp;
@@ -6366,10 +6617,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="capacity_volume"                data-endpoint="POSTapi-vehicles"
-               value="32.966978"
+               value="470815587.07515"
                data-component="body">
     <br>
-<p>Example: <code>32.966978</code></p>
+<p>Example: <code>470815587.07515</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>insurance_policy_number</code></b>&nbsp;&nbsp;
@@ -6377,10 +6628,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="insurance_policy_number"                data-endpoint="POSTapi-vehicles"
-               value="officiis"
+               value="deserunt"
                data-component="body">
     <br>
-<p>Example: <code>officiis</code></p>
+<p>Example: <code>deserunt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>insurance_coverage</code></b>&nbsp;&nbsp;
@@ -6388,10 +6639,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="insurance_coverage"                data-endpoint="POSTapi-vehicles"
-               value="quo"
+               value="aut"
                data-component="body">
     <br>
-<p>Example: <code>quo</code></p>
+<p>Example: <code>aut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>insurance_expiration</code></b>&nbsp;&nbsp;
@@ -6399,10 +6650,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="insurance_expiration"                data-endpoint="POSTapi-vehicles"
-               value="2025-03-08T23:20:30"
+               value="2025-04-01T15:50:28"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-03-08T23:20:30</code></p>
+<p>Must be a valid date. Example: <code>2025-04-01T15:50:28</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>attached_device_id</code></b>&nbsp;&nbsp;
@@ -6410,10 +6661,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="attached_device_id"                data-endpoint="POSTapi-vehicles"
-               value="15"
+               value="19"
                data-component="body">
     <br>
-<p>Example: <code>15</code></p>
+<p>Example: <code>19</code></p>
         </div>
         </form>
 
@@ -6430,14 +6681,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://dayalog.test/api/vehicles/eveniet" \
+    --get "https://dayalog.test/api/vehicles/eius" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/vehicles/eveniet"
+    "https://dayalog.test/api/vehicles/eius"
 );
 
 const headers = {
@@ -6453,7 +6704,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/vehicles/eveniet';
+$url = 'https://dayalog.test/api/vehicles/eius';
 $response = $client-&gt;get(
     $url,
     [
@@ -6471,7 +6722,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/vehicles/eveniet'
+url = 'https://dayalog.test/api/vehicles/eius'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -6494,7 +6745,7 @@ response.json()</code></pre></div>
 content-type: application/json
 access-control-allow-origin: localhost:8000
 access-control-allow-credentials: true
-set-cookie: dayalog_session=dTwJYJu8dOrxC6BSjXleQF1hAUdTtOTD0YOexXx8; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
+set-cookie: dayalog_session=Sr4Mi28KvlxH3flLACvkKiNkNbNRSEOXnSG7oV0g; expires=Tue, 01 Apr 2025 14:50:28 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -6561,10 +6812,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-vehicles--id-"
-               value="eveniet"
+               value="eius"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>eveniet</code></p>
+<p>The ID of the vehicle. Example: <code>eius</code></p>
             </div>
                     </form>
 
@@ -6581,14 +6832,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.test/api/vehicles/laborum" \
+    "https://dayalog.test/api/vehicles/voluptatem" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/vehicles/laborum"
+    "https://dayalog.test/api/vehicles/voluptatem"
 );
 
 const headers = {
@@ -6604,7 +6855,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/vehicles/laborum';
+$url = 'https://dayalog.test/api/vehicles/voluptatem';
 $response = $client-&gt;put(
     $url,
     [
@@ -6622,7 +6873,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/vehicles/laborum'
+url = 'https://dayalog.test/api/vehicles/voluptatem'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -6698,10 +6949,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-vehicles--id-"
-               value="laborum"
+               value="voluptatem"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>laborum</code></p>
+<p>The ID of the vehicle. Example: <code>voluptatem</code></p>
             </div>
                     </form>
 
@@ -6718,14 +6969,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://dayalog.test/api/vehicles/et" \
+    "https://dayalog.test/api/vehicles/voluptatum" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/vehicles/et"
+    "https://dayalog.test/api/vehicles/voluptatum"
 );
 
 const headers = {
@@ -6741,7 +6992,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/vehicles/et';
+$url = 'https://dayalog.test/api/vehicles/voluptatum';
 $response = $client-&gt;delete(
     $url,
     [
@@ -6759,7 +7010,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/vehicles/et'
+url = 'https://dayalog.test/api/vehicles/voluptatum'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -6831,10 +7082,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-vehicles--id-"
-               value="et"
+               value="voluptatum"
                data-component="url">
     <br>
-<p>The ID of the vehicle. Example: <code>et</code></p>
+<p>The ID of the vehicle. Example: <code>voluptatum</code></p>
             </div>
                     </form>
 
@@ -6851,18 +7102,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.test/api/vehicles/aut/attach-device" \
+    "https://dayalog.test/api/vehicles/eveniet/attach-device" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"device_id\": \"rerum\"
+    \"device_id\": \"incidunt\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/vehicles/aut/attach-device"
+    "https://dayalog.test/api/vehicles/eveniet/attach-device"
 );
 
 const headers = {
@@ -6871,7 +7122,7 @@ const headers = {
 };
 
 let body = {
-    "device_id": "rerum"
+    "device_id": "incidunt"
 };
 
 fetch(url, {
@@ -6883,7 +7134,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/vehicles/aut/attach-device';
+$url = 'https://dayalog.test/api/vehicles/eveniet/attach-device';
 $response = $client-&gt;put(
     $url,
     [
@@ -6892,7 +7143,7 @@ $response = $client-&gt;put(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'device_id' =&gt; 'rerum',
+            'device_id' =&gt; 'incidunt',
         ],
     ]
 );
@@ -6904,9 +7155,9 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/vehicles/aut/attach-device'
+url = 'https://dayalog.test/api/vehicles/eveniet/attach-device'
 payload = {
-    "device_id": "rerum"
+    "device_id": "incidunt"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -6979,10 +7230,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="vehicle"                data-endpoint="PUTapi-vehicles--vehicle--attach-device"
-               value="aut"
+               value="eveniet"
                data-component="url">
     <br>
-<p>The vehicle. Example: <code>aut</code></p>
+<p>The vehicle. Example: <code>eveniet</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -7002,10 +7253,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="device_id"                data-endpoint="PUTapi-vehicles--vehicle--attach-device"
-               value="rerum"
+               value="incidunt"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the traccar.tc_devices table. Example: <code>rerum</code></p>
+<p>The <code>id</code> of an existing record in the traccar.tc_devices table. Example: <code>incidunt</code></p>
         </div>
         </form>
 
@@ -7022,7 +7273,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://dayalog.test/api/vehicles/sint/detach-devices" \
+    "https://dayalog.test/api/vehicles/odit/detach-devices" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
 </code></pre></div>
@@ -7030,7 +7281,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://dayalog.test/api/vehicles/sint/detach-devices"
+    "https://dayalog.test/api/vehicles/odit/detach-devices"
 );
 
 const headers = {
@@ -7046,7 +7297,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://dayalog.test/api/vehicles/sint/detach-devices';
+$url = 'https://dayalog.test/api/vehicles/odit/detach-devices';
 $response = $client-&gt;put(
     $url,
     [
@@ -7064,7 +7315,7 @@ print_r(json_decode((string) $body));</code></pre></div>
     <pre><code class="language-python">import requests
 import json
 
-url = 'https://dayalog.test/api/vehicles/sint/detach-devices'
+url = 'https://dayalog.test/api/vehicles/odit/detach-devices'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -7136,10 +7387,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="vehicle"                data-endpoint="PUTapi-vehicles--vehicle--detach-devices"
-               value="sint"
+               value="odit"
                data-component="url">
     <br>
-<p>The vehicle. Example: <code>sint</code></p>
+<p>The vehicle. Example: <code>odit</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">

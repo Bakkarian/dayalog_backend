@@ -35,7 +35,7 @@ endpoints:
           content-type: application/json
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
-          set-cookie: 'dayalog_session=hZR04yWC4z0CQir8NAdDd02preU8maUP6YgoCPa5; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
+          set-cookie: 'dayalog_session=m5y2X7GAGHVOY95F7YUFKjRn1Agal1gvE9EyFB0d; expires=Tue, 01 Apr 2025 14:50:27 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -76,7 +76,7 @@ endpoints:
           content-type: application/json
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
-          set-cookie: 'dayalog_session=X4fjWC5eadn0yOtFg6R3xf91ykXhEYb3NMo00Ph8; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
+          set-cookie: 'dayalog_session=ydGjdoK2Mwz1E2d9HxJ2AAQVIn5yZvj7kjjd2Rix; expires=Tue, 01 Apr 2025 14:50:27 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -110,14 +110,14 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: culpa
+        example: beatae
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      name: culpa
+      name: beatae
     fileParameters: []
     responses: []
     responseFields: []
@@ -147,14 +147,14 @@ endpoints:
         name: device
         description: 'The device.'
         required: true
-        example: odit
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      device: odit
+      device: voluptatem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -162,7 +162,7 @@ endpoints:
         name: from
         description: 'Must be a valid date in the format <code>Y-m-d H:i:s</code>.'
         required: true
-        example: '2025-03-08 23:20:30'
+        example: '2025-04-01 15:50:27'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -172,15 +172,15 @@ endpoints:
         name: to
         description: 'Must be a valid date in the format <code>Y-m-d H:i:s</code>.'
         required: true
-        example: '2025-03-08 23:20:30'
+        example: '2025-04-01 15:50:27'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      from: '2025-03-08 23:20:30'
-      to: '2025-03-08 23:20:30'
+      from: '2025-04-01 15:50:27'
+      to: '2025-04-01 15:50:27'
     fileParameters: []
     responses:
       -
@@ -191,9 +191,105 @@ endpoints:
           content-type: application/json
           access-control-allow-origin: 'localhost:8000'
           access-control-allow-credentials: 'true'
-          set-cookie: 'dayalog_session=OeCcjuzryKedoYsHF3lInajgM79fZNLW1I1rHpAh; expires=Sat, 08 Mar 2025 22:20:30 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
+          set-cookie: 'dayalog_session=iZ9zIgBXIXD36I0WYCMIQgU1urpQyRYI8Y30ix3i; expires=Tue, 01 Apr 2025 14:50:27 GMT; Max-Age=7200; path=/; secure; httponly; samesite=lax'
         description: null
         custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/login/by/system
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'This field is required when none of <code>phone_number</code> and <code>patasente_id</code> are present.  Must be a valid email address. Must not be greater than 255 characters.'
+        required: false
+        example: neil57@example.net
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      patasente_id:
+        name: patasente_id
+        description: 'This field is required when none of <code>email</code> and <code>phone_number</code> are present.'
+        required: false
+        example: sit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      phone_number:
+        name: phone_number
+        description: 'This field is required when none of <code>email</code> and <code>patasente_id</code> are present.'
+        required: false
+        example: qui
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      name:
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: vslpxpywvaster
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      system_id:
+        name: system_id
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: fmsgxxcfbxskyhwiqunwcwvg
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      system_access_token:
+        name: system_access_token
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: jxjjln
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      email: neil57@example.net
+      patasente_id: sit
+      phone_number: qui
+      name: vslpxpywvaster
+      system_id: fmsgxxcfbxskyhwiqunwcwvg
+      system_access_token: jxjjln
+    fileParameters: []
+    responses: []
     responseFields: []
     auth: []
     controller: null

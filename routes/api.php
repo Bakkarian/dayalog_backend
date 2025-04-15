@@ -9,7 +9,6 @@ use App\Http\Controllers\DriverController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\VehiclesController;
 use App\Http\Middleware\ShouldSelectOrganization;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
